@@ -33,3 +33,5 @@
 - **Stockage (SSD)** : capacité de stockage 
 - **Alimentation (PSU)** : énergie  
 - **Boîtier + refroidissement** : maintien des températures  
+# Assemblage d'un PC : 
+- https://www.youtube.com/watch?v=7Vxp2zhDTUw
