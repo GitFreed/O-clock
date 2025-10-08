@@ -21,4 +21,8 @@ Il y a également 2 ports USB et un port Jack à l'avant du boitier.
 
 ### PATH OF DOUBLE PAIN
 
-Installer git en local, le config, le lier, et comprendre le git commit push etc 🥵
+Installer git en local, le config, le lier, et comprendre le git commit push etc 
+
+C'était plus simple via le web direct, vu tout ce qu'il faut taper pour un seul update 🥵
+
+![Screen Git Update](../images/SCREEN_GITUPDATE.jpg)
