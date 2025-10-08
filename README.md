@@ -4,4 +4,3 @@ Ce dépôt contient les challenges réalisés dans le cadre de la formation O'cl
 
 - `/challenges` : exercices quotidiens
 - `/images` : captures ou schémas
-
