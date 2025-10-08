@@ -1,6 +1,6 @@
-# Challenge-25-10-07
+# Challenge E03 07/10/2025
 
-## « Votre chef vous demande de lui trouver (repérer les modèles/références sur internet) des nouveaux écrans, claviers &amp; souris pour son parc de machines. »
+## Pitch de l’exercice « Votre chef vous demande de lui trouver (repérer les modèles/références sur internet) des nouveaux écrans, claviers &amp; souris pour son parc de machines. »
 
 - Quelles questions complémentaires lui-poser ? Quel modèles recommandez-vous ?
 - En bonus : un peu de veille techno ! Essayez de découvrir les différents composants d’un ordinateur, leur rôle, comment les choisir, comment les assembler ! À vous de trouver comment/où chercher de l’info à ce sujet 😉

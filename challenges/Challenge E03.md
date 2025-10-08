@@ -1,9 +1,15 @@
-# Pitch de l’exercice
+# Challenge E03 08/10/2025
 
-Prenez en photo les différents connecteurs présents sur votre ordinateur, cherchez le nom (le plus précis possible) de chaque port présent sur votre machine.
+## Pitch de l’exercice
 
-Pour ceux qui ont un PC fixe : ouvrez la façade de votre ordinateur (hors tension / après l’avoir débranché ⚠️) et prenez une photo des composants à l’intérieur. Essayez d’identifier chaque composant présent dans votre ordi !
+- Prenez en photo les différents connecteurs présents sur votre ordinateur, cherchez le nom (le plus précis possible) de chaque port présent sur votre machine.
+
+- Pour ceux qui ont un PC fixe : ouvrez la façade de votre ordinateur (hors tension / après l’avoir débranché ⚠️) et prenez une photo des composants à l’intérieur. Essayez d’identifier chaque composant présent dans votre ordi !
 Pour ceux qui n’ont pas de PC fixe ou ne souhaitent pas l’ouvrir, utilisez une photo d’un PC fixe ouvert trouvée sur le web pour faire le même exercice.
+
+- Bonus moins fun et un peu plus compliqué :
+Vous avez donc lu le challenge. Rien de trop compliqué, encore un travail de recherche et des notes à prendre.
+Alors ces notes, envoyez-les sur un repo Github que vous aurez créé pour l'occasion.
 
 ---
 
