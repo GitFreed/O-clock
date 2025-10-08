@@ -19,7 +19,9 @@ Il y a également 2 ports USB et un port Jack à l'avant du boitier.
 
 ![Vue intérieure du PC](../images/IMG_PC_INSIDE.jpg)
 
-### PATH OF DOUBLE PAIN
+---
+
+## PATH OF DOUBLE PAIN
 
 Installer git en local, le config, le lier, et comprendre le git commit push etc
 
