@@ -6,4 +6,15 @@ Pour ceux qui ont un PC fixe : ouvrez la façade de votre ordinateur (hors tensi
 Pour ceux qui n’ont pas de PC fixe ou ne souhaitent pas l’ouvrir, utilisez une photo d’un PC fixe ouvert trouvée sur le web pour faire le même exercice.
 
 ---
-test
+
+## Connecteurs présents à l'arrière de l'ordinateur
+
+Voici le PC vu de l’extérieur :
+
+![Vue arrière du PC](../images/IMG_PC_BACK.jpg)
+
+Il y a également 2 ports USB et un port Jack à l'avant du boitier.
+
+## Composants à l'intérieur de l'ordinateur
+
+![Vue intérieure du PC](../images/IMG_PC_INSIDE.jpg)
