@@ -20,13 +20,13 @@ N’hésitez pas à partager vos paniers sur Slack, dans le canal #entraide. Vou
 
 ## Config Bureautique à 700€
 
-On s'oriente sur une config avec du matériel correct, un i5 pour le multitasking en bureautique. Une Alim 550W suffisante car nous n'utiliseront pas de GPU dans ce setup, le CPU ayant un coeur graphique. La Carte mère possède néanmmoins une sortie HDMI + DIsplay port pour brancher 2 écrans.
+On s'oriente sur une config avec du matériel assez basique mais si possible de bonnes marques, un i5 pour le multitasking en bureautique. Une Alim 550W suffisante car nous n'utiliseront pas de GPU dans ce setup, le CPU ayant un coeur graphique. La Carte mère possède néanmmoins une sortie HDMI + DIsplay port pour brancher 2 écrans.
 
 - [https://www.materiel.net/s/3Y7VZG7](https://www.materiel.net/s/3Y7VZG7)
 
 ## Config Gaming & Station de travail à 2000€
 
-Voici une config gaming, mais limitée par le budget. CPU AMD plus orienté gaming que multitasking, un bon GPU RTX DLSS, un NVME rapide avec un dissipateur, de la DDR5 6200MHz serait mieux dans l'idéal mais il faut faire des sacrifices, une CM correcte, un AIO 240mm, une alim 750W Gold, un boitier avec un bon airflow.
+Pour une config gaming et station de travail il nous faut un GPU et CPU puissant, un disque rapide, et 64go de mémoire vive pour les rendus vidéos, tout en restant limités par le budget il va falloir faire des sacrifices. Un CPU AMD moins orienté multitasking, un bon GPU RTX DLSS pour le jeu, un NVME rapide avec un dissipateur, de la DDR5 (6200MHz serait mieux dans l'idéal), une CM correcte (chipset basique), un AIO 240mm, une alim 750W Gold, un boitier avec un bon airflow.
 
 - [https://www.materiel.net/s/3EVT2Y6](https://www.materiel.net/s/3EVT2Y6)
 
