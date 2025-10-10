@@ -1,4 +1,4 @@
-# Challenge 0104 09/10/2025
+# Challenge 0105 10/10/2025
 
 ## Pitch de l’exercice
 
@@ -16,3 +16,16 @@
 
 ## Screen & Tips
 
+![Windows 10](../images/VM-Win10.png)
+
+![Windows 11](../images/VM-Win11.png)
+
+![Ubuntu](../images/VM-Ubuntu.png)
+
+![VirtualBox](../images/VM-Menu.png)
+
+![3 Machines sur une](../images/VM-Triple.png)
+
+![Bypass Win11 Compte Microsoft](../images/VM-BypassWin.png)
+
+Il y à eu plusieurs erreurs ou instabilités me poussant à réinstaller plusieurs fois. Comme renommer une VM sur VirtualBox, ou oublier l'image disque d'installation.
