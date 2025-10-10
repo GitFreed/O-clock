@@ -16,11 +16,11 @@
 
 ## Screen & Tips
 
-- VM Windows 10
+- VM Windows 10 avec un user2 local
 
 ![Windows 10](../images/VM-Win10.png)
 
-- VM Windows 11
+- VM Windows 11 sans compte Microsoft
 
 ![Windows 11](../images/VM-Win11.png)
 
