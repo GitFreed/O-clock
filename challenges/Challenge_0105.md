@@ -16,16 +16,22 @@
 
 ## Screen & Tips
 
+VM Windows 10
 ![Windows 10](../images/VM-Win10.png)
 
+VM Windows 11
 ![Windows 11](../images/VM-Win11.png)
 
+VM Ubuntu
 ![Ubuntu](../images/VM-Ubuntu.png)
 
+VirtualBox avec les 3 VM installées
 ![VirtualBox](../images/VM-Menu.png)
 
+Les 3 VM lancées en simultané
 ![3 Machines sur une](../images/VM-Triple.png)
 
-![Bypass Win11 Compte Microsoft](../images/VM-BypassWin.png)
-
 Il y à eu plusieurs erreurs ou instabilités me poussant à réinstaller plusieurs fois. Comme renommer une VM sur VirtualBox, ou oublier l'image disque d'installation.
+
+Pour l'installation de Win11 sans compte Microsoft j'ai été dans les paramètres de la VM Win11 et désactivé la carte réseau. Puis effectué cette commande
+![Bypass Win11 Compte Microsoft](../images/VM-BypassWin.png)
