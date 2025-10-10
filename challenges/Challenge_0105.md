@@ -36,7 +36,11 @@
 
 ![3 Machines sur une](../images/VM-Triple.png)
 
-Il y à eu plusieurs erreurs ou instabilités me poussant à réinstaller plusieurs fois. Comme renommer une VM sur VirtualBox, ou oublier l'image disque d'installation.
+Il y à eu plusieurs erreurs humaines et instabilités de Vbox me poussant à réinstaller plusieurs fois. 
+
+- Par exemple renommer une VM sur VirtualBox, ou oublier de retirer l'image disque d'installation.
+
+- J'ai aussi revu les allocations de RAM et Coeurs car il y avait des Freeze en tentant de lancer/installer plusieurs VM à la fois.
 
 Pour l'installation de Win11 sans compte Microsoft j'ai été dans les paramètres de la VM Win11 et désactivé la carte réseau. Puis effectué cette commande
 
