@@ -36,7 +36,7 @@
 
 ![3 Machines sur une](../images/VM-Triple.png)
 
-Il y à eu plusieurs erreurs humaines et instabilités de Vbox me poussant à réinstaller plusieurs fois. 
+Il y à eu plusieurs erreurs humaines et instabilités de Vbox me poussant à réinstaller plusieurs fois.
 
 - Par exemple renommer une VM sur VirtualBox, ou oublier de retirer l'image disque d'installation.
 
