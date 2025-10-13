@@ -11,7 +11,7 @@
 
 ## Virtual Box Guest Additions 💽
 
-- Activation dans les paramètres du copier/coller et glisser/déposer sur les VM Windows 10 et 11 après avoir installé les Additions invités du Disque "VirtualBox Guest Additions". Elles permettent aussi de resize la fenêtre de la VM en fonction de l'hôte.
+- Activation dans les paramètres du copier/coller et glisser/déposer sur les VM Windows 10 et 11 après avoir installé les Additions invités via le Disque "VirtualBox Guest Additions" monté dans les périphériques. Elles permettent en plus de resize la fenêtre de la VM en fonction de l'hôte.
 
 ![Additions](../images/VM-copypaste.png)
 
@@ -27,7 +27,7 @@
 
 - Installation du reste des applications à l'aide de commandes via le terminal pour la plupart.
 
-- Installation d'Okular, un outil PDF qui remplace Adobe Acrobat sur Linux, même si à priori Libre Office Draw permet de faire les basiques.
+- Installation d'Okular, un outil PDF qui remplace Adobe Acrobat sur Linux, même si à priori Libre Office Draw permet de faire les basiques. Adobe Acrobat n'étant plus du tout suivit depuis des années, va aussi à l'encontre de la mentalité Linux et l'Open source.
 
 ![Ubuntu](../images/VM-Ubuntuapps.png)
 
@@ -37,29 +37,29 @@
 
 ![VM Debian](../images/VM-debian.png)
 
-- Partition Home séparée
+- Ajout d'une partition Home séparée.
 
 ![Parition home](../images/VM-debianpartition.png)
 
 - Installation de Vbox Guest Additions en chargeant l'image, lancement de l'executable, puis reboot et config, sans problème.
 
-- Vérification et intallation des programmes mentionnés avec la commande ``sudo apt list grep 7zip vlc okular libreoffice``
+- Vérification et des programmes demandés avec la commande ``sudo apt list grep 7zip vlc okular libreoffice``
 
 ![apt list](../images/VM-debianinstallbasics.png)
 
-- Installation des packages manquants
+- Installation des packages manquants.
 
 ![apt isntall](../images/VM-debianinstallbasics.png)
 
-- Vérification
+- Vérification.
 
 ![apt list](../images/VM-debianinstallbasicsOK.png)
 
-- C'est OOoookkkk
+- C'est OOoookkkk ^^
 
 ## Notes 🗒️
 
-N'étant pas familier de linux j'ai voulu comprendre les commandes que j'utilise :
+N'étant pas familier de linux j'ai voulu comprendre les commandes utilisées :
 
 ``sudo`` Super Utilisateur DO pour exécuter avec les droits admin
 
