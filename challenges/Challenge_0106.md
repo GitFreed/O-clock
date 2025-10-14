@@ -61,26 +61,28 @@
 
 N'étant pas familier de linux j'ai voulu comprendre les commandes utilisées :
 
-- ``sudo`` Super Utilisateur DO pour exécuter avec les droits admin
+- ``sudo`` Super Utilisateur DO pour exécuter avec les droits admin.
 
 - ``apt`` Advanced Packaging Tool pour gérer les paquets (search update upgrade install remove) ``sudo apt update`` ``sudo apt upgrade``
 
-- ``ls`` List ``ls /`` liste racine, ``lsbk`` : liste partitions
+- ``ls`` List ``ls /`` liste racine, ``lsbk`` : liste partitions.
 
-- ``man`` Donne la liste des commandes, par exemple ``man ls`` donne toutes les commandes possibles de List
+- ``man`` Donne la liste des commandes, par exemple ``man ls`` donne toutes les commandes possibles de List.
 
-- ``tar`` Tape ARchiver, utilitaire pour regrouper des fichiers
+- ``cd`` ou ``chdir`` change directory, permet de changer de répertoire.
 
-- ``bzip2`` algo de compression
+- ``tar`` Tape ARchiver, utilitaire pour regrouper des fichiers.
+
+- ``bzip2`` algo de compression.
 
 - ``grep`` g/re/p : globally search for a regular expression and print, est un outil de Linux pour faire des recherches spécifiques.
 
 Pour les partitions :
 
-- ``/`` partition racine là ou le système s'installe, 50Go mini pour les dernières versions d'Ubuntu par ex
+- ``/`` partition racine là ou le système s'installe, 50Go mini pour les dernières versions d'Ubuntu par ex.
 
 - ``/boot`` 1 à 2 Go, aide le système à démarrer, on y trouve la partition ``/efi``
 
-- ``/swap`` partition d'échange, extention de la RAM si elle est full pour ne pas freeze, ou pour l'hibernation (dans ce cas elle doit faire 1x à 1,5x la taille de notre RAM)
+- ``/swap`` partition d'échange, extention de la RAM si elle est full pour ne pas freeze, ou pour l'hibernation (dans ce cas elle doit faire 1x à 1,5x la taille de notre RAM).
 
-- ``/home`` optionnel mais très recommandé, c'est comme avoir un second disque data pour garder nos données si le système crash ou réinstall ou utilisation multi OS
+- ``/home`` optionnel mais très recommandé, c'est comme avoir un second disque data pour garder nos données si le système crash ou réinstall ou utilisation multi OS.
