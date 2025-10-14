@@ -17,7 +17,7 @@
 
 ## Ubuntu 🐧
 
-- J'ai voulu commencer par les Additions Invités mais au lancement du disque j'ai eu ce message d'erreur
+- J'ai voulu commencer par les Additions Invités mais au lancement du disque j'ai eu ce message d'erreur.
 
 ![Ubuntu error](../images/bzip2missing.png)
 
