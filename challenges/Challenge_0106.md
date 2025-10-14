@@ -61,19 +61,19 @@
 
 N'étant pas familier de linux j'ai voulu comprendre les commandes utilisées :
 
-``sudo`` Super Utilisateur DO pour exécuter avec les droits admin
+- ``sudo`` Super Utilisateur DO pour exécuter avec les droits admin
 
-``apt`` Advanced Packaging Tool pour gérer les paquets (update upgrade install remove) ``sudo apt update`` ``sudo apt upgrae``
+- ``apt`` Advanced Packaging Tool pour gérer les paquets (update upgrade install remove) ``sudo apt update`` ``sudo apt upgrae``
 
-``ls`` List ``ls /`` liste racine, ``lsbk`` : liste partitions
+- ``ls`` List ``ls /`` liste racine, ``lsbk`` : liste partitions
 
-``man`` Donne la liste des commandes, par exemple ``man ls`` donne toutes les commandes possibles de List
+- ``man`` Donne la liste des commandes, par exemple ``man ls`` donne toutes les commandes possibles de List
 
-``tar`` Tape ARchiver, utilitaire pour regrouper des fichiers
+- ``tar`` Tape ARchiver, utilitaire pour regrouper des fichiers
 
-``bzip2`` algo de compression
+- ``bzip2`` algo de compression
 
-``grep`` g/re/p : globally search for a regular expression and print, est un outil de Linux pour faire des recherches spécifiques.
+- ``grep`` g/re/p : globally search for a regular expression and print, est un outil de Linux pour faire des recherches spécifiques.
 
 Pour les partitions :
 
