@@ -61,7 +61,7 @@
 
 N'étant pas familier de linux j'ai voulu comprendre les commandes utilisées :
 
-``sudo`` Super Utilisateur DO pour exécuter avec les droits admin 
+``sudo`` Super Utilisateur DO pour exécuter avec les droits admin
 
 ``apt`` Advanced Packaging Tool pour gérer les paquets (update upgrade install remove) ``sudo apt update`` ``sudo apt upgrae``
 
@@ -75,7 +75,7 @@ N'étant pas familier de linux j'ai voulu comprendre les commandes utilisées :
 
 ``grep`` g/re/p : globally search for a regular expression and print, est un outil de Linux pour faire des recherches spécifiques.
 
-Pour les partitions : 
+Pour les partitions :
 
 - ``/`` partition racine là ou le système s'installe, 50Go mini pour les dernières versions d'Ubuntu par ex
 
