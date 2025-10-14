@@ -63,7 +63,7 @@ N'étant pas familier de linux j'ai voulu comprendre les commandes utilisées :
 
 - ``sudo`` Super Utilisateur DO pour exécuter avec les droits admin
 
-- ``apt`` Advanced Packaging Tool pour gérer les paquets (update upgrade install remove) ``sudo apt update`` ``sudo apt upgrae``
+- ``apt`` Advanced Packaging Tool pour gérer les paquets (search update upgrade install remove) ``sudo apt update`` ``sudo apt upgrade``
 
 - ``ls`` List ``ls /`` liste racine, ``lsbk`` : liste partitions
 
