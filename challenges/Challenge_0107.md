@@ -19,7 +19,7 @@ Au programme de ce challenge : installez et configurez un gestionnaire de mot de
 
 - Installer l'application : Ajouter l'extension aux navigateurs web permet de sauvegarder automatiquement les nouveaux mots de passe et de pré-remplir les champs sur les sites web. Télécharger et installer l'application Bitwarden sur smartphone. Cela permet de gérer les mots de passe de manière centralisée.
 
-- Configuration de base : on se connecte à l'application et à l'extension avec le mot de passe maître. On peut ensuite commencer à ajouter manuellement les mots de passe existants ou le faire au fur et à mesure qu'on se connecte à nos différents comptes en ligne. On peut aussi les importer / exporter.
+- Configuration de base : on se connecte à l'application et à l'extension avec le mot de passe maître. On peut ensuite commencer à ajouter manuellement les mots de passe existants ou le faire au fur et à mesure qu'on se connecte à nos différents comptes en ligne. On peut aussi les importer / exporter. Il est fortement conseillé d'ajouter une identification 2FA.
 
 ### Les avantages d'un gestionnaire de mots de passe 📟
 
@@ -27,7 +27,7 @@ Au programme de ce challenge : installez et configurez un gestionnaire de mot de
 
 ![Bitwarden Unlock](../images/Sec-bitwarden.png)
 
-- Des mots de passe forts et uniques : Le gestionnaire peut générer des mots de passe extrêmement complexes (par exemple ``5?Trp@8!z$qE*wK#_2``) et uniques pour chaque site.
+- Des mots de passe forts et uniques : Le gestionnaire peut générer des mots de passe extrêmement complexes (par exemple ``5?Trp@8!z$qE*wK#_2``) et uniques pour chaque site. Il peut aussi gérer les autentifications 2 facteurs et les clés de connexion.
 
 ![Bitwarden Generator](../images/Sec-bitwardengen.png)
 
