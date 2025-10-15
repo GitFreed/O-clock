@@ -2,13 +2,13 @@
 
 Liens et autres ressources utiles partagées pendant des cours.
 
-## 0101 & 0102 Bienvenue et Introduction
+## 0101 & 0102 Bienvenue et Introduction 🧑‍🏫
 
 [Titre Pro AIS](https://www.francecompetences.fr/recherche/rncp/37680/)
 
 [Le dossier Professionnel](https://www.dossierprofessionnel.fr/)
 
-## 0103 : Histoire de l'informatique
+## 0103 : Histoire de l'informatique 💾
 
 [Informatique](https://fr.wikipedia.org/wiki/Informatique)
 
@@ -30,7 +30,7 @@ Liens et autres ressources utiles partagées pendant des cours.
 
 [Téléscripteur](https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9scripteur)
 
-## 0104 : les Bases du hardware
+## 0104 : les Bases du hardware 🖥️
 
 [Composants d'un PC](https://www.malekal.com/les-composants-hardware-et-materiel-dun-pc-le-dossier/)
 
@@ -40,13 +40,13 @@ Liens et autres ressources utiles partagées pendant des cours.
 
 [PC Builder](https://fr.pcpartpicker.com/list/)
 
-## 0105 & 0106 : Introduction à l'administration windows et Machines Virtuelles
+## 0105 & 0106 : Introduction à l'administration windows et Machines Virtuelles 🤖
 
 [Commandes Ubuntu](https://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base)
 
 [Les distributions Linux](https://alexblog.fr/wp-content/uploads/2011/01/evolution-linux-distributions.jpg)
 
-## 0107 : Introduction à la sécurité et bonne pratiques
+## 0107 : Introduction à la sécurité et bonne pratiques 🔐
 
 [Le virus Stuxnet](https://www.youtube.com/watch?v=gXtp6C-3JKo)
 
@@ -60,7 +60,7 @@ Liens et autres ressources utiles partagées pendant des cours.
 
 [Loi informatique et Libertés](https://fr.wikipedia.org/wiki/Loi_informatique_et_libert%C3%A9s)
 
-## 0108 : Base des Réseaux, Chiffrement et Numération
+## 0108 : Base des Réseaux, Chiffrement et Numération 🌐
 
 [Antivirus](https://fr.wikipedia.org/wiki/Logiciel_antivirus)
 
