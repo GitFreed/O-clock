@@ -77,7 +77,6 @@ Liens et autres ressources utiles partagées pendant des cours.
 [Préfixe Binaire](https://fr.wikipedia.org/wiki/Pr%C3%A9fixe_binaire)
 
 [Tableau de Calcul Binaire](https://lesitedelaclasse.fr/wp-content/uploads/2018/12/tableau-binaire.png)
-![Tableau de Calcul Binaire](https://lesitedelaclasse.fr/wp-content/uploads/2018/12/tableau-binaire.png)
 
 [Table de Conversion](http://yannklein.free.fr/cours/reseau/conversion.html)
 
