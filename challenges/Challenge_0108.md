@@ -12,11 +12,11 @@
 
 - Le Diagramme Physique, représente le Layer 1 du modèle OSI, quels appareils sont physiquement présents et leur emplacement dans les pièces du logement. `"Où sont les choses et comment sont-elles branchées ?"`.
 
-Dans mon cas étant dans un studio il n'y a pas de réel interêt.
+Dans mon cas étant dans un studio il n'y a pas de réel interêt : tout est dans la même pièce.
 
 ![Diagramme Physique](../images/DiagL1.jpg)
 
-- Le Diagramme Logique, représente le Layer 3 du modèle OSI,  il montre comment les appareils communiquent entre eux. C'est une vue de haut avec les informations réseau utiles, comme les adresses IP, et les sous-réseaux. `"Qui parle à qui et comment ?"`.
+- Le Diagramme Logique, représente le Layer 3 du modèle OSI,  il montre comment les appareils communiquent entre eux. C'est une vue de haut avec les informations réseau utiles, comme les adresses IP et les sous-réseaux. `"Qui parle à qui et comment ?"`.
 
 ![Diagramme Logique](../images/DiagL3.jpg)
 
