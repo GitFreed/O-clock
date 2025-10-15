@@ -1,6 +1,7 @@
-﻿# Challenges O'Clock promo Aldébaran
+﻿# O'Clock promo Aldébaran ♉🖥️
 
-Ce dépôt contient les challenges réalisés dans le cadre de la formation O'clock AIS.
+Ce dépôt contient des ressources utiles et les challenges réalisés dans le cadre de la formation O'clock AIS.
 
 - `/challenges` : exercices quotidiens
 - `/images` : captures ou schémas
+- `/ressources` : diverses ressources aprtagées pendant les cours
