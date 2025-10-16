@@ -91,3 +91,5 @@ Liens et autres ressources utiles partagées pendant des cours.
 [Méthode du nombre magique](https://zestedesavoir.com/tutoriels/321/calculer-une-plage-dadresses-avec-la-methode-magique/#2-10258_quest-ce-que-la-methode-magique)
 
 [Table masque de sous réseau, binaire et hôtes](https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png)
+
+[CIDR Calculator](https://www.subnet-calculator.com/cidr.php)
