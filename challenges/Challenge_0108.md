@@ -36,4 +36,4 @@ J'ai commencé à vouloir faire l'exercice sur Cisco Packet Tracer, mais ce n'es
 
 [Masques de sous-réseaux](https://www.youtube.com/watch?v=3Scbl-D5rpM)
 
-[Masques et méthode de Calcul](https://www.youtube.com/watch?v=4dOzT9sTlz8)
+[Masques et méthode de calcul](https://www.youtube.com/watch?v=4dOzT9sTlz8)
