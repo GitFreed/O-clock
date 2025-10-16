@@ -161,13 +161,13 @@ L'adresse réseau est donc **172.16.26.0**
 
 - **Calcul de l'adresse de broadcast**
 
-On prend le multiple suivant, donc 28, -1
+On prend le multiple supérieur à 27, donc 28 et on soustrait 1
 
 L'adresse broadcast est donc **172.16.27.255**
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
-Le sous-masque étant /23 il reste (32-23) = 9 bits libres, soit (2^9)-2 = **510**
+Le sous-masque étant /23 il reste (32-23) = 9 bits libres pour les hôtes, soit (2^9)-2 = **510**
 
 - **Calcul de la plage d'adresses disponibles**
 
@@ -193,21 +193,41 @@ Plage d'adresses : 512, 172.16.26.0 à 172.16.27.255
 
 - **Calcul de l'adresse réseau**
 
+255.255.128.0, 3ieme octet significatif, Nbre magique : 256-128 = 128, ses multiples sont 0, 128, 256.
+
+0 <= 5 donc l'adresse réseau est **10.7.0.0**
+
 - **Calcul de l'adresse de broadcast**
+
+(128 > 5) -1  donc l'adresse broadcast est **10.7.127.255**
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
+255.255.128.0 est 1111 1111 . 1111 1111 . 1000 0000 . 0000 0000 en binaire.
+
+Soit 17 bits utilisés pour le réseau et 15 bits libres pour les hôtes.
+
+Donc (2^17)-2 = **131070**
+
 - **Calcul de la plage d'adresses disponibles**
+
+(2^17) = **131072**
 
 ### **Résultats**
 
-``192.168.13.67/24``
+``10.7.5.1 – 255.255.128.0``
 
-Sous-masque : 255.255.255.0
-Adresse réseau : 192.168.13.0
-Adresse broadcast : 192.168.13.255
-Machines hôtes : 254
-Plage d'adresses : 256, 192.168.13.0 à 192.168.13.255
+Sous-masque : 255.255.128.0
+
+Adresse réseau : 10.7.0.0
+
+Adresse broadcast : 10.7.127.255
+
+Machines hôtes : 131070
+
+Plage d'adresses : 131072, 10.7.0.0 à 10.7.127.255
+
+Nous avons à faire à un réseau bien plus vaste.
 
 ---
 
@@ -215,21 +235,39 @@ Plage d'adresses : 256, 192.168.13.0 à 192.168.13.255
 
 - **Calcul de l'adresse réseau**
 
+Le sous-masque /12 correspond à 12 bits utilisés et 20 bits libres soit 1111 1111 . 1111 0000 . 0000 0000 . 0000 0000 en binaire et 255.240.0.0 en décimal.
+
+L'octet significatif est donc le second. Nbre magique : 256-240 = 16, ses multiples sont : 0, 16, 32, 48.
+
+32 <= 42 donc l'adresse réseau est **10.32.0.0**
+
 - **Calcul de l'adresse de broadcast**
+
+(48 > 42) -1  donc l'adresse broadcast est **10.47.255.255**
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
+Le sous-masque étant /12 il reste (32-12) = 20 bits libres pour les hôtes, soit (2^20)-2 = **1 048 574**
+
 - **Calcul de la plage d'adresses disponibles**
+
+(2^20) = **1 048 576**
 
 ### **Résultats**
 
-``192.168.13.67/24``
+``10.42.0.82/12``
 
-Masque : 255.255.255.0
-Adresse réseau : 192.168.13.0
-Adresse broadcast : 192.168.13.255
-Machines hôtes : 254
-Plage d'adresses : 256, 192.168.13.0 à 192.168.13.255
+Masque : 255.240.0.0
+
+Adresse réseau : 10.32.0.0
+
+Adresse broadcast : 10.47.255.255
+
+Machines hôtes : 1 048 574
+
+Plage d'adresses : 1 048 576, 10.32.0.0 à 10.47.255.255
+
+"Téma la taille du réseau"
 
 ---
 
