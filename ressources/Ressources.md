@@ -84,4 +84,10 @@ Liens et autres ressources utiles partagées pendant des cours.
 
 [Encodage de nos lettres UTF-8](https://www.malekal.com/utf-8-comment-ca-marche/)
 
-## 0109
+## 0109 : Adressage IP, Calcul Masques sous-réseaux 🧮
+
+[Logique ET OU](https://github.com/GitFreed/Challenges-O-clock/blob/main/images/Logique.jpg)
+
+[Méthode du nombre magique](https://zestedesavoir.com/tutoriels/321/calculer-une-plage-dadresses-avec-la-methode-magique/#2-10258_quest-ce-que-la-methode-magique)
+
+[Table masque de sous réseau, binaire et hôtes](https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png)
