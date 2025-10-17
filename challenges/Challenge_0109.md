@@ -32,7 +32,7 @@ Essayez de calculer tout à la main (avec la méthode de votre choix, idéalemen
 
 ### - ``192.168.13.67/24``
 
-/24 signifie qu'on a 24 "1" dans le sous-masque réseau, ou 24/8 = 3 octets, traduit en binaire :
+/24 signifie qu'on a 24 "1" dans le masque réseau, ou 24/8 = 3 octets, traduit en binaire :
 
 1111 1111 . 1111 1111 . 1111 1111 . 0000 0000 qui correspond à **255.255.255.0** en décimal.
 
@@ -55,7 +55,7 @@ IP : 192.168.13.67 on commence par traduire cette IP en binaire, on va utiliser 
 
 IP en binaire : 1100 0000 . 1010 1000 . 0000 1101 . 0100 0011
 
-Subnet binaire : 1111 1111 . 1111 1111 . 1111 1111 . 0000 0000
+Masque binaire : 1111 1111 . 1111 1111 . 1111 1111 . 0000 0000
 
 ET Logique : 1100 0000 . 1010 1000 . 0000 1101 . 0000 0000
 
@@ -63,7 +63,7 @@ ET Logique : 1100 0000 . 1010 1000 . 0000 1101 . 0000 0000
 
 - **Calcul de l'adresse de broadcast**
 
-NOT Subnet binaire : 0000 0000 . 0000 0000 . 0000 0000 . 1111 1111
+NOT Masque binaire : 0000 0000 . 0000 0000 . 0000 0000 . 1111 1111
 
 Adresse réseau : 1100 0000 . 1010 1000 . 0000 1101 . 0000 0000
 
@@ -87,7 +87,7 @@ Formule de calcul de la plage d'adresses disponibles : ``(2^b)``, ici (2^8) = **
 
 ``192.168.13.67/24``
 
-Sous-masque : 255.255.255.0
+Masque sous-réseau : 255.255.255.0
 
 Adresse réseau : 192.168.13.0
 
@@ -105,7 +105,7 @@ J'utiliserais la [méthode du "Nombre magique"](https://zestedesavoir.com/tutori
 
 - **Calcul de l'adresse réseau**
 
-Le sous-masque étant 255.255.255.**0**, l'**octet significatif** est donc le **dernier** octet
+Le masque étant 255.255.255.**0**, l'**octet significatif** est donc le **dernier** octet
 
 256-0 = 256, les multiples de 256 sont 0, 256, 512...
 
@@ -121,7 +121,7 @@ L'adresse broadcast est donc **172.16.0.255**
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
-Le sous-masque étant 255.255.255.0, il y a seulement un octet libre, soit (2^8)-2 = **254**
+Le masque étant 255.255.255.0, il y a seulement un octet libre, soit (2^8)-2 = **254**
 
 - **Calcul de la plage d'adresses disponibles**
 
@@ -131,7 +131,7 @@ Idem sans enlever les 2 adresses, soit (2^8) = **256**
 
 ``172.16.0.1 – 255.255.255.0``
 
-Sous-masque : 255.255.255.0
+Masque sous-réseau : 255.255.255.0
 
 Adresse réseau : 172.16.0.0
 
@@ -149,7 +149,7 @@ On peut aussi l'écrire : 172.16.0.1/24
 
 - **Calcul de l'adresse réseau**
 
-Le sous-masque en /23 se traduit par 23 "1" puis 9 "0" en binaire :
+Le masque en /23 se traduit par 23 "1" puis 9 "0" en binaire :
 
 1111 1111 . 1111 1111 . 1111 1110 . 0000 0000 soit 255.255.**254**.0 et l'**octet significatif** est le **3ieme**.
 
@@ -167,7 +167,7 @@ L'adresse broadcast est donc **172.16.27.255**
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
-Le sous-masque étant /23 il reste (32-23) = 9 bits libres pour les hôtes, soit (2^9)-2 = **510**
+Le masque étant /23 il reste (32-23) = 9 bits libres pour les hôtes, soit (2^9)-2 = **510**
 
 - **Calcul de la plage d'adresses disponibles**
 
@@ -177,7 +177,7 @@ Idem sans enlever les 2 adresses, soit (2^9) = **512**
 
 ``172.16.27.32/23``
 
-Sous-masque : 255.255.254.0
+Masque sous-réseau : 255.255.254.0
 
 Adresse réseau : 172.16.26.0
 
@@ -217,7 +217,7 @@ Donc (2^17)-2 = **131070**
 
 ``10.7.5.1 – 255.255.128.0``
 
-Sous-masque : 255.255.128.0
+Masque sous-réseau : 255.255.128.0
 
 Adresse réseau : 10.7.0.0
 
@@ -247,7 +247,7 @@ L'**octet significatif** est donc le **second**. Nbre magique : 256-240 = 16, se
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
-Le sous-masque étant /12 il reste (32-12) = 20 bits libres pour les hôtes, soit (2^20)-2 = **1 048 574**
+Le masque étant /12 il reste (32-12) = 20 bits libres pour les hôtes, soit (2^20)-2 = **1 048 574**
 
 - **Calcul de la plage d'adresses disponibles**
 
@@ -257,7 +257,7 @@ Le sous-masque étant /12 il reste (32-12) = 20 bits libres pour les hôtes, soi
 
 ``10.42.0.82/12``
 
-Masque : 255.240.0.0
+Masque sous-réseau : 255.240.0.0
 
 Adresse réseau : 10.32.0.0
 
