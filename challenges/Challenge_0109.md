@@ -105,7 +105,7 @@ J'utiliserais la [méthode du "Nombre magique"](https://zestedesavoir.com/tutori
 
 - **Calcul de l'adresse réseau**
 
-Le sous-masque étant 255.255.255.0, l'octet significatif est donc le dernier octet
+Le sous-masque étant 255.255.255.**0**, l'**octet significatif** est donc le **dernier** octet
 
 256-0 = 256, les multiples de 256 sont 0, 256, 512...
 
@@ -151,7 +151,7 @@ On peut aussi l'écrire : 172.16.0.1/24
 
 Le sous-masque en /23 se traduit par 23 "1" puis 9 "0" en binaire :
 
-1111 1111 . 1111 1111 . 1111 1110 . 0000 0000 soit 255.255.254.0 et l'octet significatif est le 3ieme.
+1111 1111 . 1111 1111 . 1111 1110 . 0000 0000 soit 255.255.**254**.0 et l'**octet significatif** est le **3ieme**.
 
 256-254 = 2, les multiples sont 0 2 4 6 8 10 ... 24 26 28 30 ...
 
@@ -193,7 +193,7 @@ Plage d'adresses : 512, 172.16.26.0 à 172.16.27.255
 
 - **Calcul de l'adresse réseau**
 
-255.255.128.0, 3ieme octet significatif, Nbre magique : 256-128 = 128, ses multiples sont 0, 128, 256.
+255.255.**128**.0, 3ieme **octet significatif**, Nbre magique : 256-128 = 128, ses multiples sont 0, 128, 256.
 
 0 <= 5 donc l'adresse réseau est **10.7.0.0**
 
@@ -235,9 +235,9 @@ Nous avons à faire à un réseau bien plus vaste.
 
 - **Calcul de l'adresse réseau**
 
-Le sous-masque /12 correspond à 12 bits utilisés et 20 bits libres soit 1111 1111 . 1111 0000 . 0000 0000 . 0000 0000 en binaire et 255.240.0.0 en décimal.
+Le sous-masque /12 correspond à 12 bits utilisés et 20 bits libres soit 1111 1111 . 1111 0000 . 0000 0000 . 0000 0000 en binaire et 255.**240**.0.0 en décimal.
 
-L'octet significatif est donc le second. Nbre magique : 256-240 = 16, ses multiples sont : 0, 16, 32, 48.
+L'**octet significatif** est donc le **second**. Nbre magique : 256-240 = 16, ses multiples sont : 0, 16, 32, 48.
 
 32 <= 42 donc l'adresse réseau est **10.32.0.0**
 
