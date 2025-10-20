@@ -59,7 +59,7 @@ Masque binaire : 1111 1111 . 1111 1111 . 1111 1111 . 0000 0000
 
 ET Logique : 1100 0000 . 1010 1000 . 0000 1101 . 0000 0000
 
-**Adresse réseau : 192.168.13.0**
+résultat : **Adresse réseau : 192.168.13.0**
 
 - **Calcul de l'adresse de broadcast**
 
@@ -69,7 +69,7 @@ Adresse réseau : 1100 0000 . 1010 1000 . 0000 1101 . 0000 0000
 
 Adresse broadcast : 1100 0000 . 1010 1000 . 0000 1101 . 1111 1111
 
-**Adresse broadcast : 192.168.13.255**
+résultat : **Adresse broadcast : 192.168.13.255**
 
 - **Calcul du nombre d'adresses utilisables pour les machines**
 
@@ -173,7 +173,7 @@ Le masque étant /23 il reste (32-23) = 9 bits libres pour les hôtes, soit (2^9
 
 Idem sans enlever les 2 adresses, soit (2^9) = **512**
 
-### **Résultats**
+- **Résultats**
 
 ``172.16.27.32/23``
 
@@ -213,7 +213,7 @@ Donc (2^17)-2 = **131070**
 
 (2^17) = **131072**
 
-### **Résultats**
+- **Résultats**
 
 ``10.7.5.1 – 255.255.128.0``
 
@@ -253,7 +253,7 @@ Le masque étant /12 il reste (32-12) = 20 bits libres pour les hôtes, soit (2^
 
 (2^20) = **1 048 576**
 
-### **Résultats**
+- **Résultats**
 
 ``10.42.0.82/12``
 
