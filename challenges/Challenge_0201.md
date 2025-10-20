@@ -66,7 +66,7 @@ Collabora est une bonne option si on veux héberger sois-même la solution et ga
 
 Microsoft365 reste la solution de facilité, les intégrations cloud sont natives.
 
-## Découverte du site <www.clic-formation.net>
+## Découverte du site <www.clic-formation.net> 👀
 
 Clic-formation.net est une plateforme de formation en ligne dédiée à l'acquisition de compétences, du débutant au plus expérimentés. Il permet au débutant de se former sur les toutes bases comme l'utilisation du clavier et souris, avec de nombreux exercices. Mais aussi sur les suites de bureautique de Microsoft et LibreOffice, ainsi que Publisher/Scrubitus, PowerBI, Photofiltre, Inskape, avec une multitudes d'exercices pour s'entrainer.
 
