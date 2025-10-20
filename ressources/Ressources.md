@@ -97,3 +97,7 @@ Liens et autres ressources utiles partagées pendant des cours.
 ## 0201 : Introduction Centre de Service 🖥️
 
 [Autoformation aux bases de la bureautique](http://clic-formation.net/)
+
+[Base de donnée de logiciels alternatifs](https://alternativeto.net/)
+
+[Site comparatif de solutions alternatives d'entreprises](https://www.capterra.fr/)
