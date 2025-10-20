@@ -48,13 +48,13 @@ Ce n'est qu'un avis personnel peut être biaisé par une méconnaissance de Libr
 
 - Word & Writer : pas de problème particulier au niveau de la compatibilité pour ouvrir le fichier Writer.odt avec Word ou pour ouvrir le fichier Word.docx avec Writer. On perd néammoins les fonctions comme la mise à jour de la table des matières. Word conserve l'arborescence clicable des Titres, alors que Writer non. On doit changer de format de fichier pour tout garder lors des sauvegardes.
 
-- Excel & Calc : là encore pas de soucis de compatibilité, on peu ouvrir l'un et l'autre directement. On notera encore des petits problèmes au niveau de certaines choses comme les mise en forme conditionnelles, Excel n'a pas pris en compte celles du fichier .ods alors que Calc à gardé celles du .xlsx
+- Excel & Calc : là encore pas de soucis de compatibilité, on peut ouvrir l'un et l'autre directement. On notera encore des petits problèmes au niveau de certaines choses comme les mise en forme conditionnelles, Excel n'a pas pris en compte celles du fichier .ods alors que Calc à gardé celles du .xlsx
 
-- Powerpoint & Impress : là encore pas de soucis de compatibilité, on peu ouvrir l'un et l'autre directement. Je n'avais pas créé de présentation bien compliquée, par contre powerpoint à mis une police noire alors qu'elle étant blanche sur Impress.
+- Powerpoint & Impress : là encore pas de soucis de compatibilité, on peut ouvrir l'un et l'autre directement. Je n'avais pas créé de présentation bien compliquée, par contre powerpoint à mis une police noire alors qu'elle étant blanche sur Impress.
 
 ## Collaboration en ligne avec ces suites 📶
 
-N'ayant personne avec qui tester ces options en profondeur, et Collabora n'étant pas gratuit je me suis surtout renseigné sur internet. Pour la suite Libreoffice de base, il y a peu d'options de partage et de collaboration, alors que sur MicrosoftOffice on peu facilement partager et travailler à plusieurs via un compte miscrosoft et OneDrive.
+N'ayant personne avec qui tester ces options en profondeur, et Collabora n'étant pas gratuit je me suis surtout renseigné sur internet. Pour la suite Libreoffice de base, il y a peu d'options de partage et de collaboration, alors que sur MicrosoftOffice on peut facilement partager et travailler à plusieurs via un compte miscrosoft et OneDrive.
 
 Pour faciliter le travail en équipe on va s'orienter vers Microsoft365 et Collabora Online qui sont des suites de collaboration en ligne et en simultané.
 
