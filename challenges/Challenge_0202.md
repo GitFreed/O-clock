@@ -39,7 +39,7 @@ Il y a deux solutions pour permettre aux VM et à l'hôte de communiquer :
 
 Cette solution va permettre de créer un réseau privé et isolé dans lequel il n'y aura que le PC hôte et les VMs. Pour garder la connexion à Internet on va garder l'interface réseau NAT, et on va ajouter une interface Host-Only puis démarrer la VM.
 
-![Host](../images/VM-IP-Host.png)
+![Settings](../images/VM-IP-Hostsettings.png)
 
 On récupère sa nouvelle adresse IP ``192.168.56.101``
 
@@ -56,3 +56,21 @@ Une fois ces changement effectués, j'ai pu ping la VM depuis l'hôte et l'hôte
 ![Host ping](../images/VM-IP-hostpingedokw10.png)
 
 ## Accès par pont (Bridge) 🌉
+
+Cette solution va permettre aux VMs d'être sur le même réseau physique que l'hôte, avec une adresse IP du même réseau que lui.
+
+On change cette fois l'interface réseau en Accès par pont, en utilisant la carte réseau de l'hôte.
+
+![Settings](../images/VM-IP-bridgesettings.png)
+
+On récupère la nouvelle IP ``192.168.1.17``, on voit déjà qu'on est sur le même masque (/24) sur l'hôte.
+
+![IP](../images/VM-IP-bridgeIP.png)
+
+On fait un Ping pour vérifier, et c'est OK cette fois-ci.
+
+![Ping](../images/VM-IP-bridgePING.png)
+
+Pour Ping l'hôte depuis la VM, je dois cette fois activer les règles de traffic entrant ICMPv4 sur l'hôte.
+
+Sur la VM Win11, je suis passé directement en Accès par pont (Bridge). Aucun problème particulier.
