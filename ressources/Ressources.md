@@ -101,3 +101,9 @@ Liens et autres ressources utiles partagées pendant des cours.
 [Base de donnée de logiciels alternatifs](https://alternativeto.net/)
 
 [Site comparatif de solutions alternatives d'entreprises](https://www.capterra.fr/)
+
+## 0202 : Diagnostics et résolutions d'incidents 🛠️
+
+[Sysinternals](https://learn.microsoft.com/fr-fr/sysinternals/)
+
+[Autocomplétion des CMD Terminal](https://github.com/chrisant996/clink)
