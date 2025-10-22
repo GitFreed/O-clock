@@ -202,15 +202,15 @@ Cette saison se concentre sur les outils et méthodes pour assister les utilisat
 
 Ce cours présente les suites bureautiques, des ensembles de logiciels essentiels pour la productivité en entreprise.
 
-* **Suite Microsoft Office** : La suite la plus répandue, développée par Microsoft[cite: 50].
-  * **Composants principaux** : **Word** (traitement de texte), **Excel** (tableur), **PowerPoint** (présentation) et **Outlook** [messagerie](cite: 52, 53, 54, 55).
-  * **Versions** : Il existe des versions sous **licence perpétuelle** (ex: Office 2024) et des versions par **abonnement** basées sur le cloud (**Microsoft 365**), qui incluent des services comme OneDrive et permettent la collaboration en temps réel[cite: 60, 62, 70, 75].
+* **Suite Microsoft Office** : La suite la plus répandue, développée par Microsoft.
+  * **Composants principaux** : **Word** (traitement de texte), **Excel** (tableur), **PowerPoint** (présentation) et **Outlook** (messagerie).
+  * **Versions** : Il existe des versions sous **licence perpétuelle** (ex: Office 2024) et des versions par **abonnement** basées sur le cloud (**Microsoft 365**), qui incluent des services comme OneDrive et permettent la collaboration en temps réel.
 
-* **LibreOffice** : Une alternative **gratuite et open-source** à Microsoft Office[cite: 418].
-  * **Équivalents** : Elle propose des logiciels similaires comme **Writer** (Word), **Calc** (Excel), **Impress** (PowerPoint) et **Base** [Access](cite: 419).
-  * **Avantages** : Elle est multiplateforme, compatible avec les formats de fichiers Microsoft et n'implique aucun coût de licence[cite: 418, 420, 679].
+* **LibreOffice** : Une alternative **gratuite et open-source** à Microsoft Office.
+  * **Équivalents** : Elle propose des logiciels similaires comme **Writer** (Word), **Calc** (Excel), **Impress** (PowerPoint) et **Base** (Access).
+  * **Avantages** : Elle est multiplateforme, compatible avec les formats de fichiers Microsoft et n'implique aucun coût de licence.
 
-* **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel[cite: 365].
+* **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel.
 
 [Challenge 0201](../challenges/Challenge_0201.md)
 
@@ -221,24 +221,24 @@ Ce cours présente les suites bureautiques, des ensembles de logiciels essentiel
 Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre les problèmes sur un système d'exploitation Windows.
 
 * **Outils de diagnostic natifs de Windows** :
-  * **Gestionnaire des tâches** : Pour surveiller les processus, les performances (CPU, mémoire) et gérer les applications au démarrage[cite: 3220, 3221, 3222].
-  * **Observateur d'événements** : Pour consulter les journaux système et identifier les erreurs, avertissements et événements critiques qui peuvent causer des instabilités[cite: 3225, 3226].
-  * **Éditeur du Registre (Regedit)** : Permet de modifier la base de données de configuration de Windows[cite: 3342]. Une manipulation incorrecte peut endommager gravement le système[cite: 3343].
-  * **Gestionnaire de périphériques** : Pour gérer les pilotes (drivers) des composants matériels et identifier les conflits ou les dysfonctionnements[cite: 3375, 3376].
+  * **Gestionnaire des tâches** : Pour surveiller les processus, les performances (CPU, mémoire) et gérer les applications au démarrage.
+  * **Observateur d'événements** : Pour consulter les journaux système et identifier les erreurs, avertissements et événements critiques qui peuvent causer des instabilités.
+  * **Éditeur du Registre (Regedit)** : Permet de modifier la base de données de configuration de Windows. Une manipulation incorrecte peut endommager gravement le système.
+  * **Gestionnaire de périphériques** : Pour gérer les pilotes (drivers) des composants matériels et identifier les conflits ou les dysfonctionnements.
 
 * **Dépannage du démarrage de Windows** :
-  * **Processus de démarrage** : Implique des composants clés comme **BootMGR** (gestionnaire de démarrage), **Winload.exe** (chargeur de l'OS) et le **BCD** [base de données de configuration du démarrage](cite: 3253, 3259, 3272).
+  * **Processus de démarrage** : Implique des composants clés comme **BootMGR** (gestionnaire de démarrage), **Winload.exe** (chargeur de l'OS) et le **BCD** (base de données de configuration du démarrage).
   * **Outils de réparation** :
-    * **`bootrec`** : Commande pour réparer le MBR, le secteur de démarrage et reconstruire le BCD[cite: 3281].
-    * **`chkdsk`** : Pour vérifier et réparer les erreurs sur le disque dur[cite: 3312].
-    * **Options de démarrage avancé** : Permet d'accéder au mode sans échec, à la restauration du système ou à l'invite de commandes de récupération[cite: 3295, 3298].
+    * **`bootrec`** : Commande pour réparer le MBR, le secteur de démarrage et reconstruire le BCD.
+    * **`chkdsk`** : Pour vérifier et réparer les erreurs sur le disque dur.
+    * **Options de démarrage avancé** : Permet d'accéder au mode sans échec, à la restauration du système ou à l'invite de commandes de récupération.
 
 * **Sauvegarde et Récupération** :
-  * **Restauration du système** : Permet de revenir à un point de restauration antérieur pour annuler des modifications qui ont causé un problème[cite: 3301].
-  * **Historique des fichiers** : Sauvegarde automatiquement différentes versions de vos fichiers personnels[cite: 3320].
-  * **Image système** : Crée une copie complète du système pour une restauration totale en cas de panne majeure[cite: 3326].
+  * **Restauration du système** : Permet de revenir à un point de restauration antérieur pour annuler des modifications qui ont causé un problème.
+  * **Historique des fichiers** : Sauvegarde automatiquement différentes versions de vos fichiers personnels.
+  * **Image système** : Crée une copie complète du système pour une restauration totale en cas de panne majeure.
 
 * **Logiciels tiers utiles** :
-  * Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows[cite: 3390, 3391, 3392].
+  * Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
 [Challenge 0202](../challenges/Challenge_0202.md)
