@@ -26,4 +26,14 @@ L’objectif est simplement d’explorer leurs possibilités et de tester par vo
 
 ## MemTest86 🧠
 
+Téléchargement de l'exécutable sur le site officiel.
+
+![Download](../images/Memtest-DL.png)
+
+Comment setup le support en suivant le User Guide officiel :
+
+![Setup](../images/Memtest-setup.png)
+
+Pour résumer l'exécutable reformate la clef USB, la transformant en clef bootable.
+
 ## Bonus : Le controle à distance 🖥️🔁🖥️
