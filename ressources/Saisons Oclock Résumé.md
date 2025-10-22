@@ -6,11 +6,15 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 L'objectif de cette saison est de construire un socle de connaissances commun sur le fonctionnement des ordinateurs, des systèmes d'exploitation, des réseaux et de la sécurité.
 
+---
+
 ### 🎯 0101. & 0102. Introduction Formation O'clock & Titre Pro AIS
 
 Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
 [Challenge 0102](../challenges/Challenge_0102.md)
+
+---
 
 ### 📜 0103. Histoire de l'Informatique
 
@@ -41,6 +45,8 @@ En résumé :
 
 [Challenge 0103](../challenges/Challenge_0103.md)
 
+---
+
 ### ⚙️ 0104. Les Composants Matériels (Hardware)
 
 Un ordinateur est constitué d'un ensemble de composants physiques (le hardware) qui interagissent pour fonctionner.
@@ -65,6 +71,8 @@ Un ordinateur est constitué d'un ensemble de composants physiques (le hardware)
 
 [Challenge 0104](../challenges/Challenge_0104.md)
 
+---
+
 ### 💿 0105. Le Système d'Exploitation (OS)
 
 Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédiaire entre le matériel et les applications logicielles. Les plus courants sur ordinateur sont Windows, macOS et GNU/Linux.
@@ -84,6 +92,8 @@ Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédia
   * Il faut configurer le **BIOS/UEFI** de l'ordinateur pour qu'il démarre ("boot") sur ce média d'installation.
 
 [Challenge 0105](../challenges/Challenge_0105.md)
+
+---
 
 ### 🔢 0106. Numération : Bits et Octets
 
@@ -106,6 +116,8 @@ Les ordinateurs fonctionnent avec un système binaire, qui est la base de toute 
 
 [Challenge 0106](../challenges/Challenge_0106.md)
 
+---
+
 ### 🌐 0107. Introduction aux Réseaux Informatiques
 
 Un réseau est un ensemble d'équipements informatiques connectés entre eux pour partager des ressources et communiquer.
@@ -126,6 +138,8 @@ Un réseau est un ensemble d'équipements informatiques connectés entre eux pou
   * **Diagramme Logique** : Montre comment les informations circulent, les adresses IP, les sous-réseaux, etc.
 
 [Challenge 0107](../challenges/Challenge_0107.md)
+
+---
 
 ### 🛡️ 0108. Sécurité Informatique
 
@@ -152,6 +166,8 @@ La sécurité informatique vise à protéger les systèmes d'information contre 
     * **Asymétrique** : Utilise une paire de clés (une publique pour chiffrer, une privée pour déchiffrer).
 
 [Challenge 0108](../challenges/Challenge_0108.md)
+
+---
 
 ### 🧮 0109. Atelier calcul d'adresse IP et Masque sous-réseau
 
