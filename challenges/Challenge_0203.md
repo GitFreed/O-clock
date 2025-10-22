@@ -32,7 +32,7 @@ Téléchargement de l'exécutable sur le site officiel.
 
 ![Download](../images/Memtest-DL.png)
 
-Comment setup le support en suivant le User Guide officiel :
+Setup le support USB en suivant le User Guide officiel :
 
 ![Setup](../images/Memtest-setup.png)
 
@@ -40,7 +40,7 @@ Pour résumer l'exécutable reformate la clef USB, la transformant en clef boota
 
 ![install](../images/Memtest-install.png)
 
-par la suite il faut reboot le PC, si le boot sur support n'est pas activé il faut entrer dans le BIOS pour activer les périphériques USB et éventuellement le placer en 1ier dans l'odre de Boot.
+Par la suite il faut reboot le PC, si le boot sur support n'est pas activé il faut entrer dans le BIOS pour activer les périphériques USB et éventuellement le placer en 1ier dans l'odre de Boot.
 
 Sachant que le memorytest peut prendre très longtemps je ne l'ai pas effectué et j'ai décidé de le faire sur une VM vu la mémoire limité, et me permettant de faire autre chose pendant ce temps.
 
@@ -80,7 +80,7 @@ En me connectant de l'une à l'autre, la machine qui reçoit la demande doit acc
 
 ![Anydesk Rules](../images/VM-CADAnydesk2.png)
 
-J'ai pu ainsi entrer dans les règles de pare-feu, si l'utilisateur avait un problème pour trouver une impirmante réseau par exemple, lancer le terminal, etc.
+J'ai pu ainsi entrer dans les règles de pare-feu, si l'utilisateur avait un problème pour trouver une imprimante réseau par exemple, lancer le terminal, etc.
 
 ![Anydesk OK](../images/VM-CADAnydesk3.png)
 
@@ -100,9 +100,9 @@ En lançant Teamviewer sur les 2 machines elles ne se détectent pas comme Anyde
 
 ![Teamviewer Co](../images/VM-CADTeamvw1.png)
 
-En me connectant de l'une à l'autre, il faut entrer le mot de passe puis on est connectés. J'ai pu ainsi entrer dans les règles de pare-feu, si l'utilisateur avait un problème pour trouver une impirmante réseau par exemple, lancer le terminal, etc.
+En me connectant de l'une à l'autre, il faut entrer le mot de passe puis on est connectés. J'ai pu ainsi entrer dans les règles de pare-feu, si l'utilisateur avait un problème pour trouver une imprimante réseau par exemple (encore oui!), lancer le terminal, etc.
 
-Quelques différences aec Anydesk : la connection par mot de passe, on ne garde pas le fond d'écran, la machine cible voit un encadré orange et peut cloturer la connexion directement, elle voit également qui est connecté en bas à droite.
+Quelques différences avec Anydesk : la connexion par mot de passe, on ne garde pas le fond d'écran, la machine cible voit un encadré orange et peut cloturer la connexion directement, elle voit également qui est connecté en bas à droite.
 
 ![Teamviewer Rules](../images/VM-CADTeamvw2.png)
 
@@ -114,4 +114,8 @@ Une fois déconnecté, TEamviewer à fermé la session pour la machine cible qui
 
 ![Teamviewer Infos](../images/VM-CADTeamvw4.png)
 
-L'incident de Susie est résolu ^^
+L'incident de Susie est aussi résolu ^^
+
+### Mon retour personnel
+
+En premier lieu j'ai trouvé l'interface d'Anydesk pas du tout à mon gout comparé à Teamviewer, et pourtant après avoir utilisé les deux, j'ai trouvé Anydesk plus facile à prendre en main, plus intuitif, et en apparence moins limité (par la licence gratuite).
