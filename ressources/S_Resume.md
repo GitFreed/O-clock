@@ -165,6 +165,8 @@ La sécurité informatique vise à protéger les systèmes d'information contre 
     * **Symétrique** : La même clé est utilisée pour chiffrer et déchiffrer.
     * **Asymétrique** : Utilise une paire de clés (une publique pour chiffrer, une privée pour déchiffrer).
 
+![CIA Triad](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/CIA-Triad-What-is-cybersecurity-Edureka.png)
+
 [Challenge 0108](../challenges/Challenge_0108.md)
 
 ---
