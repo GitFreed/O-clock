@@ -275,3 +275,5 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
   * **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
 
 [Challenge 0203](../challenges/Challenge_0203.md)
+
+---
