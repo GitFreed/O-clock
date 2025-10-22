@@ -1,6 +1,8 @@
 # Résumé des Saisons O'clock
 
-Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "EXPERT CYBERSÉCURITÉ" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées".
+Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "Expert Cybersécurité" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées".
+
+Quelques liens utiles donnés lors de ces cours sont [ICI](../ressources/Ressources.md).
 
 ## **💻 Saison 01 : Savoirs de Base**
 

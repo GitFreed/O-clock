@@ -1,6 +1,6 @@
 # Ressources 📚
 
-Liens et autres ressources utiles partagées pendant des cours.
+Liens et autres ressources utiles partagées pendant les cours.
 
 ## 0101 & 0102 Bienvenue et Introduction 🧑‍🏫
 
@@ -107,3 +107,15 @@ Liens et autres ressources utiles partagées pendant des cours.
 [Sysinternals](https://learn.microsoft.com/fr-fr/sysinternals/)
 
 [Autocomplétion des CMD Terminal](https://github.com/chrisant996/clink)
+
+## 0203 : Contrôle à distance 🔁
+
+[Les réseaux virtuels sur virtualbox](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/)
+
+[Les réseaux virtuels sur vmware](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/)
+
+[WinRM](https://www.it-connect.fr/chapitres/utiliser-winrm-pour-la-gestion-a-distance/)
+
+[MobaXterm](https://mobaxterm.mobatek.net/)
+
+[Ruskdesk](https://rustdesk.com/fr/) [Ruskdesk Github](https://github.com/rustdesk/rustdesk)
