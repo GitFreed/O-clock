@@ -10,6 +10,8 @@ L'objectif de cette saison est de construire un socle de connaissances commun su
 
 Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
+[Challenge 0102](../challenges/Challenge_0102.md)
+
 ### 📜 0103. Histoire de l'Informatique
 
 L'informatique est un domaine dont les racines sont bien plus anciennes que les ordinateurs modernes.
@@ -37,6 +39,8 @@ En résumé :
 | 1969 | **Micro-processeur** | Invention du composant central (ex: Intel 4004). |
 | 1975 | **Altair 8800** | Lancement de l'ère des micro-ordinateurs personnels. |
 
+[Challenge 0103](../challenges/Challenge_0103.md)
+
 ### ⚙️ 0104. Les Composants Matériels (Hardware)
 
 Un ordinateur est constitué d'un ensemble de composants physiques (le hardware) qui interagissent pour fonctionner.
@@ -59,6 +63,8 @@ Un ordinateur est constitué d'un ensemble de composants physiques (le hardware)
   * **Périphériques de sortie** : Écran, imprimante, haut-parleurs.
   * **Périphériques d'entrée-sortie** : Clé USB, disque dur externe, écran tactile.
 
+[Challenge 0104](../challenges/Challenge_0104.md)
+
 ### 💿 0105. Le Système d'Exploitation (OS)
 
 Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédiaire entre le matériel et les applications logicielles. Les plus courants sur ordinateur sont Windows, macOS et GNU/Linux.
@@ -76,6 +82,8 @@ Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédia
   * Se fait généralement à partir d'un **média d'installation** (clé USB ou DVD).
   * Ce média est créé à partir d'une **image ISO**, qui est une copie conforme d'un disque.
   * Il faut configurer le **BIOS/UEFI** de l'ordinateur pour qu'il démarre ("boot") sur ce média d'installation.
+
+[Challenge 0105](../challenges/Challenge_0105.md)
 
 ### 🔢 0106. Numération : Bits et Octets
 
@@ -96,6 +104,8 @@ Les ordinateurs fonctionnent avec un système binaire, qui est la base de toute 
   * **ASCII** : Une des premières normes, limitée à 128 caractères (principalement pour l'anglais).
   * **Unicode (UTF-8)** : La norme moderne qui peut représenter la quasi-totalité des systèmes d'écriture du monde, y compris les accents et les emojis.
 
+[Challenge 0106](../challenges/Challenge_0106.md)
+
 ### 🌐 0107. Introduction aux Réseaux Informatiques
 
 Un réseau est un ensemble d'équipements informatiques connectés entre eux pour partager des ressources et communiquer.
@@ -114,6 +124,8 @@ Un réseau est un ensemble d'équipements informatiques connectés entre eux pou
 * **Diagrammes Réseau** : Ce sont des schémas qui représentent l'organisation d'un réseau.
   * **Diagramme Physique** : Montre l'emplacement réel des équipements et leur câblage.
   * **Diagramme Logique** : Montre comment les informations circulent, les adresses IP, les sous-réseaux, etc.
+
+[Challenge 0107](../challenges/Challenge_0107.md)
 
 ### 🛡️ 0108. Sécurité Informatique
 
@@ -139,6 +151,8 @@ La sécurité informatique vise à protéger les systèmes d'information contre 
     * **Symétrique** : La même clé est utilisée pour chiffrer et déchiffrer.
     * **Asymétrique** : Utilise une paire de clés (une publique pour chiffrer, une privée pour déchiffrer).
 
+[Challenge 0108](../challenges/Challenge_0108.md)
+
 ### 🧮 0109. Atelier calcul d'adresse IP et Masque sous-réseau
 
 Cet atelier pratique a permis de mettre en application les concepts de l'adressage IPv4. L'objectif était de pouvoir, à partir d'une adresse IP et de son masque, déterminer les informations essentielles d'un sous-réseau :
@@ -157,6 +171,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 * Octet Significatif
 * 256- OS = Nombre magique
 * Calcul avec les multiples de l'adresse réseau et broadcast
+
+[Challenge 0109](../challenges/Challenge_0109.md)
 
 ---
 
