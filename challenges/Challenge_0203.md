@@ -4,15 +4,26 @@
 
 ⌨️ Challenge
 
-Actuellement, sur Windows 10 et Windows 11, il est impossible de pinguer vos machines virtuelles (VM) depuis votre ordinateur hôte (votre PC personnel) sous VirtualBox.
+- Essayez l’outil MemTest86 sur votre PC 🧠
 
-- Votre tâche consiste à permettre à votre machine hôte d’effectuer un ping vers vos VM Windows.
-En d’autres termes, vous devez configurer votre environnement de manière à rendre vos VM accessibles en réseau depuis votre poste principal.
+Il vous faudra pour cela une clé USB, sauvegardez tout ce que vous avez dessus avant de suivre les instructions ci-dessous ! ⚠️
 
-💡 Rappel :
+Téléchargez MemTest86 Free depuis le site officiel.
 
-Le ping est un test de connectivité réseau.
+Trouvez le moyen de « l’installer » sur votre clé USB, en suivant les instructions officielles ou en cherchant un peu sur Internet ! (attention à ne pas effacer votre disque dur malencontreusement !)
 
-C’est l’un des tests les plus simples, mais aussi l’un des plus importants à maîtriser en informatique. Il permet de vérifier qu’une machine est accessible sur le réseau et que la communication est possible entre deux hôtes.
+Redémarrez votre PC et bootez sur MemTest !
 
-## Test de connectivité réseau 🖥️🔄🖥️
+Lancez un test complet de votre RAM.
+
+💡 Si vous ne voulez pas prendre de risque, vous pouvez aussi tenter de lancer MemTest86 sur une machine virtuelle. À vous de trouver comment faire 😉
+
+- 🏆 Challenge Bonus
+
+Rendez-vous avec des outils de prise en main à distance, que ce soit AnyDesk, TeamViewer, ou même les outils natifs de votre système d’exploitation.
+
+L’objectif est simplement d’explorer leurs possibilités et de tester par vous-même différents outils.
+
+## MemTest86 🧠
+
+## Bonus : Le controle à distance 🖥️🔁🖥️

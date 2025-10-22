@@ -246,3 +246,32 @@ Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre le
   * Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
 [Challenge 0202](../challenges/Challenge_0202.md)
+
+---
+
+### 🔩 0203. Incidents Hardware et Réglementation
+
+Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi que les cadres réglementaires essentiels liés à la gestion des équipements informatiques en fin de vie (DEEE) et à la protection des données personnelles (RGPD).
+
+* **Diagnostic des Pannes Matérielles** :
+  * **Premières étapes** : Avant toute intervention complexe, il est crucial d'effectuer des vérifications simples : nettoyer la poussière, débrancher les périphériques non essentiels, tester les câbles et analyser les messages d'erreur au démarrage.
+  * **Isoler le problème** : Une approche méthodique consiste à tester les composants un par un pour identifier la source de la panne. Les causes fréquentes d'un écran noir incluent l'alimentation, la carte graphique, la mémoire RAM ou la pile du BIOS.
+  * **Outils de diagnostic** :
+    * **Logiciels** : Des outils spécialisés permettent de tester la stabilité et les performances de chaque composant une fois le PC démarré :
+      * **CPU-Z** pour le processeur et la carte graphique.
+      * **MemTest86** pour la mémoire RAM.
+      * **CrystalDiskInfo** pour l'état de santé des disques durs et SSD.
+      * **OCCT** pour tester l'alimentation en charge.
+    * **Matériel** : Un **multimètre** peut être utilisé pour vérifier les tensions de sortie de l'alimentation.
+
+* **Réglementation DEEE (Déchets d'Équipements Électriques et Électroniques)** :
+  * **Objectif** : Encadrer la collecte et le recyclage des équipements en fin de vie pour limiter leur impact environnemental, dû aux matériaux polluants qu'ils contiennent (plomb, mercure).
+  * **Obligations des entreprises** : Les professionnels doivent trier leurs DEEE, les confier à une filière de recyclage agréée et s'assurer de la **destruction sécurisée des données** présentes sur les supports de stockage. Des outils comme **DBAN** peuvent être utilisés pour cela.
+
+* **Réglementation RGPD (Règlement Général sur la Protection des Données)** :
+  * **Objectif** : Protéger les **données personnelles** des citoyens de l'Union Européenne et encadrer leur traitement par les organisations.
+  * **Principes clés** : Le traitement des données doit être légal, limité à des finalités précises (minimisation), et les données doivent être conservées de manière sécurisée et confidentielle pour une durée limitée.
+  * **Rôle de la CNIL** : En France, la **Commission Nationale de l'Informatique et des Libertés (CNIL)** est l'autorité chargée de veiller au respect du RGPD. Elle informe, contrôle et peut sanctionner les entreprises en cas de manquement.
+  * **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
+
+[Challenge 0203](../challenges/Challenge_0203.md)
