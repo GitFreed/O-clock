@@ -4,4 +4,4 @@ Ce dépôt contient des ressources utiles et les challenges réalisés dans le c
 
 - `/challenges` : exercices quotidiens
 - `/images` : captures ou schémas
-- `/ressources` : diverses ressources aprtagées pendant les cours
+- `/ressources` : quelques ressources partagées pendant les cours et le résumé des slides de chaque saison
