@@ -36,4 +36,8 @@ Comment setup le support en suivant le User Guide officiel :
 
 Pour résumer l'exécutable reformate la clef USB, la transformant en clef bootable.
 
+![install](../images/Memtest-install.png)
+
+Pour le faire sur une VM, il faut télécharger le fichier ISO de l'executable, le mettre en tant que CD/DVD
+
 ## Bonus : Le controle à distance 🖥️🔁🖥️
