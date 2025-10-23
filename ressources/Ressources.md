@@ -119,3 +119,9 @@ Liens et autres ressources utiles partagées pendant les cours.
 [MobaXterm](https://mobaxterm.mobatek.net/)
 
 [Ruskdesk](https://rustdesk.com/fr/) [Ruskdesk Github](https://github.com/rustdesk/rustdesk)
+
+## 0204 : Incidents hardware et réglementation 🔩
+
+[DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
+
+[CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
