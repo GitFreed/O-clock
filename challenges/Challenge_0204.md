@@ -1,8 +1,8 @@
-# Challenge 0203 22/10/2025
+# Challenge 0204 23/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
-⌨️ Challenge
+⌨️ Atelier
 
 - Essayez l’outil MemTest86 sur votre PC 🧠
 
