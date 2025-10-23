@@ -131,4 +131,12 @@ Tout est OK on va pouvoir passer au SFC (System File Checker) pour analyser les 
 
 ``/offwindir=E:\Windows`` : Spécifie le chemin exact du dossier Windows à réparer.
 
-![SFC](../images/TPmichu10.png)
+![SFC](../images/TPmichu11.png)
+
+SFC à bien détecté et réparé des fichiers corrompus.
+
+![SFCOK](../images/TPmichu12.png)
+
+Je redémarre la machine et c'est bon, Windows est réparé et load comme il se doit, on tombe sur la session de Mme Michu !
+
+![OKMICHU](../images/TPmichu13.png)
