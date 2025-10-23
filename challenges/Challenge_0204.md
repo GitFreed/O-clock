@@ -281,7 +281,7 @@ ainsi tout son dossier utilisateur retrouve les données perdues.
 
 - Coup de chance pour Mme Michu, l'Historique des fichier avait du être activé et avait pu les sauvegarder sur le disque DATA E: 🍀
 
-![eyes](../images/TPmichu30.png)
+![eyes](../images/TPmichu31.png)
 
 ---
 
