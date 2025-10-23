@@ -69,6 +69,8 @@ Retrouve et restaure ces fichiers pour elle.
 
 Ayant récupéré le PC de Mme Michu je vais pouvoir commencer à diagnostiquer les problèmes.
 
+### Étape 1 : Réparer le démarrage de Windows 🛠️
+
 Au lancement, voici l'écran qui s'affiche :
 
 ![Démarrage](../images/TPmichu1.png)
@@ -140,3 +142,79 @@ SFC à bien détecté et réparé des fichiers corrompus.
 Je redémarre la machine et c'est bon, Windows est réparé et load comme il se doit, on tombe sur la session de Mme Michu !
 
 ![OKMICHU](../images/TPmichu13.png)
+
+---
+
+### Étape 2 : Restaurer les performances normales de la machine 🕵️
+
+Mon premier réflexe est d'ouvrir le gestionnaire des taches  ``Crtl + MAJ + Echap`` pour regarder ce qui se passe en fond sur la machine : Analyser les performances et les processus.
+
+![Gestionnaire](../images/TPmichu14.png)
+
+Aucun programme seul n'est entrain d'utiliser le processeur à plus de 30%.
+
+Aucun programme seul n'est entrain de saturer la mémoire.
+
+Par contre je me rend compte qu'il y a une quantité anormale de petit processus identiques liés à la Console et à une demande de Ping, qui consomment pas grand chose individuelement mais saturent le système vu la quantité présente !
+
+![Proc](../images/TPmichu15.png)
+
+![Mem](../images/TPmichu16.png)
+
+Je vais voir dans les Détails ce sont : conhost.exe qui est la Console windows, et PING.exe qui n'est pas un processus normal. je comprend donc qu'on a une commande malveillante, surement lancée au démarrage (je me souviens avoir vu apparaitre brievement une console au démarrage).
+
+![Cmd](../images/TPmichu17.png)
+
+![Ping](../images/TPmichu18.png)
+
+La machine étant vraiment saturée, je vais dans Démarrage Windows, et je désactive tout ce qui est inutile, et surtout la commande powershell. Je reboot.
+
+![Démarrage](../images/TPmichu21.png)
+
+Je lance directement le Gestionnaire après le reboot et là on voit que les performances sont bien plus normales.
+
+![GestionnnaireOK](../images/TPmichu22.png)
+
+Je décide donc d'aller voir en détail dans le dossier de démarrage avec la commande ``shell:startup`` et je trouve bien le raccourcit PING.exe qui polluait ma machine au démarrage. J'imagine que c'est une commande malveillante pour lancer des Pings en boucle et saturer la machine. Je me rend compte que j'aurais peut être dû faire ça directement plutôt que d'aller dans les paramètres de Démarrage Windows. Mais ça me laisse maintenant le temps d'analyser ce que c'est.
+
+![Pinganalyse](../images/TPmichu23.png)
+
+J'ai demandé à Gemini d'analyser cette commande
+
+*Voici la commande que tu as trouvée dans le raccourci au démarrage : ``C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Ping.ps1"``*
+
+*Décortiquons-la pour comprendre sa toxicité :*
+
+- *``powershell.exe`` C'est l'outil qui exécute le script. PowerShell est un langage de commande très puissant, bien plus que l'ancienne invite de commandes.*
+
+- *``-WindowStyle Hidden`` C'est la partie la plus vicieuse. Cet argument ordonne à PowerShell de s'exécuter sans aucune fenêtre visible. Mme Michu ne voit absolument rien se passer sur son bureau, pendant que son PC est en train d'être mis à genoux en arrière-plan.*
+
+- *``-ExecutionPolicy Bypass`` C'est un énorme drapeau rouge de sécurité ! Par défaut, Windows empêche l'exécution de scripts non signés pour protéger l'utilisateur. Cet argument dit à PowerShell : "Ignore toutes les règles de sécurité et exécute le script quoi qu'il arrive". C'est comme forcer une porte de sécurité.*
+
+- *``-File "C:\Windows\Ping.ps1"`` C'est le cœur du problème. Cette partie exécute un fichier nommé Ping.ps1. Le fait qu'il soit placé directement dans C:\Windows est une technique classique pour le cacher parmi les milliers de fichiers système légitimes.*
+
+*Que fait le script ``Ping.ps1`` ?
+Même sans voir le contenu du fichier, on peut le deviner. Ce script contient très probablement une boucle infinie qui lance en continu la commande ping.exe.*
+
+*Ça ressemble à quelque chose comme ça en PowerShell :*
+
+*``PowerShell
+while ($true) {
+    Start-Process ping.exe -ArgumentList "une_adresse_ip_cible"
+}``*
+
+*Cette boucle tourne sans jamais s'arrêter, lançant des milliers de processus ping.exe jusqu'à ce que le système n'ait plus aucune ressource (CPU, RAM) et se bloque complètement.*
+
+*C'est une forme d'attaque qu'on peut assimiler à une **"Fork Bomb"** : un programme qui se réplique à l'infini pour saturer les ressources d'un ordinateur et le faire planter. Dans ce cas, il ne se réplique pas lui-même, mais il lance un autre programme en boucle.*
+
+Maintenant il ne me reste plus qu'a nettoyer la machine.
+
+- ``shell:startup`` pour ouvrir le dossier de démarrage et supprimer le Lien Malveillant.
+
+- ``C:\Windows`` (le chemin était dans le raccourcit) pour trouver le fichier ``Ping.ps1`` et le supprimer (je l'ai ouvert pour vérifier la commande).
+
+- Relancer au Démarrage Windows antivirus, faire les mises à jour et lancer un scan pour vérifier que tout est OK.
+
+### Étape 3 : Vérifier l’état des disques durs 💽
+
+### Étape 4 : Retrouver les fichiers disparus dans le dossier « Images » 🖼️
