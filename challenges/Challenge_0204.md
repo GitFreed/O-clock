@@ -67,4 +67,46 @@ Retrouve et restaure ces fichiers pour elle.
 
 ## Résolution 📞
 
-ok
+Ayant récupéré le PC de Mme Michu je vais pouvoir commencer à diagnostiquer les problèmes.
+
+Au lancement, voici l'écran qui s'affiche :
+
+![Démarrage](../images/TPmichu1.png)
+
+On m'a précisé que « BootMGR est manquant » et « Winload.exe introuvable », c'est donc que le BootManager qui lance le Winloaderr est introuvable (problème 1) et le Winload pour lancer Windows correctement l'est aussi (problème 2).
+
+Je vais donc insérer un disque Windows pour boot dessus et fixer le problème de BootMGR en premier.
+
+![Winsows](../images/TPmichu2.png)
+
+Je lance l'utilitaire de réparation.
+
+![Repair](../images/TPmichu3.png)
+
+J'ai lancé l'Outil de redémarrage pour réparer automatiquement mais sans succès.
+
+![Fail](../images/TPmichu4.png)
+
+J'entre dans le terminal pour afficher la liste de mes disques avec le ``Diskpart`` et ``list disk`` puis ``list vol`` et déterminer lequel est le disque Windows, c'est le disque ``C:`` qui est actuellement assigné à Windows ``"Réservé au système"``, je vois un disque ``D: Data``, je sais que je devrais faire attention à ne surtout pas l'effacer!
+
+![Disklist](../images/TPmichu5.png)
+
+Je vais tenter la méthode du Fix Master Boot Record avec les commandes ``bootrec /FixMbr``, ``bootrec /FixBoot``, ``bootrec /RebuildBcd``.
+
+![fixboot](../images/TPmichu6.png)
+
+L'accès est refusé, celà vient à priori du type de partitionnement, la commande /fixboot est conçue pour l'ancien système MBR/BIOS et non EFI moderne.
+
+Je vais à nouveau vérifier mes disques et leurs partition avec ``list partition``, chercher la/les partitions EFI sur mes disques.
+
+![ListPart](../images/TPmichu7.png)
+
+Je vois que 2 détails m'ont échappé, le format et la taille des partitions, en effet la partition EFI du BootMNG doit être en fat32 pour pouvoir être lu universellement par le BIOS/UEFI, il faut donc la reformater. Les fichiers Windows sont quand à eux dans la partition 2 (E:) et c'est eux qu'on va copier avec bcdboot vers la partition C:
+
+*The command ``bcdboot C:\Windows /s E:`` copies essential boot files from the Windows directory (E:\Windows) to the system partition (C:) and recreates the Boot Configuration Data (BCD) store, which is required for the system to start.*
+
+![ListPart](../images/TPmichu8.png)
+
+Une fois ces opérations effectuées, je reboot la machine, et j'arrive sur cet écran bleu. C'est déjà une progression, on sait que le BootMNG est réparé, c'est maintenant l'étape du Winload, qui lui est HS ou introuvable et ne peux donc pas charcher l'OS.
+
+![ListPart](../images/TPmichu9.png)
