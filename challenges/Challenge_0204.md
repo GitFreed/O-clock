@@ -215,6 +215,10 @@ Maintenant il ne me reste plus qu'a nettoyer la machine.
 
 - Relancer au Démarrage Windows antivirus, faire les mises à jour et lancer un scan pour vérifier que tout est OK.
 
+---
+
 ### Étape 3 : Vérifier l’état des disques durs 💽
+
+---
 
 ### Étape 4 : Retrouver les fichiers disparus dans le dossier « Images » 🖼️
