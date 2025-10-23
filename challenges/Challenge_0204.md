@@ -143,6 +143,8 @@ Je redémarre la machine et c'est bon, Windows est réparé et load comme il se 
 
 ![OKMICHU](../images/TPmichu13.png)
 
+👵 Quel plaisir d'enfin admirer le fond d'écran de Mme Michu !
+
 ---
 
 ### Étape 2 : Restaurer les performances normales de la machine 🕵️
@@ -215,10 +217,97 @@ Maintenant il ne me reste plus qu'a nettoyer la machine.
 
 - Relancer au Démarrage Windows antivirus, faire les mises à jour et lancer un scan pour vérifier que tout est OK.
 
+![Clean](../images/TPmichu24.png)
+
+👵 La machine de Mme Michu tourne comme en 40 !
+
 ---
 
 ### Étape 3 : Vérifier l’état des disques durs 💽
 
+Mme Michu s'inquète de l'état de ses disques durs, mais quand j'ouvre l'explorateur Windows, je ne vois qu'un seul disque, je lance donc l'outil de Gestion des disques pour voir ce qu'il en retourne. Et effectivement je vois bien le Disque 0, mais le Disque 1 est hors connexion.
+
+![GestionDD](../images/TPmichu25.png)
+
+J'ai juste à faire un click-droit : En Ligne. Il apparait ainsi dans l'explorateur sans problème, je vois qu'il est déjà formaté et partitioné ``DATA E:`` (c'est bien le disque qu'on avait dans le tout premier ``DiskPart : list vol``)
+
+![DataE:](../images/TPmichu26.png)
+
+- Vérification **visuelle** des disques : je reboot la machine pour voir si le disque est toujours là. C'est OK
+
+- Vérification **logique** : je lance un ``chddsk`` depuis l'explorateur sur les 2 disques. C'est OK
+
+- Vérification **physique** : je lance ``wmic diskdrive get status`` pour avoir l'état S.M.A.R.T. des disques. C'est OK
+
+![CheckDisks](../images/TPmichu27.png)
+
+👵 Voilà de quoi rassurer Mme Michu sur l'état de ses disques !
+
 ---
 
 ### Étape 4 : Retrouver les fichiers disparus dans le dossier « Images » 🖼️
+
+Je tombe sur la note ``SOS !`` de Mme Michu dans son dossier Image.
+
+![SOS](../images/TPmichu28.png)
+
+Avec une simple fonction de recherche je retrouve son dossier perdu, je pourrais simplement orienter sa bibliothèque d'image vers cette cible : ``E:\FileHistory\Mme Michu\DESKTOP-8DF7QI8\Data\C\Users\Mme Michu\Pictures`` mais en investiguant un peu cette arborescence je me rend compte que c'est tout le dossier User de Mme Michu qui a été déplacé.
+
+![York](../images/TPmichu29.png)
+
+En cherchant un peu sur internet je vois que le dossier ``E:\FileHistory`` avec des fichiers Config XML font parti du mécanisme de sauvegarde **"Historique des Fichiers"** de Windows.
+
+Je devrais pouvoir donc lui restaurer ça proprement. Je vais ``copier`` tout le contenu de :
+
+ ``E:\FileHistory\Mme Michu\DESKTOP-8DF7QI8\Data\C\Users\Mme Michu``
+
+vers :
+
+``C:\Users\Mme Michu``
+
+ainsi tout son dossier utilisateur retrouve les données perdues.
+
+![user](../images/TPmichu30.png)
+
+---
+
+### Mon analyse de ce qui a pu se passer 🧠
+
+- Le script malveillant sature le Proc et la RAM de Mme Michu 🦠
+
+- Face à son ordinateur bloqué Mme Michu tente de l'éteindre, par exemple en laissant appuyé sur le bouton de démarrage pendant 5 sec (HardShutdown) ou en coupant l'alimentation. 💥
+
+- Cet arrêt brutal en plein "travail" a pu endommager l'écriture sur le disque et corrompre le secteur de démarrage : BootMNG, le secteur de fichiers Windows systèmes : Winload ainsi que le profil utilisateur, obligeant Windows à en créer un nouveau, vierge. 🧨
+
+- Coup de chance pour Mme Michu, l'Historique des fichier avait du être activé et avait pu les sauvegarder sur le disque DATA E: 🍀
+
+![eyes](../images/TPmichu30.png)
+
+---
+
+### Quel discours tenir en rendant l'ordinateur à Mme Michu 👵
+
+*"Bonjour Madame Michu, j'ai une excellente nouvelle, votre ordinateur est de nouveau en pleine forme ! Je vous l'ai nettoyé et tout est rentré dans l'ordre.*
+
+*Je vais vous expliquer simplement ce qui s'est passé. Votre ordinateur était devenu extrêmement lent à cause d'un petit programme malveillant, une sorte de parasite, qui s'était installéet forçait votre ordinateur à faire des milliers de petites tâches inutiles en même temps, sans que vous ne le voyiez.*
+
+*Comme il était totalement bloqué, j'imagine que vous avez dû le forcer à s'éteindre. C'est un bon réflexe, mais cet arrêt un peu brusque a un peu "brouillé" le démarrage de Windows. C'est pour ça qu'il ne voulait plus se lancer du tout et qu'il vous affichait un message d'erreur.*
+
+*J'ai d'abord réparé le démarrage de Windows pour qu'il puisse se lancer à nouveau.*
+
+*Ensuite, j'ai trouvé et supprimé définitivement ce fameux parasite qui le ralentissait.*
+
+*Enfin, j'ai fait une vérification complète du système, des disques et j'ai installé toutes les dernières mises à jour de sécurité.*
+
+*Et maintenant, la meilleure nouvelle ! Je sais que vous étiez très inquiète pour vos photos. Lorsque Windows a eu son problème de démarrage, il a supprimé votre profil utilisateur.
+Heureusement, vous aviez une sauvegarde automatique sur votre deuxième disque dur. J'ai pu tout récupérer. Vos magnifiques photos de Yorkshires sont bien là, en sécurité dans votre dossier "Images", comme avant.*
+
+*Pour finir, juste deux petits conseils pour l'avenir :*
+
+*Faites bien attention aux pièces jointes dans les e-mails et aux programmes que vous téléchargez sur des sites inconnus, c'est souvent par là que ces parasites arrivent.*
+
+*Pensez toujours à éteindre l'ordinateur via le menu Démarrer et le bouton "Arrêter".*
+
+*Voilà, il est maintenant propre, rapide et sécurisé. N'hésitez surtout pas à m'appeler si vous avez la moindre question !"**
+
+![The End](https://media.istockphoto.com/id/617891116/fr/photo/yorkie-en-robe-rose-et-pantoufles-au-grooming-salon-spa.jpg?s=1024x1024&w=is&k=20&c=iU1cUi3Up2ixhISkKXx5rzFByIPQ6Rs-SFobNF-18l0=)
