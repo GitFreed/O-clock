@@ -277,3 +277,7 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
 [Challenge 0203](../challenges/Challenge_0203.md)
 
 ---
+
+### 🐶 0204. Atelier Mme Michu 👵
+
+[Challenge 0204](../challenges/Challenge_0204.md)
