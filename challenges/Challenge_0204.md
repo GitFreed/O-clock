@@ -105,8 +105,30 @@ Je vois que 2 détails m'ont échappé, le format et la taille des partitions, e
 
 *The command ``bcdboot C:\Windows /s E:`` copies essential boot files from the Windows directory (E:\Windows) to the system partition (C:) and recreates the Boot Configuration Data (BCD) store, which is required for the system to start.*
 
-![ListPart](../images/TPmichu8.png)
+![bcdboot](../images/TPmichu8.png)
 
 Une fois ces opérations effectuées, je reboot la machine, et j'arrive sur cet écran bleu. C'est déjà une progression, on sait que le BootMNG est réparé, c'est maintenant l'étape du Winload, qui lui est HS ou introuvable et ne peux donc pas charcher l'OS.
 
-![ListPart](../images/TPmichu9.png)
+Il va donc falloir réparer les fichiers Windows avec le SFC (System File Checker).
+
+![winload.exe](../images/TPmichu9.png)
+
+Je relance la machine, je boot sur l'image Windows, j'utilise la commande ``MAF + F10`` pour aller directement à la console et lancer un Check Disk par précaution, pour s'assurer que le disque est sain avant de réparer Windows.
+
+``chkdsk E: /f /r``  /f corrige les erreurs sur le disque.  /r localise les secteurs défectueux et récupère les informations lisibles.
+
+Le checkdisk est un peu long, il m'a laissé le temps de déjeuner ^^
+
+![chkdsk](../images/TPmichu10.png)
+
+Tout est OK on va pouvoir passer au SFC (System File Checker) pour analyser les fichiers et remplacer ceux qui peuvent être HS comme notre *winload.exe*.
+
+``sfc /scannow /offbootdir=E:\ /offwindir=E:\Windows``
+
+``/scannow`` : C'est l'ordre de scanner et réparer.
+
+``/offbootdir=E:\`` : Indique que le lecteur de démarrage (là où se trouve Windows) est E:.
+
+``/offwindir=E:\Windows`` : Spécifie le chemin exact du dossier Windows à réparer.
+
+![SFC](../images/TPmichu10.png)
