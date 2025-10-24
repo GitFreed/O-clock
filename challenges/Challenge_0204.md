@@ -273,6 +273,8 @@ ainsi tout son dossier utilisateur retrouve les données perdues.
 
 ### Mon analyse de ce qui a pu se passer 🧠
 
+- Mme Michu ouvre un mail avec des photos de York sans vérifier qui lui a envoyé 👵
+
 - Le script malveillant sature le Proc et la RAM de Mme Michu 🦠
 
 - Face à son ordinateur bloqué Mme Michu tente de l'éteindre, par exemple en laissant appuyé sur le bouton de démarrage pendant 5 sec (HardShutdown) ou en coupant l'alimentation. 💥
