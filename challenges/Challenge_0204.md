@@ -317,3 +317,37 @@ Heureusement, vous aviez une sauvegarde automatique sur votre deuxième disque d
 ![The End](https://media.istockphoto.com/id/617891116/fr/photo/yorkie-en-robe-rose-et-pantoufles-au-grooming-salon-spa.jpg?s=1024x1024&w=is&k=20&c=iU1cUi3Up2ixhISkKXx5rzFByIPQ6Rs-SFobNF-18l0=)
 
 ---
+
+### Correction 🧑‍🏫
+
+**1.** *bootMGR problem*
+
+Parfois forcer 3x l'utilitaire de réparation peut passer mais on ve plutôt chercher.
+
+``MAJ + F10`` > ``notepad`` > Ouvrir > Fouiller pour trouver le bootMGR
+
+diskpart **à compléter**
+
+bcdboot **à compléter**
+
+C: **à compléter**
+
+``bcdedit`` permet de voir **à compléter**
+
+**2.** *winload.exe is missing*
+
+cmd > ``notepad`` > Ouvrir > Fouiller Windows\System32 > 🔍 winload : ``winload.panne`` devrait être ``winload.exe`` (et pas .efi car partition BIOS)
+
+On peut utiliser ``DISM`` (Deployment Image Servicing and Management) ou ``SFC`` (System File Checker).
+
+On va utiliser SFC ``sfc /scannow /offbootdir=E:\ /offwindir=E:\Windows``
+
+``/scannow`` : C'est l'ordre de scanner et réparer.
+
+``/offbootdir=E:\`` : Indique que le lecteur de démarrage (là où se trouve Windows) est E:.
+
+``/offwindir=E:\Windows`` : Spécifie le chemin exact du dossier Windows à réparer.
+
+**3.** *restaurer les performances*
+
+``Ctrl + MAJ + ECHAP`` > Gestionnaire des tâches >

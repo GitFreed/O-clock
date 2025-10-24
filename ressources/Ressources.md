@@ -125,3 +125,9 @@ Liens et autres ressources utiles partagées pendant les cours.
 [DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
 
 [CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
+
+## 0204 : Correction Atelier Mme Michu 🧑‍🏫
+
+[Lignes cmd BCDBoot](https://learn.microsoft.com/fr-fr/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di?view=windows-11)
+
+[Process Démarrage Windows](https://www.malekal.com/processus-demarrage-windows-mbr/)
