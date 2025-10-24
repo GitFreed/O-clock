@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-⌨️ Atelier Mme Michu
+⌨️ Atelier "Mme Michu"
 
 Hello 👋
 
@@ -277,7 +277,7 @@ ainsi tout son dossier utilisateur retrouve les données perdues.
 
 - Le script malveillant sature le Proc et la RAM de Mme Michu 🦠
 
-- Face à son ordinateur bloqué Mme Michu tente de l'éteindre, par exemple en laissant appuyé sur le bouton de démarrage pendant 5 sec (HardShutdown) ou en coupant l'alimentation. 💥
+- Face à son ordinateur bloqué Mme Michu tente de l'éteindre, par exemple en laissant appuyer sur le bouton de démarrage pendant 5 sec (HardShutdown) ou en coupant l'alimentation. 💥
 
 - Cet arrêt brutal en plein "travail" a pu endommager l'écriture sur le disque et corrompre le secteur de démarrage : BootMNG, le secteur de fichiers Windows systèmes : Winload ainsi que le profil utilisateur, obligeant Windows à en créer un nouveau, vierge. 🧨
 
