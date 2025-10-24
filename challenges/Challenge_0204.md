@@ -350,4 +350,24 @@ On va utiliser SFC ``sfc /scannow /offbootdir=E:\ /offwindir=E:\Windows``
 
 **3.** *restaurer les performances*
 
-``Ctrl + MAJ + ECHAP`` > Gestionnaire des tâches >
+``Ctrl + MAJ + ECHAP`` > Gestionnaire des tâches > 🔍 On voit tous les process anormaux : soit ça vient des tâches, des services ou du démarrage.
+
+- Les Tâches : ouvrir le Planificateur de tâches pour vérifier. Mais dans ce cas il n'y a rien.
+
+- Les Services : Gestionnaire des tâches > Services (svchost.exe lance tous les services)
+
+- Le Démarrage : Gestionnaire des tâches > Démarrage, on voit les programmes qui se lancent, mais pas les éléments de démarrage en détail. Dossier utlisateur > Dossiers cachés > AppData\Roaming\Microsoft\Windows\Menu Démarrer\Démarrage\ ou ``Win+R`` > ``shell:startup``
+
+Il fallait supprimer le raccourcit Ping du démarrage. On pouvait regarder ses propriétés avant pour chercher le script (Ping.ps1) et le supprimer aussi.
+
+à noter la commande pour kill un process ouvert de multiples fois : ``taskkill /IM ping.exe /f``
+
+**4.** *vérifier l'état des disques durs*
+
+On avait vu un disque DATA e/ avec Diskpart, on va ouvrir le Gestionnaire de Disque pour vérifier. On voit le disque Hors Ligne, clic-droit : En Ligne. C'est bon ! On peut faire une Vérification du disque dans Propriété/Outils.
+
+**5.** *retrouver le dossier perdu*
+
+On voit que dans le disque réapparu on a un dossier FileHistory, c'est un dossier de l'Historique de Fichier windows. Les fichiers sont horodatés.
+
+Dossier Image > Acceuil > Historique. On peut voir les version précédentes et les restaurer, enlève l'horodatage; ou Clic droit sur Images et Restaurer; ou chercher : Historique des Fichiers.
