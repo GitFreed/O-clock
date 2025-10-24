@@ -310,4 +310,8 @@ Heureusement, vous aviez une sauvegarde automatique sur votre deuxième disque d
 
 *Voilà, il est maintenant propre, rapide et sécurisé. N'hésitez surtout pas à m'appeler si vous avez la moindre question !"**
 
+---
+
 ![The End](https://media.istockphoto.com/id/617891116/fr/photo/yorkie-en-robe-rose-et-pantoufles-au-grooming-salon-spa.jpg?s=1024x1024&w=is&k=20&c=iU1cUi3Up2ixhISkKXx5rzFByIPQ6Rs-SFobNF-18l0=)
+
+---
