@@ -82,7 +82,7 @@ Pour tester la clef dans les VM je lance simplement la VM, et dans la fenêtre `
 
 ![USB Win11](../images/USBVMw11.png)
 
-![USB Ubuntu](../images/USBVMubu.png)
+![USB Ubuntu](../images/USBVMUbu.png)
 
 - Sur la VM Debian il y a une erreur pour la partition NTFS, ``wrong fs type`` signifie que Debian ne sais pas lire le système de fichier (fs pour file system).
 
