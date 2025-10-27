@@ -249,7 +249,7 @@ Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre le
 
 ---
 
-### 🔩 0203. Incidents Hardware et Réglementation
+### 🔩 0204. Incidents Hardware et Réglementation
 
 Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi que les cadres réglementaires essentiels liés à la gestion des équipements informatiques en fin de vie (DEEE) et à la protection des données personnelles (RGPD).
 
@@ -278,6 +278,36 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
 
 ---
 
-### 💻 0204. Atelier Mme Michu 👵🐶
+### 💻 0205. Atelier Mme Michu 👵🐶
 
 [Challenge 0204](../challenges/Challenge_0204.md)
+
+---
+
+### 💾 0206. BIOS, UEFI, MBR et GPT
+
+Ce cours explore les firmwares qui gèrent le démarrage de l'ordinateur (BIOS et UEFI) et les structures de partitionnement des disques durs (MBR et GPT) qui organisent les données.
+
+* **Le Firmware : BIOS vs UEFI** :
+  * **BIOS (Basic Input/Output System)** : Ancien firmware stocké sur une puce de la carte mère, responsable de l'initialisation du matériel au démarrage (POST - Power-On Self Test).
+    * **Limitations** : Interface textuelle (navigation au clavier), mode 16 bits, et incapacité à gérer des disques de plus de 2 To.
+  * **UEFI (Unified Extensible Firmware Interface)** : Le successeur moderne du BIOS.
+    * **Avantages** : Interface graphique (support de la souris), fonctionnement en 32/64 bits, et prise en charge des disques de plus de 2 To grâce au GPT.
+    * **Fonctionnalités avancées** :
+      * **Secure Boot** : Empêche l'exécution de chargeurs de démarrage non signés pour protéger contre les malwares au démarrage.
+      * **Fast Boot** : Accélère le démarrage en sautant certaines étapes d'initialisation matérielle.
+  * **Mise à jour (Flasher)** : Mettre à jour le firmware (BIOS/UEFI) peut améliorer la stabilité et la compatibilité, mais une erreur durant le processus peut rendre la carte mère inutilisable.
+
+* **Partitionnement de Disque : MBR vs GPT** :
+  * **MBR (Master Boot Record)** : Ancien standard de partitionnement.
+    * **Structure** : Stocke les informations de démarrage et la table des partitions dans le premier secteur du disque.
+    * **Limitations** : Limité à 4 partitions principales et à des disques de 2 To maximum. Vulnérable car les informations de démarrage sont stockées à un seul endroit.
+  * **GPT (GUID Partition Table)** : Le standard moderne, associé à l'UEFI.
+    * **Avantages** : Supporte jusqu'à 128 partitions, gère des disques de très grande taille (plus de 2 To), et offre une meilleure protection contre la corruption des données grâce à des copies de sauvegarde de la table de partition.
+
+* **Les Systèmes de Fichiers** : Ils organisent la manière dont les données sont stockées sur une partition.
+  * **NTFS (New Technology File System)** : Le système de fichiers par défaut de Windows. Robuste, il gère les grands fichiers et offre des fonctionnalités de sécurité avancées (chiffrement, permissions).
+  * **FAT32 (File Allocation Table 32)** : Ancien système de fichiers très compatible avec la plupart des appareils (clés USB, cartes mémoire). Sa principale limitation est qu'il ne peut pas gérer les fichiers de plus de 4 Go.
+  * **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
+
+[Challenge 0206](../challenges/Challenge_0206.md)

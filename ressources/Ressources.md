@@ -94,7 +94,7 @@ Liens et autres ressources utiles partagées pendant les cours.
 
 [CIDR Calculator](https://www.subnet-calculator.com/cidr.php)
 
-## 0201 : Introduction Centre de Service 🖥️
+## 0201. Outils Bureautiques 💼
 
 [Autoformation aux bases de la bureautique](http://clic-formation.net/)
 
@@ -120,14 +120,24 @@ Liens et autres ressources utiles partagées pendant les cours.
 
 [Ruskdesk](https://rustdesk.com/fr/) [Ruskdesk Github](https://github.com/rustdesk/rustdesk)
 
-## 0204 : Incidents hardware et réglementation 🔩
+## 0204 : Incidents Hardware et Réglementation 🔩
 
 [DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
 
 [CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
-## 0204 : Correction Atelier Mme Michu 🧑‍🏫
+## 0205 : Correction Atelier Mme Michu 🧑‍🏫
 
 [Lignes cmd BCDBoot](https://learn.microsoft.com/fr-fr/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di?view=windows-11)
 
 [Process Démarrage Windows](https://www.malekal.com/processus-demarrage-windows-mbr/)
+
+### 0205. BIOS, UEFI, MBR, GPT
+
+[2 Versions BIOS historiques](https://www.quora.com/What-are-the-differences-between-AMI-and-AWARD-BIOSes-1)
+
+[Boot PXE](https://www.it-connect.fr/le-boot-pxe-et-le-boot-ipxe-pour-les-debutants/)
+
+[GUID Partition Table](https://fr.wikipedia.org/wiki/GUID_Partition_Table)
+
+[MBR vs GPT](https://www.simplylinuxfaq.com/2017/10/main-differences-between-mbr-gpt.html)
