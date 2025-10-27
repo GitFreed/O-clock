@@ -68,6 +68,10 @@ Et ils sont direcement reconnus par Windows dans l'explorateur.
 
 ![USB Explore](../images/USBGPTexpl.png)
 
+Sinon on pouvait aussi tout faire par l'interface Graphique du Gestionaire de Disques.
+
+![USB Gestion Disques](../images/USBGPTgest.png)
+
 ### test de la Clef sur les VM
 
 Pour tester la clef dans les VM je lance simplement la VM, et dans la fenêtre ``Périphériques / USB`` je sélectionne ma clef.
