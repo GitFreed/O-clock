@@ -142,6 +142,6 @@ Liens et autres ressources utiles partagées pendant les cours.
 
 [MBR vs GPT](https://www.simplylinuxfaq.com/2017/10/main-differences-between-mbr-gpt.html)
 
-## 0207. ITIL
+## 0207. ITIL 📝
 
-[PDF ITIL](https://github.com/sethuaung/ITIL_V4_Materials/blob/main/1.%20ITIL_Foundation_Guide.pdf)
+[PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
