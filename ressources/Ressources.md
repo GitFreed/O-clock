@@ -132,7 +132,7 @@ Liens et autres ressources utiles partagées pendant les cours.
 
 [Process Démarrage Windows](https://www.malekal.com/processus-demarrage-windows-mbr/)
 
-### 0206. BIOS, UEFI, MBR et GPT 💾
+## 0206. BIOS, UEFI, MBR et GPT 💾
 
 [2 Versions BIOS historiques](https://www.quora.com/What-are-the-differences-between-AMI-and-AWARD-BIOSes-1)
 
@@ -142,6 +142,6 @@ Liens et autres ressources utiles partagées pendant les cours.
 
 [MBR vs GPT](https://www.simplylinuxfaq.com/2017/10/main-differences-between-mbr-gpt.html)
 
-### 0207. ITIL
+## 0207. ITIL
 
 [PDF ITIL](https://github.com/sethuaung/ITIL_V4_Materials/blob/main/1.%20ITIL_Foundation_Guide.pdf)
