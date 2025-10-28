@@ -311,3 +311,7 @@ Ce cours explore les firmwares qui gèrent le démarrage de l'ordinateur (BIOS e
   * **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
 
 [Challenge 0206](../challenges/Challenge_0206.md)
+
+---
+
+### 📝 0207. ITIL
