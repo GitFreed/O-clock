@@ -16,6 +16,11 @@ Cette introduction a permis de présenter le déroulement de la formation, ses o
 
 [Challenge 0102](../challenges/Challenge_0102.md)
 
+>Ressources :
+>
+>* [Titre Pro AIS](https://www.francecompetences.fr/recherche/rncp/37680/)
+>* [Le dossier Professionnel](https://www.dossierprofessionnel.fr/)
+
 ---
 
 ### 📜 0103. Histoire de l'Informatique
@@ -47,6 +52,19 @@ En résumé :
 
 [Challenge 0103](../challenges/Challenge_0103.md)
 
+>Ressources :
+>
+>* [Informatique](https://fr.wikipedia.org/wiki/Informatique)
+>* [Machine analytique](https://fr.wikipedia.org/wiki/Machine_analytique)
+>* [Algorythme d'Euclide](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide)
+>* [Machine de Turing](https://fr.wikipedia.org/wiki/Machine_de_Turing)
+>* [Architecture de Von Neumann](https://fr.wikipedia.org/wiki/Architecture_de_von_Neumann)
+>* [Ferranti Mk I](https://fr.wikipedia.org/wiki/Ferranti_Mark_I)
+>* [UNIVAC I](https://fr.wikipedia.org/wiki/UNIVAC_I)
+>* [PDP-8](https://fr.wikipedia.org/wiki/PDP-8)
+>* [Microprocesseur](https://fr.wikipedia.org/wiki/Microprocesseur)
+>* [Téléscripteur](https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9scripteur)
+
 ---
 
 ### ⚙️ 0104. Les Composants Matériels (Hardware)
@@ -73,6 +91,13 @@ Un ordinateur est constitué d'un ensemble de composants physiques (le hardware)
 
 [Challenge 0104](../challenges/Challenge_0104.md)
 
+>Ressources :
+>
+>* [Composants d'un PC](https://www.malekal.com/les-composants-hardware-et-materiel-dun-pc-le-dossier/)
+>* [Cache de Processeur](https://fr.wikipedia.org/wiki/Cache_de_processeur)
+>* [Architecture mémoire multi canaux](https://fr.wikipedia.org/wiki/Architecture_de_m%C3%A9moire_%C3%A0_multiples_canaux)
+>* [PC Builder](https://fr.pcpartpicker.com/list/)
+
 ---
 
 ### 💿 0105. Le Système d'Exploitation (OS)
@@ -94,6 +119,11 @@ Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédia
   * Il faut configurer le **BIOS/UEFI** de l'ordinateur pour qu'il démarre ("boot") sur ce média d'installation.
 
 [Challenge 0105](../challenges/Challenge_0105.md)
+
+>Ressources :
+>
+>* [Commandes Ubuntu](https://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base)
+>* [Les distributions Linux](https://alexblog.fr/wp-content/uploads/2011/01/evolution-linux-distributions.jpg)
 
 ---
 
@@ -141,6 +171,15 @@ Un réseau est un ensemble d'équipements informatiques connectés entre eux pou
 
 [Challenge 0107](../challenges/Challenge_0107.md)
 
+>Ressources :
+>
+>* [Le virus Stuxnet](https://www.youtube.com/watch?v=gXtp6C-3JKo)
+>* [Le cas Ledger](https://www.youtube.com/watch?v=4nXEfsQalkI)
+>* [Le cas Proton](https://www.youtube.com/watch?v=-pSdE6jjdG0)
+>* [Top 10 Web Application Security Risks](https://owasp.org/www-project-top-ten/)
+>* [Mitre-CVE version Européenne (car le Mitre à failli sauter avec les coupes de Trump)](https://euvd.enisa.europa.eu/)
+>* [Loi informatique et Libertés](https://fr.wikipedia.org/wiki/Loi_informatique_et_libert%C3%A9s)
+
 ---
 
 ### 🛡️ 0108. Sécurité Informatique
@@ -171,11 +210,25 @@ La sécurité informatique vise à protéger les systèmes d'information contre 
 
 [Challenge 0108](../challenges/Challenge_0108.md)
 
+>Ressources :
+>
+>* [Antivirus](https://fr.wikipedia.org/wiki/Logiciel_antivirus)
+>* [Exemple Social Engineering : Hushpuppy](https://etudestech.com/decryptage/portrait-arnaquer-hushpuppi-hacker/)
+>* [Chiffrer et pas Crypter](https://chiffrer.info/)
+>* [Chiffrement Asymétrique + Symétrique](https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman)
+>* [Comprendre le chiffrement](https://www.youtube.com/watch?v=7W7WPMX7arI)
+>* [Télégraphe de Chappe](https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9graphe_Chappe)
+>* [Préfixe Binaire](https://fr.wikipedia.org/wiki/Pr%C3%A9fixe_binaire)
+>* [Tableau de Calcul Binaire](https://lesitedelaclasse.fr/wp-content/uploads/2018/12/tableau-binaire.png)
+>* [Table de Conversion](http://yannklein.free.fr/cours/reseau/conversion.html)
+>* [Convertisseur](https://www.rapidtables.org/fr/convert/number/binary-to-decimal.html?x=1111)
+>* [Encodage de nos lettres UTF-8](https://www.malekal.com/utf-8-comment-ca-marche/)
+
 ---
 
 ### 🧮 0109. Atelier calcul d'adresse IP et Masque sous-réseau
 
-Cet atelier pratique a permis de mettre en application les concepts de l'adressage IPv4. L'objectif était de pouvoir, à partir d'une adresse IP et de son masque, déterminer les informations essentielles d'un sous-réseau :
+> Cet atelier pratique a permis de mettre en application les concepts de l'adressage IPv4. L'objectif était de pouvoir, à partir d'une adresse IP et de son masque, déterminer les informations essentielles d'un sous-réseau :
 
 * L'adresse du réseau.
 * L'adresse de broadcast (diffusion).
@@ -205,13 +258,13 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ## **🛠️ Saison 02 : Support aux Utilisateurs**
 
-Cette saison se concentre sur les outils et méthodes pour assister les utilisateurs, diagnostiquer et résoudre les incidents courants sur les postes de travail, etc.
+> Cette saison se concentre sur les outils et méthodes pour assister les utilisateurs, diagnostiquer et résoudre les incidents courants sur les postes de travail, etc.
 
 ---
 
 ### 💼 0201. Outils Bureautiques
 
-Ce cours présente les suites bureautiques, des ensembles de logiciels essentiels pour la productivité en entreprise.
+> Ce cours présente les suites bureautiques, des ensembles de logiciels essentiels pour la productivité en entreprise.
 
 * **Suite Microsoft Office** : La suite la plus répandue, développée par Microsoft.
   * **Composants principaux** : **Word** (traitement de texte), **Excel** (tableur), **PowerPoint** (présentation) et **Outlook** (messagerie).
@@ -223,19 +276,19 @@ Ce cours présente les suites bureautiques, des ensembles de logiciels essentiel
 
 * **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel.
 
+[Challenge 0201](../challenges/Challenge_0201.md)
+
 >Ressources :
 >
 >* [Autoformation aux bases de la bureautique](http://clic-formation.net/)
 >* [Base de donnée de logiciels alternatifs](https://alternativeto.net/)
 >* [Site comparatif de solutions alternatives d'entreprises](https://www.capterra.fr/)
 
-[Challenge 0201](../challenges/Challenge_0201.md)
-
 ---
 
 ### 🔍 0202. Diagnostic et Résolution d'Incidents
 
-Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre les problèmes sur un système d'exploitation Windows.
+> Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre les problèmes sur un système d'exploitation Windows.
 
 * **Outils de diagnostic natifs de Windows** :
   * **Gestionnaire des tâches** : Pour surveiller les processus, les performances (CPU, mémoire) et gérer les applications au démarrage.
@@ -258,12 +311,12 @@ Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre le
 * **Logiciels tiers utiles** :
   * Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
+[Challenge 0202](../challenges/Challenge_0202.md)
+
 >Ressources :
 >
 >* [Sysinternals](https://learn.microsoft.com/fr-fr/sysinternals/)
 >* [Autocomplétion des CMD Terminal](https://github.com/chrisant996/clink)
-
-[Challenge 0202](../challenges/Challenge_0202.md)
 
 ---
 
@@ -281,7 +334,7 @@ Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre le
 
 ### 🔩 0204. Incidents Hardware et Réglementation
 
-Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi que les cadres réglementaires essentiels liés à la gestion des équipements informatiques en fin de vie (DEEE) et à la protection des données personnelles (RGPD).
+> Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi que les cadres réglementaires essentiels liés à la gestion des équipements informatiques en fin de vie (DEEE) et à la protection des données personnelles (RGPD).
 
 * **Diagnostic des Pannes Matérielles** :
   * **Premières étapes** : Avant toute intervention complexe, il est crucial d'effectuer des vérifications simples : nettoyer la poussière, débrancher les périphériques non essentiels, tester les câbles et analyser les messages d'erreur au démarrage.
@@ -304,16 +357,18 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
   * **Rôle de la CNIL** : En France, la **Commission Nationale de l'Informatique et des Libertés (CNIL)** est l'autorité chargée de veiller au respect du RGPD. Elle informe, contrôle et peut sanctionner les entreprises en cas de manquement.
   * **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
 
+[Challenge 0203](../challenges/Challenge_0203.md)
+
 >Ressources :
 >
 >* [DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
 >* [CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
-[Challenge 0203](../challenges/Challenge_0203.md)
-
 ---
 
 ### 💻 0205. Atelier Mme Michu 👵🐶
+
+> L'atelier « Mme Michu » a servi de cas pratique pour appliquer les concepts vu précédemment, en simulant un dépannage complet : réparation du démarrage de Windows, résolution d'une surcharge CPU/RAM, vérification de l'état des disques et restauration de fichiers disparus.
 
 [Challenge 0204](../challenges/Challenge_0204.md)
 
@@ -350,6 +405,8 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
   * **FAT32 (File Allocation Table 32)** : Ancien système de fichiers très compatible avec la plupart des appareils (clés USB, cartes mémoire). Sa principale limitation est qu'il ne peut pas gérer les fichiers de plus de 4 Go.
   * **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
 
+[Challenge 0206](../challenges/Challenge_0206.md)
+
 > Ressources :
 >
 >* [2 Versions BIOS historiques](https://www.quora.com/What-are-the-differences-between-AMI-and-AWARD-BIOSes-1)
@@ -357,13 +414,11 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
 >* [GUID Partition Table](https://fr.wikipedia.org/wiki/GUID_Partition_Table)
 >* [MBR vs GPT](https://www.simplylinuxfaq.com/2017/10/main-differences-between-mbr-gpt.html)
 
-[Challenge 0206](../challenges/Challenge_0206.md)
-
 ---
 
 ### 📝 0207. ITIL
 
-[Ce cours](https://gamma.app/docs/ITIL-V4-naxpqmck8b6yltv?mode=doc) introduit ITIL (Information Technology Infrastructure Library), un référentiel de meilleures pratiques pour la gestion des services informatiques ITSM (Information Technology Service Management).
+> [Ce cours](https://gamma.app/docs/ITIL-V4-naxpqmck8b6yltv?mode=doc) introduit ITIL (Information Technology Infrastructure Library), un référentiel de meilleures pratiques pour la gestion des services informatiques ITSM (Information Technology Service Management).
 
 * **Qu'est-ce qu'ITIL ?**
     ITIL est un ensemble de bonnes pratiques destiné aux entreprises pour gérer au mieux leurs services informatiques. L'objectif principal est d'aligner les services informatiques sur les besoins métier afin de créer de la **valeur**. ITIL n'est pas une norme rigide mais un **cadre** (framework) qui fournit des recommandations. Il n'existe pas de "certification ITIL" pour une entreprise, mais des certifications individuelles pour les professionnels.
