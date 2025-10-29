@@ -2,15 +2,13 @@
 
 Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "Expert Cybersécurité" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées" et quelques ressources partagées lors des cours.
 
-Bien sûr ! Voici la table des matières en Markdown, prête à être copiée-collée, générée à partir de votre screenshot.
-
 ## 📖 Table des Matières
 
 ### [Saison 01. Savoirs de Base](#-saison-01-savoirs-de-base)
 
 - [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
 - [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
-- [0104. Les Composants Matériels](#-0104-Les-Composants-Matériels)
+- [0104. Les Composants Matériels](#-0104-les-composants-matériels)
 - [0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
 - [0106. Numération : Bits et Octets](#-0106-numération--bits-et-octets)
 - [0107. Introduction aux Réseaux Informatiques](#-0107-introduction-aux-réseaux-informatiques)
@@ -26,7 +24,6 @@ Bien sûr ! Voici la table des matières en Markdown, prête à être copiée-co
 - [0205. Atelier Mme Michu](#-0205-atelier-mme-michu-)
 - [0206. BIOS, UEFI, MBR et GPT](#-0206-bios-uefi-mbr-et-gpt)
 - [0207. & 0208. ITIL](#-0207--0208-itil)
-Bien sûr \! Voici la table des matières corrigée et prête à être copiée. Elle devrait résoudre les problèmes de liens que vous rencontriez.
 
 ---
 
