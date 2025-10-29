@@ -226,7 +226,9 @@ En résumé :
 
 ### 🧮 0109. Atelier calcul d'adresse IP et Masque sous-réseau
 
-> Cet atelier pratique a permis de mettre en application les concepts de l'adressage IPv4. L'objectif était de pouvoir, à partir d'une adresse IP et de son masque, déterminer les informations essentielles d'un sous-réseau :
+> Cet atelier pratique a permis de mettre en application les concepts de l'adressage IPv4.
+
+L'objectif était de pouvoir, à partir d'une adresse IP et de son masque, déterminer les informations essentielles d'un sous-réseau :
 
 * L'adresse du réseau.
 * L'adresse de broadcast (diffusion).
@@ -484,3 +486,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >
 >* [PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
 >* [Manifeste Agile](https://manifesteagile.fr/)
+
+---
+
+###
