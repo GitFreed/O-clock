@@ -8,7 +8,7 @@ Bien sûr ! Voici la table des matières en Markdown, prête à être copiée-co
 
 ### [Saison 01 : Savoirs de Base](#-saison-01--savoirs-de-base)
 
-- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](###-0101.-&-0102.-introduction-formation-o'clock-&-titre-pro-ais)
+- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
 - [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
 - [0104. Les Composants Matériels (Hardware)](#-0104-les-composants-matériels-hardware)
 - [0105. Le Système d'Exploitation (OS)](#-0105-le-système-dexploitation-os)
