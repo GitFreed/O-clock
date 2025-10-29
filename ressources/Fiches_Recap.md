@@ -192,6 +192,13 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 * 256- OS = Nombre magique
 * Calcul avec les multiples de l'adresse réseau et broadcast
 
+> Ressources :
+>
+>* [Logique ET OU](https://github.com/GitFreed/Challenges-O-clock/blob/main/images/Logique.jpg)
+>* [Méthode du nombre magique](https://zestedesavoir.com/tutoriels/321/calculer-une-plage-dadresses-avec-la-methode-magique/#2-10258_quest-ce-que-la-methode-magique)
+>* [Table masque de sous réseau, binaire et hôtes](https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png)
+>* [CIDR Calculator](https://www.subnet-calculator.com/cidr.php)
+
 [Challenge 0109](../challenges/Challenge_0109.md)
 
 ---
@@ -215,6 +222,12 @@ Ce cours présente les suites bureautiques, des ensembles de logiciels essentiel
   * **Avantages** : Elle est multiplateforme, compatible avec les formats de fichiers Microsoft et n'implique aucun coût de licence.
 
 * **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel.
+
+>Ressources :
+>
+>* [Autoformation aux bases de la bureautique](http://clic-formation.net/)
+>* [Base de donnée de logiciels alternatifs](https://alternativeto.net/)
+>* [Site comparatif de solutions alternatives d'entreprises](https://www.capterra.fr/)
 
 [Challenge 0201](../challenges/Challenge_0201.md)
 
@@ -245,7 +258,24 @@ Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre le
 * **Logiciels tiers utiles** :
   * Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
+>Ressources :
+>
+>* [Sysinternals](https://learn.microsoft.com/fr-fr/sysinternals/)
+>* [Autocomplétion des CMD Terminal](https://github.com/chrisant996/clink)
+
 [Challenge 0202](../challenges/Challenge_0202.md)
+
+---
+
+## 🔁 0203. Contrôle à distance
+
+>Ressources :
+>
+>* [Les réseaux virtuels sur virtualbox](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/)
+>* [Les réseaux virtuels sur vmware](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/)
+>* [WinRM](https://www.it-connect.fr/chapitres/utiliser-winrm-pour-la-gestion-a-distance/)
+>* [MobaXterm](https://mobaxterm.mobatek.net/)
+>* [Ruskdesk](https://rustdesk.com/fr/) et [Ruskdesk Github](https://github.com/rustdesk/rustdesk)
 
 ---
 
@@ -274,6 +304,11 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
   * **Rôle de la CNIL** : En France, la **Commission Nationale de l'Informatique et des Libertés (CNIL)** est l'autorité chargée de veiller au respect du RGPD. Elle informe, contrôle et peut sanctionner les entreprises en cas de manquement.
   * **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
 
+>Ressources :
+>
+>* [DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
+>* [CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
+
 [Challenge 0203](../challenges/Challenge_0203.md)
 
 ---
@@ -282,11 +317,16 @@ Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi qu
 
 [Challenge 0204](../challenges/Challenge_0204.md)
 
+> Ressources :
+>
+>* [Lignes cmd BCDBoot](https://learn.microsoft.com/fr-fr/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di?view=windows-11)
+>* [Process Démarrage Windows](https://www.malekal.com/processus-demarrage-windows-mbr/)
+
 ---
 
 ### 💾 0206. BIOS, UEFI, MBR et GPT
 
-Ce cours explore les firmwares qui gèrent le démarrage de l'ordinateur (BIOS et UEFI) et les structures de partitionnement des disques durs (MBR et GPT) qui organisent les données.
+> Ce cours explore les firmwares qui gèrent le démarrage de l'ordinateur (BIOS et UEFI) et les structures de partitionnement des disques durs (MBR et GPT) qui organisent les données.
 
 * **Le Firmware : BIOS vs UEFI** :
   * **BIOS (Basic Input/Output System)** : Ancien firmware stocké sur une puce de la carte mère, responsable de l'initialisation du matériel au démarrage (POST - Power-On Self Test).
@@ -310,8 +350,77 @@ Ce cours explore les firmwares qui gèrent le démarrage de l'ordinateur (BIOS e
   * **FAT32 (File Allocation Table 32)** : Ancien système de fichiers très compatible avec la plupart des appareils (clés USB, cartes mémoire). Sa principale limitation est qu'il ne peut pas gérer les fichiers de plus de 4 Go.
   * **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
 
+> Ressources :
+>
+>* [2 Versions BIOS historiques](https://www.quora.com/What-are-the-differences-between-AMI-and-AWARD-BIOSes-1)
+>* [Boot PXE](https://www.it-connect.fr/le-boot-pxe-et-le-boot-ipxe-pour-les-debutants/)
+>* [GUID Partition Table](https://fr.wikipedia.org/wiki/GUID_Partition_Table)
+>* [MBR vs GPT](https://www.simplylinuxfaq.com/2017/10/main-differences-between-mbr-gpt.html)
+
 [Challenge 0206](../challenges/Challenge_0206.md)
 
 ---
 
 ### 📝 0207. ITIL
+
+[Ce cours](https://gamma.app/docs/ITIL-V4-naxpqmck8b6yltv?mode=doc) introduit ITIL (Information Technology Infrastructure Library), un référentiel de meilleures pratiques pour la gestion des services informatiques ITSM (Information Technology Service Management).
+
+* **Qu'est-ce qu'ITIL ?**
+    ITIL est un ensemble de bonnes pratiques destiné aux entreprises pour gérer au mieux leurs services informatiques. L'objectif principal est d'aligner les services informatiques sur les besoins métier afin de créer de la **valeur**. ITIL n'est pas une norme rigide mais un **cadre** (framework) qui fournit des recommandations. Il n'existe pas de "certification ITIL" pour une entreprise, mais des certifications individuelles pour les professionnels.
+
+* **Historique** :
+    Développé dans les années 1980 par le gouvernement britannique, ITIL visait à standardiser la gestion des services informatiques. Il a depuis évolué à travers plusieurs versions pour s'adapter aux changements technologiques et aux nouvelles méthodologies. **ITIL 4**, la version actuelle, est conçu pour être plus flexible et s'intégrer avec d'autres cadres comme **Agile, DevOps et Lean**.
+  * **Agile** est une approche de gestion de projet qui privilégie la flexibilité et la collaboration. Le travail est découpé en cycles courts et itératifs (appelés "sprints") pour s'adapter rapidement aux changements.
+  * **DevOps** est une culture qui vise à unifier le développement (Dev) et les opérations (Ops) pour livrer des applications et des services plus rapidement et de manière plus fiable, en s'appuyant sur l'automatisation et la collaboration.
+  * **Lean** est une philosophie axée sur l'optimisation des processus en éliminant tout gaspillage ("waste") afin de maximiser la valeur pour le client avec le moins de ressources possible
+
+* **Concepts Clés de la Gestion des Services** :
+  * **Valeur** : Le bénéfice perçu, l'utilité et l'importance de quelque chose. La valeur est toujours **co-créée** par une collaboration active entre le fournisseur de services et le consommateur.
+  * **Service** : Un moyen de co-créer de la valeur en facilitant les **résultats** que les clients souhaitent obtenir, sans qu'ils aient à gérer les **coûts** et les **risques** spécifiques.
+  * **Produit** : Une configuration des ressources d'une organisation, conçue pour offrir de la valeur à un consommateur. Les services sont basés sur des produits.
+  * **Relation de service** : Comprend la **fourniture de service** (par le fournisseur), la **consommation de service** (par le consommateur) et la **gestion de la relation** pour assurer la co-création de valeur.
+
+* **Le Système de Valeur des Services (SVS)** :
+    Le SVS décrit comment tous les composants et activités d'une organisation fonctionnent ensemble comme un système pour faciliter la création de valeur. Il transforme une **opportunité** ou une **demande** en **valeur** pour les parties prenantes. Ses 5 composants principaux sont :
+    1. **Les Principes Directeurs ITIL** : Recommandations qui guident une organisation en toutes circonstances.
+    2. **La Gouvernance** : Les moyens par lesquels une organisation est dirigée et contrôlée.
+    3. **La Chaîne de Valeur des Services (SVC)** : Le modèle opérationnel central du SVS.
+    4. **Les Pratiques ITIL** : Ensembles de ressources pour accomplir un travail (anciennement "processus").
+    5. **L'Amélioration Continue** : Une activité récurrente à tous les niveaux pour s'assurer que les performances répondent aux attentes.
+
+* **Les Sept Principes Directeurs** :
+    Ce sont des recommandations universelles et durables qui guident les décisions et les actions.
+    1. **Privilégier la valeur** : Tout doit contribuer, directement ou indirectement, à la création de valeur.
+    2. **Commencer là où vous êtes** : Ne pas repartir de zéro ; évaluer et tirer parti de ce qui existe déjà.
+    3. **Progresser par itérations avec des retours** : Organiser le travail en petites parties gérables pour livrer des résultats plus rapidement et s'ajuster grâce aux retours.
+    4. **Collaborer et promouvoir la visibilité** : Travailler ensemble et partager les informations pour prendre de meilleures décisions.
+    5. **Penser et travailler de façon holistique** : Avoir une vision d'ensemble et comprendre comment les différentes parties du système interagissent.
+    6. **Opter pour la simplicité et rester pratique** : Éliminer tout ce qui n'apporte pas de valeur et choisir la solution la plus simple et efficace.
+    7. **Optimiser et automatiser** : Maximiser la valeur du travail en optimisant les processus avant de les automatiser.
+
+* **Les Quatre Dimensions de la Gestion des Services** :
+    Pour une approche holistique, ITIL 4 identifie quatre dimensions à considérer pour chaque service.
+    1. **Organisations et personnes** : Culture, structure, rôles et compétences.
+    2. **Information et technologie** : Les informations, connaissances et technologies nécessaires.
+    3. **Partenaires et fournisseurs** : Les relations avec les autres organisations impliquées.
+    4. **Flux de valeur et processus** : Les activités et workflows qui permettent la création de valeur.
+
+* **La Chaîne de Valeur des Services (SVC)** :
+    C'est le cœur du SVS. Elle représente un modèle opérationnel de six activités qui peuvent être combinées pour créer différents **flux de valeur** afin de répondre à la demande.
+    1. **Planifier** : Assurer une compréhension partagée de la vision et de la direction.
+    2. **Améliorer** : Assurer l'amélioration continue des produits et services.
+    3. **Engager** : Comprendre les besoins des parties prenantes et maintenir de bonnes relations.
+    4. **Concevoir et assurer la transition** : S'assurer que les services répondent aux attentes en termes de qualité, de coût et de délai.
+    5. **Obtenir/construire** : S'assurer que les composants de service sont disponibles quand et où ils sont nécessaires.
+    6. **Fournir et assurer le support** : S'assurer que les services sont fournis et supportés conformément aux attentes.
+
+* **Quelques Pratiques ITIL Clés** :
+  * **Amélioration continue** : Aligner les services sur les besoins métier en constante évolution.
+  * **Contrôle des changements** : Maximiser le nombre de changements réussis en évaluant les risques.
+  * **Gestion des incidents** : Rétablir le fonctionnement normal du service le plus rapidement possible.
+  * **Gestion des problèmes** : Réduire la probabilité et l'impact des incidents en identifiant leurs causes profondes.
+  * **Gestion des demandes de service** : Gérer les demandes prédéfinies des utilisateurs (ex: demande d'information, d'accès).
+  * **Centre de services (Service Desk)** : Le point de contact unique entre le fournisseur et les utilisateurs.
+  * **Gestion des niveaux de service (SLM)** : Définir des cibles de performance claires pour les services (SLA).
+
+> Ressources : [PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
