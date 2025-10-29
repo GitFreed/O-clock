@@ -6,10 +6,10 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison 01. Savoirs de Base](#-saison-01-savoirs-de-base)
 
-- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
-- [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
-- [0104. Les Composants Matériels](#-0104-les-composants-matériels)
-- [0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
+- [🎯 0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
+- [📜 0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
+- [⚙️ 0104. Les Composants Matériels](#-0104-les-composants-matériels)
+- [💿 0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
 - [0106. Numération : Bits et Octets](#-0106-numération--bits-et-octets)
 - [0107. Introduction aux Réseaux Informatiques](#-0107-introduction-aux-réseaux-informatiques)
 - [0108. Sécurité Informatique](#-0108-sécurité-informatique)
@@ -24,32 +24,6 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [0205. Atelier Mme Michu](#-0205-atelier-mme-michu-)
 - [0206. BIOS, UEFI, MBR et GPT](#-0206-bios-uefi-mbr-et-gpt)
 - [0207. & 0208. ITIL](#-0207--0208-itil)
-
----
-
-## 📚 Table des matières
-
-### Saison 01. Savoirs de Base
-
-- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#0101--0102-introduction-formation-oclock--titre-pro-ais)
-- [0103. Histoire de l'Informatique](#0103-histoire-de-linformatique)
-- [0104. Les Composants Matériels](#0104-les-composants-matériels)
-- [0105. Le Système d’Exploitation](#0105-le-système-dexploitation)
-- [0106. Numération : Bits et Octets](#0106-numération--bits-et-octets)
-- [0107. Introduction aux Réseaux Informatiques](#0107-introduction-aux-réseaux-informatiques)
-- [0108. Sécurité Informatique](#0108-sécurité-informatique)
-- [0109. Atelier calcul d’adresse IP et Masque sous-réseau](#0109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
-- [FIN Saison 01. Savoirs de Base](#fin-saison-01-savoirs-de-base)
-
-### Saison 02. Support aux Utilisateurs
-
-- [0201. Outils Bureautiques](#0201-outils-bureautiques)
-- [0202. Diagnostic et Résolution d’Incidents](#0202-diagnostic-et-résolution-dincidents)
-- [0203. Contrôle à distance](#0203-contrôle-à-distance)
-- [0204. Incidents Hardware et Réglementation](#0204-incidents-hardware-et-réglementation)
-- [0205. Atelier Mme Michu 🧓💻](#0205-atelier-mme-michu-)
-- [0206. BIOS, UEFI, MBR et GPT](#0206-bios-uefi-mbr-et-gpt)
-- [0207. & 0208. ITIL](#0207--0208-itil)
 
 ---
 
