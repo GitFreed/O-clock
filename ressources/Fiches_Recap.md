@@ -443,6 +443,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
     4. **Les Pratiques ITIL** : Ensembles de ressources pour accomplir un travail (anciennement "processus").
     5. **L'Amélioration Continue** : Une activité récurrente à tous les niveaux pour s'assurer que les performances répondent aux attentes.
 
+![ITILSVS](../images/ITIL1.png)
+
 * **Les Sept Principes Directeurs** :
     Ce sont des recommandations universelles et durables qui guident les décisions et les actions.
     1. **Privilégier la valeur** : Tout doit contribuer, directement ou indirectement, à la création de valeur.
@@ -478,4 +480,9 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   * **Centre de services (Service Desk)** : Le point de contact unique entre le fournisseur et les utilisateurs.
   * **Gestion des niveaux de service (SLM)** : Définir des cibles de performance claires pour les services (SLA).
 
-> Ressources : [PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
+![ITIL](../images/ITIL2.png)
+
+> Ressources :
+>
+>* [PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
+>* [Manifeste Agile](https://manifesteagile.fr/)

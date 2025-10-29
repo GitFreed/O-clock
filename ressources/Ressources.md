@@ -101,3 +101,4 @@ Liens et autres ressources utiles partagées pendant les cours.
 ## 0207. ITIL 📝
 
 >* [PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
+>* [Manifeste Agile](https://manifesteagile.fr/)
