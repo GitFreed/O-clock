@@ -494,7 +494,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 > Ressources :
 >
->* [PDF ITIL](../images/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
+>* [PDF ITIL](../ressources/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
 >* [Manifeste Agile](https://manifesteagile.fr/)
 
 ---
