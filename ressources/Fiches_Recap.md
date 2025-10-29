@@ -6,10 +6,10 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison 01. Savoirs de Base](#-saison-01-savoirs-de-base)
 
-- [🎯 0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
-- [📜 0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
-- [⚙️ 0104. Les Composants Matériels](#-0104-les-composants-matériels)
-- [💿 0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
+- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
+- [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
+- [0104. Les Composants Matériels](#-0104-les-composants-matériels)
+- [0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
 - [0106. Numération : Bits et Octets](#-0106-numération--bits-et-octets)
 - [0107. Introduction aux Réseaux Informatiques](#-0107-introduction-aux-réseaux-informatiques)
 - [0108. Sécurité Informatique](#-0108-sécurité-informatique)
