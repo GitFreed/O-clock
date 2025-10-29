@@ -6,53 +6,31 @@ Bien sûr ! Voici la table des matières en Markdown, prête à être copiée-co
 
 ## 📖 Table des Matières
 
-### [Saison 01 : Savoirs de Base](#-saison-01--savoirs-de-base)
+### [Saison 01. Savoirs de Base](#-saison-01-savoirs-de-base)
 
 - [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
 - [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
-- [0104. Les Composants Matériels (Hardware)](#-0104-les-composants-matériels-hardware)
-- [0105. Le Système d'Exploitation (OS)](#-0105-le-système-dexploitation-os)
+- [0104. Les Composants Matériels](#-0104-Les-Composants-Matériels)
+- [0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
 - [0106. Numération : Bits et Octets](#-0106-numération--bits-et-octets)
 - [0107. Introduction aux Réseaux Informatiques](#-0107-introduction-aux-réseaux-informatiques)
 - [0108. Sécurité Informatique](#-0108-sécurité-informatique)
 - [0109. Atelier calcul d'adresse IP et Masque sous-réseau](#-0109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
 
-### [Saison 02 : Support aux Utilisateurs](#-saison-02--support-aux-utilisateurs)
+### [Saison 02. Support aux Utilisateurs](#-saison-02-support-aux-utilisateurs)
 
 - [0201. Outils Bureautiques](#-0201-outils-bureautiques)
 - [0202. Diagnostic et Résolution d'Incidents](#-0202-diagnostic-et-résolution-dincidents)
 - [0203. Contrôle à distance](#-0203-contrôle-à-distance)
 - [0204. Incidents Hardware et Réglementation](#-0204-incidents-hardware-et-réglementation)
-- [0205. Atelier Mme Michu](#-0205-atelier-mme-michu)
+- [0205. Atelier Mme Michu](#-0205-atelier-mme-michu-)
 - [0206. BIOS, UEFI, MBR et GPT](#-0206-bios-uefi-mbr-et-gpt)
 - [0207. & 0208. ITIL](#-0207--0208-itil)
 Bien sûr \! Voici la table des matières corrigée et prête à être copiée. Elle devrait résoudre les problèmes de liens que vous rencontriez.
 
-
-## 📖 Table des Matières
-
-### [Saison 01 : Savoirs de Base](#-saison-01--savoirs-de-base)
-- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
-- [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
-- [0104. Les Composants Matériels (Hardware)](#-0104-les-composants-matériels-hardware)
-- [0105. Le Système d'Exploitation (OS)](#-0105-le-système-dexploitation-os)
-- [0106. Numération : Bits et Octets](#-0106-numération--bits-et-octets)
-- [0107. Introduction aux Réseaux Informatiques](#-0107-introduction-aux-réseaux-informatiques)
-- [0108. Sécurité Informatique](#-0108-sécurité-informatique)
-- [0109. Atelier calcul d'adresse IP et Masque sous-réseau](#-0109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
-
-### [Saison 02 : Support aux Utilisateurs](#-saison-02--support-aux-utilisateurs)
-- [0201. Outils Bureautiques](#-0201-outils-bureautiques)
-- [0202. Diagnostic et Résolution d'Incidents](#-0202-diagnostic-et-résolution-dincidents)
-- [0203. Contrôle à distance](#-0203-contrôle-à-distance)
-- [0204. Incidents Hardware et Réglementation](#-0204-incidents-hardware-et-réglementation)
-- [0205. Atelier Mme Michu](#-0205-atelier-mme-michu)
-- [0206. BIOS, UEFI, MBR et GPT](#-0206-bios-uefi-mbr-et-gpt)
-- [0207. & 0208. ITIL](#-0207--0208-itil)
-
 ---
 
-## **💻 Saison 01 : Savoirs de Base**
+## **💻 Saison 01. Savoirs de Base**
 
 > L'objectif de cette saison est de construire un socle de connaissances commun sur le fonctionnement des ordinateurs, des systèmes d'exploitation, des réseaux et de la sécurité.
 
@@ -115,7 +93,7 @@ En résumé :
 
 ---
 
-### ⚙️ 0104. Les Composants Matériels (Hardware)
+### ⚙️ 0104. Les Composants Matériels
 
 > Un ordinateur est constitué d'un ensemble de composants physiques (le hardware) qui interagissent pour fonctionner.
 
@@ -148,7 +126,7 @@ En résumé :
 
 ---
 
-### 💿 0105. Le Système d'Exploitation (OS)
+### 💿 0105. Le Système d'Exploitation
 
 > Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédiaire entre le matériel et les applications logicielles. Les plus courants sur ordinateur sont Windows, macOS et GNU/Linux.
 
@@ -306,7 +284,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## **💻 FIN Saison 01 : Savoirs de Base**
+## **💻 FIN Saison 01. Savoirs de Base**
 
 [QCM Saison 01](https://forms.gle/MofrrYWGy8XXPN6D7)
 
@@ -314,7 +292,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## **🛠️ Saison 02 : Support aux Utilisateurs**
+## **🛠️ Saison 02. Support aux Utilisateurs**
 
 > Cette saison se concentre sur les outils et méthodes pour assister les utilisateurs, diagnostiquer et résoudre les incidents courants sur les postes de travail, etc.
 
