@@ -1,6 +1,6 @@
 # Résumé des Saisons O'clock
 
-Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "Expert Cybersécurité" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées".
+Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "Expert Cybersécurité" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées" et quelques ressources partagées lors des cours.
 
 ## **💻 Saison 01 : Savoirs de Base**
 
@@ -256,6 +256,14 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
+## **💻 FIN Saison 01 : Savoirs de Base**
+
+[QCM Saison 01](https://forms.gle/MofrrYWGy8XXPN6D7)
+
+![QCM Résultats](../images/QCMs01.png)
+
+---
+
 ## **🛠️ Saison 02 : Support aux Utilisateurs**
 
 > Cette saison se concentre sur les outils et méthodes pour assister les utilisateurs, diagnostiquer et résoudre les incidents courants sur les postes de travail, etc.
@@ -320,7 +328,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## 🔁 0203. Contrôle à distance
+### 🔁 0203. Contrôle à distance
 
 >Ressources :
 >
@@ -416,7 +424,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 📝 0207. ITIL
+### 📝 0207. & 0208. ITIL
 
 > [Ce cours](https://gamma.app/docs/ITIL-V4-naxpqmck8b6yltv?mode=doc) introduit ITIL (Information Technology Infrastructure Library), un référentiel de meilleures pratiques pour la gestion des services informatiques ITSM (Information Technology Service Management).
 
@@ -425,9 +433,9 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 * **Historique** :
     Développé dans les années 1980 par le gouvernement britannique, ITIL visait à standardiser la gestion des services informatiques. Il a depuis évolué à travers plusieurs versions pour s'adapter aux changements technologiques et aux nouvelles méthodologies. **ITIL 4**, la version actuelle, est conçu pour être plus flexible et s'intégrer avec d'autres cadres comme **Agile, DevOps et Lean**.
-  * **Agile** est une approche de gestion de projet qui privilégie la flexibilité et la collaboration. Le travail est découpé en cycles courts et itératifs (appelés "sprints") pour s'adapter rapidement aux changements.
-  * **DevOps** est une culture qui vise à unifier le développement (Dev) et les opérations (Ops) pour livrer des applications et des services plus rapidement et de manière plus fiable, en s'appuyant sur l'automatisation et la collaboration.
-  * **Lean** est une philosophie axée sur l'optimisation des processus en éliminant tout gaspillage ("waste") afin de maximiser la valeur pour le client avec le moins de ressources possible
+  * * *Agile est une approche de gestion de projet qui privilégie la flexibilité et la collaboration. Le travail est découpé en cycles courts et itératifs (appelés "sprints") pour s'adapter rapidement aux changements.*
+  * * *DevOps est une culture qui vise à unifier le développement (Dev) et les opérations (Ops) pour livrer des applications et des services plus rapidement et de manière plus fiable, en s'appuyant sur l'automatisation et la collaboration.*
+  * * *Lean est une philosophie axée sur l'optimisation des processus en éliminant tout gaspillage ("waste") afin de maximiser la valeur pour le client avec le moins de ressources possible.*
 
 * **Concepts Clés de la Gestion des Services** :
   * **Valeur** : Le bénéfice perçu, l'utilité et l'importance de quelque chose. La valeur est toujours **co-créée** par une collaboration active entre le fournisseur de services et le consommateur.
@@ -481,6 +489,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   * **Gestion des niveaux de service (SLM)** : Définir des cibles de performance claires pour les services (SLA).
 
 ![ITIL](../images/ITIL2.png)
+
+[Challenge 0207](../challenges/Challenge_0207.md)
 
 > Ressources :
 >
