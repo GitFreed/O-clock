@@ -2,17 +2,15 @@
 
 Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "Expert Cybersécurité" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées".
 
-Quelques liens utiles donnés lors de ces cours sont [ICI](../ressources/Ressources.md).
-
 ## **💻 Saison 01 : Savoirs de Base**
 
-L'objectif de cette saison est de construire un socle de connaissances commun sur le fonctionnement des ordinateurs, des systèmes d'exploitation, des réseaux et de la sécurité.
+> L'objectif de cette saison est de construire un socle de connaissances commun sur le fonctionnement des ordinateurs, des systèmes d'exploitation, des réseaux et de la sécurité.
 
 ---
 
 ### 🎯 0101. & 0102. Introduction Formation O'clock & Titre Pro AIS
 
-Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
+> Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
 [Challenge 0102](../challenges/Challenge_0102.md)
 
@@ -25,7 +23,7 @@ Cette introduction a permis de présenter le déroulement de la formation, ses o
 
 ### 📜 0103. Histoire de l'Informatique
 
-L'informatique est un domaine dont les racines sont bien plus anciennes que les ordinateurs modernes.
+> L'informatique est un domaine dont les racines sont bien plus anciennes que les ordinateurs modernes.
 
 * **Les Origines** : Les concepts de base remontent à l'Antiquité avec les algorithmes, comme celui d'**Euclide**. Le mot "algorithme" lui-même dérive du nom du mathématicien **Al-Khwarizmî**.
 * **La Programmation Mécanique** : Le premier système mécanique programmable est le **métier à tisser Jacquard**, qui utilisait des cartes perforées. **Ada Lovelace** est reconnue pour avoir écrit le premier véritable programme informatique sur la machine analytique de Charles Babbage au XIXe siècle.
@@ -69,7 +67,7 @@ En résumé :
 
 ### ⚙️ 0104. Les Composants Matériels (Hardware)
 
-Un ordinateur est constitué d'un ensemble de composants physiques (le hardware) qui interagissent pour fonctionner.
+> Un ordinateur est constitué d'un ensemble de composants physiques (le hardware) qui interagissent pour fonctionner.
 
 * **La Carte Mère** : C'est le circuit imprimé central qui connecte tous les autres composants. Elle inclut :
   * Le **socket** pour le processeur.
@@ -102,7 +100,7 @@ Un ordinateur est constitué d'un ensemble de composants physiques (le hardware)
 
 ### 💿 0105. Le Système d'Exploitation (OS)
 
-Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédiaire entre le matériel et les applications logicielles. Les plus courants sur ordinateur sont Windows, macOS et GNU/Linux.
+> Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédiaire entre le matériel et les applications logicielles. Les plus courants sur ordinateur sont Windows, macOS et GNU/Linux.
 
 * **Le Noyau (Kernel)** : C'est le cœur de l'OS. Il gère les ressources matérielles (mémoire, processeur), l'exécution des programmes, les périphériques et les systèmes de fichiers.
 * **Les Interfaces** : Pour interagir avec le noyau, on utilise :
@@ -129,7 +127,7 @@ Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédia
 
 ### 🔢 0106. Numération : Bits et Octets
 
-Les ordinateurs fonctionnent avec un système binaire, qui est la base de toute information numérique.
+> Les ordinateurs fonctionnent avec un système binaire, qui est la base de toute information numérique.
 
 * **Bit et Octet** :
   * Le **bit** (binary digit) est la plus petite unité d'information et peut avoir deux valeurs : 0 ou 1.
@@ -152,7 +150,7 @@ Les ordinateurs fonctionnent avec un système binaire, qui est la base de toute 
 
 ### 🌐 0107. Introduction aux Réseaux Informatiques
 
-Un réseau est un ensemble d'équipements informatiques connectés entre eux pour partager des ressources et communiquer.
+> Un réseau est un ensemble d'équipements informatiques connectés entre eux pour partager des ressources et communiquer.
 
 * **Types de Réseaux (par étendue)** :
   * **LAN (Local Area Network)** : Réseau local (ex: à la maison, dans une entreprise).
@@ -184,7 +182,7 @@ Un réseau est un ensemble d'équipements informatiques connectés entre eux pou
 
 ### 🛡️ 0108. Sécurité Informatique
 
-La sécurité informatique vise à protéger les systèmes d'information contre les menaces et à garantir leur bon fonctionnement.
+> La sécurité informatique vise à protéger les systèmes d'information contre les menaces et à garantir leur bon fonctionnement.
 
 * **Les 5 Piliers de la Sécurité** :
     1. **Confidentialité** : S'assurer que seules les personnes autorisées peuvent accéder aux données.
