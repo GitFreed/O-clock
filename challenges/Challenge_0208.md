@@ -24,10 +24,23 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 ## Challenge 0208 📝
 
-### Installer GLPI Agent sur des VM
+### Installer GLPI Agent sur des VM 💽
 
 Je vais sur le site officiel GLPI Project qui me renvois sur le Github pour trouver [la dernière version de l'agent](https://github.com/glpi-project/glpi-agent/releases/tag/1.15)
 
-![](/images/2025-10-30-17-56-23.png)
+![GLPI Agent Github](/images/2025-10-30-17-56-23.png)
 
-### Tester la gestion des tickets dans GLPI
+Lors de l'installation de l'agent on doit pointer le serveur GLPI. Sous Linux tout se fait en ligne de commande.
+
+![Install](/images/2025-10-30-18-35-37.png)
+
+Une fois terminé je force l'agent à faire un premier inventaire.
+
+![Force Agent](/images/2025-10-30-18-58-33.png)
+
+Dans mon server GLPI je retrouve bien mes 2 machines !
+
+![Inventaire done](/images/2025-10-30-19-02-24.png)
+
+### Tester la gestion des tickets dans GLPI 🎫
+
