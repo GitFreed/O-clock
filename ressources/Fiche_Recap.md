@@ -531,3 +531,12 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 GLPI, Lotus (IBM), Zendesk, Connectwise, Easyvista, etc
 
 (Gestionnaire Libre de Parc Informatique)
+
+ACL : Accès Control List
+
+SLA : Service Level Agreement, ou accord de niveau de service, est un contrat formel entre un fournisseur de services et un client qui définit les attentes en matière de performance, les niveaux de service promis, les délais de réponse et de résolution, ainsi que les conséquences en cas de non-respect des engagements.
+
+> Ressources :
+>
+>*[GLPI](https://glpi.pandit.fr/public/)
+>*
