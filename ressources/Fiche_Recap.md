@@ -559,6 +559,6 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 > Ressources :
 >
->*[GLPI](https://glpi.pandit.fr/public/)
+>[GLPI](https://glpi.pandit.fr/public/)
 
 ---
