@@ -28,4 +28,6 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 Je vais sur le site officiel GLPI Project qui me renvois sur le Github pour trouver [la dernière version de l'agent](https://github.com/glpi-project/glpi-agent/releases/tag/1.15)
 
+![](/images/2025-10-30-17-56-23.png)
+
 ### Tester la gestion des tickets dans GLPI
