@@ -66,6 +66,18 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 ![Filtre](/images/2025-10-30-19-35-54.png)
 
-* 
+* Et trouver les ID pour le contrôle à distance.
+
+![Remote desk](/images/2025-10-30-20-03-09.png)
+
+* J'ai pu prendre le contrôle sur sa machine et refaire fonctionner le son qui était coupé dans les paramètres avancés.
 
 ![Done](/images/2025-10-30-19-52-09.png)
+
+![OK](/images/2025-10-30-20-14-57.png)
+
+![Clos](/images/2025-10-30-20-13-59.png)
+
+* On peut voir le nombre de tickets qui ont été cloturés ou leurs status sur un utilisateur
+
+![admin](/images/2025-10-30-20-16-22.png)
