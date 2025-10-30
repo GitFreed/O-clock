@@ -74,10 +74,12 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 ![Done](/images/2025-10-30-19-52-09.png)
 
-![OK](/images/2025-10-30-20-14-57.png)
+* Une fois validé par l'utilisateur, on peut cloturer le ticket.
 
 ![Clos](/images/2025-10-30-20-13-59.png)
 
 * On peut voir le nombre de tickets qui ont été cloturés ou leurs status sur un utilisateur
 
 ![admin](/images/2025-10-30-20-16-22.png)
+
+Je trouve l'outil simple et complexe à la fois, côté utilisateur c'est très facile, côté Admin c'est plus dense mais je pense que la prise en main est assez rapide, après quelques jours on doit être efficace. Les base informations relevées grâce à l'agent, et la recherche dans les base de données permettent une résolution efficace.
