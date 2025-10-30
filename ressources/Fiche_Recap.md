@@ -24,8 +24,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [0204. Incidents Hardware et Réglementation](#-0204-incidents-hardware-et-réglementation)
 - [0205. Atelier Mme Michu](#-0205-atelier-mme-michu-)
 - [0206. BIOS, UEFI, MBR et GPT](#-0206-bios-uefi-mbr-et-gpt)
-- [0207. & 0208. ITIL](#-0207--0208-itil)
-- [0209. GLPI](#0208-glpi)
+- [0207. ITIL](#-0207-itil)
+- [0208. Pratiques ITIL et GLPI](#️-0208-pratiques-itil-et-glpi)
 
 ---
 
@@ -451,7 +451,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 📝 0207. & 0208. ITIL
+### 📝 0207. ITIL
 
 > [Ce cours](https://gamma.app/docs/ITIL-V4-naxpqmck8b6yltv?mode=doc) introduit ITIL (Information Technology Infrastructure Library), un référentiel de meilleures pratiques pour la gestion des services informatiques ITSM (Information Technology Service Management).
 
@@ -526,17 +526,39 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 0208. GLPI
+### 🛠️ 0208. Pratiques ITIL et GLPI
 
-GLPI, Lotus (IBM), Zendesk, Connectwise, Easyvista, etc
+> Ce cours présente GLPI (Gestion Libre de Parc Informatique), une solution open-source de gestion des services informatiques (ITSM) qui permet de mettre en application concrètement les bonnes pratiques du référentiel ITIL. Il existe de nombreuses autres solutions ITSM sur le marché, comme Zendesk, Connectwise, Easyvista, ou historiquement Lotus (IBM).
 
-(Gestionnaire Libre de Parc Informatique)
+- **Introduction à GLPI** : GLPI (**G**estion **L**ibre de **P**arc **I**nformatique) est un outil complet qui centralise la gestion du parc informatique, des tickets de support et des processus d'assistance. Il est conçu pour aider les équipes IT à structurer leur travail en s'appuyant sur les concepts ITIL.
 
-ACL : Accès Control List
+- **Gestion des Actifs et des Utilisateurs** :
+  - **Inventaire (Parc)** : GLPI permet de recenser et de suivre le cycle de vie de tous les actifs de l'entreprise (ordinateurs, logiciels, imprimantes, etc.), ainsi que de gérer les contrats de maintenance et les licences logicielles associés.
+  - **Gestion des utilisateurs** : L'outil permet de créer des comptes utilisateurs et de leur assigner des profils avec des droits spécifiques (**Admin**, **Technicien**, **Hotliner**, **Observer**, **Self-Service**). Cette gestion fine des permissions repose sur le principe des **ACL (Access Control List)**, qui définissent précisément qui peut voir ou modifier quoi dans l'application.
 
-SLA : Service Level Agreement, ou accord de niveau de service, est un contrat formel entre un fournisseur de services et un client qui définit les attentes en matière de performance, les niveaux de service promis, les délais de réponse et de résolution, ainsi que les conséquences en cas de non-respect des engagements.
+- **Gestion des Tickets (Incidents & Demandes)** :
+  - C'est le cœur de GLPI. Les utilisateurs peuvent soumettre des **incidents** (pannes) ou des **demandes de service** via une interface simple.
+  - Chaque ticket suit un **workflow** clair : création, assignation, résolution et clôture, ce qui permet de tracer chaque étape et d'assurer une prise en charge efficace.
+  - Les tickets sont priorisés en fonction de leur **impact** et de leur **urgence**, conformément aux principes ITIL.
+
+- **Indicateurs de Performance (KPIs)** :
+    GLPI permet de mesurer l'efficacité du support technique grâce à des indicateurs clés:
+  - **TTO (Time To Own)** : Temps entre la création d'un ticket et sa prise en charge par un technicien.
+  - **TTR (Time To Resolve)** : Temps total entre la création et la résolution complète du ticket.
+    Ces métriques sont essentielles pour évaluer et améliorer la réactivité de l'équipe support.
+
+- **Autres fonctionnalités clés** :
+  - **Base de connaissances** : Un espace pour documenter les solutions aux problèmes récurrents et les procédures, accessible aux techniciens et aux utilisateurs.
+  - **Gestion des changements et des projets** : GLPI permet de suivre les modifications apportées à l'infrastructure IT et de gérer des projets de A à Z.
+  - **Rapports et statistiques** : L'outil peut générer des rapports détaillés sur les performances, l'état du parc ou l'activité des utilisateurs pour aider à la prise de décision.
+
+- **Pratiques ITIL dans GLPI** :
+  - **Gestion des Niveaux de Service (SLM)** : Cette pratique est matérialisée par le **SLA (Service Level Agreement)**. C'est un contrat formel entre un fournisseur de services et un client qui définit les attentes en matière de performance, les niveaux de service promis, les délais de réponse et de résolution (comme le TTO et le TTR), ainsi que les conséquences en cas de non-respect des engagements.
+
+[Challenge 0208](../challenges/Challenge_0208.md)
 
 > Ressources :
 >
 >*[GLPI](https://glpi.pandit.fr/public/)
->*
+
+---
