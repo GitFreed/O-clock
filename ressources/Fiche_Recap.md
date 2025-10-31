@@ -563,3 +563,11 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [GLPI Documentation](https://help.glpi-project.org/documentation/fr)
 
 ---
+
+## **🛠️ FIN Saison 02. Support aux Utilisateurs**
+
+[QCM Saison 02](https://forms.gle/k9oAMPjiy1Eb2U7x9)
+
+![Résultat QCM](/images/2025-10-31-09-04-11.png)
+
+---
