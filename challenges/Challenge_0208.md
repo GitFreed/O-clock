@@ -34,7 +34,7 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 ![Install](/images/2025-10-30-18-35-37.png)
 
-* Une fois terminé je force l'agent à faire un premier inventaire.
+* Une fois terminé je force l'agent à faire un premier inventaire. On peut aussi le faire depuis un navigateur via ``http://localhost:62354``
 
 ![Force Agent](/images/2025-10-30-18-58-33.png)
 
