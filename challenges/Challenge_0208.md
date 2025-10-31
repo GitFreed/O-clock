@@ -82,4 +82,4 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 ![admin](/images/2025-10-30-20-16-22.png)
 
-Je trouve l'outil simple et complexe à la fois, côté utilisateur c'est très facile, côté Admin c'est plus dense mais je pense que la prise en main est assez rapide, après quelques jours on doit être efficace. Les base informations relevées grâce à l'agent, et la recherche dans les base de données permettent une résolution efficace.
+Je trouve l'outil simple et complexe à la fois, côté utilisateur c'est très facile, côté Admin c'est plus dense mais je pense que la prise en main est assez rapide, après quelques jours on doit être efficace. Les informations relevées grâce à l'agent, et la recherche dans les base de données permettent une résolution efficace.
