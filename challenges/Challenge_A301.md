@@ -92,7 +92,7 @@ Vérifiez avec la commande ping si les postes peuvent bien communiquer. Vous l�
 
 ## Challenge A301 : Packet Tracer 🖥️
 
-### Je vais ajouter toutes les machines demandées, par zone de salles pour facilement m'y retrouver, ajouter leurs IP via les notes puis les configurer.
+Je vais ajouter toutes les machines demandées, par zone de salles pour facilement m'y retrouver, ajouter leurs IP via les notes puis les configurer :
 
 - Pour les PC il faut aller dans la partie Desktop : IP
 
@@ -102,15 +102,15 @@ Vérifiez avec la commande ping si les postes peuvent bien communiquer. Vous l�
 
 ![Config Printer](/images/2025-11-03-19-52-11.png)
 
-### Je vais les relier en câble droit pour les PC/Printers -> Servers et câble croisé pour les Servers entre-eux.
+Je vais les relier en câble droit pour les PC/Printers -> Servers et câble croisé pour les Servers entre-eux :
 
 ![cables](/images/2025-11-03-19-59-38.png)
 
-### Ici un seul LAN, mais dans la réalité il y aurait 2 LAN : PARIS et LYON, il faudrait donc un adressage dynamique et des Switchs L3 (Couche 3 modèle OSI).
+Ici un seul LAN, mais dans la réalité il y aurait 2 LAN : PARIS et LYON, il faudrait donc un adressage dynamique et des Switchs L3 (Couche 3 modèle OSI) :
 
 ![L3](/images/2025-11-03-19-59-01.png)
 
-### Résultat
+Résultat du plan d'adressage sur Cisco Packet Tracer :
 
 ![Final](/images/2025-11-03-19-49-14.png)
 
