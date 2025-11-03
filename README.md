@@ -4,4 +4,5 @@ Ce dépôt contient des ressources utiles et les challenges réalisés dans le c
 
 - `/challenges` : exercices quotidiens.
 - `/images` : captures et schémas.
-- `/ressources` : le [résumé](./ressources/Fiche_Recap.md) des cours de chaque saison et quelques ressources partagées pendant les cours.
+- `/ressources`: quelques ressources partagées pendant les cours.
+- `RESUME` : la fiche [résumé](/RESUME.md) des cours de chaque saison.
