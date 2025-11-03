@@ -122,4 +122,8 @@ Bob du service info de Paris va tenter de ping le PC d'Alice à l'Accueil à Lyo
 
 C'est OK !
 
+Je peux regarder une simulation de ce Ping via le Simulation Panel (filter : ICMP only).
+
+![ping1](/images/2025-11-03-20-21-04.png) -> ![ping2](/images/2025-11-03-20-21-47.png) -> ![ping3](/images/2025-11-03-20-22-32.png)
+
 [Cisco Packet Tracer Activity File](Challenge_A301.pkt)
