@@ -16,7 +16,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A109. Atelier calcul d'adresse IP et Masque sous-réseau](#-a109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
 - [QCM Saison 01](#-fin-saison-a1-savoirs-de-base)
 
-### [Saison A2. Support aux Utilisateurs 🛠️](#saison-a2-support-aux-utilisateurs-️)
+### [Saison A2. Support aux Utilisateurs 🛠️](#️-saison-a2-support-aux-utilisateurs)
 
 - [A201. Outils Bureautiques](#-a201-outils-bureautiques)
 - [A202. Diagnostic et Résolution d'Incidents](#-a202-diagnostic-et-résolution-dincidents)
@@ -29,7 +29,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison A3. Réseau](#saison-a3-réseau)
 
-- [A301. Réseau](#a301-réseau)
+- [A301. Réseau](#-a301-fondamentaux-réseau--ethernet)
 
 ---
 
@@ -576,22 +576,24 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## **Saison A3. Réseau**
+## **🌐 Saison A3. Réseau**
 
-> Cette saison
+> Cette saison introduit les concepts fondamentaux des réseaux informatiques. L'objectif est de comprendre le modèle OSI, la suite TCP/IP, l'adressage (IPv4/IPv6) et la configuration des équipements clés comme les switchs, les routeurs (Cisco) et les pare-feux (pfSense), en utilisant des outils de simulation tels que Cisco Packet Tracer.
 
 ---
 
-### A301. Réseau
+### 🌐 A301. Fondamentaux Réseau & Ethernet
+
+> Ce cours couvre les briques de base de la communication réseau, des architectures logiques (Client/Serveur) aux supports physiques (Ethernet).
 
 #### Rappels SA1
 
 Deux types de masques de sous-réseau :
 
-- masques FLSM (Fixed Length Subnet Mask, masque à "taille fixe" en français)
-- masques VLSM (Variable Length Subnet Mask, masque à "taille variable")
+- masques **FLSM** (Fixed Length Subnet Mask masque à "taille fixe" en français)
+- masques **VLSM** (Variable Length Subnet Mask, masque à "taille variable")
 
-Les masques à taille fixe (à connaitre par coeur) :
+Les masques à taille fixe FLSM (à connaitre par coeur) :
 
 - /24 : 255.255.255.0
 - /16 : 255.255.0.0
@@ -635,40 +637,40 @@ Quelle que soit la méthode, il faut retenir quelques petites choses par coeur !
 
 ⚠️ Un masque de sous-réseau ne peut pas être composé de n'importe quelles valeurs, puisque tous les 1 doivent être à gauche et tous les 0 à droite dans sa notation binaire.
 
-1111 1111 = 255
-1111 1110 = 254 (-1)
-1111 1100 = 252 (-2)
-1111 1000 = 248 (-4)
-1111 0000 = 240 (-8)
-1110 0000 = 224 (-16)
-1100 0000 = 192 (-32)
-1000 0000 = 128 (-64)
+>- 1111 1111 = 255
+>- 1111 1110 = 254 (-1)
+>- 1111 1100 = 252 (-2)
+>- 1111 1000 = 248 (-4)
+>- 1111 0000 = 240 (-8)
+>- 1110 0000 = 224 (-16)
+>- 1100 0000 = 192 (-32)
+>- 1000 0000 = 128 (-64)
 
 À partir de ça, on peut retrouver la correspondance CIDR - notation classique de n'importe quel masque !
 
 💡 Pour rappel, la notation CIDR c'est le nombre de bits à 1 dans le masque de sous-réseau (en notation binaire)
 
-/32 = 255.255.255.255 (1111 1111.1111 1111.1111 1111.1111 1111)
-/31 = 255.255.255.254 (1111 1111.1111 1111.1111 1111.1111 1110)
-/30 = 255.255.255.252 (1111 1111.1111 1111.1111 1111.1111 1100)
-/29 = 255.255.255.248
-/28 = 255.255.255.240
-...
-/24 = 255.255.255.0
-...
-/19 = 255.255.224.0
-/18 = 255.255.192.0
-/17 = 255.255.128.0
-/16 = 255.255.0.0
-...
-/8  = 255.0.0.0
-/7  = 254.0.0.0
-...
-/0  = 0.0.0.0
+>- /32 = 255.255.255.255 (1111 1111.1111 1111.1111 1111.1111 1111)
+>- /31 = 255.255.255.254 (1111 1111.1111 1111.1111 1111.1111 1110)
+>- /30 = 255.255.255.252 (1111 1111.1111 1111.1111 1111.1111 1100)
+>- /29 = 255.255.255.248
+>- /28 = 255.255.255.240
+>- ...
+>- /24 = 255.255.255.0
+>- ...
+>- /19 = 255.255.224.0
+>- /18 = 255.255.192.0
+>- /17 = 255.255.128.0
+>- /16 = 255.255.0.0
+>- ...
+>- /8  = 255.0.0.0
+>- /7  = 254.0.0.0
+>- ...
+>- /0  = 0.0.0.0
 
-#### Méthode du nombre magique
+##### Méthode du nombre magique
 
-##### 1er exemple : 10.42.153.87 /17
+**1er exemple** : 10.42.153.87 /17
 
 D'abord, on doit déterminer l'octet significatif dans le masque de sous-réseau.
 
@@ -696,7 +698,7 @@ On peut déterminer la plage utilisable : 10.42.128.1 -> 10.42.255.254
 
 Nombre de machines : 2 ^ (32 - masque CIDR) - 2 : 2^15 -2 = 32 766 machines max
 
-##### 2ème exemple : 10.42.153.87 /28
+**2ème exemple** : 10.42.153.87 /28
 
 /28 correspond à 255.255.255.240
 
@@ -712,8 +714,47 @@ nombre de machine : 14
 
 ---
 
-masques FLSM (/24 16 8, soit 255.255.255.0 255.255.0.0 255.0.0.0) et VLSM
+#### 🌐 A301. Introduction Réseau & Ethernet
 
-Wiki <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
-Table des masques <https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png>
-IPcalc <https://www.mupssoft.com/ipcalc.html> / <https://jodies.de/ipcalc> / <https://sourceforge.net/projects/ipcalc-net/>
+- **Règles de Communication** : Toute communication nécessite trois éléments : une **source** (expéditeur), une **destination** (destinataire) et un **canal** (média). Ces échanges sont régis par des **protocoles**, qui sont des règles définissant l'encodage, le formatage, la taille et la synchronisation des messages.
+
+- **Encapsulation** : C'est le processus qui consiste à "emballer" les données dans un format spécifique, appelé **trame** (frame), avant de les envoyer. Cette "enveloppe" (la trame) contient les adresses source et destination, à l'instar d'une lettre postale.
+
+- **Modes de Remise** :
+  - **Unicast** : 1-à-1 (une source vers une destination).
+  - **Multicast** : 1-à-plusieurs (une source vers un groupe défini).
+  - **Broadcast** : 1-à-tous (une source vers tous les participants du réseau).
+
+- **Canaux de Communication** :
+  - **Simplex** : Communication à sens unique (ex: la radio FM).
+  - **Half-duplex** : Communication dans les deux sens, mais pas simultanément (ex: talkie-walkie).
+  - **Full-duplex** : Communication simultanée dans les deux sens (ex: téléphone).
+
+- **Architectures Réseau** :
+  - **Client/Serveur** : Un **serveur** (qui peut être un matériel dédié ou un logiciel) fournit un service, et un **client** le consomme (ex: un PC accédant à un site web). Les serveurs matériels sont souvent conçus pour être montés en **rack** (format 1U, 2U...) dans des baies ou des salles serveurs dédiées.
+  - **Pair-à-Pair (Peer-to-Peer)** : Chaque machine est à la fois client et serveur (ex: partage de fichiers en torrent).
+
+- **Protocole Ethernet** : C'est le protocole standard pour les réseaux locaux (LAN). Il définit les normes de câblage et de signalisation.
+  - **Normes** : 100BASE-T (Fast Ethernet), 1000BASE-T (Gigabit Ethernet), etc.
+  - **Câblage** : Utilise des **câbles à paires torsadées** (Catégorie 5e, Cat6...) avec un connecteur **RJ45**.
+  - **Blindage** : Les câbles à paires torsadées ont différents types de blindage pour se protéger des interférences. Les plus courants sont **U/UTP** (aucun blindage) et **F/UTP** (un blindage global en aluminium autour des 4 paires). Il existe des types plus avancés comme S/FTP, U/FTP, etc.
+  - **Sertissage** : Les câbles sont sertis selon deux normes : **T-568A** et **T-568B**. Un câble **droit** (même norme aux deux bouts) sert à connecter un appareil à un équipement central (PC -> Switch). Un câble **croisé** (normes différentes) servait à relier deux appareils identiques (PC -> PC ou Switch -> Switch).
+  - **Auto MDI-X** : Aujourd'hui, cette distinction est largement obsolète car la plupart des équipements modernes peuvent "croiser" les paires automatiquement.
+
+![Blindages](/images/2025-11-03-13-28-06.png)
+
+[Challenge A301](../challenges/Challenge_A301.md)
+
+> Ressources :
+>
+>- Wiki IP : <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
+>- Table des masques : <https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png>
+>- IPcalc : <https://www.mupssoft.com/ipcalc.html> (all OS) / <https://jodies.de/ipcalc> (unix) / <https://sourceforge.net/projects/ipcalc-net/> (windows)
+>- Wiki Protocoles : <https://fr.wikipedia.org/wiki/Protocole_de_communication>
+>- Wiki norme Ethernet : <https://fr.wikipedia.org/wiki/Ethernet>
+>- Wiki autonégociation : <https://fr.wikipedia.org/wiki/Auton%C3%A9gociation>
+>- Wiki Paire torsadée : <https://fr.wikipedia.org/wiki/Paire_torsad%C3%A9e>
+
+---
+
+### A302
