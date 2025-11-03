@@ -34,7 +34,7 @@ Voici la liste des end devices avec leurs adresses IP (on appelle ça un plan d�
 
 - - - 1 imprimante, adresse IP 10.1.123.3
 
-- Salle 4 / open-space N°1 :
+- - Salle 4 / open-space N°1 :
 
 - - - 8 PC fixes, adresses IP en 10.10.4.X (X étant le numéro du poste, de 1 à 8)
 
