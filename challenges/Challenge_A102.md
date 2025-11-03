@@ -1,4 +1,4 @@
-# Challenge 0102 07/10/2025
+# Challenge A102 07/10/2025
 
 ## Pitch de l’exercice « Votre chef vous demande de lui trouver (repérer les modèles/références sur internet) des nouveaux écrans, claviers &amp; souris pour son parc de machines. »
 

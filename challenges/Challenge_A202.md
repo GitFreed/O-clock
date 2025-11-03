@@ -1,4 +1,4 @@
-# Challenge 0202 21/10/2025
+# Challenge A202 21/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -14,6 +14,8 @@ En d’autres termes, vous devez configurer votre environnement de manière à r
 Le ping est un test de connectivité réseau.
 
 C’est l’un des tests les plus simples, mais aussi l’un des plus importants à maîtriser en informatique. Il permet de vérifier qu’une machine est accessible sur le réseau et que la communication est possible entre deux hôtes.
+
+---
 
 ## Test de connectivité réseau 🖥️🔄🖥️
 

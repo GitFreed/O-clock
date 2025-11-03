@@ -1,4 +1,4 @@
-# Challenge 0201 20/10/2025
+# Challenge A201 20/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -13,6 +13,8 @@
 - Explorer les options de collaboration en ligne avec Microsoft Office (Office 365) ou LibreOffice (Collabora)
 
 - Explorer le site <https://www.clic-formation.net/>
+
+---
 
 ## Installation de MicrosoftOffice et LibreOffice 🖥️
 

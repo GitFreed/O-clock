@@ -4,42 +4,46 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ## 📖 Table des Matières
 
-### [Saison 01. Savoirs de Base 💻](#-saison-01-savoirs-de-base)
+### [Saison A1. Savoirs de Base 💻](#-saison-a1-savoirs-de-base)
 
-- [0101. & 0102. Introduction Formation O'clock & Titre Pro AIS](#-0101--0102-introduction-formation-oclock--titre-pro-ais)
-- [0103. Histoire de l'Informatique](#-0103-histoire-de-linformatique)
-- [0104. Les Composants Matériels](#️-0104-les-composants-matériels)
-- [0105. Le Système d'Exploitation](#-0105-le-système-dexploitation)
-- [0106. Numération : Bits et Octets](#-0106-numération--bits-et-octets)
-- [0107. Introduction aux Réseaux Informatiques](#-0107-introduction-aux-réseaux-informatiques)
-- [0108. Sécurité Informatique](#️-0108-sécurité-informatique)
-- [0109. Atelier calcul d'adresse IP et Masque sous-réseau](#-0109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
-- [QCM Saison 01](#-fin-saison-01-savoirs-de-base)
+- [A101. & A102. Introduction Formation O'clock & Titre Pro AIS](#-a101--a102-introduction-formation-oclock--titre-pro-ais)
+- [A103. Histoire de l'Informatique](#-a103-histoire-de-linformatique)
+- [A104. Les Composants Matériels](#️-a104-les-composants-matériels)
+- [A105. Le Système d'Exploitation](#-a105-le-système-dexploitation)
+- [A106. Numération : Bits et Octets](#-a106-numération--bits-et-octets)
+- [A107. Introduction aux Réseaux Informatiques](#-a107-introduction-aux-réseaux-informatiques)
+- [A108. Sécurité Informatique](#️-a108-sécurité-informatique)
+- [A109. Atelier calcul d'adresse IP et Masque sous-réseau](#-a109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
+- [QCM Saison 01](#-fin-saison-a1-savoirs-de-base)
 
-### [Saison 02. Support aux Utilisateurs 🛠️](#️-saison-02-support-aux-utilisateurs)
+### [Saison A2. Support aux Utilisateurs 🛠️](#saison-a2-support-aux-utilisateurs-️)
 
-- [0201. Outils Bureautiques](#-0201-outils-bureautiques)
-- [0202. Diagnostic et Résolution d'Incidents](#-0202-diagnostic-et-résolution-dincidents)
-- [0203. Contrôle à distance](#-0203-contrôle-à-distance)
-- [0204. Incidents Hardware et Réglementation](#-0204-incidents-hardware-et-réglementation)
-- [0205. Atelier Mme Michu](#-0205-atelier-mme-michu-)
-- [0206. BIOS, UEFI, MBR et GPT](#-0206-bios-uefi-mbr-et-gpt)
-- [0207. ITIL](#-0207-itil)
-- [0208. Pratiques ITIL et GLPI](#️-0208-pratiques-itil-et-glpi)
+- [A201. Outils Bureautiques](#-a201-outils-bureautiques)
+- [A202. Diagnostic et Résolution d'Incidents](#-a202-diagnostic-et-résolution-dincidents)
+- [A203. Contrôle à distance](#-a203-contrôle-à-distance)
+- [A204. Incidents Hardware et Réglementation](#-a204-incidents-hardware-et-réglementation)
+- [A205. Atelier Mme Michu](#-a205-atelier-mme-michu-)
+- [A206. BIOS, UEFI, MBR et GPT](#-a206-bios-uefi-mbr-et-gpt)
+- [A207. ITIL](#-a207-itil)
+- [A208. Pratiques ITIL et GLPI](#️-a208-pratiques-itil-et-glpi)
+
+### [Saison A3. Réseau](#saison-a3-réseau)
+
+- [A301. Réseau](#a301-réseau)
 
 ---
 
-## **💻 Saison 01. Savoirs de Base**
+## **💻 Saison A1. Savoirs de Base**
 
 > L'objectif de cette saison est de construire un socle de connaissances commun sur le fonctionnement des ordinateurs, des systèmes d'exploitation, des réseaux et de la sécurité.
 
 ---
 
-### 🎯 0101. & 0102. Introduction Formation O'clock & Titre Pro AIS
+### 🎯 A101. & A102. Introduction Formation O'clock & Titre Pro AIS
 
 > Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
-[Challenge 0102](../challenges/Challenge_0102.md)
+[Challenge A102](../challenges/Challenge_A102.md)
 
 >Ressources :
 >
@@ -48,7 +52,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ---
 
-### 📜 0103. Histoire de l'Informatique
+### 📜 A103. Histoire de l'Informatique
 
 > L'informatique est un domaine dont les racines sont bien plus anciennes que les ordinateurs modernes.
 
@@ -75,7 +79,7 @@ En résumé :
 | 1969 | **Micro-processeur** | Invention du composant central (ex: Intel 4004). |
 | 1975 | **Altair 8800** | Lancement de l'ère des micro-ordinateurs personnels. |
 
-[Challenge 0103](../challenges/Challenge_0103.md)
+[Challenge A103](../challenges/Challenge_A103.md)
 
 >Ressources :
 >
@@ -92,7 +96,7 @@ En résumé :
 
 ---
 
-### ⚙️ 0104. Les Composants Matériels
+### ⚙️ A104. Les Composants Matériels
 
 > Un ordinateur est constitué d'un ensemble de composants physiques (le hardware) qui interagissent pour fonctionner.
 
@@ -114,7 +118,7 @@ En résumé :
   - **Périphériques de sortie** : Écran, imprimante, haut-parleurs.
   - **Périphériques d'entrée-sortie** : Clé USB, disque dur externe, écran tactile.
 
-[Challenge 0104](../challenges/Challenge_0104.md)
+[Challenge A104](../challenges/Challenge_A104.md)
 
 >Ressources :
 >
@@ -125,7 +129,7 @@ En résumé :
 
 ---
 
-### 💿 0105. Le Système d'Exploitation
+### 💿 A105. Le Système d'Exploitation
 
 > Le système d'exploitation (OS) est le logiciel principal qui sert d'intermédiaire entre le matériel et les applications logicielles. Les plus courants sur ordinateur sont Windows, macOS et GNU/Linux.
 
@@ -143,7 +147,7 @@ En résumé :
   - Ce média est créé à partir d'une **image ISO**, qui est une copie conforme d'un disque.
   - Il faut configurer le **BIOS/UEFI** de l'ordinateur pour qu'il démarre ("boot") sur ce média d'installation.
 
-[Challenge 0105](../challenges/Challenge_0105.md)
+[Challenge A105](../challenges/Challenge_A105.md)
 
 >Ressources :
 >
@@ -152,7 +156,7 @@ En résumé :
 
 ---
 
-### 🔢 0106. Numération : Bits et Octets
+### 🔢 A106. Numération : Bits et Octets
 
 > Les ordinateurs fonctionnent avec un système binaire, qui est la base de toute information numérique.
 
@@ -171,11 +175,11 @@ En résumé :
   - **ASCII** : Une des premières normes, limitée à 128 caractères (principalement pour l'anglais).
   - **Unicode (UTF-8)** : La norme moderne qui peut représenter la quasi-totalité des systèmes d'écriture du monde, y compris les accents et les emojis.
 
-[Challenge 0106](../challenges/Challenge_0106.md)
+[Challenge A106](../challenges/Challenge_A106.md)
 
 ---
 
-### 🌐 0107. Introduction aux Réseaux Informatiques
+### 🌐 A107. Introduction aux Réseaux Informatiques
 
 > Un réseau est un ensemble d'équipements informatiques connectés entre eux pour partager des ressources et communiquer.
 
@@ -194,7 +198,7 @@ En résumé :
   - **Diagramme Physique** : Montre l'emplacement réel des équipements et leur câblage.
   - **Diagramme Logique** : Montre comment les informations circulent, les adresses IP, les sous-réseaux, etc.
 
-[Challenge 0107](../challenges/Challenge_0107.md)
+[Challenge A107](../challenges/Challenge_A107.md)
 
 >Ressources :
 >
@@ -207,7 +211,7 @@ En résumé :
 
 ---
 
-### 🛡️ 0108. Sécurité Informatique
+### 🛡️ A108. Sécurité Informatique
 
 > La sécurité informatique vise à protéger les systèmes d'information contre les menaces et à garantir leur bon fonctionnement.
 
@@ -233,7 +237,7 @@ En résumé :
 
 ![CIA Triad](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/CIA-Triad-What-is-cybersecurity-Edureka.png)
 
-[Challenge 0108](../challenges/Challenge_0108.md)
+[Challenge A108](../challenges/Challenge_A108.md)
 
 >Ressources :
 >
@@ -251,7 +255,7 @@ En résumé :
 
 ---
 
-### 🧮 0109. Atelier calcul d'adresse IP et Masque sous-réseau
+### 🧮 A109. Atelier calcul d'adresse IP et Masque sous-réseau
 
 > Cet atelier pratique a permis de mettre en application les concepts de l'adressage IPv4.
 
@@ -279,25 +283,25 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [Table masque de sous réseau, binaire et hôtes](https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png)
 >- [CIDR Calculator](https://www.subnet-calculator.com/cidr.php)
 
-[Challenge 0109](../challenges/Challenge_0109.md)
+[Challenge A109](../challenges/Challenge_A109.md)
 
 ---
 
-## **💻 FIN Saison 01. Savoirs de Base**
+## **💻 FIN Saison A1. Savoirs de Base**
 
-[QCM Saison 01](https://forms.gle/MofrrYWGy8XXPN6D7)
+[QCM Saison A1](https://forms.gle/MofrrYWGy8XXPN6D7)
 
 ![QCM Résultats](../images/QCMs01.png)
 
 ---
 
-## **🛠️ Saison 02. Support aux Utilisateurs**
+## **🛠️ Saison A2. Support aux Utilisateurs**
 
 > Cette saison se concentre sur les outils et méthodes pour assister les utilisateurs, diagnostiquer et résoudre les incidents courants sur les postes de travail, etc.
 
 ---
 
-### 💼 0201. Outils Bureautiques
+### 💼 A201. Outils Bureautiques
 
 > Ce cours présente les suites bureautiques, des ensembles de logiciels essentiels pour la productivité en entreprise.
 
@@ -311,7 +315,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 - **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel.
 
-[Challenge 0201](../challenges/Challenge_0201.md)
+[Challenge A201](../challenges/Challenge_A201.md)
 
 >Ressources :
 >
@@ -321,7 +325,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 🔍 0202. Diagnostic et Résolution d'Incidents
+### 🔍 A202. Diagnostic et Résolution d'Incidents
 
 > Ce cours aborde les outils et les procédures pour diagnostiquer et résoudre les problèmes sur un système d'exploitation Windows.
 
@@ -346,7 +350,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - **Logiciels tiers utiles** :
   - Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
-[Challenge 0202](../challenges/Challenge_0202.md)
+[Challenge A202](../challenges/Challenge_A202.md)
 
 >Ressources :
 >
@@ -355,7 +359,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 🔁 0203. Contrôle à distance
+### 🔁 A203. Contrôle à distance
 
 >Ressources :
 >
@@ -367,7 +371,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 🔩 0204. Incidents Hardware et Réglementation
+### 🔩 A204. Incidents Hardware et Réglementation
 
 > Ce cours couvre la méthodologie de diagnostic des pannes matérielles, ainsi que les cadres réglementaires essentiels liés à la gestion des équipements informatiques en fin de vie (DEEE) et à la protection des données personnelles (RGPD).
 
@@ -392,7 +396,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **Rôle de la CNIL** : En France, la **Commission Nationale de l'Informatique et des Libertés (CNIL)** est l'autorité chargée de veiller au respect du RGPD. Elle informe, contrôle et peut sanctionner les entreprises en cas de manquement.
   - **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
 
-[Challenge 0203](../challenges/Challenge_0203.md)
+[Challenge A203](../challenges/Challenge_A203.md)
 
 >Ressources :
 >
@@ -401,11 +405,11 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 💻 0205. Atelier Mme Michu 👵🐶
+### 💻 A205. Atelier Mme Michu 👵🐶
 
 > L'atelier « Mme Michu » a servi de cas pratique pour appliquer les concepts vu précédemment, en simulant un dépannage complet : réparation du démarrage de Windows, résolution d'une surcharge CPU/RAM, vérification de l'état des disques et restauration de fichiers disparus.
 
-[Challenge 0204](../challenges/Challenge_0204.md)
+[Challenge A204](../challenges/Challenge_A204.md)
 
 > Ressources :
 >
@@ -414,7 +418,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 💾 0206. BIOS, UEFI, MBR et GPT
+### 💾 A206. BIOS, UEFI, MBR et GPT
 
 > Ce cours explore les firmwares qui gèrent le démarrage de l'ordinateur (BIOS et UEFI) et les structures de partitionnement des disques durs (MBR et GPT) qui organisent les données.
 
@@ -440,7 +444,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **FAT32 (File Allocation Table 32)** : Ancien système de fichiers très compatible avec la plupart des appareils (clés USB, cartes mémoire). Sa principale limitation est qu'il ne peut pas gérer les fichiers de plus de 4 Go.
   - **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
 
-[Challenge 0206](../challenges/Challenge_0206.md)
+[Challenge A206](../challenges/Challenge_A206.md)
 
 > Ressources :
 >
@@ -451,7 +455,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 📝 0207. ITIL
+### 📝 A207. ITIL
 
 > [Ce cours](https://gamma.app/docs/ITIL-V4-naxpqmck8b6yltv?mode=doc) introduit ITIL (Information Technology Infrastructure Library), un référentiel de meilleures pratiques pour la gestion des services informatiques ITSM (Information Technology Service Management).
 
@@ -517,7 +521,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ![ITIL](../images/ITIL2.png)
 
-[Challenge 0207](../challenges/Challenge_0207.md)
+[Challenge A207](../challenges/Challenge_A207.md)
 
 > Ressources :
 >
@@ -526,7 +530,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-### 🛠️ 0208. Pratiques ITIL et GLPI
+### 🛠️ A208. Pratiques ITIL et GLPI
 
 > Ce cours présente GLPI (Gestion Libre de Parc Informatique), une solution open-source de gestion des services informatiques (ITSM) qui permet de mettre en application concrètement les bonnes pratiques du référentiel ITIL. Il existe de nombreuses autres solutions ITSM sur le marché, comme Zendesk, Connectwise, Easyvista, ou historiquement Lotus (IBM).
 
@@ -555,7 +559,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - **Pratiques ITIL dans GLPI** :
   - **Gestion des Niveaux de Service (SLM)** : Cette pratique est matérialisée par le **SLA (Service Level Agreement)**. C'est un contrat formel entre un fournisseur de services et un client qui définit les attentes en matière de performance, les niveaux de service promis, les délais de réponse et de résolution (comme le TTO et le TTR), ainsi que les conséquences en cas de non-respect des engagements.
 
-[Challenge 0208](../challenges/Challenge_0208.md)
+[Challenge A208](../challenges/Challenge_A208.md)
 
 > Ressources :
 >
@@ -564,10 +568,152 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## **🛠️ FIN Saison 02. Support aux Utilisateurs**
+## **🛠️ FIN Saison A2. Support aux Utilisateurs**
 
-[QCM Saison 02](https://forms.gle/k9oAMPjiy1Eb2U7x9)
+[QCM Saison A2](https://forms.gle/k9oAMPjiy1Eb2U7x9)
 
 ![Résultat QCM](/images/2025-10-31-09-04-11.png)
 
 ---
+
+## **Saison A3. Réseau**
+
+> Cette saison
+
+---
+
+### A301. Réseau
+
+#### Rappels SA1
+
+Deux types de masques de sous-réseau :
+
+- masques FLSM (Fixed Length Subnet Mask, masque à "taille fixe" en français)
+- masques VLSM (Variable Length Subnet Mask, masque à "taille variable")
+
+Les masques à taille fixe (à connaitre par coeur) :
+
+- /24 : 255.255.255.0
+- /16 : 255.255.0.0
+- /8  : 255.0.0.0
+
+Avec un masque à taille fixe, on "coupe" l'adresse IP pile poil entre 2 octets !
+
+Exemple, avec 192.168.1.42 :
+
+- si on a un masque /24, on coupe entre le 3ème et le 4ème octet :
+  - partie réseau : 192.168.1
+  - partie machine : 42
+  - adresse de réseau : 192.168.1.0 (on prend la partie réseau et on met les octets restants à 0)
+  - adresse de broadcast : 192.168.1.255 (on prend la partie réseau et on met les octets restants à 255)
+  - plage utilisable : 192.168.1.1 -> 192.168.1.254
+  - nombre de machine : 254 machines max
+
+- si on a un masque /16, on coupe entre le 2ème et le 3ème octet :
+  - partie réseau : 192.168
+  - partie machine : 1.42
+  - adresse de réseau : 192.168.0.0 (on prend la partie réseau et on met les octets restants à 0)
+  - adresse de broadcast : 192.168.255.255 (on prend la partie réseau et on met les octets restants à 255)
+  - plage utilisable : 192.168.0.1 -> 192.168.255.254
+  - nombre de machine : 2^(32 - masque au format CIDR) - 2 = 65 534 machines
+
+- si on a un masque /8, on coupe entre le 1er et le 2ème octet :
+  - partie réseau : 192
+  - partie machine : 168.1.42
+  - adresse de réseau : 192.0.0.0 (on prend la partie réseau et on met les octets restants à 0)
+  - adresse de broadcast : 192.255.255.255 (on prend la partie réseau et on met les octets restants à 255)
+  - plage utilisable : 192.0.0.1 -> 192.255.255.254
+  - nombre de machine : 2^(32 - masque au format CIDR) - 2 = 16 777 214 machines
+
+Pour les masques à taille variable (VLSM), pas le choix, il va falloir faire des calculs !
+On a vu deux méthodes en SA1 :
+
+- méthode "classique", qui nécessite plein de conversions binaire/décimal
+- méthode du "nombre magique", qui ne nécessite presque pas de calculs et pas de conversion !
+
+Quelle que soit la méthode, il faut retenir quelques petites choses par coeur !
+
+⚠️ Un masque de sous-réseau ne peut pas être composé de n'importe quelles valeurs, puisque tous les 1 doivent être à gauche et tous les 0 à droite dans sa notation binaire.
+
+1111 1111 = 255
+1111 1110 = 254 (-1)
+1111 1100 = 252 (-2)
+1111 1000 = 248 (-4)
+1111 0000 = 240 (-8)
+1110 0000 = 224 (-16)
+1100 0000 = 192 (-32)
+1000 0000 = 128 (-64)
+
+À partir de ça, on peut retrouver la correspondance CIDR - notation classique de n'importe quel masque !
+
+💡 Pour rappel, la notation CIDR c'est le nombre de bits à 1 dans le masque de sous-réseau (en notation binaire)
+
+/32 = 255.255.255.255 (1111 1111.1111 1111.1111 1111.1111 1111)
+/31 = 255.255.255.254 (1111 1111.1111 1111.1111 1111.1111 1110)
+/30 = 255.255.255.252 (1111 1111.1111 1111.1111 1111.1111 1100)
+/29 = 255.255.255.248
+/28 = 255.255.255.240
+...
+/24 = 255.255.255.0
+...
+/19 = 255.255.224.0
+/18 = 255.255.192.0
+/17 = 255.255.128.0
+/16 = 255.255.0.0
+...
+/8  = 255.0.0.0
+/7  = 254.0.0.0
+...
+/0  = 0.0.0.0
+
+#### Méthode du nombre magique
+
+##### 1er exemple : 10.42.153.87 /17
+
+D'abord, on doit déterminer l'octet significatif dans le masque de sous-réseau.
+
+S'il est au format CIDR, il faut le convertir dans son format "classique" en utilisant les infos à retenir par coeur ci-dessus.
+
+/17 -> 255.255.128.0
+
+L'octet significatif, c'est là où intervient la "coupure" entre partie réseau et partie machine.
+
+Ici, c'est 128.
+
+On détermine ensuite le nombre magique en faisant 256 - octet significatif : 256 - 128 = 128
+
+On doit ensuite lister tous les multiples du nombre magique jusqu'à 256 : 0, 128, 256
+
+Pour obtenir l'adresse de réseau, on remplace l'octet significatif dans l'adresse IP par le multiple du nombre magique inférieur ou égal à la valeur de cet octet. Dans notre cas, on remplace donc 153 par 128. Et on met tous les octets restants (à droite) à 0.
+
+adresse de réseau : 10.42.128.0
+
+Pour l'adresse de broadcast, on remplace ce même octet par le multiple suivant - 1 ! Et on met tous les octets restants à 255.
+
+adresse de broadcast : 10.42.255.255
+
+On peut déterminer la plage utilisable : 10.42.128.1 -> 10.42.255.254
+
+Nombre de machines : 2 ^ (32 - masque CIDR) - 2 : 2^15 -2 = 32 766 machines max
+
+##### 2ème exemple : 10.42.153.87 /28
+
+/28 correspond à 255.255.255.240
+
+nombre magique = 256 - 240 = 16
+
+multiples du nb magique : 0, 16, 32, 48, 64, 80, 96, 112, ... 256
+
+adresse de réseau : 10.42.153.80
+adresse de broadcast : 10.42.153.95
+
+plage utilisable : 10.42.153.81 -> 10.42.153.94
+nombre de machine : 14
+
+---
+
+masques FLSM (/24 16 8, soit 255.255.255.0 255.255.0.0 255.0.0.0) et VLSM
+
+Wiki <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
+Table des masques <https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png>
+IPcalc <https://www.mupssoft.com/ipcalc.html> / <https://jodies.de/ipcalc> / <https://sourceforge.net/projects/ipcalc-net/>

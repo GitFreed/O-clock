@@ -1,4 +1,4 @@
-# Challenge 0109 16/10/2025
+# Challenge A109 16/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -27,6 +27,8 @@ Certains utilisent la notation « classique », d’autres la notation CIDR :
 ``10.42.0.82/12``
 
 Essayez de calculer tout à la main (avec la méthode de votre choix, idéalement essayez d’utiliser les deux !), puis vérifiez vos calculs avec une calculatrice en ligne ([exemple](https://www.subnet-calculator.com/cidr.php)) !
+
+---
 
 ## Place aux Maths 🧠🧮
 

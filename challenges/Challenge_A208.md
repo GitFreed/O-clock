@@ -1,4 +1,4 @@
-# Challenge 0208 30/10/2025
+# Challenge A208 30/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -22,7 +22,7 @@ Explorez les fonctionnalités utiles au support : ajout de commentaires, changem
 
 ---
 
-## Challenge 0208 📝
+## Challenge A208 📝
 
 ### Installer GLPI Agent sur des VM 💽
 

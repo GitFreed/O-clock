@@ -1,4 +1,4 @@
-# Challenge 0206 27/10/2025
+# Challenge A206 27/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -24,7 +24,7 @@ testez la compatibilité avec les différents systèmes d’exploitation (en con
 
 ---
 
-## Challenge 0206 💽
+## Challenge A206 💽
 
 ### BIOS 🤖
 

@@ -1,4 +1,4 @@
-# Challenge 0106 13/10/2025
+# Challenge A106 13/10/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
