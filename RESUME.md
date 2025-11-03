@@ -43,7 +43,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 > Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
-[Challenge A102](../challenges/Challenge_A102.md)
+[Challenge A102](/challenges/Challenge_A102.md)
 
 >Ressources :
 >
@@ -79,7 +79,7 @@ En résumé :
 | 1969 | **Micro-processeur** | Invention du composant central (ex: Intel 4004). |
 | 1975 | **Altair 8800** | Lancement de l'ère des micro-ordinateurs personnels. |
 
-[Challenge A103](../challenges/Challenge_A103.md)
+[Challenge A103](/challenges/Challenge_A103.md)
 
 >Ressources :
 >
@@ -118,7 +118,7 @@ En résumé :
   - **Périphériques de sortie** : Écran, imprimante, haut-parleurs.
   - **Périphériques d'entrée-sortie** : Clé USB, disque dur externe, écran tactile.
 
-[Challenge A104](../challenges/Challenge_A104.md)
+[Challenge A104](/challenges/Challenge_A104.md)
 
 >Ressources :
 >
@@ -147,7 +147,7 @@ En résumé :
   - Ce média est créé à partir d'une **image ISO**, qui est une copie conforme d'un disque.
   - Il faut configurer le **BIOS/UEFI** de l'ordinateur pour qu'il démarre ("boot") sur ce média d'installation.
 
-[Challenge A105](../challenges/Challenge_A105.md)
+[Challenge A105](/challenges/Challenge_A105.md)
 
 >Ressources :
 >
@@ -175,7 +175,7 @@ En résumé :
   - **ASCII** : Une des premières normes, limitée à 128 caractères (principalement pour l'anglais).
   - **Unicode (UTF-8)** : La norme moderne qui peut représenter la quasi-totalité des systèmes d'écriture du monde, y compris les accents et les emojis.
 
-[Challenge A106](../challenges/Challenge_A106.md)
+[Challenge A106](/challenges/Challenge_A106.md)
 
 ---
 
@@ -198,7 +198,7 @@ En résumé :
   - **Diagramme Physique** : Montre l'emplacement réel des équipements et leur câblage.
   - **Diagramme Logique** : Montre comment les informations circulent, les adresses IP, les sous-réseaux, etc.
 
-[Challenge A107](../challenges/Challenge_A107.md)
+[Challenge A107](/challenges/Challenge_A107.md)
 
 >Ressources :
 >
@@ -237,7 +237,7 @@ En résumé :
 
 ![CIA Triad](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/CIA-Triad-What-is-cybersecurity-Edureka.png)
 
-[Challenge A108](../challenges/Challenge_A108.md)
+[Challenge A108](/challenges/Challenge_A108.md)
 
 >Ressources :
 >
@@ -276,14 +276,14 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - 256- OS = Nombre magique
 - Calcul avec les multiples de l'adresse réseau et broadcast
 
+[Challenge A109](/challenges/Challenge_A109.md)
+
 > Ressources :
 >
 >- [Logique ET OU](https://github.com/GitFreed/Challenges-O-clock/blob/main/images/Logique.jpg)
 >- [Méthode du nombre magique](https://zestedesavoir.com/tutoriels/321/calculer-une-plage-dadresses-avec-la-methode-magique/#2-10258_quest-ce-que-la-methode-magique)
 >- [Table masque de sous réseau, binaire et hôtes](https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png)
 >- [CIDR Calculator](https://www.subnet-calculator.com/cidr.php)
-
-[Challenge A109](../challenges/Challenge_A109.md)
 
 ---
 
@@ -315,7 +315,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 - **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel.
 
-[Challenge A201](../challenges/Challenge_A201.md)
+[Challenge A201](/challenges/Challenge_A201.md)
 
 >Ressources :
 >
@@ -350,7 +350,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - **Logiciels tiers utiles** :
   - Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
-[Challenge A202](../challenges/Challenge_A202.md)
+[Challenge A202](/challenges/Challenge_A202.md)
 
 >Ressources :
 >
@@ -396,7 +396,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **Rôle de la CNIL** : En France, la **Commission Nationale de l'Informatique et des Libertés (CNIL)** est l'autorité chargée de veiller au respect du RGPD. Elle informe, contrôle et peut sanctionner les entreprises en cas de manquement.
   - **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
 
-[Challenge A203](../challenges/Challenge_A203.md)
+[Challenge A203](/challenges/Challenge_A203.md)
 
 >Ressources :
 >
@@ -409,7 +409,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 > L'atelier « Mme Michu » a servi de cas pratique pour appliquer les concepts vu précédemment, en simulant un dépannage complet : réparation du démarrage de Windows, résolution d'une surcharge CPU/RAM, vérification de l'état des disques et restauration de fichiers disparus.
 
-[Challenge A204](../challenges/Challenge_A204.md)
+[Challenge A204](/challenges/Challenge_A204.md)
 
 > Ressources :
 >
@@ -444,7 +444,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **FAT32 (File Allocation Table 32)** : Ancien système de fichiers très compatible avec la plupart des appareils (clés USB, cartes mémoire). Sa principale limitation est qu'il ne peut pas gérer les fichiers de plus de 4 Go.
   - **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
 
-[Challenge A206](../challenges/Challenge_A206.md)
+[Challenge A206](/challenges/Challenge_A206.md)
 
 > Ressources :
 >
@@ -482,7 +482,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
     4. **Les Pratiques ITIL** : Ensembles de ressources pour accomplir un travail (anciennement "processus").
     5. **L'Amélioration Continue** : Une activité récurrente à tous les niveaux pour s'assurer que les performances répondent aux attentes.
 
-![ITILSVS](../images/ITIL1.png)
+![ITILSVS](/images/ITIL1.png)
 
 - **Les Sept Principes Directeurs** :
     Ce sont des recommandations universelles et durables qui guident les décisions et les actions.
@@ -519,13 +519,13 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **Centre de services (Service Desk)** : Le point de contact unique entre le fournisseur et les utilisateurs.
   - **Gestion des niveaux de service (SLM)** : Définir des cibles de performance claires pour les services (SLA).
 
-![ITIL](../images/ITIL2.png)
+![ITIL](/images/ITIL2.png)
 
-[Challenge A207](../challenges/Challenge_A207.md)
+[Challenge A207](/challenges/Challenge_A207.md)
 
 > Ressources :
 >
->- [PDF ITIL](../ressources/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
+>- [PDF ITIL](/ressources/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
 >- [Manifeste Agile](https://manifesteagile.fr/)
 
 ---
@@ -559,7 +559,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - **Pratiques ITIL dans GLPI** :
   - **Gestion des Niveaux de Service (SLM)** : Cette pratique est matérialisée par le **SLA (Service Level Agreement)**. C'est un contrat formel entre un fournisseur de services et un client qui définit les attentes en matière de performance, les niveaux de service promis, les délais de réponse et de résolution (comme le TTO et le TTR), ainsi que les conséquences en cas de non-respect des engagements.
 
-[Challenge A208](../challenges/Challenge_A208.md)
+[Challenge A208](/challenges/Challenge_A208.md)
 
 > Ressources :
 >
@@ -743,7 +743,7 @@ nombre de machine : 14
 
 ![Blindages](/images/2025-11-03-13-28-06.png)
 
-[Challenge A301](../challenges/Challenge_A301.md)
+[Challenge A301](/challenges/Challenge_A301.md)
 
 > Ressources :
 >
