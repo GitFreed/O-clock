@@ -29,7 +29,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison A3. Réseau](#saison-a3-réseau)
 
-- [A301. Réseau](#-a301-fondamentaux-réseau--ethernet)
+- [A301. Fondamentaux Réseau & Ethernet](#-a301-fondamentaux-réseau--ethernet)
 
 ---
 
