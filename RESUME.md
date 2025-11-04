@@ -831,11 +831,11 @@ nombre de machine : 14
 
   - **Couche 4 - Transport** : Assure la connexion de bout en bout et le contrôle de flux. C'est ici qu'intervient la notion de **port** (TCP et UDP) pour distinguer les applications sur une même machine.
     - *Unité : Segment (TCP) / Datagramme (UDP).*
-  - **Couche 3 - Réseau** : S'occupe de l'adressage logique (Adresse **IP**) et du routage (déterminer le meilleur chemin pour les paquets).
+  - **Couche 3 - Réseau** (Network) : S'occupe de l'adressage logique (Adresse **IP**) et du routage (déterminer le meilleur chemin pour les paquets).
     - C'est ici qu'opère le protocole **ARP** (Address Resolution Protocol), qui fait le lien entre la Couche 3 (IP) et la Couche 2 (MAC). Il permet de trouver une adresse MAC à partir d'une IP.
     - Les machines hôtes stockent les correspondances (IP \<-\> MAC) dans un **cache ARP**. Les routeurs et les switchs de niveau 3 maintiennent également une table ARP pour savoir où acheminer les paquets.
     - *Unité : Paquet.*
-  - **Couche 2 - Liaison de données** : S'occupe de l'adressage physique sur le réseau local (LAN) et du transfert des données entre les entités d'un même réseau.
+  - **Couche 2 - Liaison de données** (Data Link) : S'occupe de l'adressage physique sur le réseau local (LAN) et du transfert des données entre les entités d'un même réseau.
     - C'est la couche de l'**adresse MAC** (Media Access Control). Cette adresse est **unique**, **gravée par le fabricant** sur la carte réseau (selon une norme **IEEE**) et codée sur 6 octets (48 bits).
     - *Format MAC :* `24:4B:FE:DE:96:80`. Les 3 premiers octets (l'OUI) identifient le fabricant, ce qui lui laisse 24 bits (plus de 16 millions) d'adresses uniques.
     - C'est la couche principale des **Switchs**.
@@ -849,7 +849,7 @@ nombre de machine : 14
 > 📚 Ressources :
 >
 >- Mnémotechnique modèle OSI (de bas en haut) : ``Pour Le Réseau Tout Se Passe Automatiquement`` ou ``Petit Lapin Rose Trouvé à la SPA``
->- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix`` ou **``All People Seem To Need Data Processing``**
+>- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix`` ou **``All People Seem To Need Data Processing``** (Network & Data-link en anglais).
 
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
