@@ -802,6 +802,9 @@ nombre de machine : 14
 >- Connexions réseau : Exécuter (win+R) : ``ncpa.cpl``
 >- Table ARP d'un Switch : CLI / enable, ``show mac address-table dynamic``
 >- Scan du réseau : nmap ou AngryIPscanner
+>- Vidéo présentant un Datacenter : <https://www.youtube.com/watch?v=rO6bXt7d2L8>,
+>- Valorisation de la Chaleur produite d'un Datacenter : <https://www.youtube.com/watch?v=JTmUUofSt7I>
+>- OVHcloud : <https://www.youtube.com/watch?v=W--OHDSoraw>
 
 ---
 
@@ -846,7 +849,7 @@ nombre de machine : 14
 > 📚 Ressources :
 >
 >- Mnémotechnique modèle OSI (de bas en haut) : ``Pour Le Réseau Tout Se Passe Automatiquement`` ou ``Petit Lapin Rose Trouvé à la SPA``
->- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix``
+>- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix`` ou **``All People Seem To Need Data Processing``**
 
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
