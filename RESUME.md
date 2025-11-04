@@ -777,8 +777,9 @@ nombre de machine : 14
 
   - C'est l'**adresse physique** (ou matérielle) utilisée par les switchs pour identifier les appareils.
   - Elle est **unique au monde** (en théorie) et gravée sur chaque carte réseau (PC, smartphone, frigo connecté...).
+  - Elle est définie par une norme de l'**IEEE** (Institute of Electrical and Electronics Engineers).
   - **Format** : Elle est codée sur 6 octets (48 bits) et s'écrit en hexadécimal (ex: `24:4B:FE:DE:96:80`).
-  - **OUI** : Les 3 premiers octets (ex: `24:4B:FE`) sont l'**OUI** (Organizationally Unique Identifier), un préfixe attribué par l'**IEEE** à chaque fabricant.
+  - **OUI** : Les 3 premiers octets (ex: `24:4B:FE`) sont l'**OUI** (Organizationally Unique Identifier), un préfixe attribué par l'**IEEE** à chaque fabricant. 3 octets équivalents à 24 bits (2^24) soit plus de 16 millions d'adresses uniques possibles.
   - **Trame Ethernet** : L'adresse MAC est utilisée pour la source et la destination dans une **trame Ethernet** (Couche 2 OSI).
 
 - **Protocole ARP (Address Resolution Protocol)** :
