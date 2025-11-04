@@ -30,6 +30,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison A3. Réseau](#-saison-a3-réseau)
 
 - [A301. Fondamentaux Réseau & Ethernet](#-a301-fondamentaux-réseau--ethernet)
+- [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
 
 ---
 
@@ -761,14 +762,34 @@ nombre de machine : 14
 
 ---
 
-### A302. Adresse MAC & protocole ARP
+### 🌍 A302. Hubs, Switchs, MAC & ARP
 
-Notions du jour :
+> Ce cours aborde les équipements qui connectent les machines sur un réseau local (LAN) et les systèmes d'adressage qu'ils utilisent.
 
-- concentrateurs (hubs) vs. commutateurs (switchs)
-- adresse MAC
-- protocole ARP
-- modèle OSI (intro)
+- **Concentrateur (Hub) vs. Commutateur (Switch)** :
+
+  - Pour connecter plus de deux machines, on utilise un équipement central (Hub ou Switch), ce qui crée une topologie en **étoile**.
+  - **Hub (obsolète)** : C'est une "multiprise réseau". Il est "bête" : il reçoit une trame sur un port et la retransmet (broadcast) à **tous** les autres ports, surchargeant inutilement le réseau.
+  - **Switch** : C'est un appareil "intelligent". Il apprend quelles machines sont connectées à quels ports en inspectant les trames qui passent.
+  - **Table MAC** : Il construit une **table d'adresses MAC** (un tableau qui associe un port à une adresse MAC). Il transmet les données **uniquement** au port de destination, ce qui rend le réseau rapide et efficace.
+
+- **Adresse MAC (Media Access Control)** :
+
+  - C'est l'**adresse physique** (ou matérielle) utilisée par les switchs pour identifier les appareils.
+  - Elle est **unique au monde** (en théorie) et gravée sur chaque carte réseau (PC, smartphone, frigo connecté...).
+  - **Format** : Elle est codée sur 6 octets (48 bits) et s'écrit en hexadécimal (ex: `24:4B:FE:DE:96:80`).
+  - **OUI** : Les 3 premiers octets (ex: `24:4B:FE`) sont l'**OUI** (Organizationally Unique Identifier), un préfixe attribué par l'**IEEE** à chaque fabricant.
+  - **Trame Ethernet** : L'adresse MAC est utilisée pour la source et la destination dans une **trame Ethernet** (Couche 2 OSI).
+
+- **Protocole ARP (Address Resolution Protocol)** :
+
+  - **Problème** : Un switch fonctionne avec les adresses MAC (Couche 2), mais nos applications utilisent des adresses IP (Couche 3). Comment un PC (Alice) trouve-t-il l'adresse MAC d'un autre PC (Bob) en ne connaissant que son adresse IP ?
+  - **Solution** : Le protocole ARP.
+  - **Fonctionnement** :
+        1. Alice envoie une requête ARP en **Broadcast** sur le réseau ("Qui a l'IP `192.168.1.42` ?").
+        2. Bob (qui possède cette IP) est le seul à répondre, en **Unicast**, à Alice ("C'est moi \! Mon adresse MAC est `24:4B:FE:DE:96:80`.").
+  - **Cache ARP** : Alice stocke cette correspondance (IP \<-\> MAC) dans son **cache ARP** pour ne pas avoir à reposer la question pendant un certain temps.
+  - **Sécurité** : Ce protocole est vulnérable à l'**ARP Poisoning**, une attaque *Man-in-the-Middle* où un attaquant se fait passer pour une autre machine (ex: le routeur) en envoyant de fausses réponses ARP.
 
 >Ressources :
 >
