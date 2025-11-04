@@ -27,7 +27,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A207. ITIL](#-a207-itil)
 - [A208. Pratiques ITIL et GLPI](#️-a208-pratiques-itil-et-glpi)
 
-### [Saison A3. Réseau](#-saison-a3-réseau)
+### [Saison A3. Réseau 🌐](#-saison-a3-réseau)
 
 - [A301. Fondamentaux Réseau & Ethernet](#-a301-fondamentaux-réseau--ethernet)
 - [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
@@ -854,5 +854,7 @@ nombre de machine : 14
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
 ![OSI Layers2](/images/2025-11-04-15-03-09.png)
+
+[Retour en haut](#-table-des-matières)
 
 ---
