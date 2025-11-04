@@ -46,7 +46,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 [Challenge A102](/challenges/Challenge_A102.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Titre Pro AIS](https://www.francecompetences.fr/recherche/rncp/37680/)
 >- [Le dossier Professionnel](https://www.dossierprofessionnel.fr/)
@@ -82,7 +82,7 @@ En résumé :
 
 [Challenge A103](/challenges/Challenge_A103.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Informatique](https://fr.wikipedia.org/wiki/Informatique)
 >- [Machine analytique](https://fr.wikipedia.org/wiki/Machine_analytique)
@@ -121,7 +121,7 @@ En résumé :
 
 [Challenge A104](/challenges/Challenge_A104.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Composants d'un PC](https://www.malekal.com/les-composants-hardware-et-materiel-dun-pc-le-dossier/)
 >- [Cache de Processeur](https://fr.wikipedia.org/wiki/Cache_de_processeur)
@@ -150,7 +150,7 @@ En résumé :
 
 [Challenge A105](/challenges/Challenge_A105.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Commandes Ubuntu](https://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base)
 >- [Les distributions Linux](https://alexblog.fr/wp-content/uploads/2011/01/evolution-linux-distributions.jpg)
@@ -240,7 +240,7 @@ En résumé :
 
 [Challenge A108](/challenges/Challenge_A108.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Antivirus](https://fr.wikipedia.org/wiki/Logiciel_antivirus)
 >- [Exemple Social Engineering : Hushpuppy](https://etudestech.com/decryptage/portrait-arnaquer-hushpuppi-hacker/)
@@ -279,7 +279,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A109](/challenges/Challenge_A109.md)
 
-> Ressources :
+>📚 Ressources :
 >
 >- [Logique ET OU](https://github.com/GitFreed/Challenges-O-clock/blob/main/images/Logique.jpg)
 >- [Méthode du nombre magique](https://zestedesavoir.com/tutoriels/321/calculer-une-plage-dadresses-avec-la-methode-magique/#2-10258_quest-ce-que-la-methode-magique)
@@ -318,7 +318,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A201](/challenges/Challenge_A201.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Autoformation aux bases de la bureautique](http://clic-formation.net/)
 >- [Base de donnée de logiciels alternatifs](https://alternativeto.net/)
@@ -353,7 +353,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A202](/challenges/Challenge_A202.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [Sysinternals](https://learn.microsoft.com/fr-fr/sysinternals/)
 >- [Autocomplétion des CMD Terminal](https://github.com/chrisant996/clink)
@@ -362,7 +362,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ### 🔁 A203. Contrôle à distance
 
->Ressources :
+>📚 Ressources :
 >
 >- [Les réseaux virtuels sur virtualbox](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/)
 >- [Les réseaux virtuels sur vmware](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/)
@@ -399,7 +399,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A203](/challenges/Challenge_A203.md)
 
->Ressources :
+>📚 Ressources :
 >
 >- [DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
 >- [CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
@@ -412,7 +412,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A204](/challenges/Challenge_A204.md)
 
-> Ressources :
+>📚 Ressources :
 >
 >- [Lignes cmd BCDBoot](https://learn.microsoft.com/fr-fr/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di?view=windows-11)
 >- [Process Démarrage Windows](https://www.malekal.com/processus-demarrage-windows-mbr/)
@@ -447,7 +447,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A206](/challenges/Challenge_A206.md)
 
-> Ressources :
+>📚 Ressources :
 >
 >- [2 Versions BIOS historiques](https://www.quora.com/What-are-the-differences-between-AMI-and-AWARD-BIOSes-1)
 >- [Boot PXE](https://www.it-connect.fr/le-boot-pxe-et-le-boot-ipxe-pour-les-debutants/)
@@ -524,7 +524,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A207](/challenges/Challenge_A207.md)
 
-> Ressources :
+>📚 Ressources :
 >
 >- [PDF ITIL](/ressources/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
 >- [Manifeste Agile](https://manifesteagile.fr/)
@@ -562,7 +562,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [Challenge A208](/challenges/Challenge_A208.md)
 
-> Ressources :
+>📚 Ressources :
 >
 >- [GLPI server](https://glpi.pandit.fr/public/)
 >- [GLPI Documentation](https://help.glpi-project.org/documentation/fr)
@@ -750,7 +750,7 @@ nombre de machine : 14
 
 [Challenge A301](/challenges/Challenge_A301.md)
 
-> Ressources :
+>📚 Ressources :
 >
 >- Classes IP : <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
 >- Table des masques : <https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png>
@@ -792,7 +792,7 @@ nombre de machine : 14
   - **Cache ARP** : Alice stocke cette correspondance (IP \<-\> MAC) dans son **cache ARP** pour ne pas avoir à reposer la question pendant un certain temps.
   - **Sécurité** : Ce protocole est vulnérable à l'**ARP Poisoning**, une attaque *Man-in-the-Middle* où un attaquant se fait passer pour une autre machine (ex: le routeur) en envoyant de fausses réponses ARP.
 
->Ressources :
+>📚 Ressources :
 >
 >- IEEE : <https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers>
 >- Spoofing : <https://en.wikipedia.org/wiki/MAC_spoofing>
@@ -843,10 +843,12 @@ nombre de machine : 14
 
 [Challenge A303](/challenges/Challenge_A303.md)
 
-> Ressources :
+> 📚 Ressources :
 >
 >- Mnémotechnique modèle OSI : ``Pour Le Réseau Tout Se Passe Automatiquement`` (de bas en haut)
 
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
 ![OSI Layers2](/images/2025-11-04-15-03-09.png)
+
+---
