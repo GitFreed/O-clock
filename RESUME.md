@@ -740,7 +740,7 @@ nombre de machine : 14
 - **Protocole Ethernet** : C'est le protocole standard pour les réseaux locaux (LAN). Il définit les normes de câblage et de signalisation.
 
   - **Normes** : 100BASE-T (Fast Ethernet), 1000BASE-T (Gigabit Ethernet), 10GBASE-T, etc.
-  - **Câblage** : Utilise des **câbles à paires torsadées** (ex: Cat 5e, Cat 6, Cat 6a, Cat 7, Cat 8) avec un connecteur **RJ45** (sauf Cat 7). En France, on utilise aussi la notion de **Grades** (ex: Grade 3 TV) pour les installations domestiques.
+  - **Câblage** : Utilise des **câbles à paires torsadées** (ex: Cat 5e 1Gbit/s, Cat 6 1Gbit/s+PoE, Cat 6a 10Gbit/s, Cat 7, Cat 8) avec un connecteur **RJ45** (sauf Cat 7). En France, on utilise aussi la notion de **Grades** (ex: Grade 3 TV) pour les installations domestiques.
   - **Blindage** : Les câbles à paires torsadées ont différents types de blindage pour se protéger des interférences. La nomenclature (X/YTP) décrit le blindage global (X) et le blindage par paire (Y) : **U/UTP** (aucun blindage), **F/UTP** (blindage global en aluminium), **U/FTP** (blindage par paire), **S/FTP** (tresse globale et blindage par paire), etc.
   - **Sertissage** : Les câbles sont sertis selon deux normes : **T-568A** et **T-568B**. Un câble **droit** (même norme aux deux bouts) sert à connecter un appareil à un équipement central (PC -\> Switch). Un câble **croisé** (normes différentes) servait à relier deux appareils identiques (PC -\> PC ou Switch -\> Switch).
   - **Auto MDI-X** : Aujourd'hui, cette distinction est largement obsolète car la plupart des équipements modernes peuvent "croiser" les paires automatiquement.
@@ -751,13 +751,13 @@ nombre de machine : 14
 
 > Ressources :
 >
->- Wiki IP : <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
+>- Classes IP : <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
 >- Table des masques : <https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png>
 >- IPcalc : <https://www.mupssoft.com/ipcalc.html> (all OS) / <https://jodies.de/ipcalc> (unix) / <https://sourceforge.net/projects/ipcalc-net/> (windows)
->- Wiki Protocoles : <https://fr.wikipedia.org/wiki/Protocole_de_communication>
->- Wiki norme Ethernet : <https://fr.wikipedia.org/wiki/Ethernet>
->- Wiki autonégociation : <https://fr.wikipedia.org/wiki/Auton%C3%A9gociation>
->- Wiki Paire torsadée : <https://fr.wikipedia.org/wiki/Paire_torsad%C3%A9e>
+>- Protocoles de communication : <https://fr.wikipedia.org/wiki/Protocole_de_communication>
+>- Norme Ethernet : <https://fr.wikipedia.org/wiki/Ethernet>
+>- Autonégociation : <https://fr.wikipedia.org/wiki/Auton%C3%A9gociation>
+>- Paire torsadée : <https://fr.wikipedia.org/wiki/Paire_torsad%C3%A9e>
 
 ---
 
@@ -772,14 +772,16 @@ Notions du jour :
 
 >Ressources :
 >
->- [IEEE](https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers)
->- [Spoofing](https://en.wikipedia.org/wiki/MAC_spoofing)
->- [ID MAC](https://macvendors.com/)
->- [ARP Poisoning](https://fr.wikipedia.org/wiki/ARP_poisoning)
+>- IEEE : <https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers>
+>- Spoofing : <https://en.wikipedia.org/wiki/MAC_spoofing>
+>- ID MAC : <https://macvendors.com/>
+>- ARP Poisoning : <https://fr.wikipedia.org/wiki/ARP_poisoning>
 >- Cache ARP : Exécuter (win+R) : ``cmd`` : ``arp -a`` (visualiser le cache ARP), ``arp -d`` (effacer le cache ARP)
 >- Connexions réseau : Exécuter (win+R) : ``ncpa.cpl``
 >- Table ARP d'un Switch : CLI / enable, ``show mac address-table dynamic``
 >- Scan du réseau : nmap ou AngryIPscanner
+
+---
 
 ### A303. le modèle OSI
 
