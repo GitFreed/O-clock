@@ -846,7 +846,7 @@ nombre de machine : 14
 > 📚 Ressources :
 >
 >- Mnémotechnique modèle OSI (de bas en haut) : ``Pour Le Réseau Tout Se Passe Automatiquement`` ou ``Petit Lapin Rose Trouvé à la SPA``
->- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix`` ou <!-- Ah Petite Salope Tu Recraches La Purée -->
+>- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix``
 
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
