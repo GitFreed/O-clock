@@ -721,24 +721,28 @@ nombre de machine : 14
 - **Encapsulation** : C'est le processus qui consiste à "emballer" les données dans un format spécifique, appelé **trame** (frame), avant de les envoyer. Cette "enveloppe" (la trame) contient les adresses source et destination, à l'instar d'une lettre postale.
 
 - **Modes de Remise** :
+
   - **Unicast** : 1-à-1 (une source vers une destination).
   - **Multicast** : 1-à-plusieurs (une source vers un groupe défini).
   - **Broadcast** : 1-à-tous (une source vers tous les participants du réseau).
 
 - **Canaux de Communication** :
+
   - **Simplex** : Communication à sens unique (ex: la radio FM).
   - **Half-duplex** : Communication dans les deux sens, mais pas simultanément (ex: talkie-walkie).
   - **Full-duplex** : Communication simultanée dans les deux sens (ex: téléphone).
 
 - **Architectures Réseau** :
-  - **Client/Serveur** : Un **serveur** (qui peut être un matériel dédié ou un logiciel) fournit un service, et un **client** le consomme (ex: un PC accédant à un site web). Les serveurs matériels sont souvent conçus pour être montés en **rack** (format 1U, 2U...) dans des baies ou des salles serveurs dédiées.
+
+  - **Client/Serveur** : Un **serveur** (qui peut être un matériel dédié ou un logiciel) fournit un service, et un **client** le consomme (ex: un PC accédant à un site web). Les serveurs matériels sont souvent au format **rack** (ex: 1U, 2U) pour être montés dans des baies 19 pouces, situées dans des salles serveurs sécurisées et climatisées. Les serveurs logiciels fournissent des services spécifiques comme des serveurs **Web** (HTTP), de **fichiers** (FTP/SMB), ou d'**annuaire** (LDAP).
   - **Pair-à-Pair (Peer-to-Peer)** : Chaque machine est à la fois client et serveur (ex: partage de fichiers en torrent).
 
 - **Protocole Ethernet** : C'est le protocole standard pour les réseaux locaux (LAN). Il définit les normes de câblage et de signalisation.
-  - **Normes** : 100BASE-T (Fast Ethernet), 1000BASE-T (Gigabit Ethernet), etc.
-  - **Câblage** : Utilise des **câbles à paires torsadées** (Catégorie 5e, Cat6...) avec un connecteur **RJ45**.
-  - **Blindage** : Les câbles à paires torsadées ont différents types de blindage pour se protéger des interférences. Les plus courants sont **U/UTP** (aucun blindage) et **F/UTP** (un blindage global en aluminium autour des 4 paires). Il existe des types plus avancés comme S/FTP, U/FTP, etc.
-  - **Sertissage** : Les câbles sont sertis selon deux normes : **T-568A** et **T-568B**. Un câble **droit** (même norme aux deux bouts) sert à connecter un appareil à un équipement central (PC -> Switch). Un câble **croisé** (normes différentes) servait à relier deux appareils identiques (PC -> PC ou Switch -> Switch).
+
+  - **Normes** : 100BASE-T (Fast Ethernet), 1000BASE-T (Gigabit Ethernet), 10GBASE-T, etc.
+  - **Câblage** : Utilise des **câbles à paires torsadées** (ex: Cat 5e, Cat 6, Cat 6a, Cat 7, Cat 8) avec un connecteur **RJ45** (sauf Cat 7). En France, on utilise aussi la notion de **Grades** (ex: Grade 3 TV) pour les installations domestiques.
+  - **Blindage** : Les câbles à paires torsadées ont différents types de blindage pour se protéger des interférences. La nomenclature (X/YTP) décrit le blindage global (X) et le blindage par paire (Y) : **U/UTP** (aucun blindage), **F/UTP** (blindage global en aluminium), **U/FTP** (blindage par paire), **S/FTP** (tresse globale et blindage par paire), etc.
+  - **Sertissage** : Les câbles sont sertis selon deux normes : **T-568A** et **T-568B**. Un câble **droit** (même norme aux deux bouts) sert à connecter un appareil à un équipement central (PC -\> Switch). Un câble **croisé** (normes différentes) servait à relier deux appareils identiques (PC -\> PC ou Switch -\> Switch).
   - **Auto MDI-X** : Aujourd'hui, cette distinction est largement obsolète car la plupart des équipements modernes peuvent "croiser" les paires automatiquement.
 
 ![Blindages](/images/2025-11-03-13-28-06.png)
@@ -757,4 +761,32 @@ nombre de machine : 14
 
 ---
 
-### A302
+### A302. Adresse MAC & protocole ARP
+
+Notions du jour :
+
+- concentrateurs (hubs) vs. commutateurs (switchs)
+- adresse MAC
+- protocole ARP
+- modèle OSI (intro)
+
+>Ressources :
+>
+>- [IEEE](https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers)
+>- [Spoofing](https://en.wikipedia.org/wiki/MAC_spoofing)
+>- [ID MAC](https://macvendors.com/)
+>- [ARP Poisoning](https://fr.wikipedia.org/wiki/ARP_poisoning)
+>- Cache ARP : Exécuter (win+R) : ``cmd`` : ``arp -a`` (visualiser le cache ARP), ``arp -d`` (effacer le cache ARP)
+>- Connexions réseau : Exécuter (win+R) : ``ncpa.cpl``
+>- Table ARP d'un Switch : CLI / enable, ``show mac address-table dynamic``
+>- Scan du réseau : nmap ou AngryIPscanner
+
+### A303. le modèle OSI
+
+![OSI Layers](/images/2025-11-04-14-53-10.png)
+
+![OSI Layers2](/images/2025-11-04-15-03-09.png)
+
+>Ressources :
+>
+>Mnémotechnique modèle OSI : ``Pour Le Réseau Tout Se Passe Automatiquement`` (de bas en haut)
