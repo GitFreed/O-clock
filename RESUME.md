@@ -804,12 +804,48 @@ nombre de machine : 14
 
 ---
 
-### A303. le modèle OSI
+### 🏛️ A303. Le Modèle OSI
+
+> Ce cours présente le modèle OSI (Open Systems Interconnection), un cadre conceptuel qui standardise les fonctions de communication d'un réseau en sept couches distinctes.
+
+- **Qu'est-ce que le modèle OSI ?**
+    Développé par l'ISO, c'est un modèle théorique qui décompose la communication réseau en 7 couches (layers). Il permet de comprendre le rôle de chaque protocole et équipement. Il ne s'agit pas d'un protocole en soi, mais d'un "plan" pour créer des normes cohérentes.
+
+- **Encapsulation et Décapsulation** :
+    À l'envoi (émission), chaque couche ajoute un en-tête (encapsulation), comme on mettrait une lettre (données) dans une enveloppe (segment), puis cette enveloppe dans un colis (paquet), et enfin une étiquette d'expédition sur le colis (trame). À la réception, le processus est inversé (décapsulation).
+
+- **Les 7 Couches du Modèle OSI** :
+
+  #### Couches Hautes (Logicielles)
+
+  - **Couche 7 - Application** : Le point d'accès aux services réseau pour les logiciels. C'est la couche avec laquelle l'utilisateur interagit.
+    - *Protocoles : HTTP, FTP, SMTP, POP.*
+  - **Couche 6 - Présentation** : Gère la conversion des données (encodage, ex: ASCII), le chiffrement/déchiffrement et la compression.
+  - **Couche 5 - Session** : Ouvre, gère et ferme les "transactions" (sessions) entre les applications.
+
+  #### Couches Basses (Matérielles)
+
+  - **Couche 4 - Transport** : Assure la connexion de bout en bout et le contrôle de flux. C'est ici qu'intervient la notion de **port** (TCP et UDP) pour distinguer les applications sur une même machine.
+    - *Unité : Segment (TCP) / Datagramme (UDP).*
+  - **Couche 3 - Réseau** : S'occupe de l'adressage logique (Adresse **IP**) et du routage (déterminer le meilleur chemin pour les paquets).
+    - C'est ici qu'opère le protocole **ARP** (Address Resolution Protocol), qui fait le lien entre la Couche 3 (IP) et la Couche 2 (MAC). Il permet de trouver une adresse MAC à partir d'une IP.
+    - Les machines hôtes stockent les correspondances (IP \<-\> MAC) dans un **cache ARP**. Les routeurs et les switchs de niveau 3 maintiennent également une table ARP pour savoir où acheminer les paquets.
+    - *Unité : Paquet.*
+  - **Couche 2 - Liaison de données** : S'occupe de l'adressage physique sur le réseau local (LAN) et du transfert des données entre les entités d'un même réseau.
+    - C'est la couche de l'**adresse MAC** (Media Access Control). Cette adresse est **unique**, **gravée par le fabricant** sur la carte réseau (selon une norme **IEEE**) et codée sur 6 octets (48 bits).
+    - *Format MAC :* `24:4B:FE:DE:96:80`. Les 3 premiers octets (l'OUI) identifient le fabricant, ce qui lui laisse 24 bits (plus de 16 millions) d'adresses uniques.
+    - C'est la couche principale des **Switchs**.
+    - *Unité : Trame.*
+  - **Couche 1 - Physique** : Gère la transmission des signaux bruts (les bits : 0 et 1) sur le média physique (câble cuivre, fibre optique, ondes radio).
+    - C'est la couche des **Hubs** et des câbles.
+    - *Unité : Bit.*
+
+[Challenge A303](/challenges/Challenge_A303.md)
+
+> Ressources :
+>
+>- Mnémotechnique modèle OSI : ``Pour Le Réseau Tout Se Passe Automatiquement`` (de bas en haut)
 
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
 ![OSI Layers2](/images/2025-11-04-15-03-09.png)
-
->Ressources :
->
->Mnémotechnique modèle OSI : ``Pour Le Réseau Tout Se Passe Automatiquement`` (de bas en haut)
