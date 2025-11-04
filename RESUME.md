@@ -31,6 +31,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [A301. Fondamentaux Réseau & Ethernet](#-a301-fondamentaux-réseau--ethernet)
 - [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
+- [A303. Modèle OSI](#️-a303-le-modèle-osi)
 
 ---
 
@@ -50,6 +51,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 >
 >- [Titre Pro AIS](https://www.francecompetences.fr/recherche/rncp/37680/)
 >- [Le dossier Professionnel](https://www.dossierprofessionnel.fr/)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -95,6 +98,8 @@ En résumé :
 >- [Microprocesseur](https://fr.wikipedia.org/wiki/Microprocesseur)
 >- [Téléscripteur](https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9scripteur)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### ⚙️ A104. Les Composants Matériels
@@ -128,6 +133,8 @@ En résumé :
 >- [Architecture mémoire multi canaux](https://fr.wikipedia.org/wiki/Architecture_de_m%C3%A9moire_%C3%A0_multiples_canaux)
 >- [PC Builder](https://fr.pcpartpicker.com/list/)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### 💿 A105. Le Système d'Exploitation
@@ -155,6 +162,8 @@ En résumé :
 >- [Commandes Ubuntu](https://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base)
 >- [Les distributions Linux](https://alexblog.fr/wp-content/uploads/2011/01/evolution-linux-distributions.jpg)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### 🔢 A106. Numération : Bits et Octets
@@ -177,6 +186,8 @@ En résumé :
   - **Unicode (UTF-8)** : La norme moderne qui peut représenter la quasi-totalité des systèmes d'écriture du monde, y compris les accents et les emojis.
 
 [Challenge A106](/challenges/Challenge_A106.md)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -209,6 +220,8 @@ En résumé :
 >- [Top 10 Web Application Security Risks](https://owasp.org/www-project-top-ten/)
 >- [Mitre-CVE version Européenne (car le Mitre à failli sauter avec les coupes de Trump)](https://euvd.enisa.europa.eu/)
 >- [Loi informatique et Libertés](https://fr.wikipedia.org/wiki/Loi_informatique_et_libert%C3%A9s)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -254,6 +267,8 @@ En résumé :
 >- [Convertisseur](https://www.rapidtables.org/fr/convert/number/binary-to-decimal.html?x=1111)
 >- [Encodage de nos lettres UTF-8](https://www.malekal.com/utf-8-comment-ca-marche/)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### 🧮 A109. Atelier calcul d'adresse IP et Masque sous-réseau
@@ -286,6 +301,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [Table masque de sous réseau, binaire et hôtes](https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png)
 >- [CIDR Calculator](https://www.subnet-calculator.com/cidr.php)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ## **💻 FIN Saison A1. Savoirs de Base**
@@ -293,6 +310,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 [QCM Saison A1](https://forms.gle/MofrrYWGy8XXPN6D7)
 
 ![QCM Résultats](../images/QCMs01.png)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -323,6 +342,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [Autoformation aux bases de la bureautique](http://clic-formation.net/)
 >- [Base de donnée de logiciels alternatifs](https://alternativeto.net/)
 >- [Site comparatif de solutions alternatives d'entreprises](https://www.capterra.fr/)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -357,6 +378,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >
 >- [Sysinternals](https://learn.microsoft.com/fr-fr/sysinternals/)
 >- [Autocomplétion des CMD Terminal](https://github.com/chrisant996/clink)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -404,6 +427,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [DEEE](https://www.economie.gouv.fr/cedef/fiches-pratiques/gestion-et-traitement-des-dechets-dequipements-electriques-et-electroniques)
 >- [CNIL - RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### 💻 A205. Atelier Mme Michu 👵🐶
@@ -416,6 +441,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >
 >- [Lignes cmd BCDBoot](https://learn.microsoft.com/fr-fr/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di?view=windows-11)
 >- [Process Démarrage Windows](https://www.malekal.com/processus-demarrage-windows-mbr/)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -453,6 +480,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [Boot PXE](https://www.it-connect.fr/le-boot-pxe-et-le-boot-ipxe-pour-les-debutants/)
 >- [GUID Partition Table](https://fr.wikipedia.org/wiki/GUID_Partition_Table)
 >- [MBR vs GPT](https://www.simplylinuxfaq.com/2017/10/main-differences-between-mbr-gpt.html)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -529,6 +558,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [PDF ITIL](/ressources/ITIL%20V4%20-%20Foundation%20-%20Axelos.pdf)
 >- [Manifeste Agile](https://manifesteagile.fr/)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### 🛠️ A208. Pratiques ITIL et GLPI
@@ -567,6 +598,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 >- [GLPI server](https://glpi.pandit.fr/public/)
 >- [GLPI Documentation](https://help.glpi-project.org/documentation/fr)
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ## **🛠️ FIN Saison A2. Support aux Utilisateurs**
@@ -574,6 +607,8 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 [QCM Saison A2](https://forms.gle/k9oAMPjiy1Eb2U7x9)
 
 ![Résultat QCM](/images/2025-10-31-09-04-11.png)
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
@@ -760,6 +795,8 @@ nombre de machine : 14
 >- Autonégociation : <https://fr.wikipedia.org/wiki/Auton%C3%A9gociation>
 >- Paire torsadée : <https://fr.wikipedia.org/wiki/Paire_torsad%C3%A9e>
 
+[Retour en haut](#-table-des-matières)
+
 ---
 
 ### 🌍 A302. Hubs, Switchs, MAC & ARP
@@ -805,6 +842,8 @@ nombre de machine : 14
 >- Vidéo présentant un Datacenter : <https://www.youtube.com/watch?v=rO6bXt7d2L8>,
 >- Valorisation de la Chaleur produite d'un Datacenter : <https://www.youtube.com/watch?v=JTmUUofSt7I>
 >- OVHcloud : <https://www.youtube.com/watch?v=W--OHDSoraw>
+
+[Retour en haut](#-table-des-matières)
 
 ---
 
