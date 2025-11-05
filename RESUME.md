@@ -31,7 +31,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [A301. Fondamentaux Réseau & Ethernet](#-a301-fondamentaux-réseau--ethernet)
 - [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
-- [A303. Modèle OSI](#️-a303-le-modèle-osi)
+- [A303. Modèle OSI, TCP/IP, UDP & DHCP](#️-a303-modèle-osi-tcpip-udp--dhcp)
 
 ---
 
@@ -847,7 +847,7 @@ nombre de machine : 14
 
 ---
 
-### 🏛️ A303. Le Modèle OSI
+### 🏛️ A303. Modèle OSI, TCP/IP, UDP & DHCP
 
 > Ce cours présente le modèle OSI (Open Systems Interconnection), un cadre conceptuel qui standardise les fonctions de communication d'un réseau en sept couches distinctes.
 
@@ -889,10 +889,29 @@ nombre de machine : 14
 >
 >- Mnémotechnique modèle OSI (de bas en haut) : ``Pour Le Réseau Tout Se Passe Automatiquement`` ou ``Petit Lapin Rose Trouvé à la SPA``
 >- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix`` ou **``All People Seem To Need Data Processing``** (Network & Data-link en anglais).
+>- RFC 1122 & 23 : <https://www.rfc-editor.org/rfc/rfc1122.html> <https://www.rfc-editor.org/rfc/rfc1123> Exigences pour les hôtes Internet – Couches de communication, est une spécification officielle publiée en octobre 1989 par l'Internet Engineering Task Force (IETF)
+>- Représentations TCP/IP : <https://reussirsonccna.fr/wp-content/uploads/2014/10/modele_TCPIP_evolution.png>
+>- Protocoles par couches : <https://reussirsonccna.fr/wp-content/uploads/2014/10/ports-connus.png>
+>- Protocole TCP : <https://fr.wikipedia.org/wiki/Transmission_Control_Protocol>
+>- MTU : <https://fr.wikipedia.org/wiki/Maximum_transmission_unit>
+>- Jumbo frames : <https://fr.wikipedia.org/wiki/Trame_g%C3%A9ante>
+>- Protocole UDP : <https://fr.wikipedia.org/wiki/User_Datagram_Protocol>
+>- Liste de ports logiciels : <https://fr.wikipedia.org/wiki/Liste_de_ports_logiciels>
+>- Protocole DHCP : <https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>
+>- Mnémotechnique requête DHCP : DORA (Discover , Offer, Request, Acknowledge)
+>- Protocole APIPA : <https://fr.wikipedia.org/wiki/Automatic_Private_Internet_Protocol_Addressing>
+>- Liaison Série (RS-232) : <https://fr.wikipedia.org/wiki/Transmission_s%C3%A9rie>
+>- PuTTY (émulateur de terminal/client pour les protocoles SSH, Telnet, rlogin, et TCP brut) : <https://www.chiark.greenend.org.uk/~sgtatham/putty/>
 
 ![OSI Layers](/images/2025-11-04-14-53-10.png)
 
 ![OSI Layers2](/images/2025-11-04-15-03-09.png)
+
+![TCP/IP](/images/2025-11-05-11-01-13.png)
+
+![TCP/IP Protocoles Ports](/images/2025-11-05-11-01-36.png)
+
+![Encapsulation](/images/2025-11-05-10-59-19.png)
 
 [Retour en haut](#-table-des-matières)
 
