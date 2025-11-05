@@ -926,10 +926,10 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - **Configuration fournie** : Adresse IP, Masque de sous-réseau, Passerelle par défaut, Serveurs DNS, et la durée du **bail DHCP** (la "location" de l'adresse IP).
   - **Processus (D.O.R.A.)** :
 
-    1. **D**iscover : Le client envoie un **Broadcast** ("Il y a un serveur DHCP ?").
-    2. **O**ffer : Un ou plusieurs serveurs DHCP répondent avec une offre d'adresse IP.
-    3. **R**equest : Le client choisit une offre (généralement la première reçue) et envoie un **Broadcast** pour l'accepter (informant les autres serveurs qu'ils n'ont pas été choisis).
-    4. **A**CK (Acknowledge) : Le serveur choisi confirme l'attribution et envoie le reste de la configuration (masque, DNS, etc.) ainsi que la durée du bail.
+    - **D**iscover : Le client envoie un **Broadcast** ("Il y a un serveur DHCP ?").
+    - **O**ffer : Un ou plusieurs serveurs DHCP répondent avec une offre d'adresse IP.
+    - **R**equest : Le client choisit une offre (généralement la première reçue) et envoie un **Broadcast** pour l'accepter (informant les autres serveurs qu'ils n'ont pas été choisis).
+    - **A**CK (Acknowledge) : Le serveur choisi confirme l'attribution et envoie le reste de la configuration (masque, DNS, etc.) ainsi que la durée du bail.
 
 [Challenge A303](/challenges/Challenge_A303.md)
 
