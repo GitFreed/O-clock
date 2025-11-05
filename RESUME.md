@@ -849,7 +849,9 @@ nombre de machine : 14
 
 ### 🏛️ A303. Modèle OSI, TCP/IP, UDP & DHCP
 
-> Ce cours présente le modèle OSI (Open Systems Interconnection), un cadre conceptuel qui standardise les fonctions de communication d'un réseau en sept couches distinctes.
+> Ce cours explore les modèles de communication réseau (OSI et TCP/IP) et les protocoles fondamentaux qui assurent l'adressage (DHCP) et le transport des données (TCP/UDP).
+
+#### **Le modèle OSI**
 
 - **Qu'est-ce que le modèle OSI ?**
     Développé par l'ISO, c'est un modèle théorique qui décompose la communication réseau en 7 couches (layers). Il permet de comprendre le rôle de chaque protocole et équipement. Il ne s'agit pas d'un protocole en soi, mais d'un "plan" pour créer des normes cohérentes.
@@ -859,14 +861,14 @@ nombre de machine : 14
 
 - **Les 7 Couches du Modèle OSI** :
 
-  #### Couches Hautes (Logicielles)
+  Couches Hautes (Logicielles) :
 
   - **Couche 7 - Application** : Le point d'accès aux services réseau pour les logiciels. C'est la couche avec laquelle l'utilisateur interagit.
     - *Protocoles : HTTP, FTP, SMTP, POP.*
   - **Couche 6 - Présentation** : Gère la conversion des données (encodage, ex: ASCII), le chiffrement/déchiffrement et la compression.
   - **Couche 5 - Session** : Ouvre, gère et ferme les "transactions" (sessions) entre les applications.
 
-  #### Couches Basses (Matérielles)
+  Couches Basses (Matérielles) :
 
   - **Couche 4 - Transport** : Assure la connexion de bout en bout et le contrôle de flux. C'est ici qu'intervient la notion de **port** (TCP et UDP) pour distinguer les applications sur une même machine.
     - *Unité : Segment (TCP) / Datagramme (UDP).*
@@ -882,6 +884,49 @@ nombre de machine : 14
   - **Couche 1 - Physique** : Gère la transmission des signaux bruts (les bits : 0 et 1) sur le média physique (câble cuivre, fibre optique, ondes radio).
     - C'est la couche des **Hubs** et des câbles.
     - *Unité : Bit.*
+
+![OSI Layers](/images/2025-11-04-14-53-10.png)
+
+Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processing``** (Network & Data-link en anglais).
+
+![OSI Layers2](/images/2025-11-04-15-03-09.png)
+
+#### **Suite de Protocoles TCP/IP**
+
+- C'est le **modèle pratique** sur lequel fonctionne Internet, développé par la DARPA (inspiré du projet français Cyclades) et rendu obligatoire sur Arpanet en 1983.
+  - Le modèle TCP/IP standard (défini par la RFC 1122) ne comporte que **4 couches** :
+        1. **Application** (Regroupe OSI 5, 6, 7) : HTTP, FTP, DNS...
+        2. **Transport** (Identique à OSI 4) : **TCP**, **UDP**.
+        3. **Internet/Réseau** (Identique à OSI 3) : **IP**, ICMP.
+        4. **Accès Réseau** (Regroupe OSI 1, 2) : Ethernet, WiFi.
+  - **Modèle TCP/IP à 5 couches** : Pour faciliter la comparaison avec le modèle OSI, il est aussi courant de le présenter en 5 couches, en séparant la couche "Accès Réseau" en deux : **Liaison de données (C2)** et **Physique (C1)**.
+
+![TCP/IP](/images/2025-11-05-11-01-13.png)
+
+- **TCP vs. UDP (Couche Transport)** :
+
+  - **TCP (Transmission Control Protocol)** :
+
+    - **Fiable** et **orienté connexion**. Il établit une connexion ("three-way handshake" : SYN, SYN-ACK, ACK) avant d'envoyer des données.
+    - Il garantit que **tous les segments arrivent dans l'ordre** et sans erreur (il accuse réception de chaque segment et gère la retransmission des segments perdus).
+    - Utilisé pour : Web (HTTP/HTTPS), e-mail (SMTP), transfert de fichiers (FTP).
+  - **UDP (User Datagram Protocol)** :
+    - **Non fiable** et **sans connexion** ("fire and forget"). Il envoie les datagrammes sans vérifier s'ils arrivent.
+    - **Avantage** : Très rapide, léger et faible latence.
+    - Utilisé pour : Streaming vidéo, jeux en ligne, VoIP, DNS, et les protocoles de diffusion (Broadcast/Multicast) comme le DHCP.
+    - **Ports** : Les deux protocoles utilisent des numéros de **ports** (codés sur 16 bits) pour permettre à l'ordinateur de savoir à quelle application (processus) remettre les données. (ex: HTTP: 80, HTTPS: 443, FTP: 21, SSH: 22, DNS: 53).
+
+![TCP/IP Protocoles Ports](/images/2025-11-05-11-01-36.png)
+
+#### **DHCP (Dynamic Host Configuration Protocol)**
+
+- C'est un protocole de la couche Application qui permet à une machine (client) d'obtenir **automatiquement** sa configuration réseau auprès d'un **serveur DHCP**. Il utilise UDP car il doit contacter le serveur via un **Broadcast**, ce que TCP ne permet pas.
+  - **Configuration fournie** : Adresse IP, Masque de sous-réseau, Passerelle par défaut, Serveurs DNS, et la durée du **bail DHCP** (la "location" de l'adresse IP).
+  - **Processus (D.O.R.A.)** :
+        1. **D**iscover : Le client envoie un **Broadcast** ("Il y a un serveur DHCP ?").
+        2. **O**ffer : Un ou plusieurs serveurs DHCP répondent avec une offre d'adresse IP.
+        3. **R**equest : Le client choisit une offre (généralement la première reçue) et envoie un **Broadcast** pour l'accepter (informant les autres serveurs qu'ils n'ont pas été choisis).
+        4. **A**CK (Acknowledge) : Le serveur choisi confirme l'attribution et envoie le reste de la configuration (masque, DNS, etc.) ainsi que la durée du bail.
 
 [Challenge A303](/challenges/Challenge_A303.md)
 
@@ -902,14 +947,6 @@ nombre de machine : 14
 >- Protocole APIPA : <https://fr.wikipedia.org/wiki/Automatic_Private_Internet_Protocol_Addressing>
 >- Liaison Série (RS-232) : <https://fr.wikipedia.org/wiki/Transmission_s%C3%A9rie>
 >- PuTTY (émulateur de terminal/client pour les protocoles SSH, Telnet, rlogin, et TCP brut) : <https://www.chiark.greenend.org.uk/~sgtatham/putty/>
-
-![OSI Layers](/images/2025-11-04-14-53-10.png)
-
-![OSI Layers2](/images/2025-11-04-15-03-09.png)
-
-![TCP/IP](/images/2025-11-05-11-01-13.png)
-
-![TCP/IP Protocoles Ports](/images/2025-11-05-11-01-36.png)
 
 ![Encapsulation](/images/2025-11-05-10-59-19.png)
 
