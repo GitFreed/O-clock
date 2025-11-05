@@ -945,6 +945,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >- Protocole DHCP : <https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>
 >- Mnémotechnique requête DHCP : DORA (Discover , Offer, Request, Acknowledge)
 >- Protocole APIPA : <https://fr.wikipedia.org/wiki/Automatic_Private_Internet_Protocol_Addressing>
+>- Réseau privé RFC 1918 : <https://fr.wikipedia.org/wiki/R%C3%A9seau_priv%C3%A9>
 >- Liaison Série (RS-232) : <https://fr.wikipedia.org/wiki/Transmission_s%C3%A9rie>
 >- PuTTY (émulateur de terminal/client pour les protocoles SSH, Telnet, rlogin, et TCP brut) : <https://www.chiark.greenend.org.uk/~sgtatham/putty/>
 
