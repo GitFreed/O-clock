@@ -2,8 +2,6 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-⌨️ Challenge
-
 ### Au programme du challenge de ce soir ? La création d’un plan d’adressage 💪
 
 **Pitch de l’exercice :**
@@ -51,7 +49,7 @@ On en reparlera de l’utilité de ces adresses et de cette RFC bientôt, mais e
 | --- | ---
 | 10.0.0.0/8 | 10.0.0.0 – 10.255.255.255
 | 172.16.0.0/12 | 172.16.0.0 – 172.31.255.255
-| 192.168.0.0/16 |192.168.0.0 – 192.168.255.255
+| 192.168.0.0/16 | 192.168.0.0 – 192.168.255.255
 
 💡 Vous pouvez redécouper les plages ci-dessus, par exemple avoir un sous-réseau en 192.168.1.0/24 et un autre en 192.168.2.0/24.
 
@@ -74,10 +72,29 @@ Voici le rendu qui est attendu (bossez dans le bloc-note, ça suffit amplement) 
 - Bordeaux/pubW     : X.X.X.X/Y      (Z adresses)
 - Bordeaux/privW    : X.X.X.X/Y      (Z adresses)
 
-### Bonus
+### Bonus 🍬
 
-Vérifiez avec la commande ping si les postes peuvent bien communiquer. Vous l’avez normalement vue en saison 2, mais cherchez sur Internet comment utiliser cette commande si nécessaire (votre formateur n’a peut-être pas eu le temps d’en reparler, la journée était suffisamment chargée 😅)
+En bonus, je vous encourage très fortement à pratiquer le protocole DHCP sur Packet Tracer !
+
+Vous pouvez aussi tenter de vous connecter à un équipement Cisco depuis son port Console dans Packet Tracer !
 
 ---
 
-## Challenge A303
+## Challenge A303 ⌨️
+
+### Plan d'adressage 🌐
+
+| Emplacement       | Subnet         | Nombre d'adresses
+| --- | --- | ---
+| Montpellier/PC    | 192.168.1.0/24 |(254 adresses)
+| Montpellier/SERV   | 192.168.7.0/24 |(254 adresses)
+| Montpellier/COPY  | X.X.X.X/Y      |(Z adresses)
+| Montpellier/WIFIO | X.X.X.X/Y      |(Z adresses)
+| Montpellier/WIFIP | X.X.X.X/Y      |(Z adresses)
+| Bordeaux/PC       | 192.168.1.0/24 |(254 adresses)
+| Bordeaux/SERV      | 192.168.7.0/24 |(254 adresses)
+| Bordeaux/COPY     | X.X.X.X/Y      |(Z adresses)
+| Bordeaux/WIFIO    | X.X.X.X/Y      |(Z adresses)
+| Bordeaux/WIFIP    | X.X.X.X/Y      |(Z adresses)
+
+### Bonus
