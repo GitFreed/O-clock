@@ -115,4 +115,42 @@ Réseaux Privés sur la plage 192.168.0.0 à 192.168.255.255
 | Bordeaux/WIFIPV    | 192.168.9.0/24  | 192.168.9.1 à 192.168.9.254 | 254
 | Bordeaux/WIFIPB    | 192.168.10.0/24 | 192.168.10.1 à 192.168.10.254 | 254
 
-### Bonus
+### Bonus 🍬
+
+#### DHCP test dans packet tracer
+
+Une fois le server DHCP configuré (ici Server IP 192.168.1.1, DHCP IP Start 192.168.1.100/24) et allumé
+
+On peut observer via la simulation les différentes requêtes (*DORA*)
+
+![end](/images/2025-11-05-21-25-18.png)
+
+- Discover : le PC envois sa demande en broadcast
+
+![start](/images/2025-11-05-21-14-36.png)
+
+- Offer : le server DHCP répond avec une offre
+
+- Request : le client reçois l'offre et renvois un broadcast pour accepter
+
+![DORA](/images/2025-11-05-21-31-30.png)
+
+- ACKnowledge : le server DHCP renvois la configuration qui donnera la bonne IP au client
+
+![ACK](/images/2025-11-05-21-35-21.png)
+
+Je ne comprends pas pourquoi le DHCP renvois l'ACK en Broadcast ?
+
+![?](/images/2025-11-05-21-42-22.png)
+
+Quand il y a plusieurs Clients, je ne comprends pas comment le DHCP choisi le bon client pour renvoyer l'Offer ou le ACK vu que tout se fait en Broadcast, à moins que ce soit un bug de packet tracer.
+
+#### Connexion Switch Cisco depuis son port Console dans Packet Tracer
+
+Je relie le Port RS232 du Labtop au port RJ Console du Switch. Je vais dans le Terminal du Labtop et avec la bonne config de port j'arrive sur le Cisco IOS Software de contrôle du Switch.
+
+![console](/images/2025-11-05-22-06-15.png)
+
+La commande enable me permet d'entrer dans plus d'options de config
+
+![enable](/images/2025-11-05-22-07-36.png)
