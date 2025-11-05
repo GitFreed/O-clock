@@ -104,7 +104,7 @@ Réseaux Privés sur la plage 192.168.0.0 à 192.168.255.255
 
 | Emplacement        | Subnet          | Plage IP disponibles        | Nombre d'adresses Host
 | --- | --- | --- | ---
-| Montpellier/PC     | 192.168.0.0/22  | 192.168.0.1 à 192.168.1.254 | 510
+| Montpellier/PC     | 192.168.0.0/23  | 192.168.0.1 à 192.168.1.254 | 510
 | Montpellier/SERV   | 192.168.2.0/24  | 192.168.2.1 à 192.168.2.254 | 254
 | Montpellier/COPY   | 192.168.3.0/24  | 192.168.3.1 à 192.168.3.254 | 254
 | Montpellier/WIFIPV | 192.168.4.0/24  | 192.168.4.1 à 192.168.4.254 | 254
