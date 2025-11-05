@@ -895,10 +895,10 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 - C'est le **modèle pratique** sur lequel fonctionne Internet, développé par la DARPA (inspiré du projet français Cyclades) et rendu obligatoire sur Arpanet en 1983.
   - Le modèle TCP/IP standard (défini par la RFC 1122) ne comporte que **4 couches** :
-        1. **Application** (Regroupe OSI 5, 6, 7) : HTTP, FTP, DNS...
-        2. **Transport** (Identique à OSI 4) : **TCP**, **UDP**.
-        3. **Internet/Réseau** (Identique à OSI 3) : **IP**, ICMP.
-        4. **Accès Réseau** (Regroupe OSI 1, 2) : Ethernet, WiFi.
+      1. **Application** (Regroupe OSI 5, 6, 7) : HTTP, FTP, DNS...
+      2. **Transport** (Identique à OSI 4) : **TCP**, **UDP**.
+      3. **Internet/Réseau** (Identique à OSI 3) : **IP**, ICMP.
+      4. **Accès Réseau** (Regroupe OSI 1, 2) : Ethernet, WiFi.
   - **Modèle TCP/IP à 5 couches** : Pour faciliter la comparaison avec le modèle OSI, il est aussi courant de le présenter en 5 couches, en séparant la couche "Accès Réseau" en deux : **Liaison de données (C2)** et **Physique (C1)**.
 
 ![TCP/IP](/images/2025-11-05-11-01-13.png)
@@ -925,10 +925,11 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 - C'est un protocole de la couche Application qui permet à une machine (client) d'obtenir **automatiquement** sa configuration réseau auprès d'un **serveur DHCP**. Il utilise UDP car il doit contacter le serveur via un **Broadcast**, ce que TCP ne permet pas.
   - **Configuration fournie** : Adresse IP, Masque de sous-réseau, Passerelle par défaut, Serveurs DNS, et la durée du **bail DHCP** (la "location" de l'adresse IP).
   - **Processus (D.O.R.A.)** :
-        1. **D**iscover : Le client envoie un **Broadcast** ("Il y a un serveur DHCP ?").
-        2. **O**ffer : Un ou plusieurs serveurs DHCP répondent avec une offre d'adresse IP.
-        3. **R**equest : Le client choisit une offre (généralement la première reçue) et envoie un **Broadcast** pour l'accepter (informant les autres serveurs qu'ils n'ont pas été choisis).
-        4. **A**CK (Acknowledge) : Le serveur choisi confirme l'attribution et envoie le reste de la configuration (masque, DNS, etc.) ainsi que la durée du bail.
+
+    1. **D**iscover : Le client envoie un **Broadcast** ("Il y a un serveur DHCP ?").
+    2. **O**ffer : Un ou plusieurs serveurs DHCP répondent avec une offre d'adresse IP.
+    3. **R**equest : Le client choisit une offre (généralement la première reçue) et envoie un **Broadcast** pour l'accepter (informant les autres serveurs qu'ils n'ont pas été choisis).
+    4. **A**CK (Acknowledge) : Le serveur choisi confirme l'attribution et envoie le reste de la configuration (masque, DNS, etc.) ainsi que la durée du bail.
 
 [Challenge A303](/challenges/Challenge_A303.md)
 
