@@ -918,6 +918,8 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ![TCP/IP Protocoles Ports](/images/2025-11-05-11-01-36.png)
 
+![Encapsulation](/images/2025-11-05-10-59-19.png)
+
 #### **DHCP (Dynamic Host Configuration Protocol)**
 
 - C'est un protocole de la couche Application qui permet à une machine (client) d'obtenir **automatiquement** sa configuration réseau auprès d'un **serveur DHCP**. Il utilise UDP car il doit contacter le serveur via un **Broadcast**, ce que TCP ne permet pas.
@@ -948,8 +950,6 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >- Réseau privé RFC 1918 : <https://fr.wikipedia.org/wiki/R%C3%A9seau_priv%C3%A9>
 >- Liaison Série (RS-232) : <https://fr.wikipedia.org/wiki/Transmission_s%C3%A9rie>
 >- PuTTY (émulateur de terminal/client pour les protocoles SSH, Telnet, rlogin, et TCP brut) : <https://www.chiark.greenend.org.uk/~sgtatham/putty/>
-
-![Encapsulation](/images/2025-11-05-10-59-19.png)
 
 [Retour en haut](#-table-des-matières)
 

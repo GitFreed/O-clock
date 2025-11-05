@@ -59,7 +59,6 @@ On en reparlera de l’utilité de ces adresses et de cette RFC bientôt, mais e
 
 Chaque sous-réseau doit être au format X.X.X.X/Y (par exemple, 192.168.1.0/24)
 
-
 Précisez aussi le nombre d’adresses utilisables pour des machines sur chaque sous-réseau !
 
 Voici le rendu qui est attendu (bossez dans le bloc-note, ça suffit amplement) :
