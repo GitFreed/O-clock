@@ -115,7 +115,7 @@ Réseaux Privés sur la plage 192.168.0.0 à 192.168.255.255
 | Bordeaux/WIFIPV    | 192.168.9.0/24  | 192.168.9.1 à 192.168.9.254 | 254
 | Bordeaux/WIFIPB    | 192.168.10.0/24 | 192.168.10.1 à 192.168.10.254 | 254
 
-### Bonus 🍬
+### Bonus Challenge 🍬
 
 #### DHCP test dans packet tracer
 
