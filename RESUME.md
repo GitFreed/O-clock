@@ -997,13 +997,17 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >
 >- **Config Switch cmd :**
 >
->1. copy running-config startup-config -> **copy run sta**
+>1. enable
 >2. show running-config -> **sh run**
 >3. configure terminal -> **conf t**
->4. interface Vlan1 = pour config le VLAN puis IP (ip 192.168.0.x 255.255.255.x)
->5. **show ip interface brief** = montre les IP sur l'interface
->6. **enable secret** = password crypté(5)
->7. **hostname** XXX = nom du Switch
+>4. **hostname** XXX = nom du Switch
+>5. **enable secret** XXX = password
+>6. interface Vlan 1 = pour config l'IP du VLAN
+>7. ip address 192.168.0.x 255.255.255.x
+>8. no shutdown -> **no shut**
+>9. **show ip interface brief** = montre les IP sur l'interface
+>10. end
+>11. copy running-config startup-config -> **copy run sta**
 >
 >- Ctrl + Shift + 9 (ou 6) stop une commande en cours
 >- Plages IP attribuées sur un /24 (exemple)  1.0 : Réseau, 1.1 : Routeur, 1.2 -> 1.99 : Infra, 1.100 -> 1.250 : DHCP (les machines clients), 1.254 : Switch, 1.255 : Broadcast.
