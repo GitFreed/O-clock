@@ -955,3 +955,5 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 [Retour en haut](#-table-des-matières)
 
 ---
+
+![Routeurs](/images/2025-11-06-15-35-33.png)
