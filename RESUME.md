@@ -32,6 +32,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A301. Fondamentaux Réseau & Ethernet](#-a301-fondamentaux-réseau--ethernet)
 - [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
 - [A303. Modèle OSI, TCP/IP, UDP & DHCP](#️-a303-modèle-osi-tcpip-udp--dhcp)
+- [A304. Cisco IOS & Routage Statique](#-a304-cisco-ios--routage-statique)
 
 ---
 
