@@ -1029,7 +1029,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >
 >- Table de routage : <https://fr.wikipedia.org/wiki/Table_de_routage>
 >- Cmd : show ip route
->- **Config Routage cmd :** ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx
+>- **Config Routage cmd :** ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx puis end
 
 [Retour en haut](#-table-des-matières)
 
