@@ -37,3 +37,5 @@ Routeur 2 : ip route 0.0.0.0 0.0.0.0 172.16.0.2
 Puis je tente des Pings de part et d'autre et... c'est BON !! 🥳
 
 ![Config Routes OK](/images/2025-11-06-19-43-31.png)
+
+[Fichier Packet Tracer Challenge A304](/challenges/Challenge_A304.pkt)
