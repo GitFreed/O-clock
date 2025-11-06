@@ -955,3 +955,77 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🌐 A304. Cisco IOS & Routage Statique
+
+> Ce cours introduit le routeur, l'équipement de Couche 3 qui interconnecte différents réseaux. Il couvre les bases du système d'exploitation Cisco (IOS), la connexion initiale en console, et la configuration des interfaces et des routes statiques.
+
+- **Le Routeur (Couche 3)** : Un routeur est un équipement réseau opérant à la **Couche 3 (Réseau)** du modèle OSI. Son rôle principal est d'**interconnecter des réseaux différents** (ex: LAN 1 en `192.168.1.0/24` et LAN 2 en `172.16.0.0/16`) en "routant" les paquets IP d'une interface à l'autre.
+
+- **Cisco IOS (Internetwork Operating System)** : C'est le système d'exploitation qui équipe la plupart des routeurs et switchs Cisco. La configuration se fait principalement via une **Interface en Ligne de Commande (CLI)**.
+
+- **Accès Console (Configuration Initiale)** :
+
+  - Pour la première configuration (avant que le réseau ne soit fonctionnel), on accède au routeur via un **câble console** (bleu, type RJ45 vers DB9 ou USB).
+  - On utilise un logiciel (ex: **PuTTY**) sur le port **COM** de l'ordinateur (vitesse : **9600**) pour se connecter.
+
+- **Fichiers de Configuration et Modes IOS** :
+
+  - IOS utilise deux fichiers de configuration :
+        1. `running-config` : La configuration active, stockée en **RAM** (volatile). Les modifications sont appliquées instantanément.
+        2. `startup-config` : La configuration de démarrage, stockée en **NVRAM** (non-volatile).
+  - **Il est impératif** de sauvegarder les modifications de la `running-config` vers la `startup-config` avec la commande `copy running-config startup-config` pour qu'elles persistent après un redémarrage.
+  - La navigation dans l'IOS se fait via différents modes :
+    - **User EXEC** (`Router>`) : Mode de base, très limité.
+    - **Privileged EXEC** (`Router#`) : Accès avec `enable`. Permet la vérification (`show...`) et la sauvegarde (`copy...`).
+    - **Global Configuration** (`Router(config)#`) : Accès avec `configure terminal`. Permet de modifier la configuration globale (ex: `hostname R1`, `enable secret [mot_de_passe]`).
+    - **Interface Configuration** (`Router(config-if)#`) : Accès avec `interface [type/num]`. Permet de configurer une interface (ex: `ip address 192.168.1.1 255.255.255.0`, `no shutdown`).
+
+- **Table de Routage & Routes Statiques** :
+
+  - La **table de routage** est le "cerveau" du routeur ; il l'utilise pour décider où envoyer un paquet. Elle contient les réseaux directement connectés, les routes statiques et les routes apprises dynamiquement.
+  - Une **route statique** est une route qu'un administrateur ajoute manuellement.
+    - *Commande :* `ip route [réseau_destination] [masque] [ip_du_prochain_routeur]`
+  - Une **route par défaut** est une route statique spéciale (`0.0.0.0 0.0.0.0`) qui capture tout le trafic sans destination connue (généralement vers Internet).
+
+- **Routeur en tant que Serveur DHCP** : Un routeur Cisco peut aussi être configuré pour agir comme un serveur DHCP (`ip dhcp pool ...`) afin d'attribuer automatiquement des adresses IP aux clients de son réseau local (LAN).
+
+[Challenge A304](/challenges/Challenge_A304.md)
+
+> 📚 Ressources :
+>
+>- **Config Switch cmd :**
+>
+>1. copy running-config startup-config -> **copy run sta**
+>2. show running-config -> **sh run**
+>3. configure terminal -> **conf t**
+>4. interface Vlan1 = pour config le VLAN puis IP (ip 192.168.0.x 255.255.255.x)
+>5. **show ip interface brief** = montre les IP sur l'interface
+>6. **enable secret** = password crypté(5)
+>7. **hostname** XXX = nom du Switch
+>
+>- Ctrl + Shift + 9 (ou 6) stop une commande en cours
+>- Plages IP attribuées sur un /24 (exemple)  1.0 : Réseau, 1.1 : Routeur, 1.2 -> 1.99 : Infra, 1.100 -> 1.250 : DHCP (les machines clients), 1.254 : Switch, 1.255 : Broadcast.
+>
+>- Routeur : <https://fr.wikipedia.org/wiki/Routeur>
+>
+>- **Config Routeur cmd :**
+>
+>1. enable
+>2. conf t
+>3. hostname
+>4. enable secret
+>5. interface gigabitethernet 0/1
+>6. ip address 172.16.0.1 255.255.255.0
+>7. no shutdown
+>8. exit / end
+>9. sh run
+>10. copy run sta
+>
+>- Table de routage : <https://fr.wikipedia.org/wiki/Table_de_routage>
+>- Cmd : show ip route
+>- **Config Routage cmd :** ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx
+
+[Retour en haut](#-table-des-matières)
+
+---
