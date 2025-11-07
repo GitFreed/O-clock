@@ -11,6 +11,16 @@
 >[3. Config Switchs](#3-config-switchs-)
 >
 >[4. Config IP & GW Routeurs](#4-config-ip--gw-routeurs-)
+>
+>[5. Routes statiques](#5-routes-statiques-️)
+>
+>[6. DHCP](#6-dhcp-)
+>
+>[Bonus]
+>
+>[Méga_Bonus]
+>
+>[Fichier packet Tracer](/challenges/Challenge_A305.pkt)
 
 ## Pitch de l’exercice 🧑‍🏫
 

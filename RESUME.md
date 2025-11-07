@@ -1028,8 +1028,20 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >10. copy run sta
 >
 >- Table de routage : <https://fr.wikipedia.org/wiki/Table_de_routage>
->- Cmd : show ip route
->- **Config Routage cmd :** Route par défaut -> ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx puis end
+>- Cmd : 
+>
+>- **Config Routage cmd :** Route par défaut -> ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx puis end et show ip route pour voir
+>
+>- **Config DHCP Routeur :**
+>
+>1. conf t
+>2. ip dhcp pool LAN3
+>3. network 10.0.0.0 255.255.0.0
+>4. default-router 10.0.0.1
+>5. dns-server 8.8.8.8
+>6. exit
+>7. ip dhcp excluded-address 10.0.0.1 10.0.0.10
+>8. end
 
 [Retour en haut](#-table-des-matières)
 
