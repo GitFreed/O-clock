@@ -383,3 +383,5 @@ Je branche des Labtop dans chaque LAN et active leur DHCP et... c'est bon!! 🥳
 Demain....
 
 ## Méga Bonus 🖥️
+
+ip dhcp relay information trust-all
