@@ -4,23 +4,17 @@
 >
 >Résolution :
 >
->[1. Plan Adressage](#1-plan-dadressage-)
->
->[2. Installation](#2-installation-)
->
->[3. Config Switchs](#3-config-switchs-)
->
->[4. Config IP & GW Routeurs](#4-config-ip--gw-routeurs-)
->
->[5. Routes statiques](#5-routes-statiques-️)
->
->[6. DHCP](#6-dhcp-)
->
->[Bonus]
->
->[Méga_Bonus]
+>1. [Plan Adressage](#1-plan-dadressage-)
+>2. [Installation](#2-installation-)
+>3. [Config Switchs](#3-config-switchs-)
+>4. [Config IP & GW Routeurs](#4-config-ip--gw-routeurs-)
+>5. [Routes statiques](#5-routes-statiques-️)
+>6. [DHCP](#6-dhcp-)
+>7. [Bonus](#bonus-)
+>8. [Méga_Bonus](#méga-bonus)
 >
 >[Fichier packet Tracer](/challenges/Challenge_A305.pkt)
+>
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -303,22 +297,64 @@ Démarrer, renommer (nommenclature Rootroot-région), sécuriser et arrtibuer le
 
 RootrootVNP :
 
-ip route 0.0.0.0 0.0.0.0 92.56.78.1
+>ip route 0.0.0.0 0.0.0.0 92.56.78.1
 
 Rootroot59 :
 
-ip route 0.0.0.0 0.0.0.0 92.12.34.1
+>ip route 0.0.0.0 0.0.0.0 92.12.34.1
 
 Rootroot75 :
 
-ip route 10.0.0.0 255.255.252.0 92.56.78.2
-
-ip route 10.59.10.0 255.255.254.0 92.12.34.2
-
-ip route 10.59.20.0 255.255.254.0 92.12.34.2
+>ip route 10.0.0.0 255.255.252.0 92.56.78.2
+>
+>ip route 10.59.10.0 255.255.254.0 92.12.34.2
+>
+>ip route 10.59.20.0 255.255.254.0 92.12.34.2
 
 Pings OK 🥳
 
 ![Routes](/images/2025-11-07-17-34-09.png)
 
 ## 6. DHCP 🤖
+
+[DHCP sur Routers](https://www.it-connect.fr/configurer-le-service-dhcp-sur-un-routeur-cisco/)
+
+Routeur du VPN :
+>enable, con f,
+>RootrootVPN(config)#ip dhcp pool LAN_VPN
+>RootrootVPN(dhcp-config)#network 10.0.0.0 255.255.252.0
+>RootrootVPN(dhcp-config)#default-router 10.0.0.1
+>RootrootVPN(dhcp-config)#end
+>RootrootVPN#copy run sta
+
+Routeur Paris :
+
+>Rootroot75(config)#ip dhcp pool LAN_PC75
+>Rootroot75(dhcp-config)#network 10.75.10.0 255.255.254.0
+>Rootroot75(dhcp-config)#default-router 10.75.10.1
+>Rootroot75(dhcp-config)#exit
+>Rootroot75(config)#ip dhcp pool LAN_WIFI75
+>Rootroot75(dhcp-config)#network 10.75.20.0 255.255.254.0
+>Rootroot75(dhcp-config)#default-router 10.75.20.1
+>Rootroot75(dhcp-config)#exit
+>Rootroot75(config)#ip dhcp pool DMZ75
+>Rootroot75(dhcp-config)#network 10.75.40.0 255.255.255.0
+>Rootroot75(dhcp-config)#default-router 10.75.40.1
+
+Routeur Lille :
+
+>Rootroot59(config)#ip dhcp pool LAN_WIFI59
+>Rootroot59(dhcp-config)#network 10.59.20.0 255.255.254.0
+>Rootroot59(dhcp-config)#default-router 10.59.20.1
+>Rootroot59(dhcp-config)#exit
+>Rootroot59(config)#ip dhcp pool LAN_PC59
+>Rootroot59(dhcp-config)#network 10.59.10.0 255.255.254.0
+>Rootroot59(dhcp-config)#default-router 10.59.10.1
+
+Je branche des Labtop dans chaque LAN et active leur DHCP et... c'est bon!!
+
+![DHCP](/images/2025-11-07-18-24-53.png)
+
+## Bonus 🛜
+
+## Méga Bonus 🖥️
