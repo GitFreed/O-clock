@@ -180,37 +180,49 @@ Il faudrait trouver un moyen de *relayer* les trames DHCP vers notre serveur �
 
 ### Plan d'adressage
 
+Requirements :
+
+- Salariés : 200+
+- Pôles : commercial (16) com (5) compta (5) dir (4) rh (2) juri (2) r&d (23) info (2)
+- Sites : Paris, Lille, autres départements potentiels (total : 96 métropolitains et 5 départements d'outre-mer)
+- Paris : dir, compta, jur, com, r&d, info
+- Lille : com, r&d, info
+- Paris : Salle Servers de 4 machines : Coeur réseau <-> Salle R&D avec Baie reliée en Fibre
+- VPN sur le Routeur de Paris
+- Copieurs : Paris (2) dont 1 r&d et Lille (1)
+
 Paris :
 
-- LAN1 : min x machines en filaire
-- LAN2 : min x servers
-- LAN3 : min x copieurs
-- LAN4 : min x machines en Wifi Privé
-- LAN5 : min X machines en Wifi Public
+- LAN1 : 60+ machines en filaire
+- LAN2 : 3+ servers (DMZ)
+- LAN3 : 3+ copieurs
+- LAN4 : x machines en Wifi Public
 
 Lille :
 
-- LAN6 : min x machines en filaire
-- LAN7 : min x servers
-- LAN8 : min x copieurs
-- LAN9 : min x machines en Wifi Privé
-- LAN10 : min x machines en Wifi Public
+- LAN1 : 20+ machines en filaire
+- LAN2 : 1+ servers (DMZ)
+- LAN3 : 1+ copieurs
+- LAN4 : x machines en Wifi Public
 
-Futurs Départemetns :
+Prévisions et Futurs Départements :
 
-- LAN
+- LAN1 : 100+ machines en filaire
+- LAN2 : 10+ servers (DMZ)
+- LAN3 : 10+ copieurs
+- LAN4 : 50+ machines en Wifi Public
 
 Réseaux Privés sur la plage 192.168.0.0 à 192.168.255.255
 
-| Emplacement        | Subnet          | Plage IP disponibles        | Nombre d'adresses Host
-| --- | --- | --- | ---
-| Montpellier/PC     | 192.168.0.0/23  | 192.168.0.1 à 192.168.1.254 | 510
-| Montpellier/SERV   | 192.168.2.0/24  | 192.168.2.1 à 192.168.2.254 | 254
-| Montpellier/COPY   | 192.168.3.0/24  | 192.168.3.1 à 192.168.3.254 | 254
-| Montpellier/WIFIPV | 192.168.4.0/24  | 192.168.4.1 à 192.168.4.254 | 254
-| Montpellier/WIFIPB | 192.168.5.0/24  | 192.168.5.1 à 192.168.5.254 | 254
-| Bordeaux/PC        | 192.168.6.0/24  | 192.168.6.1 à 192.168.6.254 | 254
-| Bordeaux/SERV      | 192.168.8.0/24  | 192.168.7.1 à 192.168.7.254 | 254
-| Bordeaux/COPY      | 192.168.8.0/24  | 192.168.8.1 à 192.168.8.254 | 254
-| Bordeaux/WIFIPV    | 192.168.9.0/24  | 192.168.9.1 à 192.168.9.254 | 254
-| Bordeaux/WIFIPB    | 192.168.10.0/24 | 192.168.10.1 à 192.168.10.254 | 254
+| Emplacement        | Subnet          | Plage IP disponibles        | Nombre d'adresses Host | Adresses réservées
+| --- | --- | --- | --- | ---
+| Paris/PC     | 192.168.10.0/23 (255.255.254.0) | 192.168.10.1 à 192.168.11.254 | 510 | GW : 192.168.10.1 , Switch VLAN1 : 192.168.10.254
+| Paris/WIFI   | 192.168.15.0/24 (255.255.255.0) | 192.168.15.1 à 192.168.15.254 | 254 | GW : 192.168.15.1 , Switch VLAN1 : 192.168.15.254
+| Paris/DMZ    | 192.168.19.0/24 (255.255.255.0) | 192.168.19.1 à 192.168.19.254 | 254 | GW : 192.168.19.1 , Switch VLAN1 : 192.168.19.254
+| --- | --- | --- | --- | ---
+| Lille/PC     | 192.168.20.0/23 (255.255.254.0) | 192.168.20.1 à 192.168.21.254 | 510 | GW : 192.168.20.1 , Switch VLAN1 : 192.168.20.254
+| Lille/WIFI   | 192.168.25.0/24 (255.255.255.0) | 192.168.25.1 à 192.168.25.254 | 254 | GW : 192.168.25.1 , Switch VLAN1 : 192.168.25.254
+| --- | --- | --- | --- | ---
+| Sites/PC     | 192.168.x0.0/23 (255.255.254.0) | 192.168.x0.1 à 192.168.x1.254 | 510 | GW : 192.168.x0.1 , Switch VLAN1 : 192.168.x0.254
+| Sites/WIFI   | 192.168.x5.0/24 (255.255.255.0) | 192.168.x5.1 à 192.168.x5.254 | 254 | GW : 192.168.x5.1 , Switch VLAN1 : 192.168.x5.254
+| Sites/DMZ    | 192.168.x9.0/24 (255.255.255.0) | 192.168.x9.1 à 192.168.x9.254 | 254 | GW : 192.168.x9.1 , Switch VLAN1 : 192.168.x9.254
