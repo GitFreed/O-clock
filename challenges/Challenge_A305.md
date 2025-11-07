@@ -10,6 +10,7 @@
 >
 >[3. Config Switchs](#3-config-switchs-)
 >
+>[4. Config IP & GW Routeurs](#4-config-ip--gw-routeurs-)
 
 ## Pitch de l’exercice 🧑‍🏫
 
@@ -228,7 +229,7 @@ Réseaux Privés sur la plage 192.168.0.0/24, 172.16.0.0/12, 10.0.0.0/8
 
 | Emplacement        | Subnet          | Plage IP disponibles        | Nombre d'adresses Host | Adresses réservées
 | --- | --- | --- | --- | ---
-| Paris/VPN    | 10.0.0.0/22  (255.255.0.0)   | 10.0.0.1   à 10.0.3.254 | 1022 | GW : 10.0.0.1 , Switch VPN : 10.0.3.254
+| Paris/VPN    | 10.0.0.0/22  (255.255.252.0)   | 10.0.0.1   à 10.0.3.254 | 1022 | GW : 10.0.0.1 , Switch VPN : 10.0.3.254
 | --- | --- | --- | --- | ---
 | Paris/PC     | 10.75.10.0/23 (255.255.254.0) | 10.75.10.1 à 10.75.11.255 | 510 | GW : 10.75.10.1 , Switch PC : 10.75.10.254
 | Paris/WIFI   | 10.75.20.0/23 (255.255.254.0) | 10.75.20.1 à 10.75.21.255 | 510 | GW : 10.75.20.1 , Switch Wifi : 10.75.20.254
@@ -277,3 +278,37 @@ Le routeur 1941 utilisé pour le VPN doit être relié au routeur 2901 du site d
 ![Cable Mngt](/images/2025-11-07-13-42-37.png)
 
 ## 3. Config Switchs 🌐
+
+Démarrer, renommer (nommenclature Sw-région-emplacement), sécuriser et arrtibuer une IP à chaque Switch. Ping tests OK 🥳
+
+![Switchs](/images/2025-11-07-16-15-17.png)
+
+## 4. Config IP & GW Routeurs 🌐
+
+Démarrer, renommer (nommenclature Rootroot-région), sécuriser et arrtibuer les IP de chaque Routeur, entre eux et les Gateway. Ping tests OK 🥳
+
+![Routers](/images/2025-11-07-16-50-39.png)
+
+## 5. Routes statiques 🛣️
+
+RootrootVNP :
+
+ip route 0.0.0.0 0.0.0.0 92.56.78.1
+
+Rootroot59 :
+
+ip route 0.0.0.0 0.0.0.0 92.12.34.1
+
+Rootroot75 :
+
+ip route 10.0.0.0 255.255.252.0 92.56.78.2
+
+ip route 10.59.10.0 255.255.254.0 92.12.34.2
+
+ip route 10.59.20.0 255.255.254.0 92.12.34.2
+
+Pings OK 🥳
+
+![Routes](/images/2025-11-07-17-34-09.png)
+
+## 6. DHCP 🤖
