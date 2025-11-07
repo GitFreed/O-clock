@@ -194,39 +194,43 @@ Il faudrait trouver un moyen de *relayer* les trames DHCP vers notre serveur �
 Paris :
 
 - LAN1 : 60+ machines en filaire
-- LAN2 : 3+ servers (DMZ)
-- LAN3 : 3+ copieurs
-- LAN4 : x machines en Wifi Public
+- LAN2 : x machines en Wifi Public
+- LAN3 : 1+ copieurs
+- LAN4 : VPN
+- LAN5 : 4 servers (DMZ)
 
 Lille :
 
 - LAN1 : 20+ machines en filaire
-- LAN2 : 1+ servers (DMZ)
+- LAN2 : x machines en Wifi Public
 - LAN3 : 1+ copieurs
-- LAN4 : x machines en Wifi Public
 
 **Prévisions et Futurs Départements :**
 
 - LAN1 : 100+ machines en filaire
-- LAN2 : 10+ servers (DMZ)
+- LAN2 : 50+ machines en Wifi Public
 - LAN3 : 10+ copieurs
-- LAN4 : 50+ machines en Wifi Public
+- LAN4 : VPN
+- LAN5 : 10+ servers (DMZ)
 
 Réseaux Privés sur la plage 192.168.0.0 à 192.168.255.255
 
 | Emplacement        | Subnet          | Plage IP disponibles        | Nombre d'adresses Host | Adresses réservées
 | --- | --- | --- | --- | ---
 | Paris/PC     | 192.168.10.0/23 (255.255.254.0) | 192.168.10.1 à 192.168.11.254 | 510 | GW : 192.168.10.1 , Switch PC : 192.168.10.254
-| Paris/WIFI   | 192.168.15.0/24 (255.255.255.0) | 192.168.15.1 à 192.168.15.254 | 254 | GW : 192.168.15.1 , Switch Wifi : 192.168.15.254
-| Paris/VPN    | 192.168.16.0/23 (255.255.254.0) | 192.168.16.1 à 192.168.17.254 | 510| GW : 192.168.16.1 , Switch VPN : 192.168.16.254
+| Paris/WIFI   | 192.168.12.0/24 (255.255.255.0) | 192.168.12.1 à 192.168.12.254 | 254 | GW : 192.168.12.1 , Switch Wifi : 192.168.12.254
+| Paris/COPY   | 192.168.14.0/24 (255.255.255.0) | 192.168.14.1 à 192.168.14.254 | 254 | GW : 192.168.14.1 , Switch COPY : 192.168.14.254
+| Paris/VPN    | 172.16.10.0/16  (255.255.0.0)   | 172.16.0.1   à 172.16.255.254 | 65k | GW : 172.16.10.1 , Switch VPN : 172.16.255.254
 | Paris/DMZ    | 192.168.19.0/24 (255.255.255.0) | 192.168.19.1 à 192.168.19.254 | 254 | GW : 192.168.19.1 , Switch DMZ : 192.168.19.254
 | --- | --- | --- | --- | ---
 | Lille/PC     | 192.168.20.0/23 (255.255.254.0) | 192.168.20.1 à 192.168.21.254 | 510 | GW : 192.168.20.1 , Switch PC : 192.168.20.254
-| Lille/WIFI   | 192.168.25.0/24 (255.255.255.0) | 192.168.25.1 à 192.168.25.254 | 254 | GW : 192.168.25.1 , Switch WIFI : 192.168.25.254
+| Lille/WIFI   | 192.168.22.0/24 (255.255.255.0) | 192.168.22.1 à 192.168.22.254 | 254 | GW : 192.168.22.1 , Switch WIFI : 192.168.22.254
+| Paris/COPY   | 192.168.24.0/24 (255.255.255.0) | 192.168.24.1 à 192.168.24.254 | 254 | GW : 192.168.24.1 , Switch VPN : 192.168.24.254
 | Lille/DMZ    | 192.168.29.0/24 (255.255.255.0) | 192.168.29.1 à 192.168.29.254 | 254 | GW : 192.168.29.1 , Switch DMZ : 192.168.29.254
 | --- | --- | --- | --- | ---
 | SiteX/PC     | 192.168.x0.0/23 (255.255.254.0) | 192.168.x0.1 à 192.168.x1.254 | 510 | GW : 192.168.x0.1 , Switch PC : 192.168.x0.254
-| SiteX/WIFI   | 192.168.x5.0/24 (255.255.255.0) | 192.168.x5.1 à 192.168.x5.254 | 254 | GW : 192.168.x5.1 , Switch WIFI : 192.168.x5.254
+| SiteX/WIFI   | 192.168.x2.0/24 (255.255.255.0) | 192.168.x2.1 à 192.168.x2.254 | 254 | GW : 192.168.x2.1 , Switch WIFI : 192.168.x2.254
+| Paris/COPY   | 192.168.x4.0/24 (255.255.255.0) | 192.168.x4.1 à 192.168.x4.254 | 254 | GW : 192.168.x4.1 , Switch VPN : 192.168.x4.254
 | SiteX/DMZ    | 192.168.x9.0/24 (255.255.255.0) | 192.168.x9.1 à 192.168.x9.254 | 254 | GW : 192.168.x9.1 , Switch DMZ : 192.168.x9.254
 | --- | --- | --- | --- | ---
 | Routeur Paris > Lille | 92.12.34.1/24 | --- | --- | ---
