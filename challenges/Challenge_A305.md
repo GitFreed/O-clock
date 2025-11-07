@@ -1,5 +1,11 @@
 # Challenge A305 07/11/2025
 
+[Pitch](#pitch-de-lexercice-)
+[Exercice](#atelier-sa3-️)
+[1. Plan Adressage](#1-plan-dadressage-)
+[2. Installation](#2-installation-)
+[3. Config Switchs](#3-config-switchs-)
+
 ## Pitch de l’exercice 🧑‍🏫
 
 ## S03 : Atelier Packet Tracer
@@ -178,7 +184,7 @@ Il faudrait trouver un moyen de *relayer* les trames DHCP vers notre serveur �
 
 ## Atelier SA3 ⌨️
 
-### Plan d'adressage 🧮
+## 1. Plan d'adressage 🧮
 
 **Requirements :**
 
@@ -260,8 +266,8 @@ Connecter les switchs et les routeurs en fibre optique
 
 Le routeur 1941 utilisé pour le VPN doit être relié au routeur 2901 du site du Paris avec une liaison Serial DTE (cartes HWIC-2T)
 
-### Câblage 🔌
+## 2. Installation 🔌
 
 ![Cable Mngt](/images/2025-11-07-13-42-37.png)
 
-### Config Switchs 🌐
+## 3. Config Switchs 🌐
