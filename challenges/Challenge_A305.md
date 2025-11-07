@@ -178,7 +178,7 @@ Il faudrait trouver un moyen de *relayer* les trames DHCP vers notre serveur �
 
 ## Atelier SA3 ⌨️
 
-### Plan d'adressage
+### Plan d'adressage 🧮
 
 **Requirements :**
 
@@ -259,3 +259,9 @@ Wifi = filaire sur le switch 2960-24TT
 Connecter les switchs et les routeurs en fibre optique
 
 Le routeur 1941 utilisé pour le VPN doit être relié au routeur 2901 du site du Paris avec une liaison Serial DTE (cartes HWIC-2T)
+
+### Câblage 🔌
+
+![Cable Mngt](/images/2025-11-07-13-42-37.png)
+
+### Config Switchs 🌐
