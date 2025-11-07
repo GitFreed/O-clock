@@ -321,40 +321,63 @@ Pings OK 🥳
 
 Routeur du VPN :
 >enable, con f,
+>
 >RootrootVPN(config)#ip dhcp pool LAN_VPN
+>
 >RootrootVPN(dhcp-config)#network 10.0.0.0 255.255.252.0
+>
 >RootrootVPN(dhcp-config)#default-router 10.0.0.1
+>
 >RootrootVPN(dhcp-config)#end
+>
 >RootrootVPN#copy run sta
 
 Routeur Paris :
 
 >Rootroot75(config)#ip dhcp pool LAN_PC75
+>
 >Rootroot75(dhcp-config)#network 10.75.10.0 255.255.254.0
+>
 >Rootroot75(dhcp-config)#default-router 10.75.10.1
+>
 >Rootroot75(dhcp-config)#exit
+>
 >Rootroot75(config)#ip dhcp pool LAN_WIFI75
+>
 >Rootroot75(dhcp-config)#network 10.75.20.0 255.255.254.0
+>
 >Rootroot75(dhcp-config)#default-router 10.75.20.1
+>
 >Rootroot75(dhcp-config)#exit
+>
 >Rootroot75(config)#ip dhcp pool DMZ75
+>
 >Rootroot75(dhcp-config)#network 10.75.40.0 255.255.255.0
+>
 >Rootroot75(dhcp-config)#default-router 10.75.40.1
 
 Routeur Lille :
 
 >Rootroot59(config)#ip dhcp pool LAN_WIFI59
+>
 >Rootroot59(dhcp-config)#network 10.59.20.0 255.255.254.0
+>
 >Rootroot59(dhcp-config)#default-router 10.59.20.1
+>
 >Rootroot59(dhcp-config)#exit
+>
 >Rootroot59(config)#ip dhcp pool LAN_PC59
+>
 >Rootroot59(dhcp-config)#network 10.59.10.0 255.255.254.0
+>
 >Rootroot59(dhcp-config)#default-router 10.59.10.1
 
-Je branche des Labtop dans chaque LAN et active leur DHCP et... c'est bon!!
+Je branche des Labtop dans chaque LAN et active leur DHCP et... c'est bon!! 🥳
 
 ![DHCP](/images/2025-11-07-18-24-53.png)
 
 ## Bonus 🛜
+
+Demain....
 
 ## Méga Bonus 🖥️
