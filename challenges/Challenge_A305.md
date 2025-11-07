@@ -1,9 +1,13 @@
 # Challenge A305 07/11/2025
 
 [Pitch](#pitch-de-lexercice-)
+
 [Exercice](#atelier-sa3-️)
+
 [1. Plan Adressage](#1-plan-dadressage-)
+
 [2. Installation](#2-installation-)
+
 [3. Config Switchs](#3-config-switchs-)
 
 ## Pitch de l’exercice 🧑‍🏫
