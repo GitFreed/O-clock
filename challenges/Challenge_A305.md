@@ -376,6 +376,8 @@ Je branche des Labtop dans chaque LAN et active leur DHCP et... c'est bon!! 🥳
 
 ![DHCP](/images/2025-11-07-18-24-53.png)
 
+![Reseau](/images/2025-11-07-18-49-13.png)
+
 ## Bonus 🛜
 
 Demain....
