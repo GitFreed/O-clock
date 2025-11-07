@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-# S03 : Atelier Packet Tracer
+## S03 : Atelier Packet Tracer
 
 Premier atelier de cette S03 !
 
@@ -180,7 +180,7 @@ Il faudrait trouver un moyen de *relayer* les trames DHCP vers notre serveur �
 
 ### Plan d'adressage
 
-Requirements :
+**Requirements :**
 
 - Salariés : 200+
 - Pôles : commercial (16) com (5) compta (5) dir (4) rh (2) juri (2) r&d (23) info (2)
@@ -205,7 +205,7 @@ Lille :
 - LAN3 : 1+ copieurs
 - LAN4 : x machines en Wifi Public
 
-Prévisions et Futurs Départements :
+**Prévisions et Futurs Départements :**
 
 - LAN1 : 100+ machines en filaire
 - LAN2 : 10+ servers (DMZ)
@@ -222,7 +222,30 @@ Réseaux Privés sur la plage 192.168.0.0 à 192.168.255.255
 | --- | --- | --- | --- | ---
 | Lille/PC     | 192.168.20.0/23 (255.255.254.0) | 192.168.20.1 à 192.168.21.254 | 510 | GW : 192.168.20.1 , Switch VLAN1 : 192.168.20.254
 | Lille/WIFI   | 192.168.25.0/24 (255.255.255.0) | 192.168.25.1 à 192.168.25.254 | 254 | GW : 192.168.25.1 , Switch VLAN1 : 192.168.25.254
+| Lille/DMZ    | 192.168.29.0/24 (255.255.255.0) | 192.168.29.1 à 192.168.29.254 | 254 | GW : 192.168.29.1 , Switch VLAN1 : 192.168.29.254
 | --- | --- | --- | --- | ---
-| Sites/PC     | 192.168.x0.0/23 (255.255.254.0) | 192.168.x0.1 à 192.168.x1.254 | 510 | GW : 192.168.x0.1 , Switch VLAN1 : 192.168.x0.254
-| Sites/WIFI   | 192.168.x5.0/24 (255.255.255.0) | 192.168.x5.1 à 192.168.x5.254 | 254 | GW : 192.168.x5.1 , Switch VLAN1 : 192.168.x5.254
-| Sites/DMZ    | 192.168.x9.0/24 (255.255.255.0) | 192.168.x9.1 à 192.168.x9.254 | 254 | GW : 192.168.x9.1 , Switch VLAN1 : 192.168.x9.254
+| SiteX/PC     | 192.168.x0.0/23 (255.255.254.0) | 192.168.x0.1 à 192.168.x1.254 | 510 | GW : 192.168.x0.1 , Switch VLAN1 : 192.168.x0.254
+| SiteX/WIFI   | 192.168.x5.0/24 (255.255.255.0) | 192.168.x5.1 à 192.168.x5.254 | 254 | GW : 192.168.x5.1 , Switch VLAN1 : 192.168.x5.254
+| SiteX/DMZ    | 192.168.x9.0/24 (255.255.255.0) | 192.168.x9.1 à 192.168.x9.254 | 254 | GW : 192.168.x9.1 , Switch VLAN1 : 192.168.x9.254
+
+**Matériel :**
+
+Paris : 1 Routeur Cisco 2901, 3 Switchs Cisco 3650-24PS (2 LAN, 1 DMZ), 1 Switch Cisco 2960-24TT (Wifi), 2 Copieurs (dont R&D)
+
+VPN : 1 Routeur Cisco 1941, 1 Switch Cisco 2960-24TT
+
+Lille : 1 Routeur Cisco 2901,  1 Switch Cisco 3650-24PS (LAN), 1 Switch Cisco 2960-24TT (Wifi), 1 Copieur
+
+Mods :
+
+Routeurs : 5x cartes HWIC-1GE-SFP avec 5x mods SFP GLC-LH-SMD, 2x cartes HWIC-2T
+
+Switchs : 4x AC-POWER-SUPPLY (3650-24PS), 5x mods SFP GLC-LH-SMD
+
+Connexion :
+
+Wifi = filaire sur le switch 2960-24TT
+
+Connecter les switchs et les routeurs en fibre optique
+
+Le routeur 1941 utilisé pour le VPN doit être relié au routeur 2901 du site du Paris avec une liaison Serial DTE (cartes HWIC-2T)
