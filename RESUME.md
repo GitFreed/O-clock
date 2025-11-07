@@ -1042,6 +1042,8 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >6. exit
 >7. ip dhcp excluded-address 10.0.0.1 10.0.0.10
 >8. end
+>
+>Pour consulter : show ip dhcp binding
 
 [Retour en haut](#-table-des-matières)
 
