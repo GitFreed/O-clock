@@ -317,7 +317,7 @@ Pings OK 🥳
 
 ## 6. DHCP 🤖
 
-[DHCP sur Routers](https://www.it-connect.fr/configurer-le-service-dhcp-sur-un-routeur-cisco/)
+[DHCP sur Routeurs](https://www.it-connect.fr/configurer-le-service-dhcp-sur-un-routeur-cisco/)
 
 Routeur du VPN :
 >enable, con f,
@@ -380,7 +380,21 @@ Je branche des Labtop dans chaque LAN et active leur DHCP et... c'est bon!! 🥳
 
 ## Bonus 🛜
 
-Demain....
+Je remplace comme demandé les Switchs par des Access point WIFI (AT-PT), je les branche sur les mêmes ports que les précédents, je configure leur Wifi (SSID,password)
+
+![AT-PT](/images/2025-11-10-15-50-17.png)
+
+Installation de cartes Wifi sur les Portables
+
+![carte wifi](/images/2025-11-10-15-47-33.png)
+
+Page de recherche et connection au réseau Wifi depuis un Labtop dans "Desktop/PC Wireless"
+
+![Wifi](/images/2025-11-10-15-51-27.png)
+
+Avec la mise en place du DHCP sur les Routeurs, les Labtops ont directement la bonne IP et Passerelle une fois connectés, les Pings passent sans problème.
+
+![avec wifi all](/images/2025-11-10-15-59-55.png)
 
 ## Méga Bonus 🖥️
 
