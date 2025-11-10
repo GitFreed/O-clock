@@ -398,4 +398,28 @@ Avec la mise en place du DHCP sur les Routeurs, les Labtops ont directement la b
 
 ## Méga Bonus 🖥️
 
-ip dhcp relay information trust-all
+Comme indiqué dans l'intitulé, si on configure un serveur DHCP dans la DMZ, les machines en dehors du LAN de la DMZ n'y auraient pas accès car les routeurs cloisonnent et empêchent donc les demandes DHCP en broadcast de passer.
+
+[Mise en place d'un agent relais DHCP](https://www.it-connect.fr/mise-en-place-dun-agent-relais-dhcp/)
+
+Il va donc falloir configurer en premier temps un server DHCP qui gère différentes "pool" d'adresses, c'est à dire les plages d'adresses/passerelles, dans notre exercice : 6 LAN différents :
+
+![servDHCP](/images/2025-11-10-16-48-17.png)
+
+Maintenant je dois activer l'agent relai sur chaque Routeur en indiquant ou se trouve le serveur DHCP :
+
+>1. RootrootVPN>enable
+>2. Password:
+>3. RootrootVPN#conf t
+>4. RootrootVPN(config)#interface gigabitEthernet 0/0
+>5. RootrootVPN(config-if)#ip helper-address 10.75.40.14
+>6. RootrootVPN(config-if)#end
+>7. RootrootVPN#copy run sta
+
+![agent relai](/images/2025-11-10-17-10-32.png)
+
+On doit activer ce relai sur chaque port ou nous pouvons potentiellement recevoir une demande DHCP.
+
+Exemple pour celui de Paris avec 3 interfaces :
+
+![relai paris](/images/2025-11-10-17-17-38.png)
