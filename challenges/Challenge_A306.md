@@ -24,10 +24,10 @@ Pour avoir une adresse IP "fullstack" c'est à dire avoir une "vraie" adresse IP
 
 Je crée un réseau avec un Switch, un Serveur gérant DNS & DHCP, un Serveur hébergeant une page HTTP à afficher.
 
-LAN 192.168.0.0/24
-Server 1 DNS/DHCP : 192.168.0.1
-Server 2 Home.com : 192.168.0.2
-Switch : 192.168.0.254 (conf t / interface vlan 1 / ip address / no shutdown)
+- LAN 192.168.0.0/24
+- Server 1 DNS/DHCP : 192.168.0.1
+- Server 2 Home.com : 192.168.0.2
+- Switch : 192.168.0.254 (conf t / interface vlan 1 / ip address / no shutdown)
 
 Config DNS sur Server 1 :
 
