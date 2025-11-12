@@ -1113,7 +1113,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 - **Lignes VTY (Virtual Teletype)** : Ce sont les lignes de terminal virtuelles d'un équipement Cisco. Leur nombre (ex: `0 4` pour 5 lignes) détermine combien de sessions d'administration à distance (Telnet ou SSH) peuvent être ouvertes simultanément. Un peu comme une ligne téléphonique.
 
-**Correction** [Challenge A305](/challenges/Challenge_A305.md)
+**Correction** [packet tracer](/challenges/Challenge_A305_correction.pkt) du [Challenge A305](/challenges/Challenge_A305.md)
 
 [Challenge A306](/challenges/Challenge_A306.md)
 
