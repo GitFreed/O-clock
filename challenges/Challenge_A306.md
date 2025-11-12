@@ -54,15 +54,15 @@ Config du Switch pour SSH :
 1. enable
 2. conf t
 3. Hostname HomeSwitch
-4. Secret ****
-5. ip domain-name
-6. crypto key generate rsa 1024
+4. Secret ******
+5. ip domain-name *Home*
+6. crypto key generate rsa *1024*
 7. ip ssh version 2
 8. line vty 0 4
 9. transport input ssh
 10. login local
 11. exit
-12. username boss password ***
+12. username *boss* password *****
 13. end
 14. copy run sta
 
