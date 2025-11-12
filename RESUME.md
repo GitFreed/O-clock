@@ -1050,21 +1050,82 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-### 🌐 A305. DNS, Telnet et SSH
+### 🔐 A305. DNS, Telnet et SSH
 
-Correction [Challenge A305](/challenges/Challenge_A305.md)
+> Ce cours couvre les protocoles essentiels pour la communication réseau (DNS) et l'administration à distance (Telnet & SSH), y compris leur configuration de base sur des équipements Cisco.
 
-Types d'enregistrements DNS :
+- **DNS (Domain Name System)** :
 
-- type A : faire matcher un nom de domaine avec une adresse IPv4
-- type AAAA : faire matcher un nom de domaine avec une adresse IPv6
-- type CNAME : alias, fait matcher un nom de domaine avec un autre nom de domaine
+  - C'est un protocole de la **Couche 7 (Application)** qui agit comme "l'annuaire d'Internet". Sa fonction principale est de traduire les noms de domaine (ex: `google.com`) que les humains peuvent lire en adresses IP (ex: `172.217.16.14`) que les machines utilisent pour communiquer.
+  - Il utilise principalement **UDP** sur le **port 53** pour des requêtes rapides.
+  - Sur un équipement Cisco, on configure un client DNS (pour que le routeur lui-même puisse résoudre les noms) avec la commande :
+    - `ip name-server [adresse_ip_dns]`
+  - La recherche DNS est activée par défaut (`ip domain-lookup`). Si elle est désactivée, le routeur ne tentera pas de traduire les commandes inconnues (comme une faute de frappe) en nom de domaine, ce qui évite les temps d'attente "Translating...".
+    - `no ip domain-lookup` (pour désactiver la recherche)
 
->- **Commande traceroute :**
+  - Il y a plusieurs types d'enregistrements DNS :
+    - type A : faire matcher un nom de domaine avec une adresse IPv4
+    - type AAAA : faire matcher un nom de domaine avec une adresse IPv6
+    - type CNAME : alias, fait matcher un nom de domaine avec un autre nom de domaine
+
+- **Telnet (Telecommunication Network)** :
+
+  - Un protocole d'administration à distance de la **Couche 7 (Application)** qui permet d'accéder à la CLI d'un équipement.
+  - Il utilise **TCP** sur le **port 23**.
+  - **OBSOLÈTE ET NON SÉCURISÉ** : Telnet est à proscrire en production car il transmet toutes les informations, y compris les mots de passe, en **texte clair**. Un attaquant peut facilement "sniffer" le réseau (ex: via ARP Poisoning) et intercepter les identifiants.
+  - **Configuration Cisco (pour démo)** :
+
+        ```bash
+        Router(config)# line vty 0 4
+        Router(config-line)# transport input telnet
+        Router(config-line)# password [mot_de_passe]
+        Router(config-line)# login
+        ```
+
+- **SSH (Secure Shell)** :
+
+  - Le successeur **sécurisé** de Telnet. Il utilise le **chiffrement asymétrique** (ex: RSA) pour échanger une clé de session, puis chiffre l'intégralité de la communication.
+  - Il utilise **TCP** sur le **port 22**.
+  - **Configuration Cisco (requise)** :
+
+        ```bash
+        # 1. Définir un nom d'hôte
+        Router(config)# hostname [NomDuRouteur]
+
+        # 2. Définir un nom de domaine IP
+        [NomDuRouteur](config)# ip domain-name [nom_domaine.local]
+
+        # 3. Générer les clés de chiffrement RSA
+        [NomDuRouteur](config)# crypto key generate rsa
+        (Choisir une taille de clé, ex: 2048)
+
+        # 4. Forcer la version 2 de SSH (plus sécurisée)
+        [NomDuRouteur](config)# ip ssh version 2
+
+        # 5. Créer un utilisateur local
+        [NomDuRouteur](config)# username [nom_admin] password [mot_de_passe_secret]
+
+        # 6. Configurer les lignes virtuelles (VTY)
+        [NomDuRouteur](config-line)# line vty 0 4
+        [NomDuRouteur](config-line)# transport input ssh
+        [NomDuRouteur](config-line)# login local 
+        ```
+
+- **Lignes VTY (Virtual Teletype)** : Ce sont les lignes de terminal virtuelles d'un équipement Cisco. Leur nombre (ex: `0 4` pour 5 lignes) détermine combien de sessions d'administration à distance (Telnet ou SSH) peuvent être ouvertes simultanément. Un peu comme une ligne téléphonique.
+
+**Correction** [Challenge A305](/challenges/Challenge_A305.md)
+
+[Challenge A306](/challenges/Challenge_A306.md)
+
+> 📚 Ressources :
+>
+>
+>**Commande traceroute :**
+>
 >- sur MacOS/Linux : traceroute
 >- sur Windows : tracert
 >
->- Mise en place d'un agent relais DHCP : <https://www.it-connect.fr/mise-en-place-dun-agent-relais-dhcp/>
+>Mise en place d'un **agent relais DHCP** : <https://www.it-connect.fr/mise-en-place-dun-agent-relais-dhcp/>
 
 [Retour en haut](#-table-des-matières)
 

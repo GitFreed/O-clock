@@ -6,4 +6,6 @@
 
 ---
 
-## Ma Box
+## Ma Box 👾
+
+![ma box](/images/2025-11-12-16-31-28.png)
