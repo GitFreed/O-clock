@@ -33,6 +33,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
 - [A303. Modèle OSI, TCP/IP, UDP & DHCP](#️-a303-modèle-osi-tcpip-udp--dhcp)
 - [A304. Cisco IOS & Routage Statique](#-a304-cisco-ios--routage-statique)
+- [A305. DNS, Telnet et SSH](#-a305-dns-telnet-et-ssh)
 
 ---
 
@@ -1028,7 +1029,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >10. copy run sta
 >
 >- Table de routage : <https://fr.wikipedia.org/wiki/Table_de_routage>
->- Cmd : 
+>- Cmd :
 >
 >- **Config Routage cmd :** Route par défaut -> ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx puis end et show ip route pour voir
 >
@@ -1044,6 +1045,26 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >8. end
 >
 >Pour consulter : show ip dhcp binding
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🌐 A305. DNS, Telnet et SSH
+
+Correction [Challenge A305](/challenges/Challenge_A305.md)
+
+Types d'enregistrements DNS :
+
+- type A : faire matcher un nom de domaine avec une adresse IPv4
+- type AAAA : faire matcher un nom de domaine avec une adresse IPv6
+- type CNAME : alias, fait matcher un nom de domaine avec un autre nom de domaine
+
+>- **Commande traceroute :**
+>- sur MacOS/Linux : traceroute
+>- sur Windows : tracert
+>
+>- Mise en place d'un agent relais DHCP : <https://www.it-connect.fr/mise-en-place-dun-agent-relais-dhcp/>
 
 [Retour en haut](#-table-des-matières)
 
