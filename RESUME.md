@@ -1167,6 +1167,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - Par défaut, un routeur (pare-feu) bloque tout le trafic entrant non-sollicité. Pour héberger un service (ex: un site web) chez soi (self-hosting), il faut créer une exception.
   - Le **Port Forwarding (Redirection de Port)** est une règle de NAT statique configurée sur le routeur.
   - Elle dit : "Tout trafic arrivant sur mon IP publique *sur un port spécifique* (ex: Port 80) doit être redirigé vers l'IP privée de *ce serveur interne* (ex: `192.168.1.100` sur le Port 80)". Cela crée une "porte" dans votre pare-feu.
+  - Il faut également avoir une adresse IP "fullstack", c'est à dire avoir sa propre adresse IP Publique et non celle donnée par le CG-NAT (Carrier-Grade Network Address Translation). C'est une technologie utilisée par les fournisseurs d'accès à Internet (FAI) pour partager une seule adresse IP publique entre des centaines, voire des milliers de clients.
 
 [Challenge A307](/challenges/Challenge_A307.md)
 
