@@ -36,3 +36,10 @@ Configuration du NAT.
 
 ![NAT OK](/images/2025-11-13-18-34-58.png)
 
+Configuration des Ports
+
+Problème depuis que j'ai config les ports ça ne passe plus au retour sur le Routeur d'un côté comme de l'autre
+
+![ERROR](/images/2025-11-13-19-49-16.png)
+
+[Fichier packet tracer](/challenges/Challenge_A307.pkt) mdp des routeurs "azer"
