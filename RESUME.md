@@ -1117,7 +1117,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 [Challenge A306](/challenges/Challenge_A306.md)
 
-> 📚 Ressources :
+> 📚 **Ressources :**
 >
 >
 >**Commande traceroute :**
@@ -1126,7 +1126,45 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >- sur Windows : tracert
 >
 >Mise en place d'un **agent relais DHCP** : <https://www.it-connect.fr/mise-en-place-dun-agent-relais-dhcp/>
+>
+>Pour se connecter en SSH le clcient le plus connu est [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), il en existe d'autres comme [MobaXterm](https://mobaxterm.mobatek.net/)
 
 [Retour en haut](#-table-des-matières)
 
 ---
+
+###
+
+[Challenge A307](/challenges/Challenge_A307.md)
+
+> 📚 **Ressources :**
+>
+> **Config NAT sur routeur :**
+>
+>1. conf t
+>2. interface gigabitEthernet (côté LAN)
+>3. ip nat inside
+>4. exit
+>5. interface gigabitEthernet (côté WAN)
+>6. ip nat outside
+>7. exit
+>8. access-list 1 permit x.x.x.0 (IP LAN) x.x.x.255 (masque inverse = wildcard)
+>9. ip nat inside source list 1 interface gigabitEthernet (côté LAN) overload
+>10. exit
+>11. show ip nat stat (voir config & stats)
+>12. show ip nat translation
+>
+> **Redirection de Port :**
+>
+>1. ip nat inside source static tcp 10.10.0.5 80 (IP serveur privée / port) 34.56.78.91 80 (IP router outside publique / port)
+>1. NAT et PAT <https://www.it-connect.fr/le-nat-et-le-pat-pour-les-debutants/>
+>
+> Caddy : <https://github.com/caddyserver/caddy/releases>
+>
+> JSON : <https://fr.wikipedia.org/wiki/JavaScript_Object_Notation>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### A
