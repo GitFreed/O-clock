@@ -30,16 +30,26 @@ Le site est accessible via le web ! (Nostalgie de revoir les vieux sites html qu
 
 Je place et configure tout pour l'exercice. Config des IP fixes serveurs, switches, des gateway, des routeurs, des routes etc. Sur le Switch du LAN1 je configure un serveur DHCP pour mon Labtop. Je ping du Labtop aux serveurs : OK 🥳
 
+![DHCP](/images/2025-11-13-20-44-21.png)
+
 ![PT](/images/2025-11-13-17-52-17.png)
 
 Configuration du NAT.
 
+![NAT](/images/2025-11-13-20-45-32.png)
+
 ![NAT OK](/images/2025-11-13-18-34-58.png)
 
-Configuration des Ports
+Configuration des Ports et suppression des routes sur le Routeur internet central.
 
-Problème depuis que j'ai config les ports ça ne passe plus au retour sur le Routeur d'un côté comme de l'autre
+![config](/images/2025-11-13-20-43-23.png)
 
-![ERROR](/images/2025-11-13-19-49-16.png)
+J'arrive à me connecter au serveur via <http://84.76.20.1> ou <http://84.76.20.1:80>
 
-[Fichier packet tracer](/challenges/Challenge_A307.pkt) mdp des routeurs "azer"
+![OK 1](/images/2025-11-13-20-25-41.png)
+
+Idem pour le second serveur via <http://84.76.20.1:81>
+
+![OK 2](/images/2025-11-13-20-40-51.png)
+
+[Fichier packet tracer](/challenges/Challenge_A307.pkt)
