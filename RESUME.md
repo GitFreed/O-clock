@@ -1183,7 +1183,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >6. ip nat outside
 >7. exit
 >8. access-list 1 permit x.x.x.0 (IP LAN) x.x.x.255 (masque inverse = wildcard)
->9. ip nat inside source list 1 interface gigabitEthernet (côté LAN) overload
+>9. ip nat inside source list 1 interface gigabitEthernet (côté WAN) overload
 >10. exit
 >11. show ip nat stat (voir config & stats)
 >12. show ip nat translation
