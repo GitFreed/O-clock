@@ -6,4 +6,24 @@
 
 ---
 
-## 
+## 1. Self hosting 🖥️
+
+Redirection de port dans la Box
+
+![Port](/images/2025-11-13-15-55-27.png)
+
+Installation de [Caddy](https://github.com/caddyserver/caddy/releases), la dernière release Windows adm64.zip, extraire dans le dossier C:/caddy, puis création d'un fichier .json de config dans ce même dossier.
+
+![json](/images/2025-11-13-16-00-05.png)
+
+Lancement de Caddy via Terminal ``C:\caddy>.\caddy run --config caddy.json``
+
+![Caddy](/images/2025-11-13-15-54-10.png)
+
+Le site est accessible via le web ! (Nostalgie de revoir les vieux sites html que j'avais il y a 20ans)
+
+![Old Site](/images/2025-11-13-15-52-21.png)
+
+---
+
+## 2. NAT et redirection dans PT ⌨️

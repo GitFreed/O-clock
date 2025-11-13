@@ -33,7 +33,10 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A302. Hubs, Switchs, MAC & ARP](#-a302-hubs-switchs-mac--arp)
 - [A303. Modèle OSI, TCP/IP, UDP & DHCP](#️-a303-modèle-osi-tcpip-udp--dhcp)
 - [A304. Cisco IOS & Routage Statique](#-a304-cisco-ios--routage-statique)
-- [A305. DNS, Telnet et SSH](#-a305-dns-telnet-et-ssh)
+- [A305. Atelier Packet Tracer](/challenges/Challenge_A305.md)
+- [A306. DNS, Telnet et SSH](#-a306-dns-telnet-et-ssh)
+- [A307. RFC1918, NAT & self-hosting](#-a307-rfc1918-nat--self-hosting)
+- A308. Atelier
 
 ---
 
@@ -1050,7 +1053,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-### 🔐 A305. DNS, Telnet et SSH
+### 🔐 A306. DNS, Telnet et SSH
 
 > Ce cours couvre les protocoles essentiels pour la communication réseau (DNS) et l'administration à distance (Telnet & SSH), y compris leur configuration de base sur des équipements Cisco.
 
@@ -1133,7 +1136,37 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-###
+### 🏠 A307. RFC1918, NAT & self-hosting
+
+> Ce cours explique la différence fondamentale entre les adresses IP publiques et privées (RFC1918) et introduit le mécanisme de traduction NAT qui permet aux réseaux locaux d'accéder à Internet. Il aborde également le "self-hosting" via la redirection de port.
+
+- **Adresses IP Publiques vs. Privées (RFC1918)** :
+
+  - Les routeurs sur Internet ne savent router que des **adresses IP publiques**, qui sont uniques au monde (ex: `92.34.56.78`).
+  - Pour éviter l'épuisement des adresses IPv4, la **RFC1918** a défini des plages d'**adresses IP privées**. Celles-ci sont non-routables sur Internet et réservées à l'usage interne des réseaux locaux (LAN).
+  - **Les plages privées (à connaître) sont :**
+    - `10.0.0.0` à `10.255.255.255` (Classe A, `10.0.0.0/8`)
+    - `172.16.0.0` à `172.31.255.255` (Bloc de 16 Classes B, `172.16.0.0/12`)
+    - `192.168.0.0` à `192.168.255.255` (Bloc de 256 Classes C, `192.168.0.0/16`)
+
+- **Principe du NAT (Network Address Translation)** :
+
+  - Le **NAT** est le mécanisme qui permet à des machines avec des adresses IP privées d'accéder à Internet.
+  - Le **routeur de bordure** (votre box Internet) sert d'intermédiaire :
+        1. **Envoi** : Quand un PC (`192.168.1.5`) envoie un paquet vers Internet, le routeur **traduit** l'adresse IP source privée en sa **propre adresse IP publique** (`12.34.56.78`).
+        2. **Réception** : Quand le serveur Internet répond au routeur (`12.34.56.78`), ce dernier consulte sa **table NAT** (qui mémorise les correspondances) et re-traduit l'IP de destination vers l'IP privée d'origine (`192.168.1.5`).
+
+- **Types de NAT** :
+
+  - **NAT Statique** : Fait une correspondance 1-pour-1 entre une IP privée et une IP publique. (Ex: `192.168.1.10` utilise *toujours* `90.1.1.10`). C'est utilisé pour rendre un serveur interne accessible depuis l'extérieur.
+  - **NAT Dynamique** : Fait une correspondance "plusieurs-vers-plusieurs". Un pool d'IP privées utilise un pool (plus petit) d'IP publiques. Si le pool public est plein, les nouvelles connexions échouent.
+  - **PAT (Port Address Translation) ou NAT Overload** : C'est la forme la plus courante (celle de votre box). Un "plusieurs-vers-un". Toutes les machines du LAN partagent la **seule IP publique** du routeur. Pour distinguer les connexions, le routeur modifie les **ports source** (ex: PC 1 utilise le port 50000, PC 2 le port 50001).
+
+- **Self-Hosting (Auto-hébergement) & Redirection de Port** :
+
+  - Par défaut, un routeur (pare-feu) bloque tout le trafic entrant non-sollicité. Pour héberger un service (ex: un site web) chez soi (self-hosting), il faut créer une exception.
+  - Le **Port Forwarding (Redirection de Port)** est une règle de NAT statique configurée sur le routeur.
+  - Elle dit : "Tout trafic arrivant sur mon IP publique *sur un port spécifique* (ex: Port 80) doit être redirigé vers l'IP privée de *ce serveur interne* (ex: `192.168.1.100` sur le Port 80)". Cela crée une "porte" dans votre pare-feu.
 
 [Challenge A307](/challenges/Challenge_A307.md)
 
@@ -1167,4 +1200,4 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-### A
+### A308. Atelier
