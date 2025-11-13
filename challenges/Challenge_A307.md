@@ -27,3 +27,7 @@ Le site est accessible via le web ! (Nostalgie de revoir les vieux sites html qu
 ---
 
 ## 2. NAT et redirection dans PT ⌨️
+
+Je place et configure tout pour l'exercice. Config des IP fixes serveurs, switches, des gateway, des routeurs, des routes etc. Sur le Switch du LAN1 je configure un serveur DHCP pour mon Labtop. Je ping du Labtop aux serveurs : OK 🥳
+
+![PT](/images/2025-11-13-17-52-17.png)
