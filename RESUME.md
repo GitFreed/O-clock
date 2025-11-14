@@ -36,7 +36,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A305. Atelier Packet Tracer](/challenges/Challenge_A305.md)
 - [A306. DNS, Telnet et SSH](#-a306-dns-telnet-et-ssh)
 - [A307. RFC1918, NAT & self-hosting](#-a307-rfc1918-nat--self-hosting)
-- A308. Atelier
+- [A308. Atelier proxmox](/challenges/Challenge_A308.md)
 
 ---
 
@@ -1201,4 +1201,4 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-### A308. Atelier
+### 💠 A309
