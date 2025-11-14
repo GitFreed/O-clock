@@ -17,6 +17,12 @@
 
 ---
 
+[Configuration](#configuration)
+[Bonus](#bonus)
+[MégaBonus](#méga-bonus)
+
+---
+
 ## Configuration
 
 Proxmox, un Hyperviseur de type 1, permet de superviser le matériel serveur. On doit configurer l'interface réseau. Ajout de Bridges qui vont permettre de connecter nos interfaces réseau VM à l'interface réseau physique.
@@ -70,3 +76,5 @@ Il faut penser à sauvegarder à nouveau la table : ``sudo iptables-save | sudo 
 Et ça fonctionne, lien vers le serveur : <http://54.36.121.237:401/>
 
 ![matrix](/images/2025-11-14-17-33-07.png)
+
+---
