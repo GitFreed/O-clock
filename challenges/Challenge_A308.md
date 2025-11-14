@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-[Atelier A308](https://github.com/O-clock-Aldebaran/SA3-atelier-proxmox)
+[Pitch de l'Atelier A308 sur le Github privé Aldébaran](https://github.com/O-clock-Aldebaran/SA3-atelier-proxmox)
 
 ![Serveur](/images/2025-11-14-09-56-09.png)
 
@@ -47,9 +47,9 @@ Config NAT pfSense
 
 ![pfsense](/images/2025-11-14-13-10-10.png)
 
-![OK](/images/2025-11-14-13-19-40.png)
-
 Lien vers le serveur : <http://54.36.121.237:2019/>
+
+![OK](/images/2025-11-14-17-36-01.png)
 
 ## Méga Bonus
 
