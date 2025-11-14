@@ -4,6 +4,8 @@
 
 [Pitch de l'Atelier A308 sur le Github privé Aldébaran](https://github.com/O-clock-Aldebaran/SA3-atelier-proxmox)
 
+![schema logique](/images/2025-11-14-17-59-36.png)
+
 ![Serveur](/images/2025-11-14-09-56-09.png)
 
 ---
