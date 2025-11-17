@@ -14,7 +14,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A107. Introduction aux Réseaux Informatiques](#-a107-introduction-aux-réseaux-informatiques)
 - [A108. Sécurité Informatique](#️-a108-sécurité-informatique)
 - [A109. Atelier calcul d'adresse IP et Masque sous-réseau](#-a109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
-- [QCM Saison 01](#-fin-saison-a1-savoirs-de-base)
+- [Fin Saison 1 & QCM](#-fin-saison-a1-savoirs-de-base)
 
 ### [Saison A2. Support aux Utilisateurs 🛠️](#️-saison-a2-support-aux-utilisateurs)
 
@@ -26,6 +26,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A206. BIOS, UEFI, MBR et GPT](#-a206-bios-uefi-mbr-et-gpt)
 - [A207. ITIL](#-a207-itil)
 - [A208. Pratiques ITIL et GLPI](#️-a208-pratiques-itil-et-glpi)
+- [Fin Saison 2 & QCM](#️-fin-saison-a2-support-aux-utilisateurs)
 
 ### [Saison A3. Réseau 🌐](#-saison-a3-réseau)
 
@@ -37,6 +38,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A306. DNS, Telnet et SSH](#-a306-dns-telnet-et-ssh)
 - [A307. RFC1918, NAT & self-hosting](#-a307-rfc1918-nat--self-hosting)
 - [A308. Atelier proxmox](/challenges/Challenge_A308.md)
+- [A309. VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
+- [Fin Saison A3 & QCM](#saison-a3-réseau-)
 
 ---
 
@@ -790,7 +793,7 @@ nombre de machine : 14
 
 [Challenge A301](/challenges/Challenge_A301.md)
 
->📚 Ressources :
+>**📚 Ressources :**
 >
 >- Classes IP : <https://fr.wikipedia.org/wiki/Classe_d%27adresse_IP>
 >- Table des masques : <https://www.it-connect.fr/wp-content-itc/uploads/2021/05/reseau-adresse-ipv4-calcul-masque-sous-reseau-12.png>
@@ -834,7 +837,7 @@ nombre de machine : 14
   - **Cache ARP** : Alice stocke cette correspondance (IP \<-\> MAC) dans son **cache ARP** pour ne pas avoir à reposer la question pendant un certain temps.
   - **Sécurité** : Ce protocole est vulnérable à l'**ARP Poisoning**, une attaque *Man-in-the-Middle* où un attaquant se fait passer pour une autre machine (ex: le routeur) en envoyant de fausses réponses ARP.
 
->📚 Ressources :
+>**📚 Ressources :**
 >
 >- IEEE : <https://fr.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers>
 >- Spoofing : <https://en.wikipedia.org/wiki/MAC_spoofing>
@@ -938,7 +941,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 [Challenge A303](/challenges/Challenge_A303.md)
 
-> 📚 Ressources :
+> **📚 Ressources :**
 >
 >- Mnémotechnique modèle OSI (de bas en haut) : ``Pour Le Réseau Tout Se Passe Automatiquement`` ou ``Petit Lapin Rose Trouvé à la SPA``
 >- Mnémotechnique modèle OSI (de haut en bas) : ``Après Plusieurs Semaines, Tout Respire La paix`` ou **``All People Seem To Need Data Processing``** (Network & Data-link en anglais).
@@ -997,9 +1000,9 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 [Challenge A304](/challenges/Challenge_A304.md)
 
-> 📚 Ressources :
+> **📚 Ressources :**
 >
->- **Config Switch cmd :**
+>**Config Switch cmd :**
 >
 >1. enable
 >2. show running-config -> **sh run**
@@ -1016,9 +1019,9 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >- Ctrl + Shift + 9 (ou 6) stop une commande en cours
 >- Plages IP attribuées sur un /24 (exemple)  1.0 : Réseau, 1.1 : Routeur, 1.2 -> 1.99 : Infra, 1.100 -> 1.250 : DHCP (les machines clients), 1.254 : Switch, 1.255 : Broadcast.
 >
->- Routeur : <https://fr.wikipedia.org/wiki/Routeur>
+>Routeur : <https://fr.wikipedia.org/wiki/Routeur>
 >
->- **Config Routeur cmd :**
+>**Config Routeur cmd :**
 >
 >1. enable
 >2. conf t
@@ -1031,12 +1034,11 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 >9. sh run
 >10. copy run sta
 >
->- Table de routage : <https://fr.wikipedia.org/wiki/Table_de_routage>
->- Cmd :
+>Table de routage : <https://fr.wikipedia.org/wiki/Table_de_routage>
 >
->- **Config Routage cmd :** Route par défaut -> ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx puis end et show ip route pour voir
+>**Config Routage cmd :** Route par défaut -> ip route 0.0.0.0 0.0.0.0 xx.xx.xx.xx puis end et show ip route pour voir
 >
->- **Config DHCP Routeur :**
+>**Config DHCP Routeur :**
 >
 >1. conf t
 >2. ip dhcp pool LAN3
@@ -1201,4 +1203,71 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-### 💠 A309
+### [A308. Atelier proxmox](/challenges/Challenge_A308.md)
+
+---
+
+### 💠 A309. VLANs, L3 switchs, WiFi & IPv6
+
+Notions du jour :
+
+WiFi (normes, sécurité, obligations légales)
+
+VLANs
+
+Switchs de niveau 3
+
+Routage inter-vlan
+
+IPv6
+
+[Challenge A309](/challenges/Challenge_A309.md)
+
+> 📚 **Ressources :**
+>
+> WiFi : <https://fr.wikipedia.org/wiki/Wi-Fi>
+>
+> WiFi Protected Access : <https://fr.wikipedia.org/wiki/Wi-Fi_Protected_Access>
+>
+> CNIL point d'accès et obligations : <https://www.cnil.fr/fr/fournir-un-acces-internet-public-quelles-obligations>
+>
+> Vlan cmd :
+>
+> - *show vlan* : affiche les Vlans et les ports
+> - *conf t / vlan 10 / name LAN1* : crée un vlan qui se nomme 10 dans la config et visible comme LAN1
+> - *conf t / interface range fastEthernet 0/1-12 / switchport mode access / switchport access vlan 10* : configure la plage des ports fastEth 1 à 12 en mode access sur le vlan 10.
+>
+> Vlan Trunk : <https://fr.wikipedia.org/wiki/IEEE_802.1Q>
+>
+> Vlan Trunk cmd :
+>
+> - *conf t / interface gigabitEthernet 0/1 / switchport mode trunk* : passer l'interface gigEth en mode Trunk sur les 2 switchs pour propager plusieurs vlans.
+> - *conf t / vlan 42 / name Management / exit / interface vlan 42 / ip address 10.42.0.1 255.255.255.0 / no shutdown* : crée une interface virtuelle et lui alloue une IP (pour le administrer à distance sur un switch L2, ou passerelle par défaut sur un routeur L3 ).
+> - *interface gigabitEthernet 0/1 / switchport trunk native vlan 42* : Passe le Vlan 42 en natif, un seul Vlan untagged autre que le défaut permet d'être plus sécurisé (Hardening) contre le Vlan Hopping.
+> - *interface gigabitEthernet 0/1 / switchport trunk allowed vlan 10,20,42* (sur tous les switchs) : bloque tous les Vlans sauf le 10, 20 et 42. A faire sur tous les switchs.
+Passerelle VLan sur Routeur (L3)
+> - *conf t / interface vlan 10 / description Passerelle LAN1 / ip address 192.168.1.254 255.255.255.0 / no shutdown* : alloue une IP sur l'interface pour être une Passerelle (idem sur LAN2)
+> - *ip routing* : active le routage entre les VLANs
+>
+> IPv6
+>
+> - ``.0.0.0.`` peut s'écrire ``. .``
+> - Quasi toujours en /64 moitié hextets en préfix, moitié en clients
+>
+>IANA : <https://www.iana.org/numbers>
+>
+> - Prefixes régionaux : <https://www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xhtml>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+## 🌐 Fin Saison A3. Réseau
+
+[QCM Saison A3](https://forms.gle/)
+
+![Résultat QCM](/images/)
+
+[Retour en haut](#-table-des-matières)
+
+---
