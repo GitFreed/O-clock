@@ -77,4 +77,11 @@ Et ça fonctionne, lien vers le serveur : <http://54.36.121.237:401/>
 
 ![matrix](/images/2025-11-14-17-33-07.png)
 
+Ajout d'un fichier start-caddy.bat au démarrage de la VM pour que le serveur caddy se relance après chaque redémarrage.
+
+``@echo off
+cd /d C:\caddy
+echo Demarrage de Caddy.
+caddy run --config caddy.json``
+
 ---
