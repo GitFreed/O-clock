@@ -59,6 +59,8 @@ Je vais ajouter 2 ACL sur le Sw3 juste avant le serveur :
 - Les autres IP ne faisant pas parti de ces LAN seront forcément refusées
 - J'applique ces règles sur l'interface ou le serveur est relié (fa 0/2) avec ``ip access-group 1 in``
 
+Et ça ne fonctionne pas... 😩
+
 ![??](/images/2025-11-17-20-46-18.png)
 
 ## [Fichier Packet Tracer](./Challenge_A309.pkt)
