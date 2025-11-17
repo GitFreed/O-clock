@@ -32,4 +32,31 @@ Pour sécuriser nos Vlans, on va créer un Vlan Admin qui sera le seul en mode N
 
 ![vlan50](/images/2025-11-17-19-18-00.png)
 
+Connexion en SSH, il faut configurer le port sur lequel on se connecte comme sur les autres switchs.
+
+![SSH](/images/2025-11-17-20-38-26.png)
+
 ## 3. Routage inter-VLAN 🔀
+
+On va configurer le routeur (L3) avec les mêmes VLANs, trunk, et une passerelle sur chaque LAN et activer le routage avec ``ip routing``
+
+Il faut également indiquer à chaque machine sa passerelle.
+
+![gateway](/images/2025-11-17-19-34-17.png)
+
+Ping d'un PC en 192.168.1.x vers un 172.16.0.x OK !
+
+![ping ok](/images/2025-11-17-19-41-29.png)
+
+## Bonus : ACLs 🔏
+
+Ex: Autoriser les machines du VLAN 20 et 30 à seulement joindre un serveur spécifique dans le VLAN 10, ici je vais prendre le 192.168.1.20 sur le Sw3.
+
+Je vais ajouter 2 ACL sur le Sw3 juste avant le serveur :
+
+- Autoriser l'accès des IP du LAN2 : ``access-list 1 permit 172.16.0.0 0.0.255.255`` (network + wildcard mask /16)
+- Autoriser l'accès des IP du LAN3 : ``access-list 2 permit 10.0.0.0 0.0.255.255`` (network + wildcard mask /16)
+- Les autres IP ne faisant pas parti de ces LAN seront forcément refusées
+- J'applique ces règles sur l'interface ou le serveur est relié (fa 0/2) avec ``ip access-group 1 in``
+
+![??](/images/2025-11-17-20-46-18.png)
