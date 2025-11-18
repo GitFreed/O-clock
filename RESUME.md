@@ -1334,3 +1334,5 @@ C'est une excellente initiative ! Les modes de ports sont effectivement des conc
 Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **VLAN Natif**, à ajouter à votre fiche de révision pour le cours A309.
 
 ---
+
+## Saison A4
