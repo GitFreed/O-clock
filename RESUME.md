@@ -1209,17 +1209,68 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ### 💠 A309. VLANs, L3 switchs, WiFi & IPv6
 
-Notions du jour :
+> Ce cours approfondit la segmentation réseau avec les VLANs, introduit les switchs de niveau 3 pour le routage, détaille les normes et la sécurité du WiFi, et présente des outils de contrôle d'accès comme les proxys et portails captifs.
 
-WiFi (normes, sécurité, obligations légales)
+- **VLANs (Virtual LANs)** :
 
-VLANs
+  - Un VLAN est un **réseau local virtuel** qui permet de **cloisonner logiquement** des machines au sein d'un même équipement physique (switch).
+  - **Avantages** :
+    - **Sécurité** : Isole les départements ou fonctions sensibles (ex: Compta vs. Invités).
+    - **Flexibilité** : Permet de regrouper des utilisateurs géographiquement dispersés dans le même réseau logique.
+    - **Optimisation** : Réduit la taille des **domaines de diffusion** (broadcast domains), ce qui limite le trafic inutile et améliore les performances.
+  - **Fonctionnement** : On assigne des ports du switch à un VLAN spécifique (ex: Ports 1-5 pour VLAN 10). Les trames d'un VLAN ne peuvent pas passer directement vers un autre VLAN.
+  - **Tagging (802.1Q)** : Pour faire transiter plusieurs VLANs entre deux switchs via un seul câble, on utilise un lien **Trunk**. Le protocole **802.1Q** ajoute un "tag" (étiquette) à la trame Ethernet pour indiquer son numéro de VLAN (VLAN ID).
+  - **QoS (Quality of Service)** : Les VLANs facilitent la mise en place de la QoS, par exemple pour prioriser le trafic **VoIP** (téléphonie sur IP) afin d'assurer une bonne qualité d'appel même si le réseau est chargé.
 
-Switchs de niveau 3
+- **Switchs de Niveau 3 (L3 Switchs)** :
 
-Routage inter-vlan
+  - Contrairement aux switchs classiques (Niveau 2) qui ne comprennent que les adresses MAC, un switch L3 peut traiter les paquets IP et effectuer du **routage**.
+  - **Routage Inter-VLAN** : Pour faire communiquer deux VLANs différents, il faut normalement un routeur. Un switch L3 peut remplir ce rôle en interne, routant le trafic entre les VLANs à très haute vitesse sans passer par un routeur externe ("router-on-a-stick").
+  - Ils sont souvent utilisés en **cœur de réseau** pour leur performance.
 
-IPv6
+  Sur un switch, chaque port peut être configuré dans un mode spécifique selon l'équipement qui y est connecté.
+
+- **Mode Access (Accès)** :
+  - **Usage** : Utilisé pour connecter des **équipements terminaux** qui ne "comprennent" pas les VLANs (PC, imprimante, caméra, etc.).
+  - **Fonctionnement** : Le port est membre d'**un seul VLAN**.
+    - Lorsque le switch envoie une trame vers le PC (sortant), il **enlève le tag** VLAN (la trame redevient une trame Ethernet standard).
+    - Lorsque le PC envoie une trame au switch (entrant), le switch lui **ajoute le tag** du VLAN configuré sur ce port.
+  - **En bref** : 1 Port = 1 VLAN.
+
+- **Mode Trunk** :
+  - **Usage** : Utilisé pour connecter **deux équipements réseau** entre eux (Switch vers Switch, ou Switch vers Routeur) pour laisser passer le trafic de plusieurs VLANs.
+  - **Fonctionnement** : Le port transporte simultanément les trames de **plusieurs VLANs**.
+    - Il utilise le protocole **802.1Q** pour ajouter une étiquette (tag) à chaque trame indiquant son numéro de VLAN (VLAN ID), afin que le switch de l'autre côté sache à qui elle appartient.
+  - **En bref** : 1 Port = Plusieurs VLANs (trames étiquetées).
+
+- **VLAN Natif (Native VLAN)** :
+  - C'est un concept spécifique au mode **Trunk**.
+  - Par défaut, sur un lien Trunk, toutes les trames sont taguées... sauf celles du **VLAN Natif**.
+  - Les trames qui circulent **sans étiquette (untagged)** sur un lien Trunk sont automatiquement considérées comme appartenant au VLAN Natif.
+  - **Sécurité** : Par défaut, c'est souvent le VLAN 1. Il est recommandé de le changer pour un VLAN inutilisé (ex: VLAN 99 ou 42) pour des raisons de sécurité.
+
+  Il est bon de connaître les équivalences car les termes changent selon les fabricants :
+
+  | Terme Cisco | Terme Standard / Autres | Description |
+  | :--- | :--- | :--- |
+  | **Access Port** | **Untagged Port** | Port appartenant à un seul VLAN, trames non taguées. |
+  | **Trunk Port** | **Tagged Port** | Port transportant plusieurs VLANs, trames taguées (802.1Q). |
+
+- **WiFi (Wireless Fidelity)** :
+
+  - Ensemble de protocoles de communication sans fil régis par les normes **IEEE 802.11**.
+  - **Normes** : Du 802.11b (11 Mbit/s) au moderne 802.11ax (Wi-Fi 6) et au-delà, offrant des débits toujours plus élevés et une meilleure gestion de la densité d'appareils.
+  - **Sécurité** :
+    - **WEP** : Obsolète et non sécurisé (cassable en quelques minutes).
+    - **WPA/WPA2/WPA3** : Standards actuels. WPA2 (AES) est le minimum recommandé. WPA3 apporte des améliorations contre les attaques par force brute.
+  - **Obligations Légales (WiFi Public)** : En France, offrir un accès WiFi public (ex: entreprise, hôtel) impose des obligations légales, notamment la **conservation des logs de connexion** (qui s'est connecté, quand, etc.) pour une durée légale (généralement 1 an), conformément aux directives de la CNIL et à la loi antiterroriste.
+
+- **Proxy & Portail Captif** :
+
+  - **Proxy (Mandataire)** : Un serveur intermédiaire (Couche 7 Application) qui s'intercale entre l'utilisateur et Internet.
+    - Rôles : Filtrage d'URL (blocage de sites), mise en cache (accélération), anonymisation, et journalisation des accès (logs).
+  - **Portail Captif** : Une technique (souvent utilisée sur les WiFi publics) qui force tout nouvel utilisateur à voir une page web spécifique (authentification, acceptation des CGU) avant de pouvoir accéder à Internet.
+  - **Filtrage MAC** : Méthode de sécurité basique (Couche 2) qui autorise ou bloque l'accès au réseau selon l'adresse MAC. Elle est peu efficace car l'adresse MAC est facilement falsifiable (spoofing).
 
 [Challenge A309](/challenges/Challenge_A309.md)
 
@@ -1257,6 +1308,12 @@ Passerelle VLan sur Routeur (L3)
 >IANA : <https://www.iana.org/numbers>
 >
 > - Prefixes régionaux : <https://www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xhtml>
+>
+> ICMP (v6) : <https://fr.wikipedia.org/wiki/Internet_Control_Message_Protocol>
+>
+> Proxy : <https://fr.wikipedia.org/wiki/Proxy>
+>
+> Proxy Squid : <https://www.it-connect.fr/proxy-transparent-mise-en-place-de-squid-sur-pfsense/>
 
 [Retour en haut](#-table-des-matières)
 
@@ -1264,10 +1321,16 @@ Passerelle VLan sur Routeur (L3)
 
 ## 🌐 Fin Saison A3. Réseau
 
-[QCM Saison A3](https://forms.gle/)
+[QCM Saison A3](https://forms.gle/SXH9yy4tfSV8ePiW8)
 
-![Résultat QCM](/images/)
+![Résultat QCM](/images/2025-11-18-12-11-28.png)
 
 [Retour en haut](#-table-des-matières)
+
+---
+
+C'est une excellente initiative ! Les modes de ports sont effectivement des concepts cruciaux pour bien configurer les VLANs.
+
+Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **VLAN Natif**, à ajouter à votre fiche de révision pour le cours A309.
 
 ---
