@@ -41,7 +41,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A309. VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
 - [Fin Saison A3 & QCM](#-fin-saison-a3-réseau)
 
-### [Saison A4.](#saison-a4-w)
+### [Saison A4. Windows Server 💠](#saison-a4-windows-server-)
+
+- [A401. Introduction et Installation](#️-a401-introduction-et-installation)
 
 ---
 
@@ -1337,4 +1339,61 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-## Saison A4. W
+## **💠 Saison A4. Windows Server**
+
+> Cette saison se concentre sur l'administration système dans un environnement Microsoft. L'objectif est de maîtriser l'installation, la configuration et la gestion des services essentiels (AD DS, DNS, DHCP) sur Windows Server.
+
+### 🖥️ A401. Introduction et Installation
+
+> Ce cours introduit la famille des systèmes d'exploitation serveurs de Microsoft, leur historique, leurs spécificités par rapport aux versions "publiques" (Windows 10/11), et détaille la procédure d'installation et de promotion d'un contrôleur de domaine.
+
+- **Historique et Évolution** :
+
+  - **Les débuts (NT)** : Tout commence avec **Windows NT 3.1 Advanced Server** (1993) et **NT 4.0**, séparant la branche professionnelle de la branche grand public (Windows 95/98).
+  - **Le tournant (2000)** : **Windows 2000 Server** introduit **Active Directory**, révolutionnant la gestion centralisée des réseaux d'entreprise.
+  - **La maturité** :
+    - **Server 2003 & 2008** : Améliorations de stabilité, introduction de **Hyper-V** (virtualisation) et du mode **Server Core** (sans interface graphique).
+    - **Server 2012/2016** : Focus sur le Cloud, l'interface "Metro" et les conteneurs.
+  - **Aujourd'hui (2019/2022)** : Intégration poussée avec le cloud hybride (**Azure**), sécurité renforcée (Windows Defender ATP) et gestion via **Windows Admin Center**.
+
+- **Fonctionnement : Rôles et Fonctionnalités** :
+
+  - Contrairement à un Windows classique, Windows Server est modulaire. On n'installe que ce dont on a besoin pour des raisons de sécurité et de performance.
+  - **Rôles** : Ce sont les fonctions principales du serveur (ex: Serveur Web IIS, Serveur DNS, Services de domaine Active Directory).
+  - **Fonctionnalités** : Ce sont des outils de support (ex: .NET Framework, Chiffrement BitLocker, Telnet Client).
+  - **Gestion** : Tout se gère centralement via le **Gestionnaire de serveur** (Server Manager) ou en ligne de commande avec **PowerShell**.
+
+- **Préparation et Installation (Windows Server 2019)** :
+
+  - **Prérequis matériels** : Processeur 64 bits 1.4 GHz, RAM minimum 512 Mo (mais **8 Go** recommandés en production), et 32 Go d'espace disque.
+  - **Types d'installation** :
+    - **Expérience utilisateur (Desktop Experience)** : Avec l'interface graphique complète (GUI), recommandée pour les débutants.
+    - **Server Core** : Sans interface graphique (gestion en ligne de commande), plus léger et sécurisé (moins de surface d'attaque), mais plus complexe à gérer.
+  - **Processus** : Démarrage sur l'ISO, choix de la langue, sélection de l'édition (Standard ou Datacenter), partitionnement du disque et installation des fichiers.
+
+- **Configuration Post-Installation** :
+
+  - **Sécurité de base** : Définition du mot de passe Administrateur local (complexe requis).
+  - **Réseau** : Attribution impérative d'une **adresse IP statique** et configuration des DNS.
+  - **Identité** : Renommer le serveur avec un nom cohérent avant toute autre action.
+  - **Accès** : Activation du Bureau à distance (RDP) pour l'administration.
+  - **Mises à jour** : Installation critique des correctifs via Windows Update.
+
+- **Promotion en Contrôleur de Domaine (Active Directory)** :
+
+  - Pour qu'un serveur devienne le "chef" du réseau, on installe le rôle **AD DS** (Active Directory Domain Services).
+  - **Promotion** : Une fois le rôle installé, on doit "promouvoir" le serveur.
+  - **Nouvelle Forêt** : Pour le premier serveur, on crée une nouvelle forêt et on définit le nom de domaine racine (ex: `thm.local`).
+  - **DSRM** : On définit un mot de passe de restauration des services d'annuaire (crucial en cas de crash de l'AD).
+
+[Challenge A401](./challenges/Challenge_A401.md)
+
+> 📚 Ressources :
+>
+>Installation sur Proxmox : <https://getlabsdone.com/how-to-install-windows-server-2019-on-proxmox-step-by-step/>
+>
+> Créer un active directory : <https://www.it-connect.fr/creer-un-domaine-ad-avec-windows-server-2016/>
+
+[Retour en haut](https://www.google.com/search?q=%23-table-des-mati%C3%A8res)
+
+---
