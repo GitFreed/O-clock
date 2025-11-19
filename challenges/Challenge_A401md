@@ -31,3 +31,9 @@ Je configure dans pfSense (via Set interface IP) l'interface LAN : 198.168.80.1
 Rien de compliqué, juste mettre sur le même LAN Segment donné par pfSense.
 
 ![Serv2022](/images/2025-11-19-18-52-10.png)
+
+## 3. Installation de Windows Server sur Proxmox
+
+Une fois l'image chargée sur notre serveur, on lance l'installation de la machine virtuelle, seule différence, il faut installer les drivers VirtIO pour que l'installation trouve le disque dur.
+
+![done](/images/2025-11-19-23-26-27.png)
