@@ -44,6 +44,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison A4. Windows Server 💠](#saison-a4-windows-server-)
 
 - [A401. Introduction et Installation](#️-a401-introduction-et-installation)
+- [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
 
 ---
 
@@ -1347,6 +1348,12 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 > Ce cours introduit la famille des systèmes d'exploitation serveurs de Microsoft, leur historique, leurs spécificités par rapport aux versions "publiques" (Windows 10/11), et détaille la procédure d'installation et de promotion d'un contrôleur de domaine.
 
+- **Introduction et Contexte** :
+
+  - **Définition** : Windows Server est une solution conçue pour répondre aux besoins d'infrastructure des entreprises, distincte des versions "client" (Windows 10/11).
+  - **Part de marché** : Il domine le monde de l'entreprise avec environ **70% de parts de marché** mondiales, même si Linux reste majoritaire pour les serveurs Web.
+  - **Impact** : Il a standardisé les infrastructures IT grâce à son adoption massive et son intégration forte avec l'écosystème Microsoft (**Office, Azure**).
+
 - **Historique et Évolution** :
 
   - **Les débuts (NT)** : Tout commence avec **Windows NT 3.1 Advanced Server** (1993) et **NT 4.0**, séparant la branche professionnelle de la branche grand public (Windows 95/98).
@@ -1354,7 +1361,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
   - **La maturité** :
     - **Server 2003 & 2008** : Améliorations de stabilité, introduction de **Hyper-V** (virtualisation) et du mode **Server Core** (sans interface graphique).
     - **Server 2012/2016** : Focus sur le Cloud, l'interface "Metro" et les conteneurs.
-  - **Aujourd'hui (2019/2022)** : Intégration poussée avec le cloud hybride (**Azure**), sécurité renforcée (Windows Defender ATP) et gestion via **Windows Admin Center**.
+  - **Aujourd'hui (2019/2022/2025)** : Intégration poussée avec le cloud hybride (**Azure**), sécurité renforcée (Windows Defender ATP) et gestion via **Windows Admin Center**.
 
 - **Fonctionnement : Rôles et Fonctionnalités** :
 
@@ -1390,10 +1397,55 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 > 📚 Ressources :
 >
->Installation sur Proxmox : <https://getlabsdone.com/how-to-install-windows-server-2019-on-proxmox-step-by-step/>
+> Wiki Windows Server : <https://en.wikipedia.org/wiki/Windows_Server>
+>
+> Installation sur Proxmox : <https://getlabsdone.com/how-to-install-windows-server-2019-on-proxmox-step-by-step/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthétisé les concepts clés présents dans le PDF pour vous offrir une vue d'ensemble structurée.
+
+### 🏢 A402. Active Directory Domain Services (AD DS)
+
+> Ce cours détaille l'architecture et les composants fondamentaux d'Active Directory, le service d'annuaire de Microsoft qui centralise la gestion des identités et des accès dans un réseau Windows.
+
+- **Les Fondations : LDAP** :
+
+  - **LDAP (Lightweight Directory Access Protocol)** est le protocole standard utilisé pour interroger et modifier les annuaires. Il structure les données de manière hiérarchique (comme un arbre) pour faciliter la recherche.
+  - Active Directory est l'implémentation Microsoft de LDAP. Il utilise ce protocole pour communiquer, tout en intégrant la sécurité Kerberos.
+
+- **Architecture Logique** :
+
+  - **Domaine** : C'est l'unité de base d'administration et de sécurité. Il regroupe des objets (utilisateurs, ordinateurs) partageant une base de données commune.
+  - **Arbre (Tree)** : Regroupement de un ou plusieurs domaines partageant un espace de noms DNS contigu (ex: `thm.local` et `us.thm.local`).
+  - **Forêt (Forest)** : Le conteneur de plus haut niveau. Elle regroupe un ou plusieurs arbres qui partagent le même **schéma** (définition des objets) et la même configuration. C'est la frontière de sécurité ultime.
+  - **OU (Unité Organisationnelle)** : Conteneurs à l'intérieur d'un domaine permettant d'organiser les objets (par département, lieu...) et surtout d'appliquer des **GPO** (Stratégies de groupe) ou de déléguer des droits d'administration.
+
+- **Architecture Physique** :
+
+  - **Site** : Représente la topologie physique du réseau (un ou plusieurs sous-réseaux IP). Les sites servent à optimiser la **réplication** (synchronisation) entre les contrôleurs de domaine et à permettre aux utilisateurs de s'authentifier sur le serveur le plus proche.
+  - **Contrôleur de Domaine (DC)** : Serveur qui héberge la base de données AD (`NTDS.dit`) et le dossier SYSVOL.
+
+- **Gestion des Objets** :
+
+  - **Utilisateurs et Ordinateurs** : Comptes utilisés pour l'authentification sur le réseau.
+  - **Groupes** : Permettent de gérer les permissions efficacement (on donne des droits à un groupe, pas à un utilisateur seul).
+    - **Types** : Sécurité (pour les permissions d'accès) ou Distribution (pour les e-mails).
+    - **Portées** : Domaine Local, Global, Universel (définissent la visibilité du groupe dans la forêt).
+
+- **Le SYSVOL** :
+
+  - C'est un dossier partagé présent sur chaque Contrôleur de Domaine. Il contient les éléments publics nécessaires aux clients, comme les **scripts de connexion** et les fichiers des **GPO** (Stratégies de groupe). Il est automatiquement répliqué sur tous les DC.
+
+[Challenge A402](./challenges/Challenge_A402.md)
+
+> 📚 Ressources :
 >
 > Créer un active directory : <https://www.it-connect.fr/creer-un-domaine-ad-avec-windows-server-2016/>
+>
+> Domaine Forestier : <https://www.it-connect.fr/chapitres/domaine-arbre-et-foret/>
 
-[Retour en haut](https://www.google.com/search?q=%23-table-des-mati%C3%A8res)
+[Retour en haut](#-table-des-matières)
 
 ---

@@ -24,7 +24,7 @@ Je configure dans pfSense (via Set interface IP) l'interface LAN : 198.168.80.1
 
 ![pfsense](/images/2025-11-19-18-36-35.png)
 
-à partir de là je peux me connecter depuis une de mes VM (en la mettant sur le même LAN Segement) sur l'interface graphique pour finir la configuration.
+à partir de là je peux me connecter depuis une de mes VM (en la mettant sur le même LAN Segment) sur l'interface graphique pour finir la configuration.
 
 ## 2. Installation de Windows Server 2022
 
