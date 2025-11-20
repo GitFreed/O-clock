@@ -41,7 +41,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A309. VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
 - [Fin Saison A3 & QCM](#-fin-saison-a3-réseau)
 
-### [Saison A4. Windows Server 💠](#saison-a4-windows-server-)
+### [Saison A4. Windows Server 💠](#-saison-a4-windows-server)
 
 - [A401. Introduction et Installation](#️-a401-introduction-et-installation)
 - [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
