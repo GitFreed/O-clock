@@ -1445,6 +1445,18 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 > Créer un active directory : <https://www.it-connect.fr/creer-un-domaine-ad-avec-windows-server-2016/>
 >
 > Domaine Forestier : <https://www.it-connect.fr/chapitres/domaine-arbre-et-foret/>
+>
+> Mise en place step by step :
+>
+>1. install win serveur (choisir expérience de bureau)
+>2. configurer le nom de la machine
+>3. mettre une IP statique
+>4. ajouter le rôle AD DS (ajouter une nouvelle forêt, choisir "oclock.lan")
+>5. promouvoir ce serveur en contrôleur de domaine
+>
+>6. sur une VM Win10, configurer DNS -> utiliser IP statique du serveur windows
+>7. renommer la machine
+>8. rejoindre le domaine oclock.lan (vérifier que le ping du domaine passe avant)
 
 [Retour en haut](#-table-des-matières)
 
