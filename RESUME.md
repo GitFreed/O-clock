@@ -1395,7 +1395,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 [Challenge A401](./challenges/Challenge_A401.md)
 
-> 📚 Ressources :
+> **📚 Ressources :**
 >
 > Wiki Windows Server : <https://en.wikipedia.org/wiki/Windows_Server>
 >
@@ -1440,7 +1440,7 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 
 [Challenge A402](./challenges/Challenge_A402.md)
 
-> 📚 Ressources :
+> **📚 Ressources :**
 >
 > Créer un active directory : <https://www.it-connect.fr/creer-un-domaine-ad-avec-windows-server-2016/>
 >
@@ -1461,3 +1461,40 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🛡️ A403. Stratégies de Groupe (GPO)
+
+> Ce cours aborde les Stratégies de Groupe (GPO - Group Policy Objects), un outil puissant d'Active Directory pour gérer centralement la configuration des utilisateurs et des ordinateurs dans un environnement Windows.
+
+- **Principe des GPO** :
+  - Une GPO est un ensemble de paramètres de configuration appliqués à des utilisateurs ou des ordinateurs.
+  - Elles permettent d'automatiser la gestion, d'appliquer des règles de sécurité, d'installer des logiciels ou de configurer l'environnement de travail (fond d'écran, mappage de lecteurs, etc.) à grande échelle.
+
+- **Structure et Application** :
+  - **Conteneurs** : Les GPO peuvent être liées à des **Sites**, des **Domaines** ou des **Unités Organisationnelles (OU)**.
+  - **Héritage** : Par défaut, les GPO appliquées à un conteneur parent sont héritées par les conteneurs enfants. Cet héritage peut être bloqué ou forcé.
+  - **Ordre d'application (LSDOU)** : Local > Site > Domaine > OU. La dernière GPO appliquée l'emporte en cas de conflit (l'OU a donc la priorité sur le Domaine).
+
+- **Configuration Utilisateur vs. Ordinateur** :
+  - **Configuration Ordinateur** : S'applique au démarrage de la machine, quel que soit l'utilisateur qui se connecte (ex: paramètres de pare-feu, installation de logiciels système).
+  - **Configuration Utilisateur** : S'applique à l'ouverture de session de l'utilisateur (ex: scripts de connexion, restrictions du panneau de configuration, raccourcis bureau).
+
+- **Gestion des GPO** :
+  - L'outil principal est la **Console de gestion des stratégies de groupe (GPMC)**.
+  - On y crée les objets GPO, on les modifie via l'éditeur, et on les lie aux conteneurs AD souhaités.
+  - **Filtrage de sécurité** : Permet de restreindre l'application d'une GPO à certains utilisateurs, groupes ou ordinateurs spécifiques, même si elle est liée à leur OU.
+  - **WMI Filters** : Permettent d'appliquer une GPO selon des critères techniques (ex: version de l'OS, espace disque disponible).
+
+- **Commande utile** :
+  - `gpupdate /force` : Force la mise à jour immédiate des stratégies de groupe sur le client, sans attendre le cycle de rafraîchissement automatique (environ 90 minutes).
+  - `gpresult /r` : Affiche un rapport sur les GPO appliquées à l'utilisateur et à l'ordinateur, utile pour le diagnostic.
+
+[Challenge A403](./challenges/Challenge_A403.md)
+
+> **📚 Ressources :**
+>
+> Contrôle de comptes d'utilisateur : <https://learn.microsoft.com/fr-fr/windows/security/application-security/application-control/user-account-control/how-it-works>
+>
+> GPO sur IT-connect : <https://www.it-connect.fr/chapitres/quest-ce-quune-strategie-de-groupe-ou-gpo/>
+
+[Retour en haut](#-table-des-matières)
