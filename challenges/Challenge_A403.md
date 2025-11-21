@@ -1,8 +1,10 @@
-# Challenge A401 19/11/2025
+# Challenge A403 19/11/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
 ⌨️ Tester les stratégies de GPO
+
+[Cours A403. Stratégies de Groupe (GPO)](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#️-a403-stratégies-de-groupe-gpo)
 
 ---
 

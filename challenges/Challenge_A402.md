@@ -1,10 +1,10 @@
-# Challenge A401 19/11/2025
+# Challenge A402 20/11/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
 ![Challenge](/images/2025-11-20-16-54-33.png)
 
-[Cours A401. Active Directory](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#-a402-active-directory-domain-services-ad-ds)
+[Cours A402. Active Directory](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#-a402-active-directory-domain-services-ad-ds)
 
 ---
 

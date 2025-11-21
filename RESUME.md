@@ -45,6 +45,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [A401. Introduction et Installation](#️-a401-introduction-et-installation)
 - [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
+- [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
 
 ---
 
