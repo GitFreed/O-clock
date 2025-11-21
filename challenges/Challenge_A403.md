@@ -48,6 +48,6 @@ Pour interdire aux utilisateurs de le changer on va dans Modèles d'administrati
 
 Une fois les règles déterminées on déplace ma GPO au dessus des Unités d'organisation pour leur appliquer
 
-![GPO](/images/2025-11-21-22-48-14.png)
+![GPO](/images/2025-11-21-23-07-52.png)
 
 En se connectant à une session des promos, on a effectivement le nouveau Fond d'écran et pas la possibilité de le modifier !
