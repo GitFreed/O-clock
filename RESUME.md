@@ -1499,3 +1499,26 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 > GPO sur IT-connect : <https://www.it-connect.fr/chapitres/quest-ce-quune-strategie-de-groupe-ou-gpo/>
 
 [Retour en haut](#-table-des-matières)
+
+---
+
+###
+
+Partage SMB/NFS
+
+AGPLP vs AGP (simplifié)
+
+Casser l'héritage et refaire à la main
+
+Nom+$ cache le répertoire à tlm, pratique pour logiciel$ driver$ etc
+
+[Challenge A404](./challenges/Challenge_A404.md)
+
+> **📚 Ressources :**
+>
+> Serveur de Fichier : <https://www.it-connect.fr/serveur-de-fichiers-les-permissions-ntfs-et-de-partage/>
+>
+> AGDLP : <https://www.it-connect.fr/agdlp-bien-gerer-les-permissions-de-son-serveur-de-fichiers/>
+>
+
+[Retour en haut](#-table-des-matières)
