@@ -2,9 +2,9 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge A404](/images/⌨️%20Tester%20les%20stratégies%20de%20GPO.png)
+![Challenge A404](/images/2025-11-24-17-22-41.png)
 
-[Cours A404.](https://github.com/GitFreed/O-clock/blob/main/RESUME.md)
+[Cours A404.](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#-a404-serveur-de-fichiers-distribués-dfs)
 
 ---
 

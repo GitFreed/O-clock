@@ -46,6 +46,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A401. Introduction et Installation](#️-a401-introduction-et-installation)
 - [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
 - [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
+- [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 
 ---
 
@@ -1502,23 +1503,55 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 
 ---
 
-###
+### 💾 A404. Serveur de fichiers distribués (DFS)
 
-Partage SMB/NFS
+> Ce cours explore le service DFS de Windows Server, essentiel pour centraliser l'accès aux données, simplifier l'arborescence réseau pour les utilisateurs, et garantir la haute disponibilité des fichiers grâce à la réplication.
 
-AGPLP vs AGP (simplifié)
+- **DFS (Distributed File System)** :
 
-Casser l'héritage et refaire à la main
+  - **Définition** : Service Windows Server permettant de regrouper plusieurs partages réseau (situés sur différents serveurs) sous un seul et unique espace de noms logique (ex : `\\domaine.local\partages`).
+  - **Rôle principal - DFS Namespace** : Crée un point d'accès logique et unifié. Les utilisateurs n'ont plus besoin de connaître le nom du serveur physique.
+  - **Rôle secondaire - DFS Replication (DFSR)** : Synchronise les données entre plusieurs serveurs pour assurer la tolérance de panne et la haute disponibilité. Si un serveur tombe, les utilisateurs accèdent automatiquement à une copie des données sur un autre serveur.
+  - **Bénéfices** : Simplification des chemins d'accès pour les utilisateurs et haute disponibilité des données.
 
-Nom+$ cache le répertoire à tlm, pratique pour logiciel$ driver$ etc
+- **Gestion des Permissions : Partage vs. NTFS** :
+
+  - **Permissions NTFS** : S'appliquent au niveau du **système de fichiers local**. Elles définissent les droits précis (Lecture, Écriture, Modification, Contrôle total) et s'appliquent après l'accès au partage.
+  - **Permissions de Partage** : Gérées au niveau du **répertoire partagé** sur le réseau. Elles sont plus générales (Lecture, Modification, Contrôle total).
+  - **Règle de cumul** : Les permissions NTFS s'appliquent **après** les droits de partage. L'utilisateur reçoit toujours le **droit le plus restrictif** entre les droits de partage et les droits NTFS.
+
+- **Héritage et Bonnes Pratiques** :
+
+  - **Héritage** : Transmet automatiquement les droits définis sur un dossier parent aux sous-dossiers et fichiers. Il est possible de désactiver cet héritage ("casser l'héritage") pour isoler et redéfinir des droits spécifiques.
+  - **Bonne Pratique (Simplification)** : Pour la simplicité administrative, il est courant de donner le droit **Contrôle total** au groupe `Tout le monde` (ou `Utilisateurs Authentifiés`) sur la **permission de partage**, et de gérer toutes les **vraies restrictions** et la sécurité via les **permissions NTFS**.
+
+- **Modèle AGDLP / AGP (Modèle pour les droits)** :
+
+  - Ce modèle est une bonne pratique pour l'administration évolutive des droits dans les grandes structures :
+    - **A**ccounts (Utilisateurs et ordinateurs)
+    - placés dans des **G**roupes **D**omains **G**lobaux
+    - ajoutés dans des **L**ocal **P**ermission Groups
+    - puis ces groupes reçoivent des **P**ermissions sur la ressource (dossiers NTFS ou partages DFS).
+
+- **Tips** :
+
+  - Ajouter le suffixe `$` au nom d'un dossier partagé (ex : `drivers$`) cache le répertoire aux utilisateurs qui parcourent le réseau, tout en permettant l'accès via le chemin UNC complet.
+  - Pour les besoins spécifiques, il est parfois plus simple de **casser l'héritage** et de redéfinir manuellement les permissions.
 
 [Challenge A404](./challenges/Challenge_A404.md)
 
 > **📚 Ressources :**
 >
-> Serveur de Fichier : <https://www.it-connect.fr/serveur-de-fichiers-les-permissions-ntfs-et-de-partage/>
+> Serveur de Fichier - ITconnect: <https://www.it-connect.fr/serveur-de-fichiers-les-permissions-ntfs-et-de-partage/>
 >
-> AGDLP : <https://www.it-connect.fr/agdlp-bien-gerer-les-permissions-de-son-serveur-de-fichiers/>
+> AGDLP - ITconnect : <https://www.it-connect.fr/agdlp-bien-gerer-les-permissions-de-son-serveur-de-fichiers/>
 >
+> Documentation DFS – Microsoft <https://learn.microsoft.com/fr-fr/windows-server/storage/dfs-namespaces/dfs-overview?tabs=server-manager>
+>
+> DFS Replication – Microsoft <https://learn.microsoft.com/fr-fr/windows-server/storage/dfs-replication/dfs-replication-overview>
 
 [Retour en haut](#-table-des-matières)
+
+---
+
+### A405
