@@ -47,6 +47,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
 - [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
+- [A405.]
+- [A406. Atelier]
 
 ---
 
@@ -1555,3 +1557,21 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 ---
 
 ### A405. Filtres, Quota, Audits
+
+[Challenge A404](./challenges/Challenge_A404.md)
+
+> **📚 Ressources :**
+>
+> Monter un Lecteur réseau par GPO - ITconnect : <https://www.it-connect.fr/comment-monter-un-lecteur-reseau-par-gpo/>
+>
+> GPSearch Microsoft : <https://gpsearch.azurewebsites.net/>
+>
+> Audit des Groupes de Sécurité de l'AD - ITconnect : <https://www.it-connect.fr/audit-des-groupes-de-securite-de-lactive-directory/>
+>
+> Audit des accès aux Fichiers et Dossiers - RDR-IT : <https://rdr-it.com/serveur-fichiers-windows-enregistrer-acces-fichiers-dossiers/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### A406. Atelier
