@@ -47,8 +47,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
 - [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
-- [A405. Filtres, Quota, Audits]()
-- [A406. Atelier]()
+- [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
+- [A406. Atelier](./challenges/Challenge_A406.md)
 
 ---
 
@@ -1538,7 +1538,7 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 - **Tips** :
 
   - Ajouter le suffixe `$` au nom d'un dossier partagé (ex : `drivers$`) cache le répertoire aux utilisateurs qui parcourent le réseau, tout en permettant l'accès via le chemin UNC complet.
-  - Pour les besoins spécifiques, il est parfois plus simple de **casser l'héritage** et de redéfinir manuellement les permissions. Soit en supprimant tout et remettant manuellement, soit en 
+  - Pour les besoins spécifiques, il est parfois plus simple de **casser l'héritage** et de redéfinir manuellement les permissions. Soit en supprimant tout et remettant manuellement, soit en
 
 [Challenge A404](./challenges/Challenge_A404.md)
 
@@ -1556,7 +1556,34 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 
 ---
 
-### A405. Filtres, Quota, Audits
+### 🗄️ A405. Gestion du Stockage : Filtres, Quotas & Audit
+
+> Ce cours aborde la gestion avancée des serveurs de fichiers, principalement via le rôle **FSRM** (File Server Resource Manager / Gestionnaire de ressources du serveur de fichiers). Il permet de contrôler l'utilisation du stockage et de sécuriser les données grâce à la mise en place de l'audit.
+
+- **Le Rôle FSRM (Gestionnaire de ressources du serveur de fichiers)** :
+  - C'est une fonctionnalité de Windows Server qu'il faut installer pour gérer finement les quotas et les filtres de fichiers.
+  - Contrairement aux quotas NTFS standards (qui s'appliquent à un volume entier), FSRM permet de gérer des quotas par **dossier**.
+
+- **Gestion des Quotas (Limitation d'espace)** :
+  - **Objectif** : Empêcher la saturation des disques par les utilisateurs et répartir équitablement les ressources de stockage.
+  - **Types de Quotas** :
+    - **Quota strict (Hard quota)** : Bloque l'écriture une fois la limite atteinte (l'utilisateur reçoit un message "Espace disque insuffisant").
+    - **Quota souple (Soft quota)** : Ne bloque pas l'utilisateur, mais sert à la surveillance. Il génère des alertes (logs, emails à l'admin) lorsque des seuils sont dépassés.
+  - **Modèles** : On utilise des modèles de quotas pour appliquer automatiquement des règles (ex: "Limite de 5 Go") à tous les nouveaux sous-dossiers créés.
+
+- **Filtrage de Fichiers (File Screening)** :
+  - **Objectif** : Contrôler le type de contenu stocké sur le serveur (ex: interdire les fichiers personnels comme les MP3 ou les vidéos AVI sur un serveur professionnel).
+  - **Fonctionnement** : Se base sur des **groupes de fichiers** (listes d'extensions, ex: `*.mp3`, `*.mkv`).
+  - **Types de filtrage** :
+    - **Filtrage actif** : Empêche l'utilisateur d'enregistrer le fichier interdit (message "Accès refusé").
+    - **Filtrage passif** : Autorise l'enregistrement mais génère une alerte pour l'administrateur (utile pour surveiller sans bloquer le travail).
+
+- **Audit des Accès (Traçabilité)** :
+  - **Objectif** : Renforcer la sécurité en gardant une trace ("Qui a fait quoi et quand ?") sur les fichiers sensibles. Idéal pour savoir qui a supprimé ou modifié un fichier critique.
+  - **Mise en place (2 étapes)** :
+        1. **Activer la stratégie d'audit** : Via une GPO (Configuration Ordinateur > Stratégies > Paramètres Windows > Paramètres de sécurité > Stratégies locales > Stratégie d'audit > **Auditer l'accès aux objets**).
+        2. **Configurer la SACL** : Sur le dossier cible (Clic droit > Propriétés > Sécurité > Avancé > Onglet **Audit**), on définit *qui* on surveille et pour *quelles actions* (Réussite/Échec de suppression, écriture, etc.).
+  - **Consultation** : Les traces se trouvent dans l'**Observateur d'événements**, journal **Sécurité**.
 
 [Challenge A405](./challenges/Challenge_A405.md)
 
@@ -1575,3 +1602,9 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 ---
 
 ### A406. Atelier
+
+[Challenge A406](./challenges/Challenge_A406.md)
+
+---
+
+### A407
