@@ -4,7 +4,7 @@
 
 ![Challenge A405](/images/2025-11-25-15-29-34.png)
 
-[Cours A405.](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#️-a405-gestion-du-stockage--filtres-quotas--audit)
+[Cours A405.](/RESUME.md#️-a405-gestion-du-stockage--filtres-quotas--audit)
 
 > Audit des accès aux Fichiers et Dossiers - RDR-IT : <https://rdr-it.com/serveur-fichiers-windows-enregistrer-acces-fichiers-dossiers/>
 >
