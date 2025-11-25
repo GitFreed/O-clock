@@ -70,4 +70,44 @@ On va créer un Filtre pour bloquer les fichier exécutables ET audios/vidéos
 
 ![filtres](/images/2025-11-25-15-17-24.png)
 
-## 4. Audit
+## 4. Audit des fichiers et dossiers
+
+**Création de l'audit sur le dossier cible**, on va faire le dossier commun et l'activer pour tous les sous-dossiers & fichiers pour ne pas à avoir à le faire pour chaque promo
+
+![create](/images/2025-11-25-17-09-23.png)
+
+Configuration de l'audit
+
+![config](/images/2025-11-25-17-10-33.png)
+
+![OK](/images/2025-11-25-17-11-33.png)
+
+**Configuration de la stratégie d’audit sur le serveur**, on va activer l’audit d’accès aux objets sur le serveur avec gpedit.msc. On configure puis gpupdate /force pour mettre à jour les stratégies
+
+![pgedit](/images/2025-11-25-17-18-41.png)
+
+Maintenant on peut visualiser les journaux Windows dans l’observateur d’événements
+
+![obsrv](/images/2025-11-25-17-31-58.png)
+
+Vu le nombre d'évènements (risque d'impacter les perfs du serveur) on va plutôt Auditer les Échecs pour monitorer les tentatives d'accès seulement
+
+![Refus](/images/2025-11-25-17-33-35.png)
+
+## 5. Audit des Groupes de Sécurité de l'AD
+
+Activation de la GPO en question
+
+![GPO](/images/2025-11-25-17-40-06.png)
+
+![infos](/images/2025-11-25-17-42-46.png)
+
+Création d'un affichage personnalisé dans l'Observateur d'évènements
+
+- Par source : Microsoft Windows security auditing
+
+- ID : 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4754, 4755, 4756, 4757, 4758, 4764
+
+![obsrv](/images/2025-11-25-18-00-22.png)
+
+On peut maintenant voir  les modifications sur nos Groupes de Sécurité, ici l'administrateur a créé un groupe GS_TEST sur le domaine OCLOCK.
