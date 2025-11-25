@@ -4,6 +4,8 @@
 
 ![ChallengeA304](/images/2025-11-06-16-05-47.png)
 
+[Cours A304.](/RESUME.md#-a304-cisco-ios--routage-statique)
+
 ---
 
 ## Challenge Config de Routeurs et LANs sur Packet Tracer ⌨️

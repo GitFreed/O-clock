@@ -24,6 +24,8 @@ Rendez-vous avec des outils de prise en main à distance, que ce soit AnyDesk, T
 
 L’objectif est simplement d’explorer leurs possibilités et de tester par vous-même différents outils.
 
+[Cours A203.](/RESUME.md#-a203-contrôle-à-distance)
+
 ---
 
 ## MemTest86 🧠

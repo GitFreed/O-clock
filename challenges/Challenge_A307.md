@@ -4,6 +4,8 @@
 
 ![Challenge A307](/images/2025-11-13-15-40-31.png)
 
+[Cours A307.](/RESUME.md#-a307-rfc1918-nat--self-hosting)
+
 ---
 
 ## 1. Self hosting 🖥️

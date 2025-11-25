@@ -7,6 +7,8 @@
 - Activez le copier/coller entre vos VMs et votre système hôte (petit indice : il faudra regarder du coté des « Additions Invité » de Virtual Box 😉 une petite recherche sur Internet (ou avoir écouté votre super formateur) devrait vous permettre de trouver comment faire !)
 - Bonus: Installer une 4ème VM avec le système d’exploitation Debian 13 !
 
+[Cours A106.](/RESUME.md#-a106-numération--bits-et-octets)
+
 ---
 
 ## Virtual Box Guest Additions 💽

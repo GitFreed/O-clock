@@ -4,7 +4,7 @@
 
 ![Challenge A403](/images/⌨️%20Tester%20les%20stratégies%20de%20GPO.png)
 
-[Cours A403. Stratégies de Groupe (GPO)](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#️-a403-stratégies-de-groupe-gpo)
+[Cours A403. Stratégies de Groupe (GPO)](/RESUME.md#️-a403-stratégies-de-groupe-gpo)
 
 ---
 

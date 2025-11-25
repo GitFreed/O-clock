@@ -12,6 +12,8 @@
 - Bonus dans le bonus :  Trouvez comment installer Windows 11 sans devoir utiliser un compte Microsoft (en créant un utilisateur local, comme sur Windows 10 pro).
 - Méga-bonus : Installez une troisième machine virtuelle, avec le système Ubuntu 24.04.
 
+[Cours A105.](/RESUME.md#-a105-le-système-dexploitation)
+
 ---
 
 ## Screen & Tips

@@ -28,6 +28,8 @@ Certains utilisent la notation « classique », d’autres la notation CIDR :
 
 Essayez de calculer tout à la main (avec la méthode de votre choix, idéalement essayez d’utiliser les deux !), puis vérifiez vos calculs avec une calculatrice en ligne ([exemple](https://www.subnet-calculator.com/cidr.php)) !
 
+[Cours A109.](/RESUME.md#-a109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
+
 ---
 
 ## Place aux Maths 🧠🧮

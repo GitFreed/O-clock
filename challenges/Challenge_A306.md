@@ -4,6 +4,8 @@
 
 ![Challenge A306](/images/2025-11-12-16-27-07.png)
 
+[Cours A306.](/RESUME.md#-a306-dns-telnet-et-ssh)
+
 ---
 
 ## Ma Box 👾

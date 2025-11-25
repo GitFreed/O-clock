@@ -4,7 +4,7 @@
 
 ⌨️ Nous avons vu l'installation de Windows Server 2019. Vous devez réinstaller Windows Server 2022 sur VMware.
 
-[Cours A401.](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#-saison-a4-windows-server)
+[Cours A401.](/RESUME.md#-saison-a4-windows-server)
 
 ---
 

@@ -8,6 +8,8 @@
 
 - Bonus : vous pouvez aussi commencer à votre renseigner sur les adresses IP et le calcul de sous-réseaux. Il y a plein de vidéos qui traitent de ce sujet sur YouTube 😉
 
+[Cours A107.](/RESUME.md#-a107-introduction-aux-réseaux-informatiques)
+
 ---
 
 ## Diagrammes 📊

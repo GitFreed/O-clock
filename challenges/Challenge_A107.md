@@ -7,6 +7,8 @@ La première chose à faire : sécuriser vos mots de passe !
 
 Au programme de ce challenge : installez et configurez un gestionnaire de mot de passe ! Nous vous recommandons Bitwarden, qui est gratuit pour un usage personnel et open-source (on reparlera de ce que ça implique plus tard mais vous avez de toute évidence déjà été un peu spoil).
 
+[Cours A107.](/RESUME.md#-a107-introduction-aux-réseaux-informatiques)
+
 ---
 
 ## Bitwarden 🔐

@@ -4,7 +4,7 @@
 
 ![Challenge](/images/2025-11-20-16-54-33.png)
 
-[Cours A402. Active Directory](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#-a402-active-directory-domain-services-ad-ds)
+[Cours A402. Active Directory](/RESUME.md#-a402-active-directory-domain-services-ad-ds)
 
 ---
 

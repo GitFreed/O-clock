@@ -14,6 +14,8 @@
 
 - Explorer le site <https://www.clic-formation.net/>
 
+[Cours A201.](/RESUME.md#-a201-outils-bureautiques)
+
 ---
 
 ## Installation de MicrosoftOffice et LibreOffice 🖥️

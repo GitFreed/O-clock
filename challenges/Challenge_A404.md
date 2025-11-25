@@ -4,7 +4,7 @@
 
 ![Challenge A404](/images/2025-11-24-17-22-41.png)
 
-[Cours A404.](https://github.com/GitFreed/O-clock/blob/main/RESUME.md#-a404-serveur-de-fichiers-distribués-dfs)
+[Cours A404.](/RESUME.md#-a404-serveur-de-fichiers-distribués-dfs)
 
 ---
 

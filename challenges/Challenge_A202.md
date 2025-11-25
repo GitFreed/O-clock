@@ -15,6 +15,8 @@ Le ping est un test de connectivité réseau.
 
 C’est l’un des tests les plus simples, mais aussi l’un des plus importants à maîtriser en informatique. Il permet de vérifier qu’une machine est accessible sur le réseau et que la communication est possible entre deux hôtes.
 
+[Cours A202.](/RESUME.md#-a202-diagnostic-et-résolution-dincidents)
+
 ---
 
 ## Test de connectivité réseau 🖥️🔄🖥️

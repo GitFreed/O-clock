@@ -22,6 +22,8 @@ testez la compatibilité avec les différents systèmes d’exploitation (en con
 
 💡 Vous devrez potentiellement réussir à connecter une clé USB sur une VM VirtualBox. À vous de trouver comment faire !
 
+[Cours A206.](/RESUME.md#-a206-bios-uefi-mbr-et-gpt)
+
 ---
 
 ## Challenge A206 💽

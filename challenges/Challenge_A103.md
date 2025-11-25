@@ -11,6 +11,8 @@ Pour ceux qui n’ont pas de PC fixe ou ne souhaitent pas l’ouvrir, utilisez u
 Vous avez donc lu le challenge. Rien de trop compliqué, encore un travail de recherche et des notes à prendre.
 Alors ces notes, envoyez-les sur un repo Github que vous aurez créé pour l'occasion.
 
+[Cours A103.](/RESUME.md#-a103-histoire-de-linformatique)
+
 ---
 
 ## Connecteurs présents à l'arrière de l'ordinateur

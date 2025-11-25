@@ -6,6 +6,8 @@
 
 [Doc ACLs](https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/)
 
+[Cours A309.](/RESUME.md#-a309-vlans-l3-switchs-wifi--ipv6)
+
 ---
 
 ## 1. VLANs & routage inter-VLANs 🌐

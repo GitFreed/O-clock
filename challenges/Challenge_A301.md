@@ -88,6 +88,8 @@ Pour l’instant, même si les sites sont géographiquement éloignés, reliez l
 
 Vérifiez avec la commande ping si les postes peuvent bien communiquer. Vous l’avez normalement vue en saison 2, mais cherchez sur Internet comment utiliser cette commande si nécessaire (votre formateur n’a peut-être pas eu le temps d’en reparler, la journée était suffisamment chargée 😅)
 
+[Cours A301.](/RESUME.md#-a301-introduction-réseau--ethernet)
+
 ---
 
 ## Challenge A301 : Packet Tracer 🖥️
