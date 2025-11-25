@@ -1536,7 +1536,7 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 - **Tips** :
 
   - Ajouter le suffixe `$` au nom d'un dossier partagé (ex : `drivers$`) cache le répertoire aux utilisateurs qui parcourent le réseau, tout en permettant l'accès via le chemin UNC complet.
-  - Pour les besoins spécifiques, il est parfois plus simple de **casser l'héritage** et de redéfinir manuellement les permissions.
+  - Pour les besoins spécifiques, il est parfois plus simple de **casser l'héritage** et de redéfinir manuellement les permissions. Soit en supprimant tout et remettant manuellement, soit en 
 
 [Challenge A404](./challenges/Challenge_A404.md)
 
@@ -1554,4 +1554,4 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 
 ---
 
-### A405
+### A405. Filtres, Quota, Audits
