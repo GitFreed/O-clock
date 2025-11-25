@@ -111,3 +111,5 @@ Création d'un affichage personnalisé dans l'Observateur d'évènements
 ![obsrv](/images/2025-11-25-18-00-22.png)
 
 On peut maintenant voir  les modifications sur nos Groupes de Sécurité, ici l'administrateur a créé un groupe GS_TEST sur le domaine OCLOCK.
+
+![bigbrother](/images/2025-11-25-18-31-49.png)
