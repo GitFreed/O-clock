@@ -47,8 +47,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A402. Active Directory Domain Services (AD DS)](#-a402-active-directory-domain-services-ad-ds)
 - [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
-- [A405.]
-- [A406. Atelier]
+- [A405. Filtres, Quota, Audits]()
+- [A406. Atelier]()
 
 ---
 
@@ -1558,7 +1558,7 @@ C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthét
 
 ### A405. Filtres, Quota, Audits
 
-[Challenge A404](./challenges/Challenge_A404.md)
+[Challenge A405](./challenges/Challenge_A405.md)
 
 > **📚 Ressources :**
 >
