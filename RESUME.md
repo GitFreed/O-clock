@@ -1566,8 +1566,8 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 - **Gestion des Quotas (Limitation d'espace)** :
   - **Objectif** : Empêcher la saturation des disques par les utilisateurs et répartir équitablement les ressources de stockage.
   - **Types de Quotas** :
-    - **Quota strict (Hard quota)** : Bloque l'écriture une fois la limite atteinte (l'utilisateur reçoit un message "Espace disque insuffisant").
-    - **Quota souple (Soft quota)** : Ne bloque pas l'utilisateur, mais sert à la surveillance. Il génère des alertes (logs, emails à l'admin) lorsque des seuils sont dépassés.
+    - **Quota strict (Hard quota / Inconditionnels)** : Bloque l'écriture une fois la limite atteinte (l'utilisateur reçoit un message "Espace disque insuffisant").
+    - **Quota souple (Soft quota / Conditionnels)** : Ne bloque pas l'utilisateur, mais sert à la surveillance. Il génère des alertes (logs, emails à l'admin) lorsque des seuils sont dépassés.
   - **Modèles** : On utilise des modèles de quotas pour appliquer automatiquement des règles (ex: "Limite de 5 Go") à tous les nouveaux sous-dossiers créés.
 
 - **Filtrage de Fichiers (File Screening)** :
