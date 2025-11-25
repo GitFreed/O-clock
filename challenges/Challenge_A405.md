@@ -66,4 +66,4 @@ On va créer un Filtre pour bloquer les fichier exécutables ET audios/vidéos
 
 ![filtres](/images/2025-11-25-15-17-24.png)
 
-## 4.
+## 4. Audit
