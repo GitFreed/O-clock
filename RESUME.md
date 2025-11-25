@@ -1408,7 +1408,6 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 [Retour en haut](#-table-des-matières)
 
 ---
-C'est parti pour le résumé du cours A402 sur Active Directory \! J'ai synthétisé les concepts clés présents dans le PDF pour vous offrir une vue d'ensemble structurée.
 
 ### 🏢 A402. Active Directory Domain Services (AD DS)
 
