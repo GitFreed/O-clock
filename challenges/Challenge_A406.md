@@ -214,3 +214,9 @@ Je les ai effacés, refait un gpupdate, redémarré, tout est rentré dans l'ord
 Par contre toujours pas de VScode. Vu le log du script il semble pourtant bien installé mais impossible de mettre la main dessus :
 
 ![log](/images/2025-11-26-19-13-44.png)
+
+Test avec un script bat
+
+![bat](/images/2025-11-26-23-35-55.png)
+
+Toujours pas...
