@@ -96,6 +96,10 @@ On va ajouter la GPO Bureau pour chaque promo avec son image personnalisée
 
 ![GPOs](/images/2025-11-26-11-33-05.png)
 
+- Test pour Alice Martin de la Promo Basilic, Drives OK, Filtre DIVX OK, Wallpaper perso OK.
+
+![test](/images/2025-11-26-12-43-46.png)
+
 ## 6. Limite horaires de connexion
 
 On peut créer des plages horaire dans le profil de chaque utilisateur (on peut sélectionner tout un groupe avec Ctrl+A par ex pour aller plus vite)
@@ -109,6 +113,14 @@ Config Ordi > Strat > Paramètres Windows > Paramètres de sécurité > Stratég
 ![logoff](/images/2025-11-26-11-54-14.png)
 
 ## 7. Bonus
+
+>📚 **Ressources** :
+>
+> Profils itinérants - ITconnect : <https://www.it-connect.fr/active-directory-creer-des-profils-itinerants-pour-ses-utilisateurs/>
+>
+> Profils itinérants - RDRit : <https://rdr-it.com/configurer-profils-itinerants-environnement-ad/>
+>
+> Logiciel .msi par GPO - ITconnect : <https://www.it-connect.fr/comment-deployer-un-logiciel-au-format-msi-par-gpo/>
 
 
 
