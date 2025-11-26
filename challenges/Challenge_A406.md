@@ -189,14 +189,28 @@ Mon admin à bien accès aux dossiers Roaming des différents Utilisateurs
 
 - VScode
 
-On va créer un script pour installer
+On va créer un script pour l'installer, avec le fichier .exe dans notre dossier \\WS2025\Adminfile$\
 
-...
+![script](/images/2025-11-26-19-25-10.png)
 
 Création de la GPO pour lancer le script
 
 Config ordi > Strats > Paramètres Windows > Scripts (démarrage/arrêt)
 
-Après 3h d'essai de multiples tentatives de scripts via le dossier partagé, de scripts dans la GPO, de scripts Winget ou autres.... ça ne fonctionne pas. La machine des utilisateurs à planté, un Snapshot d'avant l'atelier pour la récupérer à fait bug tout ce que j'avais mis en place sûrement à cause des dossiers de roaming. Je les ai effacés pour revenir mais ça ne change pas grand chose.
+![GPO](/images/2025-11-26-19-27-05.png)
+
+J'autorise également les scripts locaux dans Powershell
+
+Config ordi > Strats > Modèles d'admin > Composants Windows > Microsoft Powershell
+
+![GPO](/images/2025-11-26-19-28-56.png)
+
+Après 3h d'essai de multiples tentatives de scripts via le dossier partagé, de scripts dans la GPO, de scripts Winget ou autres.... ça ne fonctionne pas. La machine des utilisateurs à planté, un Snapshot d'avant l'atelier pour la récupérer à fait bug tout ce que j'avais mis en place sûrement à cause des dossiers de roaming.
 
 ![fail](/images/2025-11-26-19-07-51.png)
+
+Je les ai effacés, refait un gpupdate, redémarré, tout est rentré dans l'ordre.
+
+Par contre toujours pas de VScode. Vu le log du script il semble pourtant bien installé mais impossible de mettre la main dessus :
+
+![log](/images/2025-11-26-19-13-44.png)
