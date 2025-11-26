@@ -112,18 +112,43 @@ Config Ordi > Strat > Paramètres Windows > Paramètres de sécurité > Stratég
 
 ![logoff](/images/2025-11-26-11-54-14.png)
 
-## 7. Bonus
+## 7. Bonus : Installer Firefox par GPO
+
+>📚 **Ressources** :
+>
+> Logiciel .msi par GPO - ITconnect : <https://www.it-connect.fr/comment-deployer-un-logiciel-au-format-msi-par-gpo/>
+
+Pour installer un programme par GPO, on télécharge l'intall Firefox.msi, on le met dans le dossier Adminfile$
+
+On va dans la GPO : Confi ordi > Strat > Paramètres du logiciel > Installation de logiciel
+
+![GPO](/images/2025-11-26-14-42-08.png)
+
+On autorise les ordinateurs du domaine a accéder au dossier Adminfile$
+
+![admin](/images/2025-11-26-14-40-34.png)
+
+On doit placer la GPO dans le domaine et pas dans une Unité d'Organisation
+
+![GPO](/images/2025-11-26-14-55-02.png)
+
+Un gpupdate ou un reboot pour l'activer
+
+![Gpupdate](/images/2025-11-26-14-55-21.png)
+
+C'est bon !
+
+![FirefoxOK](/images/2025-11-26-14-58-40.png)
+
+## 8. Bonus extreme
+
+### Profils Itinérants
 
 >📚 **Ressources** :
 >
 > Profils itinérants - ITconnect : <https://www.it-connect.fr/active-directory-creer-des-profils-itinerants-pour-ses-utilisateurs/>
 >
 > Profils itinérants - RDRit : <https://rdr-it.com/configurer-profils-itinerants-environnement-ad/>
->
-> Logiciel .msi par GPO - ITconnect : <https://www.it-connect.fr/comment-deployer-un-logiciel-au-format-msi-par-gpo/>
-
-### Profils Itinérants
-
 Création d'un groupe de sécurité  "GS_Roaming_profil_users" contenant nos promos
 
 ![GS Roaming](/images/2025-11-26-13-41-09.png)
@@ -154,8 +179,4 @@ Mon admin à bien accès aux dossiers Roaming des différents Utilisateurs
 
 ![admin](/images/2025-11-26-14-18-31.png)
 
-### Install par GPO
-
-
-
-## 8. Bonus extreme
+### 
