@@ -44,9 +44,15 @@ Création d'un Quota 30 Go dans le gestionnaire de ressources du serveur de fich
 
 ![Quotas](/images/2025-11-26-10-08-06.png)
 
-Mappage des nouveaux Dossiers en Lecteurs dans la GPO Drives
+Mappage des nouveaux Dossiers en Lecteurs dans la GPO Drives avec Ciblage des GS concernés
 
 ![mappage](/images/2025-11-26-10-15-35.png)
+
+Filtre : Interdire les fichiers DIVX (nostalgie)
+
+![divx](/images/2025-11-26-10-34-10.png)
+
+![filtres](/images/2025-11-26-10-37-51.png)
 
 ## 4. GPO Verrou NUM et MDP
 
