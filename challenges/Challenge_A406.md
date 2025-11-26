@@ -17,12 +17,36 @@
 - Ajouter une GPO Verrou NUM pour tous + Politique MDP 30 jours
 - Ajouter une GPO Fond d'écran différent pour chaque Promo
 - Désactiver la connexion des étudiants Zinc et Basilic à partir de 17h jusqu’à 8h00 (dans l'AD)
-- Bonus : Installer un Navigateur via GPO (.msi) / Bonus perso : Installer Clink Terminal
-- Bonus extreme :
+- Bonus : Installer un Navigateur via GPO (.msi) 
+- Bonus extreme : mise en place de profils itinérants et installation de VSCode / / Bonus perso : Installer Clink Terminal
 
 ## 2. Nouvelles promos
 
+Création de l'utilisateur et ajout à son GS
+
+![GS](/images/2025-11-26-09-52-40.png)
+
+Ajout des promos au GS Promos général
+
+![promos](/images/2025-11-26-09-53-44.png)
+
 ## 3. Dossiers partagés et règles
+
+Création des dossiers partagés des promos et pour les fonds d'écran et programmes à installer je vais créer un dossier caché Adminfile$
+
+![partage dossier](/images/2025-11-26-09-58-46.png)
+
+![partages](/images/2025-11-26-10-09-22.png)
+
+Création d'un Quota 30 Go dans le gestionnaire de ressources du serveur de fichiers
+
+![Modèle](/images/2025-11-26-10-03-47.png)
+
+![Quotas](/images/2025-11-26-10-08-06.png)
+
+Mappage des nouveaux Dossiers en Lecteurs dans la GPO Drives
+
+![mappage](/images/2025-11-26-10-15-35.png)
 
 ## 4. GPO Verrou NUM et MDP
 
@@ -31,8 +55,6 @@ Ordinateur\HKEY_CURRENT_USER\Control Panel\Keyboard ==> modifier avec la valeur 
 Ordinateur\HKEY_USERS\.DEFAULT\Control Panel\Keyboard ==> modifier avec la valeur 2 la ligne InitialKeyboardIndicators
 
 ## 5. Fonds d'écran
-
-Pour les fonds d'écran et programmes à installer je vais créer un dossier caché Admin$
 
 ## 6. Limite horaire de connexion
 
