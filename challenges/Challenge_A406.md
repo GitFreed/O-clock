@@ -56,11 +56,45 @@ Filtre : Interdire les fichiers DIVX (nostalgie)
 
 ## 4. GPO Verrou NUM et MDP
 
-dans le registre
-Ordinateur\HKEY_CURRENT_USER\Control Panel\Keyboard ==> modifier avec la valeur 2 la ligne InitialKeyboardIndicators
-Ordinateur\HKEY_USERS\.DEFAULT\Control Panel\Keyboard ==> modifier avec la valeur 2 la ligne InitialKeyboardIndicators
+- Pour la GPO MDP, qu'on va appliquer aux promos :
+
+Config Ordi > Strat > Paramètres Windows > Paramètres de sécurité > Stratégies de compte > Stratégie de mot de passe
+
+![MDP](/images/2025-11-26-11-28-08.png)
+
+De nos jours l'ANSSI recommande plutôt :
+
+Un MDP fort : 15+ caractères avec majuscules, minuscules, chiffres, caractères spéciaux. Une Rotation moins fréquente : changement s'il y a une suspicion de piratage ou alors très rarement (ex: tous les 6 mois ou 1 an). La MFA (Authentification Multi-Facteurs) : C'est la vraie sécurité aujourd'hui. Un mot de passe volé ne sert à rien sans le téléphone/2FA de l'utilisateur.
+
+- Pour la GPO Verrou Numérique, on va l'appliquer à tous les utilisateurs.
+
+Config Ordi > Pref > Paramètres Windows > Registre : Nouvel élément de registre
+
+\HKEY_USERS\.DEFAULT\Control Panel\Keyboard : modifier avec la valeur 2 la ligne InitialKeyboardIndicators
+
+![vernum](/images/2025-11-26-11-13-20.png)
+
+- On va profiter de cette règle Générale pour empêcher les Utilisateurs de modifier le futur Wallpaper :
+
+Config Util > Strat > Modèles d'admin > Panneau de configuration > Personnalisation > Empêcher de modifier l'arrière plan du bureau
+
+- Et bloquer le Windows Update de nos VM :
+
+Config Util > Strat > Modèles d'admin > Système > Mise à jour automatiques de Windows
+
+Voilà ce que ça donne dans l'arborescence des GP
+
+![GPOs](/images/2025-11-26-11-32-34.png)
 
 ## 5. Fonds d'écran
+
+Pour chaque promo on va créer une image personnalisée avec le nom de cette dernière dans un coin
+
+On va ajouter la GPO Bureau pour chaque promo avec son image personnalisée
+
+![walpp](/images/2025-11-26-11-30-36.png)
+
+![GPOs](/images/2025-11-26-11-33-05.png)
 
 ## 6. Limite horaire de connexion
 
