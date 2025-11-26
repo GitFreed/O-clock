@@ -197,4 +197,6 @@ Création de la GPO pour lancer le script
 
 Config ordi > Strats > Paramètres Windows > Scripts (démarrage/arrêt)
 
-Après 3h d'essai de multiples tentatives de scripts via le dossier partagé, de scripts dans la GPO, de scripts Winget ou autres.... ça ne fonctionne pas. On verra la correction.
+Après 3h d'essai de multiples tentatives de scripts via le dossier partagé, de scripts dans la GPO, de scripts Winget ou autres.... ça ne fonctionne pas. La machine des utilisateurs à planté, un Snapshot d'avant l'atelier pour la récupérer à fait bug tout ce que j'avais mis en place sûrement à cause des dossiers de roaming. Je les ai effacés pour revenir mais ça ne change pas grand chose.
+
+![fail](/images/2025-11-26-19-07-51.png)
