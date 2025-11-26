@@ -179,4 +179,22 @@ Mon admin à bien accès aux dossiers Roaming des différents Utilisateurs
 
 ![admin](/images/2025-11-26-14-18-31.png)
 
-### 
+### VScode
+
+>📚 **Ressources** :
+>
+> Deployment VScode : <https://github.com/letsdoautomation/group-policy/tree/main/Deploy%20Visual%20Studio%20Code>
+>
+> Installer un .EXE par GPO - ITconnect : <https://www.it-connect.fr/comment-deployer-un-logiciel-au-format-exe-par-gpo/>
+
+- VScode
+
+On va créer un script pour installer
+
+...
+
+Création de la GPO pour lancer le script
+
+Config ordi > Strats > Paramètres Windows > Scripts (démarrage/arrêt)
+
+Après 3h d'essai de multiples tentatives de scripts via le dossier partagé, de scripts dans la GPO, de scripts Winget ou autres.... ça ne fonctionne pas. On verra la correction.
