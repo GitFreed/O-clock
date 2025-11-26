@@ -96,8 +96,20 @@ On va ajouter la GPO Bureau pour chaque promo avec son image personnalisée
 
 ![GPOs](/images/2025-11-26-11-33-05.png)
 
-## 6. Limite horaire de connexion
+## 6. Limite horaires de connexion
+
+On peut créer des plages horaire dans le profil de chaque utilisateur (on peut sélectionner tout un groupe avec Ctrl+A par ex pour aller plus vite)
+
+![horaires](/images/2025-11-26-11-47-14.png)
+
+Attention, un utilisateur qui se connecte à 16h55 pourra continuer de travailler après l'horaire définit, il faut faire une GPO "Force Logoff" appliquée aux 2 promos concernées
+
+Config Ordi > Strat > Paramètres Windows > Paramètres de sécurité > Stratégies locales > Options de sécurité : Serveur réseau : déconnecter les clients à l'expiration des horaires d'accès
+
+![logoff](/images/2025-11-26-11-54-14.png)
 
 ## 7. Bonus
+
+
 
 ## 8. Bonus extreme
