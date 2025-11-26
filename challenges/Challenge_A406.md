@@ -122,6 +122,40 @@ Config Ordi > Strat > Paramètres Windows > Paramètres de sécurité > Stratég
 >
 > Logiciel .msi par GPO - ITconnect : <https://www.it-connect.fr/comment-deployer-un-logiciel-au-format-msi-par-gpo/>
 
+### Profils Itinérants
+
+Création d'un groupe de sécurité  "GS_Roaming_profil_users" contenant nos promos
+
+![GS Roaming](/images/2025-11-26-13-41-09.png)
+
+Création du dossier de partage pour les profils itinérants dans le dossier Shares : "Profil" avec un $ pour le masquer
+
+![Dossier](/images/2025-11-26-13-37-15.png)
+
+Partage Avancé du dossier aux Utilisateurs Authentifiés seulement, et gestions des Autorisations dans Sécurité, ajout du groupe GS_Roaming
+
+![Autorisations](/images/2025-11-26-13-35-52.png)
+
+Création d'une GPO pour que les Admin aient accès aux dossiers de roaming
+
+Config ordi > Strat > Modèles d’administration > Système > Profils utilisateur
+
+![admin](/images/2025-11-26-13-48-16.png)
+
+Ajout du Profil itinérant par utilisateur dans l'AD, pour chaque utilisateur le chemin sera : \\WS2025\Profil$\%username% 
+
+![profil](/images/2025-11-26-13-52-11.png)
+
+Je déco/reco mon Utilisateur (Alice Martin) et je peux voir que le dossier itinérant s'est bien créé!
+
+![roamingok](/images/2025-11-26-14-02-59.png)
+
+Mon admin à bien accès aux dossiers Roaming des différents Utilisateurs
+
+![admin](/images/2025-11-26-14-18-31.png)
+
+### Install par GPO
+
 
 
 ## 8. Bonus extreme
