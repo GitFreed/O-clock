@@ -223,6 +223,26 @@ Toujours pas...
 
 *Correction : Déployer VScode via 2 GPO <https://github.com/letsdoautomation/group-policy/tree/main/Deploy%20Visual%20Studio%20Code>*
 
-- GPO > Util > Pref > Win > Fichier : Mettre à jour, source \\WS2025\Adminfile$\
+- GPO > Util > Pref > Win > Fichier : Ajout : Mettre à jour
 
-- GPO >
+source : \\WS2025\Adminfile$\VSCodeUserSetup-x64-1.106.3.exe
+
+destination : C:\deployment\VSCode\VSCodeUserSetup-x64-1.106.3.exe
+
+ciblage : Clé de registre existe, Option : N'est pas. Chemin : Software\Microsoft\Windows\CurrentVersion\Uninstall\{771FD6B0-FA20-440A-A002-3B3BAC16DC50}_is1
+
+C'est une vérification du registre pour voir si VScode est installé ou pas.
+
+- GPO > Util > Pref > Win > Registre : Ajout : Mettre à jour
+
+Chemin : Software\Microsoft\Windows\CurrentVersion\RunOnce
+
+Nom : InstallVSCode
+
+Données de valeur : %CommonAppdataDir%\deployment\VSCode\VSCodeUserSetup-x64-1.106.3.exe /VERYSILENT /NORESTART /SUPPRESSMSGBOXES /MERGETASKS=!runcode,desktopicon
+
+Ciblage : IDEM
+
+OK!!!
+
+![OK](/images/2025-11-27-17-53-36.png)
