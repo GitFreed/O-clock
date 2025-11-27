@@ -17,7 +17,7 @@
 - Ajouter une GPO Verrou NUM pour tous + Politique MDP 30 jours
 - Ajouter une GPO Fond d'écran différent pour chaque Promo
 - Désactiver la connexion des étudiants Zinc et Basilic à partir de 17h jusqu’à 8h00 (dans l'AD)
-- Bonus : Installer un Navigateur via GPO (.msi) 
+- Bonus : Installer un Navigateur via GPO (.msi)
 - Bonus extreme : mise en place de profils itinérants et installation de VSCode / / Bonus perso : Installer Clink Terminal
 
 ## 2. Nouvelles promos
@@ -56,7 +56,7 @@ Filtre : Interdire les fichiers DIVX (nostalgie)
 
 ## 4. GPO Verrou NUM et MDP
 
-- Pour la GPO MDP, qu'on va appliquer aux promos :
+- Pour la GPO MDP, sur les promos *Correction : elle ne fonctionne pas dans une UO, il faut la mettre à la racine pour dans la Default Policies*
 
 Config Ordi > Strat > Paramètres Windows > Paramètres de sécurité > Stratégies de compte > Stratégie de mot de passe
 
@@ -66,7 +66,7 @@ De nos jours l'ANSSI recommande plutôt :
 
 Un MDP fort : 15+ caractères avec majuscules, minuscules, chiffres, caractères spéciaux. Une Rotation moins fréquente : changement s'il y a une suspicion de piratage ou alors très rarement (ex: tous les 6 mois ou 1 an). La MFA (Authentification Multi-Facteurs) : C'est la vraie sécurité aujourd'hui. Un mot de passe volé ne sert à rien sans le téléphone/2FA de l'utilisateur.
 
-- Pour la GPO Verrou Numérique, on va l'appliquer à tous les utilisateurs.
+- Pour la GPO Verrou Numérique, on va l'appliquer à tous les utilisateurs, directement sur l'ordinateur.
 
 Config Ordi > Pref > Paramètres Windows > Registre : Nouvel élément de registre
 
@@ -167,7 +167,7 @@ Config ordi > Strat > Modèles d’administration > Système > Profils utilisate
 
 ![admin](/images/2025-11-26-13-48-16.png)
 
-Ajout du Profil itinérant par utilisateur dans l'AD, pour chaque utilisateur le chemin sera : \\WS2025\Profil$\%username% 
+Ajout du Profil itinérant par utilisateur dans l'AD, pour chaque utilisateur le chemin sera : \\WS2025\Profil$\%username%
 
 ![profil](/images/2025-11-26-13-52-11.png)
 
@@ -220,3 +220,9 @@ Test avec un script bat
 ![bat](/images/2025-11-26-23-35-55.png)
 
 Toujours pas...
+
+*Correction : Déployer VScode via 2 GPO <https://github.com/letsdoautomation/group-policy/tree/main/Deploy%20Visual%20Studio%20Code>*
+
+- GPO > Util > Pref > Win > Fichier : Mettre à jour, source \\WS2025\Adminfile$\
+
+- GPO >
