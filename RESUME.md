@@ -49,7 +49,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
 - [A406. Atelier](./challenges/Challenge_A406.md)
-- [A407. DNS, IIS](#a407-dns-iis)
+- [A407. DNS, IIS](#-a407-dns-iis)
 
 ---
 
@@ -1601,7 +1601,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### A406. Atelier
+### ⚙️ A406. Atelier
 
 [Challenge A406](./challenges/Challenge_A406.md)
 
@@ -1609,12 +1609,17 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### A407. DNS, IIS
+### 🌐 A407. DNS, IIS
 
 DNS : Gestionaire DNS > zones de recherche directe (hôte, alias, messagerie) et inversée (pointeur etc)
 IIS : Internet Information Services. 127.0.0.1 > page IIS. Index of.
 
 Créer un Alias DNS pour les pages de l'intranet, puis un nouveau site pour chaque page en question dans IIS.
+
+[Challenge A407](./challenges/Challenge_A407.md)
+
+> **📚 Ressources :**
+>
 
 [Retour en haut](#-table-des-matières)
 

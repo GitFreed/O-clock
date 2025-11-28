@@ -4,7 +4,7 @@
 
 ⌨️ Faire fonctionner les 4 pages intranet des 4 promos.
 
-[Cours A407.](/RESUME.md#a407-dns-iis)
+[Cours A407.](/RESUME.md#-a407-dns-iis)
 
 ---
 
