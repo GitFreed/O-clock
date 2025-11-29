@@ -1616,6 +1616,42 @@ IIS : Internet Information Services. 127.0.0.1 > page IIS. Index of.
 
 Créer un Alias DNS pour les pages de l'intranet, puis un nouveau site pour chaque page en question dans IIS.
 
+- DNS (Domain Name System) — Service chargé de convertir un nom de domaine lisible par un humain en une adresse IP utilisable par un ordinateur.Fonctionnement :
+
+  - L’utilisateur saisit un nom de domaine (ex. : <www.exemple.com>).
+  - Le poste interroge un serveur DNS pour connaître l’adresse IP associée.
+  - Le serveur DNS renvoie l’IP, permettant la connexion au serveur web.
+
+     Notion clé : enregistrement A (nom → adresse IPv4).
+
+- Zone DNS — Espace logique contenant tous les enregistrements DNS d’un domaine.Contenu d’une zone :
+
+  - Enregistrements A / AAAA : associent un nom à une IP.
+  - Enregistrements CNAME : alias vers un autre nom.
+  - Enregistrements MX : serveurs de messagerie.
+  - Enregistrements TXT : informations diverses (SPF, vérifications, services cloud…).
+  - Enregistrements SRV : services réseau (ex. : Active Directory).
+
+    Exemple : la zone peut contenir : A, CNAME, MX, TXT, SRV…
+
+- IIS (Internet Information Services) — Serveur Web de Microsoft permettant d’héberger des sites, des applications ou des API.Ce que permet IIS :
+
+  - Héberger un site web (HTML, ASP.NET…).
+  - Héberger des API internes.
+  - Gérer plusieurs sites sur une seule machine via les bindings.
+  - Gérer les certificats HTTPS.
+  - Créer des pools d’applications pour isoler les sites.
+
+    Exemple : lancer un site en local ou sur un serveur Windows.
+
+- Liaison DNS ↔ IIS — Association entre l’adresse IP fournie par le DNS et le site qui doit répondre dans IIS grâce aux “bindings”.Principe :
+
+  - Le DNS fait pointer un nom de domaine vers l’IP du serveur IIS.
+  - IIS reçoit la requête sur cette IP.
+  - Grâce au binding (nom d’hôte + port), IIS détermine quel site doit répondre.
+
+    Exemple : binding sur <www.exemple.com> en port 80 → IIS sait exactement quel site servir.
+
 [Challenge A407](./challenges/Challenge_A407.md)
 
 > **📚 Ressources :**
