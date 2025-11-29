@@ -1652,6 +1652,13 @@ Créer un Alias DNS pour les pages de l'intranet, puis un nouveau site pour chaq
 
     Exemple : binding sur <www.exemple.com> en port 80 → IIS sait exactement quel site servir.
 
+- Récap :
+
+  - Le DNS convertit un nom de domaine en adresse IP.
+  - Une zone DNS regroupe les enregistrements d’un domaine.
+  - IIS sert à héberger et publier des sites Web sur Windows.
+  - Le DNS pointe vers le serveur IIS, et IIS utilise les bindings pour associer un nom de domaine à un site.
+
 [Challenge A407](./challenges/Challenge_A407.md)
 
 > **📚 Ressources :**
