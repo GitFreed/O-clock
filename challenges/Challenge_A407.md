@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-⌨️ Faire fonctionner les 4 pages intranet des 4 promos.
+![challenge A407](/images/2025-11-29-16-27-18.png)
 
 [Cours A407.](/RESUME.md#-a407-dns-iis)
 
