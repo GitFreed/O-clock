@@ -49,7 +49,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
 - [A406. Atelier](./challenges/Challenge_A406.md)
-- [A407. DNS, IIS](#-a407-dns-iis)
+- [A407. DNS, IIS](#-a407-dns--iis)
+- [A408. ]
 
 ---
 
@@ -1609,61 +1610,46 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### 🌐 A407. DNS, IIS
+### 🌐 A407. DNS & IIS
 
-DNS : Gestionaire DNS > zones de recherche directe (hôte, alias, messagerie) et inversée (pointeur etc)
-IIS : Internet Information Services. 127.0.0.1 > page IIS. Index of.
+> Ce cours explore deux rôles fondamentaux de Windows Server : le serveur DNS, pilier de la résolution de noms dans le réseau, et le serveur Web IIS, plateforme d'hébergement d'applications et de sites internet. Leur configuration conjointe est essentielle pour rendre les services accessibles de manière conviviale.
 
-Créer un Alias DNS pour les pages de l'intranet, puis un nouveau site pour chaque page en question dans IIS.
+- **DNS (Domain Name System)** :
 
-- DNS (Domain Name System) — Service chargé de convertir un nom de domaine lisible par un humain en une adresse IP utilisable par un ordinateur.Fonctionnement :
+  - **Rôle** : C'est l'annuaire d'Internet et des réseaux locaux. Il convertit des noms de domaine lisibles par l'humain (ex: `www.exemple.com`) en adresses IP utilisables par les machines.
+  - **Gestionnaire DNS** : L'outil d'administration sur Windows Server permet de configurer deux types de zones principales :
+    - **Zone de recherche directe** : Associe un nom à une IP (le cas le plus courant). Elle contient des enregistrements de type **A** (IPv4), **AAAA** (IPv6), **CNAME** (Alias), **MX** (Messagerie) ou **TXT** (Infos diverses).
+    - **Zone de recherche inversée** : Associe une IP à un nom. Elle utilise des enregistrements de type **PTR** (Pointeur). Utile pour le diagnostic réseau et certaines vérifications de sécurité.
 
-  - L’utilisateur saisit un nom de domaine (ex. : <www.exemple.com>).
-  - Le poste interroge un serveur DNS pour connaître l’adresse IP associée.
-  - Le serveur DNS renvoie l’IP, permettant la connexion au serveur web.
+- **IIS (Internet Information Services)** :
 
-     Notion clé : enregistrement A (nom → adresse IPv4).
+  - **Définition** : C'est le serveur Web modulaire et extensible de Microsoft. Il permet d'héberger des sites web (HTML, ASP.NET), des services FTP et des API.
+  - **Test rapide** : Après l'installation du rôle, accéder à `http://127.0.0.1` ou `http://localhost` depuis le serveur affiche la page d'accueil par défaut d'IIS, confirmant son bon fonctionnement.
+  - **Fonctionnalités clés** :
+    - **Sites multiples** : Hébergement de plusieurs sites sur un même serveur grâce aux **bindings** (liaisons).
+    - **Sécurité** : Gestion des certificats SSL/TLS pour le HTTPS.
+    - **Pools d'applications** : Isolation des processus pour qu'un crash sur un site n'affecte pas les autres.
+    - **Exploration de répertoire** : Option (souvent désactivée par sécurité) qui permet d'afficher la liste des fichiers d'un dossier ("Index of...").
 
-- Zone DNS — Espace logique contenant tous les enregistrements DNS d’un domaine.Contenu d’une zone :
+- **L'Interaction DNS \<-\> IIS** :
 
-  - Enregistrements A / AAAA : associent un nom à une IP.
-  - Enregistrements CNAME : alias vers un autre nom.
-  - Enregistrements MX : serveurs de messagerie.
-  - Enregistrements TXT : informations diverses (SPF, vérifications, services cloud…).
-  - Enregistrements SRV : services réseau (ex. : Active Directory).
+  - Pour qu'un utilisateur accède à un site hébergé sur IIS via un nom (ex: `intranet.thm.local`), deux configurations sont nécessaires :
+        1. **Côté DNS** : Créer un enregistrement **A** qui fait pointer le nom `intranet` vers l'adresse IP du serveur IIS.
+        2. **Côté IIS** : Configurer le **binding** (liaison) du site pour qu'il écoute les requêtes arrivant sur cette IP avec ce nom d'hôte spécifique (ex: port 80, nom d'hôte `intranet.thm.local`).
 
-    Exemple : la zone peut contenir : A, CNAME, MX, TXT, SRV…
-
-- IIS (Internet Information Services) — Serveur Web de Microsoft permettant d’héberger des sites, des applications ou des API.Ce que permet IIS :
-
-  - Héberger un site web (HTML, ASP.NET…).
-  - Héberger des API internes.
-  - Gérer plusieurs sites sur une seule machine via les bindings.
-  - Gérer les certificats HTTPS.
-  - Créer des pools d’applications pour isoler les sites.
-
-    Exemple : lancer un site en local ou sur un serveur Windows.
-
-- Liaison DNS ↔ IIS — Association entre l’adresse IP fournie par le DNS et le site qui doit répondre dans IIS grâce aux “bindings”.Principe :
-
-  - Le DNS fait pointer un nom de domaine vers l’IP du serveur IIS.
-  - IIS reçoit la requête sur cette IP.
-  - Grâce au binding (nom d’hôte + port), IIS détermine quel site doit répondre.
-
-    Exemple : binding sur <www.exemple.com> en port 80 → IIS sait exactement quel site servir.
-
-- Récap :
-
-  - Le DNS convertit un nom de domaine en adresse IP.
-  - Une zone DNS regroupe les enregistrements d’un domaine.
-  - IIS sert à héberger et publier des sites Web sur Windows.
-  - Le DNS pointe vers le serveur IIS, et IIS utilise les bindings pour associer un nom de domaine à un site.
+[Challenge A407](https://www.google.com/search?q=../challenges/Challenge_A407.md)
 
 [Challenge A407](./challenges/Challenge_A407.md)
 
 > **📚 Ressources :**
 >
+> - **Commande `nslookup`** : Outil en ligne de commande essentiel pour interroger un serveur DNS et diagnostiquer les problèmes de résolution.
+>   - **Mode interactif** : Taper `nslookup` puis `server <IP_du_DNS>` pour tester un serveur spécifique.
+>   - **Recherche directe** : `nslookup www.google.com` (renvoie l'IP).
+>   - **Recherche inversée** : `nslookup 8.8.8.8` (renvoie le nom associé `dns.google`).
 
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🔐 A408. Pools & Authentification
