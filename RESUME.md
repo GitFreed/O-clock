@@ -50,7 +50,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
 - [A406. Atelier](./challenges/Challenge_A406.md)
 - [A407. DNS et IIS](#-a407-dns--iis)
-- [A408. Pools, Authentification et Sauvegarde](#-a408-pools-authentification-et-serveur-de-backup)
+- [A408. Pools, Authentification et Sauvegarde](#️-a408-pools-iis-authentification-et-backup)
 
 ---
 
@@ -1650,31 +1650,57 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### 🔐 A408. Pools, Authentification et Serveur de Backup
+### 🛡️ A408. Pools IIS, Authentification et Backup
 
-Pool d'applications sert à ?
+> Ce cours approfondit la configuration du serveur Web IIS avec la gestion des pools d'applications et de l'authentification, et aborde un aspect critique de l'administration système : la sauvegarde et la restauration (notamment d'Active Directory) avec Windows Server Backup.
 
-Pool : IIS > Ajout de pools d'applications
+- **IIS - Pools d'Application** :
 
-L’authentification permet de contrôler l’accès en exigeant que chaque utilisateur s’identifie, par exemple via l'AD
+  - **Définition** : Un pool d'application est un mécanisme d'isolation qui permet d'exécuter des sites web ou des applications dans des processus séparés.
+  - **Idée clé** : **Un pool = Une isolation**. Si un site plante ou consomme toutes les ressources, les autres sites (dans d'autres pools) continuent de fonctionner normalement.
+  - **Configuration** : Dans le Gestionnaire IIS \> Pools d'applications \> Ajouter un pool d'applications. Chaque pool peut avoir sa propre version de .NET et son propre compte de service (identité).
 
-Auth : Ajout > Rôle de Serveurs > IIS > Sécurité > Auth de base. Parler des types d'authentification : libre, basique, forte, etc et aussi Réseau, filtrage, SSL
+- **IIS - Authentification** :
 
-Si on active auth de base il faut désactiver l'auth anonyme!
+  - **Objectif** : Contrôler l'accès aux sites web en exigeant que l'utilisateur s'identifie (souvent via un compte Active Directory).
+  - **Installation** : C'est une fonctionnalité à ajouter via le Gestionnaire de serveur \> Rôle Serveur Web (IIS) \> Serveur Web \> Sécurité \> **Authentification de base**.
+  - **Authentification de base** : Méthode simple où le navigateur demande un identifiant et un mot de passe.
+    - *Attention* : Les identifiants sont encodés en Base64 (facilement déchiffrables), il est donc crucial d'utiliser le **SSL/TLS (HTTPS)** pour chiffrer la connexion.
+  - **Règle d'or** : Si on active l'Authentification de base, il faut impérativement **désactiver l'Authentification anonyme** pour forcer la connexion.
+  - **Autres types/niveaux** : On distingue l'accès libre (Anonyme), basique, fort (certificats, MFA), ainsi que les filtrages (par IP/Réseau).
 
-Backup : Ajout > Fonctionnalités > Sauvegarde de windows serveur
+- **Windows Server Backup (Sauvegarde)** :
 
-Dossier NTDS (contient AD) et SYSVOL (contient AD et GPO)
+  - **Outil** : Fonctionnalité native (à installer via "Ajout de rôles et fonctionnalités") permettant de sauvegarder et restaurer le serveur.
+  - **Technologie VSS (Snapshot)** : Utilise le *Volume Shadow Copy Service* pour prendre des instantanés (snapshots) du système, permettant de sauvegarder des fichiers même s'ils sont ouverts/utilisés.
+  - **Stratégie** : Les snapshots permettent des sauvegardes fréquentes sans interruption de service. Une sauvegarde complète "à froid" (services arrêtés) reste une bonne pratique ponctuelle pour une cohérence absolue.
+  - **Format** : Les sauvegardes sont stockées sous forme d'images disques **.vhdx**, qui peuvent être montées manuellement pour récupérer des fichiers unitaires.
+  - **Types de récupération** : Fichiers et dossiers, Volumes entiers, Applications, ou **État du système** (System State).
 
-C'est une sauvegarde VSS = Snapshot
+- **Sauvegarde et Restauration Active Directory** :
 
-Une vraie sauvegarde est mieux qu'un snapshot, mais l'activité doit être arrêté, en général on fait des snapshots très réguliers, et une vraie sauvegarde de temps en temps.
+  - **Composants critiques** : La sauvegarde de l'AD repose sur deux dossiers clés :
+    - **NTDS** : Contient la base de données de l'annuaire (`ntds.dit`).
+    - **SYSVOL** : Contient les fichiers publics (Stratégies de groupe/GPO, scripts de connexion).
+  - **Restauration d'un utilisateur** : Pour récupérer un objet AD supprimé (utilisateur, groupe...), il faut effectuer une restauration de l'**État du système**. Cela remet l'AD dans l'état exact où il était au moment du backup.
 
-On obtient des images vhdx que l'on peut monter à nouveau et une sauvegarde qui permet de lancer la récupération : Fichiers et dossiers, Volumes, Applications, et 2tat du système (complet).
+[Challenge A408](./challenges/Challenge_A408.md)
 
-Ressource :
+> 📚 Ressources :
+>
+> - **Démarrage en Mode Restauration des Services d'Annuaire (DSRM)** : Nécessaire pour certaines restaurations AD.
+>   - Via l'interface : `msconfig` \> Onglet Démarrer \> Démarrage sécurisé \> Réparer Active Directory.
+>   - Au démarrage : Maintenir la touche **MAJ (Shift)** en cliquant sur "Redémarrer" \> Dépannage \> Options avancées \> Paramètres de démarrage.
+>
+> Sauvegarder son serveur avec Windows Server Backup - IT-connect <https://www.it-connect.fr/chapitres/windows-server-2025-sauvegarder-son-serveur-avec-windows-backup/>
+>
+> Restaurer un contrôleur de domaine AD - IT-connect <https://www.it-connect.fr/comment-restaurer-un-controleur-de-domaine-active-directory/>
+>
+> Restaurer une zone DNS - IT-connect <https://www.it-connect.fr/windows-server-comment-restaurer-une-zone-dns/>
+>
+> Vidéo Sauvegarde et restauration Active Directory - ENNIBI-IT <https://www.youtube.com/watch?v=p3N8LkLb7sU>
 
-Redémarrage sans échec : msconfig / démarrer ou MAJ+redémarre
+[Retour en haut](#-table-des-matières)
 
 ---
 
