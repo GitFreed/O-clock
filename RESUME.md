@@ -1656,23 +1656,35 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 - **IIS - Pools d'Application** :
 
-  - **Définition** : Un pool d'application est un mécanisme d'isolation qui permet d'exécuter des sites web ou des applications dans des processus séparés.
+  - **Définition** : Un pool d'application est un mécanisme d'isolation qui permet d'exécuter des sites web ou des applications dans des processus séparés. Chaque pool fonctionne avec son propre processus système (**`w3wp.exe`**).
   - **Idée clé** : **Un pool = Une isolation**. Si un site plante ou consomme toutes les ressources, les autres sites (dans d'autres pools) continuent de fonctionner normalement.
+  - **Avantages** :
+    - **Isolation** : Si une application plante, elle ne fait pas tomber les autres pools.
+    - **Sécurité & Stabilité** : Permet de définir une identité spécifique (compte de service) et des réglages de recyclage pour chaque application.
+    - **Flexibilité** : Possibilité de configurer des versions de .NET différentes par pool.
   - **Configuration** : Dans le Gestionnaire IIS \> Pools d'applications \> Ajouter un pool d'applications. Chaque pool peut avoir sa propre version de .NET et son propre compte de service (identité).
 
-- **IIS - Authentification** :
+- **IIS - Authentification et Contrôle d'Accès** :
 
-  - **Objectif** : Contrôler l'accès aux sites web en exigeant que l'utilisateur s'identifie (souvent via un compte Active Directory).
-  - **Installation** : C'est une fonctionnalité à ajouter via le Gestionnaire de serveur \> Rôle Serveur Web (IIS) \> Serveur Web \> Sécurité \> **Authentification de base**.
+  - **Objectif** : Par défaut, un site est en accès anonyme. L'authentification permet d'exiger une identification pour garantir la traçabilité et restreindre l'accès aux seules personnes autorisées.
+  - **Installation** : C'est une fonctionnalité à ajouter via le Gestionnaire de serveur \> Rôle Serveur Web (IIS) \> Serveur Web \> Sécurité \>
   - **Authentification de base** : Méthode simple où le navigateur demande un identifiant et un mot de passe.
     - *Attention* : Les identifiants sont encodés en Base64 (facilement déchiffrables), il est donc crucial d'utiliser le **SSL/TLS (HTTPS)** pour chiffrer la connexion.
-  - **Règle d'or** : Si on active l'Authentification de base, il faut impérativement **désactiver l'Authentification anonyme** pour forcer la connexion.
-  - **Autres types/niveaux** : On distingue l'accès libre (Anonyme), basique, fort (certificats, MFA), ainsi que les filtrages (par IP/Réseau).
+    - **Règle d'or** : Si on active l'Authentification de base, il faut impérativement **désactiver l'Authentification anonyme** pour forcer la connexion.
+  - **Authentification Digest** : Plus sécurisée que la "Basic" (hachage des identifiants), mais moins robuste que Windows.
+  - **Authentification Windows** : La plus robuste pour un Intranet, utilise **NTLM** ou **Kerberos** (AD).
+  - **Certificat Client** : Authentification forte basée sur des certificats X.509.
+  - **Autres restrictions** : Il est aussi possible de filtrer par **Adresse IP/Domaine** ou d'utiliser le **Filtrage des demandes** (URL Authorization) pour bloquer certaines requêtes spécifiques.
 
-- **Windows Server Backup (Sauvegarde)** :
+- **Windows Server Backup & Stratégie de Sauvegarde (PRA)** :
 
-  - **Outil** : Fonctionnalité native (à installer via "Ajout de rôles et fonctionnalités") permettant de sauvegarder et restaurer le serveur.
-  - **Technologie VSS (Snapshot)** : Utilise le *Volume Shadow Copy Service* pour prendre des instantanés (snapshots) du système, permettant de sauvegarder des fichiers même s'ils sont ouverts/utilisés.
+  - **Contexte** : La sauvegarde est le pilier du **PRA (Plan de Reprise d'Activité)**.
+
+  - **Windows Server Backup** : Solution native idéale pour les TPE/PME. Elle permet des sauvegardes complètes, incrémentielles ou de l'état du système ("System State"). A installer via "Ajout de rôles et fonctionnalités".
+  - **Limites** : Pour les grandes structures, on privilégie des solutions tierces (Veeam, etc.) offrant la centralisation, la déduplication, et la réplication cloud.
+  - **Technologies** :
+    - **Sauvegarde classique** : Garantie de continuité "à froid".
+    - **VSS (Volume Shadow Copy)** : Mécanisme de "Snapshot" (instantané) permettant de sauvegarder des fichiers en cours d'utilisation sans interrompre le service.
   - **Stratégie** : Les snapshots permettent des sauvegardes fréquentes sans interruption de service. Une sauvegarde complète "à froid" (services arrêtés) reste une bonne pratique ponctuelle pour une cohérence absolue.
   - **Format** : Les sauvegardes sont stockées sous forme d'images disques **.vhdx**, qui peuvent être montées manuellement pour récupérer des fichiers unitaires.
   - **Types de récupération** : Fichiers et dossiers, Volumes entiers, Applications, ou **État du système** (System State).
@@ -1680,9 +1692,13 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 - **Sauvegarde et Restauration Active Directory** :
 
   - **Composants critiques** : La sauvegarde de l'AD repose sur deux dossiers clés :
-    - **NTDS** : Contient la base de données de l'annuaire (`ntds.dit`).
-    - **SYSVOL** : Contient les fichiers publics (Stratégies de groupe/GPO, scripts de connexion).
-  - **Restauration d'un utilisateur** : Pour récupérer un objet AD supprimé (utilisateur, groupe...), il faut effectuer une restauration de l'**État du système**. Cela remet l'AD dans l'état exact où il était au moment du backup.
+    - **NTDS** : Contient la base de données de l'annuaire (`ntds.dit` avec utilisateurs, groupes, ordinateurs).
+    - **SYSVOL** : Contient les fichiers publics répliqués (Stratégies de groupe/GPO, scripts de connexion).
+    - **Restauration de l'État du Système (System State)** : C'est l'option à choisir pour récupérer un AD. Elle restaure :
+    - **AD** (L'annuaire lui-même).
+    - **FRS/DFSR** (Le dossier SYSVOL).
+    - **Registry** (La configuration système locale).
+  - **Règle impérative** : Active Directory étant un service critique en cours d'exécution, il **ne peut pas être restauré en mode normal**. Il faut obligatoirement redémarrer le serveur en **Mode de restauration des services d'annuaire (DSRM)**.
 
 [Challenge A408](./challenges/Challenge_A408.md)
 
