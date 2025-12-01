@@ -1674,9 +1674,7 @@ On obtient des images vhdx que l'on peut monter à nouveau et une sauvegarde qui
 
 Ressource :
 
-Redémarrage sans échec : msconfig / démarrer ou MAJ+redémarrer
-
-Challenge : Restauration de l'AD depuis une sauvegarde locale
+Redémarrage sans échec : msconfig / démarrer ou MAJ+redémarre
 
 ---
 
