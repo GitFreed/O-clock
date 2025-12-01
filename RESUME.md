@@ -49,8 +49,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
 - [A406. Atelier](./challenges/Challenge_A406.md)
-- [A407. DNS & IIS](#-a407-dns--iis)
-- [A408. Pools & Authentification](#-a408-pools--authentification)
+- [A407. DNS et IIS](#-a407-dns--iis)
+- [A408. Pools, Authentification et Sauvegarde](#-a408-pools-authentification-et-serveur-de-backup)
 
 ---
 
@@ -1650,4 +1650,34 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### 🔐 A408. Pools & Authentification
+### 🔐 A408. Pools, Authentification et Serveur de Backup
+
+Pool d'applications sert à ?
+
+Pool : IIS > Ajout de pools d'applications
+
+L’authentification permet de contrôler l’accès en exigeant que chaque utilisateur s’identifie, par exemple via l'AD
+
+Auth : Ajout > Rôle de Serveurs > IIS > Sécurité > Auth de base. Parler des types d'authentification : libre, basique, forte, etc et aussi Réseau, filtrage, SSL
+
+Si on active auth de base il faut désactiver l'auth anonyme!
+
+Backup : Ajout > Fonctionnalités > Sauvegarde de windows serveur
+
+Dossier NTDS (contient AD) et SYSVOL (contient AD et GPO)
+
+C'est une sauvegarde VSS = Snapshot
+
+Une vraie sauvegarde est mieux qu'un snapshot, mais l'activité doit être arrêté, en général on fait des snapshots très réguliers, et une vraie sauvegarde de temps en temps.
+
+On obtient des images vhdx que l'on peut monter à nouveau et une sauvegarde qui permet de lancer la récupération : Fichiers et dossiers, Volumes, Applications, et 2tat du système (complet).
+
+Ressource :
+
+Redémarrage sans échec : msconfig / démarrer ou MAJ+redémarrer
+
+Challenge : Restauration de l'AD depuis une sauvegarde locale
+
+---
+
+### A409. WDS
