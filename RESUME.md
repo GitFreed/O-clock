@@ -49,8 +49,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
 - [A406. Atelier](./challenges/Challenge_A406.md)
-- [A407. DNS, IIS](#-a407-dns--iis)
-- [A408. ]
+- [A407. DNS & IIS](#-a407-dns--iis)
+- [A408. Pools & Authentification](#-a408-pools--authentification)
 
 ---
 
@@ -1636,8 +1636,6 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
   - Pour qu'un utilisateur accède à un site hébergé sur IIS via un nom (ex: `intranet.thm.local`), deux configurations sont nécessaires :
         1. **Côté DNS** : Créer un enregistrement **A** qui fait pointer le nom `intranet` vers l'adresse IP du serveur IIS.
         2. **Côté IIS** : Configurer le **binding** (liaison) du site pour qu'il écoute les requêtes arrivant sur cette IP avec ce nom d'hôte spécifique (ex: port 80, nom d'hôte `intranet.thm.local`).
-
-[Challenge A407](https://www.google.com/search?q=../challenges/Challenge_A407.md)
 
 [Challenge A407](./challenges/Challenge_A407.md)
 
