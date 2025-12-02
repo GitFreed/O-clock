@@ -51,7 +51,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A406. Atelier](./challenges/Challenge_A406.md)
 - [A407. DNS et IIS](#-a407-dns--iis)
 - [A408. Pools, Authentification et Sauvegarde](#️-a408-pools-iis-authentification-et-backup)
-- [A409. Windows deployment services](#-a409-windows-deployment-services-wds)
+- [A409. Service de Déploiement Windows](#-a409-windows-deployment-services-wds)
 
 ---
 
@@ -1703,7 +1703,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 [Challenge A408](./challenges/Challenge_A408.md)
 
-> 📚 Ressources :
+> 📚 **Ressources** :
 >
 > - **Démarrage en Mode Restauration des Services d'Annuaire (DSRM)** : Nécessaire pour certaines restaurations AD.
 >   - Via l'interface : `msconfig` \> Onglet Démarrer \> Démarrage sécurisé \> Réparer Active Directory.
@@ -1749,7 +1749,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 [Challenge A409](./challenges/Challenge_A409.md)
 
-> 📚 Ressources :
+> 📚 **Ressources** :
 >
 > Convertir un fichier ESD en WIM <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
 >
