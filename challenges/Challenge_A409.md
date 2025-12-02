@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-Challenge A409
+⌨️ Challenge A409
 
 Tester l'installation d'une machine par déploiement de service (PXE)
 
