@@ -51,6 +51,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A406. Atelier](./challenges/Challenge_A406.md)
 - [A407. DNS et IIS](#-a407-dns--iis)
 - [A408. Pools, Authentification et Sauvegarde](#️-a408-pools-iis-authentification-et-backup)
+- [A409. Windows deployment services](#-a409-windows-deployment-services-wds)
 
 ---
 
@@ -1722,15 +1723,29 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### 🤖 A409. WDS
+### 🚀 A409. Windows Deployment Services (WDS)
 
-Gérer > Ajouter rôles et fonctionnalités > Services de déploiement Windows
+> Ce cours aborde le déploiement automatisé de systèmes d'exploitation via le réseau en utilisant le rôle **WDS** (Windows Deployment Services). Il permet d'installer Windows sur de multiples machines simultanément, sans avoir besoin de support physique (clé USB/DVD) pour chaque poste.
 
-WDS bientôt décommissioné, au profit de SCCM, peut aussi être une alternative à WSUS
+- **WDS (Windows Deployment Services)** :
+  - **Rôle** : Permet de stocker et de diffuser des images systèmes Windows (fichiers `.wim`) via le réseau. C'est l'évolution des anciens services RIS.
+  - **Images** : Le service repose sur deux types d'images principales :
+    - **Image de démarrage (Boot Image)** : C'est l'environnement Windows PE (`boot.wim`) qui se charge en premier via le réseau pour lancer l'assistant d'installation.
+    - **Image d'installation (Install Image)** : C'est l'image du système d'exploitation complet (`install.wim`) qui sera copiée sur le disque dur du client.
 
-WDS plus conseillé pour Win10 que Win11 car utilise un fichier .wim qui n'est plus présent sur Win11. MTD conseillé.
+- **Fonctionnement via PXE** :
+  - Le déploiement repose sur la norme **PXE (Preboot Execution Environment)**. Cette technologie permet à une station de travail de démarrer directement depuis sa carte réseau (avant même le chargement de l'OS local) pour récupérer une image système située sur un serveur.
+  - **Prérequis** : Pour que cela fonctionne, l'environnement doit disposer d'un serveur **DNS** (résolution de noms), d'un serveur **DHCP** (attribution d'IP) et d'un domaine **Active Directory** (authentification).
 
-Sur pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + Enable Network Booting avec l'addresse du server.
+- **Configuration DHCP pour le PXE** :
+  - Si le DHCP n'est pas sur le même serveur que WDS (exemple : un routeur pfSense), des options spécifiques doivent être configurées pour guider le client PXE :
+    - **Option 66 (Boot Server Host Name)** : L'adresse IP ou le nom du serveur WDS.
+    - **Option 67 (Bootfile Name)** : Le chemin du fichier de démarrage (ex: `boot\x64\wdsnbp.com` pour BIOS ou `boot\x64\wdsmgfw.efi` pour UEFI).
+  - **Option 60 (PXEClient)** : Cette option est nécessaire uniquement si le DHCP et le WDS cohabitent sur le **même serveur**, pour éviter les conflits car ils écoutent tous deux sur le port UDP 67.
+
+- **Limitations et transition vers MDT** :
+  - WDS seul montre ses limites, notamment avec Windows 11 (nouveaux formats `.esd`, prérequis TPM/Secure Boot). Microsoft recommande d'utiliser **MDT (Microsoft Deployment Toolkit)**.
+  - **MDT** est un outil gratuit qui se superpose à WDS pour offrir des scénarios beaucoup plus riches : il permet d'injecter automatiquement des drivers, d'installer des logiciels post-déploiement, d'exécuter des scripts de personnalisation et de migrer des données utilisateur, ce que WDS ne fait pas nativement. Pour les très grandes structures, on passera sur **SCCM** (System Center).
 
 [Challenge A409](./challenges/Challenge_A409.md)
 
@@ -1739,6 +1754,8 @@ Sur pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + E
 > Convertir un fichier ESD en WIM <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
 >
 > Serveurs WDS et DHCP : boot PXE BIOS et UEFI <https://www.it-connect.fr/serveurs-dhcp-wds-boot-pxe-bios-et-uefi/>
+>
+> Sur notre pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + Enable Network Booting avec l'addresse du server.
 
 [Retour en haut](#-table-des-matières)
 
