@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge A](/images/2025-12-01-17-40-16.png)
+![Challenge A408](/images/2025-12-01-17-40-16.png)
 
 [Cours A408.](/RESUME.md#️-a408-pools-iis-authentification-et-backup)
 

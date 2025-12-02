@@ -1722,22 +1722,26 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### A409. WDS
+### 🤖 A409. WDS
 
-> Gérer > Ajouter rôles et fonctionnalités > Services de déploiement Windows
+Gérer > Ajouter rôles et fonctionnalités > Services de déploiement Windows
 
 WDS bientôt décommissioné, au profit de SCCM, peut aussi être une alternative à WSUS
 
 WDS plus conseillé pour Win10 que Win11 car utilise un fichier .wim qui n'est plus présent sur Win11. MTD conseillé.
 
-Sur pfsense DHCP option 60 > client PXE + Enable Networ Booting avec l'addresse du server.
+Sur pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + Enable Network Booting avec l'addresse du server.
 
 [Challenge A409](./challenges/Challenge_A409.md)
 
 > 📚 Ressources :
 >
-> Convertir un fichier ESD en WIM - ITconnect <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
+> Convertir un fichier ESD en WIM <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
+>
+> Serveurs WDS et DHCP : boot PXE BIOS et UEFI <https://www.it-connect.fr/serveurs-dhcp-wds-boot-pxe-bios-et-uefi/>
 
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### A410. WDS suite
