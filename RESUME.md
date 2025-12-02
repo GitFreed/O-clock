@@ -1715,9 +1715,29 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 > Restaurer une zone DNS - IT-connect <https://www.it-connect.fr/windows-server-comment-restaurer-une-zone-dns/>
 >
 > Vidéo Sauvegarde et restauration Active Directory - ENNIBI-IT <https://www.youtube.com/watch?v=p3N8LkLb7sU>
+>
+> Reset mdp Admin en DSRM <https://learn.microsoft.com/fr-fr/troubleshoot/windows-server/active-directory/reset-directory-services-restore-mode-admin-pwd>
 
 [Retour en haut](#-table-des-matières)
 
 ---
 
 ### A409. WDS
+
+> Gérer > Ajouter rôles et fonctionnalités > Services de déploiement Windows
+
+WDS bientôt décommissioné, au profit de SCCM, peut aussi être une alternative à WSUS
+
+WDS plus conseillé pour Win10 que Win11 car utilise un fichier .wim qui n'est plus présent sur Win11. MTD conseillé.
+
+Sur pfsense DHCP option 60 > client PXE + Enable Networ Booting avec l'addresse du server.
+
+[Challenge A409](./challenges/Challenge_A409.md)
+
+> 📚 Ressources :
+>
+> Convertir un fichier ESD en WIM - ITconnect <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
+
+[Retour en haut](#-table-des-matières)
+
+---
