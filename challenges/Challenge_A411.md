@@ -4,7 +4,7 @@
 
 Challenge : Faire fonctionner GIMP en RDS : remoteapp
 
-[Cours A411.](/RESUME.md#-a411)
+[Cours A411.](/RESUME.md#️-a411-wds-avancé--rds)
 
 ---
 

@@ -52,7 +52,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A408. DNS et IIS](#-a408-dns--iis)
 - [A409. Pools, Authentification et Sauvegarde](#️-a409-pools-iis-authentification-et-backup)
 - [A410. Service de Déploiement Windows](#-a410-windows-deployment-services-wds)
-- [A411.]
+- [A411. WDS avancé et Services Bureau à Distance](#️-a411-wds-avancé--rds)
 
 ---
 
@@ -1764,7 +1764,7 @@ et Correction Atelier A407.
 
 ---
 
-### 🚀 A411. WDS Avancé & RDS
+### 🛠️ A411. WDS Avancé & RDS
 
 > Ce cours approfondit l'utilisation de WDS avec l'injection de pilotes et l'automatisation des installations via des fichiers de réponses. Il introduit également le rôle RDS (Remote Desktop Services) pour la centralisation des environnements utilisateurs.
 
