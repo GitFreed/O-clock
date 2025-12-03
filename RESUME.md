@@ -49,9 +49,10 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
 - [A406. Atelier](./challenges/Challenge_A406.md)
-- [A407. DNS et IIS](#-a407-dns--iis)
-- [A408. Pools, Authentification et Sauvegarde](#️-a408-pools-iis-authentification-et-backup)
-- [A409. Service de Déploiement Windows](#-a409-windows-deployment-services-wds)
+- [A408. DNS et IIS](#-a408-dns--iis)
+- [A409. Pools, Authentification et Sauvegarde](#️-a409-pools-iis-authentification-et-backup)
+- [A410. Service de Déploiement Windows](#-a410-windows-deployment-services-wds)
+- [A411.]
 
 ---
 
@@ -1607,11 +1608,13 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 [Challenge A406](./challenges/Challenge_A406.md)
 
+et Correction Atelier A407.
+
 [Retour en haut](#-table-des-matières)
 
 ---
 
-### 🌐 A407. DNS & IIS
+### 🌐 A408. DNS & IIS
 
 > Ce cours explore deux rôles fondamentaux de Windows Server : le serveur DNS, pilier de la résolution de noms dans le réseau, et le serveur Web IIS, plateforme d'hébergement d'applications et de sites internet. Leur configuration conjointe est essentielle pour rendre les services accessibles de manière conviviale.
 
@@ -1638,7 +1641,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
         1. **Côté DNS** : Créer un enregistrement **A** qui fait pointer le nom `intranet` vers l'adresse IP du serveur IIS.
         2. **Côté IIS** : Configurer le **binding** (liaison) du site pour qu'il écoute les requêtes arrivant sur cette IP avec ce nom d'hôte spécifique (ex: port 80, nom d'hôte `intranet.thm.local`).
 
-[Challenge A407](./challenges/Challenge_A407.md)
+[Challenge A408](./challenges/Challenge_A408.md)
 
 > **📚 Ressources :**
 >
@@ -1651,7 +1654,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### 🛡️ A408. Pools IIS, Authentification et Backup
+### 🛡️ A409. Pools IIS, Authentification et Backup
 
 > Ce cours approfondit la configuration du serveur Web IIS avec la gestion des pools d'applications et de l'authentification, et aborde un aspect critique de l'administration système : la sauvegarde et la restauration (notamment d'Active Directory) avec Windows Server Backup.
 
@@ -1701,7 +1704,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
     - **Registry** (La configuration système locale).
   - **Règle impérative** : Active Directory étant un service critique en cours d'exécution, il **ne peut pas être restauré en mode normal**. Il faut obligatoirement redémarrer le serveur en **Mode de restauration des services d'annuaire (DSRM)**.
 
-[Challenge A408](./challenges/Challenge_A408.md)
+[Challenge A409](./challenges/Challenge_A409.md)
 
 > 📚 **Ressources** :
 >
@@ -1723,7 +1726,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### 🚀 A409. Windows Deployment Services (WDS)
+### 🚀 A410. Windows Deployment Services (WDS)
 
 > Ce cours aborde le déploiement automatisé de systèmes d'exploitation via le réseau en utilisant le rôle **WDS** (Windows Deployment Services). Il permet d'installer Windows sur de multiples machines simultanément, sans avoir besoin de support physique (clé USB/DVD) pour chaque poste.
 
@@ -1747,7 +1750,7 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
   - WDS seul montre ses limites, notamment avec Windows 11 (nouveaux formats `.esd`, prérequis TPM/Secure Boot). Microsoft recommande d'utiliser **MDT (Microsoft Deployment Toolkit)**.
   - **MDT** est un outil gratuit qui se superpose à WDS pour offrir des scénarios beaucoup plus riches : il permet d'injecter automatiquement des drivers, d'installer des logiciels post-déploiement, d'exécuter des scripts de personnalisation et de migrer des données utilisateur, ce que WDS ne fait pas nativement. Pour les très grandes structures, on passera sur **SCCM** (System Center).
 
-[Challenge A409](./challenges/Challenge_A409.md)
+[Challenge A410](./challenges/Challenge_A410.md)
 
 > 📚 **Ressources** :
 >
@@ -1768,3 +1771,13 @@ WDS : ajout des pilotes VirtuIO à l'image de boot
 RDS : ajout de rôles et der fonctionnalités > Installation des services de Bureau à distance > Démarrage rapide > sur une session
 
 Pour accéder à <https://ws2025.oclock.lan/RDWeb> on ajoute un Certificat de Server autosigné, et on fait la liaison https avec sur le pool Default website
+
+[Challenge A411](./challenges/Challenge_A411.md)
+
+> 📚 **Ressources** :
+>
+>
+
+[Retour en haut](#-table-des-matières)
+
+---

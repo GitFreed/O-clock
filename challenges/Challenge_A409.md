@@ -1,43 +1,41 @@
-# Atelier A409 02/12/2025
+# Atelier A409 01/12/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![challenge](/images/2025-12-03-13-56-02.png)
+![Challenge](/images/2025-12-01-17-40-16.png)
 
-[Cours A409.](/RESUME.md#-a409-windows-deployment-services-wds)
+[Cours A409.](/RESUME.md#️-a409-pools-iis-authentification-et-backup)
 
 ---
 
-## 1. Ajouter une image de démarrage Windows 10 dans WDS à partir d’un ISO
+## 1. Suppression d'un utilisateur AD
 
-![IMAGE boot](/images/2025-12-03-14-09-01.png)
+![delete](/images/2025-12-01-17-44-28.png)
 
-## 2. Ajouter une image d’installation Windows 10 et vérifier sa présence dans les groupes WDS
+N'étant plus dans l'AD l'utilisateur Roman Beldent ne peux plus se connecter, on va devoir restaurer son profil.
 
-![IMAGE install](/images/2025-12-03-14-06-31.png)
+## 2. Récupération
 
-## 3. Activer ou vérifier l’Option 60 si DHCP et WDS sont sur le même serveur
+On ne peux pas récupérer l'AD directement car c'est un système critique qui est utilisé en continu, il faut donc le faire en mode sans échec via MSconfig
 
-![DHCP option](/images/2025-12-03-13-58-21.png)
+![reboot](/images/2025-12-01-18-01-09.png)
 
-![network boot](/images/2025-12-03-14-00-45.png)
+Se connecter en Local vu que l'AD est désactivé
 
-## 4. Tester un boot PXE sur une VM et observer les étapes de connexion au serveur WDS
+![local](/images/2025-12-01-18-09-31.png)
 
-On ajoute une nouvelle VM dans proxmox, sans aucun OS, vu qu'on a mis l'option 60 dans le DHCP de notre pfsense notre VM doit être en UEFI.
+Sauvegarde Windows Server > Récupérer > Sauvegarde > Applications > AD
 
-Lors du démarrage on peut voir le PXE en action
+![old](/images/2025-12-01-17-51-18.png)
 
-![PXE](/images/2025-12-02-15-16-33.png)
+Récupération réussie
 
-Chargement de l'image
+![récup](/images/2025-12-01-18-56-16.png)
 
-![Loading](/images/2025-12-02-15-44-34.png)
+Les fichiers de la récupération sont là, on peut remplacer les anciens fichiers par ces derniers, puis désactiver le mode sans échec et redémarrer, se reconnecter au domaine Oclock.
 
-Installation de Windows OK
+![restauration](/images/2025-12-01-17-56-04.png)
 
-![Windows install](/images/2025-12-02-15-44-51.png)
+L'utilisateur Roman est de nouveau là et peut se connecter !
 
-## 5. Bonus : Ajouter les pilotes VirtIO au boot PXE
-
-![PILOTES](/images/2025-12-03-14-07-12.png)
+![Romanback](/images/2025-12-01-18-54-38.png)

@@ -1,41 +1,37 @@
-# Atelier A408 01/12/2025
+# Atelier A408 28/11/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge A408](/images/2025-12-01-17-40-16.png)
+![challenge](/images/2025-11-29-16-27-18.png)
 
-[Cours A408.](/RESUME.md#️-a408-pools-iis-authentification-et-backup)
+[Cours A408.](/RESUME.md#-a408-dns--iis)
 
 ---
 
-## 1. Suppression d'un utilisateur AD
+## 1. Ajout dans le DNS
 
-![delete](/images/2025-12-01-17-44-28.png)
+Création d'un nouvel enregistrement d'Alias dans le gestionnaire de DNS
 
-N'étant plus dans l'AD l'utilisateur Roman Beldent ne peux plus se connecter, on va devoir restaurer son profil.
+![DNS alias](/images/2025-11-28-15-13-52.png)
 
-## 2. Récupération
+![DNS all](/images/2025-11-28-15-14-52.png)
 
-On ne peux pas récupérer l'AD directement car c'est un système critique qui est utilisé en continu, il faut donc le faire en mode sans échec via MSconfig
+## 2. Ajout dans l'IIS
 
-![reboot](/images/2025-12-01-18-01-09.png)
+Ajout du site dans le Gestionnaire des services Internet
 
-Se connecter en Local vu que l'AD est désactivé
+![site](/images/2025-11-28-15-17-08.png)
 
-![local](/images/2025-12-01-18-09-31.png)
+![IIS](/images/2025-11-28-15-18-26.png)
 
-Sauvegarde Windows Server > Récupérer > Sauvegarde > Applications > AD
+## 3. Ajout des index.html
 
-![old](/images/2025-12-01-17-51-18.png)
+Création des index.html dans chaque dossier
 
-Récupération réussie
+![aldebaran](/images/2025-11-28-15-44-36.png)
 
-![récup](/images/2025-12-01-18-56-16.png)
+![andromede](/images/2025-11-28-15-46-14.png)
 
-Les fichiers de la récupération sont là, on peut remplacer les anciens fichiers par ces derniers, puis désactiver le mode sans échec et redémarrer, se reconnecter au domaine Oclock.
+![basilic](/images/2025-11-28-15-45-54.png)
 
-![restauration](/images/2025-12-01-17-56-04.png)
-
-L'utilisateur Roman est de nouveau là et peut se connecter !
-
-![Romanback](/images/2025-12-01-18-54-38.png)
+![zinc](/images/2025-11-28-15-46-33.png)
