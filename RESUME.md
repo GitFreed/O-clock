@@ -1761,4 +1761,8 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 ---
 
-### A410. WDS suite
+### A410. WDS suite, et RDS
+
+WDS : ajout des pilotes VirtuIO à l'image de boot
+
+RDS : ajout de rôles et der fonctionnalités > Installation des services de Bureau à distance > Démarrage rapide > sur une session >
