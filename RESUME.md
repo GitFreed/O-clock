@@ -1764,13 +1764,70 @@ et Correction Atelier A407.
 
 ---
 
-### A411. WDS suite, et RDS
+### 🚀 A411. WDS Avancé & RDS
 
-WDS : ajout des pilotes VirtuIO à l'image de boot
+> Ce cours approfondit l'utilisation de WDS avec l'injection de pilotes et l'automatisation des installations via des fichiers de réponses. Il introduit également le rôle RDS (Remote Desktop Services) pour la centralisation des environnements utilisateurs.
 
-RDS : ajout de rôles et der fonctionnalités > Installation des services de Bureau à distance > Démarrage rapide > sur une session
+#### 1. WDS : Gestion des Pilotes (Drivers)
 
-Pour accéder à <https://ws2025.oclock.lan/RDWeb> on ajoute un Certificat de Server autosigné, et on fait la liaison https avec sur le pool Default website
+Pour que l'installation de Windows fonctionne sur différents matériels, WDS permet de gérer et déployer des pilotes (ex: carte réseau, contrôleur de disque).
+
+- **Groupes de Pilotes** : Permet d'organiser les pilotes logiquement. On peut appliquer des **Filtres** pour contrôler leur déploiement :
+  - **Filtres Client** : Définissent **QUI** reçoit les pilotes (ex: *Manufacturer* = Dell, *Model* = Optiplex 7080).
+  - **Filtres Fichier** : Définissent **QUOI** (quels fichiers du groupe) est installé (ex: uniquement les pilotes *Net* ou *Video*).
+
+- **Injection dans l'Image de Démarrage (Boot Image)** :
+  - **Indispensable** : Pour que l'installateur Windows (WinPE) puisse voir le disque dur ou accéder au réseau, les pilotes critiques (Stockage et Réseau) doivent être injectés directement dans l'image de boot (`boot.wim`).
+  - **Cas de la Virtualisation (VirtIO)** : Sur des hyperviseurs comme Proxmox/KVM, il faut injecter les pilotes **VirtIO** :
+    - **NetKVM** : Pour la carte réseau.
+    - **viostor/vioScsi** : Pour le contrôleur de disque.
+    - **Balloon** : Pour la gestion dynamique de la mémoire.
+  - *Attention* : L'injection est une modification lourde de l'image `.wim`. En cas de mise à jour de pilote, il faut souvent reconstruire l'image.
+
+#### 2. WDS : Automatisation (Unattend)
+
+L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installation) où l'administrateur n'a pas besoin de cliquer sur "Suivant" devant chaque poste.
+
+- **Fichier de réponses (Unattend.xml)** :
+  - C'est un fichier XML qui contient les réponses aux questions de l'installateur (Langue, Partitionnement du disque, Fuseau horaire, Mot de passe admin local, etc.).
+  - Dans les propriétés du serveur WDS (onglet *Client*), on lie ce fichier XML aux architectures (x64/x86) pour qu'il soit chargé automatiquement.
+
+- **Pré-staging (Approbation et Nommage)** :
+  - Permet de sécuriser le WDS en demandant une approbation avant l'installation.
+  - L'administrateur peut nommer la machine et définir dans quelle OU (Active Directory) elle sera créée avant même que l'installation ne commence.
+  - **Droits de jointure** : On définit quel compte est utilisé pour joindre le domaine (souvent un compte de service ou administrateur) avec les droits complets pour créer l'objet ordinateur.
+
+- **Avantage et Inconvénient** :
+  - A : Installation rapide d'OS natifs, standardisation du parc.
+  - I : Gère uniquement l'installation, pas la maintenance applicative post-install.
+
+#### 3. RDS (Remote Desktop Services)
+
+Les Services Bureau à Distance permettent d'héberger des sessions utilisateurs sur un serveur centralisé plutôt que sur les postes clients (vitualisation).
+
+- **Fonctionnement** :
+  - Le **Serveur Hôte** exécute les applications et le bureau.
+  - Le **Client** (léger ou PC) se connecte via le protocole **RDP** (port 3389).
+  - **Multi-session** : Plusieurs utilisateurs travaillent simultanément sur le même serveur, chacun dans sa bulle isolée.
+
+- **Modes d'utilisation** :
+  - **Bureau complet** : L'utilisateur a un bureau Windows classique distant.
+  - **RemoteApp** : Seule la fenêtre de l'application est envoyée au client (l'app semble tourner en local, mais s'exécute sur le serveur).
+
+- **Installation (Démarrage Rapide)** :
+  - Via le Gestionnaire de serveur > "Installation des services Bureau à distance".
+  - Choisir **"Démarrage rapide"** (Quick Start) pour une installation sur un seul serveur (installe le Broker, l'Accès Web et l'Hôte de session en une fois).
+  - Choisir "Déploiement de bureaux basés sur une session".
+
+- **Accès Web (RDWeb)** :
+  - Permet aux utilisateurs d'accéder à leurs applis/bureaux via un navigateur (URL type : `https://serveur/RDWeb`).
+  - **Sécurité (HTTPS)** : Nécessite un certificat SSL.
+    - *En lab/interne* : On peut générer un **certificat auto-signé** via IIS.
+    - Il faut ensuite lier ce certificat au port 443 du site "Default Web Site" dans la console IIS (Bindings/Liaisons).
+
+- **Avantage et Inconvénient** :
+  - A : Centralisation des données, maintenance facile (1 seule install d'app pour 50 users), accès à distance.
+  - I : **SPOF** (Single Point of Failure) : Si le serveur RDS plante, 50 personnes ne travaillent plus. Nécessite une grosse puissance serveur (RAM/CPU).
 
 [Challenge A411](./challenges/Challenge_A411.md)
 
