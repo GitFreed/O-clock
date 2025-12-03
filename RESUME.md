@@ -1765,4 +1765,6 @@ Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **
 
 WDS : ajout des pilotes VirtuIO à l'image de boot
 
-RDS : ajout de rôles et der fonctionnalités > Installation des services de Bureau à distance > Démarrage rapide > sur une session >
+RDS : ajout de rôles et der fonctionnalités > Installation des services de Bureau à distance > Démarrage rapide > sur une session
+
+Pour accéder à <https://ws2025.oclock.lan/RDWeb> on ajoute un Certificat de Server autosigné, et on fait la liaison https avec sur le pool Default website
