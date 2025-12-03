@@ -1759,6 +1759,8 @@ et Correction Atelier A407.
 > Serveurs WDS et DHCP : boot PXE BIOS et UEFI <https://www.it-connect.fr/serveurs-dhcp-wds-boot-pxe-bios-et-uefi/>
 >
 > Sur notre pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + Enable Network Booting avec l'addresse du server.
+>
+> Prise en charge de boot.wim <https://learn.microsoft.com/fr-fr/windows/deployment/wds-boot-support>
 
 [Retour en haut](#-table-des-matières)
 
@@ -1833,7 +1835,11 @@ Les Services Bureau à Distance permettent d'héberger des sessions utilisateurs
 
 > 📚 **Ressources** :
 >
+> WDS installation et configuration <https://rdr-it.com/wds-installation-et-configuration/>
 >
+> RDS overwiew <https://learn.microsoft.com/fr-fr/windows-server/remote/remote-desktop-services/overview>
+>
+> RDS déploiement <https://www.it-connect.fr/deploiement-rapide-dun-serveur-rds-avec-windows-server-2016/>
 
 [Retour en haut](#-table-des-matières)
 
