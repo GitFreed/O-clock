@@ -4,7 +4,7 @@
 
 ⌨️ Challenge : Installation d'une VM Win10 via Hyper-V
 
-[Cours A412.](/RESUME.md#️-a412-VDI)
+[Cours A412.](/RESUME.md#️-a412-vdi--hyper-v)
 
 ---
 

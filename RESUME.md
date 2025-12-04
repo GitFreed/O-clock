@@ -51,8 +51,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A406. Atelier](./challenges/Challenge_A406.md)
 - [A408. DNS et IIS](#-a408-dns--iis)
 - [A409. Pools, Authentification et Sauvegarde](#️-a409-pools-iis-authentification-et-backup)
-- [A410. Service de Déploiement Windows](#-a410-windows-deployment-services-wds)
-- [A411. WDS avancé et Services Bureau à Distance](#️-a411-wds-avancé--rds)
+- [A410. Service de Déploiement Windows (WDS)](#-a410-windows-deployment-services-wds)
+- [A411. Services Bureau à Distance (RDS)](#️-a411-rds-remote-desktop-services)
+- [A412. VDI & Hyper-V](#️-a412-vdi--hyper-v)
 
 ---
 
@@ -1728,13 +1729,14 @@ et Correction Atelier A407.
 
 ### 🚀 A410. Windows Deployment Services (WDS)
 
-> Ce cours aborde le déploiement automatisé de systèmes d'exploitation via le réseau en utilisant le rôle **WDS** (Windows Deployment Services). Il permet d'installer Windows sur de multiples machines simultanément, sans avoir besoin de support physique (clé USB/DVD) pour chaque poste.
+> Ce cours aborde le déploiement automatisé de systèmes d'exploitation via le réseau en utilisant le rôle **WDS** (Windows Deployment Services). Il permet d'installer Windows sur de multiples machines simultanément, sans avoir besoin de support physique (clé USB/DVD) pour chaque poste. Ainsi que l'injection de pilotes et l'automatisation des installations via des fichiers de réponses.
 
-- **WDS (Windows Deployment Services)** :
-  - **Rôle** : Permet de stocker et de diffuser des images systèmes Windows (fichiers `.wim`) via le réseau. C'est l'évolution des anciens services RIS.
-  - **Images** : Le service repose sur deux types d'images principales :
-    - **Image de démarrage (Boot Image)** : C'est l'environnement Windows PE (`boot.wim`) qui se charge en premier via le réseau pour lancer l'assistant d'installation.
-    - **Image d'installation (Install Image)** : C'est l'image du système d'exploitation complet (`install.wim`) qui sera copiée sur le disque dur du client.
+#### 1. **WDS (Windows Deployment Services)**
+
+- **Rôle** : Permet de stocker et de diffuser des images systèmes Windows (fichiers `.wim`) via le réseau. C'est l'évolution des anciens services RIS.
+- **Images** : Le service repose sur deux types d'images principales :
+  - **Image de démarrage (Boot Image)** : C'est l'environnement Windows PE (`boot.wim`) qui se charge en premier via le réseau pour lancer l'assistant d'installation.
+  - **Image d'installation (Install Image)** : C'est l'image du système d'exploitation complet (`install.wim`) qui sera copiée sur le disque dur du client.
 
 - **Fonctionnement via PXE** :
   - Le déploiement repose sur la norme **PXE (Preboot Execution Environment)**. Cette technologie permet à une station de travail de démarrer directement depuis sa carte réseau (avant même le chargement de l'OS local) pour récupérer une image système située sur un serveur.
@@ -1750,27 +1752,7 @@ et Correction Atelier A407.
   - WDS seul montre ses limites, notamment avec Windows 11 (nouveaux formats `.esd`, prérequis TPM/Secure Boot). Microsoft recommande d'utiliser **MDT (Microsoft Deployment Toolkit)**.
   - **MDT** est un outil gratuit qui se superpose à WDS pour offrir des scénarios beaucoup plus riches : il permet d'injecter automatiquement des drivers, d'installer des logiciels post-déploiement, d'exécuter des scripts de personnalisation et de migrer des données utilisateur, ce que WDS ne fait pas nativement. Pour les très grandes structures, on passera sur **SCCM** (System Center).
 
-[Challenge A410](./challenges/Challenge_A410.md)
-
-> 📚 **Ressources** :
->
-> Convertir un fichier ESD en WIM <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
->
-> Serveurs WDS et DHCP : boot PXE BIOS et UEFI <https://www.it-connect.fr/serveurs-dhcp-wds-boot-pxe-bios-et-uefi/>
->
-> Sur notre pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + Enable Network Booting avec l'addresse du server.
->
-> Prise en charge de boot.wim <https://learn.microsoft.com/fr-fr/windows/deployment/wds-boot-support>
-
-[Retour en haut](#-table-des-matières)
-
----
-
-### 🛠️ A411. WDS Avancé & RDS
-
-> Ce cours approfondit l'utilisation de WDS avec l'injection de pilotes et l'automatisation des installations via des fichiers de réponses. Il introduit également le rôle RDS (Remote Desktop Services) pour la centralisation des environnements utilisateurs.
-
-#### 1. WDS : Gestion des Pilotes (Drivers)
+#### 2. WDS : Gestion des Pilotes (Drivers)
 
 Pour que l'installation de Windows fonctionne sur différents matériels, WDS permet de gérer et déployer des pilotes (ex: carte réseau, contrôleur de disque).
 
@@ -1800,42 +1782,76 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
   - **Droits de jointure** : On définit quel compte est utilisé pour joindre le domaine (souvent un compte de service ou administrateur) avec les droits complets pour créer l'objet ordinateur.
 
 - **Avantage et Inconvénient** :
-  - A : Installation rapide d'OS natifs, standardisation du parc.
-  - I : Gère uniquement l'installation, pas la maintenance applicative post-install.
+  - **Avantages** : Installation rapide d'OS natifs, standardisation du parc.
+  - **Inconvénient** : Gère uniquement l'installation, pas la maintenance applicative post-install.
 
-#### 3. RDS (Remote Desktop Services)
+[Challenge A410](./challenges/Challenge_A410.md)
 
-Les Services Bureau à Distance permettent d'héberger des sessions utilisateurs sur un serveur centralisé plutôt que sur les postes clients (vitualisation).
+> 📚 **Ressources** :
+>
+> Convertir un fichier ESD en WIM <https://www.it-connect.fr/wds-convertir-un-fichier-esd-en-wim/>
+>
+> Serveurs WDS et DHCP : boot PXE BIOS et UEFI <https://www.it-connect.fr/serveurs-dhcp-wds-boot-pxe-bios-et-uefi/>
+>
+> Sur notre pfsense DHCP option 60 si UEFI et option 66 & 67 pour BIOS : "PXEClient" + Enable Network Booting avec l'addresse du server.
+>
+> Prise en charge de boot.wim <https://learn.microsoft.com/fr-fr/windows/deployment/wds-boot-support>
+>
+> WDS installation et configuration <https://rdr-it.com/wds-installation-et-configuration/>
+>
+> Déployer un Certificat <https://rdr-it.com/gpo-deployer-un-certificat/>
+>
+> Configurer le SSO <https://rdr-it.com/en/gpo-configure-sso-on-rds-connections/>
 
-- **Fonctionnement** :
-  - Le **Serveur Hôte** exécute les applications et le bureau.
-  - Le **Client** (léger ou PC) se connecte via le protocole **RDP** (port 3389).
-  - **Multi-session** : Plusieurs utilisateurs travaillent simultanément sur le même serveur, chacun dans sa bulle isolée.
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🖥️ A411. RDS (Remote Desktop Services)
+
+> Ce cours introduit le rôle RDS (Services Bureau à Distance) pour la centralisation des environnements utilisateurs. Il couvre le déploiement rapide, la sécurisation via certificats et l'automatisation de la connexion via les GPO.
+
+- **RDS (Remote Desktop Services)** :
+  - Les Services Bureau à Distance permettent d'héberger des sessions utilisateurs sur un serveur centralisé (virtualisation de session).
+  - **Fonctionnement** :
+    - Le **Serveur Hôte** exécute les applications et le bureau.
+    - Le **Client** (léger ou PC) se connecte via le protocole **RDP** (port 3389).
+    - **Multi-session** : Plusieurs utilisateurs travaillent simultanément sur le même serveur, chacun dans sa bulle isolée.
 
 - **Modes d'utilisation** :
-  - **Bureau complet** : L'utilisateur a un bureau Windows classique distant.
-  - **RemoteApp** : Seule la fenêtre de l'application est envoyée au client (l'app semble tourner en local, mais s'exécute sur le serveur).
+  - **Bureau complet** : L'utilisateur accède à un bureau Windows distant classique.
+  - **RemoteApp** : Seule la fenêtre de l'application est envoyée au client. L'application s'exécute sur le serveur mais semble tourner en local (intégration transparente).
 
 - **Installation (Démarrage Rapide)** :
   - Via le Gestionnaire de serveur > "Installation des services Bureau à distance".
-  - Choisir **"Démarrage rapide"** (Quick Start) pour une installation sur un seul serveur (installe le Broker, l'Accès Web et l'Hôte de session en une fois).
+  - Choisir **"Démarrage rapide"** pour une installation sur un seul serveur (installe le Broker, l'Accès Web et l'Hôte de session en une seule opération).
   - Choisir "Déploiement de bureaux basés sur une session".
 
 - **Accès Web (RDWeb)** :
-  - Permet aux utilisateurs d'accéder à leurs applis/bureaux via un navigateur (URL type : `https://serveur/RDWeb`).
-  - **Sécurité (HTTPS)** : Nécessite un certificat SSL.
-    - *En lab/interne* : On peut générer un **certificat auto-signé** via IIS.
-    - Il faut ensuite lier ce certificat au port 443 du site "Default Web Site" dans la console IIS (Bindings/Liaisons).
+  - Permet aux utilisateurs d'accéder à leurs applications/bureaux via un navigateur (URL type : `https://serveur/RDWeb`).
+  - **Sécurité (HTTPS)** : Nécessite impérativement un certificat SSL. En environnement de lab, on utilise souvent un certificat auto-signé qu'il faut lier au port 443 dans IIS.
 
-- **Avantage et Inconvénient** :
-  - A : Centralisation des données, maintenance facile (1 seule install d'app pour 50 users), accès à distance.
-  - I : **SPOF** (Single Point of Failure) : Si le serveur RDS plante, 50 personnes ne travaillent plus. Nécessite une grosse puissance serveur (RAM/CPU).
+- **Gestion des Certificats (MMC)** :
+  - Pour que les clients acceptent la connexion sans erreur de sécurité, ils doivent faire confiance au certificat du serveur RDS.
+  - **Export du certificat** : Sur le serveur, ouvrir la console `mmc.exe` > Ajouter un composant > Certificats > **Compte d'ordinateur** > Ordinateur Local. Exporter le certificat (sans la clé privée) pour le déployer ensuite.
+
+- **Déploiement Automatisé via GPO** :
+  - Une GPO permet de distribuer le certificat et de configurer automatiquement la connexion RemoteApp sur les postes clients.
+  - **1. Distribution du Certificat (Confiance)** :
+    - *Chemin* : Configuration Ordinateur > Stratégies > Paramètres Windows > Paramètres de sécurité > Stratégies de clé publique > **Autorités de certification racines de confiance**.
+    - *Action* : Importer le certificat exporté précédemment.
+  - **2. Configuration du flux RemoteApp** :
+    - *Chemin* : Configuration Utilisateur > Stratégies > Modèles d'administration > Composants Windows > Services Bureau à distance > Connexions aux programmes RemoteApp et aux services Bureau à distance.
+    - *Paramètre* : **Spécifier l'URL de connexion par défaut**.
+    - *Valeur* : `https://ws2025.oclock.lan/rdweb/Feed/webfeed.aspx` (URL du flux RSS/Webfeed).
+
+- **Avantages et Inconvénients** :
+  - **Avantages** : Centralisation des données, maintenance simplifiée (1 seule installation d'app pour 50 utilisateurs), accès à distance sécurisé.
+  - **Inconvénients** : **SPOF** (Single Point of Failure) - si le serveur RDS plante, tous les utilisateurs sont bloqués. Nécessite une infrastructure serveur robuste (RAM/CPU).
 
 [Challenge A411](./challenges/Challenge_A411.md)
 
 > 📚 **Ressources** :
->
-> WDS installation et configuration <https://rdr-it.com/wds-installation-et-configuration/>
 >
 > RDS overwiew <https://learn.microsoft.com/fr-fr/windows-server/remote/remote-desktop-services/overview>
 >
@@ -1845,35 +1861,52 @@ Les Services Bureau à Distance permettent d'héberger des sessions utilisateurs
 
 ---
 
-### A412. RDS Avancé & VDI
+### ☁️ A412. VDI & Hyper-V
 
-mmc.exe > ajouter/supprimer des composants logiciels enfichables > Certificats > Ajouter > Un compte ordinateur > Ordinateur Local
+> Ce cours introduit la base de la VDI (Virtual Desktop Infrastructure) : l'hyperviseur. Sur Windows Server, le rôle **Hyper-V** permet de créer et gérer des machines virtuelles qui serviront de modèles ("Masters") pour les bureaux virtuels.
 
-On doit exporter le certificat RDS qu'on a fait hier pour le transférer aux clients via une GPO (Ordi > Strat > Par Windows > Par de sécu > Start clé publique >  Autorité certif  racines de confiance > Importer + Util > Start > Modèles Admin > Composants Windows > Services Bureau à Dist > Connex programmes RemoteApp > Spécifier l'URL : Activer : <https://ws2025.oclock.lan/rdweb/Feed/webfeed.aspx> )
+- **Installation du rôle Hyper-V** :
+  - S'installe via "Ajouter des rôles et fonctionnalités" > **Hyper-V**.
+  - **Configuration** :
+    - **Ethernet** : Il est conseillé de ne pas cocher la carte réseau durant l'installation (pour configurer le switch virtuel manuellement plus tard).
+    - **Migration** : Laisser par défaut (CredSSP).
+    - **Emplacement** : Changer le chemin par défaut pour stocker les VM dans un dossier dédié (ex: `C:\VM`) pour une meilleure organisation.
+  - **Redémarrage** : Obligatoire pour charger l'hyperviseur au niveau noyau.
 
-VDI :
+- **Gestion du Réseau : Commutateurs Virtuels (vSwitch)** :
+  - Une fois installé, on configure le réseau via le **Gestionnaire Hyper-V** > **Gestionnaire de commutateur virtuel**.
+  - Il existe 3 types de commutateurs :
+        1. **Externe (Bridge)** : La VM est connectée directement au réseau physique (comme si elle était branchée au switch réel). Elle obtient une IP du DHCP du réseau LAN.
+        2. **Interne (NAT)** : La VM communique uniquement avec l'hôte physique et les autres VM. (Souvent utilisé avec du NAT).
+        3. **Privé (Local Only)** : La VM communique uniquement avec les autres VM sur le même vSwitch. Isolation totale de l'hôte physique.
+  - *Note* : La création d'un vSwitch externe crée une interface réseau virtuelle visible dans `ncpa.cpl`.
 
-Il faut installer un hyperviseur pour pouvoir utiliser des ordinateurs virtuels : Hyper-V
+- **Création d'une VM "Master"** :
+  - L'objectif est de créer une VM modèle (Master) propre, qui servira de base pour le déploiement de masse.
+  - **Installation de l'OS** : On configure la VM pour démarrer via le réseau ("Installer à partir d'un serveur d'installation réseau") afin de récupérer l'image Windows via **WDS**.
 
-Ajout rôle > Hyper V > On ne coche pas Ethernet >Migration par défaut > Emplacement C:\VM > redémarre
-
-Outil : Gestionnaire Hyper-V accessible maintenant, on ajoute un commutateur virtuel (externe = BRIDGE / interne = NAT / privé = localonly), nom : vSwitch le reste par défaut.
-
-On peut voir une nouvelle carte réseau (ncpa.cpl)
-
-On va créer un nouvel oordinateur vortuel "master" un modèle qu'on pourra copier > Attention Gen2 > Mémoire Dynamique > Connexion : le vSwitch qu'on a créé > Installer à partir d'un serveur d'installation réseau : utilisera l'image qu'on avait via WDS
-
-On va choisir Gen2, attention Gen1 : BIOS classique, disque IDE, MBR, alors que Gen2 : UEFI, disque SCSI, GPT, Secure boot (il faudra le désactiver pour certaines machines Linux)
+- **Générations de VM : Gen 1 vs Gen 2** :
+  - C'est un choix crucial à la création de la VM.
+  - **Génération 1 (Gen 1)** :
+    - Simule un matériel ancien.
+    - **BIOS** classique (Legacy).
+    - Disque IDE / Partition **MBR**.
+    - Compatible avec les vieux OS (Windows 7, vieux Linux).
+  - **Génération 2 (Gen 2)** :
+    - Standard moderne (recommandé).
+    - **UEFI**.
+    - Disque SCSI / Partition **GPT**.
+    - Supporte le **Secure Boot** (Démarrage sécurisé). *Attention : il faut parfois désactiver le Secure Boot pour certaines distributions Linux.*
 
 [Challenge A412](./challenges/Challenge_A412.md)
 
 > 📚 **Ressources** :
 >
-> Déployer un Certificat <https://rdr-it.com/gpo-deployer-un-certificat/>
->
-> Configurer le SSO <https://rdr-it.com/en/gpo-configure-sso-on-rds-connections/>
->
 > Types d'Hyperviseurs <https://www.it-connect.fr/les-types-dhyperviseurs/>
+>
+> Installer Hyper-V sur Windows <https://www.it-connect.fr/installer-hyper-v-sur-windows-10-et-creer-sa-premiere-vm/>
+>
+> Créer une VM avec Hyper-V <https://learn.microsoft.com/fr-fr/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v?tabs=hyper-v-manager>
 
 [Retour en haut](#-table-des-matières)
 
