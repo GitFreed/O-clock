@@ -31,3 +31,5 @@ Installation PXE
 C'est OK
 
 ![OK](/images/2025-12-04-15-36-10.png)
+
+---
