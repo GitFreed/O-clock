@@ -1876,9 +1876,9 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
 - **Gestion du Réseau : Commutateurs Virtuels (vSwitch)** :
   - Une fois installé, on configure le réseau via le **Gestionnaire Hyper-V** > **Gestionnaire de commutateur virtuel**.
   - Il existe 3 types de commutateurs :
-         1. **Externe (Bridge)** : La VM est connectée directement au réseau physique (comme si elle était branchée au switch réel). Elle obtient une IP du DHCP du réseau LAN.
-         2. **Interne (NAT)** : La VM communique uniquement avec l'hôte physique et les autres VM. (Souvent utilisé avec du NAT).
-         3. **Privé (Local Only)** : La VM communique uniquement avec les autres VM sur le même vSwitch. Isolation totale de l'hôte physique.
+    1. **Externe (Bridge)** : La VM est connectée directement au réseau physique (comme si elle était branchée au switch réel). Elle obtient une IP du DHCP du réseau LAN.
+    2. **Interne (NAT)** : La VM communique uniquement avec l'hôte physique et les autres VM. (Souvent utilisé avec du NAT).
+    3. **Privé (Local Only)** : La VM communique uniquement avec les autres VM sur le même vSwitch. Isolation totale de l'hôte physique.
   - *Note* : La création d'un vSwitch externe crée une interface réseau virtuelle visible dans `ncpa.cpl`.
 
 - **Création d'une VM "Master"** :
