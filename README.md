@@ -6,4 +6,3 @@ Ce dépôt contient les challenges réalisés ainsi que des ressources utiles da
 - `/images` : Captures et schémas.
 - `/ressources`: Ressources fiches & docs.
 - `RESUME` : Fiche [résumé](/RESUME.md) des cours.
-
