@@ -1845,4 +1845,36 @@ Les Services Bureau à Distance permettent d'héberger des sessions utilisateurs
 
 ---
 
-### A412
+### A412. RDS Avancé & VDI
+
+mmc.exe > ajouter/supprimer des composants logiciels enfichables > Certificats > Ajouter > Un compte ordinateur > Ordinateur Local
+
+On doit exporter le certificat RDS qu'on a fait hier pour le transférer aux clients via une GPO (Ordi > Strat > Par Windows > Par de sécu > Start clé publique >  Autorité certif  racines de confiance > Importer + Util > Start > Modèles Admin > Composants Windows > Services Bureau à Dist > Connex programmes RemoteApp > Spécifier l'URL : Activer : <https://ws2025.oclock.lan/rdweb/Feed/webfeed.aspx> )
+
+VDI :
+
+Il faut installer un hyperviseur pour pouvoir utiliser des ordinateurs virtuels : Hyper-V
+
+Ajout rôle > Hyper V > On ne coche pas Ethernet >Migration par défaut > Emplacement C:\VM > redémarre
+
+Outil : Gestionnaire Hyper-V accessible maintenant, on ajoute un commutateur virtuel (externe = BRIDGE / interne = NAT / privé = localonly), nom : vSwitch le reste par défaut.
+
+On peut voir une nouvelle carte réseau (ncpa.cpl)
+
+On va créer un nouvel oordinateur vortuel "master" un modèle qu'on pourra copier > Attention Gen2 > Mémoire Dynamique > Connexion : le vSwitch qu'on a créé > Installer à partir d'un serveur d'installation réseau : utilisera l'image qu'on avait via WDS
+
+On va choisir Gen2, attention Gen1 : BIOS classique, disque IDE, MBR, alors que Gen2 : UEFI, disque SCSI, GPT, Secure boot (il faudra le désactiver pour certaines machines Linux)
+
+[Challenge A412](./challenges/Challenge_A412.md)
+
+> 📚 **Ressources** :
+>
+> Déployer un Certificat <https://rdr-it.com/gpo-deployer-un-certificat/>
+>
+> Configurer le SSO <https://rdr-it.com/en/gpo-configure-sso-on-rds-connections/>
+>
+> Types d'Hyperviseurs <https://www.it-connect.fr/les-types-dhyperviseurs/>
+
+[Retour en haut](#-table-des-matières)
+
+---

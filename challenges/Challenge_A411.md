@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-Challenge : Faire fonctionner GIMP en RDS : remoteapp
+⌨️ Challenge : Faire fonctionner GIMP en RDS : remoteapp
 
 [Cours A411.](/RESUME.md#️-a411-wds-avancé--rds)
 
