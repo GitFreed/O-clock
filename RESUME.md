@@ -48,12 +48,14 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
-- [A406. Atelier](./challenges/Challenge_A406.md)
+- [A406 & 407. Atelier & correction](./challenges/Challenge_A406.md)
 - [A408. DNS et IIS](#-a408-dns--iis)
 - [A409. Pools, Authentification et Sauvegarde](#️-a409-pools-iis-authentification-et-backup)
 - [A410. Service de Déploiement Windows (WDS)](#-a410-windows-deployment-services-wds)
 - [A411. Services Bureau à Distance (RDS)](#️-a411-rds-remote-desktop-services)
 - [A412. VDI & Hyper-V](#️-a412-vdi--hyper-v)
+- [A413. Déploiement VDI & Sysprep](#-a413-déploiement-vdi--sysprep)
+- [A414. Azure](#️-a414-microsoft-azure)
 
 ---
 
@@ -1907,6 +1909,85 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
 > Installer Hyper-V sur Windows <https://www.it-connect.fr/installer-hyper-v-sur-windows-10-et-creer-sa-premiere-vm/>
 >
 > Créer une VM avec Hyper-V <https://learn.microsoft.com/fr-fr/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v?tabs=hyper-v-manager>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🏭 A413. Déploiement VDI & Sysprep
+
+> Ce cours finalise la mise en place de la VDI (Virtual Desktop Infrastructure). L'objectif est de transformer une machine virtuelle Windows 10 "Master" en un modèle déployable massivement via les services RDS, offrant ainsi à chaque utilisateur son propre PC virtuel.
+
+#### 1. Préparation du Master (Windows 10)
+
+Avant de dupliquer une VM, il faut la "nettoyer" pour qu'elle soit neutre.
+
+- **Nettoyage des comptes** :
+  - On active le compte **Administrateur** intégré (via `lusrmgr.msc` ou Gestion de l'ordinateur).
+  - On se connecte avec ce compte Admin.
+  - On **supprime** le compte utilisateur initial (celui créé lors de l'installation) et son profil. *But : Avoir une image sans fichiers utilisateurs parasites.*
+
+- **Sysprep (System Preparation Tool)** :
+  - C'est l'outil indispensable pour l'autonomie matérielle et la duplication. Il se trouve dans `C:\Windows\System32\Sysprep\sysprep.exe`.
+  - **Modes d'utilisation** :
+    - **Mode Audit** : Permet de démarrer en mode administrateur spécial pour installer des logiciels, des drivers ou faire des mises à jour *avant* de sceller l'image.
+    - **Mode OOBE (Out-Of-Box Experience)** : C'est le mode final. Au prochain démarrage, la machine lancera l'assistant de configuration (choix de la langue, clavier, création utilisateur...), comme un PC neuf sortant du carton.
+  - **L'option "Généraliser" (Generalize)** : **Cruciale**. Elle supprime les informations spécifiques au matériel et surtout le **SID** (Security Identifier) unique de la machine. Si on ne généralise pas, on ne peut pas déployer l'image dans un domaine Active Directory (conflit d'identifiants).
+  - **Action** : Pour le VDI, on choisit **OOBE** + Cocher **Généraliser** + Option d'extinction **Arrêter**.
+
+#### 2. Déploiement VDI (Processus RDS)
+
+Une fois le Master éteint (Syspreppé), le serveur RDS prend le relais pour créer la "Collection" de bureaux virtuels.
+
+- **Rôle nécessaire** : Contrairement au RDS classique (Session), le VDI nécessite le rôle **Hôte de virtualisation des services Bureau à distance** (RD Virtualization Host) installé sur le serveur physique Hyper-V.
+- **Processus d'installation (Théorique)** :
+    1. Dans le Gestionnaire de serveur > Services Bureau à distance.
+    2. Lancer l'assistant "Créer une collection de bureaux virtuels".
+    3. **Type** : "Pooled" (Bureaux partagés, non persistants) ou "Personal" (Bureaux persistants, l'utilisateur garde ses modifs).
+    4. **Source** : On sélectionne le fichier disque dur du Master (`C:\VM\Win10-MASTER.vhdx`).
+    5. **Déploiement** : Le serveur va copier ce disque, et créer X machines virtuelles basées dessus.
+
+- **Résultat** : Dans le portail web RDS (`/RDWeb`), l'utilisateur voit une icône "Windows 10 VDI". Quand il clique, le serveur allume une des VM disponibles et le connecte dessus.
+
+#### Bonus : Optimisation Disque (Proxmox / QCOW2)
+
+En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` sur Proxmox (Linux). Les disques virtuels ont tendance à grossir même si on supprime des fichiers dedans. Cette manip permet de récupérer l'espace vide (sparsify).
+
+- **Condition** : La VM doit impérativement être **éteinte**.
+- **Procédure (Shell Proxmox)** :
+    1. Passer en root :
+        `sudo su -`
+    2. Aller dans le dossier de stockage des images (adapter l'ID `9000` à votre VM) :
+        `cd /var/lib/vz/images/9000`
+    3. Vérifier la taille actuelle :
+        `ls -lh`
+    4. **Convertir et compresser** (Création d'une copie optimisée `newdisk`) :
+        `qemu-img convert -f qcow2 -O qcow2 -o preallocation=off vm-9000-disk-1.qcow2 newdisk.qcow2`
+        *(Cette commande réécrit le disque en ignorant les blocs vides).*
+    5. Supprimer l'ancien disque (Attention, irréversible) :
+        `rm vm-9000-disk-1.qcow2`
+    6. Renommer le nouveau disque pour qu'il prenne la place de l'ancien :
+        `mv newdisk.qcow2 vm-9000-disk-1.qcow2`
+
+[Challenge A413](./challenges/Challenge_A413.md)
+
+> 📚 **Ressources** :
+>
+> Erreurs sysrep : <https://neptunet.fr/error-sysprep/>
+>
+> Install & config VDI <https://rdr-it.com/vdi-installer-configurer-windows-serveur/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### ☁️ A414. Microsoft Azure
+
+[Challenge A414](./challenges/Challenge_A414.md)
+
+> 📚 **Ressources** :
+>
+> Microsoft Azure pour Etudiants <https://azure.microsoft.com/fr-fr/free/students>
 
 [Retour en haut](#-table-des-matières)
 
