@@ -56,6 +56,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A412. VDI & Hyper-V](#️-a412-vdi--hyper-v)
 - [A413. Déploiement VDI & Sysprep](#-a413-déploiement-vdi--sysprep)
 - [A414. Azure](#️-a414-microsoft-azure)
+- [Fin Saison A4 & QCM](#saison-a4-windows-server-)
+
+### [Saison A5. Linux 🐧](#saison-a5-linux-)
 
 ---
 
@@ -1963,8 +1966,6 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
     6. Renommer le nouveau disque pour qu'il prenne la place de l'ancien :
         `mv newdisk.qcow2 vm-9000-disk-1.qcow2`
 
-[Challenge A413](./challenges/Challenge_A413.md)
-
 > 📚 **Ressources** :
 >
 > Erreurs sysrep : <https://neptunet.fr/error-sysprep/>
@@ -2008,8 +2009,6 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
   - **Interface Réseau (NIC)** : Carte virtuelle connectée au VNet. Elle peut avoir une **IP Publique** (pour l'accès Internet) et une **IP Privée** (pour le LAN Azure).
   - **Sécurité (NSG - Network Security Group)** : C'est le pare-feu de la VM. Il contient des règles entrantes/sortantes (Inbound/Outbound rules).
     - *Indispensable* : Ouvrir le port **22** (SSH) pour Linux ou **3389** (RDP) pour Windows, et **80/443** pour un serveur Web.
-
-[Challenge A414](./challenges/Challenge_A414.md)
 
 > 📚 **Ressources** :
 >
