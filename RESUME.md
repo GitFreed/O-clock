@@ -1345,12 +1345,6 @@ Passerelle VLan sur Routeur (L3)
 
 ---
 
-C'est une excellente initiative ! Les modes de ports sont effectivement des concepts cruciaux pour bien configurer les VLANs.
-
-Voici les détails complémentaires sur les modes **Access**, **Trunk** et le **VLAN Natif**, à ajouter à votre fiche de révision pour le cours A309.
-
----
-
 ## **💠 Saison A4. Windows Server**
 
 > Cette saison se concentre sur l'administration système dans un environnement Microsoft. L'objectif est de maîtriser l'installation, la configuration et la gestion des services essentiels (AD DS, DNS, DHCP) sur Windows Server.
@@ -1983,11 +1977,76 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 ### ☁️ A414. Microsoft Azure
 
+> Ce cours introduit le Cloud Computing, une évolution majeure de l'informatique où les ressources (calcul, stockage, réseau) sont fournies à la demande via Internet. Il se concentre sur la pratique avec **Microsoft Azure**, de la théorie des modèles de service (XaaS) au déploiement concret de machines virtuelles.
+
+- **Concepts Fondamentaux du Cloud** :
+
+  - **Définition** : Mise à disposition de ressources informatiques via Internet avec une facturation à l'usage (Pay-as-you-go). On passe d'une dépense d'investissement (CapEx - acheter des serveurs) à une dépense de fonctionnement (OpEx - louer des services).
+  - **Principaux Fournisseurs** : **AWS** (Amazon Web Services), **Azure** (Microsoft), **GCP** (Google Cloud Platform).
+
+- **Modèles de Service (XaaS)** :
+
+  - **IaaS (Infrastructure as a Service)** : Le fournisseur gère le matériel (datacenter, réseau physique, hyperviseur). Vous gérez tout à partir de l'OS (VM, middleware, data, apps).
+    - *Exemple : Azure VM, Amazon EC2.*
+  - **PaaS (Platform as a Service)** : Le fournisseur gère l'OS et le runtime. Vous ne gérez que vos applications et vos données. Idéal pour les développeurs.
+    - *Exemple : Azure App Service, Google App Engine.*
+  - **SaaS (Software as a Service)** : Le fournisseur gère tout. Vous utilisez simplement le logiciel.
+    - *Exemple : Microsoft 365, Gmail, Salesforce.*
+  - **FaaS (Function as a Service)** : "Serverless". Vous déployez uniquement des bouts de code (fonctions) qui s'exécutent sur événement.
+    - *Exemple : Azure Functions, AWS Lambda.*
+
+- **Déploiement d'une VM sous Azure (IaaS)** :
+    La création d'une machine virtuelle nécessite de configurer plusieurs composants interdépendants :
+
+  - **Image** : Le système d'exploitation de base (ex: Ubuntu 22.04, Windows Server 2022) ou une image Marketplace (ex: WordPress pré-installé).
+  - **Taille (Size) & Coût** : Définit la puissance (vCPU, RAM). Le prix est affiché par mois mais facturé à la seconde/heure.
+  - **Disques** :
+    - *OS Disk* : Contient le système.
+    - *Data Disk* : Pour les données (optionnel).
+    - *Types* : HDD Standard (lent/pas cher), SSD Standard, SSD Premium (performant/cher).
+  - **Réseau Virtuel (VNet)** : Le réseau logique dans le cloud. Il est segmenté en **Subnets** (sous-réseaux).
+  - **Interface Réseau (NIC)** : Carte virtuelle connectée au VNet. Elle peut avoir une **IP Publique** (pour l'accès Internet) et une **IP Privée** (pour le LAN Azure).
+  - **Sécurité (NSG - Network Security Group)** : C'est le pare-feu de la VM. Il contient des règles entrantes/sortantes (Inbound/Outbound rules).
+    - *Indispensable* : Ouvrir le port **22** (SSH) pour Linux ou **3389** (RDP) pour Windows, et **80/443** pour un serveur Web.
+
 [Challenge A414](./challenges/Challenge_A414.md)
 
 > 📚 **Ressources** :
 >
+> Qu'est-ce que le Cloud <https://www.cloudflare.com/fr-fr/learning/cloud/what-is-the-cloud/>
+>
+> IaaS Paas Saas <https://www.redhat.com/fr/topics/cloud-computing/iaas-vs-paas-vs-saas>
+>
+> Microsoft Azure : <https://portal.azure.com/>
+>
 > Microsoft Azure pour Etudiants <https://azure.microsoft.com/fr-fr/free/students>
+>
+> Calculatrice Azure (Pour estimer les coûts avant déploiement) <https://azure.microsoft.com/fr-ca/pricing/calculator/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+## **💠 Fin Saison A4. Windows Server**
+
+[QCM Saison A4](.)
+
+![Résultat QCM](.)
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+## **🐧 Saison A5. Linux**
+
+>
+
+### 🖥️ A501. Introduction et Installation
+
+[Challenge A501](./challenges/Challenge_A501.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
