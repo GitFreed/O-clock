@@ -14,7 +14,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A107. Introduction aux Réseaux Informatiques](#-a107-introduction-aux-réseaux-informatiques)
 - [A108. Sécurité Informatique](#️-a108-sécurité-informatique)
 - [A109. Atelier calcul d'adresse IP et Masque sous-réseau](#-a109-atelier-calcul-dadresse-ip-et-masque-sous-réseau)
-- [Fin Saison 1 & QCM](#-fin-saison-a1-savoirs-de-base)
+- [Fin Saison 1 : QCM](#-fin-saison-a1-savoirs-de-base)
 
 ### [Saison A2. Support aux Utilisateurs 🛠️](#️-saison-a2-support-aux-utilisateurs)
 
@@ -26,7 +26,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A206. BIOS, UEFI, MBR et GPT](#-a206-bios-uefi-mbr-et-gpt)
 - [A207. ITIL](#-a207-itil)
 - [A208. Pratiques ITIL et GLPI](#️-a208-pratiques-itil-et-glpi)
-- [Fin Saison 2 & QCM](#️-fin-saison-a2-support-aux-utilisateurs)
+- [Fin Saison 2 : QCM](#️-fin-saison-a2-support-aux-utilisateurs)
 
 ### [Saison A3. Réseau 🌐](#-saison-a3-réseau)
 
@@ -39,7 +39,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A307. RFC1918, NAT & self-hosting](#-a307-rfc1918-nat--self-hosting)
 - [A308. Atelier Proxmox](/challenges/Challenge_A308.md)
 - [A309. VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
-- [Fin Saison A3 & QCM](#-fin-saison-a3-réseau)
+- [Fin Saison A3 : QCM](#-fin-saison-a3-réseau)
 
 ### [Saison A4. Windows Server 💠](#-saison-a4-windows-server)
 
@@ -56,7 +56,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A412. VDI & Hyper-V](#️-a412-vdi--hyper-v)
 - [A413. Déploiement VDI & Sysprep](#-a413-déploiement-vdi--sysprep)
 - [A414. Azure](#️-a414-microsoft-azure)
-- [Fin Saison A4 & QCM](#-fin-saison-a4-windows-server)
+- [Fin Saison A4 : QCM](#-fin-saison-a4-windows-server)
 
 ### [Saison A5. Linux 🐧](#saison-a5-linux-)
 
