@@ -37,7 +37,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A305. Atelier Packet Tracer](/challenges/Challenge_A305.md)
 - [A306. DNS, Telnet et SSH](#-a306-dns-telnet-et-ssh)
 - [A307. RFC1918, NAT & self-hosting](#-a307-rfc1918-nat--self-hosting)
-- [A308. Atelier proxmox](/challenges/Challenge_A308.md)
+- [A308. Atelier Proxmox](/challenges/Challenge_A308.md)
 - [A309. VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
 - [Fin Saison A3 & QCM](#-fin-saison-a3-réseau)
 
@@ -56,7 +56,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A412. VDI & Hyper-V](#️-a412-vdi--hyper-v)
 - [A413. Déploiement VDI & Sysprep](#-a413-déploiement-vdi--sysprep)
 - [A414. Azure](#️-a414-microsoft-azure)
-- [Fin Saison A4 & QCM](#saison-a4-windows-server-)
+- [Fin Saison A4 & QCM](#-fin-saison-a4-windows-server)
 
 ### [Saison A5. Linux 🐧](#saison-a5-linux-)
 
@@ -332,7 +332,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## **💻 FIN Saison A1. Savoirs de Base**
+### 💻 Fin Saison A1. Savoirs de Base
 
 [QCM Saison A1](https://forms.gle/MofrrYWGy8XXPN6D7)
 
@@ -629,7 +629,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ---
 
-## **🛠️ FIN Saison A2. Support aux Utilisateurs**
+### 🛠️ Fin Saison A2. Support aux Utilisateurs
 
 [QCM Saison A2](https://forms.gle/k9oAMPjiy1Eb2U7x9)
 
@@ -1338,7 +1338,7 @@ Passerelle VLan sur Routeur (L3)
 
 ---
 
-## **🌐 FIN Saison A3. Réseau**
+### 🌐 Fin Saison A3. Réseau
 
 [QCM Saison A3](https://forms.gle/SXH9yy4tfSV8ePiW8)
 
@@ -2037,7 +2037,7 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 ---
 
-## **💠 Fin Saison A4. Windows Server**
+### 💠 Fin Saison A4. Windows Server
 
 [QCM Saison A4](https://forms.gle/ttL2fUrjdREAjsLh7)
 
