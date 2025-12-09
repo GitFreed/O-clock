@@ -1815,6 +1815,7 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
   - **Fonctionnement** :
     - Le **Serveur Hôte** exécute les applications et le bureau.
     - Le **Client** (léger ou PC) se connecte via le protocole **RDP** (port 3389).
+    - **mstsc.exe** : La commande qui lance l'application Connexion Bureau à distance (Remote Desktop Connection) sous Windows.
     - **Multi-session** : Plusieurs utilisateurs travaillent simultanément sur le même serveur, chacun dans sa bulle isolée.
 
 - **Modes d'utilisation** :
@@ -1826,10 +1827,14 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
   - Choisir **"Démarrage rapide"** pour une installation sur un seul serveur (installe le Broker, l'Accès Web et l'Hôte de session en une seule opération).
   - Choisir "Déploiement de bureaux basés sur une session".
 
+- **Gestion des Licences (RD Licensing)** :
+  - Ce rôle est indispensable pour le déploiement en production. Il stocke et délivre les **CALs RDS** (licences d'accès client).
+  - Lorsqu'un utilisateur se connecte, le serveur Hôte de session interroge le serveur de licences pour obtenir une CAL valide (distincte de la licence Windows Server de base). Sans ce rôle configuré, la période de grâce de 120 jours finira par bloquer les connexions.
+
 - **Accès Web (RDWeb)** :
   - Permet aux utilisateurs d'accéder à leurs applications/bureaux via un navigateur (URL type : `https://serveur/RDWeb`).
   - **Sécurité (HTTPS)** : Nécessite impérativement un certificat SSL. En environnement de lab, on utilise souvent un certificat auto-signé qu'il faut lier au port 443 dans IIS.
-
+  
 - **Gestion des Certificats (MMC)** :
   - Pour que les clients acceptent la connexion sans erreur de sécurité, ils doivent faire confiance au certificat du serveur RDS.
   - **Export du certificat** : Sur le serveur, ouvrir la console `mmc.exe` > Ajouter un composant > Certificats > **Compte d'ordinateur** > Ordinateur Local. Exporter le certificat (sans la clé privée) pour le déployer ensuite.
@@ -2028,9 +2033,9 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 ## **💠 Fin Saison A4. Windows Server**
 
-[QCM Saison A4](.)
+[QCM Saison A4](https://forms.gle/ttL2fUrjdREAjsLh7)
 
-![Résultat QCM](.)
+![Résultat QCM](/images/2025-12-09-09-51-18.png)
 
 [Retour en haut](#-table-des-matières)
 
