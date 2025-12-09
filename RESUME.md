@@ -1376,7 +1376,7 @@ Passerelle VLan sur Routeur (L3)
   - Contrairement à un Windows classique, Windows Server est modulaire. On n'installe que ce dont on a besoin pour des raisons de sécurité et de performance.
   - **Rôles** : Ce sont les fonctions principales du serveur (ex: Serveur Web IIS, Serveur DNS, Services de domaine Active Directory).
   - **Fonctionnalités** : Ce sont des outils de support (ex: .NET Framework, Chiffrement BitLocker, Telnet Client).
-  - **Gestion** : Tout se gère centralement via le **Gestionnaire de serveur** (Server Manager) ou en ligne de commande avec **PowerShell**.
+  - **Gestion** : Tout se gère centralement via le **Gestionnaire de serveur** (Server Manager) ou en ligne de commande avec **PowerShell**. Dans le Gestionnaire de serveur on retrouve la **MMC** (Microsoft Management Console). C'est l'outil graphique qui héberge les composants (snap-ins) pour gérer les différents rôles Windows. .
 
 - **Préparation et Installation (Windows Server 2019)** :
 
@@ -1511,6 +1511,11 @@ Passerelle VLan sur Routeur (L3)
 ### 💾 A404. Serveur de fichiers distribués (DFS)
 
 > Ce cours explore le service DFS de Windows Server, essentiel pour centraliser l'accès aux données, simplifier l'arborescence réseau pour les utilisateurs, et garantir la haute disponibilité des fichiers grâce à la réplication.
+
+- **Protocole SMB (Server Message Block)** :
+  - C'est le protocole standard des réseaux Microsoft pour le partage de fichiers et d'imprimantes.
+  - Il permet aux clients d'accéder aux ressources via des chemins UNC (ex: `\\NomServeur\NomPartage`).
+  - La version moderne (**SMB 3.x**) inclut des fonctionnalités avancées de sécurité (chiffrement) et de performance, essentielles pour les serveurs de fichiers et la virtualisation (Hyper-V).
 
 - **DFS (Distributed File System)** :
 
@@ -1736,6 +1741,7 @@ et Correction Atelier A407.
 - **Images** : Le service repose sur deux types d'images principales :
   - **Image de démarrage (Boot Image)** : C'est l'environnement Windows PE (`boot.wim`) qui se charge en premier via le réseau pour lancer l'assistant d'installation.
   - **Image d'installation (Install Image)** : C'est l'image du système d'exploitation complet (`install.wim`) qui sera copiée sur le disque dur du client.
+  - **Image de capture (Capture Image)** : C'est une image de démarrage spéciale. Elle sert à capturer l'état d'une machine de référence (préalablement préparée avec Sysprep) pour créer une nouvelle image d'installation ``.wim`` personnalisée (Master) qui pourra être redéployée ultérieurement (voir cours A413. VDI).
 
 - **Fonctionnement via PXE** :
   - Le déploiement repose sur la norme **PXE (Preboot Execution Environment)**. Cette technologie permet à une station de travail de démarrer directement depuis sa carte réseau (avant même le chargement de l'OS local) pour récupérer une image système située sur un serveur.
