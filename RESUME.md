@@ -336,7 +336,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 [QCM Saison A1](https://forms.gle/MofrrYWGy8XXPN6D7)
 
-![QCM Résultats](../images/QCMs01.png)
+![QCM Résultats](./images/QCMs01.png)
 
 [Retour en haut](#-table-des-matières)
 
