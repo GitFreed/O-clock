@@ -2057,6 +2057,21 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 > 📚 **Ressources** :
 >
+> Temps partagé <https://fr.wikipedia.org/wiki/Temps_partag%C3%A9>
+>
+> Multitâche Préemptif <https://fr.wikipedia.org/wiki/Multit%C3%A2che_pr%C3%A9emptif>
+>
+> Minix <https://fr.wikipedia.org/wiki/Minix>
+>
+> Noyau OS <https://fr.wikipedia.org/wiki/Noyau_de_syst%C3%A8me_d%27exploitation>
+>
+> Liste des distributions Linux <https://upload.wikimedia.org/wikipedia/commons/9/96/Liste_des_distributions_Linux.svg>
+>
+> Cheatsheet Linux cmd  [cheatsheetlinux](./ressources/Linux-Commands-Cheatsheet-FR.pdf)
+>
+> Jeu Terminus <https://luffah.xyz/bidules/Terminus/>
+
+![Linus original mail](/images/2025-12-10-10-57-25.png)
 
 [Retour en haut](#-table-des-matières)
 
