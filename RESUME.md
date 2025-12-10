@@ -60,6 +60,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison A5. Linux 🐧](#saison-a5-linux-)
 
+- [A501. Introduction](#️-a501-introduction-à-gnulinux)
+
 ---
 
 ## **💻 Saison A1. Savoirs de Base**
@@ -2049,10 +2051,58 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 ## **🐧 Saison A5. Linux**
 
->
+> Cette saison introduit l'environnement **GNU/Linux**, système d'exploitation incontournable pour les serveurs, le Cloud et la sécurité. Elle se concentre sur la compréhension de son architecture, de son histoire, et sur la maîtrise fondamentale de l'administration système via l'interface en ligne de commande.
 
-### 🖥️ A501. Introduction et Installation
+### 🖥️ A501. Introduction à GNU/Linux
 
+> Ce cours pose les bases de l'environnement Linux, de ses origines historiques (Unix, GNU) à son architecture actuelle (distributions, système de fichiers), en passant par la philosophie du logiciel libre.
+
+- **Un peu d'Histoire : De Multics à Linux**
+  - **Multics (1964)** : Projet ambitieux (MIT, Bell Labs, GE) visant à créer un système en "temps partagé". Trop complexe et coûteux, il fut abandonné par les Bell Labs, mais a inspiré la suite.
+  - **Unix (1969)** : Créé par Ken Thompson et Dennis Ritchie (inventeur du langage C) sur un PDP-7. Philosophie KISS (*Keep It Simple, Stupid*) : faire une seule chose, mais la faire bien. Il devient portable grâce à sa réécriture en C.
+  - **BSD (1977)** : La *Berkeley Software Distribution* est une branche universitaire d'Unix, améliorée par Bill Joy (créateur de l'éditeur `vi`). Elle a donné naissance aux systèmes modernes comme FreeBSD ou macOS.
+  - **GNU (1983)** : Richard Stallman lance le projet GNU (*GNU's Not Unix*) avec pour but de créer un système d'exploitation entièrement libre. Il crée les outils essentiels (compilateur GCC, éditeur Emacs, shell Bash) et la licence **GPL**, mais il manque le cœur du système : le noyau.
+  - **Minix (1987)** : Système éducatif créé par Andrew Tanenbaum. C'est en l'utilisant que Linus Torvalds décidera de créer son propre noyau.
+  - **Linux (1991)** : Linus Torvalds développe un noyau (kernel) monolithique. En le combinant avec les outils du projet GNU, le système d'exploitation complet **GNU/Linux** est né.
+
+- **Les Distributions Linux**
+  - **Définition** : Linux est un noyau, pas un OS complet. Une distribution est un assemblage comprenant le noyau Linux, les outils GNU, un gestionnaire de paquets et souvent un environnement graphique.
+  - **Grandes Familles** : Elles se distinguent principalement par leur gestionnaire de paquets :
+    - **Debian** (et ses dérivés Ubuntu, Kali, Mint) : Utilise le format `.deb` et le gestionnaire `apt`. Très populaire et stable.
+    - **Red Hat** (RHEL, Fedora, CentOS/Alma) : Utilise le format `.rpm` et le gestionnaire `dnf`/`yum`. Standard dans le monde de l'entreprise.
+    - **Slackware** : La plus ancienne encore active, philosophie minimaliste.
+    - **Arch Linux** : Modèle "Rolling release" (mise à jour continue), utilise `pacman`. Pour utilisateurs avancés.
+    - **Android** : Utilise le noyau Linux mais pas les outils GNU (remplacés par des bibliothèques Java/Google).
+
+- **Notions de Base**
+  - **CLI (Ligne de Commande)** : Interface privilégiée sous Linux pour sa puissance et sa rapidité d'administration. Le **Shell** (souvent Bash) interprète les commandes saisies dans le terminal.
+  - **Le Prompt** : Invite de commande indiquant qui on est (`user`), où on est (machine/dossier) et le niveau de privilège (`$` pour utilisateur, `#` pour root).
+  - **Système de Fichiers** :
+    - **Arborescence unique** : Tout commence à la racine `/`. Il n'y a pas de lettres de lecteur (C:, D:) comme sous Windows.
+    - **Tout est fichier** : Documents, dossiers, mais aussi matériel (disque dur, souris), processus... tout est représenté sous forme de fichier.
+    - **Sensible à la casse** : `Fichier.txt` et `fichier.txt` sont deux fichiers différents.
+  - **Dossiers Clés** :
+    - `/home` : Dossiers personnels des utilisateurs.
+    - `/root` : Dossier personnel de l'administrateur.
+    - `/etc` : Fichiers de configuration du système.
+    - `/bin` & `/usr/bin` : Exécutables (programmes) essentiels.
+    - `/var` : Données variables (logs, sites web, bases de données).
+    - `/tmp` : Fichiers temporaires (vidé à chaque redémarrage).
+
+- **Commandes Linux essentielles**
+
+  - `sudo` : **S**uper **U**ser **DO**, permet d'exécuter une commande avec les droits d'administrateur (root).
+  - `apt` : **A**dvanced **P**ackaging **T**ool, outil pour gérer les paquets (logiciels) : rechercher, mettre à jour, installer ou supprimer (ex: `sudo apt update`, `sudo apt upgrade`).
+  - `ls` : **L**i**S**t, liste les fichiers et dossiers présents dans le répertoire courant.
+  - `cd` : **C**hange **D**irectory, permet de changer de répertoire.
+  - `pwd` : **P**rint **W**orking **D**irectory, affiche le chemin absolu du dossier dans lequel vous vous trouvez.
+  - `man` : **MAN**ual, affiche la documentation d'une commande (ex: `man ls` pour voir les options de liste).
+  - `mkdir` : **M**a**K**e **DIR**ectory, pour créer un dossier.
+  - `touch` : Permet de créer un fichier vide.
+  - `rm` : **R**e**M**ove, pour supprimer un ou plusieurs fichiers.
+  - `mv` : **M**o**V**e, pour déplacer ou renommer des fichiers/dossiers.
+  - `cat` : Affiche le contenu d'un fichier dans la sortie standard (le terminal).
+  
 [Challenge A501](./challenges/Challenge_A501.md)
 
 > 📚 **Ressources** :
