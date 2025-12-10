@@ -10,6 +10,8 @@
 
 ## Installation d'une VM Linux sur VMware
 
+J'ai choisi Kubuntu pour tester l'environnement de bureau KDE-Plasma
+
 ![Kubuntu](/images/2025-12-10-16-40-51.png)
 
 ![KDE](/images/2025-12-10-18-17-13.png)
