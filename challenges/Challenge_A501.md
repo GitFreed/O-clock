@@ -4,13 +4,15 @@
 
 ![501](/images/2025-12-10-17-03-10.png)
 
-[Cours A501.](/RESUME.md#️-a501)
+[Cours A501.](/RESUME.md#️-a501-introduction-à-gnulinux)
 
 ---
 
 ## Installation d'une VM Linux sur VMware
 
 ![Kubuntu](/images/2025-12-10-16-40-51.png)
+
+![KDE](/images/2025-12-10-18-17-13.png)
 
 ---
 
@@ -23,3 +25,7 @@ Terminus <https://luffah.xyz/bidules/Terminus/>
 Oops !
 
 [move](/images/2025-12-10-17-31-12.png)
+
+![planche](/images/2025-12-10-18-14-57.png)
+
+![artisane](/images/2025-12-10-18-13-29.png)
