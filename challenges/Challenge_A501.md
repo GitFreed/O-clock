@@ -17,3 +17,9 @@
 ## Terminus Quest
 
 Terminus <https://luffah.xyz/bidules/Terminus/>
+
+![quest](/images/2025-12-10-17-09-34.png)
+
+Oops !
+
+[move](/images/2025-12-10-17-31-12.png)
