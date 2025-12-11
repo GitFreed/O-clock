@@ -2188,29 +2188,29 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
 
 - **Serveur Graphique** :
 
-      - C'est la fondation qui permet de dessiner des fenêtres et de gérer la souris/clavier. C’est un composant technique, invisible pour l’utilisateur.
-      - **X11 (X.Org)** : Le standard historique (depuis 1987), robuste mais vieillissant.
-      - **Wayland** : Le remplaçant moderne, plus sécurisé et performant, mais qui nécessite que les applications soient adaptées.
+  - C'est la fondation qui permet de dessiner des fenêtres et de gérer la souris/clavier. C’est un composant technique, invisible pour l’utilisateur.
+  - **X11 (X.Org)** : Le standard historique (depuis 1987), robuste mais vieillissant.
+  - **Wayland** : Le remplaçant moderne, plus sécurisé et performant, mais qui nécessite que les applications soient adaptées.
 
 - **Gestionnaire d'Affichage (Display Manager)** :
 
-      - C'est simplement votre **écran de connexion** (Login screen). Il lance le serveur graphique et vous demande votre mot de passe.
+  - C'est simplement votre **écran de connexion** (Login screen). Il lance le serveur graphique et vous demande votre mot de passe.
 
 - **Gestionnaire de Fenêtres (Window Manager - WM)** :
 
-      - Il s'occupe uniquement de "décorer" et placer les fenêtres (bordures, réduction, déplacement). Il peut être utilisé seul (pour les configurations minimalistes comme *i3* ou *Openbox*).
+  - Il s'occupe uniquement de "décorer" et placer les fenêtres (bordures, réduction, déplacement). Il peut être utilisé seul (pour les configurations minimalistes comme *i3* ou *Openbox*).
 
 - **Environnement de Bureau (Desktop Environment - DE)** :
 
-      - C'est une suite complète qui inclut un Gestionnaire de Fenêtres + un Explorateur de fichiers + des applications (calculatrice, paramètres, terminal) + une barre des tâches. C'est ce qui donne l'apparence globale (le "look & feel").
-      - *Exemples :*
-          - **GNOME** : Moderne, épuré (utilisé par Ubuntu, Fedora).
-          - **KDE Plasma** : Très personnalisable, ressemble un peu à Windows.
-          - **XFCE** : Léger et performant pour les vieux PC.
+  - C'est une suite complète qui inclut un Gestionnaire de Fenêtres + un Explorateur de fichiers + des applications (calculatrice, paramètres, terminal) + une barre des tâches. C'est ce qui donne l'apparence globale (le "look & feel").
+  - *Exemples :*
+    - **GNOME** : Moderne, épuré (utilisé par Ubuntu, Fedora).
+    - **KDE Plasma** : Très personnalisable, ressemble un peu à Windows.
+    - **XFCE** : Léger et performant pour les vieux PC.
 
 - **Bibliothèques Graphiques** :
 
-      - Ce sont les "boîtes à outils" utilisées par les développeurs pour créer les boutons et menus. **GTK** est utilisé par GNOME, **Qt** est utilisé par KDE.
+  - Ce sont les "boîtes à outils" utilisées par les développeurs pour créer les boutons et menus. **GTK** est utilisé par GNOME, **Qt** est utilisé par KDE.
 
 #### 4. Les Outils Complémentaires
 
