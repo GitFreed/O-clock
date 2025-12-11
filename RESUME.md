@@ -2126,3 +2126,29 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🖥️ A502
+
+> - Shell
+> - Gestionnaire de paquets
+> - Chargeur d'amorçage
+> - init / gestionnaire de services
+> - Éditeur de texte
+> - Serveur graphique
+> - Pilotes de périphériques
+> - Gestionnaire d'affichage
+> - Environnement de bureau
+> - Gestionnaire de fenêtres
+> - Bibliothèques d'interface graphique
+> - Explorateur de fichiers
+> - Outil de configuration réseau
+> - Serveur & sous-système audio
+
+[Challenge A502](./challenges/Challenge_A502.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
