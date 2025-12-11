@@ -2127,35 +2127,108 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 ---
 
-### 🖥️ A502
+### 🧱 A502. Composants d'un système GNU/Linux
 
+> Ce cours détaille l'anatomie d'un système Linux en passant en revue les différentes briques logicielles qui, assemblées autour du noyau, forment un système d'exploitation complet et fonctionnel.
+>
+> - Chargeur d'amorçage
+> - Init : Gestionnaire de services
+> - Drivers : Pilotes de périphériques
 > - Shell
 > - Gestionnaire de paquets
-> - Chargeur d'amorçage
-> - init / gestionnaire de services
 > - Éditeur de texte
 > - Serveur graphique
-> - Pilotes de périphériques
 > - Gestionnaire d'affichage
-> - Environnement de bureau
 > - Gestionnaire de fenêtres
+> - Environnement de bureau
 > - Bibliothèques d'interface graphique
 > - Explorateur de fichiers
 > - Outil de configuration réseau
 > - Serveur & sous-système audio
 
-Le serveur graphique = le moteur
-Il gère :
+#### 1\. Les Fondations du Système (Bas niveau)
 
-- l’affichage des fenêtres
-- la composition (assembler l’image finale)
-- les événements clavier/souris
-- la communication avec la carte graphique
-C’est un composant technique, invisible pour l’utilisateur.
-Exemples :
-- Xorg / Wayland (Linux)
-- DWM (Windows)
-- Quartz Compositor (macOS)
+- **Le Chargeur d'amorçage (Bootloader)** :
+
+  - **Rôle** : C'est le tout premier logiciel lancé au démarrage de la machine (par le BIOS ou l'UEFI). Il permet de choisir sur quel système d'exploitation démarrer (si vous avez un dual-boot Windows/Linux) et charge le noyau en mémoire.
+  - *Exemple célèbre :* **GRUB** (GRand Unified Bootloader).
+
+- **Le Système d'Init (Gestionnaire de services)** :
+
+  - **Rôle** : Une fois le noyau chargé, `init` est le **premier programme** lancé (il porte le PID 1). Il est le "père" de tous les autres processus. Il est chargé de démarrer les services (réseau, son, cron, etc.).
+  - *Standard actuel :* **systemd**. Bien que controversé pour sa complexité, il est aujourd'hui le standard sur la majorité des distributions. Il se gère avec la commande `systemctl`.
+
+- **Pilotes de Périphériques (Drivers)** :
+
+  - **Rôle** : Permettent au système de communiquer avec le matériel. Sous Linux, ils sont généralement intégrés directement au noyau sous forme de **modules** chargés dynamiquement.
+
+#### 2\. Les Outils d'Administration
+
+- **Le Shell (Interpréteur de commandes)** :
+
+  - **Rôle** : C'est l'interface textuelle qui permet de dialoguer avec le système. Il interprète vos commandes et lance les programmes.
+  - *Les stars :*
+    - **Bash** : Le standard historique, présent presque partout.
+    - **Zsh** : Très populaire et moderne (par défaut sur macOS), souvent utilisé avec des plugins pour l'autocomplétion.
+
+- **Le Gestionnaire de Paquets** :
+
+  - **Rôle** : Il automatise l'installation, la mise à jour et la suppression des logiciels. Contrairement à Windows où l'on télécharge des `.exe` manuellement, ici on demande au gestionnaire de récupérer le logiciel et toutes ses **dépendances** (les bibliothèques nécessaires) depuis un dépôt sécurisé.
+  - *Exemples :* **apt** (Debian/Ubuntu), **dnf/rpm** (Red Hat), **pacman** (Arch).
+
+- **Éditeur de texte** :
+
+  - **Rôle** : Indispensable pour modifier les fichiers de configuration.
+  - *Les incontournables :* **Nano** (simple pour débuter), **Vim** (puissant mais nécessite un apprentissage), **Emacs**.
+
+#### 3\. L'Interface Graphique (La couche visible)
+
+C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique est une "pile" de plusieurs logiciels distincts :
+
+1. **Serveur Graphique** :
+
+      - C'est la fondation qui permet de dessiner des fenêtres et de gérer la souris/clavier. C’est un composant technique, invisible pour l’utilisateur.
+      - **X11 (X.Org)** : Le standard historique (depuis 1987), robuste mais vieillissant.
+      - **Wayland** : Le remplaçant moderne, plus sécurisé et performant, mais qui nécessite que les applications soient adaptées.
+
+2. **Gestionnaire d'Affichage (Display Manager)** :
+
+      - C'est simplement votre **écran de connexion** (Login screen). Il lance le serveur graphique et vous demande votre mot de passe.
+
+3. **Gestionnaire de Fenêtres (Window Manager - WM)** :
+
+      - Il s'occupe uniquement de "décorer" et placer les fenêtres (bordures, réduction, déplacement). Il peut être utilisé seul (pour les configurations minimalistes comme *i3* ou *Openbox*).
+
+4. **Environnement de Bureau (Desktop Environment - DE)** :
+
+      - C'est une suite complète qui inclut un Gestionnaire de Fenêtres + un Explorateur de fichiers + des applications (calculatrice, paramètres, terminal) + une barre des tâches. C'est ce qui donne l'apparence globale (le "look & feel").
+      - *Exemples :*
+          - **GNOME** : Moderne, épuré (utilisé par Ubuntu, Fedora).
+          - **KDE Plasma** : Très personnalisable, ressemble un peu à Windows.
+          - **XFCE** : Léger et performant pour les vieux PC.
+
+5. **Bibliothèques Graphiques** :
+
+      - Ce sont les "boîtes à outils" utilisées par les développeurs pour créer les boutons et menus. **GTK** est utilisé par GNOME, **Qt** est utilisé par KDE.
+
+#### 4\. Les Outils Complémentaires
+
+- **Bibliothèques d'interface graphique** :
+  - **Rôle** : Ce sont des ensembles de code (librairies) qui fournissent aux développeurs les "briques visuelles" prêtes à l'emploi (boutons, menus, fenêtres) pour créer des logiciels.
+  - *Les principales :* **GTK** (utilisée par les environnements GNOME, XFCE, Mate) et **Qt** (utilisée par KDE Plasma, LXQt).
+
+- **Explorateur de fichiers** :
+  - **Rôle** : L'équivalent de l'Explorateur Windows ou du Finder macOS, il permet de naviguer graphiquement dans l'arborescence.
+  - *Exemples Graphiques (GUI) :* **Nautilus** (Gnome), **Dolphin** (KDE), **Thunar** (léger, souvent avec XFCE).
+  - *Exemples Ligne de commande (CLI) :* **Ranger** ou **Midnight Commander** (pour naviguer efficacement dans les dossiers sans souris).
+
+- **Outil de configuration réseau** :
+  - **Rôle** : Permet de gérer les interfaces réseau (IP statique, DHCP, DNS). La méthode varie beaucoup selon la distribution.
+  - *Exemple :* **Netplan** est l'outil standard utilisé sur Ubuntu pour configurer le réseau via des fichiers YAML.
+
+- **Serveur & sous-système audio** :
+  - **Rôle** : C'est la couche logicielle qui gère la carte son et permet à plusieurs applications de jouer du son en même temps (mixage).
+  - *Contexte :* Bien que le support soit bref à ce sujet, on retient souvent **PulseAudio** (créé par le même auteur que systemd) ou plus récemment **PipeWire** comme standards actuels.
 
 [Challenge A502](./challenges/Challenge_A502.md)
 
