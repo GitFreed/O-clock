@@ -37,3 +37,7 @@ On répare le pont avec ''touch''
 ça commence à rentrer
 
 ![artisane](/images/2025-12-10-18-13-29.png)
+
+The End
+
+![END](/images/2025-12-11-13-39-38.png)
