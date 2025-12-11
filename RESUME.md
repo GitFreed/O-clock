@@ -2179,7 +2179,7 @@ Exemples :
 >
 > Son <https://doc.ubuntu-fr.org/utilisateurs/darkjam/son>
 >
-> Learn VIM Game <https://vim-adventures.com/>
+> Learn VIM via Game <https://vim-adventures.com/> ou `vimtutor`
 
 [Retour en haut](#-table-des-matières)
 
