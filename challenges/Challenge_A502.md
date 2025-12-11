@@ -12,10 +12,16 @@
 
 <https://vim-adventures.com/>
 
+![hello](/images/2025-12-11-19-27-17.png)
+
+![islands](/images/2025-12-11-19-24-52.png)
+
+![lv3](/images/2025-12-11-19-26-08.png)
+
 ---
 
 ## VIMtutor
 
-![tutor](/images/2025-12-11-15-47-43.png)
+![tutor](/images/2025-12-11-19-28-07.png)
 
 ---
