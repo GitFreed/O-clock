@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![502](/images/)
+![502](/images/2025-12-11-17-41-06.png)
 
 [Cours A502.](/RESUME.md#️-a502)
 
