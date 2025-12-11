@@ -2148,6 +2148,13 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
 > 📚 **Ressources** :
 >
+> Shebang <https://fr.wikipedia.org/wiki/Shebang>
+>
+> Ajouter chemin au Path <https://www.malekal.com/ajouter-chemin-path-linux/>
+>
+> Bootloaders <https://wiki.archlinux.org/title/Arch_boot_process#Feature_comparison>
+>
+> X11 window System <https://fr.wikipedia.org/wiki/X_Window_System>
 
 [Retour en haut](#-table-des-matières)
 
