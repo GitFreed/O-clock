@@ -13,3 +13,9 @@
 <https://vim-adventures.com/>
 
 ---
+
+## VIMtutor
+
+![tutor](/images/2025-12-11-15-47-43.png)
+
+---
