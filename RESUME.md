@@ -61,6 +61,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison A5. Linux 🐧](#saison-a5-linux-)
 
 - [A501. Introduction](#️-a501-introduction-à-gnulinux)
+- [A502. Composants d'un système GNU/Linux](#-a502-composants-dun-système-gnulinux)
 
 ---
 
@@ -2146,7 +2147,7 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 > - Outil de configuration réseau
 > - Serveur & sous-système audio
 
-#### 1\. Les Fondations du Système (Bas niveau)
+#### 1. Les Fondations du Système (Bas niveau)
 
 - **Le Chargeur d'amorçage (Bootloader)** :
 
@@ -2162,7 +2163,7 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 
   - **Rôle** : Permettent au système de communiquer avec le matériel. Sous Linux, ils sont généralement intégrés directement au noyau sous forme de **modules** chargés dynamiquement.
 
-#### 2\. Les Outils d'Administration
+#### 2. Les Outils d'Administration
 
 - **Le Shell (Interpréteur de commandes)** :
 
@@ -2181,25 +2182,25 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
   - **Rôle** : Indispensable pour modifier les fichiers de configuration.
   - *Les incontournables :* **Nano** (simple pour débuter), **Vim** (puissant mais nécessite un apprentissage), **Emacs**.
 
-#### 3\. L'Interface Graphique (La couche visible)
+#### 3. L'Interface Graphique (La couche visible)
 
 C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique est une "pile" de plusieurs logiciels distincts :
 
-1. **Serveur Graphique** :
+- **Serveur Graphique** :
 
       - C'est la fondation qui permet de dessiner des fenêtres et de gérer la souris/clavier. C’est un composant technique, invisible pour l’utilisateur.
       - **X11 (X.Org)** : Le standard historique (depuis 1987), robuste mais vieillissant.
       - **Wayland** : Le remplaçant moderne, plus sécurisé et performant, mais qui nécessite que les applications soient adaptées.
 
-2. **Gestionnaire d'Affichage (Display Manager)** :
+- **Gestionnaire d'Affichage (Display Manager)** :
 
       - C'est simplement votre **écran de connexion** (Login screen). Il lance le serveur graphique et vous demande votre mot de passe.
 
-3. **Gestionnaire de Fenêtres (Window Manager - WM)** :
+- **Gestionnaire de Fenêtres (Window Manager - WM)** :
 
       - Il s'occupe uniquement de "décorer" et placer les fenêtres (bordures, réduction, déplacement). Il peut être utilisé seul (pour les configurations minimalistes comme *i3* ou *Openbox*).
 
-4. **Environnement de Bureau (Desktop Environment - DE)** :
+- **Environnement de Bureau (Desktop Environment - DE)** :
 
       - C'est une suite complète qui inclut un Gestionnaire de Fenêtres + un Explorateur de fichiers + des applications (calculatrice, paramètres, terminal) + une barre des tâches. C'est ce qui donne l'apparence globale (le "look & feel").
       - *Exemples :*
@@ -2207,11 +2208,11 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
           - **KDE Plasma** : Très personnalisable, ressemble un peu à Windows.
           - **XFCE** : Léger et performant pour les vieux PC.
 
-5. **Bibliothèques Graphiques** :
+- **Bibliothèques Graphiques** :
 
       - Ce sont les "boîtes à outils" utilisées par les développeurs pour créer les boutons et menus. **GTK** est utilisé par GNOME, **Qt** est utilisé par KDE.
 
-#### 4\. Les Outils Complémentaires
+#### 4. Les Outils Complémentaires
 
 - **Bibliothèques d'interface graphique** :
   - **Rôle** : Ce sont des ensembles de code (librairies) qui fournissent aux développeurs les "briques visuelles" prêtes à l'emploi (boutons, menus, fenêtres) pour créer des logiciels.
