@@ -2144,6 +2144,19 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 > - Outil de configuration réseau
 > - Serveur & sous-système audio
 
+Le serveur graphique = le moteur
+Il gère :
+
+- l’affichage des fenêtres
+- la composition (assembler l’image finale)
+- les événements clavier/souris
+- la communication avec la carte graphique
+C’est un composant technique, invisible pour l’utilisateur.
+Exemples :
+- Xorg / Wayland (Linux)
+- DWM (Windows)
+- Quartz Compositor (macOS)
+
 [Challenge A502](./challenges/Challenge_A502.md)
 
 > 📚 **Ressources** :
@@ -2154,7 +2167,19 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 >
 > Bootloaders <https://wiki.archlinux.org/title/Arch_boot_process#Feature_comparison>
 >
-> X11 window System <https://fr.wikipedia.org/wiki/X_Window_System>
+> X window System <https://fr.wikipedia.org/wiki/X_Window_System>
+>
+> Le Display manager <https://wiki.archlinux.org/title/Display_manager>
+>
+> Métaphore du Bureau <https://fr.wikipedia.org/wiki/Environnement_de_bureau#M%C3%A9taphore_du_bureau>
+>
+> Qt <https://www.d-booker.fr/content/43-qt-une-bibliotheque-dediee-au-developement-multiplate-forme>
+>
+> Netplan <https://doc.ubuntu-fr.org/netplan>
+>
+> Son <https://doc.ubuntu-fr.org/utilisateurs/darkjam/son>
+>
+> Learn VIM Game <https://vim-adventures.com/>
 
 [Retour en haut](#-table-des-matières)
 
