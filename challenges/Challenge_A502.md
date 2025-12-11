@@ -24,4 +24,8 @@
 
 ![tutor](/images/2025-12-11-19-28-07.png)
 
+On comprends le potentiel de Vim en avançant dans ce tuto, par contre il doit falloir beaucoup pratiquer pour apprendre toutes les commandes.
+
+![end](/images/2025-12-11-20-12-03.png)
+
 ---
