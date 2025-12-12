@@ -4,7 +4,7 @@
 
 ![challenge](/images/2025-12-12-16-02-30.png)
 
-[Cours A503.](/RESUME.md#-a503)
+[Cours A503.](/RESUME.md#-a503-utilisateurs-groupes-permissions--sudo)
 
 ---
 

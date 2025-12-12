@@ -62,6 +62,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [A501. Introduction](#️-a501-introduction-à-gnulinux)
 - [A502. Composants d'un système GNU/Linux](#-a502-composants-dun-système-gnulinux)
+- [A503. Utilisateurs, Groupes, Permissions & Sudo](#-a503-utilisateurs-groupes-permissions--sudo)
 
 ---
 
@@ -2259,7 +2260,120 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
 
 ---
 
-### 🧱 A503. Utilisateurs et SUDO
+### 🔐 A503. Utilisateurs, Groupes, Permissions & Sudo
+
+> Ce cours aborde la gestion des comptes utilisateurs, l'organisation en groupes, et la sécurité du système de fichiers via les permissions. Il détaille également l'utilisation de `sudo` pour l'élévation de privilèges.
+
+#### Gestion des Utilisateurs
+
+Les utilisateurs sont identifiés par un **UID** (User ID) et un **GID** (Group ID) principal.
+
+- **Fichiers de configuration** :
+
+  - `/etc/passwd` : Liste les comptes utilisateurs.
+    - *Format* : `user:x:UID:GID:Commentaire:/home/user:/bin/bash`.
+  - `/etc/shadow` : Stocke les mots de passe chiffrés et les règles d'expiration (accessible uniquement par root).
+
+- **Commandes principales** :
+
+  - **Créer** : `useradd`
+    - `sudo useradd -m -s /bin/bash -c "Jean Dupont" jean`.
+    - `-m` : Crée le dossier personnel (`/home/user`).
+    - `-s` : Définit le shell par défaut (ex: `/bin/bash`).
+    - `-c` : Ajoute un commentaire (Nom complet, GECOS).
+    - `-u` / `-g` : Imposer un UID ou un GID spécifique.
+  - **Modifier** : `usermod`
+    - `sudo usermod -s /bin/zsh jean` : Change le shell.
+    - `sudo usermod -l nouveau_nom ancien_nom` : Renomme le compte.
+    - `sudo usermod -L jean` / `-U jean` : Verrouille / Déverrouille le compte.
+    - `sudo usermod -d /home/new -m jean` : Change le dossier home et déplace les fichiers existants.
+  - **Supprimer** : `userdel`
+    - `sudo userdel -r jean` : Supprime l'utilisateur **et** son dossier personnel (`-r`).
+  - **Mot de passe** : `passwd jean` pour définir/changer le mot de passe.
+
+#### Gestion des Groupes
+
+Les groupes permettent de rassembler des utilisateurs pour simplifier la gestion des droits. Un utilisateur a un groupe primaire et peut avoir plusieurs groupes secondaires.
+
+- **Fichier de configuration** :
+
+  - `/etc/group` : Liste les groupes et leurs membres secondaires.
+
+- **Commandes principales** :
+
+  - **Créer** : `groupadd`
+    - `sudo groupadd reseau`.
+    - `-g` : Imposer un GID spécifique.
+  - **Supprimer** : `groupdel nom_groupe`.
+  - **Gérer les membres** :
+    - `sudo usermod -aG sudo,reseau jean` : Ajoute (`-a`) l'utilisateur aux groupes secondaires (`-G`) spécifiés.
+    - `sudo gpasswd --delete jean reseau` : Retire un utilisateur d'un groupe.
+    - `sudo usermod -g devops jean` : Change le groupe **primaire** de l'utilisateur.
+
+#### Permissions et Propriétaires
+
+Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe propriétaire (g)**. Les permissions sont définies pour eux et pour les **Autres (o)**.
+
+- **Visualiser** : `ls -l` affiche les permissions (ex: `-rw-r--r--`).
+
+  - 1er caractère : Type (`-` fichier, `d` dossier, `l` lien).
+  - Suivants : 3 blocs de droits `rwx` (User, Group, Others).
+
+- **Signification des droits** :
+
+  - `r` (Read) : Lire le fichier / Lister le dossier.
+  - `w` (Write) : Modifier le fichier / Créer ou supprimer dans le dossier.
+  - `x` (Execute) : Exécuter le fichier (script/programme) / Traverser le dossier (indispensable pour y accéder).
+
+- **Changer le propriétaire** : `chown` (Change Owner)
+
+  - `sudo chown user:group fichier` : Change le propriétaire et le groupe.
+  - `sudo chown -R user:group dossier/` : Applique récursivement au dossier et son contenu (`-R`).
+
+- **Changer les permissions** : `chmod` (Change Mode)
+
+  - **Méthode Symbolique** (`u/g/o` + `+/-/=` + `r/w/x`) :
+    - `chmod u+x script.sh` : Ajoute l'exécution pour le propriétaire.
+    - `chmod o-w file` : Retire l'écriture aux autres.
+  - **Méthode Octale** (r=4, w=2, x=1) :
+    - `7` (4+2+1) : `rwx` (Lecture, écriture, exécution).
+    - `6` (4+2) : `rw-` (Lecture, écriture).
+    - `5` (4+1) : `r-x` (Lecture, exécution).
+    - `chmod 644 fichier` : rw- (proprio), r-- (groupe), r-- (autres).
+    - `chmod 755 dossier` : rwx (proprio), r-x (groupe), r-x (autres).
+
+      ![octal](/images/2025-12-12-14-38-23.png)
+
+#### Sudo (SuperUser DO)
+
+`sudo` permet à un utilisateur autorisé d'exécuter des commandes en tant qu'administrateur (root) ou un autre utilisateur, sans se connecter directement en root.
+
+- **Configuration** :
+
+  - Fichier principal : `/etc/sudoers`.
+  - Dossier pour ajouts : `/etc/sudoers.d/`.
+  - **Outil obligatoire** : Toujours utiliser `sudo visudo` pour éditer la configuration (vérifie la syntaxe avant d'enregistrer pour éviter de casser le système).
+
+- **Syntaxe d'une règle sudo** :
+    `QUI OÙ=(EN_TANT_QUE) QUOI`
+
+  - Exemple : `%sudo ALL=(ALL:ALL) ALL` (Le groupe sudo peut tout faire, partout, en tant que n'importe qui).
+  - Exemple ciblé : `jean ALL=(root) /usr/bin/systemctl restart nginx` (Jean peut seulement redémarrer Nginx en tant que root).
+
+- **Commandes utiles** :
+
+  - `sudo -l` : Liste les droits sudo de l'utilisateur courant.
+  - `sudo -i` ou `sudo -s` : Ouvre un shell root interactif (à éviter pour des tâches ponctuelles).
+
+[Challenge A503](./challenges/Challenge_A503.md)
+
+> 📚 **Ressources** :
+>
+> Gestion des groupes sous Linux <https://www.it-connect.fr/la-gestion-des-groupes-sous-linux/>
+
+[Retour en haut](#-table-des-matières)
+
+---
 
 /etc/passwd : liste les comptes
 ex : user:password:UID:GUID:GecosName:/home/user:/bin/bash(shell)
@@ -2288,7 +2402,6 @@ u g et o c'est les catégories d'utilisateurs. user,groups,others
 r w et x c'est les droits. rwx,rwx,rwx
 
 syntaxe octale : r = 4, w = 2, x = 1.
-![octal](/images/2025-12-12-14-38-23.png)
 
 sudo
 
@@ -2311,12 +2424,12 @@ Permissions
         chmod => permet de changer les droits d'une ressource
         Pourquoi 3 niveaux de droits :
                 - les droits du propriétaire
-                - les droits du groupe 
+                - les droits du groupe
                 - les droits des autres
         ! Pour pouvoir parcourir un dossier, il faut avoir le droit d'exécution
 Syntaxe symbolique
         r = droit de lecture
-        w = droit d'écriture 
+        w = droit d'écriture
         x = droit d'exécution
 Syntaxe octale
 r = 4
@@ -2333,12 +2446,3 @@ x = 1
 7 rwx
 
 644 : -rw-r--r--
-
-[Challenge A503](./challenges/Challenge_A503.md)
-
-> 📚 **Ressources** :
->
-
-[Retour en haut](#-table-des-matières)
-
----
