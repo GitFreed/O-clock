@@ -58,7 +58,7 @@ Test en passant sur mon usersudo ``su - usersudo``, le rpm passe mais pas le dnf
 
 ``sudo chmod 760 /home/partage_fichier`` Applique les permissions complètes (7) au proprio, lecture et écriture (6) au groupe et rien (0) aux autres.
 
-'``ls -l /home/``' Pour vérifier les permissions.
+``ls -l /home/`` Pour vérifier les permissions.
 
 ![verif](/images/2025-12-12-17-50-10.png)
 
