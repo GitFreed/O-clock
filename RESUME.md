@@ -2309,6 +2309,7 @@ Les groupes permettent de rassembler des utilisateurs pour simplifier la gestion
     - `sudo usermod -aG sudo,reseau jean` : Ajoute (`-a`) l'utilisateur aux groupes secondaires (`-G`) spécifiés.
     - `sudo gpasswd --delete jean reseau` : Retire un utilisateur d'un groupe.
     - `sudo usermod -g devops jean` : Change le groupe **primaire** de l'utilisateur.
+    - `groups jean` : Affiche dans quel groupes est l'utilisateur jean.
 
 #### Permissions et Propriétaires
 
@@ -2375,74 +2376,13 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
 
 ---
 
-/etc/passwd : liste les comptes
-ex : user:password:UID:GUID:GecosName:/home/user:/bin/bash(shell)
-commandes : useradd, usermod, userdel
-ex : sudo useradd -m -s /bin/bash -c "Bob Dylan" bob
-ex : sudo usermod -s /bin/sh user : change le shell
-ex : sudo usermod -l UnerName user : renomme
-recherche : cat /etc/passwd | grep -e 'bob|alice'
+### A504
 
-/etc/shadow : liste les mdp
+[Challenge A504](./challenges/Challenge_A504.md)
 
-/etc/group : liste les groupes
-commandes : groupadd, groupdel
-ex : sudo usermod -aG group user : ajoute l'user au group
-ex : sudo groupadd -g 1052 devops : impose un GID
-ex : sudo gpasswd -delete user group : efface l'user du group
-ex : sudo usermod -g group user : change le groupe primaire
+> 📚 **Ressources** :
+>
 
-commande voir les droits : ls -l
-syntaxe - ou d pour fichier ou dossier, puis rwx rwx rwx, les droits des users,groups,others.
+[Retour en haut](#-table-des-matières)
 
-chown change le propriétaire, ex : sudo chown -R user:group rapport.txt (-R pour récursif)
-
-chmod modifie les droits de ces utilisateurs avec + ou - ou =
-u g et o c'est les catégories d'utilisateurs. user,groups,others
-r w et x c'est les droits. rwx,rwx,rwx
-
-syntaxe octale : r = 4, w = 2, x = 1.
-
-sudo
-
-Utilisateurs
-        useradd, usermod, userdel => commandes utilisateurs
-        /etc/passwd => liste les utilisateurs
-        /etc/shadow => liste les mots de passe
-Groupes
-        groupadd, groupdel
-        /etc/group => liste les groupes
-        pour ajouter un utilisateur à un groupe, on modifie l'utilisateur, pas le groupe
-        à la création, chaque user a un GID
-        Les groupes servent à faire des ensembles d'utilisateurs
-        Les groupes permettent de gérer les droits des fichiers
-Permissions
-        Une ressource ça a : un propriétaire, un groupe, et les autres
-        Les droits d'appliquent au niveau des ressources et pas des utilisateurs
-        Les droits s'appliquent pour chacun de ces 3 acteurs
-        chown => changer le propriétaire et/ou le groupe d'une ressource
-        chmod => permet de changer les droits d'une ressource
-        Pourquoi 3 niveaux de droits :
-                - les droits du propriétaire
-                - les droits du groupe
-                - les droits des autres
-        ! Pour pouvoir parcourir un dossier, il faut avoir le droit d'exécution
-Syntaxe symbolique
-        r = droit de lecture
-        w = droit d'écriture
-        x = droit d'exécution
-Syntaxe octale
-r = 4
-w = 2
-x = 1
-
-0 ---
-1 --x
-2 -w-
-3 -wx
-4 r--
-5 r-x
-6 rw-
-7 rwx
-
-644 : -rw-r--r--
+---
