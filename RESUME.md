@@ -2258,3 +2258,45 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🧱 A503. Utilisateurs
+
+/etc/passwd : liste les comptes
+ex : user:password:UID:GUID:GecosName:/home/user:/bin/bash(shell)
+commandes : useradd, usermod, userdel
+ex : sudo useradd -m -s /bin/bash -c "Bob Dylan" bob
+ex : sudo usermod -s /bin/sh user : change le shell
+ex : sudo usermod -l UnerName user : renomme
+recherche : cat /etc/passwd | grep -e 'bob|alice'
+
+/etc/shadow : liste les mdp
+
+/etc/group : liste les groupes
+commandes : groupadd, groupdel
+ex : sudo usermod -aG group user : ajoute l'user au group
+ex : sudo groupadd -g 1052 devops : impose un GID
+ex : sudo gpasswd -delete user group : efface l'user du group
+ex : sudo usermod -g group user : change le groupe primaire
+
+commande voir les droits : ls -l
+syntaxe - ou d pour fichier ou dossier, puis rwx rwx rwx, les droits des users,groups,others.
+
+chown change le propriétaire, ex : sudo chown -R user:group rapport.txt (-R pour récursif)
+
+chmod modifie les droits de ces utilisateurs avec + ou - ou =
+u g et o c'est les catégories d'utilisateurs. user,groups,others
+r w et x c'est les droits. rwx,rwx,rwx
+
+syntaxe octale : r = 4, w = 2, x = 1.
+![octal](/images/2025-12-12-14-38-23.png)
+
+sudo
+
+[Challenge A503](./challenges/Challenge_A503.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
