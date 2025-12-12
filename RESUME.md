@@ -2259,7 +2259,7 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
 
 ---
 
-### 🧱 A503. Utilisateurs
+### 🧱 A503. Utilisateurs et SUDO
 
 /etc/passwd : liste les comptes
 ex : user:password:UID:GUID:GecosName:/home/user:/bin/bash(shell)
@@ -2291,6 +2291,48 @@ syntaxe octale : r = 4, w = 2, x = 1.
 ![octal](/images/2025-12-12-14-38-23.png)
 
 sudo
+
+Utilisateurs
+        useradd, usermod, userdel => commandes utilisateurs
+        /etc/passwd => liste les utilisateurs
+        /etc/shadow => liste les mots de passe
+Groupes
+        groupadd, groupdel
+        /etc/group => liste les groupes
+        pour ajouter un utilisateur à un groupe, on modifie l'utilisateur, pas le groupe
+        à la création, chaque user a un GID
+        Les groupes servent à faire des ensembles d'utilisateurs
+        Les groupes permettent de gérer les droits des fichiers
+Permissions
+        Une ressource ça a : un propriétaire, un groupe, et les autres
+        Les droits d'appliquent au niveau des ressources et pas des utilisateurs
+        Les droits s'appliquent pour chacun de ces 3 acteurs
+        chown => changer le propriétaire et/ou le groupe d'une ressource
+        chmod => permet de changer les droits d'une ressource
+        Pourquoi 3 niveaux de droits :
+                - les droits du propriétaire
+                - les droits du groupe 
+                - les droits des autres
+        ! Pour pouvoir parcourir un dossier, il faut avoir le droit d'exécution
+Syntaxe symbolique
+        r = droit de lecture
+        w = droit d'écriture 
+        x = droit d'exécution
+Syntaxe octale
+r = 4
+w = 2
+x = 1
+
+0 ---
+1 --x
+2 -w-
+3 -wx
+4 r--
+5 r-x
+6 rw-
+7 rwx
+
+644 : -rw-r--r--
 
 [Challenge A503](./challenges/Challenge_A503.md)
 
