@@ -6,7 +6,7 @@
 
 [Challenge A504](https://github.com/O-clock-Aldebaran/SA5-compiler-un-binaire)
 
-[Cours A504.](/RESUME.md#-a504)
+[Cours A504.](/RESUME.md#-a504-gestion-des-paquets-compilation--logs)
 
 ---
 
