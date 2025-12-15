@@ -63,6 +63,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A501. Introduction](#️-a501-introduction-à-gnulinux)
 - [A502. Composants d'un système GNU/Linux](#-a502-composants-dun-système-gnulinux)
 - [A503. Utilisateurs, Groupes, Permissions & Sudo](#-a503-utilisateurs-groupes-permissions--sudo)
+- [A504. Gestion des Paquets, Compilation & Logs](#-a504-gestion-des-paquets-compilation--logs)
 
 ---
 
