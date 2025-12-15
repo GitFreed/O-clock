@@ -32,6 +32,8 @@ C'est le groupe wheel qui contient les administrateurs sur Rocky Linux, on l'ajo
 
 On va éditer le fichier de configuration sudoers à l'aide de la commande ``sudo visudo`` et de la gestion de VIM vu hier, il faut ajouter ``usersudo ALL=(ALL) NOPASSWD: /usr/bin/rpm`` et :wq pour write&quite.
 
+*correction : `sudo visudo /etc/sudoers.d/rpm`*
+
 ![visudo](/images/2025-12-12-16-58-51.png)
 
 Test en passant sur mon usersudo ``su - usersudo``, le rpm passe mais pas le dnf update, c'est bon.
