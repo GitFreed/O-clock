@@ -60,7 +60,7 @@ C'est beaucoup plus rapide et simple, tout se fait automatiquement.
 
 Téléchargement du programme via github : `wget https://github.com/abishekvashok/cmatrix/releases/download/v2.0/cmatrix-v2.0-Butterscotch.tar`
 
-Décompression de l'archive : `tar -xvf cmatrix-v2.0-Butterscotch.tar `
+Décompression de l'archive : `tar -xvf cmatrix-v2.0-Butterscotch.tar`
 
 `./configure` : Vérifie que toutes les dépendances sont là et génère le Makefile spécifique à notre système (Ubuntu).
 
