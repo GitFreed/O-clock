@@ -2388,3 +2388,7 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
 ---
 
 commande whoami / which
+
+df -h
+
+-h human readable
