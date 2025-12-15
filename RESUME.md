@@ -2386,3 +2386,5 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
 [Retour en haut](#-table-des-matières)
 
 ---
+
+commande whoami / which

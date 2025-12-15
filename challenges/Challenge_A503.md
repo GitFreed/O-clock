@@ -56,13 +56,13 @@ Test en passant sur mon usersudo ``su - usersudo``, le rpm passe mais pas le dnf
 
 ``sudo chown -R :groupe_partage /home/partage_fichier`` Change le proprio du dossier.
 
-``sudo chmod 600 /home/partage_fichier`` Applique la permission lecture/écriture (6) au propriétaire, c'est à dire notre groupe qui l'est devenu, puis rien (0) aux autres.
+``sudo chmod 770 /home/partage_fichier`` Applique la permission lecture/écriture (6) au propriétaire et au groupe propriétaire, puis rien (0) aux autres.
 
 ``ls -l /home/`` Pour vérifier les permissions.
 
-![verif](/images/2025-12-12-17-50-10.png)
+![verif](/images/2025-12-15-10-12-41.png)
 
-``drw-------`` correspond bien à 600.
+``drwxrwx---`` correspond bien à 770.
 
 ## 6. Créer le Dernier Utilisateur pour Vérifier
 
