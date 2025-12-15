@@ -2376,9 +2376,144 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
 
 ---
 
-### A504
+### 📦 A504. Gestion des Paquets, Compilation & Logs
+
+> Ce cours couvre la gestion du cycle de vie des logiciels sous Linux (installation via paquets ou compilation) ainsi que la surveillance du système (logs et ressources matérielles).
+
+#### 1. Gestion des Paquets
+
+Un gestionnaire de paquets automatise l'installation, la mise à jour et la suppression de logiciels. Il gère les **dépendances** (bibliothèques nécessaires au fonctionnement d'un programme) et vérifie l'intégrité des fichiers via des dépôts officiels.
+
+Il existe toujours une distinction entre l'outil **bas niveau** (gère le fichier paquet local) et l'outil **haut niveau** (gère les dépôts et les dépendances).
+
+##### A. Debian / Ubuntu (et dérivés)
+
+- **Outils** : `dpkg` (bas niveau) et **`apt`** (haut niveau).
+- **Fichiers de config** : `/etc/apt/sources.list`.
+
+| Action | Commande `apt` (Recommandé) |
+| :--- | :--- |
+| Rafraîchir la liste des dépôts | `sudo apt update` |
+| Mettre à jour les paquets | `sudo apt upgrade` |
+| Installer un paquet | `sudo apt install <nom>` |
+| Désinstaller un paquet | `sudo apt remove <nom>` |
+| Rechercher un paquet | `sudo apt search <nom>` |
+| Installer un fichier `.deb` local | `sudo dpkg -i fichier.deb` |
+
+##### B. Arch Linux / Manjaro
+
+- **Outil** : **`pacman`** (gère tout : synchro, install, cache).
+- **Fichiers de config** : `/etc/pacman.conf`.
+
+| Action | Commande `pacman` |
+| :--- | :--- |
+| Mettre à jour tout le système | `sudo pacman -Syu` |
+| Installer un paquet | `sudo pacman -S <nom>` |
+| Rechercher un paquet | `sudo pacman -Ss <nom>` |
+| Désinstaller (+ dépendances inutiles) | `sudo pacman -Rns <nom>` |
+
+##### C. Red Hat / Fedora / CentOS
+
+- **Outils** : `rpm` (bas niveau) et **`dnf`** (haut niveau, remplace yum).
+- **Fichiers de config** : `/etc/yum.repos.d/`.
+
+| Action | Commande `dnf` |
+| :--- | :--- |
+| Vérifier les mises à jour | `sudo dnf check-update` |
+| Mettre à jour le système | `sudo dnf upgrade` |
+| Installer un paquet | `sudo dnf install <nom>` |
+| Installer un fichier `.rpm` local | `sudo rpm -ivh fichier.rpm` |
+
+#### 2. Compiler un programme (Depuis les sources)
+
+Parfois nécessaire pour avoir une version très récente ou activer des options spécifiques.
+
+- **Prérequis** : Il faut les outils de développement (compilateur `gcc`, `make`, etc.).
+  - Debian/Ubuntu : `sudo apt install build-essential`.
+  - RHEL : `sudo dnf groupinstall "Development Tools"`.
+
+**Workflow classique (La trinité de la compilation) :**
+
+1. **Extraction** : `tar xf logiciel.tar.gz` puis `cd logiciel`.
+2. **Configuration** : `./configure` (Vérifie les prérequis et prépare la compilation. On peut ajouter `--prefix=/usr/local` pour choisir le dossier d'install).
+3. **Compilation** : `make` (Transforme le code source en binaire. Option `-j$(nproc)` pour aller plus vite).
+4. **Installation** : `sudo make install` (Copie les binaires dans le système).
+
+#### 3. Journaux du Système (Logs)
+
+Les logs sont essentiels pour le dépannage. Ils sont soit centralisés par **systemd** (binaire), soit stockés dans des fichiers texte.
+
+##### A. Fichiers logs classiques (`/var/log/`)
+
+On les lit avec `cat`, `less` ou `tail`.
+
+- `/var/log/syslog` ou `/var/log/messages` : Logs généraux.
+- `/var/log/auth.log` : Logs d'authentification (sudo, ssh, login).
+- `/var/log/dmesg` : Messages du noyau au démarrage.
+
+##### B. Journald (systemd)
+
+Commande unique : **`journalctl`**.
+
+- `journalctl -f` : Suivre les logs en direct (équivalent à tail -f).
+- `journalctl -xe` : Voir les dernières erreurs détaillées.
+- `journalctl -u ssh` : Voir les logs d'un service précis (ici ssh).
+- `journalctl -k` : Messages du noyau (kernel).
+- `journalctl --since "10 min ago"` : Logs des 10 dernières minutes.
+
+#### 4. Périphériques, Hardware & Surveillance
+
+Pour surveiller les ressources et identifier le matériel.
+
+##### Surveillance des ressources
+
+- **CPU / RAM** : `top` ou `htop` (vue temps réel).
+- **Mémoire** : `free -h` (affiche la RAM libre/utilisée).
+- **Disques** :
+  - `df -h` : Affiche l'espace disque occupé/libre (**-h** = human readable, lisible par l'homme en Go/Mo).
+  - `lsblk` : Affiche l'arborescence des partitions.
+
+##### Identification Matériel
+
+- `lspci` : Liste les périphériques PCI (cartes graphiques, réseau...).
+- `lsusb` : Liste les périphériques USB.
+- `dmesg` : Affiche les messages du noyau (très utile pour voir si un périphérique est détecté au branchement).
+- `/dev/` : Dossier contenant les fichiers représentant le matériel (ex: `/dev/sda` pour un disque).
+
+### ⌨️ Récapitulatif des commandes
+
+> Voici les commandes essentielles à retenir pour ce module :
+
+- **Infos utilisateur & commandes**
+  - `whoami` : Affiche le nom de l'utilisateur courant.
+  - `which <commande>` : Affiche le chemin complet de l'exécutable d'une commande (ex: `which python`).
+  - `man <commande>` : Affiche le manuel d'utilisation.
+
+- **Paquets**
+  - `sudo apt update && sudo apt upgrade` : Mettre à jour (Debian/Ubuntu).
+  - `sudo apt install <paquet>` : Installer.
+
+- **Disques & Fichiers**
+  - `df -h` : Espace disque libre (en format lisible).
+  - `lsblk` : Liste des blocs/partitions.
+
+- **Logs**
+  - `tail -f /var/log/syslog` : Suivre les logs en continu.
+  - `journalctl -xe` : Debugger une erreur récente systemd.
 
 [Challenge A504](./challenges/Challenge_A504.md)
+
+> 📚 **Ressources** :
+>
+> Cheatsheet Linux <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### A505
+
+[Challenge A505](./challenges/Challenge_A505.md)
 
 > 📚 **Ressources** :
 >
@@ -2386,9 +2521,3 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
 [Retour en haut](#-table-des-matières)
 
 ---
-
-commande whoami / which
-
-df -h
-
--h human readable
