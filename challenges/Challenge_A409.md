@@ -1,4 +1,4 @@
-# Atelier A409 01/12/2025
+# Challenge A409 01/12/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 

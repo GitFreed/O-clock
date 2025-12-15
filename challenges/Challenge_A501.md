@@ -1,8 +1,8 @@
-# Atelier A501 10/12/2025
+# Challenge A501 10/12/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![501](/images/2025-12-10-17-03-10.png)
+![Challenge](/images/2025-12-10-17-03-10.png)
 
 [Cours A501.](/RESUME.md#️-a501-introduction-à-gnulinux)
 

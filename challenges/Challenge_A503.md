@@ -1,4 +1,4 @@
-# Atelier A503 12/12/2025
+# Challenge A503 12/12/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 

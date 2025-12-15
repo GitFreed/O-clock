@@ -1,4 +1,4 @@
-# Atelier A412 04/12/2025
+# Challenge A412 04/12/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 

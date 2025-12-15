@@ -1,4 +1,4 @@
-# Atelier A408 28/11/2025
+# Challenge A408 28/11/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 

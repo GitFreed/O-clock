@@ -1,8 +1,8 @@
-# Atelier A502 11/12/2025
+# Challenge A502 11/12/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![502](/images/2025-12-11-17-41-06.png)
+![Challenge](/images/2025-12-11-17-41-06.png)
 
 [Cours A502.](/RESUME.md#-a502-composants-dun-système-gnulinux)
 
