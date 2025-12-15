@@ -64,6 +64,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A502. Composants d'un système GNU/Linux](#-a502-composants-dun-système-gnulinux)
 - [A503. Utilisateurs, Groupes, Permissions & Sudo](#-a503-utilisateurs-groupes-permissions--sudo)
 - [A504. Gestion des Paquets, Compilation & Logs](#-a504-gestion-des-paquets-compilation--logs)
+- [A505 & 506. Atelier & correction](./challenges/Challenge_A505.md)
 
 ---
 
@@ -2149,6 +2150,8 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 > - Outil de configuration réseau
 > - Serveur & sous-système audio
 
+---
+
 #### 1. Les Fondations du Système (Bas niveau)
 
 - **Le Chargeur d'amorçage (Bootloader)** :
@@ -2184,6 +2187,8 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
   - **Rôle** : Indispensable pour modifier les fichiers de configuration.
   - *Les incontournables :* **Nano** (simple pour débuter), **Vim** (puissant mais nécessite un apprentissage), **Emacs**.
 
+---
+
 #### 3. L'Interface Graphique (La couche visible)
 
 C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique est une "pile" de plusieurs logiciels distincts :
@@ -2213,6 +2218,8 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
 - **Bibliothèques Graphiques** :
 
   - Ce sont les "boîtes à outils" utilisées par les développeurs pour créer les boutons et menus. **GTK** est utilisé par GNOME, **Qt** est utilisé par KDE.
+
+---
 
 #### 4. Les Outils Complémentaires
 
@@ -2292,6 +2299,8 @@ Les utilisateurs sont identifiés par un **UID** (User ID) et un **GID** (Group 
     - `sudo userdel -r jean` : Supprime l'utilisateur **et** son dossier personnel (`-r`).
   - **Mot de passe** : `passwd jean` pour définir/changer le mot de passe.
 
+---
+
 #### Gestion des Groupes
 
 Les groupes permettent de rassembler des utilisateurs pour simplifier la gestion des droits. Un utilisateur a un groupe primaire et peut avoir plusieurs groupes secondaires.
@@ -2311,6 +2320,8 @@ Les groupes permettent de rassembler des utilisateurs pour simplifier la gestion
     - `sudo gpasswd --delete jean reseau` : Retire un utilisateur d'un groupe.
     - `sudo usermod -g devops jean` : Change le groupe **primaire** de l'utilisateur.
     - `groups jean` : Affiche dans quel groupes est l'utilisateur jean.
+
+---
 
 #### Permissions et Propriétaires
 
@@ -2345,6 +2356,8 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
     - `chmod 755 dossier` : rwx (proprio), r-x (groupe), r-x (autres).
 
       ![octal](/images/2025-12-12-14-38-23.png)
+
+---
 
 #### Sudo (SuperUser DO)
 
@@ -2425,6 +2438,8 @@ Il existe toujours une distinction entre l'outil **bas niveau** (gère le fichie
 | Installer un paquet | `sudo dnf install <nom>` |
 | Installer un fichier `.rpm` local | `sudo rpm -ivh fichier.rpm` |
 
+---
+
 #### 2. Compiler un programme (Depuis les sources)
 
 Parfois nécessaire pour avoir une version très récente, activer des options spécifiques ou être sûr que le programme n'a pas été altéré.
@@ -2439,6 +2454,8 @@ Parfois nécessaire pour avoir une version très récente, activer des options s
 2. **Configuration** : `./configure` (Vérifie les prérequis et prépare la compilation. On peut ajouter `--prefix=/usr/local` pour choisir le dossier d'install).
 3. **Compilation** : `make` (Transforme le code source en binaire. Option `-j$(nproc)` pour aller plus vite).
 4. **Installation** : `sudo make install` (Copie les binaires dans le système).
+
+---
 
 #### 3. Journaux du Système (Logs)
 
@@ -2462,6 +2479,8 @@ Commande unique : **`journalctl`**.
 - `journalctl -k` : Messages du noyau (kernel).
 - `journalctl --since "10 min ago"` : Logs des 10 dernières minutes.
 
+---
+
 #### 4. Périphériques, Hardware & Surveillance
 
 Pour surveiller les ressources et identifier le matériel.
@@ -2481,7 +2500,9 @@ Pour surveiller les ressources et identifier le matériel.
 - `dmesg` : Affiche les messages du noyau (très utile pour voir si un périphérique est détecté au branchement).
 - `/dev/` : Dossier contenant les fichiers représentant le matériel (ex: `/dev/sda` pour un disque).
 
-### ⌨️ Récapitulatif des commandes
+---
+
+#### ⌨️ Récapitulatif des commandes
 
 > Voici les commandes essentielles à retenir pour ce module :
 
@@ -2512,12 +2533,11 @@ Pour surveiller les ressources et identifier le matériel.
 
 ---
 
-### A505
+### A505. Atelier
 
-[Challenge A505](./challenges/Challenge_A505.md)
+[Atelier A505](./challenges/Challenge_A505.md)
 
-> 📚 **Ressources** :
->
+Atelier 506. Correction
 
 [Retour en haut](#-table-des-matières)
 
