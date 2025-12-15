@@ -2427,7 +2427,7 @@ Il existe toujours une distinction entre l'outil **bas niveau** (gère le fichie
 
 #### 2. Compiler un programme (Depuis les sources)
 
-Parfois nécessaire pour avoir une version très récente ou activer des options spécifiques.
+Parfois nécessaire pour avoir une version très récente, activer des options spécifiques ou être sûr que le programme n'a pas été altéré.
 
 - **Prérequis** : Il faut les outils de développement (compilateur `gcc`, `make`, etc.).
   - Debian/Ubuntu : `sudo apt install build-essential`.
