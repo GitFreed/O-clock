@@ -46,9 +46,9 @@ Notre programme affiche un carré rouge à l'écran.
 
 ## Second programme avec SDL & SDL_Image
 
-Création du fichier main c++ avec le code fourni. 
+Création du fichier main c++ avec le code fourni.
 
-Installation d'une bibliothèque manquante `sudo apt install libsdl2-image-dev` 
+Installation d'une bibliothèque manquante `sudo apt install libsdl2-image-dev`
 
 Téléchargement de l'image Tux nécessaire `wget https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png`
 
