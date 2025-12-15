@@ -12,7 +12,7 @@
 
 ## Créons un Hello World en C
 
-Création du fichier main.c
+Création du fichier `main.c`
 
 ![nano](/images/2025-12-15-16-19-35.png)
 
@@ -26,13 +26,19 @@ On va copier le binaire ainsi créer dans le dossier utilisateur `/bin` pour qu'
 
 ## Créons un Hello World en C++
 
-`-lstdc++` : Link STandarD C++ : liaison à la biblio C++
+Compilation avec la variable `-lstdc++` : Link STandarD C++ : liaison à la biblio C++
 
 ![c++](/images/2025-12-15-16-34-46.png)
 
 ## Programme avec les bibliothèques `lib`
 
-Simple DirectMedia Layer (SDL) est une bibliothèque logicielle libre : `libsdl2-dev`
+Simple DirectMedia Layer (SDL) est une bibliothèque logicielle libre : `sudo apt install libsdl2-dev`
+
+Création et contenu du fichier main.cpp
+
+![maincpp](/images/2025-12-15-18-17-53.png)
+
+Compilation avec la commande suivante
 
 ![compilsdl](/images/2025-12-15-17-20-21.png)
 
@@ -40,11 +46,21 @@ Notre programme affiche un carré rouge à l'écran.
 
 ## Second programme avec SDL & SDL_Image
 
+Création du fichier main c++ avec le code fourni. 
+
+Installation d'une bibliothèque manquante `sudo apt install libsdl2-image-dev` 
+
+Téléchargement de l'image Tux nécessaire `wget https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png`
+
 ![SDL](/images/2025-12-15-17-29-22.png)
+
+Compilation :
 
 ![SDLano](/images/2025-12-15-17-30-45.png)
 
-Notre programme affiche l'image de Tux qu'on a utilisé à l'écran. On voit que les commandes se complexifient rapidement.
+Notre programme affiche l'image de Tux qu'on a utilisé à l'écran et  qu'on peut bouger avec nos flèches.
+
+On voit que les commandes de gcc se complexifient rapidement.
 
 ## Make & makefile
 
