@@ -85,10 +85,12 @@ Décompression de l'archive : `tar -xvf cmatrix-v2.0-Butterscotch.tar`
 Il manque des bibliothèques, il faut les installer et relancer un ./configure
 
 `sudo apt install autoconf`
+
 `sudo apt install libncurses5-dev libncursesw5-dev`
+
 `./configure`
 
-On peut alors faire le complier grâce au `make` et l'installer `sudo make install`
+On peut alors compiler directement grâce au `make` et l'installer `sudo make install`
 
 On peut maintenant lancer notre programme `cmatrix`
 
