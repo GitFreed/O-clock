@@ -138,3 +138,5 @@ On va ignorer les erreurs de sécurisé qu'on corrigera ultérieurement, et on v
 On a finit l'installation, et on peu se connecter avec glpi/glpi, et nous voilà sur notre tableau de bord !
 
 ![glpi](/images/2025-12-16-12-46-46.png)
+
+## Bonus : PHPMyAdmin & Adminer
