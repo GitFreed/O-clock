@@ -2533,7 +2533,7 @@ Pour surveiller les ressources et identifier le matériel.
 
 ---
 
-### A505. Atelier
+### A505. Atelier LAMP
 
 [Atelier A505](./challenges/Challenge_A505.md)
 
