@@ -168,3 +168,82 @@ On a une interface très légère voir minimaliste
 ![ranger](/images/2025-12-16-13-14-45.png)
 
 ## Super-bonus : sécurité
+
+On va résoudre les problèmes de sécurité indiqués lors de l'installation.
+
+Documentation officielle sur la [configuration du serveur Apache]<https://glpi-install.readthedocs.io/en/latest/prerequisites.html#apache-configuration>, et les [Virtual Hosts Apache]<https://www.linuxtricks.fr/wiki/apache-les-virtual-hosts>.
+
+On va retrouver nos erreurs dans : Configuration > Générale
+
+![errors](/images/2025-12-16-16-27-24.png)
+
+### Erreur 1 : le site GLPI doit pointer sur /public et non /glpi
+
+`Web server root directory configuration is not safe as it permits access to non-public files. See installation documentation for more details.`
+
+![config](/images/2025-12-16-16-41-14.png)
+
+On va créer un fichier de configuration avec `sudo nano /etc/apache2/sites-available/glpi.conf`
+
+![conf](/images/2025-12-16-17-15-23.png)
+
+On va désactiver l'ancienne conf et mettre la nouvelle
+
+```bash
+sudo a2ensite glpi.conf
+sudo a2dissite 000-default.conf
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+```
+
+### Erreur 2 : les cookies 🍪
+
+`PHP directive "session.cookie_httponly" should be set to "on" to prevent client-side script to access cookie values.`
+
+On doit sécuriser l'accès aux Cookies pour empêcher des scripts d'y accéder
+
+On va ouvrir notre config php avec `sudo nano /etc/php/8.2/apache2/php.ini`
+
+On cherche la ligne en question avec Crtl + W et on l'active avec `on`
+
+![cookie](/images/2025-12-16-17-19-38.png)
+
+On sauvegarde et redémarre apache
+
+### Problème de Timezone
+
+Mariadb n'a pas accès aux informations de TZ nativement <https://glpi-install.readthedocs.io/en/latest/timezones.html>
+
+On va lui injecter ces informations :
+
+```bash
+ mariadb-tzinfo-to-sql /usr/share/zoneinfo > /tmp/zones.sql
+ sudo mariadb -u root -p mysql
+ ```
+
+Il faut maintenant donner le droit de lecture à notre utilisateur
+
+`sudo mariadb -u root -p`
+
+```bash
+USE mysql;
+GRANT SELECT ON time_zone_name TO 'dbuser'@'localhost';
+FLUSH PRIVILEGES;
+exit
+```
+
+### Effacer le fichier d'installation
+
+`sudo rm /var/www/glpi/install/install.php`
+
+![erreursOK](/images/2025-12-16-17-35-52.png)
+
+### Hyper-bonus : configuration de GLPI
+
+
+
+
+
+> 📚 **Ressources :**
+>
+> GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
