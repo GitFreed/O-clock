@@ -140,3 +140,31 @@ On a finit l'installation, et on peu se connecter avec glpi/glpi, et nous voilà
 ![glpi](/images/2025-12-16-12-50-23.png)
 
 ## Bonus : PHPMyAdmin & Adminer
+
+Pour administrer un serveur de base de données relationnelles tel que MySQL ou MariaDB, on utilise en général une interface web. Il existe deux solutions populaires : PHPMyAdmin et Adminer
+
+`sudo apt install phpmyadmin`
+
+On sélectionne `apache2` en appuyant sur la touche `Espace` de votre clavier AVANT d'appuyer sur `Entrée` pour valider. Sinon la commande `sudo dpkg-reconfigure phpmyadmin` permet de reconfigurer (dpkg : debian package)
+
+On s'y connecte avec notre dbuser
+
+![myadmin](/images/2025-12-16-13-11-43.png)
+
+On va aussi tester Adminer
+
+```bash
+cd /var/www/html
+mkdir adminer
+cd adminer
+wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-mysql.php
+mv adminer-4.8.1-mysql.php index.php
+```
+
+On a une interface très légère voir minimaliste
+
+![adminer](/images/2025-12-16-13-16-08.png)
+
+![ranger](/images/2025-12-16-13-14-45.png)
+
+## Super-bonus : sécurité
