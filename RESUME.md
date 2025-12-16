@@ -2535,9 +2535,16 @@ Pour surveiller les ressources et identifier le matériel.
 
 ### A505. Atelier LAMP
 
+> Dans cet atelier, vous allez découvrir comment installer et configurer les différents logiciels nécessaire à la mise en place d'une stack LAMP.
+> LAMP pour Linux, Apache, MySQL et PHP : ce sont les briques de bases nécessaires pour un serveur web hébergeant des applications web codées en PHP !
+
 [Atelier A505](./challenges/Challenge_A505.md)
 
 Atelier 506. Correction
+
+> 📚 **Ressources** :
+>
+> GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
 
 [Retour en haut](#-table-des-matières)
 

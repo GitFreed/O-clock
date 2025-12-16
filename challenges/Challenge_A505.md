@@ -240,10 +240,24 @@ exit
 
 ### Hyper-bonus : configuration de GLPI
 
+Prérequis : avec une VM Windows avec l'agent GLPI Windows et qui est sur le même réseau que notre serveur.
 
+Depuis ma VM Windows 10 je ping mon serveur et je vais télécharger mon agent GLPI (.msi) sur <https://github.com/glpi-project/glpi-agent/releases/tag/1.15>
 
+![VM](/images/2025-12-16-17-46-51.png)
 
+On target notre serveur GLPI
 
-> 📚 **Ressources :**
->
-> GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
+![target](/images/2025-12-16-17-51-04.png)
+
+On va activer l'inventaire dans notre serveur GLPI > Administration > Inventaire > Activer.
+
+On va forcer l'inventaire en ouvrant `http://localhost:62354` dans notre navigateur sur la VM Windows
+
+![inventory](/images/2025-12-16-17-52-37.png)
+
+Et voilà !
+
+![tableau](/images/2025-12-16-18-00-21.png)
+
+![ordi](/images/2025-12-16-18-00-55.png)
