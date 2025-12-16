@@ -234,11 +234,11 @@ exit
 
 ### Effacer le fichier d'installation
 
-`sudo rm /var/www/glpi/install/install.php`
+`sudo rm /var/www/html/glpi/install/install.php`
 
 ![erreursOK](/images/2025-12-16-17-35-52.png)
 
-### Hyper-bonus : configuration de GLPI
+## Hyper-bonus : configuration de GLPI
 
 Prérequis : avec une VM Windows avec l'agent GLPI Windows et qui est sur le même réseau que notre serveur.
 
