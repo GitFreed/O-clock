@@ -2553,7 +2553,8 @@ Pour surveiller les ressources et identifier le matériel.
 
 ### 📁 A506. Atelier SAMBA
 
->
+> L'intéret d'utiliser un serveur Linux à la place d'un Windows Server avec Active Directory ? On économise le coût des licences ! Pas besoin de CAL pour nos postes/utilisateurs.
+> Pour remplacer Active Directory sur GNU/Linux, il existe plusieurs solutions. L'une des plus populaires est le logiciel Samba.
 
 [Atelier A506](./challenges/Challenge_A506.md)
 
