@@ -2544,6 +2544,8 @@ Pour surveiller les ressources et identifier le matériel.
 > 📚 **Ressources** :
 >
 > GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
+> Apache config <https://glpi-install.readthedocs.io/en/latest/prerequisites.html#apache-configuration>
+> Apache Virtual Hosts <https://www.linuxtricks.fr/wiki/apache-les-virtual-hosts>
 
 [Retour en haut](#-table-des-matières)
 
@@ -2562,3 +2564,14 @@ Pour surveiller les ressources et identifier le matériel.
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### x A507
+
+>
+
+[Challenge A507](./challenges/Challenge_A507.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
