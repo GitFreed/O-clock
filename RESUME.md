@@ -2561,6 +2561,8 @@ Pour surveiller les ressources et identifier le matériel.
 > 📚 **Ressources** :
 >
 > Installer et configurer SAMBA <https://www.it-connect.fr/serveur-de-fichiers-debian-installer-et-configurer-samba-4/>
+> Lier un lecteur réseau avec une GPO <https://activedirectorypro.com/map-network-drives-with-group-policy/>
+> Samba et Systemd <https://wiki.samba.org/index.php/Managing_the_Samba_AD_DC_Service_Using_Systemd>
 
 [Retour en haut](#-table-des-matières)
 

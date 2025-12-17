@@ -130,11 +130,13 @@ Création d'une zone inversée : `sudo /usr/local/samba/bin/samba-tool dns zonec
 
 ## Clients Windows
 
-Sur notre VM Windows 10 pro, on va mettre notre serveur Debian en Serveur DNS `ncpa.cpl` et on vérifie le domaine (attribué précédèrent par notre pfsense)
+Sur notre VM Windows 10 pro, on va mettre notre serveur Debian en Serveur DNS `ncpa.cpl` et on rajoute le bon domaine.
 
 ![win](/images/2025-12-17-20-53-46.png)
 
-![domaine](/images/2025-12-17-20-55-53.png)
+![domaine](/images/2025-12-17-21-34-44.png)
+
+Redémarrer et se connecter avec le compte Administrator du domaine
 
 ## Outils RSAT
 
@@ -145,3 +147,60 @@ Téléchargement <https://www.microsoft.com/fr-fr/download/details.aspx?id=45520
 On va aller activer les outils AD-DS et Gestion stratégie de Groupe dans Paramètres : Fonctionnalités facultatives : Ajouter
 
 ![rsat](/images/2025-12-17-21-10-35.png)
+
+On va dans la console MMC (Exécuter → mmc) et Fichier > Ajouter des composants logiciels enfichables.
+
+![mmc](/images/2025-12-17-21-39-10.png)
+
+Ajout d'un utilisateur au domaine
+
+![bob](/images/2025-12-17-21-46-39.png)
+
+## Partage Samba
+
+ On doit modifier le fichier de configuration avec la commande `sudo nano /usr/local/samba/etc/smb.conf` en ajoutant une conf
+
+ ![conf](/images/2025-12-17-23-25-14.png)
+
+ On doit ensuite stopper samba et le relancer, avec la commande `ps aux | grep samba` on trouve le PID du processus samba
+
+```bash
+sudo kill -9 1425
+sudo /usr/local/samba/sbin/samba
+```
+
+On va créer le dossier et changer ses permissions (777 ok car partage public)
+
+```bash
+sudo mkdir -p /home/shares/public
+sudo chmod 777 /home/shares/public
+```
+
+Depuis la machine windows sur le domaine on peut y accéder
+
+![dossier](/images/2025-12-17-23-34-03.png)
+
+## GPO
+
+<https://activedirectorypro.com/map-network-drives-with-group-policy/>
+
+On va créer une nouvelle UO "Promo"
+
+![uo](/images/2025-12-17-23-40-11.png)
+
+On va maintenant créer notre GPO sur notre UO
+
+![gpo](/images/2025-12-17-23-43-53.png)
+
+On va ensuite éditer notre GPO pour cibler le dossier public qu'on a créé
+
+![gpo](/images/2025-12-17-23-48-14.png)
+
+On va aussi créer une GPO fond d'écran pour le verrouillage et le bureau
+
+![fond](/images/2025-12-18-00-10-04.png)
+
+On va se connecter avec notre utilisateur pour voir si le lecteur et le fond d'écran apparaissent bien
+
+## systemd
+
