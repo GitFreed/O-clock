@@ -48,7 +48,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A403. Stratégies de Groupe (GPO)](#️-a403-stratégies-de-groupe-gpo)
 - [A404. Serveur de fichiers distribués (DFS)](#-a404-serveur-de-fichiers-distribués-dfs)
 - [A405. Gestion du Stockage : Filtres, Quotas & Audit](#️-a405-gestion-du-stockage--filtres-quotas--audit)
-- [A406 & 407. Atelier & correction](./challenges/Challenge_A406.md)
+- [A406 & 407. Atelier Windows Server](./challenges/Challenge_A406.md)
 - [A408. DNS et IIS](#-a408-dns--iis)
 - [A409. Pools, Authentification et Sauvegarde](#️-a409-pools-iis-authentification-et-backup)
 - [A410. Service de Déploiement Windows (WDS)](#-a410-windows-deployment-services-wds)
@@ -64,7 +64,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A502. Composants d'un système GNU/Linux](#-a502-composants-dun-système-gnulinux)
 - [A503. Utilisateurs, Groupes, Permissions & Sudo](#-a503-utilisateurs-groupes-permissions--sudo)
 - [A504. Gestion des Paquets, Compilation & Logs](#-a504-gestion-des-paquets-compilation--logs)
-- [A505 & 506. Atelier & correction](./challenges/Challenge_A505.md)
+- [A505. Atelier LAMP](#-a505-atelier-lamp)
+- [A506. Atelier SAMBA](#-a506-atelier-samba)
 
 ---
 
@@ -2533,18 +2534,30 @@ Pour surveiller les ressources et identifier le matériel.
 
 ---
 
-### A505. Atelier LAMP
+### 🪔 A505. Atelier LAMP
 
 > Dans cet atelier, vous allez découvrir comment installer et configurer les différents logiciels nécessaire à la mise en place d'une stack LAMP.
 > LAMP pour Linux, Apache, MySQL et PHP : ce sont les briques de bases nécessaires pour un serveur web hébergeant des applications web codées en PHP !
 
 [Atelier A505](./challenges/Challenge_A505.md)
 
-Atelier 506. Correction
-
 > 📚 **Ressources** :
 >
 > GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 📁 A506. Atelier SAMBA
+
+>
+
+[Atelier A506](./challenges/Challenge_A506.md)
+
+> 📚 **Ressources** :
+>
+> Installer et configurer SAMBA <https://www.it-connect.fr/serveur-de-fichiers-debian-installer-et-configurer-samba-4/>
 
 [Retour en haut](#-table-des-matières)
 

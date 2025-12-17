@@ -171,7 +171,7 @@ On a une interface très légère voir minimaliste
 
 On va résoudre les problèmes de sécurité indiqués lors de l'installation.
 
-Documentation officielle sur la [configuration du serveur Apache]<https://glpi-install.readthedocs.io/en/latest/prerequisites.html#apache-configuration>, et les [Virtual Hosts Apache]<https://www.linuxtricks.fr/wiki/apache-les-virtual-hosts>.
+Documentation officielle sur la [configuration du serveur Apache](https://glpi-install.readthedocs.io/en/latest/prerequisites.html#apache-configuration), et les [Virtual Hosts Apache](https://www.linuxtricks.fr/wiki/apache-les-virtual-hosts).
 
 On va retrouver nos erreurs dans : Configuration > Générale
 
