@@ -196,11 +196,53 @@ On va ensuite éditer notre GPO pour cibler le dossier public qu'on a créé
 
 ![gpo](/images/2025-12-17-23-48-14.png)
 
-On va aussi créer une GPO fond d'écran pour le verrouillage et le bureau
+Et cibler l'UO Promo de notre utilisateur
+
+![gpo](/images/2025-12-18-00-39-47.png)
+
+On va aussi créer une GPO fond d'écran pour le bureau
 
 ![fond](/images/2025-12-18-00-10-04.png)
 
 On va se connecter avec notre utilisateur pour voir si le lecteur et le fond d'écran apparaissent bien
 
+![OK](/images/2025-12-18-00-40-13.png)
+
 ## systemd
 
+On va faire en sorte que Samba se lance automatiquement au démarrage serveur ou si crash.
+
+On va couper samba pour créer un nouveau fichier de service `sudo kill -9 2275` (samba PID 2275)
+
+On crée le fichier de service `sudo nano /etc/systemd/system/samba-ad-dc.service`
+
+On ajoute la config trouvée dans la doc <https://wiki.samba.org/index.php/Managing_the_Samba_AD_DC_Service_Using_Systemd>
+
+```bash
+[Unit]
+Description=Samba Active Directory Domain Controller
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/samba/sbin/samba -D
+PIDFile=/usr/local/samba/var/run/samba.pid
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Puis on active et redémarre samba
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable samba-ad-dc
+sudo systemctl start samba-ad-dc
+```
+
+![symlink](/images/2025-12-18-00-47-07.png)
+
+On check avec `sudo systemctl status samba-ad-dc`
+
+![status ](/images/2025-12-18-00-48-38.png)
