@@ -4,7 +4,7 @@
 
 ⌨️ Installer et configurer une machine Arch
 
-[Cours A507.](/RESUME.md#-a507)
+[Cours A507.](/RESUME.md#-a507-arch-linux)
 
 ---
 
