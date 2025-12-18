@@ -2540,6 +2540,8 @@ Pour surveiller les ressources et identifier le matériel.
 > Dans cet atelier, vous allez découvrir comment installer et configurer les différents logiciels nécessaire à la mise en place d'une stack LAMP.
 > LAMP pour Linux, Apache, MySQL et PHP : ce sont les briques de bases nécessaires pour un serveur web hébergeant des applications web codées en PHP !
 
+![LAMP](/images/2025-12-18-16-12-11.png)
+
 [Atelier A505](./challenges/Challenge_A505.md)
 
 > 📚 **Ressources** :
@@ -2556,6 +2558,8 @@ Pour surveiller les ressources et identifier le matériel.
 
 > L'intéret d'utiliser un serveur Linux à la place d'un Windows Server avec Active Directory ? On économise le coût des licences ! Pas besoin de CAL pour nos postes/utilisateurs.
 > Pour remplacer Active Directory sur GNU/Linux, il existe plusieurs solutions. L'une des plus populaires est le logiciel Samba.
+
+![SAMBA](/images/2025-12-18-16-12-30.png)
 
 [Atelier A506](./challenges/Challenge_A506.md)
 
