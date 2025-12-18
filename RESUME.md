@@ -2568,7 +2568,7 @@ Pour surveiller les ressources et identifier le matériel.
 
 ---
 
-### x A507
+### 💠 A507. Arch
 
 >
 
@@ -2576,5 +2576,9 @@ Pour surveiller les ressources et identifier le matériel.
 
 > 📚 **Ressources** :
 >
+> Les liens symboliques <https://www.it-connect.fr/creer-un-lien-symbolique-sous-linux/>
+> L'umask sous Linux <https://www.it-connect.fr/gestion-de-lumask-sous-linux/>
+> Install Arch sur Proxmox <https://thiagodsantos.com/arch-linux-installation-in-proxmox/>
+
 
 [Retour en haut](#-table-des-matières)
