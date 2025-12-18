@@ -31,9 +31,8 @@ usermod -aG sudo freed
 
 ## Guest addition
 
-`sudo apt install open-vm-tools`
-
-![vmtools](/images/2025-12-16-10-54-44.png)
+`sudo apt install qemu-guest-agent`
+`sudo systemctl start qemu-guest-agent`
 
 ## A : Apache
 
