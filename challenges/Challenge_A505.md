@@ -263,8 +263,8 @@ Et voilà !
 
 Sur linux pour installer le GLPI agent
 
-sudo apt update
-sudo apt install glpi-agent
+`sudo apt update`
+`sudo apt install glpi-agent`
 
 modifier le fichier config et ajouter notre serveur `server = http://10.0.0.55/glpi/`
 
