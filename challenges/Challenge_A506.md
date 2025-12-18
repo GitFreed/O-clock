@@ -204,7 +204,7 @@ On va aussi créer une GPO fond d'écran pour le bureau
 
 ![fond](/images/2025-12-18-00-10-04.png)
 
-On va se connecter avec notre utilisateur pour voir si le lecteur et le fond d'écran apparaissent bien
+On va se connecter avec notre utilisateur pour voir si le lecteur et le fond d'écran apparaissent bien, un petit `gpupdate /force` et :
 
 ![OK](/images/2025-12-18-00-40-13.png)
 
