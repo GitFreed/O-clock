@@ -91,7 +91,7 @@ On va également installer plusieurs modules de PHP, souvent utiles (certains so
 `sudo apt install php-{curl,gd,intl,memcache,xml,zip,mbstring,json,mysql,bz2,ldap}`
 Redémarrage du service Apache avec la commande `sudo systemctl restart apache2`
 
-Création d'un fichier PHP basique pour vérifier sur <http://192.168.1.86/info.php>
+Création d'un fichier PHP basique avec `echo "<?php phpinfo(); ?>" | sudo tee -a /var/www/html/info.php` et pour vérifier sur <http://192.168.1.86/info.php>
 
 ![php](/images/2025-12-16-11-44-32.png)
 
@@ -260,3 +260,20 @@ Et voilà !
 ![tableau](/images/2025-12-16-18-00-21.png)
 
 ![ordi](/images/2025-12-16-18-00-55.png)
+
+Sur linux pour installer le GLPI agent
+
+sudo apt update
+sudo apt install glpi-agent
+
+modifier le fichier config et ajouter notre serveur `server = http://10.0.0.55/glpi/`
+
+`sudo nano /etc/glpi-agent/agent.cfg`
+
+redémarrer le service
+
+`sudo systemctl restart glpi-agent`
+
+forcer l'inventaire
+
+`sudo glpi-agent --force`
