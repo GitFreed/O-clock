@@ -153,4 +153,79 @@ Et voilà une install "The Arch Way"
 
 ![arh](/images/2025-12-18-16-31-36.png)
 
-## Configuration
+## Qemu guest agent
+
+On va installer l'agent invité pour notre VM Proxmox
+
+```bash
+pacman -Sy
+pacman -S qemu-guest-agent
+systemctl enable --now qemu-guest-agent
+```
+
+![qemu](/images/2025-12-18-16-55-27.png)
+
+## SSH
+
+On va installer SSH
+
+```bash
+pacman -S openssh
+systemctl enable --now sshd
+```
+
+On ajoute un utilisateur au groupe wheel et config son password
+
+```bash
+useradd -m -G wheel freed
+passwd freed
+```
+
+et `Sudo pacman -S sudo`
+
+On configure ses droits `EDITOR=nano visudo`
+
+![visudo](/images/2025-12-18-17-24-27.png)
+
+Et depuis powershell je suis bien connecté!
+
+![ssh](/images/2025-12-18-17-29-33.png)
+
+## Environnement
+
+On va installer un environnement préconfiguré (ML4W) maintenant pour ne pas passer 3h à installer manuellement tout.
+
+My Linux for Work <https://www.ml4w.com/>
+
+On installe git `sudo pacman -Syu git base-devel`
+
+On clone et installe le script ML4W
+
+```bash
+git clone --depth 1 https://github.com/mylinuxforwork/dotfiles.git
+cd dotfiles
+./install.sh
+```
+
+![setup](/images/2025-12-18-17-47-20.png)
+
+Le script va télécharger et compiler les packets puis les installer automatiquement.
+
+On reboot et on va activer l'interface graphique : `sudo systemctl enable --now sddm`
+
+On est bien sur le bureau, je vais continuer l’installation du script
+
+```bash
+cd ~/dotfiles/setup
+./setup.sh
+```
+
+![desk](/images/2025-12-18-18-22-49.png)
+
+Après un reboot voilà le résultat !
+
+![graphic](/images/2025-12-18-18-46-29.png)
+
+Sur Kitty (terminal), fastfetch donne le Logo arch avec les infos machine. Avec un | lolcat tout passe rainbow (aïe)
+
+![test](/images/2025-12-18-19-38-26.png)
