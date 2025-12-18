@@ -66,6 +66,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A504. Gestion des Paquets, Compilation & Logs](#-a504-gestion-des-paquets-compilation--logs)
 - [A505. Atelier LAMP](#-a505-atelier-lamp)
 - [A506. Atelier SAMBA](#-a506-atelier-samba)
+- [A507. Arch Linux](#-a507-arch-linux)
 
 ---
 
@@ -2568,9 +2569,82 @@ Pour surveiller les ressources et identifier le matériel.
 
 ---
 
-### 💠 A507. Arch
+Voici un cours structuré pour la session **A507**, rédigé dans le même format que vos précédents résumés. Il est conçu pour vous donner le contexte théorique nécessaire avant d'attaquer le challenge d'installation.
 
->
+Les informations sont tirées principalement du **Wiki Arch Linux** (la "bible" de cette distribution) et de sources techniques fiables.
+
+---
+
+### 🐧 A507. Arch Linux
+
+> Ce cours introduit **Arch Linux**, une distribution indépendante connue pour sa philosophie minimaliste, son modèle de mise à jour continue (*Rolling Release*) et sa gestion de paquets communautaire (AUR). C'est le système idéal pour comprendre en profondeur le fonctionnement de Linux.
+
+#### 1. Philosophie & Concepts Clés
+
+Contrairement à Debian (stabilité avant tout) ou Ubuntu (facilité d'utilisation), Arch Linux repose sur des principes différents :
+
+- **KISS (Keep It Simple, Stupid)** :
+- Le système est conçu pour être **simple techniquement** (pas de surcouche inutile, pas de patchs complexes), mais pas forcément simple à utiliser pour un débutant.
+- L'utilisateur a le contrôle total : rien n'est installé par défaut sans que vous l'ayez décidé.
+
+- **Rolling Release (Publication Continue)** :
+- Il n'y a **pas de versions** majeures (pas de "Arch 22.04" ou "Arch 11").
+- Vous installez le système une seule fois, et vous le mettez à jour continuellement. Vous aurez toujours la toute dernière version des logiciels (noyau, drivers, applications) quelques jours après leur sortie.
+- *Avantage* : Toujours à jour ("Bleeding Edge").
+- *Inconvénient* : Risque d'instabilité si une mise à jour casse une configuration (nécessite de lire les news du site officiel).
+
+- **DIY (Do It Yourself)** :
+- Après l'installation, vous vous retrouvez avec un écran noir et un curseur clignotant. C'est à vous d'installer l'interface graphique, le son, le réseau, etc..
+
+#### 2. Gestion des Paquets : Pacman & AUR
+
+Arch Linux utilise un gestionnaire de paquets très rapide et une communauté immense.
+
+- **Pacman (Package Manager)** :
+- C'est l'équivalent de `apt` ou `dnf`. Il gère les dépôts officiels (Core, Extra).
+- Il utilise des fichiers binaires `.pkg.tar.zst`.
+
+- **AUR (Arch User Repository)** :
+- C'est la grande force d'Arch. Si un logiciel n'est pas dans les dépôts officiels (ex: Google Chrome, Spotify, ou un petit outil obscur), il est à 99% dans AUR.
+- C'est un dépôt communautaire contenant des scripts (`PKGBUILD`) qui téléchargent les sources et compilent le logiciel pour vous.
+- Pour l'utiliser facilement, on installe un **"AUR Helper"** comme `yay` ou `paru` (non installés par défaut).
+
+#### 3. Anatomie de l'Installation (Le Challenge)
+
+L'installation classique se fait en ligne de commande. Voici les étapes logiques que vous devrez reproduire pour le challenge :
+
+1. **Clavier & Réseau** : Mettre le clavier en FR (`loadkeys fr`) et vérifier la connexion internet (indispensable car l'installateur télécharge tout en direct).
+2. **Partitionnement** : Utiliser `cfdisk` ou `fdisk` pour créer les partitions (EFI, Root, Swap).
+3. **Formatage & Montage** :
+
+- Formater les partitions (`mkfs.ext4`, `mkswap`).
+- Monter la partition Root dans `/mnt` (le système temporaire).
+
+1. **Installation du système de base** : La commande magique est **`pacstrap`**.
+
+- Exemple : `pacstrap /mnt base linux linux-firmware vim`.
+
+1. **Configuration du système (Chroot)** :
+
+- Générer le fichier fstab (`genfstab`).
+- Entrer dans le nouveau système (`arch-chroot /mnt`) pour devenir "root" à l'intérieur de votre nouvelle installation.
+- Configurer la langue, l'heure, le nom de la machine et le mot de passe root.
+
+1. **Bootloader** : Installer et configurer **GRUB** pour que le PC puisse démarrer.
+
+> **Note :** Il existe désormais un script officiel nommé `archinstall` qui automatise tout cela via des menus, mais savoir le faire à la main est un excellent exercice pédagogique.
+
+#### ⌨️ Commandes Essentielles (Pacman)
+
+Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
+
+| Action | Commande Arch (`pacman`) | Équivalent Debian (`apt`) |
+| --- | --- | --- |
+| Mettre à jour tout le système | `sudo pacman -Syu` | `apt update && apt upgrade` |
+| Installer un paquet | `sudo pacman -S <nom>` | `apt install <nom>` |
+| Chercher un paquet | `pacman -Ss <mot>` | `apt search <mot>` |
+| Supprimer un paquet | `sudo pacman -Rs <nom>` | `apt autoremove <nom>` |
+| Nettoyer le cache | `sudo pacman -Sc` | `apt clean` |
 
 [Challenge A507](./challenges/Challenge_A507.md)
 
@@ -2581,3 +2655,5 @@ Pour surveiller les ressources et identifier le matériel.
 > Install Arch <https://wiki.archlinux.org/title/Installation_guide>
 
 [Retour en haut](#-table-des-matières)
+
+---
