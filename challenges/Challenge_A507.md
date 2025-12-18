@@ -128,3 +128,29 @@ On nomme `echo "archlinux" > /etc/hostname`
 On active le gestionnaire réseau `systemctl enable NetworkManager`
 
 ![net](/images/2025-12-18-16-08-39.png)
+
+## Mot de passe Root
+
+`passw`
+
+## Installation du bootloader GRUB
+
+`pacman -S grub`
+
+![grub](/images/2025-12-18-16-16-37.png)
+
+On installe l'amorce sur le disque dur `grub-install --target=i386-pc /dev/sda`
+
+On génère le fichier de configuration `grub-mkconfig -o /boot/grub/grub.cfg`
+
+![grub](/images/2025-12-18-16-21-26.png)
+
+On sort du chmod et on démonte les partitions `umount -R /mnt` qui peuvent corrompre un système.
+
+On lance le reboot (en sortant le disque d'installation)
+
+Et voilà une install "The Arch Way"
+
+![arh](/images/2025-12-18-16-31-36.png)
+
+## Configuration
