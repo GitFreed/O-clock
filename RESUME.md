@@ -2578,7 +2578,6 @@ Pour surveiller les ressources et identifier le matériel.
 >
 > Les liens symboliques <https://www.it-connect.fr/creer-un-lien-symbolique-sous-linux/>
 > L'umask sous Linux <https://www.it-connect.fr/gestion-de-lumask-sous-linux/>
-> Install Arch sur Proxmox <https://thiagodsantos.com/arch-linux-installation-in-proxmox/>
-
+> Install Arch sur Proxmox <https://i12bretro.github.io/tutorials/0874.html> & <https://thiagodsantos.com/arch-linux-installation-in-proxmox/>
 
 [Retour en haut](#-table-des-matières)
