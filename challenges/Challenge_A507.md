@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge]()
+⌨️ Installer et configurer une machine Arch
 
 [Cours A507.](/RESUME.md#-a507)
 
