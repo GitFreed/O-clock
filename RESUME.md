@@ -2657,3 +2657,14 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### A508
+
+[Challenge A508](./challenges/Challenge_A508.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
