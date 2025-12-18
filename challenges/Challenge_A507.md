@@ -4,6 +4,8 @@
 
 ⌨️ Installer et configurer une machine Arch
 
+Installation Guide <https://wiki.archlinux.org/title/Installation_guide>
+
 [Cours A507.](/RESUME.md#-a507-arch-linux)
 
 ---
@@ -40,6 +42,10 @@ On ping pour voir si le net est OK
 
 ![ping](/images/2025-12-18-15-05-11.png)
 
+On vérifie l'horloge `timedatectl`
+
+![time](/images/2025-12-18-15-54-25.png)
+
 ## Partitions
 
 `cfdisk` > dos en BIOS
@@ -74,3 +80,51 @@ On monte la partition pour le système  ```mount /dev/sda2 /mnt```
 On vérifie avec `lsblk`
 
 ![lsblk](/images/2025-12-18-15-24-26.png)
+
+## Installation des packets essentiels
+
+On va installer la base : structure minimale, linux : le kernel, linux-firmware : les pilotes, nano : l'éditeur de txt, networkmanager pour garder internet après le reboot
+
+`pacstrap /mnt base linux linux-firmware nano networkmanager`
+
+## Fstab
+
+On va créer un fichier de configuration avec nos partitions
+
+`genfstab -U /mnt >> /mnt/etc/fstab`
+
+![fstab](/images/2025-12-18-15-55-49.png)
+
+## Chroot
+
+On va passer en root sur le système
+
+![chroot](/images/2025-12-18-15-56-51.png)
+
+## Fuseau horaire
+
+On va se mettre sur notre fuseau horaire en créant un lien symbolique
+
+`ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime` et on synchronise l'horloge matérielle `hwclock --systohc`
+
+## Localisation
+
+On va config la langue et le clavier pour qu'il reste après reboot
+
+`nano /etc/locale.gen`
+
+on enlève le # devant fr_FR
+
+![fr](/images/2025-12-18-16-03-42.png)
+
+On génère les locales `locale-gen` et on définit la langue puis le clavier
+
+![locale](/images/2025-12-18-16-05-35.png)
+
+## Réseau
+
+On nomme `echo "archlinux" > /etc/hostname`
+
+On active le gestionnaire réseau `systemctl enable NetworkManager`
+
+![net](/images/2025-12-18-16-08-39.png)
