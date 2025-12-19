@@ -117,3 +117,100 @@ On peut démarrer Asterisk maintenant
 `sudo asterisk -rvvv`
 
 ![asterisk](/images/2025-12-19-16-26-11.png)
+
+![status](/images/2025-12-19-17-51-34.png)
+
+## Fichiers de configuration
+
+On va configurer le fichiere `pjsip`
+
+```bash 
+cd /etc/asterisk/
+sudo mv pjsip.conf pjsip.conf.backup
+sudo nano /etc/asterisk/pjsip.conf
+```
+
+Transport : Crée un transport UDP qui écoute sur toutes les adresses IP (0.0.0.0)
+
+Endpoint 123 : Définit un téléphone numéro 123, qui utilise les codecs alaw et ulaw, et qui est placé dans le contexte lab
+
+Auth : Définit l'utilisateur 123 avec le mot de passe rocknroll
+
+```bash
+[simpletrans]
+type=transport
+protocol=udp
+bind=0.0.0.0
+
+[123]
+type=endpoint
+trust_id_outbound=yes
+caller_id=Caller ID<123>
+language=fr
+context=lab
+disallow=all
+allow=alaw
+allow=ulaw
+force_rport=no
+transport=simpletrans
+aors=123
+auth=auth123
+
+[123]
+type=aor
+max_contacts=1
+
+[auth123]
+type=auth
+auth_type=userpass
+password=rocknroll
+username=123
+EOF
+```
+
+On recharge la configuration `sudo asterisk -rx "pjsip reload"`
+
+![conf](/images/2025-12-19-18-20-37.png)
+
+Maintenant on va configurer le fichier extensions.conf pour avoir un dialplan
+
+```bash
+sudo mv extensions.conf extensions.conf.backup
+sudo nano /etc/asterisk/extensions.conf
+```
+
+Answer() : Asterisk décroche la ligne.
+
+Wait(2) : Il attend 2 secondes (pour être sûr que l'audio est bien établi).
+
+Playback(hello-world) : Il joue le son de test standard "Hello World".
+
+Hangup() : Il raccroche proprement.
+
+```bash
+[lab]
+exten => 123,1,Answer()
+exten => 123,2,Wait(2)
+exten => 123,3,Playback(hello-world)
+exten => 123,4,Hangup()
+```
+
+Pour valider les changements on recharge le plan de numérotation `sudo asterisk -rx "dialplan reload"`
+
+On va vérifier que Asterisk "écoute" bien le port 5060
+
+`sudo ss -anup | grep asterisk`
+
+![anup](/images/2025-12-19-18-43-54.png)
+
+C'est presque finit, on va aller dans la console (`sudo asterisk -rvvv`) pour demander à Asterisk d'afficher tous les messages réseaux (paquets SIP) qui entrent et sortent.
+
+`pjsip set logger on`
+
+![pjsip](/images/2025-12-19-18-45-42.png)
+
+## Connexion
+
+On va  télécharger et installer un Softphone : Zoiper <https://www.zoiper.com/en/voip-softphone/download/current>
+
+![zoiper](/images/2025-12-19-18-52-08.png)
