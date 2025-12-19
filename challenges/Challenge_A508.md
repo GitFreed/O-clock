@@ -65,3 +65,55 @@ On va ouvrir le menu `make menuselect` pour sélectionner les modules à install
 
 [*] Extras Sound Packages -> EXTRA-SOUNDS-FR-WAV
 
+Téléchargement du module mp3 `contrib/scripts/get_mp3_source.sh`
+
+Compilation `make`
+
+![make](/images/2025-12-19-15-35-39.png)
+
+Installation `make install`
+
+![makeinstall](/images/2025-12-19-15-40-15.png)
+
+On complète l'installation en ajoutant la documentation relative à Asterisk ainsi que les fichiers de configuration par défaut. `make samples`
+
+`make config` On crée les scripts pour que la commande systemctl fonctionne.
+
+`ldconfig` On met à jour les liens des librairies (la plomberie interne).
+
+## Sécuriser notre serveur
+
+Par sécurité on va créer un utilisateur système asterisk et son groupe, puis ajouter notre utilisateur dedans, et leur donner les droits pour ne pas avoir accès directement à root.
+
+```bash
+groupadd asterisk
+useradd -r -d /var/lib/asterisk -g asterisk asterisk
+# audio et dialout seulement si besoin de cartes physiques mais nécessite l'installation de DHADI
+usermod -aG audio,dialout asterisk 
+usermod -aG asterisk freed
+chown -R asterisk:asterisk /etc/asterisk /var/{lib,log,spool}/asterisk /usr/lib/asterisk
+chmod -R 775 /etc/asterisk /var/{lib,log,spool}/asterisk /usr/lib/asterisk
+```
+
+On doit maintenant configurer l'utilisateur dans Asterisk, et décommenter (enlever le ; devant runuser et rungroup)
+
+```bash
+sudo nano /etc/asterisk/asterisk.conf
+[options]
+runuser = asterisk
+rungroup = asterisk
+```
+
+## Démarrage
+
+Activer le démarrage automatique au boot du serveur
+
+`sudo systemctl enable asterisk`
+
+On peut démarrer Asterisk maintenant
+
+`sudo systemctl start asterisk`
+
+`sudo asterisk -rvvv`
+
+![asterisk](/images/2025-12-19-16-26-11.png)
