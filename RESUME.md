@@ -2671,7 +2671,9 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 > Code Chappe <https://fr.wikipedia.org/wiki/Code_Chappe>
 > Qu'est-ce que la VoIP <https://www.it-connect.fr/quest-ce-que-la-voip/>
 > Qu'est-ce qu'un PBX <https://www.cisco.com/c/fr_ca/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html>
-> Doc Asterisk <https://doc.ubuntu-fr.org/asterisk>
+> Installing Asterisk <https://docs.asterisk.org/Getting-Started/Installing-Asterisk/>
+> Ubuntu Asterisk <https://doc.ubuntu-fr.org/asterisk>
+> Debian Asterisk <https://doc.clementperrin.fr/application/asterisk/installation-asterisk-18-debian>
 
 [Retour en haut](#-table-des-matières)
 
