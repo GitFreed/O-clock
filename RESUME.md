@@ -2672,34 +2672,34 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 Avant la VoIP, la téléphonie reposait sur la **commutation de circuits** (une ligne physique est réservée entre deux interlocuteurs pendant toute la durée de l'appel).
 
 - **RTC (Réseau Téléphonique Commuté)** :
-- Aussi appelé **PSTN** (Public Switched Telephone Network).
-- C'est le réseau analogique historique (la prise en T murale).
-- *Technologie* : Commutation de circuits.
-- *Inconvénient* : Coûteux, peu flexible, une ligne = un appel.
+  - Aussi appelé **PSTN** (Public Switched Telephone Network).
+  - C'est le réseau analogique historique (la prise en T murale).
+  - *Technologie* : Commutation de circuits.
+  - *Inconvénient* : Coûteux, peu flexible, une ligne = un appel.
 
 - **RNIS (Réseau Numérique à Intégration de Services)** :
-- Aussi appelé **ISDN** (Integrated Services Digital Network) ou **Numéris** en France.
-- C'est une évolution du RTC permettant de transporter de la voix et des données en numérique sur les lignes téléphoniques classiques.
-- *Avantage* : Qualité supérieure, plusieurs appels simultanés sur une même ligne physique (canaux B).
+  - Aussi appelé **ISDN** (Integrated Services Digital Network) ou **Numéris** en France.
+  - C'est une évolution du RTC permettant de transporter de la voix et des données en numérique sur les lignes téléphoniques classiques.
+  - *Avantage* : Qualité supérieure, plusieurs appels simultanés sur une même ligne physique (canaux B).
 
 - **VoIP (Voice over IP)** :
-- C'est la technologie actuelle. La voix est numérisée, compressée et découpée en **paquets** de données (comme pour un email ou une page web).
-- Elle transite par le réseau Internet ou un réseau local (LAN).
-- *Avantages* : Réduction des coûts (pas de câblage téléphonique dédié), mobilité, intégration avec l'informatique.
+  - C'est la technologie actuelle. La voix est numérisée, compressée et découpée en **paquets** de données (comme pour un email ou une page web).
+  - Elle transite par le réseau Internet ou un réseau local (LAN).
+  - *Avantages* : Réduction des coûts (pas de câblage téléphonique dédié), mobilité, intégration avec l'informatique.
 
 #### 2. PABX vs IPBX
 
 C'est le cœur du système téléphonique d'une entreprise (le standard).
 
 - **PABX (Private Automatic Branch Exchange)** :
-- L'ancien standard téléphonique "physique".
-- Gère les lignes internes et l'accès au réseau public (RTC/RNIS).
-- Nécessite souvent un câblage téléphonique séparé du réseau informatique.
+  - L'ancien standard téléphonique "physique".
+  - Gère les lignes internes et l'accès au réseau public (RTC/RNIS).
+  - Nécessite souvent un câblage téléphonique séparé du réseau informatique.
 
 - **IPBX (Internet Protocol Private Branch Exchange)** :
-- C'est la version moderne, souvent logicielle (comme Asterisk).
-- Il gère les téléphones IP via le réseau informatique existant (câbles Ethernet RJ45).
-- Il offre des fonctionnalités avancées : messagerie unifiée, conférences, serveur vocal interactif (IVR) .
+  - C'est la version moderne, souvent logicielle (comme Asterisk).
+  - Il gère les téléphones IP via le réseau informatique existant (câbles Ethernet RJ45).
+  - Il offre des fonctionnalités avancées : messagerie unifiée, conférences, serveur vocal interactif (IVR) .
 
 #### 3. Les Protocoles VoIP
 
@@ -2735,10 +2735,10 @@ L'intelligence d'Asterisk réside dans son **Dialplan** (Plan de numérotation).
 - **Structure d'une règle (Dialplan)**  :
 Une règle se compose de 4 éléments :
 
-  1. **Contexte** (`[internal]`) : Groupe logique (ex: appels internes vs appels externes).
-  2. **Extension** (`100`) : Le numéro appelé.
-  3. **Priorité** (`1`, `2`, `n`) : L'ordre d'exécution des étapes.
-  4. **Application** (`Dial`, `Answer`) : L'action à effectuer.
+  - **Contexte** (`[internal]`) : Groupe logique (ex: appels internes vs appels externes).
+  - **Extension** (`100`) : Le numéro appelé.
+  - **Priorité** (`1`, `2`, `n`) : L'ordre d'exécution des étapes.
+  - **Application** (`Dial`, `Answer`) : L'action à effectuer.
 
 - **Exemple de syntaxe**  :
 
