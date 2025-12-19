@@ -229,3 +229,10 @@ Après un reboot voilà le résultat !
 Sur Kitty (terminal), fastfetch donne le Logo arch avec les infos machine. Avec un | lolcat tout passe rainbow (aïe)
 
 ![test](/images/2025-12-18-19-38-26.png)
+
+> 📚 **Ressources** :
+>
+> Install Arch <https://wiki.archlinux.org/title/Installation_guide>
+> Install sur Proxmox <https://www.youtube.com/watch?v=XlYL2JHgH6k>
+> ML4W Hyprland <https://www.ml4w.com/>
+> Jakoolit Hyprland <https://christitus.com/jakoolit-hyprland/>
