@@ -137,24 +137,19 @@ Endpoint 123 : Définit un téléphone numéro 123, qui utilise les codecs alaw 
 Auth : Définit l'utilisateur 123 avec le mot de passe rocknroll
 
 ```bash
-[simpletrans]
+[transport-udp]
 type=transport
 protocol=udp
 bind=0.0.0.0
 
 [123]
 type=endpoint
-trust_id_outbound=yes
-caller_id=Caller ID<123>
-language=fr
 context=lab
 disallow=all
-allow=alaw
-allow=ulaw
-force_rport=no
-transport=simpletrans
-aors=123
+allow=ulaw,alaw
 auth=auth123
+aors=123
+transport=transport-udp
 
 [123]
 type=aor
@@ -165,7 +160,6 @@ type=auth
 auth_type=userpass
 password=rocknroll
 username=123
-EOF
 ```
 
 On recharge la configuration `sudo asterisk -rx "pjsip reload"`
@@ -189,10 +183,10 @@ Hangup() : Il raccroche proprement.
 
 ```bash
 [lab]
-exten => 123,1,Answer()
-exten => 123,2,Wait(2)
-exten => 123,3,Playback(hello-world)
-exten => 123,4,Hangup()
+exten => 999,1,Answer()
+exten => 999,2,Wait(2)
+exten => 999,3,Playback(hello-world)
+exten => 999,4,Hangup()
 ```
 
 Pour valider les changements on recharge le plan de numérotation `sudo asterisk -rx "dialplan reload"`
@@ -214,3 +208,19 @@ C'est presque finit, on va aller dans la console (`sudo asterisk -rvvv`) pour de
 On va  télécharger et installer un Softphone : Zoiper <https://www.zoiper.com/en/voip-softphone/download/current>
 
 ![zoiper](/images/2025-12-19-18-52-08.png)
+
+On reçoit bien la demande côté serveur qui transmet sa réponse.
+
+![aste](/images/2025-12-19-19-10-18.png)
+
+On est bien connectés !
+
+![ok](/images/2025-12-19-19-19-31.png)
+
+On peut call le 999 pour test la réponse echo "Hello World"
+
+![test](/images/2025-12-19-19-34-00.png)
+
+et le log de l'appel
+
+![log](/images/2025-12-19-19-35-53.png)
