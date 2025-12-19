@@ -2662,7 +2662,113 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 
 ---
 
-### A508. VoIP, Asterisk
+### 📞 A508. Introduction à la VoIP et Asterisk
+
+> Ce cours marque la transition de la téléphonie traditionnelle vers la téléphonie moderne sur IP. Il aborde l'évolution des réseaux, les protocoles de communication et la mise en place d'un standard téléphonique logiciel (IPBX) avec Asterisk.
+
+#### 1. L'Évolution des Réseaux Téléphoniques
+
+Avant la VoIP, la téléphonie reposait sur la **commutation de circuits** (une ligne physique est réservée entre deux interlocuteurs pendant toute la durée de l'appel).
+
+- **RTC (Réseau Téléphonique Commuté)** :
+- Aussi appelé **PSTN** (Public Switched Telephone Network).
+- C'est le réseau analogique historique (la prise en T murale).
+- *Technologie* : Commutation de circuits.
+- *Inconvénient* : Coûteux, peu flexible, une ligne = un appel.
+
+- **RNIS (Réseau Numérique à Intégration de Services)** :
+- Aussi appelé **ISDN** (Integrated Services Digital Network) ou **Numéris** en France.
+- C'est une évolution du RTC permettant de transporter de la voix et des données en numérique sur les lignes téléphoniques classiques.
+- *Avantage* : Qualité supérieure, plusieurs appels simultanés sur une même ligne physique (canaux B).
+
+- **VoIP (Voice over IP)** :
+- C'est la technologie actuelle. La voix est numérisée, compressée et découpée en **paquets** de données (comme pour un email ou une page web).
+- Elle transite par le réseau Internet ou un réseau local (LAN).
+- *Avantages* : Réduction des coûts (pas de câblage téléphonique dédié), mobilité, intégration avec l'informatique.
+
+#### 2. PABX vs IPBX
+
+C'est le cœur du système téléphonique d'une entreprise (le standard).
+
+- **PABX (Private Automatic Branch Exchange)** :
+- L'ancien standard téléphonique "physique".
+- Gère les lignes internes et l'accès au réseau public (RTC/RNIS).
+- Nécessite souvent un câblage téléphonique séparé du réseau informatique.
+
+- **IPBX (Internet Protocol Private Branch Exchange)** :
+- C'est la version moderne, souvent logicielle (comme Asterisk).
+- Il gère les téléphones IP via le réseau informatique existant (câbles Ethernet RJ45).
+- Il offre des fonctionnalités avancées : messagerie unifiée, conférences, serveur vocal interactif (IVR) .
+
+#### 3. Les Protocoles VoIP
+
+Pour téléphoner sur Internet, on a besoin de deux choses : un protocole pour *établir* la connexion (signalisation) et un protocole pour *transporter* la voix.
+
+-
+
+**SIP (Session Initiation Protocol)**  :
+
+- C'est le standard mondial (RFC 3261) pour la **signalisation**.
+- **Rôle** : Il ne transporte pas la voix ! Il sert à **initier** (faire sonner), **modifier** (mettre en attente) et **terminer** (raccrocher) les sessions multimédia .
+
+- **Fonctionnement** : Architecture Client-Serveur (similaire au HTTP du web).
+
+- **Autres protocoles** :
+- **RTP** (Real-time Transport Protocol) : C'est lui qui transporte réellement la voix (le flux audio) une fois que SIP a établi la connexion.
+-
+
+**IAX** (Inter-Asterisk eXchange) : Protocole spécifique à Asterisk, plus efficace pour relier deux serveurs Asterisk entre eux.
+
+-
+
+**H.323** : Ancien standard, plus complexe, aujourd'hui supplanté par SIP.
+
+#### 4. Zoom sur Asterisk
+
+**Asterisk** est la solution de référence pour créer son propre IPBX.
+
+-
+
+**Définition** : C'est une plateforme Open Source (créée en 1999 par Mark Spencer) qui transforme un ordinateur en serveur de communication complet .
+
+-
+
+**Fonctionnalités** : Il agit comme un PBX, une passerelle VoIP, un serveur de conférence et un serveur vocal (IVR) .
+
+**Architecture et Dialplan**
+L'intelligence d'Asterisk réside dans son **Dialplan** (Plan de numérotation). C'est le cerveau qui décide "qui appelle qui" et "que faire quand ça sonne" .
+
+-
+
+**Fichier de configuration** : Le dialplan se configure dans le fichier `/etc/asterisk/extensions.conf`.
+
+-
+
+**Structure d'une règle (Dialplan)**  :
+Une règle se compose de 4 éléments :
+
+1. **Contexte** (`[internal]`) : Groupe logique (ex: appels internes vs appels externes).
+2. **Extension** (`100`) : Le numéro appelé.
+3. **Priorité** (`1`, `2`, `n`) : L'ordre d'exécution des étapes.
+4. **Application** (`Dial`, `Answer`) : L'action à effectuer.
+
+-
+
+**Exemple de syntaxe**  :
+
+```ini
+[internal]                ; Nom du contexte
+exten => 100,1,Answer()   ; Étape 1 : Si on appelle le 100, Asterisk décroche
+exten => 100,2,Playback(hello-world) ; Étape 2 : Il joue le son "hello-world"
+exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
+```
+
+-
+
+**Terminologie importante**
+
+- **Softphone** : Logiciel installé sur PC ou Smartphone qui simule un téléphone (ex: Zoiper, Linphone).
+- **Trunk SIP** : Le "tuyau" qui relie votre IPBX Asterisk au monde extérieur (via un opérateur VoIP) pour passer des appels sur les fixes/mobiles.
 
 [Challenge A508](./challenges/Challenge_A508.md)
 
