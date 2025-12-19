@@ -2705,68 +2705,51 @@ C'est le cœur du système téléphonique d'une entreprise (le standard).
 
 Pour téléphoner sur Internet, on a besoin de deux choses : un protocole pour *établir* la connexion (signalisation) et un protocole pour *transporter* la voix.
 
--
+- **SIP (Session Initiation Protocol)**  :
 
-**SIP (Session Initiation Protocol)**  :
+  - C'est le standard mondial (RFC 3261) pour la **signalisation**.
+  - **Rôle** : Il ne transporte pas la voix ! Il sert à **initier** (faire sonner), **modifier** (mettre en attente) et **terminer** (raccrocher) les sessions multimédia .
 
-- C'est le standard mondial (RFC 3261) pour la **signalisation**.
-- **Rôle** : Il ne transporte pas la voix ! Il sert à **initier** (faire sonner), **modifier** (mettre en attente) et **terminer** (raccrocher) les sessions multimédia .
-
-- **Fonctionnement** : Architecture Client-Serveur (similaire au HTTP du web).
+  - **Fonctionnement** : Architecture Client-Serveur (similaire au HTTP du web).
 
 - **Autres protocoles** :
-- **RTP** (Real-time Transport Protocol) : C'est lui qui transporte réellement la voix (le flux audio) une fois que SIP a établi la connexion.
--
+  - **RTP** (Real-time Transport Protocol) : C'est lui qui transporte réellement la voix (le flux audio) une fois que SIP a établi la connexion.
 
-**IAX** (Inter-Asterisk eXchange) : Protocole spécifique à Asterisk, plus efficace pour relier deux serveurs Asterisk entre eux.
+  - **IAX** (Inter-Asterisk eXchange) : Protocole spécifique à Asterisk, plus efficace pour relier deux serveurs Asterisk entre eux.
 
--
-
-**H.323** : Ancien standard, plus complexe, aujourd'hui supplanté par SIP.
+  - **H.323** : Ancien standard, plus complexe, aujourd'hui supplanté par SIP.
 
 #### 4. Zoom sur Asterisk
 
 **Asterisk** est la solution de référence pour créer son propre IPBX.
 
--
+- **Définition** : C'est une plateforme Open Source (créée en 1999 par Mark Spencer) qui transforme un ordinateur en serveur de communication complet .
 
-**Définition** : C'est une plateforme Open Source (créée en 1999 par Mark Spencer) qui transforme un ordinateur en serveur de communication complet .
-
--
-
-**Fonctionnalités** : Il agit comme un PBX, une passerelle VoIP, un serveur de conférence et un serveur vocal (IVR) .
+- **Fonctionnalités** : Il agit comme un PBX, une passerelle VoIP, un serveur de conférence et un serveur vocal (IVR) .
 
 **Architecture et Dialplan**
 L'intelligence d'Asterisk réside dans son **Dialplan** (Plan de numérotation). C'est le cerveau qui décide "qui appelle qui" et "que faire quand ça sonne" .
 
--
+- **Fichier de configuration** : Le dialplan se configure dans le fichier `/etc/asterisk/extensions.conf`.
 
-**Fichier de configuration** : Le dialplan se configure dans le fichier `/etc/asterisk/extensions.conf`.
-
--
-
-**Structure d'une règle (Dialplan)**  :
+- **Structure d'une règle (Dialplan)**  :
 Une règle se compose de 4 éléments :
 
-1. **Contexte** (`[internal]`) : Groupe logique (ex: appels internes vs appels externes).
-2. **Extension** (`100`) : Le numéro appelé.
-3. **Priorité** (`1`, `2`, `n`) : L'ordre d'exécution des étapes.
-4. **Application** (`Dial`, `Answer`) : L'action à effectuer.
+  1. **Contexte** (`[internal]`) : Groupe logique (ex: appels internes vs appels externes).
+  2. **Extension** (`100`) : Le numéro appelé.
+  3. **Priorité** (`1`, `2`, `n`) : L'ordre d'exécution des étapes.
+  4. **Application** (`Dial`, `Answer`) : L'action à effectuer.
 
--
+- **Exemple de syntaxe**  :
 
-**Exemple de syntaxe**  :
-
-```ini
+```ini TOML
 [internal]                ; Nom du contexte
 exten => 100,1,Answer()   ; Étape 1 : Si on appelle le 100, Asterisk décroche
 exten => 100,2,Playback(hello-world) ; Étape 2 : Il joue le son "hello-world"
 exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 ```
 
--
-
-**Terminologie importante**
+**Terminologie importante** :
 
 - **Softphone** : Logiciel installé sur PC ou Smartphone qui simule un téléphone (ex: Zoiper, Linphone).
 - **Trunk SIP** : Le "tuyau" qui relie votre IPBX Asterisk au monde extérieur (via un opérateur VoIP) pour passer des appels sur les fixes/mobiles.
