@@ -2613,9 +2613,9 @@ Arch Linux utilise un gestionnaire de paquets très rapide et une communauté im
 - C'est un dépôt communautaire contenant des scripts (`PKGBUILD`) qui téléchargent les sources et compilent le logiciel pour vous.
 - Pour l'utiliser facilement, on installe un **"AUR Helper"** comme `yay` ou `paru` (non installés par défaut).
 
-#### 3. Anatomie de l'Installation (Le Challenge)
+#### 3. Anatomie de l'Installation
 
-L'installation classique se fait en ligne de commande. Voici les étapes logiques que vous devrez reproduire pour le challenge :
+L'installation classique se fait en ligne de commande. Voici les étapes logiques :
 
 1. **Clavier & Réseau** : Mettre le clavier en FR (`loadkeys fr`) et vérifier la connexion internet (indispensable car l'installateur télécharge tout en direct).
 2. **Partitionnement** : Utiliser `cfdisk` ou `fdisk` pour créer les partitions (EFI, Root, Swap).
@@ -2662,12 +2662,16 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 
 ---
 
-### A508
+### A508. VoIP, Asterisk
 
 [Challenge A508](./challenges/Challenge_A508.md)
 
 > 📚 **Ressources** :
 >
+> Code Chappe <https://fr.wikipedia.org/wiki/Code_Chappe>
+> Qu'est-ce que la VoIP <https://www.it-connect.fr/quest-ce-que-la-voip/>
+> Qu'est-ce qu'un PBX <https://www.cisco.com/c/fr_ca/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html>
+> Doc Asterisk <https://doc.ubuntu-fr.org/asterisk>
 
 [Retour en haut](#-table-des-matières)
 
