@@ -2709,17 +2709,37 @@ Pour téléphoner sur Internet, on a besoin de deux choses : un protocole pour *
 
   - C'est le standard mondial (RFC 3261) pour la **signalisation**.
   - **Rôle** : Il ne transporte pas la voix ! Il sert à **initier** (faire sonner), **modifier** (mettre en attente) et **terminer** (raccrocher) les sessions multimédia .
-
   - **Fonctionnement** : Architecture Client-Serveur (similaire au HTTP du web).
 
 - **Autres protocoles** :
   - **RTP** (Real-time Transport Protocol) : C'est lui qui transporte réellement la voix (le flux audio) une fois que SIP a établi la connexion.
-
   - **IAX** (Inter-Asterisk eXchange) : Protocole spécifique à Asterisk, plus efficace pour relier deux serveurs Asterisk entre eux.
-
   - **H.323** : Ancien standard, plus complexe, aujourd'hui supplanté par SIP.
 
-#### 4. Zoom sur Asterisk
+#### 4. Architecture Technique et Qualité
+
+Pour qu'un appel VoIP fonctionne correctement, le protocole SIP ne suffit pas. Il faut une infrastructure matérielle et une gestion fine du réseau.
+
+- **Composants SIP** :
+  - **User Agent (UA)** : Le téléphone (physique ou logiciel) utilisé par le client.
+  - **Proxy SIP** : Serveur qui achemine les requêtes d'un utilisateur à l'autre (le "facteur").
+  - **Registrar** : Serveur de base de données qui note où se trouve chaque utilisateur (son adresse IP) quand il s'enregistre.
+  - **Gateway (Passerelle)** : L'équipement indispensable pour sortir vers le réseau classique (appeler un fixe ou un mobile via le RTC).
+
+- **Numérisation et Codecs** :
+  - Le **Codec** (Coder-Decoder) transforme la voix analogique en données numériques compressées.
+  - **G.711** : Qualité standard (HD), aucune compression, consomme **64 kbps**.
+  - **G.729** : Forte compression, qualité légèrement dégradée, idéal pour petits débits (**8 kbps**).
+
+- **Qualité de Service (QoS)** :
+  - La VoIP est du temps réel : on ne peut pas mettre la voix en "pause" le temps que le réseau charge. Il faut configurer la QoS sur les routeurs pour prioriser la voix sur les téléchargements.
+  - **Les 4 critères vitaux** :
+    - **Bande passante** : Le débit doit être suffisant.
+    - **Latence** : Le délai doit être faible (< 150ms) pour éviter l'effet "écho".
+    - **Gigue (Jitter)** : La variation du délai (le pire ennemi de la VoIP).
+    - **Perte de paquets** : Entraîne des coupures de son (hachures).
+
+#### 5. Zoom sur Asterisk
 
 **Asterisk** est la solution de référence pour créer son propre IPBX.
 
