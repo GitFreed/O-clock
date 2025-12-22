@@ -68,6 +68,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A506. Atelier SAMBA](#-a506-atelier-samba)
 - [A507. Arch Linux](#-a507-arch-linux)
 - [A508. Introduction à la VoIP et Asterisk](#-a508-introduction-à-la-voip-et-asterisk)
+- [A509. Atelier Asterisk](#️-a509-atelier-asterisk)
+- [Fin Saison A5 : QCM](#-fin-saison-a5-linux)
 
 ---
 
@@ -2574,12 +2576,6 @@ Pour surveiller les ressources et identifier le matériel.
 
 ---
 
-Voici un cours structuré pour la session **A507**, rédigé dans le même format que vos précédents résumés. Il est conçu pour vous donner le contexte théorique nécessaire avant d'attaquer le challenge d'installation.
-
-Les informations sont tirées principalement du **Wiki Arch Linux** (la "bible" de cette distribution) et de sources techniques fiables.
-
----
-
 ### 🐧 A507. Arch Linux
 
 > Ce cours introduit **Arch Linux**, une distribution indépendante connue pour sa philosophie minimaliste, son modèle de mise à jour continue (*Rolling Release*) et sa gestion de paquets communautaire (AUR). C'est le système idéal pour comprendre en profondeur le fonctionnement de Linux.
@@ -2789,7 +2785,9 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 
 ---
 
-### A509
+### ☎️ A509. Atelier Asterisk
+
+> IPBX Asterisk sur Debian 13
 
 [Challenge A509](./challenges/Challenge_A509.md)
 
@@ -2799,3 +2797,15 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🐧 Fin Saison A5. Linux
+
+[QCM Saison A5](https://forms.gle/)
+
+![Résultat QCM](/images/)
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+## **Saison A6. x**
