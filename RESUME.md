@@ -2809,4 +2809,19 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 
 ---
 
-## **Saison A6. x**
+## **💽 Saison A6. Virtualisation**
+
+>
+
+### 💽 A601. Introduction
+
+>
+
+[Challenge A601](./challenges/Challenge_A601.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
