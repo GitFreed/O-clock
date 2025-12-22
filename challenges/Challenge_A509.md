@@ -722,7 +722,7 @@ Bonjour ! Voici la procédure simple en 3 étapes pour vous connecter à notre s
 Pour accéder au serveur, vous devez d'abord activer la connexion privée.
 
 1. Téléchargez l'application **OpenVPN Connect** (disponible sur [App Store](https://apps.apple.com/fr/app/openvpn-connect/id590379981) ou [Google Play](https://play.google.com/store/apps/details?id=net.openvpn.openvpn)).
-2. Ouvrez le fichier de configuration **`[.ovpn](pfSense-UDP4-1194-guest-config.ovpn)`** que je vous ai transmis.
+2. Ouvrez le fichier de configuration **`.ovpn`** que je vous ai transmis. [.ovpn](pfSense-UDP4-1194-guest-config.ovpn)
 3. Choisissez "Ouvrir avec OpenVPN" (ou importez-le depuis l'application onglet *File*).
 4. Cliquez sur **ADD**, puis activez l'interrupteur pour vous connecter.
 
