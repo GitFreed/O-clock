@@ -725,6 +725,7 @@ Pour accéder au serveur, vous devez d'abord activer la connexion privée.
 2. Ouvrez le fichier de configuration **`.ovpn`** que je vous ai transmis. [.ovpn](pfSense-UDP4-1194-guest-config.ovpn)
 3. Choisissez "Ouvrir avec OpenVPN" (ou importez-le depuis l'application onglet *File*).
 4. Cliquez sur **ADD**, puis activez l'interrupteur pour vous connecter.
+5. Si besoin, User : Guest, Password : Rocknroll123
 
 * ✅ *Indicateur : L'écran doit passer au vert (Connected).*
 
