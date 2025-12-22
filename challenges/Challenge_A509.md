@@ -72,11 +72,97 @@ sudo apt update
 sudo apt install build-essential linux-headers-$(uname -r)
 ```
 
+### Dahdi
+
 Maintenant on va installer dahdi
 
 ```bash
 cd /usr/src/dahdi-linux-complete
 sudo make all
-sudo make install
-sudo make config
 ```
+
+Il faut installer les bibliothèques manquantes
+
+```bash
+sudo apt -y install gcc g++ automake autoconf libtool make libncurses5-dev flex bison patch linux-headers-$(uname -r) sqlite3 libsqlite3-dev
+sudo sudo apt -y install libusb-1.0-0-dev libglib2.0-dev
+```
+
+Maintenant on peut lancer `sudo make install``
+
+![install](/images/2025-12-22-12-19-09.png)
+
+Et `sudo make install-config`
+
+![OK](/images/2025-12-22-12-19-42.png)
+
+### Libpri
+
+On passe à Libpri
+
+```bash
+cd /ust/src/libpri
+make
+sudo make install
+```
+
+![ok](/images/2025-12-22-12-29-50.png)
+
+### Asterisk
+
+On va installer les dépendances pour Asterisk et vérifier avec le prerequis s'il en manque encore
+
+```bash
+cd ./asterisk
+sudo apt install -y build-essential git wget libssl-dev libxml2-dev \
+libncurses-dev libsqlite3-dev uuid-dev libjansson-dev libedit-dev \
+pkg-config curl subversion
+sudo contrib/scripts/install_prereq install
+```
+
+![ok](/images/2025-12-22-12-32-48.png)
+
+On peut lancer l'installation en le forçant a bien utiliser nos configurations précédentes
+
+`sudo ./configure --with-dahdi --with-pri --with-jansson`
+
+![ok](/images/2025-12-22-12-40-39.png)
+
+On va ajouter des modules nécessaires à notre installation
+
+`sudo make menuselect`
+
+[*] Add-ons -> format_mp3
+
+[*] Core Sound Packages -> CORE-SOUNDS-FR-WAV FR-ULAW FR-ALAW
+
+[*] Extras Sound Packages -> EXTRA-SOUNDS-FR-WAV FR-ULAW FR-ALAW
+
+[*] Music On Hold File Packages -> -WAV -ULAW -ALAW
+
+F12
+
+![menu](/images/2025-12-22-12-45-39.png)
+
+Téléchargement du module mp3 `sudo contrib/scripts/get_mp3_source.sh`
+
+Compilation `sudo make`
+
+![ok](/images/2025-12-22-12-55-50.png)
+
+Installation `sudo make install`
+
+![ok](/images/2025-12-22-12-56-48.png)
+
+On complète l'installation en ajoutant la documentation relative à Asterisk ainsi que les fichiers de configuration par défaut. `sudo make samples`
+
+`sudo make config` On crée les scripts pour que la commande systemctl fonctionne
+
+`sudo ldconfig` On met à jour les liens des librairies
+
+On vérifie avec `systemctl status asterisk`
+
+![ok](/images/2025-12-22-12-59-02.png)
+
+
+## Sécuriser notre serveur
