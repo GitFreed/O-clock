@@ -677,8 +677,38 @@ exten => i,1,Playback(invalid)
  same => n,Goto(1000,1)               ; On le renvoie au début du menu
 ```
 
-On reload `sudo asterisk -rx "dialplan reload"`
+On reload `sudo asterisk -rx "dialplan reload"` `sudo asterisk -rx "pjsip reload"`
 
 On peut test en utilisant le [fichier config openvpn](pfSense-UDP4-1194-guest-config.ovpn)
 
 Et depuis un softphone :  guest@10.0.0.61 psswd(welcome)
+
+Logs nouveau message menu-guest
+
+![log](/images/2025-12-22-19-12-44.png)
+
+En essayant de se connecter avec le nouveau guest, erreur 503
+
+![logs](/images/2025-12-22-19-24-31.png)
+
+On tente un reload pjsip puis avec `sudo asterisk -rx "pjsip show endpoints"`on vérifie nos endpoints
+
+![endpoints](/images/2025-12-22-19-24-59.png)
+
+On relance la connection depuis le softphone et c'est bon !
+
+On peut maintenant appeler en faisant le 1000.
+
+Option 1 revois sur la boite vocale(9999), logs :
+
+![logs](/images/2025-12-22-19-37-12.png)
+
+Je peux écouter le message laissé en appelant le 9999 depuis ma machine qui n'est pas Guest (pswwd 0000), logs :
+
+![logs](/images/2025-12-22-19-40-21.png)
+
+![repondeur9999](/images/2025-12-22-19-41-59.png)
+
+Option 2 renvois bien sur réunion(9000), logs :
+
+![9000](/images/2025-12-22-19-29-31.png)
