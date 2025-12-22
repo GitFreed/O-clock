@@ -712,3 +712,45 @@ Je peux écouter le message laissé en appelant le 9999 depuis ma machine qui n'
 Option 2 renvois bien sur réunion(9000), logs :
 
 ![9000](/images/2025-12-22-19-29-31.png)
+
+## 📞 Guide de Connexion : Accès au Serveur Vocal
+
+Bonjour ! Voici la procédure simple en 3 étapes pour vous connecter à notre serveur de téléphonie sécurisé depuis votre smartphone.
+
+### 1️⃣ Étape 1 : Le Tunnel Sécurisé (VPN)
+
+Pour accéder au serveur, vous devez d'abord activer la connexion privée.
+
+1. Téléchargez l'application **OpenVPN Connect** (disponible sur [App Store](https://apps.apple.com/fr/app/openvpn-connect/id590379981) ou [Google Play](https://play.google.com/store/apps/details?id=net.openvpn.openvpn)).
+2. Ouvrez le fichier de configuration **`[.ovpn](pfSense-UDP4-1194-guest-config.ovpn)`** que je vous ai transmis.
+3. Choisissez "Ouvrir avec OpenVPN" (ou importez-le depuis l'application onglet *File*).
+4. Cliquez sur **ADD**, puis activez l'interrupteur pour vous connecter.
+
+* ✅ *Indicateur : L'écran doit passer au vert (Connected).*
+
+### 2️⃣ Étape 2 : Le Téléphone (Zoiper)
+
+Une fois le VPN connecté, configurez votre ligne.
+
+1. Téléchargez l'application **Zoiper Lite** (gratuite).
+2. Ouvrez l'appli et allez dans **Paramètres** (Settings) > **Comptes** (Accounts).
+3. Cliquez sur le **+** et choisissez **"SIP Account"** (ou configuration manuelle).
+4. Remplissez **uniquement** ces 3 champs :
+
+* **Account Name :** `Guest`
+* **Host / Domain :** `10.0.0.61`
+* **Username :** `guest`
+* **Password :** `bienvenue`
+
+1. Validez (Register).
+
+* ✅ *Indicateur : Le compte doit afficher "Account is Ready" ou un point vert.*
+
+### 3️⃣ Étape 3 : Passez l'appel
+
+Tout est prêt. Depuis le clavier de Zoiper :
+
+* Composez le **`1000`** 📞
+* *Vous accéderez à notre menu interactif (laissez un message ou rejoignez la conférence).*
+
+*Note : Assurez-vous de laisser l'application OpenVPN active en arrière-plan pendant votre appel.*
