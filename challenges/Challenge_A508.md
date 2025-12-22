@@ -213,13 +213,9 @@ On reçoit bien la demande côté serveur qui transmet sa réponse.
 
 ![aste](/images/2025-12-19-19-10-18.png)
 
-On est bien connectés !
-
-![ok](/images/2025-12-19-19-19-31.png)
-
 On peut call le 999 pour test la réponse echo "Hello World"
 
-![test](/images/2025-12-19-19-34-00.png)
+![test](/images/2025-12-22-15-20-15.png)
 
 et le log de l'appel
 
