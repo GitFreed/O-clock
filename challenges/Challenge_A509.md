@@ -6,7 +6,11 @@
 
 Atelier Asterisk : <https://github.com/O-clock-Aldebaran/SA5-atelier-Asterisk>
 
-[Cours A508.](/RESUME.md#-a508)
+[Cours A508.](/RESUME.md#-a508-introduction-à-la-voip-et-asterisk)
+
+> 📚 **Ressources** :
+>
+> <https://berenger-benam.over-blog.com/2023/06/mise-en-place-de-la-telephonie-sur-ip-avec-asterisk-pjsip.html>
 
 ---
 
@@ -210,7 +214,7 @@ Activer le démarrage automatique au boot du serveur
 
 On va configurer le fichiere `pjsip`
 
-```bash 
+```bash
 cd /etc/asterisk/
 sudo mv pjsip.conf pjsip.conf.backup
 sudo nano /etc/asterisk/pjsip.conf
@@ -386,3 +390,295 @@ Test entre le téléphone et le macbook
 ![test](/images/2025-12-22-16-22-51.png)
 
 ![logs](/images/2025-12-22-16-25-15.png)
+
+## Configuration d'un serveur avec services interactifs
+
+### Messagerie Vocale (Voicemail)
+
+On va créer une boîte vocale pour chaque utilisateur.
+
+Dans le fichier /etc/asterisk/voicemail.conf tout à la fin (ctrl V plusieurs fois) on ajoute
+
+```bash
+[default]
+123 => 1234,Utilisateur Mac,root@localhost
+456 => 1234,Utilisateur Smartphone,root@localhost
+; Syntaxe : numero => mot_de_passe,Nom Complet,Email
+```
+
+Puis dans Fichier /etc/asterisk/extensions.conf on ajoute
+
+```bash
+[lab]
+; Si pas de réponse au bout de 10s, on va sur la messagerie
+exten => 123,1,Dial(PJSIP/123,10)
+ same => n,VoiceMail(123@default,u) ; u = unavailable
+ same => n,Hangup()
+
+exten => 456,1,Dial(PJSIP/456,10)
+ same => n,VoiceMail(456@default,u)
+ same => n,Hangup()
+
+; Consulter sa messagerie en composant le 888
+exten => 888,1,Answer()
+ same => n,VoiceMailMain(@default)
+ same => n,Hangup()
+ ```
+
+On reload no configurations avec
+
+```bash
+sudo asterisk -rx "voicemail reload"
+sudo asterisk -rx "dialplan reload"
+```
+
+Test d'appel du 456 sur le 123 en laissant un message, et rappel la messagerie au 888 pour l'écouter
+
+![messageok](/images/2025-12-22-17-28-40.png)
+
+Logs
+
+![logs](/images/2025-12-22-17-30-09.png)
+
+### Appels Vidéo
+
+Zoiper gratuit est limité donc test impossible.
+
+Dans le fichier /etc/asterisk/pjsip.conf on ajoute
+
+```bash
+; Tout au début du fichier
+[global]
+user_agent=Asterisk PBX
+
+; Dans les sections Endpoint [123] et [456]
+allow = h264,vp8      ; Ajoute les codecs vidéo
+support_video = yes   ; (Optionnel sur certaines versions, activé par défaut)
+```
+
+On reload `sudo asterisk -rx "pjsip reload"`
+
+### Interception d'appels (Call Pickup)
+
+Permet de composer un code (ex: *8) pour prendre l'appel qui sonne sur le téléphone du collègue.
+
+Dans le fichier /etc/asterisk/pjsip.conf on ajoute ces deux lignes dans les sections Endpoint [123] et [456] :
+
+```bash
+call_group = 1    ; Je fais partie du groupe 1
+pickup_group = 1  ; J'ai le droit d'intercepter le groupe 1
+```
+
+Dans le fichier /etc/asterisk/extensions.conf on ajoute le code dans [lab]
+
+```bash
+; Compose *8 pour intercepter un appel qui sonne
+exten => *8,1,Pickup(1@lab) ; Ou simplement Pickup()
+ same => n,Hangup()
+ ```
+
+On reload
+
+```bash
+sudo asterisk -rx "pjsip reload"
+sudo asterisk -rx "dialplan reload"
+```
+
+### Salle de Conférence
+
+On va utiliser le module moderne ConfBridge (remplaçant de MeetMe).
+
+Dans le fichier /etc/asterisk/confbridge.conf
+
+```bash
+[default_bridge]
+type=bridge
+max_members=10
+
+[default_user]
+type=user
+music_on_hold_when_empty=yes
+```
+
+Dans le fichier /etc/asterisk/extensions.conf Ajoute le numéro 9000 pour rejoindre la salle :
+
+```bash
+; Salle de conférence
+exten => 9000,1,Answer()
+ same => n,ConfBridge(1,default_bridge,default_user)
+ same => n,Hangup()
+```
+
+On reload
+
+```bash
+sudo asterisk -rx "module reload app_confbridge"
+sudo asterisk -rx "dialplan reload"`
+```
+
+On est bien acceuillis dans la conférence, musique de fond, qui se coupe lorsque l'autre utilisateur se connecte
+
+![conf](/images/2025-12-22-17-21-19.png)
+
+### Serveur Vocal Interactif (IVR)
+
+Le fameux "Tapez 1 pour..."
+
+Dans le fichier /etc/asterisk/extensions.conf on ajoute ce bloc pour le numéro 500 :
+
+```bash
+exten => 500,1,Answer()
+ same => n,Background(main-menu)       ; Joue "Tapez 1..." (fichier son par défaut)
+ same => n,WaitExten(5)                ; Attend 5 secondes que tu tapes un truc
+
+; Si on tape 1 -> Appelle le Mac
+exten => 1,1,Playback(you-entered)     ; Dit "Vous avez saisi..."
+ same => n,SayDigits(1)
+ same => n,Dial(PJSIP/123,20)
+
+; Si on tape 2 -> Salle de conf
+exten => 2,1,Goto(lab,9000,1)
+
+; Si on se trompe ou que ça time-out
+exten => i,1,Playback(invalid)
+exten => t,1,Playback(vm-goodbye)
+ same => n,Hangup()
+```
+
+On reload `sudo asterisk -rx "dialplan reload"`
+
+On peut tout reload d'Asterisk avec `sudo asterisk -rx "core reload"`
+
+En testant le serveur vocal interactif il n'y a pas de son et il raccroche, il faut donc analyser les logs
+
+![logs](/images/2025-12-22-17-35-23.png)
+
+Il essaie de jouer le fichier son "main-menu" (qui dirait par exemple "Bonjour, tapez 1 pour..."), mais ce fichier n'existe pas car nous ne l'avons pas créé
+
+On va ajouter ça dans extensions.conf (contexte [lab]) :
+
+```bash
+; --- Le Dictaphone ---
+; Appelle le 200, attends le BEEP, parle, et appuie sur # pour finir.
+exten => 200,1,Answer()
+ same => n,Wait(1)
+ same => n,Playback(beep)             ; Le signal pour commencer
+ same => n,Record(main-menu.wav)      ; Enregistre dans le fichier "main-menu.wav"
+ same => n,Wait(1)
+ same => n,Playback(main-menu)        ; Te fait réécouter pour confirmer
+ same => n,Hangup()
+```
+
+On peut appeler le 200 et au "BEEP" on dit "Bonjour, tapez 1 pour appeler le Mac, ou tapez 2 pour la conférence." et on appuie sur # (dièse) pour terminer
+
+On appele le 500 et maintenant on entend bien un message qui nous renvoie dans la salle de conférence enf aisant le 2 par exemple
+
+![500](/images/2025-12-22-17-44-41.png)
+
+## Rendre le serveur accessible par l'extérieur
+
+On va créer une config visiteur sur pfsense
+
+System > User Manager > Add
+
+On le paramètre (username, passwd, nom, not admin, créer un nouveau certificat)
+
+On va récupérer le fichier de config dans VPN > OpenVPN > Client Export > Guest > Inline config > Most clients
+
+![guest](/images/2025-12-22-18-03-26.png)
+
+On va maintenant créer un compte générique que tout le monde pourra utiliser une fois connecté au VPN. Dans le fichier : /etc/asterisk/pjsip.conf
+
+```bash
+; --- LE COMPTE VISITEUR (PUBLIC) ---
+[guest]
+type = endpoint
+context = public_lab       ; <--- IMPORTANT : On l'enferme dans une zone sécurisée
+disallow = all
+allow = alaw
+allow = ulaw
+auth = auth_guest
+aors = guest
+force_rport = yes
+rewrite_contact = yes
+
+[guest]
+type = aor
+max_contacts = 10          ; Jusqu'à 10 personnes peuvent se connecter en même temps
+
+[auth_guest]
+type = auth
+auth_type = userpass
+password = welcome       ; Mot de passe simple à donner
+username = guest
+```
+
+On reload `sudo nano /etc/asterisk/pjsip.conf`
+
+On rajoute une boite vocale dans /etc/asterisk/voicemail.conf
+
+```bash
+[default]
+; ... autres lignes
+9999 => 0000,Guest,root@localhost
+```
+
+On reload `sudo asterisk -rx "module reload app_confbridge"`
+
+Dans /etc/asterisk/extensions.conf, on va ajouter le contexte [public_lab] pour donner des droits au visiteur, joindre le 1000, un nouveau serveur vocal interactif. On va modifier notre dictaphonne pour enregistrer le message.
+
+Modifie juste temporairement ton extension 200 pour qu'elle enregistre sous le nom menu-guest au lieu de main-menu. (Dans extensions.conf, change Record(main-menu.wav) par Record(menu-guest.wav)).
+
+```bash
+[lab]
+
+; Ecouter la boite Guest
+exten => 9999,1,VoiceMailMain(9999@default)
+ same => n,Hangup()
+
+; --- Le Dictaphone ---
+; Appelle le 200, attends le BEEP, parle, et appuie sur # pour finir.
+exten => 200,1,Answer()
+ same => n,Wait(1)
+ same => n,Playback(beep)             ; Le signal pour commencer
+ same => n,Record(menu-guest.wav)      ; Enregistre dans le fichier "menu-guest.wav"
+ same => n,Wait(1)
+ same => n,Playback(menu-guest)        ; Fait réécouter pour confirmer
+ same => n,Hangup()
+
+[public_lab]
+; --- Zone Visiteur isolée ---
+; --- Standard Automatique Visiteur ---
+
+; Le numéro unique d'entrée (1000)
+exten => 1000,1,Answer()
+ same => n,Wait(1)
+ same => n,Background(menu-guest)     ; Joue le message "Tapez 1 ou 2..."
+ same => n,WaitExten(10)              ; Attend 10 secondes une réponse
+
+; --- Les Choix ---
+
+; Choix 1 : Boîte Vocale
+exten => 1,1,Playback(vm-intro)
+ same => n,VoiceMail(9999@default,s)
+ same => n,Hangup()
+
+; Choix 2 : Conférence
+exten => 2,1,Goto(lab,9000,1)
+
+; --- Gestion des erreurs ---
+
+; Si il ne tape rien (Timeout)
+exten => t,1,Playback(vm-goodbye)
+ same => n,Hangup()
+
+; Si il tape n'importe quoi (Invalid)
+exten => i,1,Playback(invalid)
+ same => n,Goto(1000,1)               ; On le renvoie au début du menu
+```
+
+On reload `sudo asterisk -rx "dialplan reload"`
+
+On peut test en utilisant le [fichier config openvpn](pfSense-UDP4-1194-guest-config.ovpn)
+
+Et depuis un softphone :  guest@10.0.0.61 psswd(welcome)
