@@ -2793,6 +2793,7 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 
 > 📚 **Ressources** :
 >
+> <https://berenger-benam.over-blog.com/2023/06/mise-en-place-de-la-telephonie-sur-ip-avec-asterisk-pjsip.html>
 
 [Retour en haut](#-table-des-matières)
 
