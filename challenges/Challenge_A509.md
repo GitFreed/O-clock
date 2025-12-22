@@ -740,7 +740,7 @@ Une fois le VPN connecté, configurez votre ligne.
 * **Account Name :** `Guest`
 * **Host / Domain :** `10.0.0.61`
 * **Username :** `guest`
-* **Password :** `bienvenue`
+* **Password :** `welcome`
 
 1. Validez (Register).
 
