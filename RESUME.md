@@ -2856,6 +2856,10 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
   - **Philosophie Unix** : "Faire une seule chose et la faire bien" + "Tout est fichier".
   - **Distributions** : Définies par leur **gestionnaire de paquets** (Debian=`apt` / RedHat=`rpm` / Arch=`pacman`).
 
+Le nombre de VM Linux sur Proxmox à la fin de la saison
+
+![VM](/images/2025-12-23-11-07-15.png)
+
 [Retour en haut](#-table-des-matières)
 
 ---
