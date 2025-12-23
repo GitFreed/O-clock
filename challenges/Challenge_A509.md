@@ -60,7 +60,7 @@ iface ens18 inet static
 
 On ne peut malheureusement pas installer Asterisk depuis les dépôts Debian car il n'est pas disponible sur notre version (Debian 13, Trixie). On va donc le compiler depuis le code source (ce qui nous permettra aussi d'avoir la toute dernière version disponible, 22.7).
 
-On intalle git et on télécharge dans le dossier usr/src le code source, et les 2 dépendances qu'on va devoir compiler au préalable : dahdi et libpri
+On installe git et on télécharge dans le dossier usr/src le code source, et les 2 dépendances qu'on va devoir compiler au préalable : dahdi et libpri
 
 ```bash
 sudo apt update
@@ -82,7 +82,7 @@ sudo apt install build-essential linux-headers-$(uname -r)
 
 ### Dahdi
 
-Maintenant on va installer dahdi
+Maintenant on va installer dahdi (qui sert normalement aux interfaces physiques d'un vrai serveur)
 
 ```bash
 cd /usr/src/dahdi-linux-complete
@@ -118,7 +118,7 @@ sudo make install
 
 ### Asterisk
 
-On va installer les dépendances pour Asterisk et vérifier avec le prerequis s'il en manque encore
+On va installer les dépendances pour Asterisk et vérifier avec les prérequis s'il en manque encore
 
 ```bash
 cd ./asterisk
@@ -130,7 +130,7 @@ sudo contrib/scripts/install_prereq install
 
 ![ok](/images/2025-12-22-12-32-48.png)
 
-On peut lancer l'installation en le forçant a bien utiliser nos configurations précédentes
+On peut lancer l'installation en le forçant à bien utiliser nos configurations précédentes
 
 `sudo ./configure --with-dahdi --with-pri --with-jansson`
 
@@ -193,8 +193,9 @@ chmod -R 775 /etc/asterisk /var/{lib,log,spool}/asterisk /usr/lib/asterisk
 
 On doit maintenant configurer l'utilisateur dans Asterisk, et décommenter (enlever le ; devant runuser et rungroup)
 
+`sudo nano /etc/asterisk/asterisk.conf`
+
 ```bash
-sudo nano /etc/asterisk/asterisk.conf
 [options]
 runuser = asterisk
 rungroup = asterisk
@@ -216,7 +217,7 @@ Activer le démarrage automatique au boot du serveur
 
 ### Fichiers de configuration
 
-On va configurer le fichiere `pjsip`
+On va backup puis configurer le fichier `pjsip`
 
 ```bash
 cd /etc/asterisk/
@@ -267,7 +268,7 @@ On recharge la configuration `sudo asterisk -rx "pjsip reload"`
 
 ![ok](/images/2025-12-22-14-30-44.png)
 
-Maintenant on va configurer le fichier extensions.conf pour avoir un dialplan
+Maintenant on va backup et configurer le fichier extensions.conf pour avoir un dialplan
 
 ```bash
 sudo mv extensions.conf extensions.conf.backup
@@ -286,7 +287,7 @@ exten => 999,1,Answer()
  same => n,Playback(hello-world) ; Joue le fichier son
  same => n,Hangup()
 
-; (Optionnel) Permet au 123 de s'appeler lui-même pour tester la sonnerie
+; Permet aux autres extensions de joindre l'utilisateur 123
 exten => 123,1,Dial(PJSIP/123)
 ```
 
@@ -342,7 +343,7 @@ et le log de l'appel avec la réponse Hello Word
 
 ## Client Smartphone
 
-Pour me connecter depuis mon smartphone je vais installer Openvpn pour me connecter à ma pfsense proxmox et l'appli Zoiper. On doit aussi activer la duplication de connection dans notre tunnel sur pfsense : VPN>OpenVPN>Servers>Edit
+Pour se connecter à notre serveur Aserisk sur Proxmox depuis un smartphone on va installer Openvpn pour se connecter à noter pfsense proxmox et l'appli Zoiper pour les appels. On doit aussi activer la duplication de connection dans notre tunnel sur pfsense : VPN>OpenVPN>Servers>Edit
 
 ![pfsense](/images/2025-12-22-16-13-05.png)
 
@@ -375,7 +376,7 @@ password = rocknroll
 username = 456
 ```
 
-Puis `sudo asterisk -rx "dialplan reload"`
+Puis reload `sudo asterisk -rx "dialplan reload"`
 
 Il faut également modifier le diaplan pour ajouter
 
@@ -429,7 +430,7 @@ exten => 888,1,Answer()
  same => n,Hangup()
  ```
 
-On reload no configurations avec
+On reload nos configurations avec
 
 ```bash
 sudo asterisk -rx "voicemail reload"
@@ -504,7 +505,7 @@ type=user
 music_on_hold_when_empty=yes
 ```
 
-Dans le fichier /etc/asterisk/extensions.conf Ajoute le numéro 9000 pour rejoindre la salle :
+Dans le fichier /etc/asterisk/extensions.conf on ajoute le numéro 9000 pour rejoindre la salle :
 
 ```bash
 ; Salle de conférence
@@ -579,7 +580,7 @@ On appele le 500 et maintenant on entend bien un message qui nous renvoie dans l
 
 ![500](/images/2025-12-22-17-44-41.png)
 
-## Rendre le serveur accessible par l'extérieur
+## Rendre le serveur accessible pour l'extérieur
 
 On va créer une config visiteur sur pfsense
 
@@ -613,7 +614,7 @@ max_contacts = 10          ; Jusqu'à 10 personnes peuvent se connecter en même
 [auth_guest]
 type = auth
 auth_type = userpass
-password = welcome       ; Mot de passe simple à donner
+password = welcome
 username = guest
 ```
 
@@ -695,7 +696,7 @@ En essayant de se connecter avec le nouveau guest, erreur 503
 
 ![logs](/images/2025-12-22-19-24-31.png)
 
-On tente un reload pjsip puis avec `sudo asterisk -rx "pjsip show endpoints"`on vérifie nos endpoints
+On tente un reload pjsip puis avec `sudo asterisk -rx "pjsip show endpoints"` on vérifie nos endpoints
 
 ![endpoints](/images/2025-12-22-19-24-59.png)
 
@@ -703,11 +704,11 @@ On relance la connection depuis le softphone et c'est bon !
 
 On peut maintenant appeler en faisant le 1000.
 
-Option 1 revois sur la boite vocale(9999), logs :
+Option 1 renvois sur la boite vocale(9999), logs :
 
 ![logs](/images/2025-12-22-19-37-12.png)
 
-Je peux écouter le message laissé en appelant le 9999 depuis ma machine qui n'est pas Guest (pswwd 0000), logs :
+Je peux écouter le message laissé en appelant le 9999 depuis la machine qui n'est pas Guest (pswwd 0000), logs :
 
 ![logs](/images/2025-12-22-19-40-21.png)
 
@@ -716,6 +717,8 @@ Je peux écouter le message laissé en appelant le 9999 depuis ma machine qui n'
 Option 2 renvois bien sur réunion(9000), logs :
 
 ![9000](/images/2025-12-22-19-29-31.png)
+
+Maintenant créons un petit guide pour des utilisateurs/clients :
 
 ## 📞 Guide de Connexion : Accès au Serveur Vocal
 
