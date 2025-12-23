@@ -14,9 +14,11 @@ Atelier Asterisk : <https://github.com/O-clock-Aldebaran/SA5-atelier-Asterisk>
 
 ---
 
-## 1. Install VM Debian 13
+## 1. Install VM Debian 13 sur Proxmox
 
 Voir Challenge d'hier sur [debian12](Challenge_A508.md)
+
+10 Go de Disque, 2go de RAM, Carte réseau Intel e1000e (vmbr2 chez moi), décocher firewall.
 
 ![debian13](/images/2025-12-22-10-09-44.png)
 

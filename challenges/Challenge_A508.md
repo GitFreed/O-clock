@@ -10,7 +10,7 @@ Installation Doc <https://docs.asterisk.org/Getting-Started/Installing-Asterisk/
 
 ---
 
-## Installation d'une VM Debian
+## Installation d'une VM Debian sur Proxmox
 
 Après l'install d'un Debian 12.8 sans interface graphique, on se connecte en SSH, on installe sudo, on passe notre utilisateur dans le groupe sudo, et on install le guest agent.
 
