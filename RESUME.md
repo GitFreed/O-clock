@@ -2828,11 +2828,11 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 - Administration & Système
 
 | Commande / Concept | Rôle | Détails importants |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | **`sudo`** | **Super-utilisateur** | Exécute une commande en tant qu'admin (root) |
 | **`chmod`** | Changer les **Permissions** | `chmod +x script.sh` (rend exécutable) |
 | **`chown`** | Changer le **Propriétaire** | `chown user:group fichier` |
-| **` | ` (Pipe)** | **Chaîner** deux commandes |
+| **`\|`** (Pipe) | **Chaîner** deux commandes | `ls \| grep "test"` (la sortie de l'un va dans l'autre) |
 | **`>`** | **Rediriger** vers un fichier | `echo "coucou" > fichier.txt` (écrase le contenu) |
 | **`apt`** | Gestionnaire de **Paquets** | Pour Debian/Ubuntu (`apt install vlc`) |
 
@@ -2849,12 +2849,12 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 
 - Culture Générale & Histoire
 
-- **Multics** (1964) : L'ancêtre complexe.
-- **Unix** (1969) : La version simplifiée (KISS), base de tout.
-- **GNU** (1983 - **R. Stallman**) : Le projet libre ("Free as in speech"), mais sans noyau.
-- **Linux** (1991 - **L. Torvalds**) : Le noyau qui a complété GNU.
-- **Philosophie Unix** : "Faire une seule chose et la faire bien" + "Tout est fichier".
-- **Distributions** : Définies par leur **gestionnaire de paquets** (Debian=`apt` / RedHat=`rpm` / Arch=`pacman`).
+  - **Multics** (1964) : L'ancêtre complexe.
+  - **Unix** (1969) : La version simplifiée (KISS), base de tout.
+  - **GNU** (1983 - **R. Stallman**) : Le projet libre ("Free as in speech"), mais sans noyau.
+  - **Linux** (1991 - **L. Torvalds**) : Le noyau qui a complété GNU.
+  - **Philosophie Unix** : "Faire une seule chose et la faire bien" + "Tout est fichier".
+  - **Distributions** : Définies par leur **gestionnaire de paquets** (Debian=`apt` / RedHat=`rpm` / Arch=`pacman`).
 
 [Retour en haut](#-table-des-matières)
 
