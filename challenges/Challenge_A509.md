@@ -16,6 +16,8 @@ Atelier Asterisk : <https://github.com/O-clock-Aldebaran/SA5-atelier-Asterisk>
 
 ## 1. Install VM Debian 13
 
+Voir Challenge d'hier sur [debian12](Challenge_A508.md)
+
 ![debian13](/images/2025-12-22-10-09-44.png)
 
 ## 2. Préparation du serveur : sudo, IP statique & SSH
