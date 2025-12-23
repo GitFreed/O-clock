@@ -2801,9 +2801,9 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 
 ### 🐧 Fin Saison A5. Linux
 
-[QCM Saison A5](https://forms.gle/)
+[QCM Saison A5](https://forms.gle/S27i3URSAbpBPg6T9)
 
-![Résultat QCM](/images/)
+![Résultat QCM](/images/2025-12-23-10-05-41.png)
 
 [Retour en haut](#-table-des-matières)
 
