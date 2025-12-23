@@ -58,7 +58,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A414. Azure](#️-a414-microsoft-azure)
 - [Fin Saison A4 : QCM](#-fin-saison-a4-windows-server)
 
-### [Saison A5. Linux 🐧](#saison-a5-linux-)
+### [Saison A5. Linux 🐧](#-saison-a5-linux)
 
 - [A501. Introduction](#️-a501-introduction-à-gnulinux)
 - [A502. Composants d'un système GNU/Linux](#-a502-composants-dun-système-gnulinux)
@@ -70,6 +70,10 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A508. Introduction à la VoIP et Asterisk](#-a508-introduction-à-la-voip-et-asterisk)
 - [A509. Atelier Asterisk](#️-a509-atelier-asterisk)
 - [Fin Saison A5 : QCM](#-fin-saison-a5-linux)
+
+### [Saison A6. Virtualisation](#-saison-a6-virtualisation)
+
+- [A601. Introduction](#-a601-introduction)
 
 ---
 
@@ -2804,6 +2808,53 @@ exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 [QCM Saison A5](https://forms.gle/S27i3URSAbpBPg6T9)
 
 ![Résultat QCM](/images/2025-12-23-10-05-41.png)
+
+- **🐧 Mémo Linux - L'essentiel à retenir**
+
+- Les Commandes de Survie (Navigation & Fichiers)
+
+| Commande | Action | Exemple / Option utile |
+| --- | --- | --- |
+| **`ls`** | **Lister** le contenu | `ls -l` (détails), `ls -a` (fichiers cachés) |
+| **`cd`** | **Changer** de dossier | `cd ..` (remonter), `cd ~` (aller à la maison) |
+| **`pwd`** | **Afficher** où on est | Affiche le chemin absolu actuel |
+| **`mkdir`** | **Créer** un dossier | `mkdir -p A/B` (crée tout le chemin) |
+| **`cp`** | **Copier** | `cp -r source/ dest/` (pour un dossier complet) |
+| **`mv`** | **Déplacer** ou **Renommer** | `mv ancien.txt nouveau.txt` |
+| **`rm`** | **Supprimer** | `rm -r dossier/` (supprime un dossier) |
+| **`cat`** | **Lire** tout le fichier | Affiche tout le texte d'un coup |
+| **`man`** | **Manuel** d'aide | `man ls` (pour quitter : touche `q`) |
+
+- Administration & Système
+
+| Commande / Concept | Rôle | Détails importants |
+| --- | --- | --- |
+| **`sudo`** | **Super-utilisateur** | Exécute une commande en tant qu'admin (root) |
+| **`chmod`** | Changer les **Permissions** | `chmod +x script.sh` (rend exécutable) |
+| **`chown`** | Changer le **Propriétaire** | `chown user:group fichier` |
+| **` | ` (Pipe)** | **Chaîner** deux commandes |
+| **`>`** | **Rediriger** vers un fichier | `echo "coucou" > fichier.txt` (écrase le contenu) |
+| **`apt`** | Gestionnaire de **Paquets** | Pour Debian/Ubuntu (`apt install vlc`) |
+
+- Les Dossiers Clés de l'Arborescence
+
+| Dossier | Contenu |
+| --- | --- |
+| **`/`** | La **Racine** (le début de tout) |
+| **`~`** | Le dossier **Home** de l'utilisateur (`/home/moi`) |
+| **`/etc`** | Les fichiers de **Configuration** système |
+| **`/bin`** | Les **Binaires** (programmes essentiels comme `ls`) |
+| **`/home`** | Les dossiers personnels des utilisateurs |
+| **`/tmp`** | Fichiers temporaires (vidé au redémarrage) |
+
+- Culture Générale & Histoire
+
+- **Multics** (1964) : L'ancêtre complexe.
+- **Unix** (1969) : La version simplifiée (KISS), base de tout.
+- **GNU** (1983 - **R. Stallman**) : Le projet libre ("Free as in speech"), mais sans noyau.
+- **Linux** (1991 - **L. Torvalds**) : Le noyau qui a complété GNU.
+- **Philosophie Unix** : "Faire une seule chose et la faire bien" + "Tout est fichier".
+- **Distributions** : Définies par leur **gestionnaire de paquets** (Debian=`apt` / RedHat=`rpm` / Arch=`pacman`).
 
 [Retour en haut](#-table-des-matières)
 
