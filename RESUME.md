@@ -71,9 +71,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A509. Atelier Asterisk](#️-a509-atelier-asterisk)
 - [Fin Saison A5 : QCM](#-fin-saison-a5-linux)
 
-### [Saison B1. Virtualisation](#-saison-b1-virtualisation)
+### [Saison B1. Virtualisation](#saison-b1-virtualisation)
 
-- [B101. Introduction](#-b101-introduction)
+- [B101. Introduction à la Virtualisation](#-b101-introduction-à-la-virtualisation)
 
 ---
 
@@ -2865,13 +2865,75 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 
 ---
 
-## **💽 Saison B1. Virtualisation**
+## **☁️ Saison B1. Virtualisation**
 
->
+> Cette saison introduit la Virtualisation, socle technologique indispensable au Cloud Computing et au DevOps. Elle se concentre sur la compréhension des hyperviseurs, l'optimisation des ressources matérielles et la gestion d'infrastructures virtuelles via les solutions standards comme VMware et Proxmox.
 
-### 💽 B101. Introduction
+### 💽 B101. Introduction à la Virtualisation
 
->
+> Ce cours introduit les concepts fondamentaux de la virtualisation, son histoire, et distingue les différents types d'hyperviseurs. Il présente également les deux outils qui seront utilisés durant la semaine : **VMware Workstation** et **Proxmox VE**.
+
+#### 1. Qu'est-ce que la Virtualisation ?
+
+- **Définition** : C'est une technologie permettant de créer des versions virtuelles de ressources informatiques (serveurs, stockage, réseaux) sur un matériel physique unique.
+- **Objectif** : Faire tourner plusieurs systèmes d'exploitation (OS) et applications sur un seul serveur physique, comme s'ils avaient chacun leur propre machine.
+- **Avantages clés** :
+- **Consolidation** : On passe de "1 serveur = 1 application" à "1 serveur = 10 VMs".
+- **Réduction des coûts** : Moins de matériel à acheter (CapEx) et moins d'électricité/clim à payer (OpEx).
+- **Flexibilité** : Déploiement rapide de nouveaux serveurs.
+- **Isolation** : Si une VM plante, les autres continuent de fonctionner.
+
+#### 2. L'Hyperviseur : La pièce maîtresse
+
+L'hyperviseur est le logiciel qui rend la virtualisation possible. Il s'intercale entre le matériel et les machines virtuelles pour distribuer les ressources (CPU, RAM, Disque). Il en existe deux familles distinctes :
+
+- **Type 1 : Bare Metal (Natif)**
+- **Installation** : S'installe **directement sur le matériel** (le serveur physique), à la place de l'OS.
+- **Usage** : Production, Data Centers, Entreprises.
+- **Avantages** : Performance maximale, sécurité accrue, accès direct au hardware.
+- *Exemples* : **VMware ESXi**, **Proxmox VE**, Microsoft Hyper-V, Xen.
+
+- **Type 2 : Hosted (Hébergé)**
+- **Installation** : S'installe **sur un système d'exploitation** existant (Windows, Linux, macOS), comme une application classique.
+- **Usage** : Tests, développement, pédagogie (ce que vous faites sur vos PC).
+- **Inconvénients** : Moins performant car il doit passer par l'OS hôte pour accéder au matériel.
+- *Exemples* : **VMware Workstation**, Oracle VirtualBox, Parallels.
+
+#### 3. Les outils de la semaine
+
+##### A. VMware Workstation (Hyperviseur Type 2)
+
+C'est la référence professionnelle pour la virtualisation de bureau.
+
+- **Fonctionnalités clés** :
+- **Snapshots** : Permet de "geler" l'état d'une VM à un instant T. Idéal avant de faire une manipulation risquée pour revenir en arrière en cas d'erreur.
+- **Clonage** : Dupliquer une VM rapidement (Clone complet ou Clone lié pour économiser de l'espace).
+
+- **Modes Réseau (Crucial pour les TPs)** :
+
+1. **Bridged (Pont)** : La VM est connectée directement au réseau physique. Elle reçoit une IP de votre box/routeur (ex: 192.168.1.x). Elle est vue comme une machine indépendante sur le réseau.
+2. **NAT (Network Address Translation)** : La VM partage l'IP de l'hôte. Elle a accès à Internet, mais elle est "cachée" derrière votre PC.
+3. **Host-Only** : Réseau privé et isolé entre l'hôte et la VM. Pas d'accès Internet, idéal pour des labos sécurisés.
+
+##### B. Proxmox VE (Hyperviseur Type 1)
+
+C'est une solution **Open Source** basée sur **Debian**, de plus en plus populaire en entreprise comme alternative à VMware ESXi (devenu très cher).
+
+- **Caractéristiques** :
+- **Gestion** : Tout se gère via une interface Web (GUI).
+- **Polyvalence** : Il gère à la fois :
+- **KVM (Kernel-based Virtual Machine)** : Virtualisation complète (pour Windows, Linux, etc.).
+- **LXC (Linux Containers)** : Conteneurs légers (partage le noyau de l'hôte), beaucoup plus rapides et économes en RAM.
+
+- **Fonctionnalités Enterprise** : Supporte la Haute Disponibilité (HA), le Clustering et les sauvegardes natives.
+
+#### 4. Autres types de virtualisation
+
+Outre la virtualisation de serveurs, le concept s'applique ailleurs :
+
+- **Réseau (SDN)** : Création de VLANs, switchs virtuels (ex: NSX).
+- **Stockage (SDS)** : Regrouper plusieurs disques physiques en un pool virtuel (ex: vSAN, Ceph).
+- **Poste de travail (VDI)** : L'utilisateur accède à son PC Windows à distance, l'OS tourne en réalité dans le datacenter.
 
 [Challenge B101](./challenges/Challenge_B101.md)
 
@@ -2880,6 +2942,17 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 > C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
 > Qu'est-ce qu'un Hyperviseur (Red hat) <https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor>
 > Proxmox <https://pve.proxmox.com/wiki/Main_Page>
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### B201
+
+[Challenge B201](./challenges/Challenge_B201.md)
+
+> 📚 **Ressources** :
 >
 
 [Retour en haut](#-table-des-matières)

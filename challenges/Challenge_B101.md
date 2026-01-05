@@ -6,7 +6,7 @@
 
 [Challenge](https://github.com/O-clock-Aldebaran/SB1E01-challenge-virtualisation)
 
-[Cours B101.](/RESUME.md#-b101-introduction)
+[Cours B101.](/RESUME.md#-b101-introduction-à-la-virtualisation)
 
 ---
 
