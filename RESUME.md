@@ -71,7 +71,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A509. Atelier Asterisk](#️-a509-atelier-asterisk)
 - [Fin Saison A5 : QCM](#-fin-saison-a5-linux)
 
-### [Saison B1. Virtualisation](#saison-b1-virtualisation)
+### [Saison B1. Virtualisation ☁️](#️-saison-b1-virtualisation)
 
 - [B101. Introduction à la Virtualisation](#-b101-introduction-à-la-virtualisation)
 
