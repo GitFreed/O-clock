@@ -2762,12 +2762,10 @@ Une règle se compose de 4 éléments :
 
 - **Exemple de syntaxe**  :
 
-``
-[internal]                ; Nom du contexte
-exten => 100,1,Answer()   ; Étape 1 : Si on appelle le 100, Asterisk décroche
-exten => 100,2,Playback(hello-world) ; Étape 2 : Il joue le son "hello-world"
-exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
-``
+    [internal]                ; Nom du contexte
+    exten => 100,1,Answer()   ; Étape 1 : Si on appelle le 100, Asterisk décroche
+    exten => 100,2,Playback(hello-world) ; Étape 2 : Il joue le son "hello-world"
+    exten => 100,3,Hangup()   ; Étape 3 : Il raccroche
 
 **Terminologie importante** :
 
@@ -2876,6 +2874,7 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 
 > 📚 **Ressources** :
 >
+> C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
 
 [Retour en haut](#-table-des-matières)
 
