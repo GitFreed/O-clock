@@ -55,4 +55,22 @@ On peut aussi se log en SSH via Powershell
 
 ## Installer un deuxième Proxmox dans une deuxième VM
 
+Même configuration, sauf hostname `pve2.local`
+
+![done](/images/2026-01-05-18-29-16.png)
+
+Sur l'interface via <https://192.168.1.82:8006/>
+
+![serveur](/images/2026-01-05-18-28-24.png)
+
 ---
+
+## Test entre les 2 serveurs
+
+On va ping d'un serveur sur l'autre voir s'ils sont accessibles
+
+![ping1](/images/2026-01-05-18-34-40.png)
+
+![ping2](/images/2026-01-05-18-34-51.png)
+
+C'est bon ^^
