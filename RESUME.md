@@ -2878,6 +2878,9 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 > 📚 **Ressources** :
 >
 > C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
+> Qu'est-ce qu'un Hyperviseur (Red hat) <https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor>
+> Proxmox <https://pve.proxmox.com/wiki/Main_Page>
+>
 
 [Retour en haut](#-table-des-matières)
 

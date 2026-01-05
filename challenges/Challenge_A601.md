@@ -2,11 +2,11 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge](/images/2026-01-05-15-19-43.png)
+![Challenge](/images/2026-01-05-16-48-38.png)
 
 [Challenge](https://github.com/O-clock-Aldebaran/SB1E01-challenge-virtualisation)
 
-[Cours A601.](/RESUME.md#-a502-composants-dun-système-gnulinux)
+[Cours A601.](/RESUME.md#-a601-introduction)
 
 ---
 
