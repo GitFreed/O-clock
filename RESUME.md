@@ -71,9 +71,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [A509. Atelier Asterisk](#️-a509-atelier-asterisk)
 - [Fin Saison A5 : QCM](#-fin-saison-a5-linux)
 
-### [Saison A6. Virtualisation](#-saison-a6-virtualisation)
+### [Saison B1. Virtualisation](#-saison-b1-virtualisation)
 
-- [A601. Introduction](#-a601-introduction)
+- [B101. Introduction](#-b101-introduction)
 
 ---
 
@@ -2865,15 +2865,15 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 
 ---
 
-## **💽 Saison A6. Virtualisation**
+## **💽 Saison B1. Virtualisation**
 
 >
 
-### 💽 A601. Introduction
+### 💽 B101. Introduction
 
 >
 
-[Challenge A601](./challenges/Challenge_A601.md)
+[Challenge B101](./challenges/Challenge_B101.md)
 
 > 📚 **Ressources** :
 >
