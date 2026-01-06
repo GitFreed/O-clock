@@ -74,6 +74,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison B1. Virtualisation ☁️](#️-saison-b1-virtualisation)
 
 - [B101. Introduction à la Virtualisation](#-b101-introduction-à-la-virtualisation)
+- [B102. Proxmox VE & Infrastructure Haute Disponibilité](#️-b102-proxmox-ve--infrastructure-haute-disponibilité)
 
 ---
 
@@ -3021,12 +3022,21 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
   - **Migration** = Je bouge ma VM (maintenance planifiée).
   - **HA** = Le cluster sauve ma VM (panne imprévue).
 
-[Challenge B201](./challenges/Challenge_B201.md)
+[Challenge B202](./challenges/Challenge_B202.md)
 
 > 📚 **Ressources** :
 >
 > Proxmox : configuration du quorum avec un cluster de 2 serveurs <https://rdr-it.com/proxmox-configuration-du-quorum-avec-un-cluster-de-2-serveurs/>
 > Community Scripts pour Proxmox VE <https://community-scripts.github.io/ProxmoxVE/scripts>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+[Challenge B203](./challenges/Challenge_B203.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
