@@ -2554,9 +2554,9 @@ Pour surveiller les ressources et identifier le matériel.
 
 > 📚 **Ressources** :
 >
-> GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
-> Apache config <https://glpi-install.readthedocs.io/en/latest/prerequisites.html#apache-configuration>
-> Apache Virtual Hosts <https://www.linuxtricks.fr/wiki/apache-les-virtual-hosts>
+> - GLPI 11 sur Debian 13 <https://www.it-connect.fr/installation-pas-a-pas-de-glpi-10-sur-debian-12/>
+> - Apache config <https://glpi-install.readthedocs.io/en/latest/prerequisites.html#apache-configuration>
+> - Apache Virtual Hosts <https://www.linuxtricks.fr/wiki/apache-les-virtual-hosts>
 
 [Retour en haut](#-table-des-matières)
 
@@ -2573,9 +2573,9 @@ Pour surveiller les ressources et identifier le matériel.
 
 > 📚 **Ressources** :
 >
-> Installer et configurer SAMBA <https://www.it-connect.fr/serveur-de-fichiers-debian-installer-et-configurer-samba-4/>
-> Lier un lecteur réseau avec une GPO <https://activedirectorypro.com/map-network-drives-with-group-policy/>
-> Samba et Systemd <https://wiki.samba.org/index.php/Managing_the_Samba_AD_DC_Service_Using_Systemd>
+> - Installer et configurer SAMBA <https://www.it-connect.fr/serveur-de-fichiers-debian-installer-et-configurer-samba-4/>
+> - Lier un lecteur réseau avec une GPO <https://activedirectorypro.com/map-network-drives-with-group-policy/>
+> - Samba et Systemd <https://wiki.samba.org/index.php/Managing_the_Samba_AD_DC_Service_Using_Systemd>
 
 [Retour en haut](#-table-des-matières)
 
@@ -2656,9 +2656,9 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 
 > 📚 **Ressources** :
 >
-> Les liens symboliques <https://www.it-connect.fr/creer-un-lien-symbolique-sous-linux/>
-> L'umask sous Linux <https://www.it-connect.fr/gestion-de-lumask-sous-linux/>
-> Install Arch <https://wiki.archlinux.org/title/Installation_guide>
+> - Les liens symboliques <https://www.it-connect.fr/creer-un-lien-symbolique-sous-linux/>
+> - L'umask sous Linux <https://www.it-connect.fr/gestion-de-lumask-sous-linux/>
+> - Install Arch <https://wiki.archlinux.org/title/Installation_guide>
 
 [Retour en haut](#-table-des-matières)
 
@@ -2780,12 +2780,12 @@ Une règle se compose de 4 éléments :
 
 > 📚 **Ressources** :
 >
-> Code Chappe <https://fr.wikipedia.org/wiki/Code_Chappe>
-> Qu'est-ce que la VoIP <https://www.it-connect.fr/quest-ce-que-la-voip/>
-> Qu'est-ce qu'un PBX <https://www.cisco.com/c/fr_ca/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html>
-> Installing Asterisk <https://docs.asterisk.org/Getting-Started/Installing-Asterisk/>
-> Ubuntu Asterisk <https://doc.ubuntu-fr.org/asterisk>
-> Debian Asterisk <https://doc.clementperrin.fr/application/asterisk/installation-asterisk-18-debian>
+> - Code Chappe <https://fr.wikipedia.org/wiki/Code_Chappe>
+> - Qu'est-ce que la VoIP <https://www.it-connect.fr/quest-ce-que-la-voip/>
+> - Qu'est-ce qu'un PBX <https://www.cisco.com/c/fr_ca/solutions/small-business/resource-center/collaboration/what-is-a-pbx.html>
+> - Installing Asterisk <https://docs.asterisk.org/Getting-Started/Installing-Asterisk/>
+> - Ubuntu Asterisk <https://doc.ubuntu-fr.org/asterisk>
+> - Debian Asterisk <https://doc.clementperrin.fr/application/asterisk/installation-asterisk-18-debian>
 
 [Retour en haut](#-table-des-matières)
 
@@ -2949,8 +2949,11 @@ Outre la virtualisation de serveurs, le concept s'applique ailleurs :
 > 📚 **Ressources** :
 >
 > C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
+>
 > Qu'est-ce qu'un Hyperviseur (Red hat) <https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor>
+>
 > Proxmox <https://pve.proxmox.com/wiki/Main_Page>
+>
 > VMware Workstation : comment virtualiser Proxmox VE <https://www.it-connect.fr/vmware-workstation-comment-virtualiser-proxmox-ve/>
 
 [Retour en haut](#-table-des-matières)
@@ -3028,6 +3031,7 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
 > 📚 **Ressources** :
 >
 > Proxmox : configuration du quorum avec un cluster de 2 serveurs <https://rdr-it.com/proxmox-configuration-du-quorum-avec-un-cluster-de-2-serveurs/>
+>
 > Community Scripts pour Proxmox VE <https://community-scripts.github.io/ProxmoxVE/scripts>
 
 [Retour en haut](#-table-des-matières)
