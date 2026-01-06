@@ -2933,7 +2933,7 @@ C'est une solution **Open Source** basée sur **Debian**, de plus en plus popula
     1. **KVM (Kernel-based Virtual Machine)** : Virtualisation complète (pour Windows, Linux, etc.).
     2. **LXC (Linux Containers)** : Conteneurs légers (partage le noyau de l'hôte), beaucoup plus rapides et économes en RAM.
 
-- **Fonctionnalités Enterprise** : Supporte la Haute Disponibilité (HA), le Clustering et les sauvegardes natives.
+  - **Fonctionnalités Enterprise** : Supporte la Haute Disponibilité (HA), le Clustering et les sauvegardes natives.
 
 #### 4. Autres types de virtualisation
 
@@ -2950,18 +2950,83 @@ Outre la virtualisation de serveurs, le concept s'applique ailleurs :
 > C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
 > Qu'est-ce qu'un Hyperviseur (Red hat) <https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor>
 > Proxmox <https://pve.proxmox.com/wiki/Main_Page>
->
+> VMware Workstation : comment virtualiser Proxmox VE <https://www.it-connect.fr/vmware-workstation-comment-virtualiser-proxmox-ve/>
 
 [Retour en haut](#-table-des-matières)
 
 ---
 
-### B201
+### ☁️ B102. Proxmox VE & Infrastructure Haute Disponibilité
+
+> Ce cours est purement pratique et se concentre sur l'administration d'un hyperviseur de Type 1 (**Proxmox VE**). L'objectif est de passer de la gestion d'un simple serveur à la gestion d'un **Cluster** de serveurs, capable d'assurer la continuité de service (HA) et la mobilité des machines (Migration).
+
+#### 1. Tour du Propriétaire : L'Interface Proxmox
+
+L'interface web de Proxmox est hiérarchique. Comprendre cette structure est essentiel pour savoir où appliquer les configurations.
+
+- **Le Datacenter** (Niveau Racine) :
+
+  - C'est le point d'entrée global. Les configurations faites ici (Stockage, Sauvegardes, Utilisateurs) peuvent s'appliquer à tous les nœuds.
+  - C'est ici qu'on visualise l'état de santé global du cluster (« Est-ce que tout est vert ? »).
+
+- **Les Nœuds (Nodes)** :
+
+  - Ce sont les serveurs physiques (vos machines *Bare-Metal*).
+  - Chaque nœud gère ses propres ressources locales (Disques, CPU, RAM, Réseau).
+  - On y crée et gère les **VMs** (Machines Virtuelles) et **CTs** (Conteneurs LXC).
+
+- **Gestion des Utilisateurs & Permissions** :
+
+  - La sécurité dans Proxmox repose sur plusieurs briques :
+  - **Realms (Domaines)** : La méthode d'authentification.
+  - *Linux PAM* : Utilise les comptes système de l'OS Debian sous-jacent (ex: `root`).
+  - *Proxmox VE (pve)* : Utilisateurs gérés uniquement par Proxmox, indépendants du système.
+  - **Rôles** : Des ensembles de privilèges prédéfinis (ex: `PVEAdmin` pour tout faire, `PVEVMUser` pour juste utiliser une VM).
+  - **Permissions** : L'association **Qui + Quoi + Où** (Utilisateur X a le Rôle Y sur la VM Z).
+
+#### 2. Le Clustering
+
+Un **Cluster** consiste à regrouper plusieurs serveurs physiques (nœuds) pour qu'ils fonctionnent comme une seule entité logique.
+
+- **Intérêt** : Administration centralisée (une seule interface web pour gérer 10 serveurs) et activation des fonctions avancées (Migration, HA).
+- **Quorum** : Concept vital. Pour qu'un cluster fonctionne (et puisse modifier des fichiers), la majorité des nœuds doit être en ligne (Vote > 50%).
+- *Exemple* : Sur un cluster de 3 nœuds, si 1 tombe, il en reste 2 (Majorité OK). Si 2 tombent, le dernier se met en sécurité (Read-only) pour éviter la corruption de données (*Split-brain*).
+
+#### 3. Fonctions Avancées (La "Magie" de la Virtualisation)
+
+C'est ici que la virtualisation prend tout son sens par rapport à des serveurs physiques classiques.
+
+- **La Migration (Live Migration)**
+
+  - **Le concept** : Déplacer une VM d'un nœud A vers un nœud B **sans éteindre la machine** et sans coupure de service pour l'utilisateur.
+  - **Comment ça marche ?** : La RAM de la VM est copiée à chaud via le réseau vers le nouveau serveur. Une fois la copie finie, la bascule se fait instantanément.
+  - **Prérequis** : Avoir un stockage partagé (NAS/SAN) ou utiliser la réplication de stockage.
+
+- **La Réplication (ZFS Replication)**
+
+  - **Le concept** : Copier régulièrement les données d'une VM d'un serveur vers un autre pour avoir une copie de secours prête à l'emploi.
+  - **Fonctionnement** : Utilise la puissance du système de fichiers **ZFS**. Il envoie uniquement les différences (delta) depuis la dernière synchronisation, ce qui est très rapide (possible toutes les minutes).
+  - **Usage** : Permet de migrer rapidement une VM même sans stockage partagé coûteux.
+
+- **La HA (High Availability / Haute Disponibilité)**
+
+  - **Le concept** : Le "Saint Graal" de l'infra. Si le serveur physique A tombe en panne (coupure élec, carte mère grillée), le cluster le détecte et **redémarre automatiquement** les VMs concernées sur le serveur B.
+  - **Downtime** : Il y a une petite coupure de service (le temps du redémarrage de l'OS de la VM), mais aucune intervention humaine n'est nécessaire à 3h du matin !
+  - **Fencing** : Mécanisme de sécurité pour s'assurer que le serveur en panne est bien "mort" (on lui coupe le courant via une prise connectée ou IPMI) avant de relancer ses VMs ailleurs, pour éviter que deux serveurs ne lancent la même VM en même temps (corruption de données).
+
+- 💡 En résumé
+
+  - **Hyperviseur Type 1** = Installé direct sur le métal (Proxmox, ESXi).
+  - **Cluster** = Plusieurs nœuds qui discutent ensemble.
+  - **Migration** = Je bouge ma VM (maintenance planifiée).
+  - **HA** = Le cluster sauve ma VM (panne imprévue).
 
 [Challenge B201](./challenges/Challenge_B201.md)
 
 > 📚 **Ressources** :
 >
+> Proxmox : configuration du quorum avec un cluster de 2 serveurs <https://rdr-it.com/proxmox-configuration-du-quorum-avec-un-cluster-de-2-serveurs/>
+> Community Scripts pour Proxmox VE <https://community-scripts.github.io/ProxmoxVE/scripts>
 
 [Retour en haut](#-table-des-matières)
 
