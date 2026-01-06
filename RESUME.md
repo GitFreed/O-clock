@@ -2978,10 +2978,11 @@ L'interface web de Proxmox est hiérarchique. Comprendre cette structure est ess
 
 - **Gestion des Utilisateurs & Permissions** :
 
-  - La sécurité dans Proxmox repose sur plusieurs briques :
+  La sécurité dans Proxmox repose sur plusieurs briques :
+
   - **Realms (Domaines)** : La méthode d'authentification.
-  - *Linux PAM* : Utilise les comptes système de l'OS Debian sous-jacent (ex: `root`).
-  - *Proxmox VE (pve)* : Utilisateurs gérés uniquement par Proxmox, indépendants du système.
+    - *Linux PAM* : Utilise les comptes système de l'OS Debian sous-jacent (ex: `root`).
+    - *Proxmox VE (pve)* : Utilisateurs gérés uniquement par Proxmox, indépendants du système.
   - **Rôles** : Des ensembles de privilèges prédéfinis (ex: `PVEAdmin` pour tout faire, `PVEVMUser` pour juste utiliser une VM).
   - **Permissions** : L'association **Qui + Quoi + Où** (Utilisateur X a le Rôle Y sur la VM Z).
 
@@ -2991,7 +2992,7 @@ Un **Cluster** consiste à regrouper plusieurs serveurs physiques (nœuds) pour 
 
 - **Intérêt** : Administration centralisée (une seule interface web pour gérer 10 serveurs) et activation des fonctions avancées (Migration, HA).
 - **Quorum** : Concept vital. Pour qu'un cluster fonctionne (et puisse modifier des fichiers), la majorité des nœuds doit être en ligne (Vote > 50%).
-- *Exemple* : Sur un cluster de 3 nœuds, si 1 tombe, il en reste 2 (Majorité OK). Si 2 tombent, le dernier se met en sécurité (Read-only) pour éviter la corruption de données (*Split-brain*).
+  - *Exemple* : Sur un cluster de 3 nœuds, si 1 tombe, il en reste 2 (Majorité OK). Si 2 tombent, le dernier se met en sécurité (Read-only) pour éviter la corruption de données (*Split-brain*).
 
 #### 3. Fonctions Avancées (La "Magie" de la Virtualisation)
 
