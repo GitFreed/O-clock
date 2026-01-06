@@ -2875,14 +2875,16 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 
 #### 1. Qu'est-ce que la Virtualisation ?
 
-- **Définition** : C'est une technologie permettant de créer des versions virtuelles de ressources informatiques (serveurs, stockage, réseaux) sur un matériel physique unique.
-- **Objectif** : Faire tourner plusieurs systèmes d'exploitation (OS) et applications sur un seul serveur physique, comme s'ils avaient chacun leur propre machine.
-- **Avantages clés** :
+**Définition** : C'est une technologie permettant de créer des versions virtuelles de ressources informatiques (serveurs, stockage, réseaux) sur un matériel physique unique.
 
- 1. **Consolidation** : On passe de "1 serveur = 1 application" à "1 serveur = 10 VMs".
- 2. **Réduction des coûts** : Moins de matériel à acheter (CapEx) et moins d'électricité/clim à payer (OpEx).
- 3. **Flexibilité** : Déploiement rapide de nouveaux serveurs.
- 4. **Isolation** : Si une VM plante, les autres continuent de fonctionner.
+**Objectif** : Faire tourner plusieurs systèmes d'exploitation (OS) et applications sur un seul serveur physique, comme s'ils avaient chacun leur propre machine.
+
+**Avantages clés** :
+
+- **Consolidation** : On passe de "1 serveur = 1 application" à "1 serveur = 10 VMs".
+- **Réduction des coûts** : Moins de matériel à acheter (CapEx) et moins d'électricité/clim à payer (OpEx).
+- **Flexibilité** : Déploiement rapide de nouveaux serveurs.
+- **Isolation** : Si une VM plante, les autres continuent de fonctionner.
 
 #### 2. L'Hyperviseur : La pièce maîtresse
 
@@ -2908,26 +2910,28 @@ L'hyperviseur est le logiciel qui rend la virtualisation possible. Il s'intercal
 
 C'est la référence professionnelle pour la virtualisation de bureau.
 
-- **Fonctionnalités clés** :
+**Fonctionnalités clés** :
 
- 1. **Snapshots** : Permet de "geler" l'état d'une VM à un instant T. Idéal avant de faire une manipulation risquée pour revenir en arrière en cas d'erreur.
- 2. **Clonage** : Dupliquer une VM rapidement (Clone complet ou Clone lié pour économiser de l'espace).
+- **Snapshots** : Permet de "geler" l'état d'une VM à un instant T. Idéal avant de faire une manipulation risquée pour revenir en arrière en cas d'erreur.
+- **Clonage** : Dupliquer une VM rapidement (Clone complet ou Clone lié pour économiser de l'espace).
 
-- **Modes Réseau (Crucial pour les TPs)** :
+**Modes Réseau (Crucial pour les TPs)** :
 
- 1. **Bridged (Pont)** : La VM est connectée directement au réseau physique. Elle reçoit une IP de votre box/routeur (ex: 192.168.1.x). Elle est vue comme une machine indépendante sur le réseau.
- 2. **NAT (Network Address Translation)** : La VM partage l'IP de l'hôte. Elle a accès à Internet, mais elle est "cachée" derrière votre PC.
- 3. **Host-Only** : Réseau privé et isolé entre l'hôte et la VM. Pas d'accès Internet, idéal pour des labos sécurisés.
+- **Bridged (Pont)** : La VM est connectée directement au réseau physique. Elle reçoit une IP de votre box/routeur (ex: 192.168.1.x). Elle est vue comme une machine indépendante sur le réseau.
+- **NAT (Network Address Translation)** : La VM partage l'IP de l'hôte. Elle a accès à Internet, mais elle est "cachée" derrière votre PC.
+- **Host-Only** : Réseau privé et isolé entre l'hôte et la VM. Pas d'accès Internet, idéal pour des labos sécurisés.
 
 ##### B. Proxmox VE (Hyperviseur Type 1)
 
 C'est une solution **Open Source** basée sur **Debian**, de plus en plus populaire en entreprise comme alternative à VMware ESXi (devenu très cher).
 
-- **Caractéristiques** :
-- - **Gestion** : Tout se gère via une interface Web (GUI).
-- - **Polyvalence** : Il gère à la fois :
-- - - **KVM (Kernel-based Virtual Machine)** : Virtualisation complète (pour Windows, Linux, etc.).
-- - - **LXC (Linux Containers)** : Conteneurs légers (partage le noyau de l'hôte), beaucoup plus rapides et économes en RAM.
+**Caractéristiques** :
+
+- **Gestion** : Tout se gère via une interface Web (GUI).
+- **Polyvalence** : Il gère à la fois :
+
+ 1. **KVM (Kernel-based Virtual Machine)** : Virtualisation complète (pour Windows, Linux, etc.).
+ 2. **LXC (Linux Containers)** : Conteneurs légers (partage le noyau de l'hôte), beaucoup plus rapides et économes en RAM.
 
 - **Fonctionnalités Enterprise** : Supporte la Haute Disponibilité (HA), le Clustering et les sauvegardes natives.
 
