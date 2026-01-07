@@ -6,7 +6,7 @@
 >
 > Installer vCenter
 
-[Cours B103.](/RESUME.md#️-b103)
+[Cours B103.](/RESUME.md#-b103-vmware-esxi--vcenter)
 
 ---
 
