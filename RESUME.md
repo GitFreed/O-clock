@@ -3095,6 +3095,7 @@ Pour ne pas confondre les deux :
 
 > 📚 **Ressources** :
 >
+> Installation vCenter <https://wiki.jovelinantoine.fr/Virtualisation/vcenter/installation>
 
 [Retour en haut](#-table-des-matières)
 
