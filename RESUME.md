@@ -3034,6 +3034,62 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
 
 ---
 
+### 🏢 B103. VMware ESXi & vCenter
+
+> Ce cours marque l'entrée dans l'écosystème **VMware**, le leader du marché de la virtualisation en entreprise. Après avoir vu Proxmox (Open Source), nous passons à la solution propriétaire standard : l'hyperviseur **ESXi** et son chef d'orchestre **vCenter**.
+
+#### 1. VMware ESXi : L'Hyperviseur (Le Moteur)
+
+**ESXi** est un hyperviseur de **Type 1** (Bare-Metal). C'est un système d'exploitation minimaliste conçu pour une seule chose : héberger des machines virtuelles de manière performante.
+
+- **Installation** :
+
+  - En entreprise, on l'installe directement sur le serveur physique (Dell, HP, etc.).
+  - **Virtualisation Imbriquée (Nested Virtualization)** : En TP, nous avons installé ESXi *à l'intérieur* d'une VM (sur Proxmox ou Workstation). C'est le concept "Inception" (une VM dans une VM). Cela permet de simuler un Datacenter complet sans avoir 10 serveurs physiques.
+
+- **Interface (Host Client)** :
+
+  - Une fois installé, ESXi se gère via une page web accessible sur son IP (https://IP_ESXi/ui).
+  - Cette interface permet de gérer **un seul** serveur à la fois (créer des VMs, voir les logs, configurer le réseau de base).
+
+#### 2. Les Datastores (Le Stockage)
+
+Pour qu'ESXi puisse créer des VMs, il lui faut de la place pour stocker les fichiers (disques virtuels `.vmdk`, fichiers de config `.vmx`, images ISO).
+
+- **Définition** : Un **Datastore** est un espace de stockage logique formaté pour VMware. C'est une abstraction : peu importe que le disque soit un SSD local, un NAS ou une baie SAN, ESXi le voit comme un "Datastore".
+
+- **Système de fichiers** : Le format propriétaire utilisé par VMware pour formater ces disques s'appelle **VMFS** (Virtual Machine File System). Il est conçu pour permettre à plusieurs serveurs d'écrire sur le même disque en même temps sans corruption.
+
+#### 3. VMware vCenter : La Gestion Centralisée
+
+Gérer 50 serveurs ESXi en se connectant à 50 pages web différentes est impossible. C'est là qu'intervient **vCenter**.
+
+- **Rôle** : C'est le point de contrôle unique. Il permet de :
+
+  - Rassembler tous les ESXi dans une seule interface.
+  - Créer des **Clusters** et activer les fonctions avancées (vMotion, HA, DRS) vues au cours B102.
+  - Gérer les permissions et les mises à jour globales.
+
+- **L'Appliance vCenter (vCSA)** :
+
+  - Avant, vCenter était un logiciel à installer sur Windows. Aujourd'hui, c'est une **Appliance**.
+  - **Définition d'une Appliance** : C'est une solution "clé en main". C'est un système pré-installé et pré-configuré (OS + Logiciel) fourni par l'éditeur (souvent sous forme de grosse VM).
+  - *Avantage* : On ne perd pas de temps à installer Linux/Windows, configurer la base de données, etc. On déploie l'appliance, on allume, et ça marche.
+  - *L'Appliance vCenter (vCSA)* est basée sur une distribution Linux (Photon OS) optimisée par VMware.
+
+> Une appliance informatique est un système logiciel et matériel intégré, préconfiguré pour une fonction spécifique (sauvegarde, sécurité, gestion de VMs ESXi,..)
+
+### 💡 Résumé : La différence ESXi vs vCenter
+
+Pour ne pas confondre les deux :
+
+| Composant | Rôle | Analogie |
+| --- | --- | --- |
+| **ESXi** | C'est l'ouvrier. Il fournit la puissance (CPU/RAM) et fait tourner les VMs. | Le moteur de la voiture. |
+| **vCenter** | C'est le manager. Il ne fait pas tourner de VM lui-même*, il donne les ordres aux ESXi. | Le conducteur (ou le GPS). |
+
+**Note : vCenter tourne lui-même dans une VM, mais sa fonction est de manager.*
+
 [Challenge B103](./challenges/Challenge_B103.md)
 
 > 📚 **Ressources** :
