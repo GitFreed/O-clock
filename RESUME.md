@@ -3023,7 +3023,7 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
   - **Migration** = Je bouge ma VM (maintenance planifiée).
   - **HA** = Le cluster sauve ma VM (panne imprévue).
 
-[Challenge B202](./challenges/Challenge_B202.md)
+[Challenge B102](./challenges/Challenge_B102.md)
 
 > 📚 **Ressources** :
 >
@@ -3034,7 +3034,7 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
 
 ---
 
-[Challenge B203](./challenges/Challenge_B203.md)
+[Challenge B103](./challenges/Challenge_B103.md)
 
 > 📚 **Ressources** :
 >
