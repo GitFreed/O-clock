@@ -64,6 +64,14 @@ Après reboot on arrive bien sur le DCUI (Direct Console User Interface)
 
 ![DCUI](/images/2026-01-07-00-23-44.png)
 
+On peut entrer dans la configuration réseau avec F2
+
+![log](/images/2026-01-07-11-11-38.png)
+
+On passe en IP Static
+
+![menu](/images/2026-01-07-11-12-47.png)
+
 On peut maintenant se connecter à l'interface via <https://192.168.1.66/> et on arrive sur notre fenêtre de log
 
 ![log](/images/2026-01-07-00-25-22.png)
