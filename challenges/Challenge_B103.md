@@ -108,7 +108,7 @@ On choisis Synchronize time with the ESXi host. Si l'heure du vCenter se décale
 
 Maintenant on va créer le domaine d'administration de VMware (Single Sign-On)
 
-On ne peut pas changer administrator, pour se connecter ce sera donc administrator@vsphere.local / password
+On ne peut pas changer administrator, pour se connecter ce sera donc <administrator@vsphere.local> / password
 
 ![SSO](/images/2026-01-07-16-37-33.png)
 
