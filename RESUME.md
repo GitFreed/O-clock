@@ -75,6 +75,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [B101. Introduction à la Virtualisation](#-b101-introduction-à-la-virtualisation)
 - [B102. Proxmox VE & Infrastructure Haute Disponibilité](#️-b102-proxmox-ve--infrastructure-haute-disponibilité)
+- [B103. VMware ESXi & vCenter](#-b103-vmware-esxi--vcenter)
 
 ---
 
