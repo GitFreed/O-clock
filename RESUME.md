@@ -3078,7 +3078,7 @@ Gérer 50 serveurs ESXi en se connectant à 50 pages web différentes est imposs
   - *Avantage* : On ne perd pas de temps à installer Linux/Windows, configurer la base de données, etc. On déploie l'appliance, on allume, et ça marche.
   - *L'Appliance vCenter (vCSA)* est basée sur une distribution Linux (Photon OS) optimisée par VMware.
 
-> Une appliance informatique est un système logiciel et matériel intégré, préconfiguré pour une fonction spécifique (sauvegarde, sécurité, gestion de VMs ESXi,..)
+> Une appliance est une solution informatique « clé en main » (matérielle ou virtuelle) livrée avec son logiciel déjà pré-installé et optimisé pour remplir une fonction unique immédiatement, sans nécessiter d'installation complexe (sauvegarde, sécurité, gestion de VMs ESXi,..).
 
 ### 💡 Résumé : La différence ESXi vs vCenter
 
@@ -3096,6 +3096,15 @@ Pour ne pas confondre les deux :
 > 📚 **Ressources** :
 >
 > Installation vCenter <https://wiki.jovelinantoine.fr/Virtualisation/vcenter/installation>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+[Challenge B104](./challenges/Challenge_B104.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
