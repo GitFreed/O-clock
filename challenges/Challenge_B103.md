@@ -18,7 +18,7 @@
 
   - vCenter :  C'est une machine virtuelle complète (basée sur Linux Photon OS) qui contient :
 
-      - Une énorme base de données (PostgreSQL) pour stocker l'historique de tout ce qui se passe. Des dizaines de services Java (très gourmands en RAM). Des outils d'analyse, de mise à jour, de sécurité, etc. C'est conçu pour gérer 2000 hôtes ESXi et 35 000 machines virtuelles. Du coup, même la version "Minuscule" (Tiny) garde cette architecture lourde.
+      Une énorme base de données (PostgreSQL) pour stocker l'historique de tout ce qui se passe. Des dizaines de services Java (très gourmands en RAM). Des outils d'analyse, de mise à jour, de sécurité, etc. C'est conçu pour gérer 2000 hôtes ESXi et 35 000 machines virtuelles. Du coup, même la version "Minuscule" (Tiny) garde cette architecture lourde.
 
   - Sans lui : Pas de déplacement de VM à chaud (vMotion), pas de redémarrage auto en cas de panne (HA).
 
