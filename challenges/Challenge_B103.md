@@ -121,3 +121,13 @@ Prêt
 ![stage 2](/images/2026-01-07-16-39-22.png)
 
 ![warn](/images/2026-01-07-16-40-47.png)
+
+Complete !
+
+![done](/images/2026-01-07-17-24-50.png)
+
+On peut maintenant se connecter à vSphere via l'interface web <https://10.0.0.70:443>
+
+![vsphere](/images/2026-01-07-17-26-06.png)
+
+![client](/images/2026-01-07-17-29-48.png)
