@@ -2948,13 +2948,10 @@ Outre la virtualisation de serveurs, le concept s'applique ailleurs :
 
 > 📚 **Ressources** :
 >
-> C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
->
-> Qu'est-ce qu'un Hyperviseur (Red hat) <https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor>
->
-> Proxmox <https://pve.proxmox.com/wiki/Main_Page>
->
-> VMware Workstation : comment virtualiser Proxmox VE <https://www.it-connect.fr/vmware-workstation-comment-virtualiser-proxmox-ve/>
+> - C'est quoi la virtualisation des réseaux ? <https://www.linkedin.com/pulse/cest-quoi-la-virtualisation-des-r%C3%A9seaux-academy-zegus/>
+> - Qu'est-ce qu'un Hyperviseur (Red hat) <https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor>
+> - Proxmox <https://pve.proxmox.com/wiki/Main_Page>
+> - VMware Workstation : comment virtualiser Proxmox VE <https://www.it-connect.fr/vmware-workstation-comment-virtualiser-proxmox-ve/>
 
 [Retour en haut](#-table-des-matières)
 
@@ -3030,9 +3027,8 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
 
 > 📚 **Ressources** :
 >
-> Proxmox : configuration du quorum avec un cluster de 2 serveurs <https://rdr-it.com/proxmox-configuration-du-quorum-avec-un-cluster-de-2-serveurs/>
->
-> Community Scripts pour Proxmox VE <https://community-scripts.github.io/ProxmoxVE/scripts>
+> - Proxmox : configuration du quorum avec un cluster de 2 serveurs <https://rdr-it.com/proxmox-configuration-du-quorum-avec-un-cluster-de-2-serveurs/>
+> - Community Scripts pour Proxmox VE <https://community-scripts.github.io/ProxmoxVE/scripts>
 
 [Retour en haut](#-table-des-matières)
 
