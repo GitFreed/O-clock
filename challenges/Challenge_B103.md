@@ -4,7 +4,7 @@
 
 >⌨️ Pitch de l'exercice :
 >
-> Installer vCenter
+> Installer vCenter et le configurer
 
 [Cours B103.](/RESUME.md#-b103-vmware-esxi--vcenter)
 
@@ -156,12 +156,7 @@ Tout en bas on a une barre des tâches (comme Proxmox) ou on peut voir les tâch
 
 ![tâches](/images/2026-01-08-11-48-36.png)
 
-Une fois terminé on a notre HCI (Hyper-Converged Infrastructure : Infrastructure Hyper-Convergée), qui permet de tout regrouper et gérer simultanément.
-
-Dans ton interface vCenter, l'HCI s'appelle vSAN (Virtual SAN).
-Imagine tu as 3 serveurs ESXi physiques, chacun avec 1 To de disque local.
-Sans HCI : Ces 1 To sont isolés. Si le serveur 1 meurt, ses données sont perdues pour les autres.
-Avec HCI (vSAN) : Le vCenter "tricote" les 3 disques ensemble pour créer un seul gros disque virtuel de 3 To visible par tout le monde.
+Une fois terminé on a notre **HCI** (Hyper-Converged Infrastructure : Infrastructure Hyper-Convergée), qui permet de tout regrouper et gérer simultanément.
 
 ![HCI](/images/2026-01-08-11-51-34.png)
 
@@ -169,10 +164,50 @@ On va faire de même pour l'autre serveur EXSi, avec les mêmes configurations.
 
 ![second hôte](/images/2026-01-08-12-02-06.png)
 
-*Petit bonus*, on peut se connecter depuis **VMware Workstation Pro** à notre serveur vSphere pour y avoir accès directement via Workstation, il suffit de faire Fichier : 
+- *Petit bonus*
+
+On peut se connecter depuis **VMware Workstation Pro** à notre serveur vSphere pour y avoir accès directement via Workstation, il suffit de faire Fichier :
 
 ![co](/images/2026-01-08-13-23-12.png)
 
-**Ajout d'un Cluster**
+![vmwarevsphere](/images/2026-01-08-13-57-34.png)
 
-![cluster](/images/2026-01-08-13-35-54.png)
+![vmwaredatacenter](/images/2026-01-08-13-57-51.png)
+
+- **Ajout d'un Cluster**
+
+On va créer un Cluster dans notre Datacenter
+
+![Cluster](/images/2026-01-08-13-35-54.png)
+
+DRS / HA
+
+Dans notre interface vCenter, l'HCI s'appelle vSAN (Virtual SAN) et permet de tout mutualiser.
+
+Si on avait 3 serveurs ESXi physiques, chacun avec 1 To de disque local :
+
+Sans HCI : Ces 1 To sont isolés. Si le serveur 1 meurt, ses données sont perdues pour les autres.
+
+Avec HCI (vSAN) : Le vCenter "tricote" les 3 disques ensemble pour créer un seul gros disque virtuel de 3 To visible par tout le monde.
+
+![Cluster](/images/2026-01-08-13-42-44.png)
+
+On sélectionne l'image et on termine la création du Cluster.
+
+![Done](/images/2026-01-08-13-46-59.png)
+
+On a maintenant un Cluster, on peut ajouter les hôtes avec clic droit ou en les faisant glisser directement, on nous propose 2 options, le pool racine ou tout est au même niveau (plus simple pour un petit lab) ou créer un pool pour garder une arborescence
+
+![déplacer](/images/2026-01-08-13-48-00.png)
+
+![Cluster](/images/2026-01-08-13-56-22.png)
+
+Les VM sont au même niveau mais on peut toujours voir quel est leur Hôte
+
+![hôte](/images/2026-01-08-14-01-06.png)
+
+Le Mode Maintenance
+
+On va activer le vMotion (fonctionnalité VMware) pour la Migration à chaud, ça va se passer au niveau des cartes réseau. On va créer un DS et un DSM qui vont gérer un réseau cluster
+
+![vMotion](/images/2026-01-08-14-02-17.png)
