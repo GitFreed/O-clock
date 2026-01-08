@@ -3101,6 +3101,8 @@ Pour ne pas confondre les deux :
 
 ---
 
+### B104
+
 2 interfaces :
 
 <https://10.0.0.70:5480/> > root > vCenter Server Management.
@@ -3109,10 +3111,14 @@ Pour ne pas confondre les deux :
 
 Datacenter > ajout hôte / cluster etc
 
+Un autre Hyperviseur XCP-ng / XEN orcherstra
+
 [Challenge B104](./challenges/Challenge_B104.md)
 
 > 📚 **Ressources** :
 >
+> - Création d’un Datacenter et ajout d'un ESXi hors cluster <https://wiki.jovelinantoine.fr/Virtualisation/vcenter/datacenter>
+> - Migration à chaud de VM avec vSPhere et le vMotion <https://www.it-connect.fr/migration-a-chaud-de-machines-virtuelles-avec-vmware-vsphere-et-le-vmotion%EF%BB%BF/>
 
 [Retour en haut](#-table-des-matières)
 

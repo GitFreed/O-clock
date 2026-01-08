@@ -174,21 +174,17 @@ On peut se connecter depuis **VMware Workstation Pro** à notre serveur vSphere 
 
 ![vmwaredatacenter](/images/2026-01-08-13-57-51.png)
 
-- **Ajout d'un Cluster**
+## Ajout d'un Cluster
 
 On va créer un Cluster dans notre Datacenter
 
 ![Cluster](/images/2026-01-08-13-35-54.png)
 
-DRS / HA
+- vSphere DRS (Distributed Resource Scheduler) : C'est l'équilibrage de charge automatique qui déplace vos VMs d'un serveur surchargé vers un serveur libre pour garantir les meilleures performances.
 
-Dans notre interface vCenter, l'HCI s'appelle vSAN (Virtual SAN) et permet de tout mutualiser.
+- vSphere HA (High Availability) : C'est la haute disponibilité qui redémarre automatiquement vos VMs sur un autre serveur survivant si leur serveur physique tombe en panne.
 
-Si on avait 3 serveurs ESXi physiques, chacun avec 1 To de disque local :
-
-Sans HCI : Ces 1 To sont isolés. Si le serveur 1 meurt, ses données sont perdues pour les autres.
-
-Avec HCI (vSAN) : Le vCenter "tricote" les 3 disques ensemble pour créer un seul gros disque virtuel de 3 To visible par tout le monde.
+- vSAN (Virtual Storage Area Network) : Combine automatiquement les disques locaux de chaque hôte ESXi pour créer un seul datastore partagé.
 
 ![Cluster](/images/2026-01-08-13-42-44.png)
 
@@ -211,3 +207,23 @@ Le Mode Maintenance
 On va activer le vMotion (fonctionnalité VMware) pour la Migration à chaud, ça va se passer au niveau des cartes réseau. On va créer un DS et un DSM qui vont gérer un réseau cluster
 
 ![vMotion](/images/2026-01-08-14-02-17.png)
+
+Trafic vMotion, on peut configurer/changer nos IP en statique etc mais on va laisser tel quel
+
+![trafic vmotion](/images/2026-01-08-14-17-04.png)
+
+terme Quorum est souvent utilisé un peu vite, mais il est fondamental pour la Haute Disponibilité (HA).
+
+![trafic](/images/2026-01-08-14-25-02.png)
+
+On finit la configuration et on peut terminer, en allant dans la configuration, on peut voir le commutateur virtuel (DSwitch)
+
+![DSwitch](/images/2026-01-08-14-29-41.png)
+
+![OK](/images/2026-01-08-15-03-15.png)
+
+## Migration à chaud
+
+![migrer](/images/2026-01-08-14-59-43.png)
+
+![ressource de calcul](/images/2026-01-08-15-01-25.png)
