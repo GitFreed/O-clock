@@ -81,7 +81,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B2. Sauvegarde 💾](#saison-b2-sauvegarde-)
 
-- [B101. Introduction à la Virtualisation](#-b201-introduction-à-la-sauvegarde)
+- [B201. Introduction à la Virtualisation](#-b201-introduction-à-la-sauvegarde)
 
 ---
 

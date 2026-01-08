@@ -238,6 +238,10 @@ On doit migrer la gestion réseau des VM et attribuer le port DSwitch-VM Network
 
 ![mise reseau VM](/images/2026-01-08-16-28-35.png)
 
+DSwitch Ok pour celui-ci également
+
+![OK](/images/2026-01-08-19-43-48.png)
+
 ![OK](/images/2026-01-08-15-03-15.png)
 
 - *Info*
@@ -246,6 +250,10 @@ Le vSwitch Distribué (DSwitch) est mieux pour la production, mais le vSwitch St
 
 ## Migration à chaud
 
-![migrer](/images/2026-01-08-14-59-43.png)
+On peut directement faire glisser une VM (ici Alpine du 10.0.0.63) sur l'autre Hyperviseur
 
-![ressource de calcul](/images/2026-01-08-15-01-25.png)
+![move](/images/2026-01-08-19-52-19.png)
+
+![migrer](/images/2026-01-08-19-50-03.png)
+
+![ressource de calcul](/images/2026-01-08-19-52-46.png)
