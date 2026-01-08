@@ -3166,7 +3166,7 @@ C'est ici que la "magie" opère. On regroupe plusieurs hôtes ESXi pour former u
 C'est une grappe de serveurs qui travaillent ensemble. vCenter voit le cluster comme un super-ordinateur unique qui additionne la puissance de tous les hôtes membres.
 
 - **vMotion (Migration à chaud)** :
-
+  
   - **Le concept** : Déplacer une VM en cours de fonctionnement d'un hôte physique A vers un hôte B **sans aucune coupure** pour l'utilisateur.
 
   - *Utilité* : Permet de vider un serveur physique pour faire sa maintenance (ajouter de la RAM, dépoussiérer) sans arrêter la production.

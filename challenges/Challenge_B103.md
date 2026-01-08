@@ -256,4 +256,26 @@ On peut directement faire glisser une VM (ici Alpine du 10.0.0.63) sur l'autre H
 
 ![migrer](/images/2026-01-08-19-50-03.png)
 
+On sélectionne l'hôte cible
+
 ![ressource de calcul](/images/2026-01-08-19-52-46.png)
+
+On choisi le stockage cible
+
+![stockage](/images/2026-01-08-20-27-53.png)
+
+On sélectionne l'adaptateur réseau
+
+![network](/images/2026-01-08-20-28-13.png)
+
+Sélectionner la priorité de vMotion
+
+![priorité](/images/2026-01-08-20-28-29.png)
+
+Terminer
+
+![fin](/images/2026-01-08-20-28-51.png)
+
+On peut voir que notre VM a bien été migrée sans interruption !
+
+![OK](/images/2026-01-08-20-29-48.png)
