@@ -3080,7 +3080,7 @@ Gérer 50 serveurs ESXi en se connectant à 50 pages web différentes est imposs
 
 > Une appliance est une solution informatique « clé en main » (matérielle ou virtuelle) livrée avec son logiciel déjà pré-installé et optimisé pour remplir une fonction unique immédiatement, sans nécessiter d'installation complexe (sauvegarde, sécurité, gestion de VMs ESXi,..).
 
-### 💡 Résumé : La différence ESXi vs vCenter
+#### 💡 Résumé : La différence ESXi vs vCenter
 
 Pour ne pas confondre les deux :
 
@@ -3101,24 +3101,134 @@ Pour ne pas confondre les deux :
 
 ---
 
-### B104
+### ☁️ B104. Opérations Avancées avec vCenter
 
-2 interfaces :
+> Ce cours explore la puissance de vCenter pour piloter un parc de serveurs ESXi. L'objectif est de passer d'une gestion manuelle à une gestion centralisée, mutualisée et flexible (Clusters, vMotion, vSAN).
 
-<https://10.0.0.70:5480/> > root > vCenter Server Management.
+Il est crucial de ne pas confondre les deux interfaces d'administration de l'appliance vCenter. Elles n'ont pas le même but ni les mêmes accès.
 
-<https://10.0.0.70:443/> > <administrator@vsphere.local> > vSphere Client.
+- **vCenter Server Management (VAMI)** :
+- **URL** : `https://IP_vCenter:5480`
+- **Login** : `root` (le compte système Linux).
+- **Rôle** : Sert à gérer l'appliance **en tant que machine** (Mises à jour du vCenter, état de santé système, sauvegarde de la config, redémarrage des services). Ce n'est pas ici qu'on gère les VMs.
 
-Datacenter > ajout hôte / cluster etc
+- **vSphere Client (HTML5)** :
+- **URL** : `https://IP_vCenter:443` (ou juste l'IP).
+- **Login** : `administrator@vsphere.local` (le compte admin SSO par défaut).
+- **Rôle** : C'est l'interface de travail quotidienne. C'est ici qu'on crée les clusters, déplace les VMs, configure le réseau, etc.
 
-Un autre Hyperviseur XCP-ng / XEN orcherstra
+#### 1. Gestion Centralisée des Hôtes
 
-[Challenge B104](./challenges/Challenge_B104.md)
+vCenter agit comme une tour de contrôle. Pour l'utiliser, il faut d'abord y connecter vos "ouvriers" (les ESXi).
+
+- **L'ajout d'hôtes** :
+
+Au lieu de se connecter sur chaque ESXi individuellement, on les "enrôle" dans vCenter.
+
+Cela permet de voir tout le parc (CPU total, RAM totale) dans une seule fenêtre.
+
+- **Les Images (Représentation des hôtes)** :
+
+Une fois ajoutés, vos serveurs ESXi apparaissent comme des objets gérés dans l'inventaire de vCenter.
+
+vCenter maintient une "image" de l'état de chaque hôte pour lui envoyer des commandes directement (redémarrage, configuration, mises à jour) sans que vous ayez à toucher à la console de l'hôte.
+
+#### 2. Manipulation des VMs
+
+vCenter facilite grandement les opérations courantes sur les machines virtuelles.
+
+- **Les Snapshots** :
+
+Comme vu sur Workstation, c'est une "photo" de la VM à un instant T.
+
+*Usage pro* : Indispensable avant une mise à jour critique d'une VM de production pour pouvoir revenir en arrière instantanément en cas de crash.
+
+- **Le Clonage** :
+
+Permet de dupliquer une VM existante à l'identique.
+
+*Template (Modèle)* : On transforme souvent une VM "parfaite" (OS installé + mises à jour) en **Template**. On ne peut plus la démarrer, mais on peut s'en servir pour déployer 50 nouveaux serveurs identiques en quelques clics.
+
+#### 3. Architecture & Haute Disponibilité (Clusters)
+
+C'est ici que la "magie" opère. On regroupe plusieurs hôtes ESXi pour former un **Cluster**.
+
+- **Le Cluster** :
+
+C'est une grappe de serveurs qui travaillent ensemble. vCenter voit le cluster comme un super-ordinateur unique qui additionne la puissance de tous les hôtes membres.
+
+- **vMotion (Migration à chaud)** :
+
+  - **Le concept** : Déplacer une VM en cours de fonctionnement d'un hôte physique A vers un hôte B **sans aucune coupure** pour l'utilisateur.
+
+  - *Utilité* : Permet de vider un serveur physique pour faire sa maintenance (ajouter de la RAM, dépoussiérer) sans arrêter la production.
+
+  - *Technique* : La mémoire RAM de la VM est copiée à la volée via le réseau.
+
+#### 4. Stockage et Réseau Virtuel
+
+Pour que vMotion et les Clusters fonctionnent, il faut que le stockage et le réseau soient partagés.
+
+- **vSAN (Virtual SAN)** :
+
+  - **Le concept** : Au lieu d'acheter une grosse baie de stockage externe coûteuse, vSAN utilise les disques durs locaux de chaque serveur ESXi.
+  - **Fonctionnement** : Il "colle" tous ces disques ensemble pour créer un énorme espace de stockage partagé virtuel visible par tout le cluster. Si un serveur tombe, les données sont accessibles via les autres (grâce à la réplication).
+
+- **vSwitch (Commutateur Virtuel)** :
+
+  - C'est l'équivalent logiciel d'un switch physique, situé à l'intérieur de l'ESXi.
+  - **Rôle** :
+
+    1. Connecter les VMs entre elles (réseau interne).
+    2. Connecter les VMs au monde extérieur (via les cartes réseau physiques de l'ESXi, appelées *Uplinks*).
+    3. Permettre à vCenter de communiquer avec l'hôte (Portgroup de gestion).
+
+#### 💡 En résumé
+
+- **Cluster** = Plusieurs ESXi qui font équipe.
+- **vMotion** = Je déplace ma VM sans l'éteindre.
+- **vSAN** = Je transforme mes disques locaux en stockage partagé.
+- **vSwitch** = Je câble mes VMs virtuellement.
+
+#### 🔄 L'Alternative Open Source : XCP-ng
+
+Bien que VMware soit le leader, il existe des alternatives puissantes et libres abordées rapidement :
+
+- **XCP-ng** : Un hyperviseur de Type 1 Open Source (basé sur Xen), alternative directe à ESXi.
+- **Xen Orchestra** : L'interface de gestion web centralisée pour XCP-ng, équivalent libre de vCenter.
+- *Intérêt* : Très populaire pour s'affranchir des coûts de licence VMware (surtout depuis le rachat par Broadcom).
+
+[Challenge B103](./challenges/Challenge_B103.md)
 
 > 📚 **Ressources** :
 >
 > - Création d’un Datacenter et ajout d'un ESXi hors cluster <https://wiki.jovelinantoine.fr/Virtualisation/vcenter/datacenter>
 > - Migration à chaud de VM avec vSPhere et le vMotion <https://www.it-connect.fr/migration-a-chaud-de-machines-virtuelles-avec-vmware-vsphere-et-le-vmotion%EF%BB%BF/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### ☁️ Fin Saison B1. Virtualisation
+
+[QCM Saison B1](https://forms.gle/)
+
+![Résultat QCM](/images/)
+
+---
+
+## **💾 Saison B2. Sauvegarde**
+
+>
+
+### 💾 B201. Introduction à la Sauvegarde
+
+>
+
+[Challenge B201](./challenges/Challenge_B201.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
