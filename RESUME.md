@@ -3101,6 +3101,14 @@ Pour ne pas confondre les deux :
 
 ---
 
+2 interfaces :
+
+<https://10.0.0.70:5480/> > root > vCenter Server Management.
+
+<https://10.0.0.70:443/> > <administrator@vsphere.local> > vSphere Client.
+
+Datacenter > ajout hôte / cluster etc
+
 [Challenge B104](./challenges/Challenge_B104.md)
 
 > 📚 **Ressources** :
