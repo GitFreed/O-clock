@@ -170,9 +170,11 @@ On peut se connecter depuis **VMware Workstation Pro** à notre serveur vSphere 
 
 ![co](/images/2026-01-08-13-23-12.png)
 
-![vmwarevsphere](/images/2026-01-08-13-57-34.png)
+![vmwarevsphere](/images/2026-01-08-16-02-26.png)
 
-![vmwaredatacenter](/images/2026-01-08-13-57-51.png)
+- *Autre bonus*
+
+On peut également migrer (à froid) nos VM entre les 2 serveurs EXSi sans créer de Cluster dans vSphere.
 
 ## Ajout d'un Cluster
 
@@ -219,6 +221,22 @@ terme Quorum est souvent utilisé un peu vite, mais il est fondamental pour la H
 On finit la configuration et on peut terminer, en allant dans la configuration, on peut voir le commutateur virtuel (DSwitch)
 
 ![DSwitch](/images/2026-01-08-14-29-41.png)
+
+Maintenant que le DSwitch est créé il faut ajouter notre second EXSi dessus, dans la partie réseau, clic droit sur DSwitch et Ajouter-gérer des hôtes
+
+![DSwitch](/images/2026-01-08-16-04-31.png)
+
+![Ajout](/images/2026-01-08-16-05-28.png)
+
+Pour l'adaptateur réseau physique, on choisir le même uplink que l'autre serveur (uplink1)
+
+Maintenant on doit assigner l'adaptateur  réseau VMkernel à un groupe de ports (le DSwitch-Management Network)
+
+![vmk0](/images/2026-01-08-16-21-26.png)
+
+On doit migrer la gestion réseau des VM et attribuer le port DSwitch-VM Network
+
+![mise reseau VM](/images/2026-01-08-16-28-35.png)
 
 ![OK](/images/2026-01-08-15-03-15.png)
 
