@@ -76,6 +76,12 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B101. Introduction à la Virtualisation](#-b101-introduction-à-la-virtualisation)
 - [B102. Proxmox VE & Infrastructure Haute Disponibilité](#️-b102-proxmox-ve--infrastructure-haute-disponibilité)
 - [B103. VMware ESXi & vCenter](#-b103-vmware-esxi--vcenter)
+- [B104. Opérations Avancées avec vCenter](#️-b104-opérations-avancées-avec-vcenter-et-vsphere)
+- [Fin Saison B1 : QCM](#️-fin-saison-b1-virtualisation)
+
+### [Saison B2. Sauvegarde 💾](#saison-b2-sauvegarde-)
+
+- [B101. Introduction à la Virtualisation](#-b201-introduction-à-la-sauvegarde)
 
 ---
 
@@ -3101,21 +3107,23 @@ Pour ne pas confondre les deux :
 
 ---
 
-### ☁️ B104. Opérations Avancées avec vCenter
+### ☁️ B104. Opérations Avancées avec vCenter et vSphere
 
 > Ce cours explore la puissance de vCenter pour piloter un parc de serveurs ESXi. L'objectif est de passer d'une gestion manuelle à une gestion centralisée, mutualisée et flexible (Clusters, vMotion, vSAN).
 
 Il est crucial de ne pas confondre les deux interfaces d'administration de l'appliance vCenter. Elles n'ont pas le même but ni les mêmes accès.
 
 - **vCenter Server Management (VAMI)** :
-- **URL** : `https://IP_vCenter:5480`
-- **Login** : `root` (le compte système Linux).
-- **Rôle** : Sert à gérer l'appliance **en tant que machine** (Mises à jour du vCenter, état de santé système, sauvegarde de la config, redémarrage des services). Ce n'est pas ici qu'on gère les VMs.
+
+  - **URL** : `https://IP_vCenter:5480`
+  - **Login** : `root` (le compte système Linux).
+  - **Rôle** : Sert à gérer l'appliance **en tant que machine** (Mises à jour du vCenter, état de santé système, sauvegarde de la config, redémarrage des services). Ce n'est pas ici qu'on gère les VMs.
 
 - **vSphere Client (HTML5)** :
-- **URL** : `https://IP_vCenter:443` (ou juste l'IP).
-- **Login** : `administrator@vsphere.local` (le compte admin SSO par défaut).
-- **Rôle** : C'est l'interface de travail quotidienne. C'est ici qu'on crée les clusters, déplace les VMs, configure le réseau, etc.
+
+  - **URL** : `https://IP_vCenter:443` (ou juste l'IP).
+  - **Login** : `administrator@vsphere.local` (le compte admin SSO par défaut).
+  - **Rôle** : C'est l'interface de travail quotidienne. C'est ici qu'on crée les clusters, déplace les VMs, configure le réseau, etc.
 
 #### 1. Gestion Centralisée des Hôtes
 
