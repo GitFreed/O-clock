@@ -172,7 +172,7 @@ On peut se connecter depuis **VMware Workstation Pro** à notre serveur vSphere 
 
 ![vmwarevsphere](/images/2026-01-08-16-02-26.png)
 
-- *Autre bonus*
+- *Info*
 
 On peut également migrer (à froid) nos VM entre les 2 serveurs EXSi sans créer de Cluster dans vSphere.
 
@@ -239,6 +239,10 @@ On doit migrer la gestion réseau des VM et attribuer le port DSwitch-VM Network
 ![mise reseau VM](/images/2026-01-08-16-28-35.png)
 
 ![OK](/images/2026-01-08-15-03-15.png)
+
+- *Info*
+
+Le vSwitch Distribué (DSwitch) est mieux pour la production, mais le vSwitch Standard fonctionne parfaitement pour vMotion. il suffit donc d'activer le service vMotion" sur le switch. Dans Adaptateurs VMkernel > Modifier > Cocher la case vMotion
 
 ## Migration à chaud
 
