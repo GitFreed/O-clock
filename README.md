@@ -1,8 +1,41 @@
-﻿# O'Clock promo Aldébaran ♉🖥️
+﻿# 🛡️ Portfolio : Administrateur d'Infrastructures Sécurisées
 
-Ce dépôt contient les challenges réalisés ainsi que des ressources utiles dans le cadre de la formation par l'école O'clock pour le Titre professionnel : Admininistrateur d'Infrastructures Sécurisées.
+## 🎓 École O'clock — Promo Aldébaran
 
-- `/challenges` : Labs et exercices quotidiens.
-- `/images` : Captures et schémas.
-- `/ressources`: Ressources fiches & docs.
-- `RESUME` : Fiche [résumé](/RESUME.md) des cours.
+Bienvenue sur mon dépôt de suivi de formation ! 👋
+
+Je suis **Frédéric**, et ce Github documente mon parcours pour l'obtention du Titre Professionnel **Administrateur d'Infrastructures Sécurisées**. Vous trouverez ici la trace concrète de ma montée en compétences, du scripting à l'architecture réseau.
+
+---
+
+## 📂 Structure du dépôt
+
+Ce répertoire est organisé pour refléter mon apprentissage quotidien :
+
+- **💻 `/challenges`** : Le cœur du réseau. Retrouvez ici mes **labs**, exercices quotidiens et scripts réalisés pour valider les concepts techniques abordés en cours.
+- **📝 `RESUME.md`** : Ma fiche de [synthèse](/RESUME.md) personnelle qui regroupe les commandes et notions essentielles que j'ai acquises.
+- **📚 `/ressources`** : Documentation technique, fiches mémo et outils utiles pour l'administration réseau.
+- **📸 `/images`** : Schémas et captures d'écran illustrant mes projets.
+
+---
+
+## 🛠️ Stack & Compétences abordées (en cours de complétion)
+
+- **Réseau :** Cisco (Switching/Routing), TCP/IP, DNS, DHCP,
+- **Système :** Linux (Debian/RedHat), Windows Server,
+- **Sécurité :** Hardening, gestion des droits, VPN,
+- **Outils :** Cisco Packet Tracer, Git, VMware, Proxmox, vCenter, Bash,
+
+---
+
+### 🚀 Objectif
+
+L'objectif de ce dépôt est double :
+
+1. **Archiver** ma progression et mes solutions techniques.
+2. **Partager** mes connaissances et montrer ma méthodologie de travail.
+
+N'hésitez pas à explorer ces dossiers et échanger !
+
+---
+*Généré avec passion par un futur Admin Réseau.* ⌨️
