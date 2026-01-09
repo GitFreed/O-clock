@@ -1,6 +1,6 @@
 ﻿# 🛡️ Portfolio : Administrateur d'Infrastructures Sécurisées
 
-![IMG](/images/2026-01-09-14-06-15.png)
+![IMG](/images/2026-01-09-14-12-05.png)
 
 ## 🎓 École O'clock — Promo Aldébaran
 
