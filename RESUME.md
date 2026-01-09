@@ -87,13 +87,13 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B4. Scripting 📜]()
 
-### [Saison C1. Gestion de projet et analyse de risque 📋]()
+### [Saison C1. Gestion de projet et analyse de risque 📅]()
 
 ### [Saison C2. Cloud ☁️]()
 
 ### [Saison C3. Sécurité système & réseau 🛡️]()
 
-### [Saison C4. Conteneurs et orchestration 🐳]()
+### [Saison C4. Conteneurs et orchestration 📦]()
 
 ### [Saison C5. Pentesting 🕵️]()
 
