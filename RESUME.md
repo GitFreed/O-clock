@@ -79,9 +79,23 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B104. Opérations Avancées avec vCenter](#️-b104-opérations-avancées-avec-vcenter-et-vsphere)
 - [Fin Saison B1 : QCM](#️-fin-saison-b1-virtualisation)
 
-### [Saison B2. Sauvegarde 💾](#saison-b2-sauvegarde-)
+### [Saison B2. Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
-- [B201. Introduction à la Virtualisation](#-b201-introduction-à-la-sauvegarde)
+- [B201. Introduction](#-b201-introduction)
+
+### [Saison B3. Supervision 📊]()
+
+### [Saison B4. Scripting 📜]()
+
+### [Saison C1. Gestion de projet et analyse de risque 📋]()
+
+### [Saison C2. Cloud ☁️]()
+
+### [Saison C3. Sécurité système & réseau 🛡️]()
+
+### [Saison C4. Conteneurs et orchestration 🐳]()
+
+### [Saison C5. Pentesting 🕵️]()
 
 ---
 
@@ -3225,11 +3239,11 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 ---
 
-## **💾 Saison B2. Sauvegarde**
+## **💾 Saison B2. Stockage & sauvegarde**
 
 >
 
-### 💾 B201. Introduction à la Sauvegarde
+### 💾 B201. Introduction
 
 >
 
