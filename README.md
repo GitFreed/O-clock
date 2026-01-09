@@ -13,7 +13,7 @@ Je suis **Frédéric**, et ce Github documente mon parcours pour l'obtention du 
 Ce répertoire est organisé pour refléter mon apprentissage quotidien :
 
 - **💻 `/challenges`** : Le cœur du réseau. Retrouvez ici mes **labs**, exercices quotidiens et scripts réalisés pour valider les concepts techniques abordés en cours.
-- **📝 `RESUME.md`** : Ma fiche de [synthèse](/RESUME.md) personnelle qui regroupe les commandes et notions essentielles que j'ai acquises.
+- **📝 `RESUME.md`** : Ma [fiche de synthèse](/RESUME.md) personnelle qui regroupe les commandes et notions essentielles que j'ai acquises.
 - **📚 `/ressources`** : Documentation technique, fiches mémo et outils utiles pour l'administration réseau.
 - **📸 `/images`** : Schémas et captures d'écran illustrant mes projets.
 
