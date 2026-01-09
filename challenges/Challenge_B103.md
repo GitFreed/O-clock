@@ -279,3 +279,9 @@ Terminer
 On peut voir que notre VM a bien été migrée sans interruption !
 
 ![OK](/images/2026-01-08-20-29-48.png)
+
+- *Problèmes rencontrés*
+
+Datastore plein sur l'EXSi qui accueillait vCenter, un peu comme quand le disque de notre Windows est plein, lenteurs, bug, saturation. Ajout d'un disque sur la machine (via proxmox), et augmentation de la taille du datastore.
+
+Pour le DSwitch, ajout d'une interface réseau sur la machine (via proxmox) et configuration de cette dernière sur le DSwitch, parce qu'une des 2 machines n'arrivait pas à changer son interface réseau active.
