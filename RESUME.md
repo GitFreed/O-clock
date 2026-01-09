@@ -3219,9 +3219,9 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 ### ☁️ Fin Saison B1. Virtualisation
 
-[QCM Saison B1](https://forms.gle/)
+[QCM Saison B1](https://forms.gle/kHM6u1HBdEJXQcEB7)
 
-![Résultat QCM](/images/)
+![Résultat QCM](/images/2026-01-09-09-01-05.png)
 
 ---
 
