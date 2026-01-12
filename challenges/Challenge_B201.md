@@ -2,13 +2,13 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge](/images/2026-01-05-16-48-38.png)
+![Challenge](/images/)
 
-[Cours B201.](/RESUME.md#-b201)
+[Cours B201.](/RESUME.md#-b201-introduction)
 
 ---
 
-## Installer et configurer TrueNAS
+## Installer et configurer TrueNAS sur ProxmoxVE
 
 TrueNAS Community edition est la version communautaire et gratuite de TrueNAS, il existe 2 version, Scale et Core. On va utiliser la Scale qui est basée sur Debian, la version Core étant basée sur FreeBSD et gère seulement un NAS, alors que la Scale permet d'utiliser d'autres fonctionnalités (comme les conteneurs).
 
