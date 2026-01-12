@@ -81,7 +81,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B2. Stockage & Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
-- [B201. Introduction](#-b201-introduction)
+- [B201. Introduction au Stockage](#-b201-introduction-au-stockage)
 
 ### [Saison B3. Supervision 📊]()
 
