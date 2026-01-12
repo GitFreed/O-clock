@@ -3251,7 +3251,23 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 > 📚 **Ressources** :
 >
-> [Recommandations ANSSI pour la sauvegarde](./ressources/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf) <https://messervices.cyber.gouv.fr/guides/fondamentaux-sauvegarde-systemes-dinformation>
+> - [Recommandations ANSSI pour la sauvegarde](./ressources/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf) <https://messervices.cyber.gouv.fr/guides/fondamentaux-sauvegarde-systemes-dinformation>
+> - Définition HPE NAS <https://www.hpe.com/fr/fr/what-is/nas.html>
+> - Définition HPE SAN <https://www.hpe.com/fr/fr/what-is/san-storage.html>
+> - Définition et niveaux de RAID <https://www.ip-systemes.com/details-qu+est+ce+qu+un+systeme+raid+-870.html>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 💾 B202
+
+>
+
+[Challenge B202](./challenges/Challenge_B202.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
