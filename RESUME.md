@@ -3289,8 +3289,21 @@ Selon l'architecture, le langage pour accéder aux données change :
 
 - **RAID (Redundant Array of Independent Disks)** :
 
-  - Technique qui combine plusieurs disques physiques en une unité logique.
-  - *But* : Améliorer la **performance** (écriture/lecture parallèle) et/ou la **tolérance aux pannes** (si un disque casse, les données sont sauves).
+  - Le **RAID** (Redundant Array of Independent Disks) combine plusieurs disques durs physiques pour n'en former qu'un seul logique. Le choix du niveau dépend de ce que l'on privilégie : **Performance**, **Sécurité** (Redondance) ou **Coût**.
+
+| Niveau RAID | Concept & Fonctionnement | Disques Min. | Panne Max. | Avantages | Inconvénients |
+| --- | --- | --- | --- | --- | --- |
+| **RAID 0** | **Striping (Agrégation)** : Les données sont réparties sur tous les disques. | **2** | **0** ⚠️ | ➕ Performance maximale. | ➖ Si 1 disque lâche, tout est perdu. |
+| **RAID 1** | **Mirroring (Miroir)** : Les données sont clonées à l'identique sur 2 disques. | **2** | **1** | ➕ Sécurité simple. | ➖ 50% d'espace perdu. |
+| **RAID 5** | **Parité Distribuée** : Données + 1 bloc de parité répartis sur les disques. | **3** | **1** | ➕ Bon compromis Stockage/Sécurité. | ➖ Écriture plus lente (calculs). |
+| **RAID 6** | **Double Parité** : Données + 2 blocs de parité répartis sur les disques. | **4** | **2** | ➕ Très haute sécurité. | ➖ Coûteux en disques. |
+| **RAID 10** | **Grappe de Miroirs (1+0)** : Combine la vitesse du RAID 0 et la sécurité du RAID 1. | **4** | **1** (par grappe) | ➕ Le plus performant et sécurisé. | ➖ Le plus cher (50% espace perdu). |
+
+- 💡 En résumé pour choisir :
+
+  - Besoin de vitesse pure (Cache, Temp) ? 👉 **RAID 0**
+  - Besoin de sécurité pour le système (OS) ? 👉 **RAID 1**
+  - Besoin de stocker beaucoup de données (Fichiers, Backup) ? 👉 **RAID 5** ou **RAID 6** (ZFS RAID-Z1 ou RAID-Z2 sur TrueNAS).
 
 - **SDS (Software Defined Storage)** :
 
