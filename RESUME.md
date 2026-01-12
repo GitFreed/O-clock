@@ -3301,9 +3301,9 @@ Selon l'architecture, le langage pour accéder aux données change :
 
 - - 💡 En résumé pour choisir :
 
-  - Besoin de vitesse pure (Cache, Temp) ? 👉 **RAID 0**
-  - Besoin de sécurité pour le système (OS) ? 👉 **RAID 1**
-  - Besoin de stocker beaucoup de données (Fichiers, Backup) ? 👉 **RAID 5** ou **RAID 6** (ZFS RAID-Z1 ou RAID-Z2 sur TrueNAS).
+    - Besoin de vitesse pure (Cache, Temp) ? 👉 **RAID 0**
+    - Besoin de sécurité pour le système (OS) ? 👉 **RAID 1**
+    - Besoin de stocker beaucoup de données (Fichiers, Backup) ? 👉 **RAID 5** ou **RAID 6** (ZFS RAID-Z1 ou RAID-Z2 sur TrueNAS).
 
 - **SDS (Software Defined Storage)** :
 
