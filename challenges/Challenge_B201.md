@@ -58,7 +58,7 @@ On va passer en IP statique
 
 ## Gestion du stockage avec ZFS
 
-On va aller dans Stockage pour créer un volume (pool)
+On va aller dans Stockage pour créer un volume (Pool : Datastore créé sur un ou plusieurs Vdevs)
 
 ![pool](/images/2026-01-12-22-30-46.png)
 
@@ -69,3 +69,67 @@ Nom : PoolNAS, Chiffrement : Aucun, Données Layout : RAIDZ1 (équivalent RAID5)
 Lorsqu'on crée le volume il efface les données qui auraient pu y rester
 
 ![pooldone](/images/2026-01-12-22-35-11.png)
+
+## Création d’un dataset et partage SMB
+
+On va ajouter un Dataset (une Zone de stockage dans un pool, équivalent à un dossier), Nom : Dataset, Préréglage : SMB (pour Windows), Ne pas cocher "Créer un partage SMB" et laisser les options avancées par défaut.
+
+![dataset](/images/2026-01-12-22-49-09.png)
+
+On va créer un utilisateur SMB : dans Identifiants → Utilisateurs → Ajouter. Prénom/Nom, mot de passe, groupe principal root, cocher Utilisateur SMB.
+
+![user](/images/2026-01-12-23-12-41.png)
+
+Dans Partage on ajoute le SMB
+
+![smb](/images/2026-01-12-23-14-12.png)
+
+![smb](/images/2026-01-12-23-15-36.png)
+
+Running!
+
+![smb](/images/2026-01-12-23-15-59.png)
+
+Pour tester, on va ouvrir les emplacements réseaux
+
+![reseau](/images/2026-01-12-23-19-14.png)
+
+On se log avec notre utilisateur nouvellement créé
+
+![log](/images/2026-01-12-23-19-48.png)
+
+On a bien accès au Dataset
+
+![dataset](/images/2026-01-12-23-20-43.png)
+
+Test de création d'un fichier txt
+
+![fichier](/images/2026-01-12-23-29-14.png)
+
+## Snapshots ZFS
+
+Pour la création d’un snapshot on va aller dans Datasets → Sélectionner Dataset → Créer un instantané.
+
+![snapshot](/images/2026-01-12-23-35-05.png)
+
+Maintenant on supprime notre fichier Test.txt
+
+![delete](/images/2026-01-12-23-40-54.png)
+
+On va dans Datasets View Snapshot On déroule le menu du Snap et on Clone vers un nouveau Dataset
+
+![clone](/images/2026-01-12-23-40-26.png)
+
+![dataset](/images/2026-01-12-23-41-37.png)
+
+Il faut partager ce nouveau dataset en SMB également
+
+![smb](/images/2026-01-12-23-50-43.png)
+
+Et on peut retourner voir sur notre utilisateur
+
+![reseau](/images/2026-01-12-23-48-14.png)
+
+And voilà !
+
+![OK](/images/2026-01-12-23-52-16.png)
