@@ -3239,19 +3239,95 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 ---
 
+C'est parti pour la **Saison B2** ! C'est un gros morceau, car la donnée est le "pétrole" de l'entreprise : il faut savoir où la stocker (Architecture) et comment ne pas la perdre (Sauvegarde).
+
+Voici tes textes d'intro et le résumé structuré du cours **B201** basé sur tes notes.
+
+---
+
 ## **💾 Saison B2. Stockage & sauvegarde**
 
->
+> Cette saison explore les fondamentaux de la gestion de la donnée en entreprise. Elle se concentre sur les architectures de stockage physiques et logicielles (NAS, SAN, SDS), les protocoles d'accès, ainsi que sur les stratégies vitales de sauvegarde et de sécurisation pour garantir l'intégrité et la disponibilité des informations.
 
-### 💾 B201. Introduction
+### 💾 B201. Introduction au Stockage
 
->
+> Ce cours pose les bases des infrastructures de stockage modernes. Il distingue les différentes architectures (DAS, NAS, SAN) et protocoles associés, et introduit les concepts clés de la protection des données (RAID, Règle 3-2-1) et les solutions logicielles comme TrueNAS.
+
+#### 1. Les Architectures de Stockage (Où sont les données ?)
+
+On distingue trois manières principales de connecter du stockage à un serveur :
+
+- **DAS (Direct Attached Storage)** :
+
+  - *Concept* : Le stockage est directement branché au serveur (disque interne ou boîtier externe USB/SAS).
+  - *Usage* : Simple, performant, mais difficile à partager entre plusieurs serveurs.
+
+- **NAS (Network Attached Storage)** :
+
+  - *Concept* : Serveur de stockage autonome relié au réseau. Il partage des **fichiers**.
+  - *Usage* : Partage de documents, « Home Directory », multimédia. Facile à mettre en place.
+
+- **SAN (Storage Area Network)** :
+
+  - *Concept* : Réseau dédié au stockage (souvent en Fibre Channel ou iSCSI). Il partage des **blocs** (le serveur voit un disque brut local, pas un dossier partagé).
+  - *Usage* : Bases de données, virtualisation (VMware/Proxmox), haute performance.
+
+#### 2. Les Protocoles d'Accès (Comment on y accède ?)
+
+Selon l'architecture, le langage pour accéder aux données change :
+
+- **Mode Fichier (NAS)** :
+
+  - **SMB (Server Message Block)** : Le standard de Windows (et macOS).
+  - **NFS (Network File System)** : Le standard du monde Linux/Unix.
+
+- **Mode Bloc (SAN)** :
+
+  - **iSCSI** : Transporte des commandes SCSI sur un réseau IP (Ethernet). Permet de monter un disque distant comme s'il était local.
+
+#### 3. Technologies de Fiabilisation et d'Abstraction
+
+- **RAID (Redundant Array of Independent Disks)** :
+
+  - Technique qui combine plusieurs disques physiques en une unité logique.
+  - *But* : Améliorer la **performance** (écriture/lecture parallèle) et/ou la **tolérance aux pannes** (si un disque casse, les données sont sauves).
+
+- **SDS (Software Defined Storage)** :
+
+  - L'intelligence du stockage est gérée par un logiciel, indépendamment du matériel (ex: **vSAN** chez VMware, **Ceph**, ou **TrueNAS**). Cela permet une grande flexibilité et évolutivité.
+
+#### 4. La Sauvegarde (Backup)
+
+Il ne faut pas confondre la disponibilité (RAID) et la sauvegarde.
+
+- **Snapshot vs Sauvegarde** :
+
+  - **Snapshot (Instantané)** : Photo de l'état du système à un instant T. Rapide, mais dépendant des données originales. Si le disque meurt, le snapshot meurt aussi.
+  - **Sauvegarde** : Copie complète et indépendante des données, stockée ailleurs.
+
+- **Types de sauvegarde** :
+
+  - **Complète (Full)** : On copie tout (long, prend de la place).
+  - **Différentielle** : On copie tout ce qui a changé depuis la *dernière complète*.
+  - **Incrémentielle** : On copie tout ce qui a changé depuis la *dernière sauvegarde* (quelle qu'elle soit). Plus rapide, mais restauration plus complexe.
+
+🛡️ **La Règle d'Or : 3-2-1**
+Pour qu'une donnée soit considérée comme sauvegardée, il faut :
+
+- **3** copies des données (1 production + 2 sauvegardes).
+- Sur **2** supports différents (ex: NAS + Cloud, ou Disque + Bande).
+- Dont **1** copie conservée hors site (off-site) pour se prémunir des sinistres physiques (incendie, vol).
+
+#### 5. TrueNAS
+
+- **TrueNAS (Scale)** : Solution de stockage Open Source basée sur **Debian** (avant FreeBSD) et utilisant le système de fichiers **ZFS**. ZFS est réputé pour sa robustesse et sa gestion avancée des volumes et des snapshots.
 
 [Challenge B201](./challenges/Challenge_B201.md)
 
 > 📚 **Ressources** :
 >
 > - [Recommandations ANSSI pour la sauvegarde](./ressources/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf) <https://messervices.cyber.gouv.fr/guides/fondamentaux-sauvegarde-systemes-dinformation>
+> - IT-Connect DAS, SAN, NAS et Cloud <https://www.it-connect.fr/les-das-san-nas-et-le-stockage-cloud-pour-les-debutants/>
 > - Définition HPE NAS <https://www.hpe.com/fr/fr/what-is/nas.html>
 > - Définition HPE SAN <https://www.hpe.com/fr/fr/what-is/san-storage.html>
 > - Définition et niveaux de RAID <https://www.ip-systemes.com/details-qu+est+ce+qu+un+systeme+raid+-870.html>
