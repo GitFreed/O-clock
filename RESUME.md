@@ -79,7 +79,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B104. Opérations Avancées avec vCenter](#️-b104-opérations-avancées-avec-vcenter-et-vsphere)
 - [Fin Saison B1 : QCM](#️-fin-saison-b1-virtualisation)
 
-### [Saison B2. Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
+### [Saison B2. Stockage & Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
 - [B201. Introduction](#-b201-introduction)
 
@@ -3251,6 +3251,7 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 > 📚 **Ressources** :
 >
+> [Recommandations ANSSI pour la sauvegarde](./ressources/anssi-fondamentaux-sauvegarde_systemes_dinformation_v1-0.pdf) <https://messervices.cyber.gouv.fr/guides/fondamentaux-sauvegarde-systemes-dinformation>
 
 [Retour en haut](#-table-des-matières)
 
