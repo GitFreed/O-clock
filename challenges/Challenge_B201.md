@@ -2,15 +2,19 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge](/images/)
+![Challenge](/images/2026-01-12-22-27-06.png)
 
-[Cours B201.](/RESUME.md#-b201-introduction)
+Challenge : <https://github.com/O-clock-Aldebaran/SB02E01-challenge-truenas>
+
+[Cours B201.](/RESUME.md#-b201-introduction-au-stockage)
 
 ---
 
-## Installer et configurer TrueNAS sur ProxmoxVE
+## Installation de TrueNAS sur ProxmoxVE
 
 TrueNAS Community edition est la version communautaire et gratuite de TrueNAS, il existe 2 version, Scale et Core. On va utiliser la Scale qui est basée sur Debian, la version Core étant basée sur FreeBSD et gère seulement un NAS, alors que la Scale permet d'utiliser d'autres fonctionnalités (comme les conteneurs).
+
+Documentation TrueNAS : <https://www.truenas.com/docs/>
 
 ![DL](/images/2026-01-12-14-16-44.png)
 
@@ -38,6 +42,8 @@ Interface Web
 
 ![interface](/images/2026-01-12-15-23-25.png)
 
+## Configuration Initiale
+
 On va pouvoir passer le clavier en AZERTY et changer la TimeZone dans les settings
 
 ![settings](/images/2026-01-12-15-35-28.png)
@@ -46,6 +52,20 @@ On va changer le mdp et dans System>Advanced>Access augmenter la session timeout
 
 ![timeout](/images/2026-01-12-15-37-15.png)
 
-Passage en IP statique
+On va passer en IP statique
 
 ![IP](/images/2026-01-12-15-34-48.png)
+
+## Gestion du stockage avec ZFS
+
+On va aller dans Stockage pour créer un volume (pool)
+
+![pool](/images/2026-01-12-22-30-46.png)
+
+Nom : PoolNAS, Chiffrement : Aucun, Données Layout : RAIDZ1 (équivalent RAID5), les 3 disques de 100 Go.
+
+![raidz1](/images/2026-01-12-22-33-18.png)
+
+Lorsqu'on crée le volume il efface les données qui auraient pu y rester
+
+![pooldone](/images/2026-01-12-22-35-11.png)
