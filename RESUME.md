@@ -3299,7 +3299,7 @@ Selon l'architecture, le langage pour accéder aux données change :
 | **RAID 6** | **Double Parité** : Données + 2 blocs de parité répartis sur les disques. | **4** | **2** | ➕ Très haute sécurité. | ➖ Coûteux en disques. |
 | **RAID 10** | **Grappe de Miroirs (1+0)** : Combine la vitesse du RAID 0 et la sécurité du RAID 1. | **4** | **1** (par grappe) | ➕ Le plus performant et sécurisé. | ➖ Le plus cher (50% espace perdu). |
 
-- 💡 En résumé pour choisir :
+- - 💡 En résumé pour choisir :
 
   - Besoin de vitesse pure (Cache, Temp) ? 👉 **RAID 0**
   - Besoin de sécurité pour le système (OS) ? 👉 **RAID 1**
