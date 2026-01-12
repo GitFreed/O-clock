@@ -36,6 +36,16 @@ Interface Web
 
 ![log](/images/2026-01-12-14-58-54.png)
 
-On va pouvoir chanter le mdp et dans System>Advanced>Access augmenter la session timeout, passer le clavier en AZERTY et changer la TimeZone
-
 ![interface](/images/2026-01-12-15-23-25.png)
+
+On va pouvoir passer le clavier en AZERTY et changer la TimeZone dans les settings
+
+![settings](/images/2026-01-12-15-35-28.png)
+
+On va changer le mdp et dans System>Advanced>Access augmenter la session timeout
+
+![timeout](/images/2026-01-12-15-37-15.png)
+
+Passage en IP statique
+
+![IP](/images/2026-01-12-15-34-48.png)
