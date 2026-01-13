@@ -16,6 +16,8 @@
 
 Télécharger l'ISO ici <https://download2.veeam.com/VBR/v13/VeeamBackup&Replication_13.0.1.1071_20251217.iso>
 
+Attention il faut une VM avec au moins 30+ Go de libre
+
 On monte l'ISO dans notre machine Windows pour installer Veeam
 
 ![veeam](/images/2026-01-13-15-36-07.png)
