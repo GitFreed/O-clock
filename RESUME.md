@@ -3422,6 +3422,7 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 
 > 📚 **Ressources** :
 >
+> - Installation Veeam Backup & Replication <https://help.ovhcloud.com/csm/fr-public-cloud-storage-veeam-backup-replication?id=kb_article_view&sysparm_article=KB0046511>
 
 [Retour en haut](#-table-des-matières)
 
