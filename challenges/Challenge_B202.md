@@ -7,6 +7,8 @@
 [Cours B201.](/RESUME.md#-b201-introduction-au-stockage)
 
 > - Installation Veeam Backup & Replication <https://help.ovhcloud.com/csm/fr-public-cloud-storage-veeam-backup-replication?id=kb_article_view&sysparm_article=KB0046511>
+>
+> Veeam Backup & Replication est un logiciel de protection des données. Il offre diverses possibilités de sauvegarde, de réplication et de restauration.
 
 ---
 
