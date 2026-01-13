@@ -106,7 +106,7 @@ Test de création d'un fichier txt
 
 ![fichier](/images/2026-01-12-23-29-14.png)
 
-## Snapshots ZFS
+## Création de Snapshots ZFS
 
 Pour la création d’un snapshot on va aller dans Datasets → Sélectionner Dataset → Créer un instantané.
 
@@ -133,3 +133,41 @@ Et on peut retourner voir sur notre utilisateur
 And voilà !
 
 ![OK](/images/2026-01-12-23-52-16.png)
+
+## Création d'un partage iSCSI
+
+On commencer par créer un partage iSCSI, ou plutôt la "cible" du futur dataset iSCSI
+
+![iSCSI](/images/2026-01-13-13-44-35.png)
+
+On lance le Wizard de création, on ajoute un Dataset iSCSI de 50GiB, Modern OS.
+
+![wizard](/images/2026-01-13-13-50-08.png)
+
+On arrive sur la config du portail, qui est le point "d'entrée" de notre iSCSI, on sélectionne . Pour Initiators c'est un paramètre de sécurité qui permet de limiter à un Host (via Hostname ou IP), si on laisse vide, tlm sur le réseau y aura accès
+
+![portal](/images/2026-01-13-13-55-35.png)
+
+On peut le voir également dans les Datasets
+
+![datasets](/images/2026-01-13-13-56-24.png)
+
+Depuis une machine Windows sur le réseau, on va lancer l'Initiateur iSCSI
+
+![iscsi](/images/2026-01-13-14-00-14.png)
+
+On va cibler notre serveur
+
+![cible](/images/2026-01-13-14-05-18.png)
+
+Connexion rapide
+
+![connexion](/images/2026-01-13-14-06-25.png)
+
+Dans volume et périphérique on va faire Configuration auto et notre volume remonte bien
+
+![volume](/images/2026-01-13-14-08-23.png)
+
+Dans la Gestion des Disques, notre disque apparaît et on peut le configurer, formater etc
+
+![disk](/images/2026-01-13-14-12-17.png)
