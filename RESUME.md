@@ -3349,9 +3349,74 @@ Pour qu'une donnée soit considérée comme sauvegardée, il faut :
 
 ---
 
-### 💾 B202. VEEAM
+### 💾 B202. Architecture ZFS & TrueNAS
 
->
+> Ce cours détaille le fonctionnement de **ZFS** (Zettabyte File System), le moteur sous le capot de TrueNAS. Contrairement à un système classique, ZFS gère à la fois le système de fichiers et le gestionnaire de volume (RAID), garantissant une intégrité des données absolue.
+
+#### 1. La Pyramide de Stockage ZFS
+
+Pour construire votre stockage, ZFS utilise une hiérarchie stricte. Imaginez des poupées russes ou des briques Lego :
+
+- **Disques Physiques** : Vos disques durs réels (HDD ou SSD).
+
+- **Vdev (Virtual Device)** :
+  - C'est une "brique" constituée d'un ou plusieurs disques physiques regroupés.
+  - C'est **au niveau du vdev** que l'on configure la redondance (Miroir, RAIDZ1, RAIDZ2).
+  - *Attention* : Si un vdev tombe en panne (trop de disques morts), **tout le Pool est perdu**.
+
+- **Pool de Stockage** :
+
+  - C'est l'espace de stockage global (le "réservoir").
+  - Il agrège un ou plusieurs vdevs pour additionner leur capacité.
+  - Exemple : Un pool `Tank` de 20 To formé de deux vdevs de 10 To.
+
+#### 2. Organisation Logique : Les Datasets
+
+Une fois le Pool créé, on ne stocke pas tout en vrac. On découpe l'espace intelligemment.
+
+- **Dataset (Jeu de données)** :
+  - Cela ressemble à un dossier, mais c'est bien plus puissant. C'est un **sous-système de fichiers**.
+  - On peut configurer des propriétés différentes pour chaque Dataset :
+    - *Compression* (ex: activée pour les documents, désactivée pour les vidéos).
+    - *Quotas* (Limites de taille).
+    - *Snapshots* (Fréquence de sauvegarde).
+
+  - *Bonne pratique* : Créer un Dataset par usage (ex: `Tank/RH`, `Tank/IT`, `Tank/Videos`).
+
+#### 3. Contrôle et Sécurité des Données
+
+ZFS offre des outils granulaires pour gérer qui fait quoi et limiter la consommation.
+
+- **Quotas** :
+  - Limite d'espace disque imposée à un Dataset ou un utilisateur.
+  - *But* : Empêcher qu'un service ou un utilisateur ne sature tout le serveur.
+
+- **Permissions (ACL)** :
+- Définit qui a le droit de **Lire (Read)**, **Écrire (Write)** ou **Exécuter** les fichiers.
+- Essentiel pour la confidentialité (ex: Le groupe "Stagiaires" ne doit pas accéder au Dataset "Compta").
+
+- **Snapshots (Instantanés)** :
+  - Photo de l'état des données à un instant T.
+  - **Immuable** : Le snapshot ne peut pas être modifié par un virus ou un ransomware.
+  - **Léger** : Ne stocke que les blocs modifiés (Copy-on-Write). Permet de revenir en arrière instantanément si on efface un fichier par erreur.
+
+#### 4. Partage Réseau (Protocoles)
+
+Une fois les données stockées et sécurisées, il faut les rendre accessibles aux clients via le réseau.
+
+| Protocole | Signification | Cible principale | Type d'accès |
+| --- | --- | --- | --- |
+| **SMB** | Server Message Block | **Windows** / macOS | **Fichier** (Dossier partagé classique). |
+| **NFS** | Network File System | **Linux** / Unix | **Fichier** (Montage dans l'arborescence). |
+| **iSCSI** | Internet SCSI | **Serveurs / VM** | **Bloc** (Vu comme un disque dur local non formaté par le client). |
+
+#### 💡 En résumé : La logique de construction TrueNAS
+
+1. J'assemble mes **Disques** pour créer un **Vdev** (avec sécurité RAIDZ).
+2. Je mets mes Vdevs dans un **Pool** (mon grand réservoir).
+3. Je découpe mon Pool en **Datasets** (mes casiers de rangement).
+4. J'applique des **Permissions** et **Quotas** sur ces Datasets.
+5. Je partage mes Datasets via **SMB** ou **NFS** pour que les utilisateurs y accèdent.
 
 [Challenge B202](./challenges/Challenge_B202.md)
 
