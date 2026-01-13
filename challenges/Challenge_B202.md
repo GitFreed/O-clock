@@ -19,3 +19,8 @@ On monte l'ISO dans notre machine Windows pour installer Veeam
 ![veeam](/images/2026-01-13-15-36-07.png)
 
 ![wizard](/images/2026-01-13-15-38-06.png)
+
+Au niveau de la Licence on peut faire suivant
+
+![licence](/images/2026-01-13-16-05-01.png)
+
