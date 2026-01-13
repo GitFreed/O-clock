@@ -3352,13 +3352,13 @@ Pour qu'une donnée soit considérée comme sauvegardée, il faut :
 
 ### 🗄️ B202. Architecture ZFS & TrueNAS
 
-> Ce cours détaille le fonctionnement de **ZFS** (Zettabyte File System), le moteur sous le capot de TrueNAS. Contrairement à un système classique, ZFS gère à la fois le système de fichiers et le gestionnaire de volume (RAID), garantissant une intégrité des données absolue.
+> Ce cours détaille le fonctionnement de **ZFS** (Zettabyte File System), de fichiers open source de TrueNAS. Contrairement à un système classique, ZFS gère à la fois le système de fichiers et le gestionnaire de volume (RAID), garantissant une intégrité des données absolue.
 
 #### 1. La Pyramide de Stockage ZFS
 
-Pour construire votre stockage, ZFS utilise une hiérarchie stricte. Imaginez des poupées russes ou des briques Lego :
+Pour construire le stockage, ZFS utilise une hiérarchie stricte. On peut imaginer des poupées russes ou des briques Lego :
 
-- **Disques Physiques** : Vos disques durs réels (HDD ou SSD).
+- **Disques Physiques** : Les disques durs réels (HDD ou SSD).
 
 - **Vdev (Virtual Device)** :
   - C'est une "brique" constituée d'un ou plusieurs disques physiques regroupés.
@@ -3373,7 +3373,7 @@ Pour construire votre stockage, ZFS utilise une hiérarchie stricte. Imaginez de
 
 #### 2. Organisation Logique : Les Datasets
 
-Une fois le Pool créé, on ne stocke pas tout en vrac. On découpe l'espace intelligemment.
+Une fois le Pool créé, on découpe l'espace intelligemment.
 
 - **Dataset (Jeu de données)** :
   - Cela ressemble à un dossier, mais c'est bien plus puissant. C'est un **sous-système de fichiers**.
@@ -3424,6 +3424,19 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 > 📚 **Ressources** :
 >
 > - (ancien)TP Sauvegarde et Stockage : <https://pmaldi.notion.site/Atelier-TP-Sauvegarde-Stockage-1907f06da9c780bd95b3ec2cb4032c52>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🧱 B203. Veeam
+
+>
+
+[Challenge B203](./challenges/Challenge_B203.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
