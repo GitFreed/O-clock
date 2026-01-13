@@ -6,7 +6,7 @@
 
 [Cours B201.](/RESUME.md#-b201-introduction-au-stockage)
 
-TP Sauvegarde et Stockage : <https://pmaldi.notion.site/Atelier-TP-Sauvegarde-Stockage-1907f06da9c780bd95b3ec2cb4032c52>
+> - Installation Veeam Backup & Replication <https://help.ovhcloud.com/csm/fr-public-cloud-storage-veeam-backup-replication?id=kb_article_view&sysparm_article=KB0046511>
 
 ---
 
@@ -24,3 +24,6 @@ Au niveau de la Licence on peut faire suivant
 
 ![licence](/images/2026-01-13-16-05-01.png)
 
+![install](/images/2026-01-13-16-15-31.png)
+
+![installation](/images/2026-01-13-16-15-46.png)
