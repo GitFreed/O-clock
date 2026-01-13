@@ -82,6 +82,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison B2. Stockage & Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
 - [B201. Introduction au Stockage](#-b201-introduction-au-stockage)
+- [B202. Architecture ZFS & TrueNAS](#-b202-architecture-zfs--truenas)
 
 ### [Saison B3. Supervision 📊]()
 
@@ -3349,7 +3350,7 @@ Pour qu'une donnée soit considérée comme sauvegardée, il faut :
 
 ---
 
-### 💾 B202. Architecture ZFS & TrueNAS
+### 🗄️ B202. Architecture ZFS & TrueNAS
 
 > Ce cours détaille le fonctionnement de **ZFS** (Zettabyte File System), le moteur sous le capot de TrueNAS. Contrairement à un système classique, ZFS gère à la fois le système de fichiers et le gestionnaire de volume (RAID), garantissant une intégrité des données absolue.
 
