@@ -31,3 +31,7 @@ Au niveau de la Licence on peut faire suivant
 ![installation](/images/2026-01-13-16-15-46.png)
 
 ![OK](/images/2026-01-13-16-52-32.png)
+
+On redémarre et maintenant on peut choisir notre Backup server
+
+![backup](/images/2026-01-13-17-11-47.png)
