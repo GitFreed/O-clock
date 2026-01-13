@@ -34,6 +34,18 @@ Au niveau de la Licence on peut faire suivant
 
 ![OK](/images/2026-01-13-16-52-32.png)
 
-On redémarre et maintenant on peut choisir notre Backup server
+## Configuration de Veeam Backup & Replication 13
+
+On redémarre et maintenant on peut se connecter à notre console Veeam en local
 
 ![backup](/images/2026-01-13-17-11-47.png)
+
+Puis sign in as current user (Veeam utilisera les identifiants de notre session Windows actuelle pour ouvrir l'interface de gestion)
+
+![signin](/images/2026-01-13-23-09-52.png)
+
+Nous voilà connectés
+
+![Veeam](/images/2026-01-13-23-12-33.png)
+
+Maintenant il nous reste à configurer notre Repo (TrueNAS), ajouter notre machine et créer un Backup Job.
