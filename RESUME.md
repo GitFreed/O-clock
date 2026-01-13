@@ -3422,7 +3422,7 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 
 > 📚 **Ressources** :
 >
-> - TP Sauvegarde et Stockage : <https://pmaldi.notion.site/Atelier-TP-Sauvegarde-Stockage-1907f06da9c780bd95b3ec2cb4032c52>
+> - (ancien)TP Sauvegarde et Stockage : <https://pmaldi.notion.site/Atelier-TP-Sauvegarde-Stockage-1907f06da9c780bd95b3ec2cb4032c52>
 
 [Retour en haut](#-table-des-matières)
 
