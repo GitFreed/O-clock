@@ -29,3 +29,5 @@ Au niveau de la Licence on peut faire suivant
 ![install](/images/2026-01-13-16-15-31.png)
 
 ![installation](/images/2026-01-13-16-15-46.png)
+
+![OK](/images/2026-01-13-16-52-32.png)
