@@ -3240,12 +3240,6 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 ---
 
-C'est parti pour la **Saison B2** ! C'est un gros morceau, car la donnée est le "pétrole" de l'entreprise : il faut savoir où la stocker (Architecture) et comment ne pas la perdre (Sauvegarde).
-
-Voici tes textes d'intro et le résumé structuré du cours **B201** basé sur tes notes.
-
----
-
 ## **💾 Saison B2. Stockage & sauvegarde**
 
 > Cette saison explore les fondamentaux de la gestion de la donnée en entreprise. Elle se concentre sur les architectures de stockage physiques et logicielles (NAS, SAN, SDS), les protocoles d'accès, ainsi que sur les stratégies vitales de sauvegarde et de sécurisation pour garantir l'intégrité et la disponibilité des informations.
