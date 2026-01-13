@@ -82,7 +82,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison B2. Stockage & Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
 - [B201. Introduction au Stockage](#-b201-introduction-au-stockage)
-- [B202. Architecture ZFS & TrueNAS](#-b202-architecture-zfs--truenas)
+- [B202. Architecture ZFS & TrueNAS](#️-b202-architecture-zfs--truenas)
 
 ### [Saison B3. Supervision 📊]()
 
