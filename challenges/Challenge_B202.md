@@ -16,7 +16,7 @@
 
 Télécharger l'ISO ici <https://download2.veeam.com/VBR/v13/VeeamBackup&Replication_13.0.1.1071_20251217.iso>
 
-Attention il faut une VM avec au moins 30+ Go de libre
+Attention il faut une VM avec au moins 80+ Go de libre
 
 On monte l'ISO dans notre machine Windows pour installer Veeam
 
@@ -50,7 +50,7 @@ Nous voilà connectés
 
 Maintenant il nous reste à configurer notre Repo (avec TrueNAS), ajouter notre machine et créer un Backup Job.
 
-## Configuration d'un Repo
+## Configuration des Repository
 
 Sur TrueNAS on va créer un dossier de partage UNIX (NFS)
 
@@ -93,3 +93,47 @@ Ici on peut choisir entre vitesse et impact sur la machine pour la backup
 ![smb](/images/2026-01-14-12-12-24.png)
 
 ![smb](/images/2026-01-14-12-13-25.png)
+
+On va faire de même pour le NFS, attention ici on est sur une structure serveur (format Linux, sensible aux majuscules, qu'on peut retrouver dans TrueNAS)
+
+![nfs](/images/2026-01-14-13-22-04.png)
+
+![nfs](/images/2026-01-14-13-23-26.png)
+
+On va maintenant pouvoir ajouter un Backup Repository dans la Backup Infrastructure : NFS Share
+
+![nfs](/images/2026-01-14-13-52-12.png)
+
+On le nomme et ajout du serveur, on configure le nombre de tâches max
+
+![repo](/images/2026-01-14-13-57-47.png)
+
+On ajoute notre Windows et il va vérifier si tout est OK puis démarrer les services
+
+![services](/images/2026-01-14-13-58-23.png)
+
+![valide](/images/2026-01-14-14-00-17.png)
+
+Quand c'est finit on valide et on choisi ce Repo NFS comme Repo de Backup par défaut
+
+> - **Récap** :
+>
+> 1. Le partage NFS (Côté TrueNAS)
+> Ce qu'on vient de créer sur TrueNAS, c'est la cible physique. C'est le dossier sur nos disques durs qui va recevoir les octets de sauvegarde. En informatique, on appelle ça un "Partage réseau" ou un "Volume".
+>
+> 2. Le Repository (Côté Veeam)
+> Dans Veeam, le Repository (Dépôt) est un objet logique. C'est l'étape où on vas dans l'interface de Veeam pour lui dire :
+>
+> "Hé Veeam, je te présente le dossier NFS qui se trouve sur l'IP 10.0.0.70. Désormais, considère-le comme un 'Repository' utilisable pour mes jobs de Backup."
+
+## Configuration de la Backup
+
+On va Create Backup Job dans Unstructured Data
+
+![backup](/images/2026-01-14-13-46-13.png)
+
+![name](/images/2026-01-14-13-47-20.png)
+
+Choix de l'objet à sauvegarder, ici on va prendre tout notre dataset
+
+![objet](/images/2026-01-14-13-49-44.png)
