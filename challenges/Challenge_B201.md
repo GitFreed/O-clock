@@ -6,7 +6,7 @@
 
 Challenge : <https://github.com/O-clock-Aldebaran/SB02E01-challenge-truenas>
 
-[Cours B201.](/RESUME.md#-b201-introduction-au-stockage)
+[Cours B201.](/RESUME.md#-b201-introduction--sauvegarde--stockage)
 
 ---
 
