@@ -137,3 +137,9 @@ On va Create Backup Job dans Unstructured Data
 Choix de l'objet à sauvegarder, ici on va prendre tout notre dataset
 
 ![objet](/images/2026-01-14-13-49-44.png)
+
+Puis on sélectionne notre Repo NFS créé précédemment, on configure le nombre de versions de backup à garder et on peut même choisir un second endroit de Backup (par exemple pour notre règle 3-2-1). Dans Advanced on peut configurer plus précisément, avec les permissions, la compression, le chiffrement, lancer des scripts, des notifications etc
+
+![repo](/images/2026-01-14-14-09-34.png)
+
+On laisse l'Archivage, on peut choisir le calendrier et l'automatisation
