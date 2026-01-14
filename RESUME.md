@@ -3440,7 +3440,20 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 
 >
 
-[Challenge B203](./challenges/Challenge_B203.md)
+[Challenge B202](./challenges/Challenge_B202.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🛟 B204. Proxmox Backup
+
+>
+
+[Challenge B204](./challenges/Challenge_B204.md)
 
 > 📚 **Ressources** :
 >
