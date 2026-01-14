@@ -3494,9 +3494,7 @@ C'est la force principale de Veeam : la granularité.
 
 - **File Level Recovery (FLR)** : On ouvre le fichier de sauvegarde comme un dossier, et on restaure juste un fichier précis (ex: un Excel écrasé par erreur) vers la VM d'origine.
 
----
-
-### 💡 Synthèse du vocabulaire Veeam
+#### 💡 Synthèse du vocabulaire Veeam
 
 | Terme | Définition |
 | --- | --- |
