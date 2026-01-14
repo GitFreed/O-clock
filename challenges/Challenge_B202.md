@@ -142,4 +142,46 @@ Puis on sélectionne notre Repo NFS créé précédemment, on configure le nombr
 
 ![repo](/images/2026-01-14-14-09-34.png)
 
-On laisse l'Archivage, on peut choisir le calendrier et l'automatisation
+On laisse l'Archivage, on peut choisir le calendrier et l'automatisation. A la validation, il nous donne la Cmdlet pour lancer ce Backup job depuis un script
+
+![summary](/images/2026-01-14-14-17-28.png)
+
+On peut retrouver notre Backup Job sur l'écran Home
+
+![home](/images/2026-01-14-14-19-28.png)
+
+Pour le lancer manuellement on à juste a clic sur Start
+
+![Start](/images/2026-01-14-14-21-41.png)
+
+Attention, on a parfois des erreurs d'Agent, mais la Backup existe quand même
+
+![error](/images/2026-01-14-14-25-26.png)
+
+![backup](/images/2026-01-14-14-30-41.png)
+
+## Test de Restauration
+
+On va vider les fichiers dans le Dataset SMB, on va sur Veeam, Home : Restore : File Share
+
+![restore](/images/2026-01-14-14-41-24.png)
+
+On va choisir un Restore Entire Share, et ajouter le restore point de notre Backup (on voit les horaires précis de ces sauvegardes)
+
+![restore](/images/2026-01-14-14-43-21.png)
+
+Si on fait Point... on peut voir la chronologie et les fichiers dans la Backup
+
+![point](/images/2026-01-14-14-45-43.png)
+
+On peut ensuite choisir ou on va restaurer (emplacement original ou autre) et quel type de restauration (écrasement des fichier, différentiel, etc)
+
+![restore](/images/2026-01-14-14-47-37.png)
+
+Il lance la restauration
+
+![restore](/images/2026-01-14-14-48-28.png)
+
+Et on peut retrouver nos fichiers effacés
+
+![files](/images/2026-01-14-14-49-12.png)
