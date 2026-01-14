@@ -81,9 +81,10 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B2. Stockage & Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
-- [B201. Introduction au Stockage](#-b201-introduction--sauvegarde--stockage)
+- [B201. Introduction : Sauvegarde & Stockage](#-b201-introduction--sauvegarde--stockage)
 - [B202. Architecture ZFS & TrueNAS](#️-b202-architecture-zfs--truenas)
-- [B203.]
+- [B203. Veeam]
+- [B204. Proxmox Backup]
 
 ### [Saison B3. Supervision 📊](.)
 
