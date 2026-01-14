@@ -81,8 +81,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B2. Stockage & Sauvegarde 💾](#-saison-b2-stockage--sauvegarde)
 
-- [B201. Introduction au Stockage](#-b201-introduction-au-stockage)
+- [B201. Introduction au Stockage](#-b201-introduction--sauvegarde--stockage)
 - [B202. Architecture ZFS & TrueNAS](#️-b202-architecture-zfs--truenas)
+- [B203.]
 
 ### [Saison B3. Supervision 📊](.)
 
@@ -3244,30 +3245,68 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 > Cette saison explore les fondamentaux de la gestion de la donnée en entreprise. Elle se concentre sur les architectures de stockage physiques et logicielles (NAS, SAN, SDS), les protocoles d'accès, ainsi que sur les stratégies vitales de sauvegarde et de sécurisation pour garantir l'intégrité et la disponibilité des informations.
 
-### 💾 B201. Introduction au Stockage
+### 💾 B201. Introduction : Sauvegarde & Stockage
 
-> Ce cours pose les bases des infrastructures de stockage modernes. Il distingue les différentes architectures (DAS, NAS, SAN) et protocoles associés, et introduit les concepts clés de la protection des données (RAID, Règle 3-2-1) et les solutions logicielles comme TrueNAS.
+> **Introduction** : La sécurité absolue n'existe pas. Face aux menaces (ex: Ransomware), il faut prévoir l'échec des mesures de protection. La sauvegarde est l'ultime rempart pour ne pas payer de rançon et restaurer l'activité.
 
-#### 1. Les Architectures de Stockage (Où sont les données ?)
+#### 1. Concepts Clés & Métriques (SLA)
 
-On distingue trois manières principales de connecter du stockage à un serveur :
+Pour définir une stratégie de sauvegarde efficace, il faut d'abord s'accorder avec la direction sur deux métriques vitales (SLA)  :
 
-- **DAS (Direct Attached Storage)** :
+- **PDMA / RPO (Perte de Données Maximale Admissible)** :
+  - *Recovery Point Objective* : C'est le "retour en arrière" acceptable. Combien de temps de travail (données) acceptons-nous de perdre ? (ex: 4h, 24h...).
+  - *Impact* : Définit la **fréquence** des sauvegardes. Si RPO = 1h, il faut sauvegarder toutes les heures.
 
-  - *Concept* : Le stockage est directement branché au serveur (disque interne ou boîtier externe USB/SAS).
-  - *Usage* : Simple, performant, mais difficile à partager entre plusieurs serveurs.
+- **DMIA / RTO (Durée Maximale d'Interruption Admissible)** :
+  - *Recovery Time Objective* : C'est le temps "chrono" pour remettre le service en route après la panne.
+  - *Impact* : Définit la **technologie** de restauration (disques rapides, réplication, etc.).
 
-- **NAS (Network Attached Storage)** :
+  **PRA / PCA** : Ces stratégies s'inscrivent dans un Plan de Reprise (PRA) ou de Continuité (PCA) d'Activité. **Important** : Une sauvegarde non testée est une sauvegarde inexistante. Il faut tester les restaurations !.
 
-  - *Concept* : Serveur de stockage autonome relié au réseau. Il partage des **fichiers**.
-  - *Usage* : Partage de documents, « Home Directory », multimédia. Facile à mettre en place.
+#### 2. Stratégie de Sauvegarde
 
-- **SAN (Storage Area Network)** :
+- **Règle du 3-2-1 (Standard de l'industrie)**  :
 
-  - *Concept* : Réseau dédié au stockage (souvent en Fibre Channel ou iSCSI). Il partage des **blocs** (le serveur voit un disque brut local, pas un dossier partagé).
-  - *Usage* : Bases de données, virtualisation (VMware/Proxmox), haute performance.
+  - **3** copies des données minimum (1 production + 2 sauvegardes).
+  - Sur **2** supports différents (ex: NAS + Bande, ou Disque + Cloud).
+  - Dont **1** copie conservée **hors site** (off-site) pour se protéger des sinistres physiques (incendie, vol).
 
-#### 2. Les Protocoles d'Accès (Comment on y accède ?)
+- **Rétention** : La durée de conservation des sauvegardes avant suppression (ex: garder les 30 derniers jours, puis 1 an d'archive) .
+
+#### 3. Les Types de Sauvegardes
+
+Comment sauvegarder les données ? Voici les 3 méthodes principales :
+
+| Type | Fonctionnement | Avantages (+) | Inconvénients (-) | Restauration |
+| --- | --- | --- | --- | --- |
+| **Complète** (Full) | Copie 100% des données à chaque fois. | Restauration simple et rapide. | Très long, consomme énormément d'espace. | Juste la dernière Full. |
+| **Incrémentielle** | Copie uniquement les modifs depuis la **dernière sauvegarde** (quelle qu'elle soit). | Très rapide, fichier de sauvegarde léger. | Restauration complexe et lente. | Dernière Full + **toutes** les incrémentielles suivantes. |
+| **Différentielle** | Copie les modifs depuis la **dernière Full**. | Bon compromis vitesse/restauration. | Plus lourd que l'incrémentielle. | Dernière Full + la dernière Différentielle. |
+
+#### 4. Snapshots & Réplication (Ne pas confondre !)
+
+- **Snapshot (Instantané)** :
+  - C'est une "photo" du système à un instant T.
+  - ⚠️ **Ce n'est PAS une sauvegarde** à part entière car le snapshot dépend souvent des données originales et est stocké au même endroit.
+  - *Usage* : Complément idéal pour des retours en arrière rapides (ex: erreur utilisateur), combiné à une vraie sauvegarde.
+
+- **Réplication** :
+  - Copie des données (synchrone ou asynchrone) vers un autre site/serveur pour assurer la continuité de service (RTO proche de zéro).
+
+#### 5. Stockage : Médias et Architectures
+
+On classe le stockage selon sa "température":
+
+- **Hot (Online)** : Données accessibles immédiatement (Production, Disques rapides).
+- **Cold (Offline)** : Données archivées, non connectées électriquement (Bandes LTO dans un coffre).
+
+**Les 3 Architectures physiques**  :
+
+1. **DAS (Direct Attached Storage)** : Disque branché directement au serveur (USB/SATA). Rapide mais non partagé.
+2. **NAS (Network Attached Storage)** : Serveur de fichiers autonome sur le réseau (Partage via SMB/NFS).
+3. **SAN (Storage Area Network)** : Réseau dédié haute performance (Fibre Channel/iSCSI) où le stockage est vu comme un disque local (Bloc) par les serveurs.
+
+**Les Protocoles d'Accès** :
 
 Selon l'architecture, le langage pour accéder aux données change :
 
@@ -3280,11 +3319,9 @@ Selon l'architecture, le langage pour accéder aux données change :
 
   - **iSCSI** : Transporte des commandes SCSI sur un réseau IP (Ethernet). Permet de monter un disque distant comme s'il était local.
 
-#### 3. Technologies de Fiabilisation et d'Abstraction
+#### 6. Sécurisation Matérielle : Le RAID
 
-- **RAID (Redundant Array of Independent Disks)** :
-
-  - Le **RAID** (Redundant Array of Independent Disks) combine plusieurs disques durs physiques pour n'en former qu'un seul logique. Le choix du niveau dépend de ce que l'on privilégie : **Performance**, **Sécurité** (Redondance) ou **Coût**.
+Le RAID (Redundant Array of Independent Disks) permet de virtualiser plusieurs disques pour la performance ou la sécurité. Le choix du niveau dépend de ce que l'on privilégie : **Performance**, **Sécurité** (Redondance) ou **Coût**.
 
 | Niveau RAID | Concept & Fonctionnement | Disques Min. | Panne Max. | Avantages | Inconvénients |
 | --- | --- | --- | --- | --- | --- |
@@ -3294,41 +3331,17 @@ Selon l'architecture, le langage pour accéder aux données change :
 | **RAID 6** | **Double Parité** : Données + 2 blocs de parité répartis sur les disques. | **4** | **2** | ➕ Très haute sécurité. | ➖ Coûteux en disques. |
 | **RAID 10** | **Grappe de Miroirs (1+0)** : Combine la vitesse du RAID 0 et la sécurité du RAID 1. | **4** | **1** (par grappe) | ➕ Le plus performant et sécurisé. | ➖ Le plus cher (50% espace perdu). |
 
-- - 💡 En résumé pour choisir :
+**SDS (Software Defined Storage)** :
 
-    - Besoin de vitesse pure (Cache, Temp) ? 👉 **RAID 0**
-    - Besoin de sécurité pour le système (OS) ? 👉 **RAID 1**
-    - Besoin de stocker beaucoup de données (Fichiers, Backup) ? 👉 **RAID 5** ou **RAID 6** (ZFS RAID-Z1 ou RAID-Z2 sur TrueNAS).
+  L'intelligence du stockage est gérée par un logiciel, indépendamment du matériel (ex: **vSAN** chez VMware, **Ceph**, ou **TrueNAS**). Cela permet une grande flexibilité et évolutivité.
 
-- **SDS (Software Defined Storage)** :
+#### 7. Solutions du Marché
 
-  - L'intelligence du stockage est gérée par un logiciel, indépendamment du matériel (ex: **vSAN** chez VMware, **Ceph**, ou **TrueNAS**). Cela permet une grande flexibilité et évolutivité.
+- **Matériel (NAS/SAN)** : Synology, QNAP, Dell EMC, HPE .
 
-#### 4. La Sauvegarde (Backup)
+- **OS NAS (DIY)** : **TrueNAS** (celui qu'on va utiliser !), OpenMediaVault, Unraid.
 
-Il ne faut pas confondre la disponibilité (RAID) et la sauvegarde.
-
-- **Snapshot vs Sauvegarde** :
-
-  - **Snapshot (Instantané)** : Photo de l'état du système à un instant T. Rapide, mais dépendant des données originales. Si le disque meurt, le snapshot meurt aussi.
-  - **Sauvegarde** : Copie complète et indépendante des données, stockée ailleurs.
-
-- **Types de sauvegarde** :
-
-  - **Complète (Full)** : On copie tout (long, prend de la place).
-  - **Différentielle** : On copie tout ce qui a changé depuis la *dernière complète*.
-  - **Incrémentielle** : On copie tout ce qui a changé depuis la *dernière sauvegarde* (quelle qu'elle soit). Plus rapide, mais restauration plus complexe.
-
-🛡️ **La Règle d'Or : 3-2-1**
-Pour qu'une donnée soit considérée comme sauvegardée, il faut :
-
-- **3** copies des données (1 production + 2 sauvegardes).
-- Sur **2** supports différents (ex: NAS + Cloud, ou Disque + Bande).
-- Dont **1** copie conservée hors site (off-site) pour se prémunir des sinistres physiques (incendie, vol).
-
-#### 5. TrueNAS
-
-- **TrueNAS (Scale)** : Solution de stockage Open Source basée sur **Debian** (avant FreeBSD) et utilisant le système de fichiers **ZFS**. ZFS est réputé pour sa robustesse et sa gestion avancée des volumes et des snapshots.
+- **Logiciels de Sauvegarde** : **Veeam** (Leader), Proxmox Backup Server, UrBackup .
 
 [Challenge B201](./challenges/Challenge_B201.md)
 
