@@ -3437,9 +3437,74 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 
 ---
 
-### 🧱 B203. Veeam
+### 🛡️ **B203. Veeam Backup & Replication**
 
->
+> **Résumé** : Veeam est la solution de référence pour la sauvegarde des infrastructures virtualisées. Ce cours détaille son architecture modulaire, ses méthodes de sauvegarde intelligente (CBT) et ses mécanismes de restauration rapide, essentiels pour garantir un RPO/RTO optimal en entreprise.
+
+#### 1. Introduction et Philosophie
+
+Veeam Backup & Replication est un logiciel conçu spécifiquement pour les environnements virtuels (VMware vSphere, Microsoft Hyper-V, Nutanix AHV, Proxmox VE).
+
+Contrairement aux solutions traditionnelles qui installaient un "agent" (petit logiciel) dans chaque serveur à sauvegarder, Veeam est **Agentless** (sans agent) pour les VMs : il communique directement avec l'hyperviseur pour copier les données, ce qui allège la charge sur les serveurs de production.
+
+#### 2. Architecture Modulaire (Les Composants)
+
+Veeam fonctionne comme un jeu de Lego. On peut tout installer sur un seul serveur (pour une PME) ou éclater les rôles sur plusieurs machines (pour une grande entreprise).
+
+- **Veeam Backup Server (Le Cerveau)** :
+  - C'est le chef d'orchestre. Il contient la configuration, la planification des tâches (Jobs) et la base de données catalogue. C'est lui qui donne les ordres.
+
+- **Backup Proxy (Les Bras)** :
+  - C'est le "déménageur". Il se situe entre la source (l'hyperviseur) et la destination.
+  - **Rôle** : Il récupère les données, les compresse, les déduplique (pour gagner de la place) et les envoie au dépôt. C'est lui qui consomme le CPU et la RAM lors d'une sauvegarde.
+
+- **Backup Repository (L'Entrepôt)** :
+  - C'est la cible de stockage. C'est là que sont écrits les fichiers de sauvegarde (`.vbk`, `.vib`).
+  - Il peut s'agir d'un serveur Windows/Linux, d'un NAS (via SMB/NFS), ou d'une appliance de déduplication.
+
+#### 3. Mécanismes de Sauvegarde
+
+Comment Veeam fait-il pour être rapide et ne pas saturer le stockage ?
+
+- **Le principe de la Chaîne de Sauvegarde** :
+  - **Full Backup (Complète - `.vbk`)** : Contient 100% des données de la VM. C'est la base, très lourde.
+  - **Incremental Backup (Incrémentielle - `.vib`)** : Ne contient *que* les données modifiées depuis la dernière sauvegarde. Très léger.
+  - *Fonctionnement typique* : On fait une "Full" le dimanche, et des "Incrémentielles" du lundi au samedi.
+
+- **CBT (Change Block Tracking)** : *La technologie clé.*
+  - Au lieu de scanner tout le disque dur pour chercher ce qui a changé (ce qui prendrait des heures), Veeam demande directement à l'hyperviseur : *"Quels blocs disque ont été modifiés depuis hier ?"*.
+  - L'hyperviseur renvoie la liste exacte, et Veeam ne copie que ces quelques blocs. La sauvegarde prend quelques minutes au lieu de quelques heures.
+
+#### 4. La Règle du 3-2-1 et la Sécurité
+
+Veeam intègre nativement les outils pour respecter les standards de sécurité :
+
+- **Backup Job** : Sauvegarde locale (sur site) pour la performance (restauration rapide).
+- **Backup Copy Job** : Copie automatique de la sauvegarde vers un site distant ou le Cloud, sans toucher à la production.
+- **Immuabilité (Hardened Repository)** : Protection contre les **Ransomwares**. Veeam permet de stocker les sauvegardes sur des dépôts Linux verrouillés (WORM - Write Once Read Many). Pendant la durée définie (ex: 10 jours), personne, même pas l'administrateur, ne peut supprimer ou chiffrer ces fichiers.
+
+#### 5. Les Types de Restauration (Restore)
+
+C'est la force principale de Veeam : la granularité.
+
+- **Full VM Restore** : On restaure la machine virtuelle entière à son emplacement d'origine. C'est long (il faut tout copier).
+- **Instant VM Recovery** :
+  - Permet de démarrer une VM **directement depuis le fichier de sauvegarde** (le Repository agit comme un Datastore temporaire).
+  - **Intérêt** : La VM est up en 2 minutes, même si elle fait 500 Go. On migre les données en arrière-plan pendant que les utilisateurs travaillent. Idéal pour le **RTO**.
+
+- **File Level Recovery (FLR)** : On ouvre le fichier de sauvegarde comme un dossier, et on restaure juste un fichier précis (ex: un Excel écrasé par erreur) vers la VM d'origine.
+
+---
+
+### 💡 Synthèse du vocabulaire Veeam
+
+| Terme | Définition |
+| --- | --- |
+| **Job** | Une tâche planifiée (Sauvegarde, Copie, Réplication). |
+| **Repository** | L'emplacement logique où sont stockés les fichiers de backup. |
+| **Proxy** | Le service qui traite la donnée (compression/transport). |
+| **Retention** | Le nombre de points de restauration (jours) que l'on conserve. |
+| **CBT** | Technologie de suivi des blocs modifiés pour accélérer les backups. |
 
 [Challenge B202](./challenges/Challenge_B202.md)
 
