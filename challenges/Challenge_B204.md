@@ -39,7 +39,7 @@ Pour se connecter on ira sur `https:10.0.0.85:8007` (port 8006 étant le Proxmox
 
 ![log](/images/2026-01-15-10-16-52.png)
 
-## Configuration
+## Configuration du PBE sur ProxmoxVE
 
 On va configurer notre seconde IP réseau (vmbr1/nic1) et faire Apply Configuration
 
@@ -92,3 +92,11 @@ Il nous faut l'empreinte de notre PBS (dans le Dashboard)
 Et voilà
 
 ![pbs](/images/2026-01-15-11-23-59.png)
+
+## Opération de Backup
+
+Il suffit d'aller sur une VM : Backup
+
+![backup](/images/2026-01-15-11-26-47.png)
+
+![backup](/images/2026-01-15-11-34-18.png)
