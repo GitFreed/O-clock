@@ -3251,7 +3251,7 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 
 ### 💾 B201. Introduction : Sauvegarde & Stockage
 
-> **Introduction** : La sécurité absolue n'existe pas. Face aux menaces (ex: Ransomware), il faut prévoir l'échec des mesures de protection. La sauvegarde est l'ultime rempart pour ne pas payer de rançon et restaurer l'activité.
+> La sécurité absolue n'existe pas. Face aux menaces (ex: Ransomware), il faut prévoir l'échec des mesures de protection. La sauvegarde est l'ultime rempart pour ne pas payer de rançon et restaurer l'activité.
 
 #### 1. Concepts Clés & Métriques (SLA)
 
@@ -3442,7 +3442,7 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 
 ### 🛡️ B203. Veeam Backup & Replication
 
-> **Résumé** : Veeam est la solution de référence pour la sauvegarde des infrastructures virtualisées. Ce cours détaille son architecture modulaire, ses méthodes de sauvegarde intelligente (CBT) et ses mécanismes de restauration rapide, essentiels pour garantir un RPO/RTO optimal en entreprise.
+> **Veeam** est la solution de référence pour la sauvegarde des infrastructures virtualisées. Ce cours détaille son architecture modulaire, ses méthodes de sauvegarde intelligente (CBT) et ses mécanismes de restauration rapide, essentiels pour garantir un RPO/RTO optimal en entreprise.
 
 #### 1. Introduction et Philosophie
 
@@ -3520,50 +3520,62 @@ C'est la force principale de Veeam : la granularité.
 
 > **PBS** est une solution de sauvegarde moderne orientée "déduplication", conçue pour s'intégrer nativement avec Proxmox VE. L'objectif est de déployer une sauvegarde rapide, économe en espace et sécurisée contre les ransomwares.
 
-#### 1. Philosophie & Architecture
+#### 1. Méthodes d'Installation & Réseau
 
-Contrairement aux sauvegardes classiques qui copient souvent des fichiers entiers, PBS repose sur une approche **"Incremental-Forever"** (Incrémentielle infinie) et une forte **Déduplication**.
+Avant d'attaquer la sauvegarde, il faut comprendre comment PBS s'implante dans l'infrastructure. Nous avons vu deux méthodes :
 
-- **Architecture Client-Serveur** :
-  - **Le Serveur (PBS)** : C'est le logiciel qui gère le stockage (Datastore). Il ne "tire" pas les sauvegardes, il attend qu'on lui envoie des données.
-  - **Le Client** : C'est l'outil installé sur la source (ex: Proxmox VE). C'est lui qui découpe les données, les chiffre et les envoie au serveur.
-  - *Note* : Proxmox VE intègre nativement le client PBS. Pas besoin d'installation supplémentaire sur vos hyperviseurs !
+- **Installation via ISO** : La méthode classique "Bare-metal". On utilise l'ISO officielle sur une machine (ou une VM) pour installer l'OS et le logiciel d'un coup.
 
-#### 2. Le Cœur du système : La Déduplication
+- **Installation sur Linux existant** : PBS peut s'installer sur une **Debian** standard déjà en place. Cela demande de gérer les sources APT et d'adapter les dépôts (notamment pour **Debian 13**).
 
-C'est LA fonctionnalité majeure.
-PBS ne stocke pas des fichiers ou des disques virtuels, il stocke des **Chunks** (morceaux).
+**Architecture Réseau** :
+Pour sécuriser les flux, une configuration à **deux cartes réseau** est essentielle (et imposée par notre architecture pfSense) :
 
-- **Le Chunking** : Le fichier disque d'une VM (ex: `vm-100-disk-0.raw`) est découpé en millions de petits morceaux (chunks) de taille variable (généralement 4 Mo).
+1. Une interface pour le réseau général/cluster.
 
-- **Le Hachage (Hashing)** : Chaque morceau reçoit une empreinte numérique unique (SHA-256).
+2. Une interface **dédiée** à la communication directe avec Proxmox VE (Management).
+*L'adressage IP doit être configuré manuellement (IP Statique) pour garantir la connectivité.*
 
-- **La Déduplication** : Avant d'envoyer un morceau au serveur, le client demande : *"Hé PBS, tu as déjà le morceau `a1b2c3...` ?"*
+#### 2. Philosophie : La Déduplication
 
-  - **Oui** : On ne l'envoie pas. On note juste dans l'index que ce fichier utilise ce morceau.
+Contrairement aux sauvegardes classiques, PBS repose sur une approche **"Incremental-Forever"** et une forte **Déduplication**. PBS ne stocke pas des fichiers entiers, il stocke des **Chunks** (morceaux).
+
+- **Le Chunking** : Le fichier disque d'une VM est découpé en millions de petits morceaux.
+- **Le Hachage** : Chaque morceau reçoit une empreinte numérique unique.
+- **La Déduplication** : Le client demande au serveur : *"Tu as déjà ce morceau ?"*.
+  - **Oui** : On ne l'envoie pas (gain de temps et de bande passante).
   - **Non** : On l'envoie et PBS le stocke.
 
-  > **Résultat** : Si vous avez 10 VMs Windows identiques, le système d'exploitation n'est stocké qu'une seule fois. L'économie d'espace est massive (souvent x10 ou x20).
+  **Résultat** : Si vous avez 10 VMs Windows identiques, le système d'exploitation n'est stocké qu'une seule fois.
 
-#### 3. Gestion du Stockage (Datastore)
+#### 3. Gestion du Stockage (Datastore & RAID)
 
-Dans PBS, on ne parle pas de "Repository" comme Veeam, mais de **Datastore**.
+Dans PBS, l'espace de stockage s'appelle aussi un **Datastore**. C'est le dossier où sont stockés les Chunks et les Index. Ce stockage repose souvent sur **ZFS** et des concepts de protection disque :
 
-- **Structure** : Un Datastore est simplement un dossier sur le disque du serveur PBS où sont stockés tous les *Chunks* et les *Index* (fichiers `.fidx` ou `.didx`).
+- **RAID** : Assure la tolérance aux pannes matérielles.
+- **RAID-Z** : La variante ZFS qui combine performance et protection des données.
+- **Miroir** : Duplication des données sur plusieurs disques.
 
-- **Garbage Collection (GC)** :
-  - Puisque les blocs sont partagés entre plein de sauvegardes, quand on supprime une vieille sauvegarde, on ne peut pas juste effacer ses données (car un bloc peut servir à une autre sauvegarde !).
-  - C'est le rôle du **Garbage Collector** (Ramasse-miettes). C'est une tâche de maintenance qui scanne tout le Datastore pour trouver les "Chunks orphelins" (ceux qui ne sont plus utilisés par personne) et les supprime réellement pour libérer de la place.
+**Garbage Collection (GC)** :
+C'est le "Ramasse-miettes". Une tâche de maintenance essentielle qui scanne le Datastore pour supprimer réellement les "Chunks orphelins" (ceux qui ne sont plus utilisés par aucune sauvegarde) afin de libérer de la place.
 
-#### 4. Sécurité & Intégrité
+#### 4. Intégration PVE & Sécurité
 
-PBS met l'accent sur la sécurité des données, particulièrement utile si le serveur de sauvegarde est sur un site distant ou "non de confiance".
+La connexion entre votre hyperviseur (PVE) et votre sauvegarde (PBS) est critique.
 
-- **Encryption (Chiffrement côté client)** : Les données peuvent être chiffrées **avant** de quitter le client (Proxmox VE). Le serveur PBS ne voit que des données illisibles. Si on vole le serveur PBS, les données sont inexploitables sans la clé.
+- **Jointure & Fingerprint** : L'ajout du PBS dans Proxmox VE nécessite une validation par **Empreinte (Fingerprint)**. C'est une sécurité cryptographique pour être sûr que l'on parle au bon serveur et éviter les interceptions.
+- **Chiffrement (Encryption)** : Les données peuvent être chiffrées côté client (PVE) avant l'envoi. Le serveur PBS ne voit alors que des données illisibles.
 
-- **Verify Jobs** : Tâches planifiées qui relisent les morceaux stockés pour vérifier qu'ils ne sont pas corrompus (bit rot).
+#### 5. Sauvegardes & Restaurations (Validation)
 
-#### 5. Synchronisation & Règle 3-2-1
+Sauvegarder ne suffit pas, il faut valider la protection des données par des tests :
+
+- **Verify Jobs** : Tâches planifiées qui relisent les morceaux stockés pour vérifier leur intégrité physique (bit rot).
+- **Restauration Complète** : Remettre une VM entière sur pied.
+- **File Picking (Collecte de fichiers)** : Capacité à restaurer *juste un fichier* précis à l'intérieur d'une archive de Conteneur ou de VM, sans tout écraser.
+- **Simulation d'erreurs** : Provoquer des pannes volontaires pour valider que les procédures de restauration fonctionnent réellement.
+
+#### 6. Synchronisation & Règle 3-2-1
 
 Pour respecter la règle du 3-2-1, PBS utilise les **Remotes** et la **Sync**.
 
@@ -3573,7 +3585,7 @@ Pour respecter la règle du 3-2-1, PBS utilise les **Remotes** et la **Sync**.
 
 - *Avantage* : Grâce à la déduplication, seuls les nouveaux morceaux sont transférés via Internet. C'est extrêmement efficace pour la réplication hors-site.
 
-#### 6. Maintenance : Le Pruning (Élagage)
+#### 7. Maintenance : Le Pruning (Élagage)
 
 Comme sur Veeam, il faut définir une politique de rétention pour ne pas saturer le disque. Cela s'appelle le **Pruning**.
 
@@ -3584,23 +3596,17 @@ Comme sur Veeam, il faut définir une politique de rétention pour ne pas sature
 
 - PBS supprime les index des vieilles sauvegardes, et le *Garbage Collector* passera plus tard pour nettoyer les blocs.
 
-#### 💡 Résumé : Différences Clés Veeam vs PBS
-
-- PBS peut être installé sur un Linux existant ou via une ISO
-- La configuration réseau avec deux cartes est essentielle
-- Le datastore repose sur des concepts RAID et ZFS
-- La jointure PVE / PBS se fait via une empreinte de sécurité
-- Les sauvegardes et restaurations permettent de valider la protection des données
+### 💡 Résumé : Différences Clés Veeam vs PBS
 
 | Fonctionnalité | Veeam Backup & Replication | Proxmox Backup Server |
 | --- | --- | --- |
-| **Cible** | VMware, Hyper-V, Nutanix, Physique, Cloud | **Proxmox VE**, Linux (Debian) |
+| **Cible** | VMware, Hyper-V, Nutanix, Physique | **Proxmox VE**, Linux (Debian) |
 | **Format** | Fichiers `.vbk` (Full) et `.vib` (Incr) | **Chunks** (Morceaux dédupliqués) |
-| **Type de Backup** | Chaînes (Full + Incrémentielles) | **Incrémentielle infinie** (Tout apparaît comme une Full) |
-| **Installation** | Windows ou Windows Server | **Bare-metal** (ISO) ou sur Debian |
+| **Architecture** | Agentless (Hyperviseur) ou Agent (Physique) | Client natif intégré dans PVE |
+| **Installation** | Windows (Server ou Desktop) | **Bare-metal** (ISO) ou sur Debian |
 | **Licence** | Payant (Community limitée) | **Open Source** (Support payant optionnel) |
 
-**En bref** : Si on est 100% Proxmox, PBS est souvent plus performant et léger que Veeam. Si on a un parc mixte, Veeam reste le roi.
+**En bref** : Pour un environnement 100% Proxmox, PBS est plus performant (déduplication native) et léger. Veeam reste incontournable pour les parcs hétérogènes (Windows/VMware).
 
 ![proxmox](/images/2026-01-15-10-01-36.png)
 
