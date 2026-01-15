@@ -95,7 +95,7 @@ Et voilà
 
 ![pbs](/images/2026-01-15-11-23-59.png)
 
-## Opération de Backup
+## Opération de Sauvegarde
 
 Il suffit d'aller sur une VM : Backup
 
@@ -134,3 +134,15 @@ On peut faire de même avec un Container
 ![ct](/images/2026-01-15-12-00-51.png)
 
 ![ct](/images/2026-01-15-12-01-52.png)
+
+## Opération de Restauration
+
+On supprime le container, on peut retrouver la backup dans le PBS sur ProxmoxVE et lancer la restauration
+
+![restore](/images/2026-01-15-13-45-40.png)
+
+![restore](/images/2026-01-15-13-47-12.png)
+
+On peut également restaurer un fichier en particulier avec File Restore
+
+![file](/images/2026-01-15-13-49-04.png)
