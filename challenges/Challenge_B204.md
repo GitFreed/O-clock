@@ -100,3 +100,35 @@ Il suffit d'aller sur une VM : Backup
 ![backup](/images/2026-01-15-11-26-47.png)
 
 ![backup](/images/2026-01-15-11-34-18.png)
+
+On peut retrouver la Backup sur ProxmoxVE dans notre VM, sur le Storage PBS et surtout dans PBS directement dans le Datastore
+
+![pbs](/images/2026-01-15-11-39-38.png)
+
+En détail on peut même retrouver nos fichiers de config, disques etc
+
+![datastore](/images/2026-01-15-11-40-59.png)
+
+On a des actions disponibles directement : V pour Verify la sauvegarde
+
+![verify](/images/2026-01-15-11-43-22.png)
+
+La silhouette pour changer l'owner
+
+![owner](/images/2026-01-15-11-46-19.png)
+
+Le ciseau pour "Prune" et nettoyer l'historique
+
+![prune](/images/2026-01-15-11-48-10.png)
+
+Le bouclier sur une backup permet de la protéger
+
+![shield](/images/2026-01-15-11-53-30.png)
+
+Et la corbeille pour supprimer (suivi d'un GC Job)
+
+On peut faire de même avec un Container
+
+![ct](/images/2026-01-15-12-00-51.png)
+
+![ct](/images/2026-01-15-12-01-52.png)
