@@ -3586,12 +3586,18 @@ Comme sur Veeam, il faut définir une politique de rétention pour ne pas sature
 
 #### 💡 Résumé : Différences Clés Veeam vs PBS
 
+- PBS peut être installé sur un Linux existant ou via une ISO
+- La configuration réseau avec deux cartes est essentielle
+- Le datastore repose sur des concepts RAID et ZFS
+- La jointure PVE / PBS se fait via une empreinte de sécurité
+- Les sauvegardes et restaurations permettent de valider la protection des données
+
 | Fonctionnalité | Veeam Backup & Replication | Proxmox Backup Server |
 | --- | --- | --- |
 | **Cible** | VMware, Hyper-V, Nutanix, Physique, Cloud | **Proxmox VE**, Linux (Debian) |
 | **Format** | Fichiers `.vbk` (Full) et `.vib` (Incr) | **Chunks** (Morceaux dédupliqués) |
 | **Type de Backup** | Chaînes (Full + Incrémentielles) | **Incrémentielle infinie** (Tout apparaît comme une Full) |
-| **Installation** | Windows Server | **Bare-metal** (ISO) ou sur Debian |
+| **Installation** | Windows ou Windows Server | **Bare-metal** (ISO) ou sur Debian |
 | **Licence** | Payant (Community limitée) | **Open Source** (Support payant optionnel) |
 
 **En bref** : Si on est 100% Proxmox, PBS est souvent plus performant et léger que Veeam. Si on a un parc mixte, Veeam reste le roi.
