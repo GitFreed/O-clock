@@ -3596,7 +3596,7 @@ Comme sur Veeam, il faut définir une politique de rétention pour ne pas sature
 
 - PBS supprime les index des vieilles sauvegardes, et le *Garbage Collector* passera plus tard pour nettoyer les blocs.
 
-### 💡 Résumé : Différences Clés Veeam vs PBS
+#### 💡 Résumé : Différences Clés Veeam vs PBS
 
 | Fonctionnalité | Veeam Backup & Replication | Proxmox Backup Server |
 | --- | --- | --- |
