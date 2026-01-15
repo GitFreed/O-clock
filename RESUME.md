@@ -84,7 +84,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B201. Introduction : Sauvegarde & Stockage](#-b201-introduction--sauvegarde--stockage)
 - [B202. Architecture ZFS & TrueNAS](#️-b202-architecture-zfs--truenas)
 - [B203. Veeam Backup & Replication](#️-b203-veeam-backup--replication)
-- [B204. Proxmox Backup](#-b204-proxmox-backup)
+- [B204. Proxmox Backup Server](#-b204-proxmox-backup-server)
 
 ### [Saison B3. Supervision 📊](.)
 
@@ -3513,7 +3513,7 @@ C'est la force principale de Veeam : la granularité.
 
 ---
 
-### 🛟 B204. Proxmox Backup
+### 🛟 B204. Proxmox Backup Server
 
 >
 
