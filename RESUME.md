@@ -3437,7 +3437,7 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 
 ---
 
-### 🛡️ **B203. Veeam Backup & Replication**
+### 🛡️ B203. Veeam Backup & Replication
 
 > **Résumé** : Veeam est la solution de référence pour la sauvegarde des infrastructures virtualisées. Ce cours détaille son architecture modulaire, ses méthodes de sauvegarde intelligente (CBT) et ses mécanismes de restauration rapide, essentiels pour garantir un RPO/RTO optimal en entreprise.
 
@@ -3516,6 +3516,8 @@ C'est la force principale de Veeam : la granularité.
 ### 🛟 B204. Proxmox Backup Server
 
 >
+
+![proxmox](/images/2026-01-15-10-01-36.png)
 
 [Challenge B204](./challenges/Challenge_B204.md)
 
