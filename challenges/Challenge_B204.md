@@ -2,7 +2,9 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge](/images/)
+>⌨️ Challenge :
+>
+> Installer Proxmox Backup Server, configurer, backup et restore
 
 [Cours B204.](/RESUME.md#-b204-proxmox-backup-server)
 
