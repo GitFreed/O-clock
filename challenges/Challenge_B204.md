@@ -4,7 +4,7 @@
 
 ![Challenge](/images/)
 
-[Cours B204.](/RESUME.md#-b204)
+[Cours B204.](/RESUME.md#-b204-proxmox-backup-server)
 
 ---
 
