@@ -84,9 +84,12 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B201. Introduction : Sauvegarde & Stockage](#-b201-introduction--sauvegarde--stockage)
 - [B202. Architecture ZFS & TrueNAS](#️-b202-architecture-zfs--truenas)
 - [B203. Veeam Backup & Replication](#️-b203-veeam-backup--replication)
-- [B204. Proxmox Backup Server](#-b204-proxmox-backup-server)
+- [B204. Proxmox Backup Server](#️-b204-proxmox-backup-server)
+- [Fin Saison B2 : QCM](#-fin-saison-b2-stockage--sauvegarde)
 
-### [Saison B3. Supervision 📊](.)
+### [Saison B3. Supervision 📊](#-saison-b3-supervision)
+
+- [B301. Introduction : Supervision](#-b301-introduction--supervision)
 
 ### [Saison B4. Scripting 📜](.)
 
@@ -3513,13 +3516,138 @@ C'est la force principale de Veeam : la granularité.
 
 ---
 
-### 🛟 B204. Proxmox Backup Server
+### ♻️ B204. Proxmox Backup Server
 
->
+> **PBS** est une solution de sauvegarde moderne orientée "déduplication", conçue pour s'intégrer nativement avec Proxmox VE. L'objectif est de déployer une sauvegarde rapide, économe en espace et sécurisée contre les ransomwares.
+
+#### 1. Philosophie & Architecture
+
+Contrairement aux sauvegardes classiques qui copient souvent des fichiers entiers, PBS repose sur une approche **"Incremental-Forever"** (Incrémentielle infinie) et une forte **Déduplication**.
+
+- **Architecture Client-Serveur** :
+  - **Le Serveur (PBS)** : C'est le logiciel qui gère le stockage (Datastore). Il ne "tire" pas les sauvegardes, il attend qu'on lui envoie des données.
+  - **Le Client** : C'est l'outil installé sur la source (ex: Proxmox VE). C'est lui qui découpe les données, les chiffre et les envoie au serveur.
+  - *Note* : Proxmox VE intègre nativement le client PBS. Pas besoin d'installation supplémentaire sur vos hyperviseurs !
+
+#### 2. Le Cœur du système : La Déduplication
+
+C'est LA fonctionnalité majeure.
+PBS ne stocke pas des fichiers ou des disques virtuels, il stocke des **Chunks** (morceaux).
+
+- **Le Chunking** : Le fichier disque d'une VM (ex: `vm-100-disk-0.raw`) est découpé en millions de petits morceaux (chunks) de taille variable (généralement 4 Mo).
+
+- **Le Hachage (Hashing)** : Chaque morceau reçoit une empreinte numérique unique (SHA-256).
+
+- **La Déduplication** : Avant d'envoyer un morceau au serveur, le client demande : *"Hé PBS, tu as déjà le morceau `a1b2c3...` ?"*
+
+  - **Oui** : On ne l'envoie pas. On note juste dans l'index que ce fichier utilise ce morceau.
+  - **Non** : On l'envoie et PBS le stocke.
+
+  > **Résultat** : Si vous avez 10 VMs Windows identiques, le système d'exploitation n'est stocké qu'une seule fois. L'économie d'espace est massive (souvent x10 ou x20).
+
+#### 3. Gestion du Stockage (Datastore)
+
+Dans PBS, on ne parle pas de "Repository" comme Veeam, mais de **Datastore**.
+
+- **Structure** : Un Datastore est simplement un dossier sur le disque du serveur PBS où sont stockés tous les *Chunks* et les *Index* (fichiers `.fidx` ou `.didx`).
+
+- **Garbage Collection (GC)** :
+  - Puisque les blocs sont partagés entre plein de sauvegardes, quand on supprime une vieille sauvegarde, on ne peut pas juste effacer ses données (car un bloc peut servir à une autre sauvegarde !).
+  - C'est le rôle du **Garbage Collector** (Ramasse-miettes). C'est une tâche de maintenance qui scanne tout le Datastore pour trouver les "Chunks orphelins" (ceux qui ne sont plus utilisés par personne) et les supprime réellement pour libérer de la place.
+
+#### 4. Sécurité & Intégrité
+
+PBS met l'accent sur la sécurité des données, particulièrement utile si le serveur de sauvegarde est sur un site distant ou "non de confiance".
+
+- **Encryption (Chiffrement côté client)** : Les données peuvent être chiffrées **avant** de quitter le client (Proxmox VE). Le serveur PBS ne voit que des données illisibles. Si on vole le serveur PBS, les données sont inexploitables sans la clé.
+
+- **Verify Jobs** : Tâches planifiées qui relisent les morceaux stockés pour vérifier qu'ils ne sont pas corrompus (bit rot).
+
+#### 5. Synchronisation & Règle 3-2-1
+
+Pour respecter la règle du 3-2-1, PBS utilise les **Remotes** et la **Sync**.
+
+- **Remote** : On déclare un autre serveur PBS distant.
+
+- **Sync Job** : On configure une tâche qui va "tirer" les sauvegardes d'un PBS A vers un PBS B.
+
+- *Avantage* : Grâce à la déduplication, seuls les nouveaux morceaux sont transférés via Internet. C'est extrêmement efficace pour la réplication hors-site.
+
+#### 6. Maintenance : Le Pruning (Élagage)
+
+Comme sur Veeam, il faut définir une politique de rétention pour ne pas saturer le disque. Cela s'appelle le **Pruning**.
+
+- Exemple de politique :
+  - `keep-last=7` (Garder les 7 dernières sauvegardes)
+  - `keep-daily=1` (Garder 1 par jour sur 2 semaines)
+  - `keep-weekly=4` (Garder 1 par semaine...)
+
+- PBS supprime les index des vieilles sauvegardes, et le *Garbage Collector* passera plus tard pour nettoyer les blocs.
+
+#### 💡 Résumé : Différences Clés Veeam vs PBS
+
+| Fonctionnalité | Veeam Backup & Replication | Proxmox Backup Server |
+| --- | --- | --- |
+| **Cible** | VMware, Hyper-V, Nutanix, Physique, Cloud | **Proxmox VE**, Linux (Debian) |
+| **Format** | Fichiers `.vbk` (Full) et `.vib` (Incr) | **Chunks** (Morceaux dédupliqués) |
+| **Type de Backup** | Chaînes (Full + Incrémentielles) | **Incrémentielle infinie** (Tout apparaît comme une Full) |
+| **Installation** | Windows Server | **Bare-metal** (ISO) ou sur Debian |
+| **Licence** | Payant (Community limitée) | **Open Source** (Support payant optionnel) |
+
+**En bref** : Si on est 100% Proxmox, PBS est souvent plus performant et léger que Veeam. Si on a un parc mixte, Veeam reste le roi.
 
 ![proxmox](/images/2026-01-15-10-01-36.png)
 
+#### 🚀 Zoom 2026 : L'Écosystème Proxmox Unifié (V9 & Datacenter)
+
+Depuis fin 2025, Proxmox ne se limite plus à un hyperviseur et un serveur de sauvegarde isolés. L'architecture a évolué pour concurrencer directement les géants comme VMware Cloud Foundation.
+
+#### 1. Proxmox VE 9 et les "Nouveaux" Conteneurs
+
+La version 9 (basée sur Debian 13 "Trixie") a brisé une barrière historique dans la virtualisation légère :
+
+- **Support OCI (Open Container Initiative)** : Avant, les conteneurs LXC étaient des "petits Linux" (OS complet). Avec la V9, Proxmox peut lancer des **images OCI** (le format standard utilisé par Docker/Kubernetes) directement dans des conteneurs LXC.
+
+- *Intérêt pour le Backup* : PBS 4 (la nouvelle version majeure) sait dédupliquer ces images conteneurs de manière encore plus agressive, car elles partagent toutes les mêmes couches de base (Layers).
+
+#### 2. Proxmox Datacenter Manager
+
+C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
+
+- **Le Concept** : C'est une troisième brique logicielle qui s'installe au-dessus de tout le reste. Elle offre une **interface unique** pour piloter plusieurs clusters PVE et plusieurs serveurs PBS disséminés géographiquement.
+
+- **Corrélation** : Au lieu de configurer vos sauvegardes PBS cluster par cluster, vous définissez une stratégie globale dans le Datacenter Manager, et il l'applique partout. Il permet aussi la migration à chaud de VMs entre deux clusters différents (Cross-Cluster Migration), ce qui change la stratégie de sauvegarde (le backup doit suivre la VM !).
+
+> **En résumé** : Aujourd'hui, l'admin système gère le trio **PVE 9** (Compute) + **PBS 4** (Backup) + **Datacenter Manager** (Orchestration).
+
 [Challenge B204](./challenges/Challenge_B204.md)
+
+> 📚 **Ressources** :
+>
+> - Documentation PBS <https://pbs.proxmox.com/docs/>
+> - Transférer des fichiers sous Linux avec SCP <https://www.it-connect.fr/transferer-fichiers-linux-scp-exemples-commandes/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 💾 Fin Saison B2. Stockage & sauvegarde
+
+[QCM Saison B2](https://forms.gle/)
+
+![Résultat QCM](/images/)
+
+---
+
+## **📊 Saison B3. Supervision**
+
+>
+
+### 📊 B301. Introduction : Supervision
+
+>
+
+[Challenge B301](./challenges/Challenge_B301.md)
 
 > 📚 **Ressources** :
 >
