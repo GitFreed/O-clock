@@ -3645,9 +3645,9 @@ C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
 
 ### 💾 Fin Saison B2. Stockage & sauvegarde
 
-[QCM Saison B2](https://forms.gle/)
+[QCM Saison B2](https://forms.gle/QM4RdUAYAwpWHtfR8)
 
-![Résultat QCM](/images/)
+![Résultat QCM](/images/2026-01-16-09-42-43.png)
 
 ---
 
