@@ -89,7 +89,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B3. Supervision 📊](#-saison-b3-supervision)
 
-- [B301. Introduction : Supervision](#-b301-introduction--supervision)
+- [B301. Introduction : Supervision](#-b301-introduction--monitoring--supervision)
 
 ### [Saison B4. Scripting 📜](.)
 
@@ -3653,13 +3653,86 @@ C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
 
 ## **📊 Saison B3. Supervision**
 
->
+> Cette saison se concentre sur la "santé" du Système d'Information. L'objectif est de passer d'une gestion réactive ("C'est cassé, on répare") à une gestion proactive ("Ça va casser, on intervient"). On y apprendra à collecter des métriques, gérer des alertes et utiliser les protocoles standards comme SNMP.
 
-### 📊 B301. Introduction : Supervision
+### 📊 B301. Introduction : Monitoring & Supervision
 
->
+> Ce premier cours pose les bases théoriques. Il distingue la collecte de données (Monitoring) de l'analyse décisionnelle (Supervision) et introduit le protocole roi des réseaux : SNMP.
 
-[Challenge B301](./challenges/Challenge_B301.md)
+#### 1. Supervision vs Monitoring : Quelle différence ?
+
+Bien que souvent utilisés comme synonymes, ces termes ont une nuance importante  :
+
+- **Monitoring (Surveillance)** : C'est l'action technique de **collecter des données** en temps réel sur l'état des composants (ex: "Le CPU est à 80%"). C'est le thermomètre.
+- **Supervision (Pilotage)** : C'est l'étape supérieure. Elle **analyse** ces données pour prendre des décisions, déclencher des alertes, visualiser l'état global et parfois automatiser des corrections (ex: "Le CPU est > 80% depuis 5min -> Alerte Critique -> Redémarrage du service").
+
+**Pourquoi superviser ?**
+Pour garantir la disponibilité (le service est-il accessible ?), la performance (est-il rapide ?) et la sécurité du SI. L'objectif final est de réduire les temps d'arrêt et d'améliorer la productivité.
+
+#### 2. Les Données de la Supervision
+
+Pour surveiller un système, on s'appuie sur trois piliers :
+
+- **Les Métriques (Chiffres)** : Données quantitatives mesurables (ex: Temps de réponse, % RAM utilisée, Débit réseau). Elles servent à faire des graphiques et voir l'évolution.
+
+- **Les Logs (Journaux)** : Données qualitatives/textuelles. Ce sont les enregistrements d'événements passés (ex: "Connexion échouée de l'utilisateur admin").
+
+- **Les Alertes (Notifications)** : Message envoyé à l'administrateur lorsqu'une métrique dépasse un seuil. On distingue 3 niveaux  :
+
+  - ℹ️ **Info** : Pour suivi.
+  - ⚠️ **Warning** : Problème potentiel, à surveiller.
+  - 🚨 **Critique** : Incident majeur, intervention immédiate requise.
+
+  **KPI & SLA** : Les métriques deviennent des **KPI** (Indicateurs Clés de Performance) qui permettent de vérifier si l'on respecte les **SLA** (Accords de niveau de service définis avec le client) .
+
+#### 3. Méthodes et Stratégies
+
+- **Proactif vs Réactif** : Le but est d'être **Proactif** (anticiper la panne avant qu'elle n'impacte l'utilisateur) plutôt que **Réactif** (réparer après la panne) .
+
+- **Push vs Pull** :
+  - *Polling (Pull)* : Le serveur de supervision demande régulièrement "Ça va ?" à l'équipement.
+  - *Push* : L'équipement envoie lui-même l'info quand elle change.
+
+- **Agent vs Agentless** :
+  - *Avec Agent* : On installe un petit logiciel sur le serveur cible (plus précis, mais intrusif).
+  - *Agentless* : On utilise des protocoles standards sans rien installer (ex: SNMP, WMI).
+
+#### 4. Le Protocole SNMP (Simple Network Management Protocol)
+
+C'est le standard universel pour superviser les équipements réseaux (routeurs, switchs) et serveurs sans agent.
+
+**Architecture en 3 composants**  :
+
+1. **Manager** (Serveur de supervision) : Il pose les questions (Zabbix, Nagios...).
+2. **Agent** (Équipement) : Il répond aux questions ou envoie des alertes.
+3. **MIB** (Management Information Base) : La base de données hiérarchique qui contient toutes les infos possibles. Chaque info a une adresse unique appelée **OID** (ex: `1.3.6.1...` pour le nom du système).
+
+**Fonctionnement**  :
+
+- **GET** : Le Manager demande une info ("Quelle est ta charge CPU ?"). C'est du *Polling*.
+- **TRAP** : L'Agent envoie une alerte spontanée ("Alerte ! Interface Down !"). C'est du *Push* (ou Alerting).
+
+**Les Versions de SNMP**  :
+
+- **v1 & v2c** (Le plus courant) : Simple mais **non sécurisé**. Le mot de passe (appelé **Community String**) circule en clair sur le réseau.
+
+- **v3** (Le standard recommandé) : Complexe mais **sécurisé**. Il apporte l'authentification (login/mdp) et le chiffrement des échanges.
+
+#### 5. Outils du marché
+
+Quelques noms cités dans le cours pour la culture générale:
+
+- **Open Source** : Zabbix, Nagios, Centreon.
+- **Commercial** : PRTG.
+
+#### 6. En résumé 💡
+
+- **Supervision** = Analyse & Décision / **Monitoring** = Collecte.
+- **SNMP** est le protocole roi du réseau. Il utilise le **Port 161 (UDP)** pour les questions (GET) et **162 (UDP)** pour les alertes (TRAP).
+
+- En production, on évite SNMP v1/v2c (mot de passe "public" en clair) et on privilégie **SNMP v3** pour la sécurité.
+
+[Challenge B301](./challenges/Challenge_B301.md) : Installation de Zabbix
 
 > 📚 **Ressources** :
 >
@@ -3670,7 +3743,7 @@ C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
 
 ---
 
-### 📊 B302
+### 📊 B302. Zabbix
 
 >
 

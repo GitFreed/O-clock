@@ -6,7 +6,7 @@
 
 Challenge : <https://github.com/O-clock-Aldebaran/SB03E01-Mise-en-place-supervision>
 
-[Cours B301.](/RESUME.md#-b301)
+[Cours B301.](/RESUME.md#-b301-introduction--monitoring--supervision)
 
 ---
 
