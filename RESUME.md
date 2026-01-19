@@ -3663,6 +3663,21 @@ C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
 
 > 📚 **Ressources** :
 >
+> - SNMPv2c vs SNMPv3 : comparaison de la sécurité avec Wireshark <https://www.it-connect.fr/snmpv2c-vs-snmpv3-comparaison-de-la-securite-avec-wireshark/>
+> - Zabbix Documentation <https://www.zabbix.com/documentation/8.0/en/manual/appliance>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 📊 B302
+
+>
+
+[Challenge B302](./challenges/Challenge_B301.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
