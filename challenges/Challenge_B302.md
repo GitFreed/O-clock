@@ -129,3 +129,25 @@ On peut ensuite placer des Widget et les configurer
 Exemple de mon Dashboard personnalisé (Darkreader Actif sur mon Navigateur)
 
 ![perso](/images/2026-01-20-22-31-59.png)
+
+## Création d'alerte et test
+
+On va créer une alerte personnalisée si un Agent est HS
+
+![Alerts](/images/2026-01-20-22-46-11.png)
+
+Condition du trigger
+
+![condition](/images/2026-01-20-22-42-34.png)
+
+Operation à effectuer
+
+![Operation](/images/2026-01-20-22-45-08.png)
+
+![HS](/images/2026-01-20-22-46-45.png)
+
+Pour tester on va stopper notre agent sur la machine ubuntu avec `sudo systemctl stop zabbix-agent2`
+
+![off](/images/2026-01-20-22-49-26.png)
+
+![alert](/images/2026-01-20-23-04-30.png)
