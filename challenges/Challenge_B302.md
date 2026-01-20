@@ -115,3 +115,17 @@ Et voilà c'est passé en vert !
 ![data](/images/2026-01-20-22-10-50.png)
 
 ## Création d'un Dashboard
+
+On peut créer un Dashboard personnalisé, tout en haut à droite du Dashboard avec les 3 barres de menu : Create new
+
+![dash](/images/2026-01-20-22-13-14.png)
+
+On peut ensuite placer des Widget et les configurer
+
+![dash](/images/2026-01-20-22-13-39.png)
+
+![graph](/images/2026-01-20-22-19-23.png)
+
+Exemple de mon Dashboard personnalisé (Darkreader Actif sur mon Navigateur)
+
+![perso](/images/2026-01-20-22-31-59.png)
