@@ -5,6 +5,10 @@
 
 ---
 
+![ADGUARD](/images/2026-01-21-00-31-34.png)<https://github.com/AdguardTeam/AdguardHome>
+
+---
+
 ## L'intérêt technique 🎯
 
 1. **Visibilité Réseau (Layer 7) :** Voir en détail ce qui se passe sur mon réseau.
