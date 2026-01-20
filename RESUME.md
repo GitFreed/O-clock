@@ -3743,14 +3743,76 @@ Quelques noms cités dans le cours pour la culture générale:
 
 ---
 
-### 📊 B302. Zabbix
+### 📊 B302. Présentation de Zabbix**
 
->
+> Découvrons **Zabbix**, la solution Open Source de référence pour la supervision d'entreprise. Comprendre comment ses différents composants s'articulent pour collecter, stocker et visualiser l'état de santé du Système d'Information.
 
-[Challenge B302](./challenges/Challenge_B301.md)
+#### 1. Qu'est-ce que Zabbix ?
+
+**Zabbix** est un logiciel de supervision "tout-en-un" créé en 2001. Il est gratuit (Open Source sous licence GPLv2) et conçu pour passer à l'échelle de la petite PME au grand groupe.
+
+- **Périmètre de surveillance** : Il surveille absolument tout :
+  - **Infrastructure** : Serveurs (Linux/Windows), Réseau (Switchs/Routeurs via SNMP).
+  - **Cloud & Virtualisation** : VMs, Conteneurs (Docker/K8s), Services Cloud.
+  - **Applications** : Bases de données, serveurs Web (Apache/Nginx), applications Java.
+
+- **Philosophie** : Centraliser toutes les métriques en un point unique pour alerter en cas de problème.
+
+#### 2. Architecture & Composants
+
+Zabbix repose sur une architecture modulaire composée de 4 briques essentielles :
+
+- **Zabbix Server (Le Cerveau)** :
+
+  - C'est le processus central (backend en C).
+  - **Rôle** : Il ordonne la collecte des données, traite les informations reçues, calcule les déclencheurs (triggers) et envoie les alertes (mails, SMS).
+
+- **Base de Données (La Mémoire)** :
+
+  - **Rôle** : Tout est stocké ici : la configuration de Zabbix ET l'historique des données collectées.
+  - **Technologies** : Compatible avec MySQL, MariaDB, PostgreSQL (et Oracle pour les versions pro).
+
+- **Zabbix Frontend (Le Visage)** :
+
+  - **Rôle** : L'interface Web (en PHP) qui permet à l'administrateur de configurer la supervision et de visualiser les graphiques/tableaux de bord.
+
+- **Zabbix Agent (Les Bras)** :
+
+  - **Rôle** : Petit logiciel installé directement sur les serveurs à surveiller (Linux ou Windows).
+  - Il récupère les infos locales (CPU, RAM, Disque) et les renvoie au serveur.
+  - *Note* : Pour le matériel réseau où on ne peut pas installer d'agent, Zabbix utilise le protocole **SNMP**.
+
+#### 3. Fonctionnement : Le Flux de Données
+
+Comment une donnée arrive-t-elle sur votre écran ?
+
+1. **Collecte** : L'Agent (ou le Serveur via SNMP) mesure une valeur (ex: CPU à 90%).
+2. **Stockage** : La valeur est envoyée au Serveur Zabbix qui l'écrit en Base de Données.
+3. **Analyse** : Le Serveur compare cette valeur à un seuil défini (Trigger).
+    - *Exemple* : "Si CPU > 80% alors ALERTE".
+4. **Visualisation** : L'administrateur voit l'alerte clignoter sur l'Interface Web.
+
+#### 4. Concepts Clés (Vocabulaire Zabbix)
+
+Pour maîtriser Zabbix, il faut parler son langage :
+
+- **Host (Hôte)** : Tout équipement surveillé (Serveur, Switch).
+- **Item (Élément)** : Une métrique précise que l'on surveille (ex: "Charge CPU", "Espace Disque C:").
+- **Trigger (Déclencheur)** : La règle qui définit un problème (ex: "Espace libre < 10%").
+- **Action** : Ce que fait Zabbix en cas de problème (Envoyer un email, redémarrer un service).
+
+#### En résumé 💡
+
+- **Zabbix** = Solution complète (OS + Réseau + App).
+- **Agent** = Installé sur les serveurs pour des infos précises.
+- **Serveur + BDD + Frontend** = Le trio central pour gérer la supervision.
+- **SNMP** = Utilisé par Zabbix pour surveiller ce qui ne supporte pas d'agent (Routeurs/Switchs).
+
+[Challenge B302](./challenges/Challenge_B301.md) : Installation d'Agents Zabbix pour étendre la supervision à l’ensemble de l’infrastructure.
 
 > 📚 **Ressources** :
 >
+> - Manuel Zabbix, doc officielle <https://www.zabbix.com/documentation/current/en/manual/introduction/manual_structure>
 
 [Retour en haut](#-table-des-matières)
 
