@@ -90,6 +90,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison B3. Supervision 📊](#-saison-b3-supervision)
 
 - [B301. Introduction : Supervision](#-b301-introduction--monitoring--supervision)
+- [B302. Présentation de Zabbix](#-b302-présentation-de-zabbix)
 
 ### [Saison B4. Scripting 📜](.)
 
@@ -3743,7 +3744,7 @@ Quelques noms cités dans le cours pour la culture générale:
 
 ---
 
-### 📊 B302. Présentation de Zabbix**
+### 📊 B302. Présentation de Zabbix
 
 > Découvrons **Zabbix**, la solution Open Source de référence pour la supervision d'entreprise. Comprendre comment ses différents composants s'articulent pour collecter, stocker et visualiser l'état de santé du Système d'Information.
 
