@@ -3809,7 +3809,7 @@ Pour maîtriser Zabbix, il faut parler son langage :
 - **Serveur + BDD + Frontend** = Le trio central pour gérer la supervision.
 - **SNMP** = Utilisé par Zabbix pour surveiller ce qui ne supporte pas d'agent (Routeurs/Switchs).
 
-[Challenge B302](./challenges/Challenge_B301.md) : Installation d'Agents Zabbix pour étendre la supervision à l’ensemble de l’infrastructure.
+[Challenge B302](./challenges/Challenge_B302.md) : Installation d'Agents Zabbix pour étendre la supervision à l’ensemble de l’infrastructure.
 
 > 📚 **Ressources** :
 >
