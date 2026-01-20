@@ -7,7 +7,7 @@
 
 ## L'intérêt technique 🎯
 
-1. **Visibilité Réseau (Layer 7) :** Voir en détail ce qui se passe sur mon réseau, qui y fait quoi, et ou ça va.
+1. **Visibilité Réseau (Layer 7) :** Voir en détail ce qui se passe sur mon réseau.
 2. **Performance (Caching) :** AdGuard garde en mémoire les réponses DNS. Réponse en **1ms** (local) au lieu de **20ms** (Internet).
 3. **Sécurité :** Bloquer les domaines malveillants avant même que le pare-feu n'ait à traiter le paquet IP. C'est la première ligne de défense.
 
@@ -15,7 +15,7 @@
 
 ## 🛠️ Architecture du Lab
 
-* **Matériel :** Raspberry Pi (J'utiliserai un Raspberry pi 3B que j'ai déjà).
+* **Matériel :** Raspberry Pi (J'utiliserai un Raspberry pi 3B qui était au fond d'un tiroir).
 * **OS :** Raspberry Pi OS (Lite).
 * **Position :** Remplacer le serveur DNS par défaut de mon FAI
 * **Réseau :** 192.168.1.0/24
@@ -24,15 +24,38 @@
 
 ---
 
-### 1. Configuration du Bail Statique (Sur la Box)
+### Pré-requis Raspberry Pi OS
 
-Avant même d'installer le logiciel, on verrouille l'IP.
+> 📚 **Ressources** :
+>
+> * Raspberry Pi OS Lite <https://www.raspberrypi.com/software/operating-systems/>
+> * Raspberry Pi Imager <https://www.raspberrypi.com/software/>
 
-* Sur ma Box `192.168.1.254` dans **Services de la box** > **DHCP** > **Attribution d'adresse IP statique**
+Pour un serveur DNS comme AdGuard Home, la version **Lite** est impérative : pas d'interface graphique inutile qui mange de la RAM et du CPU. Le Raspberry Pi sera dédié à la performance réseau.
 
-* **Action requise :** Redémarrer le Raspberry Pi (ou débrancher/rebrancher le câble réseau) pour qu'il récupère sa nouvelle identité.
+On lance Raspberry Pi Imager pour créer le support d'installation
 
-* **Vérification :** Ping
+![appareil](/images/2026-01-21-00-07-18.png)
+
+![OS](/images/2026-01-21-00-08-30.png)
+
+On personnalise le Hostname, l'user admin et le password, puis il faut activer le SSH
+
+Et c'est parti pour le formatage et l'écriture de la carte micro SD
+
+![done](/images/2026-01-21-00-20-36.png)
+
+On peut enfin mettre la carte micro SD dans le Pi et le brancher à la Box puis le démarrer !
+
+### 1. Configuration du Bail Statique
+
+Avant même d'installer le AdGuard, on va passer l'IP en statique sur la Box `192.168.1.254` dans Services de la box > DHCP > Attribution d'adresse IP statique.
+
+Pour trouver le Raspberry on va dans la liste des appareils connectés et on cherche un appareil nommé raspberrypi, adguard-pi ou dont l'adresse MAC commence par b8:27:eb ou dc:a6:32 (les identifiants constructeurs Raspberry).
+
+On débranche/rebranche le câble réseau pour qu'il récupère sa nouvelle identité.
+
+* **Vérification :** `Ping 192.168.1.XXX`
 
 ### 2. Installation (SSH)
 
