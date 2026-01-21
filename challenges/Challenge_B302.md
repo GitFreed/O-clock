@@ -158,7 +158,7 @@ On va ajouter une règle de Discover dans Data Collection pour ne pas avoir à a
 
 ![discover](/images/2026-01-21-11-23-22.png)
 
-On va aussi ajouter/modifier une Alerte pour le Discovery, dans Alerts > Actions > Discovery actions. On peut ajouter des Operations : ajout de tag,, d'alerte etc
+On va aussi ajouter/modifier une Alerte pour le Discovery, dans Alerts > Actions > Discovery actions. On peut ajouter des Operations : ajout de tag, d'alerte etc
 
 ![actions](/images/2026-01-21-11-29-08.png)
 
@@ -167,3 +167,31 @@ Maintenant que tout est prêt on peut clicker sur le status disabled à droite, 
 Dans Monitoring > Discovery nos Hosts avec des agents sont apparus directement
 
 ![discover](/images/2026-01-21-11-36-27.png)
+
+Pour les hôtes Windows on va créer une nouvelle alerte Discovery pour ajouter les bons tags
+
+![actions](/images/2026-01-21-14-23-30.png)
+
+## Scripts
+
+![scripts](/images/2026-01-21-14-38-17.png)
+
+Les scripts globaux ne sont pas activés de base
+
+![scripts](/images/2026-01-21-14-38-48.png)
+
+Il faut le modifier sur le serveur directement dans le fichier de configuration `nano /etc/zabbix/zabbix_server.conf` on passe en 1 et on restart le `systemctl restart zabbix-server.service`
+
+![nano](/images/2026-01-21-14-41-56.png)
+
+Il y a toujours une erreur pour le Ping, on doit faire `setcap cap_net_raw+p /usr/bin/ping`
+
+![pîng](/images/2026-01-21-14-49-16.png)
+
+![traceroute](/images/2026-01-21-14-49-42.png)
+
+On peut retrouver les scripts dans la partie Alerts
+
+![scripts](/images/2026-01-21-14-50-38.png)
+
+On peut voir en détail nos scripts, les modifier ou en créer de nouveaux
