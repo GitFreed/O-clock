@@ -158,6 +158,12 @@ On va ajouter une règle de Discover dans Data Collection pour ne pas avoir à a
 
 ![discover](/images/2026-01-21-11-23-22.png)
 
-On va aussi ajouter/modifier une Alerte pour le Discovery, dans Alerts > Actions > Discovery actions
+On va aussi ajouter/modifier une Alerte pour le Discovery, dans Alerts > Actions > Discovery actions. On peut ajouter des Operations : ajout de tag,, d'alerte etc
 
 ![actions](/images/2026-01-21-11-29-08.png)
+
+Maintenant que tout est prêt on peut clicker sur le status disabled à droite, il passera en enabled, idem pour le Discovery dans Data Collection
+
+Dans Monitoring > Discovery nos Hosts avec des agents sont apparus directement
+
+![discover](/images/2026-01-21-11-36-27.png)

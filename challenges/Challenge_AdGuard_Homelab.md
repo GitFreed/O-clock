@@ -53,13 +53,17 @@ On peut enfin mettre la carte micro SD dans le Pi et le brancher à la Box puis 
 
 ### 1. Configuration du Bail Statique
 
-Avant même d'installer le AdGuard, on va passer l'IP en statique sur la Box `192.168.1.254` dans Services de la box > DHCP > Attribution d'adresse IP statique.
+Avant même d'installer le AdGuard, on va passer l'IP en statique sur la Box `192.168.1.254` dans Réglages avancés > DHCP > Attribution d'adresse IP statique.
 
-Pour trouver le Raspberry on va dans la liste des appareils connectés et on cherche un appareil nommé raspberrypi, adguard-pi ou dont l'adresse MAC commence par b8:27:eb ou dc:a6:32 (les identifiants constructeurs Raspberry).
+Pour trouver le Raspberry on va dans la liste des appareils et on cherche un appareil nommé adguard-pi ou dont l'adresse MAC commence par b8:27:eb ou dc:a6:32 (les identifiants constructeurs Raspberry).
+
+![DHCP](/images/2026-01-21-11-45-54.png)
 
 On débranche/rebranche le câble réseau pour qu'il récupère sa nouvelle identité.
 
-* **Vérification :** `Ping 192.168.1.XXX`
+Vérification : `Ping 192.168.1.XXX`
+
+![ping](/images/2026-01-21-11-50-48.png)
 
 ### 2. Installation (SSH)
 
@@ -70,39 +74,47 @@ ssh user@192.168.1.XXX
 
 ```
 
-Je lance le script d'installation automatique :
+![ssh](/images/2026-01-21-11-56-15.png)
+
+On lance le script d'installation automatique :
 
 ```bash
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 
 ```
 
+![install](/images/2026-01-21-11-57-41.png)
+
 ### 3. Initialisation (Web)
 
-1. J'ouvre mon navigateur sur : `http://192.168.1.XXX:3000`
-2. Clique sur **"C'est parti"**.
-3. **Interfaces d'écoute (Attention piège classique)** :
+On va ouvrir le navigateur sur : `http://192.168.1.XXX:3000`
 
-* **Interface Web Admin :** Sur le port **80** (ou 8080 si on a déjà un serveur web dessus).
-* **Serveur DNS :** Doit impérativement être sur le port **53** (UDP/TCP).
+![web](/images/2026-01-21-11-59-24.png)
 
-* Config du premier compte admin.
+On peut voir et configurer les interfaces web et d'écoute
+
+Attention le Serveur DNS Doit impérativement être sur le port **53** (UDP/TCP).
+
+![interfaces](/images/2026-01-21-12-02-24.png)
+
+Config compte admin
+
+![admin](/images/2026-01-21-12-07-21.png)
+
+Une fois la configuration terminée je peux me connecter directement sur son IP (port 80)
+
+![login](/images/2026-01-21-12-14-17.png)
 
 ### 4. Bascule DNS
 
-Sur l'interface Box > **DHCP** > **Serveurs DNS**.
+Sur l'interface Box > Réglages avancés > DHCP > Options
 
-* **DNS 1 :** `192.168.1.XXX`
-* **DNS 2 :** *Vide* (Pour forcer le passage par AdGuard)
-* Sauvegarde et redémarre la Bbox.
+![options](/images/2026-01-21-12-28-03.png)
 
-### 💡 Le petit truc
+Le petit bonus 💡 On va créer un petit alias DNS local dans AdGuard Home.
 
-Je vais créer un petit alias DNS local dans AdGuard Home.
+Dans le menu en haut : Filtres > Réécritures DNS, et ajouter une réécriture DNS :
 
-Dans > **Filtres** > **Réécritures DNS**, j'ajoute une règle :
-
-* Domaine : `adguard.home`
-* Réponse IP : `192.168.1.XXX`
+![dns](/images/2026-01-21-12-26-14.png)
 
 Désormais, on peut taper `http://adguard.home` pour accéder à l'interface !
