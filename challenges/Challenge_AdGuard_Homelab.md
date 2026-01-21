@@ -85,6 +85,23 @@ curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/s
 
 ![install](/images/2026-01-21-11-57-41.png)
 
+Par sécurité on va donner une IP statique côté client dans le network manager `sudo nmtui`
+
+![nmt](/images/2026-01-21-16-17-15.png)
+
+On met l'IPv4 en Manuel, on ajoute notre serveur, la passerelle et le DNS en 127.0.0.1 pour qu'il utilise son propre service, on valide et on reboot `sudo reboot`
+
+![nmt](/images/2026-01-21-16-20-28.png)
+
+On va installer Btop pour avoir un monitoring
+
+```bash
+sudo apt update
+sudo apt install btop
+```
+
+![Btop](/images/2026-01-21-16-53-37.png)
+
 ### 3. Initialisation (Web)
 
 On va ouvrir le navigateur sur : `http://192.168.1.XXX:3000`
@@ -105,13 +122,13 @@ Une fois la configuration terminée je peux me connecter directement sur son IP 
 
 ![login](/images/2026-01-21-12-14-17.png)
 
-### 4. Bascule DNS
+### 4. Configuration et Bascule DNS
 
 Sur l'interface Box > Réglages avancés > DHCP > Options
 
 ![options](/images/2026-01-21-12-28-03.png)
 
-Le petit bonus 💡 On va créer un petit alias DNS local dans AdGuard Home.
+Le petit bonus 💡 On va créer un petit alias DNS local dans AdGuard Home
 
 Dans le menu en haut : Filtres > Réécritures DNS, et ajouter une réécriture DNS :
 
@@ -120,3 +137,36 @@ Dans le menu en haut : Filtres > Réécritures DNS, et ajouter une réécriture 
 Désormais, on peut taper `http://adguard.home` pour accéder à l'interface !
 
 ![dash](/images/2026-01-21-13-33-19.png)
+
+AdGuard ne sais pas résoudre certains noms locaux comme ma box ou lan, on va les ajouter dans DNS upstream dans Paramètres DNS. On a une liste d'exemple en dessous. On peux voir qu'il utilise de base Quad9 en version DoH : DNS over HTTPS, Port 443, les requêtes DNS sont cachées dans un flux HTTPS, on gagne en confidentialité. C'est la version 9.9.9.10 "Unsecured" qui laisse AdGuard gérer les restrictions
+
+On ajoute notre box et lan en local comme dans les exemples
+
+![DNS](/images/2026-01-21-15-23-13.png)
+
+On va ajouter des DNS de repli en cas de problème sur le principal pour ne pas avoir de SPOF (Single Point Of Failure), Cloudflare et Quad9 classique (toujours en DoH)
+
+![repli](/images/2026-01-21-15-35-39.png)
+
+### 5. Configuration et Bascule DHCP
+
+La Box ne permet pas le contrôle DNS sur tout le réseau, elle reste active et comme serveur DNS principal du réseau, c'est une  règle non modifiable du FAI
+
+![DNS](/images/2026-01-21-15-52-31.png)
+
+Il va donc falloir désactiver le service DHCP et activer celui de notre nouveau serveur AdGuard Home, ainsi aucun appareil ne pourra contourner le filtrage et on aura le contrôle total de notre réseau
+
+Dans les paramètres DHCP de AdGuard, on sélectionne l'interface de notre serveur (eth0), on entre l'IP de notre passerelle (box), la range IP, le masque de sous-réseau et la durée du bail (86400 = 24h)
+
+On doit également ajouter le range pour l'IPv6 : fd00::10 à fd00::ff distribue les adresses Privées ULA de la 10 à la 255
+
+![DHCP](/images/2026-01-21-16-00-59.png)
+
+Maintenant qu'il est configuré, on va aller désactiver celui de la Box et revenir activer celui ci immédiatement après
+
+![box](/images/2026-01-21-16-09-47.png)
+
+
+
+
+IP fixe, DHCP maîtrisé, DNS filtrant et chiffré.
