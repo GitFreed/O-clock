@@ -1,11 +1,11 @@
 # 🛡️ CHALLENGE LAB : Maîtrise du flux DNS et Sécurisation
 
 **Rôle :** Administrateur Réseau
+
 **Mission :** Intercepter, analyser et filtrer tout le trafic de résolution de noms (DNS) du réseau local pour bloquer les trackers, le phishing et accélérer la navigation.
 
----
-
-![ADGUARD](/images/2026-01-21-00-31-34.png)<https://github.com/AdguardTeam/AdguardHome>
+![ADGUARD](/images/2026-01-21-00-31-34.png)
+<https://github.com/AdguardTeam/AdguardHome>
 
 ---
 

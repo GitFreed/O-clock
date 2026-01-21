@@ -151,3 +151,13 @@ Pour tester on va stopper notre agent sur la machine ubuntu avec `sudo systemctl
 ![off](/images/2026-01-20-22-49-26.png)
 
 ![alert](/images/2026-01-20-23-04-30.png)
+
+## Automatisation
+
+On va ajouter une règle de Discover dans Data Collection pour ne pas avoir à ajouter chaque hôte manuellement. On choisi la plage d'IP que le serveur doit scanner pour trouver les agents
+
+![discover](/images/2026-01-21-11-23-22.png)
+
+On va aussi ajouter/modifier une Alerte pour le Discovery, dans Alerts > Actions > Discovery actions
+
+![actions](/images/2026-01-21-11-29-08.png)

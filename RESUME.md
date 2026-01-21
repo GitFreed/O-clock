@@ -3818,3 +3818,17 @@ Pour maîtriser Zabbix, il faut parler son langage :
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🕵️ B303. Zabbix Agents
+
+>
+
+[Challenge B303](./challenges/Challenge_B303.md) : Installation
+
+> 📚 **Ressources** :
+>
+> - Documentation des Agents Zabbix <https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/zabbix_agent>
+
+[Retour en haut](#-table-des-matières)
+
+---
