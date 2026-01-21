@@ -118,3 +118,5 @@ Dans le menu en haut : Filtres > Réécritures DNS, et ajouter une réécriture 
 ![dns](/images/2026-01-21-12-26-14.png)
 
 Désormais, on peut taper `http://adguard.home` pour accéder à l'interface !
+
+![dash](/images/2026-01-21-13-33-19.png)
