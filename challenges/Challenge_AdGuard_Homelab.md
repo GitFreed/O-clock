@@ -156,7 +156,7 @@ La Box ne permet pas le contrôle DNS sur tout le réseau, elle reste active et 
 
 Il va donc falloir désactiver le service DHCP et activer celui de notre nouveau serveur AdGuard Home, ainsi aucun appareil ne pourra contourner le filtrage et on aura le contrôle total de notre réseau
 
-Dans les paramètres DHCP de AdGuard, on sélectionne l'interface de notre serveur (eth0), on entre l'IP de notre passerelle (box), la range IP, le masque de sous-réseau et la durée du bail (86400 = 24h)
+Dans les paramètres DHCP de AdGuard, on sélectionne l'interface de notre serveur (eth0), on entre l'IP de notre passerelle (box), la range IP (.50 à .150), le masque de sous-réseau et la durée du bail (86400s = 24h)
 
 On doit également ajouter le range pour l'IPv6 : fd00::10 à fd00::ff distribue les adresses Privées ULA de la 10 à la 255
 
@@ -166,7 +166,18 @@ Maintenant qu'il est configuré, on va aller désactiver celui de la Box et reve
 
 ![box](/images/2026-01-21-16-09-47.png)
 
+On peu activer le DHCP d'AdGuard
 
+### Problèmes
 
+Problème rencontré, après un redémarrage mon PC n'a plus d'IP, c'est le seul appareil qui rencontre un problème a ce moment là, donc apparemment lié à Windows, après divers tests on voit une erreur NCB (Network Control Block)
 
-IP fixe, DHCP maîtrisé, DNS filtrant et chiffré.
+![NCB](/images/2026-01-21-18-51-29.png)
+
+Après de multiples essais, vidange du cache DNS, reset du catalogue Winsock, réinitialisation de la pile TCP/IP, désinstallation de la carte réseau, arrêt du matériel, reboot... rien n'y fait. Toujours impossible de renew l'IP, donc passage du PC en IP fixe.
+
+Il s'avère qu'après un reboot de la box, la plupart des appareils en wifi n'arrivaient pas à se reconnecter non plus, depuis un PC et tél portable, après pas mal de temps j'ai passé le tél en IP Fixe, et après ça tout s'est mis à remonter. Le tél qui se reconnecte en Ip Fixe au Wifi pourrait avoir trigger un renouvellement de la table ARP ? Ou juste il fallait être patient et attendre des renouvellements de bails et reconnexions ?
+
+Ajout des appareils principaux en IP fixe et/ou bail statique en dehors de la plage IP.
+
+Bref, maintenant tout à l'air OK, IP fixe, DHCP maîtrisé, DNS filtrant et chiffré.
