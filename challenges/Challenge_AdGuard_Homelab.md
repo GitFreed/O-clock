@@ -184,7 +184,7 @@ Bref, maintenant tout à l'air OK, IP fixe, DHCP maîtrisé, DNS filtrant et chi
 
 ### Sauvegarde
 
-On va faire une sauvegarde rapide en ssh avec `scp` (Secure Copy), le fichier `AdGuardHome.yaml` qui contient toute la config. 
+On va faire une sauvegarde rapide en ssh avec `scp` (Secure Copy), le fichier `AdGuardHome.yaml` qui contient toute la config.
 
 En ssh on va créer une copie avec `sudo cp /opt/AdGuardHome/AdGuardHome.yaml ~/AdGuardHome_backup.yaml` et on se donne les droits avec `sudo chown freed:freed ~/AdGuardHome_backup.yaml`
 

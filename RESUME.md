@@ -3823,7 +3823,7 @@ Pour maîtriser Zabbix, il faut parler son langage :
 
 >
 
-[Challenge B303](./challenges/Challenge_B303.md) : Installation
+[Challenge B302](./challenges/Challenge_B302.md) : Installation
 
 > 📚 **Ressources** :
 >
