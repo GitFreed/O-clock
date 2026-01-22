@@ -182,6 +182,10 @@ Ajout des appareils principaux en IP fixe et/ou bail statique en dehors de la pl
 
 Bref, maintenant tout à l'air OK, IP fixe, DHCP maîtrisé, DNS filtrant et chiffré.
 
+![OK](/images/2026-01-22-08-17-56.png)
+
+![requetes](/images/2026-01-22-08-18-37.png)
+
 ### Sauvegarde
 
 On va faire une sauvegarde rapide en ssh avec `scp` (Secure Copy), le fichier `AdGuardHome.yaml` qui contient toute la config.
