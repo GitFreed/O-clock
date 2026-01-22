@@ -55,7 +55,7 @@ On peut enfin mettre la carte micro SD dans le Pi et le brancher à la Box puis 
 
 Avant même d'installer le AdGuard, on va passer l'IP en statique sur la Box `192.168.1.254` dans Réglages avancés > DHCP > Attribution d'adresse IP statique.
 
-Pour trouver le Raspberry on va dans la liste des appareils et on cherche un appareil nommé adguard-pi ou dont l'adresse MAC commence par b8:27:eb ou dc:a6:32 (les identifiants constructeurs Raspberry).
+Pour trouver le Raspberry on va dans la liste des appareils et on cherche un appareil nommé adguard-pi ou dont l'adresse MAC commence par `b8:27:eb` ou `dc:a6:32` (les identifiants constructeurs Raspberry).
 
 ![DHCP](/images/2026-01-21-11-45-54.png)
 
@@ -89,7 +89,7 @@ Par sécurité on va donner une IP statique côté client dans le network manage
 
 ![nmt](/images/2026-01-21-16-17-15.png)
 
-On met l'IPv4 en Manuel, on ajoute notre serveur, la passerelle et le DNS en 127.0.0.1 pour qu'il utilise son propre service, on valide et on reboot `sudo reboot`
+On met l'IPv4 en Manuel, on ajoute notre serveur, la passerelle et le DNS en `127.0.0.1` pour qu'il utilise son propre service, on valide et on reboot `sudo reboot`
 
 ![nmt](/images/2026-01-21-16-20-28.png)
 
@@ -110,7 +110,7 @@ On va ouvrir le navigateur sur : `http://192.168.1.XXX:3000`
 
 On peut voir et configurer les interfaces web et d'écoute
 
-Attention le Serveur DNS Doit impérativement être sur le port **53** (UDP/TCP).
+Attention le Serveur DNS Doit impérativement être sur le port `53` (UDP/TCP).
 
 ![interfaces](/images/2026-01-21-12-02-24.png)
 
@@ -138,7 +138,7 @@ Désormais, on peut taper `http://adguard.home` pour accéder à l'interface !
 
 ![dash](/images/2026-01-21-13-33-19.png)
 
-AdGuard ne sais pas résoudre certains noms locaux comme ma box ou lan, on va les ajouter dans DNS upstream dans Paramètres DNS. On a une liste d'exemple en dessous. On peux voir qu'il utilise de base Quad9 en version DoH : DNS over HTTPS, Port 443, les requêtes DNS sont cachées dans un flux HTTPS, on gagne en confidentialité. C'est la version 9.9.9.10 "Unsecured" qui laisse AdGuard gérer les restrictions
+AdGuard ne sais pas résoudre certains noms locaux comme ma box ou lan, on va les ajouter dans DNS upstream dans Paramètres DNS. On a une liste d'exemple en dessous. On peux voir qu'il utilise de base Quad9 en version DoH : DNS over HTTPS, Port 443, les requêtes DNS sont cachées dans un flux HTTPS, on gagne en confidentialité. C'est la version `9.9.9.10` "Unsecured" qui laisse AdGuard gérer les restrictions
 
 On ajoute notre box et lan en local comme dans les exemples
 
@@ -158,7 +158,7 @@ Il va donc falloir désactiver le service DHCP et activer celui de notre nouveau
 
 Dans les paramètres DHCP de AdGuard, on sélectionne l'interface de notre serveur (eth0), on entre l'IP de notre passerelle (box), la range IP (.50 à .150), le masque de sous-réseau et la durée du bail (86400s = 24h)
 
-On doit également ajouter le range pour l'IPv6 : fd00::10 à fd00::ff distribue les adresses Privées ULA de la 10 à la 255
+On doit également ajouter le range pour l'IPv6 : `fd00::10` à `fd00::ff` distribue les adresses Privées ULA de la 10 à la 255
 
 ![DHCP](/images/2026-01-21-16-00-59.png)
 
@@ -181,3 +181,13 @@ Il s'avère qu'après un reboot de la box, la plupart des appareils en wifi n'ar
 Ajout des appareils principaux en IP fixe et/ou bail statique en dehors de la plage IP.
 
 Bref, maintenant tout à l'air OK, IP fixe, DHCP maîtrisé, DNS filtrant et chiffré.
+
+### Sauvegarde
+
+On va faire une sauvegarde rapide en ssh avec `scp` (Secure Copy), le fichier `AdGuardHome.yaml` qui contient toute la config. 
+
+En ssh on va créer une copie avec `sudo cp /opt/AdGuardHome/AdGuardHome.yaml ~/AdGuardHome_backup.yaml` et on se donne les droits avec `sudo chown freed:freed ~/AdGuardHome_backup.yaml`
+
+Depuis le terminal on choisi un dossier puis on lance `scp -r freed@192.168.1.250:/opt/AdGuardHome/AdGuardHome.yaml .`
+
+![backup](/images/2026-01-22-01-19-53.png)
