@@ -3892,3 +3892,33 @@ C'est la notion technique la plus importante. Comment l'Agent et le Serveur se p
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🍟 B304. Nagios
+
+>
+
+[Challenge B304](./challenges/Challenge_B304.md) : Installation de Nachos et de ses agents
+
+> 📚 **Ressources** :
+>
+> - Documentation Nagios <https://www.nagios.org/projects/nagios-core/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 💾 Fin Saison B3. Supervision
+
+[QCM Saison B3](https://forms.gle/)
+
+![Résultat QCM](/images/)
+
+---
+
+## **📜 Saison B4. Scripting**
+
+>
+
+### 📜 B401. Introduction aux Scripts
+
+>
