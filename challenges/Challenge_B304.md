@@ -158,7 +158,7 @@ De retour sur l'interface on peut voir que tout répond
 
 ![ok](/images/2026-01-22-12-01-10.png)
 
-## Installation de l'Agent NCPA sur un hôte Windows
+## Installation de l'Agent NCPA Windows sur un hôte Windows
 
 ![agent](/images/2026-01-22-12-03-53.png)
 
@@ -291,3 +291,93 @@ On peut voir un Warn Jaune, `load average: 2.76, 3.49, 3.56` correspond à la ch
 ![warn](/images/2026-01-22-13-11-45.png)
 
 ## Installation de l'Agent NCPA sur un hôte Ubuntu
+
+Pour Ubuntu on peut directement télécharger l'agent NCPA avec wget, ajouter les packages manquants, on update et on installe
+
+Documentation : <https://repo.nagios.com/?repo=deb-ubuntu>
+
+```bash
+cd /tmp
+wget https://assets.nagios.com/downloads/ncpa/ncpa-latest.amd64.deb
+sudo apt install gnupg gnupg2 gnupg1
+wget -qO - https://repo.nagios.com/GPG-KEY-NAGIOS-V3 | apt-key add -
+sudo apt update
+sudo apt install ./ncpa-latest.amd64.deb
+systemctl status ncpa_listener
+```
+
+L'agent est maintenant installé, on peut le voir ici
+
+![status](/images/2026-01-22-15-47-14.png)
+
+On va maintenant configurer le NCPA sur l'hôte Ubuntu
+
+il faut définir un  mot de passe sécurisé, on va modifier le fichier de configuration `nano /usr/local/ncpa/etc/ncpa.cfg` et remplacer la ligne : `community_string = mytoken` par notre mot de passe. Il servira pour l'accès à l'API
+
+NCPA écoute par défaut sur le port **5693**. Pour ouvrir le port sur **UFW**, on peut exécuter la commande suivante : `ufw allow 5693/tcp`
+
+On peut maintenant se connecter à l'interface web <https://10.0.0.50:5693> avec notre token
+
+![web](/images/2026-01-22-15-58-39.png)
+
+## Configuration de l'Agent NCPA Ubuntu sur le serveur Nagios
+
+Comme pour l'agent Windows on va créer un fichier de configuration
+
+![conf](/images/2026-01-22-16-05-22.png)
+
+```bash
+cd /usr/local/nagios/etc/servers/
+ls
+nano /usr/local/nagios/etc/servers/ubuntu_server.cfg
+```
+
+On va ajouter la configuration suivante
+
+```bash
+define host {
+    use                     generic-host
+    host_name               ubuntu_server
+    alias                   Ubuntu Server
+    address                 10.0.0.50
+    check_command           check-host-alive
+    max_check_attempts      5
+    check_interval          1
+    retry_interval          1
+    check_period            24x7
+    notification_interval   30
+    notification_period     24x7
+    contacts                nagiosadmin
+}
+
+define service {
+    use                     generic-service
+    host_name               ubuntu_server
+    service_description     CPU Load
+    check_command           check_ncpa!-t mytoken -M cpu/percent
+    normal_check_interval   5
+    retry_check_interval    1
+    notification_interval   30
+}
+
+define service {
+    use                     generic-service
+    host_name               ubuntu_server
+    service_description     Memory Usage
+    check_command           check_ncpa!-t mytoken -M memory/virtual
+    normal_check_interval   5
+    retry_check_interval    1
+    notification_interval   30
+}
+
+```
+
+et on reload `systemctl reload nagios` et on va voir sur notre serveur nagios si tout est bon
+
+![Hosts](/images/2026-01-22-16-13-45.png)
+
+![services](/images/2026-01-22-16-17-39.png)
+
+Les nachos sont bien sous surveillance !
+
+![nachos](/images/2026-01-22-16-16-31.png)
