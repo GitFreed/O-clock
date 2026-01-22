@@ -15,3 +15,7 @@
 ---
 
 ## Installation de Nagios Core
+
+AU niveau des requirements, on a pas besoin d'une grosse machine, on va monter ça dans un container LXC Ubuntu 24.04 LTS
+
+![req](/images/2026-01-22-10-15-55.png)
