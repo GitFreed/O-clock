@@ -3883,7 +3883,7 @@ C'est la notion technique la plus importante. Comment l'Agent et le Serveur se p
 4. **Mode Actif** = L'Agent envoie (Push) -> Indispensable si l'agent est derrière un pare-feu bloquant l'entrée.
 5. **UserParameter** = La méthode pour exécuter vos propres scripts via l'agent.
 
-[Challenge B302](./challenges/Challenge_B302.md) : Exploration plus en détail des paramètres, alertes de Zbiix et les Agents
+[Challenge B303](./challenges/Challenge_B303.md) : Exploration plus en détail des paramètres, alertes de Zabbix avec les Agents, configuration d'une alerte pour fichiers.
 
 > 📚 **Ressources** :
 >

@@ -4,7 +4,7 @@
 
 ![Challenge](/images/2026-01-22-02-03-02.png)
 
-[Cours B303.](/RESUME.md#-b303)
+[Cours B303.](/RESUME.md-b303-les-agents-zabbix)
 
 ---
 
