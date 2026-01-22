@@ -92,6 +92,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B301. Introduction : Supervision](#-b301-introduction--monitoring--supervision)
 - [B302. Présentation de Zabbix](#-b302-présentation-de-zabbix)
 - [B303. Les Agents Zabbix](#️-b303-les-agents-zabbix)
+- [B304. Nagios](#-b304-nagios)
+- [Fin Saison B3 : QCM](#-fin-saison-b3-supervision)
 
 ### [Saison B4. Scripting 📜](.)
 
