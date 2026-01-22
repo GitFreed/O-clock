@@ -91,6 +91,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [B301. Introduction : Supervision](#-b301-introduction--monitoring--supervision)
 - [B302. Présentation de Zabbix](#-b302-présentation-de-zabbix)
+- [B303. Les Agents Zabbix](#️-b303-les-agents-zabbix)
 
 ### [Saison B4. Scripting 📜](.)
 
@@ -3726,7 +3727,7 @@ Quelques noms cités dans le cours pour la culture générale:
 - **Open Source** : Zabbix, Nagios, Centreon.
 - **Commercial** : PRTG.
 
-#### 6. En résumé 💡
+**En résumé** 💡
 
 - **Supervision** = Analyse & Décision / **Monitoring** = Collecte.
 - **SNMP** est le protocole roi du réseau. Il utilise le **Port 161 (UDP)** pour les questions (GET) et **162 (UDP)** pour les alertes (TRAP).
@@ -3744,7 +3745,7 @@ Quelques noms cités dans le cours pour la culture générale:
 
 ---
 
-### 📊 B302. Présentation de Zabbix
+### 🤖 B302. Présentation de Zabbix
 
 > Découvrons **Zabbix**, la solution Open Source de référence pour la supervision d'entreprise. Comprendre comment ses différents composants s'articulent pour collecter, stocker et visualiser l'état de santé du Système d'Information.
 
@@ -3802,7 +3803,7 @@ Pour maîtriser Zabbix, il faut parler son langage :
 - **Trigger (Déclencheur)** : La règle qui définit un problème (ex: "Espace libre < 10%").
 - **Action** : Ce que fait Zabbix en cas de problème (Envoyer un email, redémarrer un service).
 
-#### En résumé 💡
+**En résumé** 💡
 
 - **Zabbix** = Solution complète (OS + Réseau + App).
 - **Agent** = Installé sur les serveurs pour des infos précises.
@@ -3819,11 +3820,70 @@ Pour maîtriser Zabbix, il faut parler son langage :
 
 ---
 
-### 🕵️ B303. Zabbix Agents
+### 🕵️ B303. Les Agents Zabbix
 
->
+> Comprendre le fonctionnement de la brique "collecte" de Zabbix. L'agent est le composant essentiel pour une surveillance fine et granulaire des systèmes (OS, Hardware) et des applications.
 
-[Challenge B302](./challenges/Challenge_B302.md) : Installation
+#### 1. Qu'est-ce qu'un Agent Zabbix ?
+
+L'Agent Zabbix est un **démon (service)** léger installé directement sur l'hôte à surveiller (Serveur Linux, Windows, BSD...).
+
+- **Rôle** : Il accède aux ressources locales (CPU, RAM, journaux, disques) pour collecter des métriques précises que le serveur Zabbix ne pourrait pas voir depuis l'extérieur.
+- **Compatibilité** : Multiplateforme (Linux, Windows, macOS, BSD, AIX, Solaris...).
+
+#### 2. Les Deux Versions d'Agents
+
+Zabbix propose deux déclinaisons de son agent. Elles peuvent cohabiter, mais on en choisit généralement une selon le besoin :
+
+- **Zabbix Agent (Classic)** :
+  - L'agent historique, écrit en **C**.
+  - Très léger, stable et éprouvé.
+  - Fonctionne sur toutes les architectures (même très anciennes).
+
+- **Zabbix Agent 2** :
+  - La version moderne, écrite en **Go**.
+  - **Modulaire** : Il intègre nativement des **plugins** pour surveiller des applications complexes (Docker, MySQL, PostgreSQL, Redis) sans avoir besoin de scripts externes compliqués.
+  - Gère mieux les connexions persistantes et la concurrence.
+
+#### 3. Modes de Communication : Actif vs Passif
+
+C'est la notion technique la plus importante. Comment l'Agent et le Serveur se parlent-ils ? Le choix dépend de votre architecture réseau (Firewall, NAT).
+
+| Mode | Qui initie la connexion ? | Fonctionnement | Cas d'usage idéal |
+| --- | --- | --- | --- |
+| **Passif** (Défaut) | **Le Serveur** (Poller) | Le Serveur demande : *"Donne-moi ton CPU"*. L'Agent répond. | Réseau local sécurisé, charge faible. Facile à configurer. |
+| **Actif** | **L'Agent** (Trapper) | L'Agent demande sa config au démarrage, puis **pousse** les données tout seul périodiquement. | Machines derrière un **NAT/Firewall**, ou surveillance de PC portables instables. |
+
+**Le Port** : Par défaut, l'Agent écoute sur le port **10050**. (Le Serveur contacte l'Agent sur le 10050 en mode passif).
+
+#### 4. Configuration et Extension
+
+- **Fichier de configuration** :
+  - Sous Linux : `/etc/zabbix/zabbix_agentd.conf`
+  - Paramètres clés :
+    - `Server=` (IP du serveur Zabbix autorisé à interroger l'agent - Mode Passif).
+    - `ServerActive=` (IP du serveur à qui envoyer les données - Mode Actif).
+    - `Hostname=` (Nom unique de la machine, doit correspondre à l'interface Web).
+
+- **Que surveille-t-on ?** :
+  - **Système** : Charge CPU, Mémoire libre, IO Disque, Espace disque, Uptime.
+  - **Réseau** : Bande passante entrante/sortante, erreurs de paquets.
+  - **Services** : État d'un service (Systemd, Service Windows), Processus en cours.
+
+- **Extension (UserParameter)** :
+  - Si Zabbix ne sait pas récupérer une info nativement, on peut créer un **UserParameter**.
+  - C'est une ligne dans le fichier de config qui associe une clé Zabbix à une **commande shell personnalisée**.
+  - *Exemple* : Créer une métrique qui compte le nombre de fichiers dans un dossier spécifique.
+
+**En résumé** 💡
+
+1. **Port** : L'agent écoute sur le **10050** (TCP).
+2. **Agent 2** = Nouvelle version en Go avec **plugins intégrés** (Docker/DB).
+3. **Mode Passif** = Le Serveur interroge (Polling).
+4. **Mode Actif** = L'Agent envoie (Push) -> Indispensable si l'agent est derrière un pare-feu bloquant l'entrée.
+5. **UserParameter** = La méthode pour exécuter vos propres scripts via l'agent.
+
+[Challenge B302](./challenges/Challenge_B302.md) : Exploration plus en détail des paramètres, alertes de Zbiix et les Agents
 
 > 📚 **Ressources** :
 >
