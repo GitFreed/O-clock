@@ -3895,7 +3895,73 @@ C'est la notion technique la plus importante. Comment l'Agent et le Serveur se p
 
 ### 🍟 B304. Nagios
 
->
+> Découvrir **Nagios**, le standard historique de la supervision Open Source. Bien que son interface soit vieillissante, son moteur et sa logique de "Plugins" sont à la base de la majorité des outils modernes (Centreon, Icinga, Shinken).
+
+#### 1. Qu'est-ce que Nagios ?
+
+Né en 1999 (sous le nom NetSaint), **Nagios Core** est un moteur de supervision pur et dur.
+Contrairement à Zabbix qui stocke tout en base de données, Nagios repose historiquement sur des **fichiers de configuration texte** et une exécution de scripts.
+
+- **Philosophie** : "Fais une chose et fais-la bien". Nagios est un **ordonnanceur** (scheduler). Il ne sait rien faire tout seul, il délègue tout le travail de vérification à des **Plugins**.
+- **Réputation** : Extrêmement stable, mais difficile à configurer (pas d'interface de config native dans la version Core) et interface web "rétro".
+
+#### 2. Architecture Modulaire
+
+Nagios fonctionne selon le principe **Cœur + Plugins**.
+
+- **Le Scheduler (Le Cœur)** :
+
+  - C'est le chef d'orchestre. Il lit les fichiers de config et dit : *"Il est 14h00, je dois lancer la vérification du disque sur le serveur A"*.
+
+- **Les Plugins (Les Ouvriers)** :
+
+  - C'est la grande force de Nagios. Ce sont de petits programmes (scripts Bash, Perl, Python, C...) exécutables en ligne de commande.
+  - Exemple : `./check_ping -H 192.168.1.1`
+  - Nagios exécute le plugin, récupère le résultat et l'affiche.
+  - *Avantage* : Si vous savez écrire un script, vous savez créer un plugin Nagios.
+
+- **L'Interface Web (CGI)** :
+
+  - Permet de voir l'état des services (Vert/Rouge), mais pas de modifier la configuration dans la version gratuite.
+
+#### 3. Les États (Status) & Codes Retour
+
+C'est le standard de l'industrie créé par Nagios. Un plugin doit renvoyer un **Code de retour** précis pour dire à Nagios comment ça va.
+
+| Code | État | Couleur | Signification |
+| --- | --- | --- | --- |
+| **0** | **OK** | 🟢 Vert | Tout va bien (ex: Ping répond, Disque à 40%). |
+| **1** | **WARNING** | 🟡 Jaune | Avertissement, seuil dépassé mais fonctionne encore (ex: Disque à 85%). |
+| **2** | **CRITICAL** | 🔴 Rouge | Problème critique, service HS (ex: Site Web down, Disque à 99%). |
+| **3** | **UNKNOWN** | 🟠 Orange | Impossible de vérifier (ex: Timeout, erreur du script). |
+
+#### 4. Concepts Clés de Configuration
+
+La configuration de Nagios se fait traditionnellement via des fichiers textes (`.cfg`). On y définit des **Objets** :
+
+- **Hosts** : Les machines physiques ou virtuelles (Serveurs, Routeurs).
+- **Services** : Ce qu'on surveille sur un hôte (HTTP, SSH, Espace Disque).
+- **Contacts** : Qui prévenir en cas de panne (Admins).
+- **Timeperiods** : Quand surveiller (24x7 ou seulement aux heures de bureau).
+
+  Soft vs Hard States** : Pour éviter les fausses alertes, Nagios distingue deux états.
+
+      - **Soft** : Le service vient de planter (1ère fois). Nagios attend et re-vérifie (ex: 3 fois).
+      - **Hard** : Le service est toujours planté après 3 essais. Là, **l'alerte est envoyée**.
+
+#### 5. Agents & Surveillance à Distance
+
+Comme Zabbix, Nagios surveille le réseau via **SNMP**, mais pour entrer dans les serveurs (Linux/Windows), il utilise des agents spécifiques :
+
+- **NRPE (Nagios Remote Plugin Executor)** : L'agent standard pour **Linux/Unix**. Il permet au serveur Nagios d'exécuter des plugins locaux sur la machine cible.
+- **NSClient++** : L'agent standard pour **Windows**.
+
+**En résumé** 💡
+
+1. **Architecture** : Nagios est un moteur qui lance des **scripts (Plugins)**.
+2. **Codes Retour** : **0=OK**, **1=Warning**, **2=Critical**, **3=Unknown**. (À connaître par cœur !).
+3. **Configuration** : Basée sur des **fichiers textes** (complexe), pas de BDD de configuration par défaut.
+4. **Héritage** : Nagios est le "père" de **Centreon** (qui est une surcouche graphique française pour Nagios à l'origine) et d'**Icinga**.
 
 [Challenge B304](./challenges/Challenge_B304.md) : Installation de Nachos et de ses agents
 
