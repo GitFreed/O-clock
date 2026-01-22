@@ -192,6 +192,6 @@ On va faire une sauvegarde rapide en ssh avec `scp` (Secure Copy), le fichier `A
 
 En ssh on va créer une copie avec `sudo cp /opt/AdGuardHome/AdGuardHome.yaml ~/AdGuardHome_backup.yaml` et on se donne les droits avec `sudo chown freed:freed ~/AdGuardHome_backup.yaml`
 
-Depuis le terminal on choisi un dossier puis on lance `scp -r freed@192.168.1.250:/opt/AdGuardHome/AdGuardHome.yaml .`
+Depuis un terminal Windows en Administrateur on choisi un dossier puis on lance `scp -r freed@192.168.1.250:~/AdGuardHome_backup.yaml .`
 
 ![backup](/images/2026-01-22-01-19-53.png)
