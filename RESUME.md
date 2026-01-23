@@ -3977,9 +3977,11 @@ Comme Zabbix, Nagios surveille le réseau via **SNMP**, mais pour entrer dans le
 
 ### 💾 Fin Saison B3. Supervision
 
-[QCM Saison B3](https://forms.gle/)
+[QCM Saison B3](https://forms.gle/EsgNcKmg7PBWoreo9/)
 
-![Résultat QCM](/images/)
+![qcm](/images/2026-01-23-09-53-37.png)
+
+![Résultat QCM](/images/2026-01-23-09-52-55.png)
 
 ---
 
