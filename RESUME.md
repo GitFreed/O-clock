@@ -1,6 +1,6 @@
 # Résumé des Saisons O'clock
 
-Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation "Expert Cybersécurité" en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées" et quelques ressources partagées lors des cours.
+Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation O'clock en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées" et quelques ressources partagées lors des cours.
 
 ## 📖 Table des Matières
 
@@ -95,7 +95,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B304. Nagios](#-b304-nagios)
 - [Fin Saison B3 : QCM](#-fin-saison-b3-supervision)
 
-### [Saison B4. Scripting 📜](.)
+### [Saison B4. Scripting 📜](#saison-b4-scripting-)
+
+- [B301. Introduction : Scripting](#-b401-introduction-aux-scripts)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
