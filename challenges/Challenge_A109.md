@@ -50,9 +50,9 @@ Essayez de calculer tout à la main (avec la méthode de votre choix, idéalemen
 
 IP : 192.168.13.67 on commence par traduire cette IP en binaire, on va utiliser la table de calcul à partir des multiples de 2.
 
-|Table 2²| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
-|---|---|----|----|----|----|----|----|-----|
-|192| 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Table | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+| --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ----- |
+| 192 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 168 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0 |
 | 13 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
 | 67 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 |
