@@ -23,11 +23,10 @@ Ce répertoire est organisé pour refléter mon apprentissage quotidien :
 
 ## 🛠️ Stack & Compétences abordées (en cours de complétion)
 
-- **Réseau :** Cisco (Switching/Routing), TCP/IP, DNS, DHCP,
+- **Réseau :** Cisco (Switching/Routing), TCP/IP, DNS, DHCP, [Homelab Adguard server DHCP & filtrage DNS](/challenges/Challenge_P_AdGuard_Homelab.md)
 - **Système :** Linux (Debian/RedHat), Windows Server,
 - **Sécurité :** Hardening, gestion des droits, VPN,
 - **Outils :** Cisco Packet Tracer, Git, VMware, Proxmox, vCenter, Asterisk, Veeam, Proxmox Backup, Zabbix, Nagios, Bash,
-- **HomeLab :** [Serveur DHCP & filtrage DNS sur RaspberryPi](/challenges/Challenge_P_AdGuard_Homelab.md)
 
 ---
 
