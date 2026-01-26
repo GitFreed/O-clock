@@ -186,7 +186,7 @@ Bref, maintenant tout à l'air OK, IP fixe, DHCP maîtrisé, DNS filtrant et chi
 
 ![requetes](/images/2026-01-22-08-18-37.png)
 
-### Sauvegarde
+### Sauvegarde de la config AdGuard
 
 On va faire une sauvegarde rapide en ssh avec `scp` (Secure Copy), le fichier `AdGuardHome.yaml` qui contient toute la config.
 
@@ -195,3 +195,64 @@ En ssh on va créer une copie avec `sudo cp /opt/AdGuardHome/AdGuardHome.yaml ~/
 Depuis un terminal Windows en Administrateur on choisi un dossier puis on lance `scp -r freed@192.168.1.250:~/AdGuardHome_backup.yaml .`
 
 ![backup](/images/2026-01-22-01-19-53.png)
+
+### Création d'un Script de Sauvegarde
+
+Création d’une clef SSH sur PowerShell (différente de la clef de base qui sert à autre chose et qui a une passphrase) :
+`ssh-keygen -t ed25519 -f "C:\Users\fr33d\.ssh\id_raspi”` (Entée à tout)
+
+Puis l'envoyer au Pi :
+`Get-Content "C:\Users\fr33d\.ssh\id_raspi.pub" | ssh freed@192.168.1.250 "cat >> ~/.ssh/authorized_keys”`
+
+```powershell
+# --- CONFIGURATION ---
+$User = "freed"
+$IP = "192.168.1.250"
+$KeyPath = "C:\Users\fr33d\.ssh\id_raspi"
+$RemoteFile = "/opt/AdGuardHome/AdGuardHome.yaml"
+$TempFile = "~/AdGuardHome_backup.yaml"
+$LocalPath = ".\" # Sauvegarde dans le dossier où se trouve le script
+
+Write-Host "--- Etape 1 : Preparation de la copie sur le Raspberry Pi ---" -ForegroundColor Cyan
+# On envoie une seule ligne de commande qui fait tout d'un coup sur le RPi
+# On ajoute "-i $KeyPath" pour utiliser la bonne clé
+ssh -i $KeyPath $User@$IP "sudo cp $RemoteFile $TempFile && sudo chown ${User}:${User} $TempFile"
+
+Write-Host "--- Etape 2 : Telechargement du fichier vers le PC ---" -ForegroundColor Cyan
+# Récupération du fichier
+scp -i $KeyPath "$User@$IP`:$TempFile" $LocalPath
+
+Write-Host "--- Etape 3 : Nettoyage sur le Raspberry Pi ---" -ForegroundColor Cyan
+# On supprime le fichier temporaire pour laisser propre
+ssh -i $KeyPath $User@$IP "rm $TempFile"
+
+Write-Host "--- Sauvegarde Terminee ! ---" -ForegroundColor Green
+Read-Host "Appuyez sur Entree pour fermer..."
+
+```
+
+![OK](/images/2026-01-26-14-14-59.png)
+
+### Ajout de listes
+
+* AdGuard DNS filter : Le filtre natif et généraliste. Il assure la base du blocage des publicités et des traceurs sur le web moderne.
+
+* AdAway Default Blocklist : Une liste légère et historique, particulièrement efficace pour bloquer les publicités au sein des applications mobiles (Android/iOS).
+
+* OISD (The Big One) : <https://big.oisd.nl> La référence : une liste massive qui agrège des milliers de sources tout en garantissant un taux de faux positifs quasi nul. Cible pubs, trackers et télémétrie.
+
+* Abuse.ch / URLHaus : <https://urlhaus.abuse.ch/downloads/hostfile/> Focalisée Sécurité. Projet communautaire de référence pour traquer et bloquer les domaines malveillants servant à la distribution de malwares, virus et botnets.
+
+![lists](/images/2026-01-26-14-20-42.png)
+
+### Résumé final
+
+* Infrastructure : Raspberry Pi 3B (AdGuard Home) sur OS Lite.
+
+* Supervision : Btop (Monitoring ressources temps réel).
+
+* Réseau : Intégration transparente dans LAN 10Gb (DNS & DHCP).
+
+* Sécurité : Filtrage AdGuard + OISD + URLHaus (Pubs & Malwares).
+
+* Automatisation : Sauvegarde via script PowerShell + Clés SSH dédiées.
