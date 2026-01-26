@@ -26,7 +26,8 @@ Ce répertoire est organisé pour refléter mon apprentissage quotidien :
 - **Réseau :** Cisco (Switching/Routing), TCP/IP, DNS, DHCP,
 - **Système :** Linux (Debian/RedHat), Windows Server,
 - **Sécurité :** Hardening, gestion des droits, VPN,
-- **Outils :** Cisco Packet Tracer, Git, VMware, Proxmox, vCenter, Asterisk, Veeam, Bash,
+- **Outils :** Cisco Packet Tracer, Git, VMware, Proxmox, vCenter, Asterisk, Veeam, Proxmox Backup, Zabbix, Nagios, Bash,
+- **HomeLab :** [Serveur DHCP & filtrage DNS sur RaspberryPi](/challenges/Challenge_P_AdGuard_Homelab.md)
 
 ---
 
