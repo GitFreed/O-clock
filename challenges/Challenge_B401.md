@@ -50,7 +50,7 @@ Pour obtenir le bon résultat, il faut créer une nouvelle variable "connect"
 
 ![atelier](/images/2026-01-26-17-23-46.png)
 
-[Nombre Mystère]<https://scratch.mit.edu/projects/1271197767>
+[Nombre Mystère]<https://scratch.mit.edu/projects/1271203280/>
 
 ![OK](/images/2026-01-26-17-56-11.png)
 
@@ -58,3 +58,6 @@ Pour obtenir le bon résultat, il faut créer une nouvelle variable "connect"
 
 ![bonus](/images/2026-01-26-18-03-49.png)
 
+![done](/images/2026-01-26-19-26-45.png)
+
+[Nombre Mystère avec Hall of Fame]<https://scratch.mit.edu/projects/1271197767>
