@@ -6,7 +6,7 @@
 
 Bienvenue sur mon dépôt de suivi de formation ! 👋
 
-Je suis **Frédéric**, et ce Github documente mon parcours pour l'obtention du Titre Professionnel **Administrateur d'Infrastructures Sécurisées**. Vous trouverez ici la trace concrète de ma montée en compétences, du scripting à l'architecture réseau.
+Je suis **Frédéric**, et ce Github documente mon parcours pour l'obtention du Titre Professionnel **Administrateur d'Infrastructures Sécurisées**. Vous trouverez ici la trace concrète de ma montée en compétences, de l'architecture réseau au scripting.
 
 ---
 
@@ -23,10 +23,11 @@ Ce répertoire est organisé pour refléter mon apprentissage quotidien :
 
 ## 🛠️ Stack & Compétences abordées (en cours de complétion)
 
-- **Réseau :** Cisco (Switching/Routing), TCP/IP, DNS, DHCP, [Homelab Adguard server DHCP & filtrage DNS](/challenges/Challenge_P_AdGuard_Homelab.md)
+- **Réseau :** Cisco (Switching/Routing), TCP/IP, DNS, DHCP,
 - **Système :** Linux (Debian/RedHat), Windows Server,
 - **Sécurité :** Hardening, gestion des droits, VPN,
 - **Outils :** Cisco Packet Tracer, Git, VMware, Proxmox, vCenter, Asterisk, Veeam, Proxmox Backup, Zabbix, Nagios, Bash,
+- **HomeLab :** [Serveur Adguard Home : DHCP & filtrage DNS](/challenges/Challenge_P_AdGuard_Homelab.md)
 
 ---
 
