@@ -4040,6 +4040,14 @@ Le choix du langage dépend de l'environnement cible :
 - **Linux / macOS** : Shell / Bash (`.sh`).
 - **Multiplateforme** : Python (`.py`), qui fonctionne partout.
 
+#### 5. Compétences Visées (Cadre Pro)
+
+Sélectionner, adapter ou créer des scripts (Windows/Linux).
+
+Tester le fonctionnement.
+
+Documenter le script pour la maintenance (très important pour le jury !).
+
 [Challenge B401](./challenges/Challenge_B401.md) :
 
 > 📚 **Ressources** :
