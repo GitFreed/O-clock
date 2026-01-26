@@ -3989,8 +3989,90 @@ Comme Zabbix, Nagios surveille le réseau via **SNMP**, mais pour entrer dans le
 
 ## **📜 Saison B4. Scripting**
 
+> Cette saison marque le passage de l'administration manuelle à l'automatisation. L'objectif est d'apprendre à faire exécuter par la machine des tâches répétitives, complexes ou massives (gestion de parc), en utilisant des langages comme Bash, PowerShell ou Python.
+
+### 🧱 B401. Les bases de la Programmation
+
+> Ce premier cours pose les fondations théoriques de l'algorithmique. Avant d'écrire du code, il faut apprendre à "penser machine". Nous abordons ici la logique universelle (variables, boucles, conditions) commune à tous les langages de programmation.
+
+#### 1. Le Scripting : Quoi et Pourquoi ?
+
+Un script est une suite de commandes écrites dans un fichier texte, destinées à automatiser des actions.
+
+- **L'intérêt** : Gagner du temps et réduire les erreurs. Si vous devez créer un dossier sur 10 machines, vous le faites à la main. Sur 1000 machines, c'est impossible sans script.
+- **Langage de Script (Interprété) vs Langage Compilé** :
+  - **Script (Interprété)** : Le code est lu et exécuté ligne par ligne par un interpréteur (ex: Bash, Python, PowerShell). Pas besoin de "traduire" le code avant de le lancer.
+  - **Compilé** : Le code (ex: C, C++) doit être transformé (compilé) en binaire machine avant de pouvoir être exécuté.
+
+#### 2. Les Piliers de l'Algorithmique
+
+Peu importe le langage (Python, JS, Bash...), la logique repose toujours sur ces 4 concepts clés :
+
+- **📦 Les Variables** :
+  - C'est une "boîte" dans la mémoire vive (RAM) qui porte une étiquette (nom) et contient une valeur.
+  - Cette valeur peut changer (d'où le nom *variable*). Elle peut stocker du texte, des nombres, des listes, etc.
+
+- **🔀 Les Conditions (Si... Sinon...)** :
+  - Elles permettent au script de prendre des décisions.
+  - *Exemple* : **SI** le dossier "Compta" existe, **ALORS** je le supprime, **SINON** je ne fais rien.
+  - On utilise des opérateurs logiques de comparaison (Est égal à `==`, Est plus grand que `>`, etc.).
+
+- **🔄 Les Boucles** :
+  - Elles permettent de répéter une action sans réécrire le code.
+  - *Usage* : Répéter une action X fois, ou parcourir une liste d'éléments (ex: "Pour chaque utilisateur dans la liste, créer un compte").
+
+- **dƒ Les Fonctions** :
+  - C'est un bloc de code auquel on donne un nom. On peut "appeler" ce bloc n'importe quand.
+  - *Intérêt* : Évite de copier-coller du code. On écrit la logique une fois, et on la réutilise partout. On peut lui passer des **Arguments** (paramètres) pour modifier son fonctionnement.
+
+#### 3. Représentation Logique
+
+Avant de coder, il faut schématiser sa pensée.
+
+- **Logigramme (Flowchart)** : Représentation graphique d'un algorithme. Les losanges représentent les conditions (choix), les rectangles les actions. Cela permet de visualiser le cheminement des données.
+- **Scratch** : Outil visuel souvent utilisé pour s'initier à la logique de programmation sans se soucier de la syntaxe complexe (les blocs s'emboîtent comme des Lego).
+
+#### 4. Quel langage pour quel OS ?
+
+Le choix du langage dépend de l'environnement cible :
+
+- **Windows** : PowerShell (`.ps1`) ou Batch (`.bat`).
+- **Linux / macOS** : Shell / Bash (`.sh`).
+- **Multiplateforme** : Python (`.py`), qui fonctionne partout.
+
+[Challenge B401](./challenges/Challenge_B401.md) :
+
+> 📚 **Ressources** :
+>
+> - Scratch MIT : <https://scratch.mit.edu/projects/editor/?tutorial=getStarted>
+> - Citizen Code : <https://app.citizencode.net/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🧱 B402
+
 >
 
-### 📜 B401. Introduction aux Scripts
+[Challenge B402](./challenges/Challenge_B402.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🧱 B403
 
 >
+
+[Challenge B403](./challenges/Challenge_B403.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
