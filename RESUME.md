@@ -4011,19 +4011,27 @@ Peu importe le langage (Python, JS, Bash...), la logique repose toujours sur ces
 - **📦 Les Variables** :
   - C'est une "boîte" dans la mémoire vive (RAM) qui porte une étiquette (nom) et contient une valeur.
   - Cette valeur peut changer (d'où le nom *variable*). Elle peut stocker du texte, des nombres, des listes, etc.
+  - **Attention à la syntaxe** : Le schéma précise qu'il ne faut pas confondre l'assignation ( `=` qui donne une valeur) avec la comparaison simple ( `==` ) ou la comparaison stricte ( `===` ).
 
 - **🔀 Les Conditions (Si... Sinon...)** :
   - Elles permettent au script de prendre des décisions.
   - *Exemple* : **SI** le dossier "Compta" existe, **ALORS** je le supprime, **SINON** je ne fais rien.
-  - On utilise des opérateurs logiques de comparaison (Est égal à `==`, Est plus grand que `>`, etc.).
+  - On utilise des **Opérateurs Logiques** pour tester une condition, comme `EQ` (Égal à), `NEQ` (Différent de), `GT` (Plus grand que), ou `LT` (Plus petit que).
+  - **Combinaisons** : On peut vérifier plusieurs conditions à la fois :
+    - **ET (`&&` / `and`)** : Vérifie si *toutes* les conditions sont respectées.
+    - **OU (`||` / `or`)** : Vérifie si *au moins une* des conditions est OK.
 
 - **🔄 Les Boucles** :
   - Elles permettent de répéter une action sans réécrire le code.
   - *Usage* : Répéter une action X fois, ou parcourir une liste d'éléments (ex: "Pour chaque utilisateur dans la liste, créer un compte").
+  - **Parcours de liste** : L'usage classique est de déclarer un tableau (ex: `Tableau = [elem1, elem2]`), puis de demander au script : "Pour chaque élément du tableau, fais cette liste d'actions".
+  - **Automatisme** : Pas besoin de répéter les actions manuellement ; le script passe automatiquement à l'élément suivant (`element = nextElement`) jusqu'à la fin du tableau.
 
 - **dƒ Les Fonctions** :
   - C'est un bloc de code auquel on donne un nom. On peut "appeler" ce bloc n'importe quand.
-  - *Intérêt* : Évite de copier-coller du code. On écrit la logique une fois, et on la réutilise partout. On peut lui passer des **Arguments** (paramètres) pour modifier son fonctionnement.
+  - *Intérêt* : Évite de copier-coller du code. On écrit la logique une fois, et on la réutilise partout.
+  - **Paramètres dynamiques** : On peut demander à une fonction de prendre un **paramètre** (ex: `verifierAge(Age)`).
+  - **Réutilisation** : Une fois la fonction créée, on peut l'appeler avec des valeurs différentes (ex: `verifierAge(18)`, puis `verifierAge(12)`) sans réécrire le code de vérification.
 
 #### 3. Représentation Logique
 
