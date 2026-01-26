@@ -97,7 +97,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison B4. Scripting 📜](#saison-b4-scripting-)
 
-- [B401. Introduction : Scripting](#saison-b4-scripting-)
+- [B401. Les bases de la Programmation](#-b401-les-bases-de-la-programmation)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
