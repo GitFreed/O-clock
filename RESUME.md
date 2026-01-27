@@ -4105,7 +4105,8 @@ Git est un outil **local** (installé sur votre machine). Il surveille un dossie
 - **GitHub** = Service en ligne (Hébergeur de dépôts). Il permet de synchroniser le travail et de collaborer.
 
 **Authentification** :
-Pour que votre ordinateur puisse parler à GitHub en toute sécurité sans taper son mot de passe à chaque fois, on configure une **Clé SSH**.
+Pour que votre ordinateur puisse parler à GitHub en toute sécurité sans taper son mot de passe à chaque fois, on configure une **Clé SSH**
+.
 
 **Les Commandes Distantes** :
 
@@ -4135,8 +4136,8 @@ Le Markdown est un langage de balisage léger utilisé pour documenter vos proje
 | **Listes à puces** | `- Item 1` `- Item 2` | • Item 1 • Item 2 |
 | **Listes numérotées** | `1. Premier` `2. Deuxième` | 1. Premier 2. Deuxième |
 | **Liens** | `[Texte](URL)` | [Texte](https://www.google.com/search?q=URL) |
-| **Code (Ligne)** | ` `code` ` | `code` |
-| **Bloc de Code** | ``` ```bash echo "Hello"``` ``` | (Affiche un bloc de code coloré) |
+| **Code (Ligne)** | ``` `code` ``` | `code` |
+| **Bloc de Code** | ` ```bash echo "Hello"``` ` | (Affiche un bloc de code coloré) |
 | **Citation** | `> Ceci est une citation` | ▌ Ceci est une citation |
 
 #### En résumé 💡
