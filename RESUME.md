@@ -1162,7 +1162,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - **Configuration Cisco (requise)** :
 
         ```bash
-        # 1. Définir un nom d'hôte
+        # 1. Définir un nom d hôte
         Router(config)# hostname [NomDuRouteur]
 
         # 2. Définir un nom de domaine IP
