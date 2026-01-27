@@ -4067,17 +4067,127 @@ Documenter le script pour la maintenance (très important pour le jury !).
 
 ---
 
-### 🧱 B402. Git & Github
+### 🐙 B402. Git, GitHub & Markdown
 
->
+> Après les bases du scripting, il est indispensable de savoir gérer son code. Ce cours introduit le **Versioning** (gestion de versions) qui permet de conserver l'historique, de revenir en arrière et de fusionner le travail de plusieurs personnes et éviter de perdre son travail.
+
+#### 1. Git : Le Moteur Local
+
+**C'est quoi ?**
+Git est un outil **local** (installé sur votre machine). Il surveille un dossier spécifique qu'on appelle un **Dépôt** (Repository).
+*Ce qu'il n'est PAS* : Un langage de programmation ou une simple sauvegarde (backup).
+
+**Le Cycle de Vie d'un fichier**  :
+
+1. **Modification** : Vous créez ou modifiez un script.
+2. **Staging (Index)** : Vous sélectionnez les fichiers à "photographier" (`git add`).
+3. **Validation (Commit)** : Vous enregistrez la version définitive avec un message (`git commit`).
+
+**Les Commandes Essentielles** :
+
+| Commande | Action | Description |
+| --- | --- | --- |
+| `git init` | **Initialiser** | Transforme le dossier actuel en dépôt Git.
+
+ |
+| `git status` | **Vérifier** | Affiche l'état des fichiers (modifiés, ajoutés, non suivis).
+
+ |
+| `git add <fichier>` | **Ajouter** | Ajoute un fichier à l'index (prêt à être validé).
+
+ |
+| `git add .` | **Tout Ajouter** | Ajoute *tous* les fichiers modifiés du dossier courant.
+
+ |
+| `git commit -m "..."` | **Valider** | Enregistre la version. Le message doit être **clair, court et explicite**.
+
+ |
+| `git log` | **Historique** | Affiche la liste des précédents commits.
+
+ |
+
+#### 2. GitHub : Le Cloud
+
+**Git vs GitHub**  :
+
+- **Git** = Outil local (votre ordinateur).
+- **GitHub** = Service en ligne (Hébergeur de dépôts). Il permet de synchroniser le travail et de collaborer.
+
+**Authentification** :
+Pour que votre ordinateur puisse parler à GitHub en toute sécurité sans taper son mot de passe à chaque fois, on configure une **Clé SSH** (sorte de carte d'identité numérique).
+
+**Les Commandes Distantes** :
+
+| Commande | Action | Description |
+| --- | --- | --- |
+| `git clone <URL>` | **Cloner** | Récupère un dépôt distant (GitHub) pour le mettre sur votre machine.
+
+ |
+| `git push` | **Envoyer** | Pousse vos commits locaux vers le serveur GitHub.
+
+ |
+| `git pull` | **Récupérer** | Tire les dernières modifications depuis GitHub vers votre machine.
+
+ |
 
 ![git](/images/2026-01-27-13-13-45.png)
+
+#### 3. Bonnes Pratiques
+
+- **Commit réguliers** : Ne codez pas 3 jours sans valider.
+- **Messages clairs** : "Update" ou "Modif" ne veut rien dire. Préférez "Ajout boucle for" ou "Correction bug calcul".
+- ⛔ **Sécurité** : Ne JAMAIS mettre de **mots de passe** dans un script commité sur Git !.
+
+#### 5. Le Markdown (MD)
+
+Le Markdown est un langage de balisage léger utilisé pour documenter vos projets (le fameux fichier `README.md` sur GitHub). Voici le tableau récapitulatif des syntaxes à connaître :
+
+| Élément | Syntaxe Markdown | Résultat visuel |
+| --- | --- | --- |
+| **Titres** | `# Titre 1`<br>
+
+<br>`## Titre 2`<br>
+
+<br>`### Titre 3` | **Gros Titre**<br>
+
+<br>Moyen Titre<br>
+
+<br>Petit Titre |
+| **Gras** | `**Texte en gras**` | **Texte en gras** |
+| **Italique** | `*Texte en italique*` | *Texte en italique* |
+| **Listes à puces** | `- Item 1`<br>
+
+<br>`- Item 2` | • Item 1<br>
+
+<br>• Item 2 |
+| **Listes numérotées** | `1. Premier`<br>
+
+<br>`2. Deuxième` | 1. Premier<br>
+
+<br>2. Deuxième |
+| **Liens** | `[Texte](URL)` | [Texte](https://www.google.com/search?q=URL) |
+| **Code (Ligne)** | ``code`` | `code` |
+| **Bloc de Code** | ` ```bash`<br>
+
+<br>`echo "Hello"`<br>
+
+<br>````` | (Affiche un bloc de code coloré) |
+| **Citation** | `> Ceci est une citation` | ▌ Ceci est une citation |
+
+#### En résumé 💡
+
+- **Git** gère l'historique localement (`add` -> `commit`).
+- **GitHub** héberge le code (`push` / `pull`).
+- On ne sauvegarde jamais de **mots de passe**.
+- Le **Markdown** est le standard pour rédiger la documentation technique.
 
 [Challenge B402](./challenges/Challenge_B402.md)
 
 > 📚 **Ressources** :
 >
 > - Convention de Git Commit : <https://www.conventionalcommits.org/en/v1.0.0/>
+> - Cheatsheet Markdown : <https://cheatsheets.zip/markdown>
+> - Cheatsheet / Rappel Markdown de Patrick : <https://github.com/Ergeiz/Challenge-O-Clock/blob/main/Rappel%20Markdown.md>
 
 [Retour en haut](#-table-des-matières)
 
