@@ -99,6 +99,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [B401. Les bases de la Programmation](#-b401-les-bases-de-la-programmation)
 - [B402. Git, GitHub & Markdown](#-b402-git-github--markdown)
+- [B403. Python](#-b403-python)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
@@ -4159,7 +4160,7 @@ Le Markdown est un langage de balisage léger utilisé pour documenter vos proje
 
 ---
 
-### 🧱 B403
+### 🐍 B403. Python
 
 >
 
