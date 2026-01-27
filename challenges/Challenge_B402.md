@@ -41,3 +41,5 @@ On va vérifier la configuration du du dépôt distant avec `git remote -v` et s
 ## Premier script
 
 On va créer un script avec `code backup-users.sh`
+
+![script](/images/2026-01-27-18-45-42.png)
