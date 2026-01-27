@@ -4105,7 +4105,7 @@ Git est un outil **local** (installé sur votre machine). Il surveille un dossie
 - **GitHub** = Service en ligne (Hébergeur de dépôts). Il permet de synchroniser le travail et de collaborer.
 
 **Authentification** :
-Pour que votre ordinateur puisse parler à GitHub en toute sécurité sans taper son mot de passe à chaque fois, on configure une **Clé SSH** (sorte de carte d'identité numérique).
+Pour que votre ordinateur puisse parler à GitHub en toute sécurité sans taper son mot de passe à chaque fois, on configure une **Clé SSH**.
 
 **Les Commandes Distantes** :
 
