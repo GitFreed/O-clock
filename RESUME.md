@@ -98,6 +98,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 ### [Saison B4. Scripting 📜](#saison-b4-scripting-)
 
 - [B401. Les bases de la Programmation](#-b401-les-bases-de-la-programmation)
+- [B402. Git, GitHub & Markdown](#-b402-git-github--markdown)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
@@ -4087,24 +4088,12 @@ Git est un outil **local** (installé sur votre machine). Il surveille un dossie
 
 | Commande | Action | Description |
 | --- | --- | --- |
-| `git init` | **Initialiser** | Transforme le dossier actuel en dépôt Git.
-
- |
-| `git status` | **Vérifier** | Affiche l'état des fichiers (modifiés, ajoutés, non suivis).
-
- |
-| `git add <fichier>` | **Ajouter** | Ajoute un fichier à l'index (prêt à être validé).
-
- |
-| `git add .` | **Tout Ajouter** | Ajoute *tous* les fichiers modifiés du dossier courant.
-
- |
-| `git commit -m "..."` | **Valider** | Enregistre la version. Le message doit être **clair, court et explicite**.
-
- |
-| `git log` | **Historique** | Affiche la liste des précédents commits.
-
- |
+| `git init` | **Initialiser** | Transforme le dossier actuel en dépôt Git. |
+| `git status` | **Vérifier** | Affiche l'état des fichiers (modifiés, ajoutés, non suivis). |
+| `git add <fichier>` | **Ajouter** | Ajoute un fichier à l'index (prêt à être validé). |
+| `git add .` | **Tout Ajouter** | Ajoute *tous* les fichiers modifiés du dossier courant. |
+| `git commit -m "..."` | **Valider** | Enregistre la version. Le message doit être **clair, court et explicite**. |
+| `git log` | **Historique** | Affiche la liste des précédents commits. |
 
 #### 2. GitHub : Le Cloud
 
@@ -4120,15 +4109,9 @@ Pour que votre ordinateur puisse parler à GitHub en toute sécurité sans taper
 
 | Commande | Action | Description |
 | --- | --- | --- |
-| `git clone <URL>` | **Cloner** | Récupère un dépôt distant (GitHub) pour le mettre sur votre machine.
-
- |
-| `git push` | **Envoyer** | Pousse vos commits locaux vers le serveur GitHub.
-
- |
-| `git pull` | **Récupérer** | Tire les dernières modifications depuis GitHub vers votre machine.
-
- |
+| `git clone <URL>` | **Cloner** | Récupère un dépôt distant (GitHub) pour le mettre sur votre machine. |
+| `git push` | **Envoyer** | Pousse vos commits locaux vers le serveur GitHub. |
+| `git pull` | **Récupérer** | Tire les dernières modifications depuis GitHub vers votre machine. |
 
 ![git](/images/2026-01-27-13-13-45.png)
 
@@ -4144,35 +4127,15 @@ Le Markdown est un langage de balisage léger utilisé pour documenter vos proje
 
 | Élément | Syntaxe Markdown | Résultat visuel |
 | --- | --- | --- |
-| **Titres** | `# Titre 1`<br>
-
-<br>`## Titre 2`<br>
-
-<br>`### Titre 3` | **Gros Titre**<br>
-
-<br>Moyen Titre<br>
-
-<br>Petit Titre |
+| **Titres** | `# Titre 1` `## Titre 2` `### Titre 3` | **Gros Titre** Moyen Titre Petit Titre |
 | **Gras** | `**Texte en gras**` | **Texte en gras** |
 | **Italique** | `*Texte en italique*` | *Texte en italique* |
-| **Listes à puces** | `- Item 1`<br>
-
-<br>`- Item 2` | • Item 1<br>
-
-<br>• Item 2 |
-| **Listes numérotées** | `1. Premier`<br>
-
-<br>`2. Deuxième` | 1. Premier<br>
-
-<br>2. Deuxième |
+| **Listes à puces** | `- Item 1` `- Item 2` | • Item 1 • Item 2 |
+| **Listes numérotées** | `1. Premier` `2. Deuxième` | 1. Premier 2. Deuxième |
 | **Liens** | `[Texte](URL)` | [Texte](https://www.google.com/search?q=URL) |
 | **Code (Ligne)** | ``code`` | `code` |
-| **Bloc de Code** | ` ```bash`<br>
-
-<br>`echo "Hello"`<br>
-
-<br>````` | (Affiche un bloc de code coloré) |
-| **Citation** | `> Ceci est une citation` | ▌ Ceci est une citation |
+| **Bloc de Code** | ``` bash echo "Hello" ``` | (Affiche un bloc de code coloré) |
+| **Citation** | `> Ceci est une citation` | > Ceci est une citation |
 
 #### En résumé 💡
 

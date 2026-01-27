@@ -2,9 +2,11 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge](/images/)
+![Challenge](/images/2026-01-27-15-45-52.png)
 
-[Cours B401.](/RESUME.md#️-b402)
+Challenge B402 : <https://github.com/O-clock-Aldebaran/SB04E02-git-github-GitFreed>
+
+[Cours B402.](/RESUME.md#-b402-git-github--markdown)
 
 ---
 
