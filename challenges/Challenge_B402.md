@@ -183,10 +183,20 @@ On peut voir que le fichier gitignore est bien présent et qu'on a pas le `test.
 
 ## Synthèse et réflexion
 
-Question 1 : Git vs GitHub Expliquez la différence entre Git et GitHub. Pourquoi utilise-t-on GitHub en entreprise ?
+> Question 1 : Git vs GitHub Expliquez la différence entre Git et GitHub. Pourquoi utilise-t-on GitHub en entreprise ?
 
-Question 2 : Cycle de travail Décrivez les étapes pour contribuer à un projet : de la modification d'un fichier jusqu'à son envoi sur GitHub.
+Git est le logiciel installé sur le PC pour gérer les versions, alors que GitHub est le site web qui héberge les projets. En entreprise, on utilise GitHub pour centraliser le code et permettre à toute l'équipe de collaborer sur les mêmes fichiers.
 
-Question 3 : Pull avant Push Pourquoi est-il important de faire git pull avant git push quand on travaille en équipe ?
+> Question 2 : Cycle de travail Décrivez les étapes pour contribuer à un projet : de la modification d'un fichier jusqu'à son envoi sur GitHub.
 
-Question 4 : Messages de commit Donnez 3 exemples de bons messages de commit et 3 exemples de mauvais messages.
+Je modifie mon fichier, on fait un `git add` pour préparer la sauvegarde, ensuite un `git commit` pour valider la version localement, et on finit par un `git push` pour envoyer le tout sur GitHub.
+
+> Question 3 : Pull avant Push Pourquoi est-il important de faire git pull avant git push quand on travaille en équipe ?
+
+Il faut toujours faire un pull avant pour récupérer le travail des collaborateurs. Ça évite les conflits et ça permet d'être sûr qu'on travaille sur la dernière version à jour avant d'envoyer nos modifs.
+
+> Question 4 : Messages de commit Donnez 3 exemples de bons messages de commit et 3 exemples de mauvais messages.
+
+- Bons : "Ajout du script de backup", "Correction du bug d'affichage", "Mise à jour du README".
+
+- Mauvais : "Modif", "Oups", "Update"
