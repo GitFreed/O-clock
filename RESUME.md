@@ -4067,11 +4067,11 @@ Documenter le script pour la maintenance (très important pour le jury !).
 
 ---
 
-### 🧱 B402. Git
+### 🧱 B402. Git & Github
 
 >
 
-!git[](/images/2026-01-27-13-13-45.png)
+![git](/images/2026-01-27-13-13-45.png)
 
 [Challenge B402](./challenges/Challenge_B402.md)
 
