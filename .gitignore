@@ -1,0 +1,26 @@
+# --- Système Windows ---
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- VS Code ---
+.vscode/
+
+# --- Fichiers temporaires & Logs ---
+*.log
+*.tmp
+*.bak
+*.swp
+
+# --- Sécurité ---
+.env
+*passwords*
+id_rsa
+*.pem
+*.key
+creds.txt
+connexions.conf
+
+# --- Réseau ---
+*.pcap
+*.pcapng
