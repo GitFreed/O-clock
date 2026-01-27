@@ -4067,7 +4067,7 @@ Documenter le script pour la maintenance (très important pour le jury !).
 
 ---
 
-### 🧱 B402
+### 🧱 B402. Git
 
 >
 
@@ -4075,6 +4075,7 @@ Documenter le script pour la maintenance (très important pour le jury !).
 
 > 📚 **Ressources** :
 >
+> - Convention de Git Commit : <https://www.conventionalcommits.org/en/v1.0.0/>
 
 [Retour en haut](#-table-des-matières)
 
