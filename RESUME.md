@@ -4071,6 +4071,8 @@ Documenter le script pour la maintenance (très important pour le jury !).
 
 >
 
+!git[](/images/2026-01-27-13-13-45.png)
+
 [Challenge B402](./challenges/Challenge_B402.md)
 
 > 📚 **Ressources** :
