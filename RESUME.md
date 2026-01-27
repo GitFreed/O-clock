@@ -1148,12 +1148,12 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - **OBSOLÈTE ET NON SÉCURISÉ** : Telnet est à proscrire en production car il transmet toutes les informations, y compris les mots de passe, en **texte clair**. Un attaquant peut facilement "sniffer" le réseau (ex: via ARP Poisoning) et intercepter les identifiants.
   - **Configuration Cisco (pour démo)** :
 
-        ```bash
-        Router(config)# line vty 0 4
-        Router(config-line)# transport input telnet
-        Router(config-line)# password [mot_de_passe]
-        Router(config-line)# login
-        ```
+    ```bash
+    Router(config)# line vty 0 4
+    Router(config-line)# transport input telnet
+    Router(config-line)# password [mot_de_passe]
+    Router(config-line)# login
+    ```
 
 - **SSH (Secure Shell)** :
 
@@ -1161,28 +1161,28 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - Il utilise **TCP** sur le **port 22**.
   - **Configuration Cisco (requise)** :
 
-        ```bash
-        # 1. Définir un nom d hôte
-        Router(config)# hostname [NomDuRouteur]
+    ```bash
+    # 1. Définir un nom d hôte
+    Router(config)# hostname [NomDuRouteur]
 
-        # 2. Définir un nom de domaine IP
-        [NomDuRouteur](config)# ip domain-name [nom_domaine.local]
+    # 2. Définir un nom de domaine IP
+    [NomDuRouteur](config)# ip domain-name [nom_domaine.local]
 
-        # 3. Générer les clés de chiffrement RSA
-        [NomDuRouteur](config)# crypto key generate rsa
-        (Choisir une taille de clé, ex: 2048)
+    # 3. Générer les clés de chiffrement RSA
+    [NomDuRouteur](config)# crypto key generate rsa
+    (Choisir une taille de clé, ex: 2048)
 
-        # 4. Forcer la version 2 de SSH (plus sécurisée)
-        [NomDuRouteur](config)# ip ssh version 2
+    # 4. Forcer la version 2 de SSH (plus sécurisée)
+    [NomDuRouteur](config)# ip ssh version 2
 
-        # 5. Créer un utilisateur local
-        [NomDuRouteur](config)# username [nom_admin] password [mot_de_passe_secret]
+    # 5. Créer un utilisateur local
+    [NomDuRouteur](config)# username [nom_admin] password [mot_de_passe_secret]
 
-        # 6. Configurer les lignes virtuelles (VTY)
-        [NomDuRouteur](config-line)# line vty 0 4
-        [NomDuRouteur](config-line)# transport input ssh
-        [NomDuRouteur](config-line)# login local 
-        ```
+    # 6. Configurer les lignes virtuelles (VTY)
+    [NomDuRouteur](config-line)# line vty 0 4
+    [NomDuRouteur](config-line)# transport input ssh
+    [NomDuRouteur](config-line)# login local 
+    ```
 
 - **Lignes VTY (Virtual Teletype)** : Ce sont les lignes de terminal virtuelles d'un équipement Cisco. Leur nombre (ex: `0 4` pour 5 lignes) détermine combien de sessions d'administration à distance (Telnet ou SSH) peuvent être ouvertes simultanément. Un peu comme une ligne téléphonique.
 
@@ -3948,10 +3948,10 @@ La configuration de Nagios se fait traditionnellement via des fichiers textes (`
 - **Contacts** : Qui prévenir en cas de panne (Admins).
 - **Timeperiods** : Quand surveiller (24x7 ou seulement aux heures de bureau).
 
-  Soft vs Hard States** : Pour éviter les fausses alertes, Nagios distingue deux états.
+  Soft vs Hard States** : Pour éviter les fausses alertes, Nagios distingue deux états :
 
-      - **Soft** : Le service vient de planter (1ère fois). Nagios attend et re-vérifie (ex: 3 fois).
-      - **Hard** : Le service est toujours planté après 3 essais. Là, **l'alerte est envoyée**.
+  - **Soft** : Le service vient de planter (1ère fois). Nagios attend et re-vérifie (ex: 3 fois).
+  - **Hard** : Le service est toujours planté après 3 essais. Là, **l'alerte est envoyée**.
 
 #### 5. Agents & Surveillance à Distance
 
