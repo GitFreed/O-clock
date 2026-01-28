@@ -4141,7 +4141,7 @@ Le Markdown est un langage de balisage léger utilisé pour documenter vos proje
 | **Bloc de Code** | ` ```bash echo "Hello"``` ` | (Affiche un bloc de code coloré) |
 | **Citation** | `> Ceci est une citation` | ▌ Ceci est une citation |
 
-#### En résumé 💡
+En résumé 💡
 
 - **Git** gère l'historique localement (`add` -> `commit`).
 - **GitHub** héberge le code (`push` / `pull`).
@@ -4280,7 +4280,7 @@ check_ping("8.8.8.8")
 | **Manipulation Texte** | Mettre en forme. | `texte.upper()` (Majuscule), `texte.lower()` (Minuscule) |
 | **Import Modules** | Utiliser des fonctions système. | `import os`, `os.system("ipconfig")` |
 
-#### En résumé 💡
+En résumé 💡
 
 Même si l'examen se fera en **Bash** ou **PowerShell**, la logique apprise ici est universelle :
 
