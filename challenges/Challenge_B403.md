@@ -10,6 +10,10 @@ Challenge B403 : <https://github.com/O-clock-Aldebaran/SB04E03-cplus-cmoins-GitF
 
 ---
 
-## Installation
+## Logique
 
-<https://scratch.mit.edu/projects/1271197767/editor/>
+Pour créer le jeu en script python, on va se baser ce qu'on a fait sur Scratch : <https://scratch.mit.edu/projects/1271197767/editor/>
+
+## Script
+
+[Nombre Mystère](./Challenge_B403_NbreMystere.py)
