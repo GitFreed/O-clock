@@ -4058,7 +4058,7 @@ Tester le fonctionnement.
 
 Documenter le script pour la maintenance (très important pour le jury !).
 
-[Challenge B401](./challenges/Challenge_B401.md) :
+[Challenge B401](./challenges/Challenge_B401.md) : Pratiquer sur Scratch en créant un jeu du Nombre Mystère (Plus/Moins)
 
 > 📚 **Ressources** :
 >
@@ -4148,7 +4148,7 @@ En résumé 💡
 - On ne sauvegarde jamais de **mots de passe**.
 - Le **Markdown** est le standard pour rédiger la documentation technique.
 
-[Challenge B402](./challenges/Challenge_B402.md)
+[Challenge B402](./challenges/Challenge_B402.md) : Pratiquer Git & Github
 
 > 📚 **Ressources** :
 >
@@ -4288,7 +4288,7 @@ Même si l'examen se fera en **Bash** ou **PowerShell**, la logique apprise ici 
 2. Je pose des questions (**Conditions**).
 3. Je répète les tâches (**Boucles**).
 
-[Challenge B403](./challenges/Challenge_B403.md)
+[Challenge B403](./challenges/Challenge_B403.md) : Recréer le jeu du Nombre Mystère (Plus/Moins) en script python
 
 > 📚 **Ressources** :
 >
