@@ -99,7 +99,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 - [B401. Les bases de la Programmation](#-b401-les-bases-de-la-programmation)
 - [B402. Git, GitHub & Markdown](#-b402-git-github--markdown)
-- [B403. Python](#-b403-python)
+- [B403. Python les fondamentaux](#-b403-python-les-fondamentaux)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
@@ -4160,11 +4160,149 @@ Le Markdown est un langage de balisage léger utilisé pour documenter vos proje
 
 ---
 
-### 🐍 B403. Python
+### 🐍 B403. Python les fondamentaux
+
+> Utiliser Python comme un outil pédagogique pour maîtriser la logique de programmation (variables, boucles, conditions). Même si le Titre Professionnel exige surtout du Bash/PowerShell , la syntaxe claire de Python en fait le meilleur langage pour apprendre l'algorithmique .
+
+#### 1. Pourquoi Python ?
+
+- **Interprété** : Contrairement au C, il n'a pas besoin d'être compilé. Le code est lu et exécuté ligne par ligne .
+
+- **Multi-plateforme** : Un script `.py` fonctionne sur Windows, Linux et macOS.
+
+- **Lisible** : Python force à écrire proprement (l'indentation est obligatoire).
+
+#### 2. Les Bases : Variables & Types
+
+En Python, pas besoin de déclarer le type de la variable (typage dynamique). C'est le contenu qui définit le type.
+
+- **Assignation** :
+
+```python
+serveur = "SRV-AD-01"   # String (Chaîne de caractères)
+ram_gb = 16             # Int (Entier)
+is_active = True        # Bool (Booléen - Attention à la Majuscule !)
+pi = 3.14               # Float (Nombre à virgule)
+
+```
+
+- **Conversions (Casting)** : *Indispensable car `input` renvoie toujours du texte.*
+  - `int("10")` : Convertit en entier.
+  - `str(10)` : Convertit en texte.
+
+#### 3. Entrées & Sorties (I/O)
+
+Comment interagir avec l'utilisateur ou la console.
+
+- **Sortie (Output)** :
+
+```python
+print("Bonjour le monde !")
+print("Serveur :", serveur, "RAM :", ram_gb) # Concaténation simple avec virgule
+
+```
+
+- **Entrée (Input)** :
+
+```python
+user = input("Quel est votre login ? ") # Pause le script et attend une saisie
+[cite_start]age = int(input("Votre âge ? "))        # Conversion immédiate en entier pour calculs [cite: 999]
+
+```
+
+#### 4. Structures de Contrôle (La Logique)
+
+**🔀 Les Conditions (`if`, `elif`, `else`)**
+L'indentation (le décalage vers la droite) remplace les accolades `{}` des autres langages. C'est elle qui définit ce qui est *dans* le bloc conditionnel.
+
+```python
+if age >= 18:
+    print("Accès Admin autorisé")  # Ce code ne s'exécute que si Vrai
+elif age > 10:
+    print("Accès Restreint")       # Sinon si...
+else:
+    [cite_start]print("Accès Refusé")          # Sinon... [cite: 964-967]
+
+```
+
+**🔄 Les Boucles (`for`)**
+Idéal pour répéter une action ou parcourir une liste.
+
+- **Boucle chiffrée** (répéter X fois) :
+
+```python
+for i in range(5):  # Va compter de 0 à 4 (5 exclus)
+    print("Tentative numéro", i)
+
+```
+
+- **Parcourir une liste** (Foreach) :
+
+```python
+vms = ["Web01", "Db01", "Back01"]
+for machine in vms:
+    print("Démarrage de :", machine)
+
+```
+
+#### 5. Structures de Données : Les Listes
+
+Pour gérer des parcs de machines ou des utilisateurs, on utilise des listes (Tableaux).
+
+- **Création** : `users = ["root", "admin", "guest"]`
+- **Accès** : `print(users[0])` (Affiche "root" - l'index commence à 0).
+- **Manipulation** (Bonus pour compléter les slides) :
+  - `users.append("toto")` : Ajoute à la fin.
+  - `users.remove("guest")` : Supprime l'élément.
+  - `len(users)` : Donne la taille de la liste (ex: 3).
+
+#### 6. Les Fonctions
+
+Permet de ne pas répéter le code. On définit (`def`) la logique une fois, on l'appelle autant qu'on veut.
+
+```python
+def check_ping(ip_address):           # Définition avec paramètre
+    print("Ping en cours sur", ip_address)
+
+check_ping("192.168.1.1")             # Appel de la fonction
+check_ping("8.8.8.8")
+
+```
+
+#### 🛠️ Boîte à outils supplémentaire
+
+*Voici quelques commandes très utiles pour le scripting :*
+
+| Commande | Description | Exemple |
+| --- | --- | --- |
+| **Commentaires** | Ignoré par le script (pour documenter). | `# Ceci est un commentaire` |
+| **Opérateurs Logiques** | Combiner des conditions. | `and`, `or`, `not` (ex: `if admin and active:`) |
+| **Manipulation Texte** | Mettre en forme. | `texte.upper()` (Majuscule), `texte.lower()` (Minuscule) |
+| **Import Modules** | Utiliser des fonctions système. | `import os`, `os.system("ipconfig")` |
+
+#### En résumé 💡
+
+Même si l'examen se fera en **Bash** ou **PowerShell**, la logique apprise ici est universelle :
+
+1. Je stocke mes données (**Variables/Listes**).
+2. Je pose des questions (**Conditions**).
+3. Je répète les tâches (**Boucles**).
+
+[Challenge B403](./challenges/Challenge_B403.md)
+
+> 📚 **Ressources** :
+>
+> - Lexique Python <https://docs.python.org/3/library/index.html>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🐍 B404
 
 >
 
-[Challenge B403](./challenges/Challenge_B403.md)
+[Challenge B404](./challenges/Challenge_B404.md)
 
 > 📚 **Ressources** :
 >
