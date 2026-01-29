@@ -13,3 +13,7 @@ Challenge B404 : <https://github.com/O-clock-Aldebaran/SB04-04-batch-powershell-
 ## Script : Informations système
 
 On va créer le même script en Batch et PowerShell pour comparer les deux approches.
+
+[info_systeme.bat](./Scripts/Batch/B404_info_systeme.bat)
+
+[info_systeme.ps1](./Scripts/PowerShell/B404_info_systeme.ps1)
