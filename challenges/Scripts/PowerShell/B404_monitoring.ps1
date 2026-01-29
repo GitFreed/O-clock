@@ -5,12 +5,12 @@
 # Date : 29-01-2026
 # ========================================
 
-# --- 1. FONCTION : LE CERVEAU (Récupère les chiffres) ---
+# La fonction qui récupère les chiffres
 function Get-Metriques {
-    # A. CPU (Moyenne de charge)
+    # CPU (Moyenne de charge)
     $Cpu = (Get-CimInstance Win32_Processor).LoadPercentage
 
-    # B. MÉMOIRE (RAM)
+    # MÉMOIRE (RAM)
     $Os = Get-CimInstance Win32_OperatingSystem
     $TotalRam = $Os.TotalVisibleMemorySize  # En Ko
     $FreeRam = $Os.FreePhysicalMemory       # En Ko
@@ -20,7 +20,7 @@ function Get-Metriques {
     $RamPercent = ($UsedRam / $TotalRam) * 100
     $RamGB = $UsedRam / 1MB # Division par 1MB car la source est en Ko (1024 Ko = 1 Mo, etc.)
 
-    # C. DISQUE C:
+    # DISQUE C:
     $Disk = Get-PSDrive -Name "C"
     $DiskUsed = $Disk.Used
     $DiskTotal = $Disk.Used + $Disk.Free
@@ -39,7 +39,7 @@ function Get-Metriques {
     }
 }
 
-# --- 2. FONCTION : LE PEINTRE (Affiche avec couleurs) ---
+# La fonction qui affiche avec des couleurs
 function Show-Metriques ($Donnees) {
     # On nettoie l'écran pour l'effet "temps réel"
     Clear-Host
@@ -48,7 +48,7 @@ function Show-Metriques ($Donnees) {
     Write-Host "=== MONITORING SYSTEME - $Heure ===" -ForegroundColor Cyan
     Write-Host "-------------------------------------"
 
-    # -- Petite fonction interne pour choisir la couleur --
+    # Petite fonction interne pour choisir la couleur
     # Elle regarde le chiffre et écrit la ligne
     function Ecrire-Couleur ($Titre, $Valeur, $Unite) {
         if ($Valeur -lt 50) { $C = "Green" }
@@ -75,18 +75,18 @@ function Show-Metriques ($Donnees) {
     # On récupère et trie les processus
     Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 -Property Id, ProcessName, CPU | Format-Table -AutoSize
     
-    Write-Host "(Ctrl+C pour arrêter)" -ForegroundColor DarkGray
+    Write-Host "(Ctrl+C pour arreter)" -ForegroundColor DarkGray
 }
 
-# --- 3. BOUCLE INFINIE (Le Moteur) ---
-# while ($true) veut dire "Tant que Vrai est Vrai" -> Donc pour toujours
+# La boucle infinie
+# while ($true) veut dire "Tant que Vrai est Vrai" donc pour toujours
 while ($true) {
-    # 1. On appelle le Cerveau
+    # On appelle notre fonction de récupération des infos
     $Infos = Get-Metriques
     
-    # 2. On appelle le Peintre en lui donnant les infos
+    # On appelle la fonction d'affichage avec des infos
     Show-Metriques -Donnees $Infos
     
-    # 3. On fait une sieste de 5 secondes
+    # On fait une sieste de 5 secondes
     Start-Sleep -Seconds 5
 }
