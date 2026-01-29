@@ -4326,7 +4326,7 @@ L'automatisation sous Windows a connu deux grandes ères :
 | **Syntaxe** | Archaïque (`%var%`) | Verbe-Nom (`Get-Command`) |
 | **Puissance** | Faible | Illimitée (accès .NET) |
 
-#### 2. Le Batch (L'essentiel à connaître)
+#### 2. Le Batch (en bref)
 
 Même s'il est vieillissant, le Batch reste utile pour des scripts rapides.
 
@@ -4334,14 +4334,14 @@ Même s'il est vieillissant, le Batch reste utile pour des scripts rapides.
   - `echo` : Affiche du texte (`echo Bonjour`).
   - `@echo off` : Masque l'affichage des commandes au lancement (la base de tout script).
   - `pause` : Arrête le script ("Appuyez sur une touche...").
-  - `rem` : Faire un commentaire.
+  - `@rem` : Faire un commentaire.
 
 - **Variables** :
   - Déclaration : `set nom=Toto`
   - Utilisation : `echo %nom%` (avec les `%`).
   - *Variables système* : `%DATE%`, `%TIME%`, `%USERNAME%`.
 
-#### 3. PowerShell (Le Cœur du cours)
+#### 3. PowerShell
 
 PowerShell fonctionne sur une logique de **Cmdlets** (Command-lets) normalisées sous la forme **`Verbe-Nom`** (Singulier).
 
@@ -4353,7 +4353,7 @@ PowerShell fonctionne sur une logique de **Cmdlets** (Command-lets) normalisées
 
 #### 📜 Cheat Sheet : Les Commandes PowerShell Indispensables
 
-Voici le récapitulatif des commandes vues en cours, classées par usage.
+Récapitulatif de commandes vues en cours, classées par usage.
 
 - **📂 1. Gestion de Fichiers & Navigation**
 
@@ -4383,22 +4383,22 @@ Voici le récapitulatif des commandes vues en cours, classées par usage.
 - **🚀 3. Le Pipeline & Manipulation de Données**
 C'est la force de PowerShell : on passe le résultat d'une commande à une autre avec le pipe `|`.
 
-| Cmdlet | Usage & Exemple |
+| Cmdlet | Usage |
 | --- | --- |
-| **`Where-Object`** | **Filtrer**. On ne garde que ce qui nous intéresse. *Ex: `Get-Service |
-| **`Select-Object`** | **Choisir**. On ne garde que certaines colonnes. *Ex: `Get-Process |
-| **`Sort-Object`** | **Trier**. *Ex: `Get-Process |
-| **`Measure-Object`** | **Compter**. *Ex: `Get-ChildItem |
-| **`Export-Csv`** | **Exporter**. Crée un fichier Excel/CSV avec le résultat. *Ex: `Get-Service |
+| **`Where-Object`** | **Filtrer**. On ne garde que ce qui nous intéresse. |
+| **`Select-Object`** | **Choisir**. On ne garde que certaines colonnes. |
+| **`Sort-Object`** | **Trier**. |
+| **`Measure-Object`** | **Compter**. |
+| **`Export-Csv`** | **Exporter**. Crée un fichier Excel/CSV avec le résultat. |
 
--- **🔒 4. Sécurité & Variables**
+- **🔒 4. Sécurité & Variables**
 
-- **Execution Policy** : Par défaut, PowerShell bloque les scripts.
-  - Commande : `Set-ExecutionPolicy RemoteSigned` (Standard en entreprise).
+  - **Execution Policy** : Par défaut, PowerShell bloque les scripts.
+    - Commande : `Set-ExecutionPolicy RemoteSigned` (Standard en entreprise).
 
-- **Variables** : Toujours précédées de `$`.
-  - `$MonDossier = "C:\Data"`
-  - `$Date = Get-Date`
+  - **Variables** : Toujours précédées de `$`.
+    - `$MonDossier = "C:\Data"`
+    - `$Date = Get-Date`
 
 💡 En résumé
 
