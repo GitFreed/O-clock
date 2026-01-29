@@ -14,6 +14,106 @@ Challenge B404 : <https://github.com/O-clock-Aldebaran/SB04-04-batch-powershell-
 
 On va créer le même script en Batch et PowerShell pour comparer les deux approches.
 
+![bacth](/images/2026-01-29-17-52-59.png)
+
 [info_systeme.bat](./Scripts/Batch/B404_info_systeme.bat)
 
+```batch
+@echo off
+
+@REM ========================================
+@REM Script : info_systeme.bat
+@REM Description : Affiche les données utilisateurs
+@REM Auteur : Freed
+@REM Date : 29-01-2026
+@REM ========================================
+
+@REM Un titre coloré
+color 02
+echo =====================================
+echo === Script d'informations systeme ===
+
+@REM Le nom de l'ordinateur
+echo Ordinateur : %COMPUTERNAME%
+
+@REM Le nom de l'utilisateur
+echo Utilisateur : %USERNAME%
+
+@REM La date et l'heure actuelles
+echo Date : %TIME% le %DATE%
+
+echo =====================================
+
+@REM La version du système d'exploitation (utilisez wmic)
+echo Version du systeme d'exploitation :
+powershell -command "(Get-CimInstance Win32_OperatingSystem).Caption"
+
+@REM Des informations sur le processeur (utilisez wmic)
+echo Informations du processeur :
+powershell -command "(Get-CimInstance Win32_Processor).Name"
+
+@REM La mémoire totale du système (utilisez wmic)
+echo Memoire totale du systeme :
+powershell -command "(Get-CimInstance Win32_OperatingSystem).TotalVisibleMemorySize"
+
+echo =====================================
+
+@REM Une pause à la fin
+pause
+```
+
+![batch](/images/2026-01-29-17-52-20.png)
+
+![powershell](/images/2026-01-29-17-53-21.png)
+
 [info_systeme.ps1](./Scripts/PowerShell/B404_info_systeme.ps1)
+
+```ps1
+# ========================================
+# Script : info_systeme.ps1
+# Description : Affiche les données utilisateurs
+# Auteur : Freed
+# Date : 29-01-2026
+# ========================================
+
+# Un titre coloré
+Write-Host "=== Script d'informations systeme ===" -ForegroundColor Red
+Write-Host "=====================================" -ForegroundColor Blue
+
+
+# Le nom de l'ordinateur
+Write-Host "Ordinateur : $env:COMPUTERNAME"  
+
+# Le nom de l'utilisateur
+Write-Host "Utilisateur : $env:USERNAME" 
+
+# La date et l'heure actuelles
+Write-Host "Date : $(Get-Date)"
+
+Write-Host "=====================================" -ForegroundColor Blue
+
+# La version du système d'exploitation
+Write-Host "Version du systeme d'exploitation : $((Get-CimInstance Win32_OperatingSystem).Caption)" 
+
+# Des informations sur le processeur
+Write-Host "Informations du processeur : $env:PROCESSOR_IDENTIFIER"
+
+# La mémoire totale du système
+Write-Host "Memoire totale du systeme : $([math]::Round((Get-CimInstance Win32_OperatingSystem).TotalVisibleMemorySize / 1MB, 2)) GB"
+
+
+Write-Host "=====================================" -ForegroundColor Blue
+
+# Une pause à la fin
+pause
+```
+
+![powershell](/images/2026-01-29-18-33-18.png)
+
+## Script : Sauvegarde en Batch
+
+![batch](/images/2026-01-29-18-34-01.png)
+
+## Script : Sauvegarde en PowerShell
+
+![powershell](/images/2026-01-29-18-34-42.png)
