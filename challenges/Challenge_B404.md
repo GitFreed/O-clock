@@ -10,4 +10,6 @@ Challenge B404 : <https://github.com/O-clock-Aldebaran/SB04-04-batch-powershell-
 
 ---
 
-## Script
+## Script : Informations système
+
+On va créer le même script en Batch et PowerShell pour comparer les deux approches.

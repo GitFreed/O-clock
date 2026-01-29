@@ -16,7 +16,7 @@ Pour créer le jeu en script python, on va se baser ce qu'on a fait sur Scratch 
 
 ## Script
 
-[Nombre Mystère](./Challenge_B403_NbreMystere.py)
+[Nombre Mystère](./Scripts/Python/B403_NbreMystere.py)
 
 ```py
 # Challenge : recréer le jeu du Nombre Mystère, c'est plus, c'est moins.
