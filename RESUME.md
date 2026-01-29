@@ -100,6 +100,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B401. Les bases de la Programmation](#-b401-les-bases-de-la-programmation)
 - [B402. Git, GitHub & Markdown](#-b402-git-github--markdown)
 - [B403. Python les fondamentaux](#-b403-python-les-fondamentaux)
+- [B404. Scripting : Batch & PowerShell](#-b404-scripting--batch--powershell)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
@@ -4298,11 +4299,132 @@ Même si l'examen se fera en **Bash** ou **PowerShell**, la logique apprise ici 
 
 ---
 
-### 🐍 B404
+### 🐚 B404. Scripting : Batch & PowerShell
+
+> Automatiser l'administration Windows. Comprendre l'évolution historique du **Batch** (l'ancien) vers **PowerShell** (le standard actuel) et maîtriser les commandes essentielles pour le Titre Professionnel.
+
+#### 1. Mini-Historique & Comparaison
+
+L'automatisation sous Windows a connu deux grandes ères :
+
+- **L'Ère Batch (`.bat` / `.cmd`)**
+  - **Origine** : Hérité de **MS-DOS** (années 80).
+  - **Philosophie** : Exécute des commandes ligne par ligne dans `cmd.exe`.
+  - **Limites** : Manipule uniquement du **texte**, gestion d'erreurs difficile, limité à Windows.
+  - *Usage aujourd'hui* : Tâches ultra-simples, lancements rapides, compatibilité avec de vieux systèmes.
+
+- **L'Ère PowerShell (`.ps1`)**
+  - **Origine** : Lancé en **2006** (Projet "Monad") pour concurrencer le Shell Unix.
+  - **Philosophie** : Basé sur le framework **.NET**. Tout est **Objet**.
+  - **Force** : Permet de tout gérer (AD, Cloud, Registre, Exchange) avec une syntaxe cohérente.
+
+**Le Duel :**
+
+| Caractéristique | Batch | PowerShell |
+| :--- | :--- | :--- |
+| **Données** | Texte brut (difficile à filtrer) | Objets (Propriétés & Méthodes) |
+| **Syntaxe** | Archaïque (`%var%`) | Verbe-Nom (`Get-Command`) |
+| **Puissance** | Faible | Illimitée (accès .NET) |
+
+#### 2. Le Batch (L'essentiel à connaître)
+
+Même s'il est vieillissant, le Batch reste utile pour des scripts rapides.
+
+- **Commandes de base** :
+  - `echo` : Affiche du texte (`echo Bonjour`).
+  - `@echo off` : Masque l'affichage des commandes au lancement (la base de tout script).
+  - `pause` : Arrête le script ("Appuyez sur une touche...").
+  - `rem` : Faire un commentaire.
+
+- **Variables** :
+  - Déclaration : `set nom=Toto`
+  - Utilisation : `echo %nom%` (avec les `%`).
+  - *Variables système* : `%DATE%`, `%TIME%`, `%USERNAME%`.
+
+#### 3. PowerShell (Le Cœur du cours)
+
+PowerShell fonctionne sur une logique de **Cmdlets** (Command-lets) normalisées sous la forme **`Verbe-Nom`** (Singulier).
+
+**Les 3 Piliers de la découverte** (Pour se débrouiller seul) :
+
+1. **`Get-Help`** : Le manuel (`Get-Help Get-Service -Examples`).
+2. **`Get-Command`** : L'annuaire (`Get-Command *net*`).
+3. **`Get-Member`** : Le scanner. Permet de voir les propriétés (infos) et méthodes (actions) d'un objet.
+
+#### 📜 Cheat Sheet : Les Commandes PowerShell Indispensables
+
+Voici le récapitulatif des commandes vues en cours, classées par usage.
+
+- **📂 1. Gestion de Fichiers & Navigation**
+
+*C'est la base de la navigation, comme sous Linux mais avec des alias.*
+
+| Cmdlet | Alias | Action |
+| --- | --- | --- |
+| `Get-ChildItem` | `ls`, `dir` | Lister le contenu d'un dossier. |
+| `Set-Location` | `cd` | Changer de répertoire. |
+| `New-Item` | `mkdir` | Créer un fichier ou dossier (`-ItemType Directory`). |
+| `Copy-Item` | `cp` | Copier un fichier/dossier. |
+| `Move-Item` | `mv` | Déplacer ou renommer. |
+| `Remove-Item` | `rm` | Supprimer définitivement. |
+| `Get-Content` | `cat` | Lire le texte dans un fichier. |
+| `Test-Path` | - | Vérifie si un fichier existe (Renvoie True/False). |
+
+- **⚙️ 2. Système & Administration**
+
+| Cmdlet | Action |
+| :--- | :--- |
+| `Get-Service` | Liste les services (Spouleur, Windows Update...). |
+| `Start-Service` / `Stop-Service` | Démarrer ou arrêter un service. |
+| `Get-Process` | Affiche les processus en cours (RAM, CPU). |
+| `Stop-Process` | Tue un programme (ex: `Stop-Process -Name notepad`). |
+| `Get-Date` | Affiche la date et l'heure actuelles. |
+
+- **🚀 3. Le Pipeline & Manipulation de Données**
+C'est la force de PowerShell : on passe le résultat d'une commande à une autre avec le pipe `|`.
+
+| Cmdlet | Usage & Exemple |
+| --- | --- |
+| **`Where-Object`** | **Filtrer**. On ne garde que ce qui nous intéresse. *Ex: `Get-Service |
+| **`Select-Object`** | **Choisir**. On ne garde que certaines colonnes. *Ex: `Get-Process |
+| **`Sort-Object`** | **Trier**. *Ex: `Get-Process |
+| **`Measure-Object`** | **Compter**. *Ex: `Get-ChildItem |
+| **`Export-Csv`** | **Exporter**. Crée un fichier Excel/CSV avec le résultat. *Ex: `Get-Service |
+
+-- **🔒 4. Sécurité & Variables**
+
+- **Execution Policy** : Par défaut, PowerShell bloque les scripts.
+  - Commande : `Set-ExecutionPolicy RemoteSigned` (Standard en entreprise).
+
+- **Variables** : Toujours précédées de `$`.
+  - `$MonDossier = "C:\Data"`
+  - `$Date = Get-Date`
+
+💡 En résumé
+
+Il ne faut pas tout retenir cœur, mais la **logique** :
+
+1. Je cherche ma commande (`Get-Command`).
+2. Je regarde comment elle marche (`Get-Help -Examples`).
+3. Si je veux filtrer le résultat, j'utilise le Pipe `|` et `Where-Object`.
+
+C'est cette logique **"Verbe-Nom" + Pipe** qui vous sauvera !
+
+[Challenge B404](./challenges/Challenge_B404.md) : Créer des Scripts batch et Powershell d'Administration Système
+
+> 📚 **Ressources** :
+>
+> - Exemple de scripts Batch et Powershell : <https://github.com/O-clock-Aldebaran/exemples-batch-powershell>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🐚 B405
 
 >
 
-[Challenge B404](./challenges/Challenge_B404.md)
+[Challenge B405](./challenges/Challenge_B405.md)
 
 > 📚 **Ressources** :
 >
