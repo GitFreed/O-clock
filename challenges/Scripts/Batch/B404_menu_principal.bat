@@ -22,14 +22,15 @@ echo 1. Informations Systeme (Batch)
 echo 2. Informations Systeme (PowerShell)
 echo 3. Sauvegarde Simple (Batch)
 echo 4. Sauvegarde Avancee (PowerShell)
-echo 5. Nombre Mystere (Python)
-echo 6. Quitter
+echo 5. Monitoring (PowerShell)
+echo 6. Nombre Mystere (Python)
+echo 7. Quitter
 echo.
 echo ========================================
 
 @REM Set pour créer la variable, /p invite au prompt
 
-set /p Choix=Entrez votre choix (1-5) : 
+set /p Choix=Entrez votre choix (1-7) : 
 
 @REM Gestion des choix, goto renvois sur l'étiquette en question
 
@@ -37,13 +38,14 @@ if "%Choix%"=="1" goto InfoBat
 if "%Choix%"=="2" goto InfoPS
 if "%Choix%"=="3" goto SaveBat
 if "%Choix%"=="4" goto SavePS
-if "%Choix%"=="5" goto GamePy
-if "%Choix%"=="6" exit
+if "%Choix%"=="5" goto MonitorPS
+if "%Choix%"=="6" goto GamePy
+if "%Choix%"=="7" exit
 
 @REM Si l'utilisateur tape n'importe quoi d'autre
 
 color 0C
-echo Choix invalide ! Merci de taper un chiffre entre 1 et 5.
+echo Choix invalide ! Merci de taper un chiffre entre 1 et 7.
 pause
 goto Menu
 
@@ -74,6 +76,13 @@ goto Menu
 cls
 echo Lancement de la sauvegarde PowerShell...
 powershell -NoProfile -ExecutionPolicy Bypass -File "..\PowerShell\B404_backup_avance.ps1"
+pause
+goto Menu
+
+:MonitorPS
+cls
+echo Lancement du Monitoring PowerShell...
+powershell -NoProfile -ExecutionPolicy Bypass -File "..\PowerShell\B404_monitoring.ps1"
 pause
 goto Menu
 
