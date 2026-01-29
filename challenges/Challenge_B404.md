@@ -311,14 +311,16 @@ echo 1. Informations Systeme (Batch)
 echo 2. Informations Systeme (PowerShell)
 echo 3. Sauvegarde Simple (Batch)
 echo 4. Sauvegarde Avancee (PowerShell)
-echo 5. Nombre Mystere (Python)
-echo 6. Quitter
+echo 5. Monitoring (PowerShell)
+echo 6. Nettoyage (Batch)
+echo 7. Nombre Mystere (Python)
+echo 8. Quitter
 echo.
 echo ========================================
 
 @REM Set pour créer la variable, /p invite au prompt
 
-set /p Choix=Entrez votre choix (1-5) : 
+set /p Choix=Entrez votre choix (1-8) : 
 
 @REM Gestion des choix, goto renvois sur l'étiquette en question
 
@@ -326,13 +328,15 @@ if "%Choix%"=="1" goto InfoBat
 if "%Choix%"=="2" goto InfoPS
 if "%Choix%"=="3" goto SaveBat
 if "%Choix%"=="4" goto SavePS
-if "%Choix%"=="5" goto GamePy
-if "%Choix%"=="6" exit
+if "%Choix%"=="5" goto MonitorPS
+if "%Choix%"=="6" goto CleanBat
+if "%Choix%"=="7" goto GamePy
+if "%Choix%"=="8" exit
 
 @REM Si l'utilisateur tape n'importe quoi d'autre
 
 color 0C
-echo Choix invalide ! Merci de taper un chiffre entre 1 et 5.
+echo Choix invalide ! Merci de taper un chiffre entre 1 et 7.
 pause
 goto Menu
 
@@ -363,6 +367,20 @@ goto Menu
 cls
 echo Lancement de la sauvegarde PowerShell...
 powershell -NoProfile -ExecutionPolicy Bypass -File "..\PowerShell\B404_backup_avance.ps1"
+pause
+goto Menu
+
+:MonitorPS
+cls
+echo Lancement du Monitoring PowerShell...
+powershell -NoProfile -ExecutionPolicy Bypass -File "..\PowerShell\B404_monitoring.ps1"
+pause
+goto Menu
+
+:CleanBat
+cls
+echo Lancement du Nettoyage Batch...
+call "B404_nettoyage.bat"
 pause
 goto Menu
 
@@ -492,3 +510,84 @@ while ($true) {
 ![monitoring](/images/2026-01-30-00-09-51.png)
 
 ![monitoring](/images/2026-01-30-00-12-24.png)
+
+## Script de nettoyage en Batch
+
+[nettoyage.bat](./Scripts/Batch/B404_nettoyage.bat)
+
+```bat
+@echo off
+
+:: ========================================
+:: Script : nettoyage.bat
+:: Description : Un menu qui lance les différents scripts créés.
+:: Auteur : Freed
+:: Date : 29-01-2026
+:: ========================================
+
+Title Script de Nettoyage Rapide
+color 0C
+
+:: Avertissement !
+echo ========================================================
+echo                  ATTENTION !
+echo ========================================================
+echo Ce script va supprimer definitivement les fichiers
+echo temporaires (.tmp et .log) de votre ordinateur.
+echo.
+echo Dossiers cibles :
+echo  - %TEMP%
+echo  - C:\Windows\Temp
+echo ========================================================
+echo.
+
+:: Confirmation
+:: /I permet d'accepter "O" majuscule ou "o" minuscule
+set /p Choix=Etes-vous sur de vouloir continuer ? (O/N) : 
+if /I "%Choix%" neq "O" goto Annulation
+
+:: Nettoyage
+cls
+echo Nettoyage en cours, veuillez patienter...
+echo.
+
+:: Suppression dans le dossier TEMP utilisateur
+:: /F = Force (efface même les fichiers lecture seule)
+:: /Q = Quiet (pas de confirmation à chaque fichier)
+del /F /Q "%TEMP%\*.tmp" 2>nul
+del /F /Q "%TEMP%\*.log" 2>nul
+
+:: Suppression dans le dossier TEMP système (Besoin Admin)
+del /F /Q "C:\Windows\Temp\*.tmp" 2>nul
+del /F /Q "C:\Windows\Temp\*.log" 2>nul
+
+:: Résumé
+color 0A
+echo.
+echo ========================================================
+echo                 RESUME DES ACTIONS
+echo ========================================================
+echo [OK] Nettoyage du dossier temporaire Utilisateur
+echo [OK] Nettoyage du dossier temporaire Windows
+echo.
+echo Tout est propre !
+goto Fin
+
+:Annulation
+echo.
+echo Operation annulee par l'utilisateur.
+color 0E
+
+:Fin
+pause
+```
+
+![script](/images/2026-01-30-00-35-37.png)
+
+Cancel
+
+![cancel](/images/2026-01-30-00-35-06.png)
+
+Done
+
+![clean](/images/2026-01-30-00-33-56.png)

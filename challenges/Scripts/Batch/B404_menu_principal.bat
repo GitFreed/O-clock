@@ -23,14 +23,15 @@ echo 2. Informations Systeme (PowerShell)
 echo 3. Sauvegarde Simple (Batch)
 echo 4. Sauvegarde Avancee (PowerShell)
 echo 5. Monitoring (PowerShell)
-echo 6. Nombre Mystere (Python)
-echo 7. Quitter
+echo 6. Nettoyage (Batch)
+echo 7. Nombre Mystere (Python)
+echo 8. Quitter
 echo.
 echo ========================================
 
 @REM Set pour créer la variable, /p invite au prompt
 
-set /p Choix=Entrez votre choix (1-7) : 
+set /p Choix=Entrez votre choix (1-8) : 
 
 @REM Gestion des choix, goto renvois sur l'étiquette en question
 
@@ -39,8 +40,9 @@ if "%Choix%"=="2" goto InfoPS
 if "%Choix%"=="3" goto SaveBat
 if "%Choix%"=="4" goto SavePS
 if "%Choix%"=="5" goto MonitorPS
-if "%Choix%"=="6" goto GamePy
-if "%Choix%"=="7" exit
+if "%Choix%"=="6" goto CleanBat
+if "%Choix%"=="7" goto GamePy
+if "%Choix%"=="8" exit
 
 @REM Si l'utilisateur tape n'importe quoi d'autre
 
@@ -83,6 +85,13 @@ goto Menu
 cls
 echo Lancement du Monitoring PowerShell...
 powershell -NoProfile -ExecutionPolicy Bypass -File "..\PowerShell\B404_monitoring.ps1"
+pause
+goto Menu
+
+:CleanBat
+cls
+echo Lancement du Nettoyage Batch...
+call "B404_nettoyage.bat"
 pause
 goto Menu
 
