@@ -4436,6 +4436,8 @@ C'est cette logique **"Verbe-Nom" + Pipe** qui vous sauvera !
 
 > 📚 **Ressources** :
 >
+> - Module ActiveDirectory : <https://docs.microsoft.com/powershell/module/activedirectory/>
+> - Gestion des utilisateurs AD : <https://docs.microsoft.com/windows-server/identity/ad-ds/>
 
 [Retour en haut](#-table-des-matières)
 
