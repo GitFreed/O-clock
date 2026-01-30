@@ -6,7 +6,7 @@
 
 ![conseils](/images/2026-01-30-09-55-40.png)
 
-Atelier B405 : <https://github.com/O-clock-Aldebaran/SB04E05-Atelier-Powershell-et-AD#>
+**Atelier B405** : <https://github.com/O-clock-Aldebaran/SB04E05-Atelier-Powershell-et-AD#>
 
 ### Ressources utiles
 
