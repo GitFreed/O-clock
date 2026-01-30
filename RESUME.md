@@ -4420,11 +4420,32 @@ C'est cette logique **"Verbe-Nom" + Pipe** qui vous sauvera !
 
 ---
 
-### 🐚 B405
+### 👥 B405. Atelier PowerShell & Active Directory
+
+> **Objectif de l'atelier :**
+>
+> - Installer et utiliser le module ActiveDirectory
+> - Gérer les utilisateurs AD en PowerShell
+> - Gérer les groupes et leurs membres
+> - Organiser l'annuaire avec des Unités Organisationnelles
+> - Importer des utilisateurs en masse depuis CSV
+> - Créer des scripts d'automatisation pour l'onboarding/offboarding
+> - Générer des rapports sur l'état de l'AD
+
+[Atelier B405](./challenges/Challenge_B405.md)
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🐚 B406
 
 >
 
-[Challenge B405](./challenges/Challenge_B405.md)
+[Challenge B405](./challenges/Challenge_B406.md)
 
 > 📚 **Ressources** :
 >
