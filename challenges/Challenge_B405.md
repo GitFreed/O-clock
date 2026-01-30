@@ -700,3 +700,398 @@ Le test de reset password pour `dpetit`
 ![reset](/images/2026-01-30-18-18-59.png)
 
 ## 7. Rapports et audits
+
+![inactifs](/images/2026-01-30-18-37-48.png)
+
+Le script pour les utilisateurs inactifs : `Get-InactiveUsers.ps1`
+
+On va tester avec 0 jour d'anciennté sinon rien ne sortira
+
+```ps1
+$JoursMax = 0
+$DateLimite = (Get-Date).AddDays(-$JoursMax)
+$CsvPath = "C:\Scripts\AD\Rapport_Inactifs.csv"
+
+$Users = Get-ADUser -Filter {Enabled -eq $true} -Properties PasswordLastSet
+
+$Rapport = @()
+
+foreach ($User in $Users) {
+    # On vérifie d'abord si la date existe (n'est pas nulle)
+    if ($null -ne $User.PasswordLastSet) {
+        if ($User.PasswordLastSet -lt $DateLimite) {
+            $NbJours = New-TimeSpan -Start $User.PasswordLastSet -End (Get-Date)
+            
+            $Rapport += [PSCustomObject]@{
+                Login = $User.SamAccountName
+                Nom = $User.Name
+                DernierChangementMDP = $User.PasswordLastSet
+                JoursDepuisChangement = $NbJours.Days
+            }
+        }
+    }
+}
+
+$Rapport | Sort-Object JoursDepuisChangement -Descending | Export-Csv -Path $CsvPath -NoTypeInformation -Encoding UTF8 -Delimiter ";"
+Write-Host "✅ Rapport généré sans erreur : $CsvPath" -ForegroundColor Green
+$Rapport | Format-Table -AutoSize
+```
+
+Comme on se base sur le changement de mot de passe et que le plupart ne l'ont encore jamais activé, seuln l'admin ressort
+
+![inactif](/images/2026-01-30-18-30-26.png)
+
+le log
+
+![log](/images/2026-01-30-18-38-51.png)
+
+![désactivés](/images/2026-01-30-18-39-16.png)
+
+Le script `Get-DisabledUsers.ps1`
+
+```ps1
+$CsvPath = "C:\Scripts\AD\Rapport_Desactives.csv"
+
+# On cherche les comptes désactivés
+$DisabledUsers = Get-ADUser -Filter {Enabled -eq $false} -Properties Description, LastLogonDate
+
+$ListeFinale = @()
+
+foreach ($User in $DisabledUsers) {
+    # On essaie d'extraire la date si elle est dans la description (Format "DÉSACTIVÉ le ...")
+    $DateDesac = "Inconnue"
+    if ($User.Description -match "DÉSACTIVÉ le (\d{2}/\d{2}/\d{4})") {
+        $DateDesac = $matches[1]
+    }
+
+    $ListeFinale += [PSCustomObject]@{
+        Login = $User.SamAccountName
+        Nom = $User.Name
+        OU = $User.DistinguishedName.Split(",")[1].Replace("OU=","") # Petite astuce pour chopper l'OU parent
+        DateDesactivation = $DateDesac
+        DescriptionComplete = $User.Description
+    }
+}
+
+# Export
+$ListeFinale | Export-Csv -Path $CsvPath -NoTypeInformation -Encoding UTF8 -Delimiter ";"
+
+Write-Host "✅ Rapport des comptes désactivés généré ($($ListeFinale.Count) comptes) : $CsvPath" -ForegroundColor Green
+$ListeFinale | Format-Table Login, DateDesactivation, OU -AutoSize
+```
+
+![disabled](/images/2026-01-30-18-42-03.png)
+
+![rapport](/images/2026-01-30-18-42-23.png)
+
+Le script `Get-GroupsReport.ps1` pour le rapport HTML
+
+```ps1
+$HtmlPath = "C:\Scripts\AD\Rapport_Groupes.html"
+
+# Récupération des groupes et de leurs membres
+$Groups = Get-ADGroup -Filter * -Properties Description, Members
+
+$Data = @()
+
+foreach ($Grp in $Groups) {
+    $NbMembres = ($Grp.Members).Count
+    
+    # On définit si le groupe est vide ou non
+    $Statut = if ($NbMembres -eq 0) { "⚠️ VIDE" } else { "$NbMembres membres" }
+
+    $Data += [PSCustomObject]@{
+        Nom = $Grp.Name
+        Description = $Grp.Description
+        Statut = $Statut
+        Membres = ($Grp.Members -join ", ") # Liste des membres séparés par virgule
+    }
+}
+
+# Conversion en HTML avec un peu de style CSS (couleurs)
+$Header = @"
+<style>
+    body { font-family: sans-serif; }
+    table { border-collapse: collapse; width: 100%; }
+    th { background-color: #003366; color: white; padding: 10px; }
+    td { border: 1px solid #ddd; padding: 8px; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+</style>
+"@
+
+$Data | ConvertTo-Html -Title "Rapport des Groupes TechSecure" -Head $Header | Out-File $HtmlPath
+
+Write-Host "✅ Rapport HTML généré : $HtmlPath" -ForegroundColor Green
+# Ouvre le rapport automatiquement
+Invoke-Item $HtmlPath
+```
+
+Nous donne un tableau HTML complet
+
+![rapport](/images/2026-01-30-18-43-48.png)
+
+![rapport](/images/2026-01-30-18-44-00.png)
+
+![audit](/images/2026-01-30-18-45-13.png)
+
+Le script du rapport d'audit complet `Get-ADHealthReport.ps1` avec rapport HTML
+
+```ps1
+$HtmlPath = "C:\Scripts\AD\Audit_Complet.html"
+
+Write-Host "Analyse de l'Active Directory en cours..." -ForegroundColor Cyan
+
+# 1. Récupération des données brutes
+$UsersAll = Get-ADUser -Filter * -Properties Enabled, PasswordNeverExpires, Department
+$UsersActive = $UsersAll | Where-Object { $_.Enabled -eq $true }
+$UsersDisabled = $UsersAll | Where-Object { $_.Enabled -eq $false }
+$Groups = Get-ADGroup -Filter *
+$OUs = Get-ADOrganizationalUnit -Filter *
+
+# 2. Statistiques par Département
+$StatsDept = $UsersAll | Group-Object Department | Select-Object Name, Count | Sort-Object Count -Descending
+
+# 3. Top 5 des plus gros groupes (Calcul un peu lent, patience)
+$TopGroupes = $Groups | Select-Object Name, @{N='Count';E={(Get-ADGroupMember -Identity $_).Count}} | Sort-Object Count -Descending | Select-Object -First 5
+
+# 4. Construction du HTML
+$Style = @"
+<style>
+    body { font-family: Segoe UI, sans-serif; padding: 20px; }
+    h1 { color: #2c3e50; }
+    h2 { color: #16a085; border-bottom: 2px solid #16a085; }
+    .card { background: #ecf0f1; padding: 15px; margin: 10px 0; border-radius: 5px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    th { background: #2980b9; color: white; padding: 10px; text-align: left; }
+    td { border: 1px solid #bdc3c7; padding: 8px; }
+</style>
+"@
+
+$Content = @"
+<html><head><title>Audit AD TechSecure</title>$Style</head><body>
+    <h1>📊 Rapport d'Audit TechSecure</h1>
+    <p>Généré le $(Get-Date)</p>
+
+    <div class='card'>
+        <h2>Vue d'ensemble</h2>
+        <ul>
+            <li><b>Utilisateurs Actifs :</b> $($UsersActive.Count)</li>
+            <li><b>Utilisateurs Désactivés :</b> $($UsersDisabled.Count)</li>
+            <li><b>Total Groupes :</b> $($Groups.Count)</li>
+            <li><b>Total Unités d'Organisation (OU) :</b> $($OUs.Count)</li>
+        </ul>
+    </div>
+
+    <h2>🏢 Répartition par Département</h2>
+    $($StatsDept | ConvertTo-Html -Fragment)
+
+    <h2>🏆 Top 5 des plus gros Groupes</h2>
+    $($TopGroupes | ConvertTo-Html -Fragment)
+
+    <h2>⚠️ Sécurité : Mots de passe qui n'expirent jamais</h2>
+    $($UsersAll | Where-Object {$_.PasswordNeverExpires -eq $true} | Select-Object Name, SamAccountName | ConvertTo-Html -Fragment)
+</body></html>
+"@
+
+$Content | Out-File $HtmlPath
+Write-Host "✅ Audit complet généré : $HtmlPath" -ForegroundColor Green
+Invoke-Item $HtmlPath
+```
+
+![script](/images/2026-01-30-18-46-39.png)
+
+![rapport](/images/2026-01-30-18-47-07.png)
+
+## 8. Projet final - Outil de gestion AD complet
+
+Script du Menu Interactif (Dashboard) `AD-Manager.ps1` qui regroupe tous nos outils !
+
+![add](/images/2026-01-30-18-56-41.png)
+
+```ps1
+# SYNOPSIS
+# Projet Final - Gestionnaire Active Directory TechSecure
+# DESCRIPTION
+# Menu interactif regroupant toutes les fonctionnalités d'administration.
+
+# --- CONFIGURATION ---
+$ScriptPath = "C:\Scripts\AD"
+$LogFile = "$ScriptPath\Global_Audit.log"
+
+# --- FONCTIONS UTILITAIRES ---
+
+function Log-Operation ($Message, $Type="INFO") {
+    $Line = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] [$Type] $Message"
+    Add-Content -Path $LogFile -Value $Line
+    if ($Type -eq "SUCCESS") { Write-Host "✅ $Message" -ForegroundColor Green }
+    elseif ($Type -eq "ERROR") { Write-Host "❌ $Message" -ForegroundColor Red }
+    elseif ($Type -eq "WARNING") { Write-Host "⚠️ $Message" -ForegroundColor Yellow }
+}
+
+function Pause-Script {
+    Write-Host ""
+    Write-Host "Appuyez sur une touche pour revenir au menu..." -ForegroundColor Gray
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
+function Show-Header {
+    Clear-Host
+    Write-Host "==========================================" -ForegroundColor Cyan
+    Write-Host "    GESTIONNAIRE ACTIVE DIRECTORY (v1.0)  " -ForegroundColor White -BackgroundColor DarkBlue
+    Write-Host "==========================================" -ForegroundColor Cyan
+    Write-Host ""
+}
+
+# --- BOUCLE PRINCIPALE ---
+while ($true) {
+    Show-Header
+    
+    # --- LE MENU ---
+    Write-Host "UTILISATEURS" -ForegroundColor Yellow
+    Write-Host " 1. Créer un utilisateur (Onboarding)"
+    Write-Host " 2. Rechercher un utilisateur"
+    Write-Host " 3. Modifier le Titre/Fonction"
+    Write-Host " 4. Désactiver un utilisateur (Offboarding)"
+    Write-Host " 5. Supprimer un utilisateur"
+    
+    Write-Host "`nGROUPES" -ForegroundColor Yellow
+    Write-Host " 6. Créer un groupe"
+    Write-Host " 7. Ajouter un membre à un groupe"
+    Write-Host " 8. Retirer un membre d'un groupe"
+    Write-Host " 9. Lister les membres d'un groupe"
+    
+    Write-Host "`nIMPORT/EXPORT" -ForegroundColor Yellow
+    Write-Host "10. Importer depuis CSV (Masse)"
+    Write-Host "11. Exporter les utilisateurs en CSV"
+    
+    Write-Host "`nRAPPORTS" -ForegroundColor Yellow
+    Write-Host "12. Rapport Inactifs"
+    Write-Host "13. Rapport Groupes (HTML)"
+    Write-Host "14. Audit Complet (HTML)"
+    
+    Write-Host "`nAUTRES" -ForegroundColor Yellow
+    Write-Host "15. Réinitialiser un mot de passe"
+    Write-Host "16. Quitter"
+    
+    Write-Host ""
+    $Choice = Read-Host "Votre choix (1-16)"
+
+    # --- TRAITEMENT DU CHOIX ---
+    switch ($Choice) {
+        
+        # ---------------- UTILISATEURS ----------------
+        "1" { 
+            Write-Host "--- NOUVEL UTILISATEUR ---" -ForegroundColor Cyan
+            $P = Read-Host "Prénom"; $N = Read-Host "Nom"; $T = Read-Host "Titre"; $D = Read-Host "Département (RH/Commercial/Dev/Infra)"; $M = Read-Host "Manager"
+            if ($P -and $N -and $T -and $D) {
+                & "$ScriptPath\New-Employee.ps1" -Prenom $P -Nom $N -Titre $T -Departement $D -Manager $M
+            } else { Log-Operation "Champs manquants" "ERROR" }
+        }
+
+        "2" {
+            $Recherche = Read-Host "Nom ou Login à chercher"
+            Get-ADUser -Filter "Name -like '*$Recherche*' -or SamAccountName -like '*$Recherche*'" -Properties Title, Department, Enabled | Format-Table Name, SamAccountName, Title, Department, Enabled -AutoSize
+        }
+
+        "3" {
+            $Log = Read-Host "Login de l'utilisateur"
+            $Titre = Read-Host "Nouveau Titre"
+            try { Set-ADUser -Identity $Log -Title $Titre -ErrorAction Stop; Log-Operation "Titre modifié pour $Log" "SUCCESS" } catch { Log-Operation $_.Exception.Message "ERROR" }
+        }
+
+        "4" {
+            $Log = Read-Host "Login à désactiver"
+            & "$ScriptPath\Remove-Employee.ps1" -Login $Log
+        }
+
+        "5" {
+            $Log = Read-Host "⚠️ Login à SUPPRIMER DEFINITIVEMENT"
+            if ((Read-Host "Confirmez-vous la SUPPRESSION de $Log ? (OUI/NON)") -eq "OUI") {
+                try { Remove-ADUser -Identity $Log -Confirm:$false -ErrorAction Stop; Log-Operation "$Log a été supprimé." "SUCCESS" } catch { Log-Operation $_.Exception.Message "ERROR" }
+            }
+        }
+
+        # ---------------- GROUPES ----------------
+        "6" {
+            $NomGrp = Read-Host "Nom du nouveau groupe (ex: GRP_Stagiaires)"
+            try { New-ADGroup -Name $NomGrp -GroupScope Global -Path "OU=Groupes,OU=TechSecure,DC=TECHSECURE,DC=LOCAL"; Log-Operation "Groupe $NomGrp créé" "SUCCESS" } catch { Log-Operation $_.Exception.Message "ERROR" }
+        }
+
+        "7" {
+            $Grp = Read-Host "Nom du Groupe"; $Usr = Read-Host "Login Utilisateur"
+            try { Add-ADGroupMember -Identity $Grp -Members $Usr; Log-Operation "$Usr ajouté à $Grp" "SUCCESS" } catch { Log-Operation "Erreur d'ajout" "ERROR" }
+        }
+
+        "8" {
+            $Grp = Read-Host "Nom du Groupe"; $Usr = Read-Host "Login Utilisateur"
+            try { Remove-ADGroupMember -Identity $Grp -Members $Usr -Confirm:$false; Log-Operation "$Usr retiré de $Grp" "SUCCESS" } catch { Log-Operation "Erreur de retrait" "ERROR" }
+        }
+
+        "9" {
+            $Grp = Read-Host "Nom du Groupe"
+            try { Get-ADGroupMember -Identity $Grp | Select-Object Name, SamAccountName | Format-Table } catch { Write-Host "Groupe introuvable" -ForegroundColor Red }
+        }
+
+        # ---------------- IMPORT / EXPORT ----------------
+        "10" { & "$ScriptPath\Import-Pro.ps1" }
+        
+        "11" { 
+            $Path = "$ScriptPath\Export_Users.csv"
+            Get-ADUser -Filter * -Properties Title, Department | Select-Object Name, SamAccountName, Title, Department | Export-Csv -Path $Path -NoTypeInformation -Encoding UTF8
+            Log-Operation "Export terminé : $Path" "SUCCESS"
+        }
+
+        # ---------------- RAPPORTS ----------------
+        "12" { & "$ScriptPath\Get-InactiveUsers.ps1" }
+        "13" { & "$ScriptPath\Get-GroupsReport.ps1" }
+        "14" { & "$ScriptPath\Get-ADHealthReport.ps1" }
+
+        # ---------------- AUTRES ----------------
+        "15" { 
+            $Log = Read-Host "Login de l'utilisateur"
+            & "$ScriptPath\Reset-EmployeePassword.ps1" -Login $Log
+        }
+
+        "16" { 
+            Write-Host "Au revoir !" -ForegroundColor Green
+            break 
+        }
+
+        Default { Write-Host "Choix invalide." -ForegroundColor Red }
+    }
+    
+    Pause-Script
+}
+```
+
+Test du Menu
+
+Ajout utilisateurs
+
+![add](/images/2026-01-30-18-59-00.png)
+
+Import CSV (nouveaux utilisateurs)
+
+![CSV](/images/2026-01-30-19-14-09.png)
+
+Ajout de Groupes
+
+![groups](/images/2026-01-30-19-15-18.png)
+
+Ajout de Membres aux groupes
+
+![add](/images/2026-01-30-19-16-25.png)
+
+Vérification
+
+![test](/images/2026-01-30-19-17-06.png)
+
+Génération du rapport complet
+
+![rapport](/images/2026-01-30-19-17-49.png)
+
+![html](/images/2026-01-30-19-18-12.png)
+
+Désactiver un utilisateur
+
+![desact](/images/2026-01-30-19-18-56.png)
