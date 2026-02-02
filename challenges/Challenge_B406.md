@@ -22,6 +22,7 @@ Script [B406_PlusOuMoins.ps1](./Scripts/PowerShell/B406_PlusOuMoins.ps1)
 # Challenge : Jeu du Plus ou Moins (Version Fun)
 # Auteur : Freed
 # Reprise de la base du même jeu créé précédemment en Python
+# Vers 1.0
 
 Clear-Host # Nettoie la console au démarrage
 
@@ -35,7 +36,7 @@ while ($Rejouer -eq "oui") {
     $Essais = 0
 
     # Message de début
-    Write-Host "Eh toi là ! Tu dois me retrouver un nombre entre 1 et 100 pour pouvoir passer ! (o~o)" -ForegroundColor Cyan
+    Write-Host "Eh toi là ! Tu dois me retrouver un nombre entre 1 et 100 pour pouvoir passer ! (o㇃o)" -ForegroundColor Cyan
 
     # Boucle de recherche
     while ($true) {
@@ -43,7 +44,7 @@ while ($Rejouer -eq "oui") {
         
         # On demande le nombre et on force le type [int] pour être sûr que c'est un nombre
         try {
-            $Saisie = Read-Host "Alors ? (⊙_⊙) "
+            $Saisie = Read-Host "Alors ? (⚆᭹⚆) "
             $Nombre = [int]$Saisie
         }
         catch {
