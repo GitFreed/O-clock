@@ -24,6 +24,10 @@
 
 ---
 
+[Correction de l'atelier]<https://github.com/O-clock-Aldebaran/correction-atelier-powershell>
+
+---
+
 ## 1. Module ActiveDirectory
 
 On vérifie le module ActiveDirectory dans PowerShell

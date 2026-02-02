@@ -101,6 +101,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B402. Git, GitHub & Markdown](#-b402-git-github--markdown)
 - [B403. Python les fondamentaux](#-b403-python-les-fondamentaux)
 - [B404. Scripting : Batch & PowerShell](#-b404-scripting--batch--powershell)
+- [B405. Atelier PowerShell & ActiveDirectory](#-b405-atelier-powershell--active-directory)
+- [B406. Correction Atelier](#-b406-correction-atelier-b405)
+- [B407. Bash](#-b407-bash)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
@@ -4443,11 +4446,24 @@ C'est cette logique **"Verbe-Nom" + Pipe** qui vous sauvera !
 
 ---
 
-### 🐚 B406
+### ✅ B406. Correction Atelier B405
+
+> [Correction Atelier B405]<https://github.com/O-clock-Aldebaran/correction-atelier-powershell>
+
+[Challenge B406](./challenges/Challenge_B406.md) : Jeu du Nombre Mystère Plus ou Moins en PowerShell
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🐧 B407. Bash
 
 >
 
-[Challenge B405](./challenges/Challenge_B406.md)
+[Challenge B407](./challenges/Challenge_B407.md)
 
 > 📚 **Ressources** :
 >
