@@ -1,166 +1,214 @@
 <#
 .SYNOPSIS
-    Jeu du Plus ou Moins (Version Fun & Interactive)
+    Jeu du Plus ou Moins (Version 3.2 - Ultimate Edition)
 
 .DESCRIPTION
-    Ce script est un jeu de devinette en PowerShell.
-    L'ordinateur (ou un deuxième joueur) choisit un nombre mystère.
-    Le joueur doit le trouver avec des indices "Plus grand" ou "Plus petit".
-    
-    Fonctionnalités incluses :
-    - Modes Solo (avec niveaux de difficulté) et PvP (Duel).
-    - Gestion des erreurs de saisie.
-    - Sauvegarde des scores dans un fichier CSV (Hall of Fame).
-    - Interface colorée et fun.
+    Version finale avec bonus :
+    - Sons et Animations ASCII
+    - Chronomètre (Time Attack)
+    - Statistiques avancées (Taux de victoire, Moyenne)
+    - Indice intelligent au 7ème tour
 
 .AUTHOR
     Freed
 
 .DATE
     02/02/2026
-
-.EXAMPLE
-    .\B406_PlusOuMoins.ps1
 #>
 
-# --- CONFIGURATION INITIALE ---
+# --- CONFIGURATION ---
 Clear-Host
 $FichierScores = "scores.csv"
 
-# --- BOUCLE PRINCIPALE DU JEU ---
+# Fonction pour jouer un son (Compatible Windows)
+function Play-Sound ($Type) {
+    if ($IsWindows) {
+        switch ($Type) {
+            "Plus"  { [console]::Beep(400, 150) } # Son grave
+            "Moins" { [console]::Beep(1000, 150) } # Son aigu
+            "Win"   { 
+                [console]::Beep(523, 100); [console]::Beep(659, 100); 
+                [console]::Beep(784, 100); [console]::Beep(1046, 300) 
+            }
+            "Lose"  { [console]::Beep(200, 400) }
+        }
+    }
+}
+
+# Fonction ASCII ART Victoire
+function Show-VictoryArt {
+    Write-Host "
+              _______                     _________ _          _ 
+    |\     /|(  ___  )|\     /|  |\     /|\__   __/( (    /|  ( )
+    ( \   / )| (   ) || )   ( |  | )   ( |   ) (   |  \  ( |  | |
+     \ (_) / | |   | || |   | |  | | _ | |   | |   |   \ | |  | |
+      \   /  | |   | || |   | |  | |( )| |   | |   | (\ \) |  | |
+       ) (   | |   | || |   | |  | || || |   | |   | | \   |  (_)
+       | |   | (___) || (___) |  | () () |___) (___| )  \  |   _ 
+       \_/   (_______)(_______)  (_______)\_______/|/    )_)  (_)
+                                                             
+    " -ForegroundColor Yellow
+}
+
 while ($true) {
     
-    # Affichage du titre stylisé
+    # --- TITRE ---
     Clear-Host
     Write-Host "==========================================" -ForegroundColor Magenta
-    Write-Host "      JEU DU PLUS OU MOINS (v3.1)         " -ForegroundColor Cyan
+    Write-Host "      JEU DU PLUS OU MOINS (v3.2)         " -ForegroundColor Cyan
     Write-Host "==========================================" -ForegroundColor Magenta
     Write-Host ""
 
-    # --- MENU PRINCIPAL ---
+    # --- MENU ---
     Write-Host "QUE VEUX-TU FAIRE ?" -ForegroundColor Yellow
     Write-Host "1. Jouer contre l'Ordinateur (Solo)" -ForegroundColor Green
-    Write-Host "2. Jouer contre un Pote (Duel)" -ForegroundColor Cyan
-    Write-Host "3. Voir le Tableau des Scores (Hall of Fame)" -ForegroundColor Blue
-    Write-Host "4. Quitter (Fuir)" -ForegroundColor Magenta
+    Write-Host "2. Jouer contre un Pote ⚔️  (Duel)" -ForegroundColor Cyan
+    Write-Host "3. Hall of fame  🏆" -ForegroundColor Blue
+    Write-Host "4. Quitter" -ForegroundColor Gray
     Write-Host ""
     
     $ChoixMenu = Read-Host "Ton choix (1-4)"
     
-    # Gestion de la sortie
-    if ($ChoixMenu -eq "4") {
-        Write-Host "Dégonflé ! (◡_◡)" -ForegroundColor Magenta
-        break
-    }
+    if ($ChoixMenu -eq "4") { Write-Host "Dégonflé ! (◡_◡)" -ForegroundColor Magenta; break }
     
-    # Gestion de l'affichage des scores
-    if ($ChoixMenu -eq "3") {
+    # --- STATISTIQUES AVANCÉES ---
+if ($ChoixMenu -eq "3") {
         Clear-Host
-        Write-Host "--- HALL OF FAME ---" -ForegroundColor Yellow
+        Write-Host "--- 📊 STATISTIQUES DU JOUEUR ---" -ForegroundColor Yellow
         if (Test-Path $FichierScores) {
-            # Import du CSV et tri par score (le plus bas est le meilleur)
-            Import-Csv $FichierScores | Sort-Object {[int]$_.Essais} | Format-Table -AutoSize
+            $Data = Import-Csv $FichierScores
+            $TotalGames = $Data.Count
+            
+            # On compte comme victoire si "Gagné" OU si la colonne est vide (Anciens scores)
+            $Victoires = $Data | Where-Object { $_.Resultat -eq "Gagné" -or [string]::IsNullOrWhiteSpace($_.Resultat) }
+            $NbVictoires = $Victoires.Count
+            
+            $TauxVictoire = if ($TotalGames -gt 0) { [math]::Round(($NbVictoires / $TotalGames) * 100, 1) } else { 0 }
+            
+            $MoyenneEssais = if ($NbVictoires -gt 0) { 
+                ($Victoires | Measure-Object -Property Essais -Average).Average 
+            } else { 0 }
+
+            # Affichage Stats
+            Write-Host "Nombre de parties jouées : $TotalGames"
+            Write-Host "Taux de victoire         : $TauxVictoire %" -ForegroundColor Green
+            Write-Host "Moyenne d'essais (Wins)  : $([math]::Round($MoyenneEssais, 1))" -ForegroundColor Cyan
+            Write-Host ""
+            
+            # Affichage du TOP 5 (Les plus rapides)
+            Write-Host "--- 🏆 TOP 10 MEILLEURS SCORES ---" -ForegroundColor Yellow
+            $Victoires | Sort-Object {[int]$_.Essais} | Select-Object -First 10 | Format-Table -AutoSize
+            
         } else {
-            Write-Host "Aucun score enregistré pour l'instant. Tout est à faire !" -ForegroundColor Gray
+            Write-Host "Aucune donnée. Va jouer !" -ForegroundColor Gray
         }
-        Write-Host ""
         Pause
-        continue # Retour au début du menu
+        continue
     }
 
-    # Vérification entrée valide pour le jeu
     if ($ChoixMenu -ne "1" -and $ChoixMenu -ne "2") { continue }
 
-    # --- CONFIGURATION DE LA PARTIE ---
+    # --- SETUP PARTIE ---
     if ($ChoixMenu -eq "1") {
-        # MODE SOLO : Choix de la difficulté
         Clear-Host
-        Write-Host "CHOISIS TA SOUFFRANCE :" -ForegroundColor Yellow
-        Write-Host "1. Noob           (1 à 50  | 15 vies)" -ForegroundColor Green
-        Write-Host "2. Normal         (1 à 100 | 10 vies)" -ForegroundColor Yellow
-        Write-Host "3. Ultra-Violence (1 à 200 |  8 vies) ☠️" -ForegroundColor Red
+        Write-Host "CHOIX DIFFICULTÉ (Avec Chrono ! ⏱️) :" -ForegroundColor Yellow
+        Write-Host "1. Noob           (1-50  | 15 vies | 120s)" -ForegroundColor Green
+        Write-Host "2. Normal         (1-100 | 10 vies |  90s)" -ForegroundColor Yellow
+        Write-Host "3. Ultra-Violence (1-200 |  8 vies |  60s) ☠️" -ForegroundColor Red
         
         $ChoixDiff = Read-Host "Ton choix"
         switch ($ChoixDiff) {
-            "1" { $MaxNombre = 51; $MaxTentatives = 15; $NomNiveau = "NOOB" }
-            "2" { $MaxNombre = 101; $MaxTentatives = 10; $NomNiveau = "NORMAL" }
-            "3" { $MaxNombre = 201; $MaxTentatives = 8; $NomNiveau = "ULTRA-VIOLENCE" }
-            Default { $MaxNombre = 101; $MaxTentatives = 10; $NomNiveau = "NORMAL" }
+            "1" { $MaxN = 51; $MaxT = 15; $MaxSec = 120; $Niv = "NOOB" }
+            "2" { $MaxN = 101; $MaxT = 10; $MaxSec = 90; $Niv = "NORMAL" }
+            "3" { $MaxN = 201; $MaxT = 8; $MaxSec = 60; $Niv = "ULTRA-VIOLENCE" }
+            Default { $MaxN = 101; $MaxT = 10; $MaxSec = 90; $Niv = "NORMAL" }
         }
-        # Génération du nombre aléatoire
-        $NombreSecret = Get-Random -Minimum 1 -Maximum $MaxNombre
-        $IntroMessage = "RÈGLES : Trouve le nombre entre 1 et $($MaxNombre - 1) !"
+        $Secret = Get-Random -Min 1 -Max $MaxN
+        $MsgIntro = "RÈGLES : Trouve entre 1 et $($MaxN - 1) en moins de $MaxSec secondes !"
 
     } else {
-        # MODE DUEL : Saisie manuelle du secret
+        # MODE DUEL (Pas de chrono strict imposé, mais on garde la variable)
         Clear-Host
         Write-Host "--- MODE PVP ---" -ForegroundColor Cyan
-        Write-Host "JOUEUR 1 : Cache ton écran !" -ForegroundColor Red
-        $MaxNombre = 101; $MaxTentatives = 10; $NomNiveau = "DUEL"
-        $NombreSecret = 0
-        
-        # Validation que le secret est bien entre 1 et 100
-        while ($NombreSecret -lt 1 -or $NombreSecret -gt 100) {
-            try { $NombreSecret = [int](Read-Host "JOUEUR 1 > Nombre mystère (1-100)") } catch {}
-        }
-        Clear-Host
-        Write-Host "Secret verrouillé." -ForegroundColor Gray
-        $IntroMessage = "RÈGLES : Joueur 2, trouve le nombre du Joueur 1 (1-100) !"
+        $MaxN = 101; $MaxT = 10; $MaxSec = 999; $Niv = "DUEL"
+        $Secret = 0
+        while ($Secret -lt 1 -or $Secret -gt 100) { try { $Secret = [int](Read-Host "JOUEUR 1 > Secret (1-100)") } catch {} }
+        Clear-Host; Write-Host "Secret verrouillé." -ForegroundColor Gray
+        $MsgIntro = "RÈGLES : Joueur 2, trouve le nombre !"
     }
 
-    # --- DÉBUT DU JEU ---
-    Write-Host "`n$IntroMessage" -ForegroundColor Yellow
-    Write-Host "Niveau : $NomNiveau | Vies : $MaxTentatives`n" -ForegroundColor Cyan
+    # --- JEU ---
+    Write-Host "`n$MsgIntro" -ForegroundColor Yellow
+    Write-Host "Niveau : $Niv | Vies : $MaxT | Temps : ${MaxSec}s`n" -ForegroundColor Cyan
 
     $Essais = 0
     $Victoire = $false
+    $Debut = Get-Date # Démarrage du chrono
 
-    # Boucle de devinette
     while ($true) {
-        $Essais++
-        try {
-            $Saisie = Read-Host "[Essai $Essais / $MaxTentatives] Alors ? (⚆᭹⚆) "
-            
-            # Validation des entrées (Vide ou Hors Limites)
-            if ([string]::IsNullOrWhiteSpace($Saisie)) { throw }
-            $Nombre = [int]$Saisie
-            if ($Nombre -lt 1 -or $Nombre -ge $MaxNombre) { throw }
-        } catch {
-            Write-Host "Invalide ! (o_O)" -ForegroundColor Red; $Essais--; continue
+        # 1. Vérification du Temps
+        $TempsEcoule = (Get-Date) - $Debut
+        if ($TempsEcoule.TotalSeconds -ge $MaxSec) {
+            Play-Sound "Lose"
+            Write-Host "`n⏱️ BOOM ! TEMPS ÉCOULÉ ! (X_X)" -ForegroundColor Red
+            Write-Host "Le nombre était $Secret." -ForegroundColor Gray
+            break
         }
 
-        # Comparaison
-        if ($Nombre -eq $NombreSecret) {
-            Write-Host "BRAVO Larbin ! T'as trouvé en $Essais essais ! (•_•)" -ForegroundColor Cyan
+        $Essais++
+
+        # 2. Indice Intelligent (Tour 7)
+        if ($Essais -eq 7) {
+            Write-Host "💡 INDICE BONUS : Le nombre est $(if ($Secret % 2 -eq 0) {'PAIR'} else {'IMPAIR'}) !" -ForegroundColor Magenta
+        }
+
+        try {
+            $Restant = [math]::Round($MaxSec - $TempsEcoule.TotalSeconds)
+            $Saisie = Read-Host "[Tour $Essais/$MaxT | ${Restant}s] Nombre"
+            if ([string]::IsNullOrWhiteSpace($Saisie)) { throw }
+            $Nb = [int]$Saisie
+            if ($Nb -lt 1 -or $Nb -ge $MaxN) { throw }
+        } catch {
+            Write-Host "T'es sûr (o_0) !" -ForegroundColor Red; $Essais--; continue
+        }
+
+        if ($Nb -eq $Secret) {
+            Play-Sound "Win"
+            Show-VictoryArt
+            Write-Host "BRAVO Larbin ! Trouvé en $Essais essais ($([math]::Round($TempsEcoule.TotalSeconds))s) ! (•_•)" -ForegroundColor Cyan
             $Victoire = $true
             break 
-        } elseif ($Essais -ge $MaxTentatives) {
-            Write-Host "PERDU Larbin ! C'était $NombreSecret... (X_X)" -ForegroundColor Red
+        } elseif ($Essais -ge $MaxT) {
+            Play-Sound "Lose"
+            Write-Host "PERDU ! Plus de vies... C'était $Secret (X_X)" -ForegroundColor Red
             break
-        } elseif ($Nombre -lt $NombreSecret) {
-            Write-Host "C'est plus !" -ForegroundColor Blue
+        } elseif ($Nb -lt $Secret) {
+            Play-Sound "Plus"
+            Write-Host "C'est PLUS !" -ForegroundColor Blue
         } else {
-            Write-Host "C'est moins !" -ForegroundColor Green
+            Play-Sound "Moins"
+            Write-Host "C'est MOINS !" -ForegroundColor Green
         }
     }
 
-    # --- SAUVEGARDE DU SCORE ---
-    if ($Victoire) {
-        $NomJoueur = Read-Host "Entre ton nom pour la légende (Vide pour ignorer)"
-        if (-not [string]::IsNullOrWhiteSpace($NomJoueur)) {
-            # Création de l'objet Score
-            $NouveauScore = [PSCustomObject]@{
-                Date    = Get-Date -Format "yyyy-MM-dd HH:mm"
-                Joueur  = $NomJoueur
-                Niveau  = $NomNiveau
-                Essais  = $Essais
-            }
-            # Export vers CSV
-            $NouveauScore | Export-Csv -Path $FichierScores -Append -NoTypeInformation -Encoding UTF8
-            Write-Host "✅ Score sauvegardé !" -ForegroundColor Green
+    # --- SAUVEGARDE ---
+    $Nom = Read-Host "Pseudo pour l'historique (Vide pour ignorer)"
+    if (-not [string]::IsNullOrWhiteSpace($Nom)) {
+        # Astuce : Si le CSV a changé de structure, on recrée le header si besoin, 
+        # mais le plus simple est d'ajouter la colonne Resultat.
+        $Resultat = if ($Victoire) { "Gagné" } else { "Perdu" }
+        
+        $NewScore = [PSCustomObject]@{
+            Date = Get-Date -Format "yyyy-MM-dd HH:mm"
+            Joueur = $Nom
+            Niveau = $Niv
+            Essais = $Essais
+            Resultat = $Resultat
         }
+        
+        # Le paramètre -Force permet d'éviter certaines erreurs d'encodage
+        $NewScore | Export-Csv -Path $FichierScores -Append -NoTypeInformation -Encoding UTF8 -Force
+        Write-Host "✅ Résultat sauvegardé !" -ForegroundColor Green
     }
-    
-    Write-Host ""
-    Pause
+    Write-Host ""; Pause
 }
