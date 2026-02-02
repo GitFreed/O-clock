@@ -8,4 +8,8 @@ Challenge B406 : <https://github.com/O-clock-Aldebaran/SB04E06-plusmoins-ps-GitF
 
 ---
 
-## 1
+## Préparation de l'environnement
+
+Pour les versionner le script il sera dans mon Repo <https://github.com/GitFreed/O-clock/tree/main/challenges/Scripts/PowerShell>
+
+
