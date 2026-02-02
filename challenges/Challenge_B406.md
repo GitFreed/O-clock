@@ -1121,3 +1121,7 @@ if ($ChoixMenu -eq "3") {
 ![v3.2](/images/2026-02-02-20-46-15.png)
 
 GAME OVER !
+
+## Historique GitHub
+
+![commits](/images/2026-02-02-20-51-13.png)
