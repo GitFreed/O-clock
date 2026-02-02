@@ -1,60 +1,88 @@
 # Challenge : Jeu du Plus ou Moins (Version Fun)
 # Auteur : Freed
 # Reprise de la base du même jeu créé précédemment en Python
-# Vers 2.0 - Fonctionnalités avancées (Scores & Limites)
+# Vers 2.1 - Niveaux de difficulté
 
 Clear-Host
 $Rejouer = "oui"
-$Historique = @() # Création d'une liste vide pour stocker les scores
+$Historique = @() 
 
 while ($Rejouer -eq "oui") {
     
+    # --- TITRE ---
     Clear-Host
     Write-Host "==========================================" -ForegroundColor Magenta
-    Write-Host "      JEU DU PLUS OU MOINS (v2.0)         " -ForegroundColor Cyan
+    Write-Host "      JEU DU PLUS OU MOINS (v2.1)         " -ForegroundColor Cyan
     Write-Host "==========================================" -ForegroundColor Magenta
     Write-Host ""
-    
-    Write-Host "RÈGLES : Eh toi là ! Tu dois me retrouver un nombre entre 1 et 100 ! (o㇃o)" -ForegroundColor Yellow
-    Write-Host "ATTENTION : T'as que 10 essais sinon t'es viré !" -ForegroundColor Red
+
+    # --- MENU DIFFICULTÉ ---
+    Write-Host "CHOISIS TON DESTIN LARBIN :" -ForegroundColor Yellow
+    Write-Host "1. Facile    (1 à 50  | 15 vies) - Mode Noob" -ForegroundColor Green
+    Write-Host "2. Moyen     (1 à 100 | 10 vies) - Mode Normal" -ForegroundColor Yellow
+    Write-Host "3. Difficile (1 à 200 |  8 vies) - Mode Ultra-violence ☠️" -ForegroundColor Red
     Write-Host ""
 
-    $NombreSecret = Get-Random -Minimum 1 -Maximum 101
+    $ChoixValide = $false
+    while (-not $ChoixValide) {
+        $Choix = Read-Host "Ton choix (1/2/3)"
+        switch ($Choix) {
+            "1" { 
+                $MaxNombre = 51; $MaxTentatives = 15; $NomNiveau = "FACILE"
+                Write-Host "Pff... petit joueur !" -ForegroundColor Gray
+                $ChoixValide = $true 
+            }
+            "2" { 
+                $MaxNombre = 101; $MaxTentatives = 10; $NomNiveau = "MOYEN"
+                Write-Host "Ok, classique." -ForegroundColor Gray
+                $ChoixValide = $true 
+            }
+            "3" { 
+                $MaxNombre = 201; $MaxTentatives = 8; $NomNiveau = "DIFFICILE"
+                Write-Host "Bonne chance, t'en auras besoin..." -ForegroundColor Red
+                $ChoixValide = $true 
+            }
+            Default { Write-Host "1, 2 ou 3... c'est pas compliqué pourtant !" -ForegroundColor Red }
+        }
+    }
+    
+    Write-Host ""
+    Write-Host "RÈGLES : Trouve le nombre entre 1 et $($MaxNombre - 1) ! (o㇃o)" -ForegroundColor Yellow
+    Write-Host "Niveau : $NomNiveau | Vies : $MaxTentatives" -ForegroundColor Cyan
+    Write-Host ""
+
+    $NombreSecret = Get-Random -Minimum 1 -Maximum $MaxNombre
     $Essais = 0
-    $MaxTentatives = 10
 
     while ($true) {
         $Essais++
         
         try {
-            # Affichage du compteur avec vies restantes
             $Saisie = Read-Host "[Essai $Essais / $MaxTentatives] Alors ? (⚆᭹⚆) "
             
             if ([string]::IsNullOrWhiteSpace($Saisie)) { throw "Vide" }
             $Nombre = [int]$Saisie
 
-            if ($Nombre -lt 1 -or $Nombre -gt 100) {
-                Write-Host "Hep hep hep ! Entre 1 et 100 j'ai dit ! (o_O)" -ForegroundColor Red
+            if ($Nombre -lt 1 -or $Nombre -ge $MaxNombre) {
+                Write-Host "Hep ! Entre 1 et $($MaxNombre - 1) stp ! (o_O)" -ForegroundColor Red
                 $Essais-- 
                 continue
             }
         }
         catch {
-            Write-Host "Heu... j'ai dit un nombre valide..." -ForegroundColor Red
+            Write-Host "Un nombre valide stp..." -ForegroundColor Red
             $Essais-- 
             continue
         }
 
-        # --- LOGIQUE DU JEU ---
+        # --- LOGIQUE ---
         if ($Nombre -eq $NombreSecret) {
-            # VICTOIRE
-            Write-Host "Pas mal larbin, t'as trouvé le nombre mystère en $Essais essais ! (•_•)" -ForegroundColor Cyan
-            $Historique += $Essais # On ajoute le score à l'historique
+            Write-Host "Pas mal, t'as trouvé en $Essais essais ! (•_•)" -ForegroundColor Cyan
+            $Historique += $Essais
             break 
         }
         elseif ($Essais -ge $MaxTentatives) {
-            # DEFAITE (Si on atteint 10 essais sans trouver)
-            Write-Host "PERDU ! T'es nul, le nombre était $NombreSecret... (X_X)" -ForegroundColor Red
+            Write-Host "PERDU ! Le nombre était $NombreSecret... (X_X)" -ForegroundColor Red
             break
         }
         elseif ($Nombre -lt $NombreSecret) {
@@ -65,15 +93,11 @@ while ($Rejouer -eq "oui") {
         }
     }
 
-    # --- FIN DE PARTIE & STATS ---
+    # --- STATS ---
     Write-Host "------------------------------------------" -ForegroundColor Gray
     if ($Historique.Count -gt 0) {
-        # On trie les scores du plus petit au plus grand et on prend le premier
         $MeilleurScore = $Historique | Measure-Object -Minimum
-        Write-Host "🏆 Ton meilleur score pour l'instant : $($MeilleurScore.Minimum) essais" -ForegroundColor Yellow
-    }
-    else {
-        Write-Host "Pas encore de victoire... Au boulot ! (¬_¬)" -ForegroundColor Gray
+        Write-Host "🏆 Meilleur score : $($MeilleurScore.Minimum) essais" -ForegroundColor Yellow
     }
     Write-Host "------------------------------------------" -ForegroundColor Gray
 
