@@ -13,7 +13,7 @@ Cette version avancée inclut des modes de jeu variés, des statistiques détail
   - *Ultra-Violence* (1-200, 8 vies, 60s) ☠️
 - **Mode PvP (Duel) :** Défiez un ami sur le même poste (écran masqué).
 
-### ✨ Fonctionnalités Bonus (V3.3)
+### ✨ Fonctionnalités Bonus (V3.4)
 
 - **⏱️ Chronomètre (Time Attack) :** Si le temps est écoulé, c'est perdu !
 - **🔊 Effets Sonores :** Bips interactifs (Plus, Moins, Victoire, Défaite).
