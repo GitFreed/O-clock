@@ -4563,7 +4563,7 @@ Les slides proposent des cas concrets qui reflètent le quotidien de l'admin Lin
 En Bash, **Google est votre ami** pour la syntaxe des `if` (les espaces dans les crochets `[ condition ]` sont obligatoires !).
 Et n'oubliez pas : contrairement à PowerShell qui renvoie des objets structurés, Bash renvoie du texte. Vous passerez votre temps à découper ce texte (`cut`, `awk`, `grep`) pour récupérer l'info voulue.
 
-[Challenge B407](./challenges/Challenge_B407.md)
+[Challenge B407](./challenges/Challenge_B407.md) : une série d'exercices pour créer une suite d'outils Admin en Bash.
 
 > 📚 **Ressources** :
 >

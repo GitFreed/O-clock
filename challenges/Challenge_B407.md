@@ -2,7 +2,7 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-Nous allons faire une série d'exercices pour créer une suite d'outils Admin complète en Bash
+Nous allons faire une série d'exercices pour créer une suite d'outils Admin en Bash
 
 Challenge B407 : <https://github.com/O-clock-Aldebaran/SB04E07-Bash-GitFreed>
 
