@@ -1,0 +1,6 @@
+--- RAPPORT D'INSTALLATION mer. 04 févr. 2026 00:06:49 CET ---
+git : INSTALLÉ AVEC SUCCÈS
+curl : DÉJÀ INSTALLÉ
+btop : DÉJÀ INSTALLÉ
+un_logiciel_qui_nexiste_pas : IGNORÉ PAR L'UTILISATEUR
+neofetch : IGNORÉ PAR L'UTILISATEUR

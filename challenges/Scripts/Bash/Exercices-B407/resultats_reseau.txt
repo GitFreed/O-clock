@@ -1,0 +1,10 @@
+--- RAPPORT RÉSEAU mer. 04 févr. 2026 00:03:43 CET ---
+SERVEUR              | ÉTAT        | LATENCE   
+google.com           | EN LIGNE     | 5.32     ms
+github.com           | EN LIGNE     | 13.7     ms
+cloudflare.com       | EN LIGNE     | 3.89     ms
+stackoverflow.com    | EN LIGNE     | 5.50     ms
+freedexplore.com     | EN LIGNE     | 10.3     ms
+introuvable.bidon    | HORS LIGNE   | -         
+
+RÉSUMÉ : 5 / 6 serveurs accessibles.

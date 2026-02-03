@@ -1,0 +1,17 @@
+=== RAPPORT DISQUE mar. 03 févr. 2026 23:56:10 CET ===
+
+[PARTITIONS]
+Sys. de fichiers Taille Utilisé Dispo Uti% Monté sur
+/dev/sda2           20G     12G  6,7G  64% /
+
+[TOP 10 HOME]
+188M	/home/freed
+188M	/home
+119M	/home/freed/.config
+118M	/home/freed/.config/BraveSoftware/Brave-Browser
+118M	/home/freed/.config/BraveSoftware
+61M	/home/freed/.cache
+44M	/home/freed/.cache/BraveSoftware/Brave-Browser/Default
+44M	/home/freed/.cache/BraveSoftware/Brave-Browser
+44M	/home/freed/.cache/BraveSoftware
+34M	/home/freed/.cache/BraveSoftware/Brave-Browser/Default/Cache/Cache_Data

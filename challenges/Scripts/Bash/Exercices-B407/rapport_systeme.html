@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport Système - freed-VMware</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1e1e1e; color: #d4d4d4; padding: 20px; }
+        h1 { color: #4ec9b0; border-bottom: 2px solid #4ec9b0; padding-bottom: 10px; }
+        h2 { color: #569cd6; margin-top: 30px; }
+        .card { background-color: #252526; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .info-box { background-color: #333; padding: 10px; border-radius: 4px; font-family: monospace; white-space: pre-wrap; }
+        .highlight { color: #ce9178; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { text-align: left; padding: 8px; border-bottom: 1px solid #444; }
+        th { background-color: #3e3e42; }
+        .footer { margin-top: 40px; font-size: 0.8em; color: #888; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>🖥️ Rapport Système - freed-VMware</h1>
+    <p>Généré le <span class="highlight">04/02/2026 à 00:16</span></p>
+
+    <div class="card">
+        <h2>ℹ️ Informations Générales</h2>
+        <ul>
+            <li><strong>Système OS :</strong> Ubuntu 24.04.3 LTS</li>
+            <li><strong>Noyau (Kernel) :</strong> 6.14.0-37-generic</li>
+            <li><strong>Temps d'activité :</strong> up 37 minutes</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🧠 CPU & Mémoire</h2>
+        <p><strong>Charge CPU (1min, 5min, 15min) :</strong> 0.06 0.02 0.00</p>
+        <div class="info-box">
+Type      Total    Utilisé  Libre
+Mem: 5,7Gi    1,4Gi    2,8Gi
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💾 Espace Disque</h2>
+        <div class="info-box">
+Sys. de fichiers Taille Utilisé Dispo Uti% Monté sur
+/dev/sda2           20G     12G  6,7G  65% /
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>⚙️ Services en cours (32 actifs)</h2>
+        <div class="info-box">
+  UNIT                          LOAD   ACTIVE SUB     DESCRIPTION
+  accounts-daemon.service       loaded active running Accounts Service
+  avahi-daemon.service          loaded active running Avahi mDNS/DNS-SD Stack
+  colord.service                loaded active running Manage, Install and Generate Color Profiles
+  cron.service                  loaded active running Regular background program processing daemon
+  cups-browsed.service          loaded active running Make remote CUPS printers available locally
+  cups.service                  loaded active running CUPS Scheduler
+  dbus.service                  loaded active running D-Bus System Message Bus
+  fwupd.service                 loaded active running Firmware update daemon
+  gdm.service                   loaded active running GNOME Display Manager
+  gnome-remote-desktop.service  loaded active running GNOME Remote Desktop
+  kerneloops.service            loaded active running Tool to automatically collect and submit kernel crash signatures
+  ModemManager.service          loaded active running Modem Manager
+  NetworkManager.service        loaded active running Network Manager
+  open-vm-tools.service         loaded active running Service for virtual machines hosted on VMware
+... (Liste tronquée)
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>bust_in_silhouette Dernières Connexions</h2>
+        <div class="info-box">
+freed    tty2         tty2             Tue Feb  3 23:39   still logged in
+freed    seat0        login screen     Tue Feb  3 23:39   still logged in
+reboot   system boot  6.14.0-37-generi Tue Feb  3 23:39   still running
+freed    tty2         tty2             Tue Feb  3 13:47 - crash  (09:51)
+freed    seat0        login screen     Tue Feb  3 13:47 - crash  (09:51)
+        </div>
+    </div>
+
+    <div class="footer">
+        Rapport généré automatiquement par script Bash.
+    </div>
+</body>
+</html>

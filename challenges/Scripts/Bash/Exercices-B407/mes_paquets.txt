@@ -1,0 +1,5 @@
+git
+curl
+btop
+un_logiciel_qui_nexiste_pas
+neofetch
