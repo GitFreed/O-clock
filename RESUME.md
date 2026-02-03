@@ -103,7 +103,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B404. Scripting : Batch & PowerShell](#-b404-scripting--batch--powershell)
 - [B405. Atelier PowerShell & ActiveDirectory](#-b405-atelier-powershell--active-directory)
 - [B406. Correction Atelier](#-b406-correction-atelier-b405)
-- [B407. Bash](#-b407-bash)
+- [B407. Scripting : Bash](#-b407-scripting--bash)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
@@ -4459,15 +4459,131 @@ C'est cette logique **"Verbe-Nom" + Pipe** qui vous sauvera !
 
 ---
 
-### 🐧 B407. Bash
+### 🐧 B407. Scripting : Bash
 
->
+> **Objectif** : Automatiser l'administration sous GNU/Linux et macOS. Si PowerShell est le standard Windows, **Bash** est le langage par défaut de la quasi-totalité des serveurs Linux dans le monde. C'est un outil indispensable pour l'administrateur système.
+
+#### 1. Mini-Historique & Contexte
+
+Pour bien situer Bash par rapport à ce qu'on a vu :
+
+- **Batch** (Années 80) : L'ancêtre sous DOS/Windows. Basique.
+- **Python** (1991) : Le langage polyvalent, idéal pour l'algorithmique.
+- **PowerShell** (2006) : La réponse moderne de Microsoft, orientée Objet.
+- **Bash** (1989) :
+  - Acronyme de **"Bourne Again Shell"** (jeu de mot sur le "Bourne Shell" ou `sh`, l'ancêtre Unix créé par Stephen Bourne).
+  - C'est un interpréteur de commandes **textuel**. Contrairement à PowerShell (Objets), Bash manipule des flux de **texte** (fichiers, chaînes).
+  - Il est installé par défaut sur presque toutes les distributions Linux.
+
+#### 2. Création et Exécution d'un script
+
+Sous Linux, un fichier texte ne devient un script que si on respecte 3 règles:
+
+- **L'Extension** : `.sh` (facultatif mais recommandé pour se repérer).
+
+- **Le Shebang** (`#!`) : La toute première ligne doit indiquer qui exécute le script.
+  - `#!/bin/bash`
+
+- **Les Permissions** : Par défaut, un fichier n'est pas exécutable par sécurité.
+  - Commande : `chmod +x mon_script.sh`
+  - Exécution : `./mon_script.sh` (Le `./` est obligatoire pour dire "dans le dossier courant").
+
+#### 3. Syntaxe et Spécificités
+
+⚠️ **Attention aux espaces !** Bash est très strict. Une espace en trop peut planter le script.
+
+**📦 Variables & I/O** :
+
+- **Déclaration** : `variable="valeur"` (⛔ PAS d'espace autour du `=`).
+- **Utilisation** : `echo $variable` (Le `$` sert à lire la valeur).
+- **Saisie** : `read nom_variable` (Pause le script et attend une entrée clavier).
+- **Maths** : `resultat=$(( 5 + 2 ))` (Double parenthèse pour les calculs).
+
+**🔀 Conditions (`if`)** :
+
+La syntaxe des tests est particulière, basée sur des crochets `[ ]`.
+
+```bash
+if [ $age -ge 18 ]; then
+    echo "Majeur"
+else
+    echo "Mineur"
+fi
+
+```
+
+- *Opérateurs numériques* : `-eq` (Egal), `-ne` (Différent), `-gt` (Plus grand), `-lt` (Plus petit).
+- *Opérateurs texte* : `=` (Egal), `!=` (Différent).
+
+**🔄 Boucles** :
+
+- **For** (Pour chaque élément) :
+
+```bash
+for fichier in *.txt; do
+    echo "Traitement de $fichier"
+done
+
+```
+
+- **While** (Tant que) : Idéal pour lire un fichier ligne par ligne ou attendre une condition.
+
+**arguments** : Comme en Batch/PS, on peut passer des paramètres au lancement (`./script.sh param1 param2`).
+
+- `$1`, `$2`... : Premier, deuxième argument.
+- `$0` : Nom du script lui-même.
+- `$#` : Nombre total d'arguments reçus.
+
+#### 4. Exercices Types (SysAdmin)
+
+Les slides proposent des cas concrets qui reflètent le quotidien de l'admin Linux :
+
+1. **Sauvegarde (Backup)** : Créer une archive `tar.gz` d'un dossier en ajoutant la date (`date +%Y%m%d`) dans le nom du fichier pour ne pas écraser les anciennes.
+
+2. **Création Utilisateur** : Automatiser la commande `useradd`, générer un mot de passe aléatoire et créer le dossier `/home`.
+
+3. **Monitoring** : Analyser des logs (ex: Apache) pour extraire les IPs qui reviennent le plus souvent (usage de `grep`, `cut`, `sort`, `uniq`).
+
+#### 📝 Cheat Sheet Bash
+
+| Action | Commande / Syntaxe |
+| --- | --- |
+| **Shebang** | `#!/bin/bash` (Toujours ligne 1) |
+| **Rendre exécutable** | `chmod +x script.sh` |
+| **Afficher** | `echo "Texte"` |
+| **Lire** | `read variable` |
+| **Variable** | `ma_var="toto"` (Pas d'espace !) |
+| **Utiliser Var** | `echo $ma_var` |
+| **Condition** | `if [ "$a" -eq "$b" ]; then ... fi` |
+| **Arguments** | `$1` (1er arg), `$#` (Nb args) |
+| **Calcul** | `$(( 1 + 2 ))` |
+
+#### 💡 Le Conseil du prof
+
+En Bash, **Google est votre ami** pour la syntaxe des `if` (les espaces dans les crochets `[ condition ]` sont obligatoires !).
+Et n'oubliez pas : contrairement à PowerShell qui renvoie des objets structurés, Bash renvoie du texte. Vous passerez votre temps à découper ce texte (`cut`, `awk`, `grep`) pour récupérer l'info voulue.
 
 [Challenge B407](./challenges/Challenge_B407.md)
 
 > 📚 **Ressources** :
 >
-> - Les conditions en bash : <https://buzut.net/maitriser-les-conditions-en-bash/>
+> - Guide Bash : <https://fr.wikibooks.org/wiki/Programmation_Bash>
+> - Conditions : <https://buzut.net/maitriser-les-conditions-en-bash/>
+> - Explainshell : <https://explainshell.com/> (pour comprendre les commandes)
+> - ShellCheck : <https://www.shellcheck.net/> (vérifier la qualité du code)
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🐧 B408. Atelier Bash
+
+>
+
+[Challenge B408](./challenges/Challenge_B408.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
