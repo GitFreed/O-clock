@@ -17,6 +17,8 @@ Challenge B407 : <https://github.com/O-clock-Aldebaran/SB04E07-Bash-GitFreed>
 
 ![ressources](/images/2026-02-03-15-46-32.png)
 
+Les script créés seront tous disponibles dans ce [dossier](/challenges/Scripts/Bash/Exercices-B407/)
+
 ---
 
 ## Exercice 1 - Copie
