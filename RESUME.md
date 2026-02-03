@@ -4467,6 +4467,7 @@ C'est cette logique **"Verbe-Nom" + Pipe** qui vous sauvera !
 
 > 📚 **Ressources** :
 >
+> - Les conditions en bash : <https://buzut.net/maitriser-les-conditions-en-bash/>
 
 [Retour en haut](#-table-des-matières)
 
