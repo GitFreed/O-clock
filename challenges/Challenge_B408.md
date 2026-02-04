@@ -889,14 +889,15 @@ Une suite d'outils Bash pour l'administration système automatisée, développé
 
 ## 🚀 Installation
 
-1. Cloner ou copier tous les scripts dans un dossier.
-2. Rendre les scripts exécutables :
+### 1. Cloner ou copier tous les scripts dans un dossier
+
+### 2. Rendre les scripts exécutables
 
     ```bash
     chmod +x *.sh
     ```
 
-3. Lancer le menu principal :
+### 3. Lancer le menu principal
 
     ```bash
     sudo ./sysadmin-tools.sh
