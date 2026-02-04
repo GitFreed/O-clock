@@ -4578,12 +4578,19 @@ Et n'oubliez pas : contrairement à PowerShell qui renvoie des objets structuré
 
 ### 🐧 B408. Atelier Bash
 
->
+Automatisation de l'administration système
 
-[Challenge B408](./challenges/Challenge_B408.md)
+> - Créer des scripts Bash professionnels et maintenables
+> - Automatiser les tâches courantes d'administration système
+> - Gérer les erreurs et valider les entrées utilisateur
+> - Produire des rapports et des logs d'exécution
+> - Documenter vos scripts pour faciliter leur utilisation
+
+[Challenge B408](./challenges/Challenge_B408.md) : Atelier Bash - Automatisation de l'administration système
 
 > 📚 **Ressources** :
 >
+> - Programmation Bash <https://fr.wikibooks.org/wiki/Programmation_Bash>
 
 [Retour en haut](#-table-des-matières)
 
