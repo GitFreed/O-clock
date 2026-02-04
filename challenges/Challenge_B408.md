@@ -39,6 +39,8 @@
 
 ![1](/images/2026-02-04-11-03-19.png)
 
+Le [Script](./Scripts/Bash/Atelier-B408/backup.sh)
+
 ### 1.1 & 1.2 Sauvegarde + Sécurité
 
 ```sh
@@ -144,6 +146,8 @@ Si on crée plus de 7 backup, la plus ancienne est supprimée
 ## Partie 2
 
 ![2](/images/2026-02-04-12-08-38.png)
+
+Le [Script](./Scripts/Bash/Atelier-B408/monitor.sh)
 
 ```sh
 #!/bin/bash
@@ -296,6 +300,8 @@ Le Log créé
 
 ![3](/images/2026-02-04-12-35-04.png)
 
+Le [Script](./Scripts/Bash/Atelier-B408/create-users.sh)
+
 ```sh
 #!/bin/bash
 
@@ -426,6 +432,8 @@ La suppression
 ## Partie 4
 
 ![4](/images/2026-02-04-13-06-46.png)
+
+Le [Script](./Scripts/Bash/Atelier-B408/cleanup.sh)
 
 ```sh
 #!/bin/bash
@@ -603,6 +611,8 @@ Le Log
 
 ![5](/images/2026-02-04-12-50-50.png)
 
+Le [Script](./Scripts/Bash/Atelier-B408/services.conf)
+
 ```sh
 #!/bin/bash
 
@@ -730,6 +740,8 @@ Le Log JSON
 ## Partie 6
 
 ![6](/images/2026-02-04-14-07-16.png)
+
+Le [Script](./Scripts/Bash/Atelier-B408/sysadmin-tools.sh)
 
 ```sh
 #!/bin/bash
@@ -869,6 +881,8 @@ while true; do
     esac
 done
 ```
+
+Le Test
 
 ![6](/images/2026-02-04-14-05-59.png)
 
