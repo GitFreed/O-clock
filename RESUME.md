@@ -4577,7 +4577,7 @@ Et n'oubliez pas : contrairement à PowerShell qui renvoie des objets structuré
 
 ---
 
-### 🐧 B408. Atelier Bash
+### 📊 B408. Atelier Bash
 
 Automatisation de l'administration système
 
@@ -4592,6 +4592,19 @@ Automatisation de l'administration système
 > 📚 **Ressources** :
 >
 > - Programmation Bash <https://fr.wikibooks.org/wiki/Programmation_Bash>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### x B409
+
+>
+
+[Challenge B409](./challenges/Challenge_B409.md)
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
