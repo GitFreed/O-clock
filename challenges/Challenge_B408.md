@@ -876,7 +876,7 @@ done
 
 **Fichier [README](./Scripts/Bash/Atelier-B408/README.md)**
 
-```md
+```
 # 🛠️ SysAdmin Toolbox
 
 Une suite d'outils Bash pour l'administration système automatisée, développée dans le cadre de l'atelier Scripting.
