@@ -4,7 +4,7 @@
 
 ![Challenge](/images/2026-02-04-10-51-35.png)
 
-**Atelier B408** : <https://github.com/O-clock-Aldebaran/SB04E08-Atelier-Bash/blob/main/README.mdD>
+**Atelier B408** : <https://github.com/O-clock-Aldebaran/SB04E08-Atelier-Bash/blob/main/README.md>
 
 ![conseils](/images/2026-02-04-10-52-20.png)
 
