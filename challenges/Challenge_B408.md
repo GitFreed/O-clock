@@ -35,7 +35,7 @@
 
 ---
 
-## Partie 1 : Script de sauvegarde automatisée
+## Partie 1
 
 ![1](/images/2026-02-04-11-03-19.png)
 
@@ -141,7 +141,7 @@ Si on crée plus de 7 backup, la plus ancienne est supprimée
 
 ---
 
-## Partie 2 : Moniteur de ressources système
+## Partie 2
 
 ![2](/images/2026-02-04-12-08-38.png)
 
@@ -292,7 +292,7 @@ Le Log créé
 
 ---
 
-## Partie 3 : Gestionnaire d'utilisateurs en masse
+## Partie 3
 
 ![3](/images/2026-02-04-12-35-04.png)
 
@@ -423,7 +423,7 @@ La suppression
 
 ---
 
-## Partie 4 : Nettoyeur de système automatique
+## Partie 4
 
 ![4](/images/2026-02-04-13-06-46.png)
 
@@ -599,7 +599,7 @@ Le Log
 
 ---
 
-## Partie 5 : Vérificateur de santé des services
+## Partie 5
 
 ![5](/images/2026-02-04-12-50-50.png)
 
@@ -727,7 +727,7 @@ Le Log JSON
 
 ---
 
-## Partie 6 : Outil centralisé de gestion
+## Partie 6
 
 ![6](/images/2026-02-04-14-07-16.png)
 
