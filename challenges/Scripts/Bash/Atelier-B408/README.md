@@ -26,32 +26,32 @@ sudo ./sysadmin-tools.sh
 
 ## 🧰 Liste des Outils
 
-### 1. Sauvegarde : [`backup.sh`](./Scripts/Bash/Atelier-B408/backup.sh)
+### 1. 💾 Sauvegarde : [`backup.sh`](./Scripts/Bash/Atelier-B408/backup.sh)
 
 - **But :** Archive un dossier donné.
 - **Fonctionnalités :** Logs, vérification espace disque, rotation (garde les 7 derniers).
 - **Usage :** `./backup.sh <dossier_source>`
 
-### 2. Monitoring : [`monitor.sh`](./Scripts/Bash/Atelier-B408/monitor.sh)
+### 2. 📊 Monitoring : [`monitor.sh`](./Scripts/Bash/Atelier-B408/monitor.sh)
 
 - **But :** Surveille la santé du serveur.
 - **Fonctionnalités :** CPU, RAM, Disque, Top Processus, Alertes couleurs, Rapport fichier.
 - **Usage :** `./monitor.sh [report]`
 
-### 3. Gestion Utilisateurs : [`create-users.sh`](./Scripts/Bash/Atelier-B408/create-users.sh)
+### 3. 👥 Gestion Utilisateurs : [`create-users.sh`](./Scripts/Bash/Atelier-B408/create-users.sh)
 
 - **But :** Importation de masse depuis CSV.
 - **Fonctionnalités :** Création comptes, groupes, mots de passe aléatoires, suppression.
 - **Usage :** `./create-users.sh <fichier.csv> [--delete]`
 
-### 4. Nettoyeur : [`cleanup.sh`](./Scripts/Bash/Atelier-B408/cleanup.sh)
+### 4. 🧹 Nettoyeur : [`cleanup.sh`](./Scripts/Bash/Atelier-B408/cleanup.sh)
 
 - **But :** Libère de l'espace disque.
 - **Cibles :** Cache APT, /tmp, logs > 30 jours, corbeilles.
 - **Sécurité :** Mode "Dry-Run" (simulation) par défaut.
 - **Usage :** `./cleanup.sh [--force]`
 
-### 5. Services Checker : [`check-services.sh`](./Scripts/Bash/Atelier-B408/services.conf)
+### 5. 🏥 Services Checker : [`check-services.sh`](./Scripts/Bash/Atelier-B408/services.conf)
 
 - **But :** Haute disponibilité des services (SSH, Apache, etc.).
 - **Fonctionnalités :** Auto-restart, export JSON, mode Watch temps réel.
