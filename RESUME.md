@@ -104,6 +104,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B405. Atelier PowerShell & ActiveDirectory](#-b405-atelier-powershell--active-directory)
 - [B406. Correction Atelier](#-b406-correction-atelier-b405)
 - [B407. Scripting : Bash](#-b407-scripting--bash)
+- [B408. Atelier Bash](./challenges/Challenge_B408.md)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
