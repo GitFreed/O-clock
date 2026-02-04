@@ -1,0 +1,7 @@
+[
+  { "service": "ssh", "status": "active", "enabled": "disabled" },
+  { "service": "cron", "status": "recovered", "enabled": "enabled" },
+  { "service": "rsyslog", "status": "active", "enabled": "enabled" },
+  { "service": "apache2", "status": "inactive", "enabled": "not-found" },
+  { "service": "mysql", "status": "inactive", "enabled": "not-found" }
+]

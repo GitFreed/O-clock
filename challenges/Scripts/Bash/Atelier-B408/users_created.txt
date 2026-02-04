@@ -1,0 +1,15 @@
+--- LISTE DES UTILISATEURS CRÉÉS ---
+Login: hpotter | Pass: +MLzdVoFxohPoUEP | Role: Auror
+Login: hgranger | Pass: Ch8Jsviu3dl/GM8x | Role: Ministre
+Login: rweasley | Pass: TEL56FNeR1idVYz+ | Role: Auror
+Login: dmalefoy | Pass: W9U3Ze42J4Bqe5A5 | Role: Rentier
+Login: adumbledore | Pass: S990TEQa/At3sfYl | Role: Directeur
+Login: srogue | Pass: FcqqTqOFF2sLvN1k | Role: Professeur
+Login: llovegood | Pass: 0znmhmbAf71NOXhc | Role: Journaliste
+Login: nlondubat | Pass: sioiTQXrf17YRBok | Role: Botaniste
+Login: cdiggory | Pass: FdmTmnava//nbnZJ | Role: Champion
+Login: mmcgonagall | Pass: u2CP8Otx6isrDG2R | Role: Directrice
+Login: rhagrid | Pass: ANUdPMfd5/CvE8fI | Role: Gardien
+Login: sblack | Pass: gNSp50TtFDyLLTLY | Role: Parrain
+Login: gweasley | Pass: Ouz9wgmTyoU6T9Ph | Role: Joueuse
+Login: fweasley | Pass: nI2gAikl3KmuPDNB | Role: Farceur
