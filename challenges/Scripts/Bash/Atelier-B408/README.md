@@ -14,15 +14,15 @@ Une suite d'outils Bash pour l'administration système automatisée, développé
 
 ### 2. Rendre les scripts exécutables
 
-    ```bash
-    chmod +x *.sh
-    ```
+```bash
+chmod +x *.sh
+```
 
 ### 3. Lancer le menu principal
 
-    ```bash
-    sudo ./sysadmin-tools.sh
-    ```
+```bash
+sudo ./sysadmin-tools.sh
+```
 
 ## 🧰 Liste des Outils
 

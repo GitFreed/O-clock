@@ -874,6 +874,8 @@ done
 
 ---
 
+![7](/images/2026-02-04-14-38-38.png)
+
 **Fichier [README](./Scripts/Bash/Atelier-B408/README.md)**
 
 ```markdown
