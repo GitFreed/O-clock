@@ -6,7 +6,13 @@
 
 ---
 
-![conseils](/images/2026-02-04-10-52-20.png)
+**Instructions Atelier B408** : <https://github.com/O-clock-Aldebaran/SB04E08-Atelier-Bash/blob/main/README.md>
+
+**Les scripts créés seront tous disponibles dans ce [dossier](./Scripts/Bash/Atelier-B408/)**
+
+**Fichier [README](./Scripts/Bash/Atelier-B408/README.md)**
+
+---
 
 ### Commandes importantes
 
@@ -24,14 +30,6 @@
 - `man bash` - Manuel Bash complet
 - `help` - Aide sur les commandes intégrées
 - <https://fr.wikibooks.org/wiki/Programmation_Bash>
-
----
-
-**Atelier B408** : <https://github.com/O-clock-Aldebaran/SB04E08-Atelier-Bash/blob/main/README.md>
-
-**Les scripts créés seront tous disponibles dans ce [dossier](./Scripts/Bash/Atelier-B408/)**
-
-**Fichier [README](./Scripts/Bash/Atelier-B408/README.md)**
 
 ---
 
@@ -961,3 +959,7 @@ Une suite d'outils Bash pour l'administration système automatisée, développé
 **Auteur :** Freed
 **Version :** 1.0
 ```
+
+---
+
+![conseils](/images/2026-02-04-10-52-20.png)
