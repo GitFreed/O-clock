@@ -110,7 +110,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
 
-- [C101.]()
+- [C101](.)
 
 ### [Saison C2. Cloud ☁️](.)
 
@@ -4636,7 +4636,7 @@ Windows dispose d'un outil graphique puissant et complet : le **Task Scheduler**
 Sous Linux, la planification est reine. C'est le cœur du système.
 
 **A. Cron (Le Standard)**
-C'est le démon (`crond`) qui se réveille chaque minute pour voir s'il a quelque chose à faire.
+C'est le daemon (`crond`) qui se réveille chaque minute pour voir s'il a quelque chose à faire.
 
 - **Crontab** : C'est le fichier "table" où sont listées les tâches.
   - `crontab -e` : Éditer sa table personnelle.
@@ -4651,7 +4651,7 @@ C'est le démon (`crond`) qui se réveille chaque minute pour voir s'il a quelqu
 Une ligne cron se compose de **5 champs temporels** suivis de la commande.
 
 ```text
-m   h   dom   mon   dow    commande
+m h dom mon dow   commande
 * * * * * /chemin/vers/script.sh
 ```
 
@@ -4676,8 +4676,6 @@ Cron suppose que la machine est allumée 24/7 (Serveur). Si votre PC est éteint
 **Anacron** comble ce manque : au démarrage, il vérifie si une tâche a été ratée pendant l'extinction et la lance (avec un délai aléatoire pour ne pas tout charger au boot).
 
 #### 4. Comparatif Windows vs Linux
-
-Comme demandé, voici le tableau de synthèse:
 
 | Aspect | 🪟 Windows | 🐧 Linux |
 | --- | --- | --- |
