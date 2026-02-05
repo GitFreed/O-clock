@@ -4699,6 +4699,7 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 > 📚 **Ressources** :
 >
 > - Calculateur de Crontab : <https://crontab.guru/>
+> - Linux : comment planifier des tâches avec cron et la crontab : <https://www.it-connect.fr/automatiser-des-taches-avec-crontab/>
 
 [Retour en haut](#-table-des-matières)
 
