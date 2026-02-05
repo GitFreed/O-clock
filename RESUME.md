@@ -4597,11 +4597,132 @@ Automatisation de l'administration système
 
 ---
 
-### x B409
+### ⏰ B409. Planification de Tâches
+
+> **Objectif** : Transformer un script ponctuel en une tâche automatique. Que ce soit pour des sauvegardes nocturnes, des rapports mensuels ou du nettoyage de logs, le planificateur est le "réveil-matin" de l'administrateur système.
+
+#### 1. Pourquoi planifier ?
+
+L'automatisation planifiée répond à plusieurs besoins critiques :
+
+- **Régularité** : Sauvegardes, mises à jour.
+- **Heures Creuses** : Lancer des tâches lourdes la nuit pour ne pas ralentir les utilisateurs.
+- **Fiabilité** : Éviter l'oubli humain ("Ah mince, j'ai oublié le backup d'hier").
+
+#### 2. Côté Windows : Le Planificateur de Tâches
+
+Windows dispose d'un outil graphique puissant et complet : le **Task Scheduler**.
+
+- **Accessibilité** :
+
+  - GUI : `taskschd.msc`.
+  - CMD : `schtasks`.
+  - PowerShell : `New-ScheduledTask`.
+
+- **Concepts Clés** :
+
+  - **Déclencheurs (Triggers)** : "Quand ?" (À une heure précise, au démarrage, à l'ouverture de session, sur événement log...).
+  - **Actions** : "Quoi ?" (Lancer un programme, envoyer un mail - obsolète, afficher un message - obsolète).
+  - **Contexte** : On peut exécuter la tâche avec un compte spécifique (ex: `SYSTEM`) même si personne n'est connecté.
+
+- **Déploiement** : En entreprise, on utilise les **GPO** (Group Policy) pour déployer une tâche planifiée sur 500 PC d'un coup.
+
+#### 3. Côté Linux : Cron & Anacron (Focus)
+
+Sous Linux, la planification est reine. C'est le cœur du système.
+
+**A. Cron (Le Standard)**
+C'est le démon (`crond`) qui se réveille chaque minute pour voir s'il a quelque chose à faire.
+
+- **Crontab** : C'est le fichier "table" où sont listées les tâches.
+  - `crontab -e` : Éditer sa table personnelle.
+  - `crontab -l` : Lister ses tâches.
+  - `crontab -r` : Tout supprimer.
+
+- **Fichiers Système** :
+  - `/etc/crontab` : La table globale du système (avec une colonne "user" en plus).
+  - `/etc/cron.daily`, `/etc/cron.hourly`... : Il suffit de déposer un script dans ces dossiers pour qu'il s'exécute automatiquement (pratique !).
+
+**B. La Syntaxe Crontab (À connaître par cœur !)**
+Une ligne cron se compose de **5 champs temporels** suivis de la commande.
+
+```text
+m   h   dom   mon   dow    commande
+* * * * * /chemin/vers/script.sh
+```
+
+| Champ | Signification | Valeurs possibles |
+| --- | --- | --- |
+| **m** | Minutes | 0-59 |
+| **h** | Heures | 0-23 |
+| **dom** | Jour du mois (Day of Month) | 1-31 |
+| **mon** | Mois (Month) | 1-12 |
+| **dow** | Jour de la semaine (Day of Week) | 0-7 (0 et 7 = Dimanche) |
+
+*Exemples :*
+
+- `30 08 * * *` : Tous les jours à 08h30.
+- `*/5 * * * *` : Toutes les 5 minutes.
+- `00 23 * * 5` : Tous les vendredis à 23h00.
+- **Raccourcis** : `@reboot` (au démarrage), `@daily` (minuit), `@weekly`.
+
+**C. Anacron (Pour les PC éteints)**
+Cron suppose que la machine est allumée 24/7 (Serveur). Si votre PC est éteint à l'heure H, la tâche Cron est **perdue**.
+
+**Anacron** comble ce manque : au démarrage, il vérifie si une tâche a été ratée pendant l'extinction et la lance (avec un délai aléatoire pour ne pas tout charger au boot).
+
+#### 4. Comparatif Windows vs Linux
+
+Comme demandé, voici le tableau de synthèse:
+
+| Aspect | 🪟 Windows | 🐧 Linux |
+| --- | --- | --- |
+| **Outil** | Planificateur de tâches | Cron |
+| **Interface** | GUI + CLI + PowerShell | CLI principalement (texte) |
+| **Précision** | Minute | Minute |
+| **Événements** | ✅ Très complet (Logs, Boot, Session...) | ❌ Limité (Temps uniquement) |
+| **Rattrapage** | ✅ Option "Si manqué, lancer au démarrage" | ⚠️ Anacron nécessaire |
+| **Centralisation** | ✅ GPO | ⚠️ Ansible/Puppet |
+| **Complexité** | Moyenne | Simple (mais syntaxe à apprendre) |
+
+#### Attention 💡
+
+Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votre profil utilisateur (.bashrc).
+
+👉 **Utilisez toujours des chemins absolus** dans vos crontabs !
+
+- ❌ `python script.py`
+- ✅ `/usr/bin/python3 /home/user/scripts/script.py`.
+
+[Challenge B409](./challenges/Challenge_B409.md)
+
+> 📚 **Ressources** :
+>
+> - Calculateur de Crontab : <https://crontab.guru/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 📜 Fin Saison B4. Scripting
+
+[QCM Saison B4](https://forms.gle/)
+
+![QCM](/images/)
+
+![Résultat QCM](/images/)
+
+---
+
+## **🗓️ Saison C1. Gestion de projet**
 
 >
 
-[Challenge B409](./challenges/Challenge_B409.md)
+### 🗓️ C101
+
+>
+
+[Challenge C101](./challenges/Challenge_C101.md)
 
 > 📚 **Ressources** :
 >
