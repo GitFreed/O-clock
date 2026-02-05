@@ -104,9 +104,13 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B405. Atelier PowerShell & ActiveDirectory](#-b405-atelier-powershell--active-directory)
 - [B406. Correction Atelier](#-b406-correction-atelier-b405)
 - [B407. Scripting : Bash](#-b407-scripting--bash)
-- [B408. Atelier Bash](./challenges/Challenge_B408.md)
+- [B408. Atelier Bash](#-b408-atelier-bash)
+- [B409. Planification de Tâches](#-b409-planification-de-tâches)
+- [Fin Saison B4 : QCM](#-fin-saison-b4-scripting)
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](.)
+
+- [C101.]()
 
 ### [Saison C2. Cloud ☁️](.)
 
