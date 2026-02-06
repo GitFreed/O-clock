@@ -4709,11 +4709,9 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 ### 📜 Fin Saison B4. Scripting
 
-[QCM Saison B4](https://forms.gle/)
+[QCM Saison B4](https://docs.google.com/forms/d/e/1FAIpQLSc7vvyky-TlFFwa7VgPBytCt9K-q8viqHqOBRnsklhYw37b6A/viewform?pli=1)
 
-![QCM](/images/)
-
-![Résultat QCM](/images/)
+![Résultat QCM](/images/2026-02-06-10-17-37.png)
 
 ---
 
