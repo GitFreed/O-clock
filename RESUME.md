@@ -4792,11 +4792,14 @@ C'est le modèle classique pour les projets d'infrastructure lourds où l'erreur
 - ✅ **Avantages** : Prévisible, documenté, rassurant, idéal quand le besoin est clair et stable.
 - ❌ **Inconvénients** : "Effet tunnel" (on ne voit le résultat qu'à la fin), peu flexible, lourd en documentation.
 
-[Challenge C101](./challenges/Challenge_C101.md) : Faire la note de cadrage d'un projet.
+![cycleV](/images/2026-02-09-17-48-42.png)
+
+[Challenge C101](./challenges/Challenge_C101.md) : Effectuer la note de cadrage d'un projet.
 
 > 📚 **Ressources** :
 >
-> - Manifeste Agile : <https://agilemanifesto.org/iso/fr/manifesto.html>
+> - Cycle en V  : <https://www.manager-go.com/gestion-de-projet/cycle-en-v.htm>
+> - Matrice RACE : <https://www.manager-go.com/gestion-de-projet/dossiers-methodes/matrice-raci>
 
 [Retour en haut](#-table-des-matières)
 
@@ -4806,11 +4809,15 @@ C'est le modèle classique pour les projets d'infrastructure lourds où l'erreur
 
 >
 
+![Manifeste](/images/2026-02-09-17-41-34.png)
+
+![agile](/images/2026-02-09-17-49-00.png)
+
 [Challenge C102](./challenges/Challenge_C102.md)
 
 > 📚 **Ressources** :
 >
->
+> - Manifeste Agile : <https://agilemanifesto.org/iso/fr/manifesto.html>
 
 [Retour en haut](#-table-des-matières)
 
