@@ -11,3 +11,19 @@
 ---
 
 ##
+
+Contexte
+
+Objectifs
+
+Périmètres Inclus-Exclus
+
+Partie prenante
+
+Livrables principaux
+
+Contraintes QCD (qualité coût délais)
+
+Méthode recommandée
+
+Commentaire manifeste Agile

@@ -95,7 +95,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B304. Nagios](#-b304-nagios)
 - [Fin Saison B3 : QCM](#-fin-saison-b3-supervision)
 
-### [Saison B4. Scripting 📜](#saison-b4-scripting-)
+### [Saison B4. Scripting 📜](#-saison-b4-scripting)
 
 - [B401. Les bases de la Programmation](#-b401-les-bases-de-la-programmation)
 - [B402. Git, GitHub & Markdown](#-b402-git-github--markdown)
@@ -108,7 +108,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 - [B409. Planification de Tâches](#-b409-planification-de-tâches)
 - [Fin Saison B4 : QCM](#-fin-saison-b4-scripting)
 
-### [Saison C1. Gestion de projet et analyse de risque 📅](.)
+### [Saison C1. Gestion de projet et analyse de risque 📅](#️-saison-c1-gestion-de-projet-et-analyse-de-risque)
 
 - [C101](.)
 
@@ -4715,25 +4715,94 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 ---
 
-## **🗓️ Saison C1. Gestion de projet**
+## **🗓️ Saison C1. Gestion de projet et Analyse de Risque**
 
->
+> **Le Contexte** : En tant que professionnels de l'IT, nous ne faisons pas que de la technique pure. Nous devons répondre à des besoins précis, dans des délais donnés et avec un budget limité.
+> Cette saison couvre l'organisation du travail (comment on mène un projet de A à Z) et la sécurité organisationnelle (comment on gère les risques et la continuité d'activité).
 
-### 🗓️ C101. Introduction à la gestion de projet
+**Au programme de la saison :**
 
->
+- **Méthodologies** : Cycle en V, Agile, Scrum.
+- **Pilotage** : Planification et suivi.
+- **Analyse de Risques** : Menaces, vulnérabilités et gestion du risque.
+- **Continuité** : PCA (Continuité) et PRA (Reprise d'activité).
+
+### 🏗️ C101. Les Fondamentaux de la Gestion de Projet
+
+> **Objectif** : Comprendre ce qu'est un projet, pourquoi il faut le gérer rigoureusement, et découvrir les méthodologies classiques comme le Cycle en V, adaptées aux projets d'infrastructure stable.
+
+### 1. Qu'est-ce qu'un Projet ?
+
+Un projet se définit par son caractère **temporaire** et **unique**. Ce n'est pas une opération courante (run), mais une entreprise avec un début et une fin précise pour créer un produit ou service unique.
+
+- **Caractéristiques clés** : Un objectif précis, des ressources limitées (budget, temps, humains), et un résultat unique (produit ou service).
+- **Exemples IT** : Déploiement de la fibre, migration vers le Cloud (ex: Netflix vers AWS), mise en place d'un ERP.
+- **Contraintes** : Elles sont techniques, humaines, financières, sécuritaires et liées à l'exploitation.
+
+### 2. La Gestion de Projet & Le Triangle d'Or (Qualité - Coûts - Délais)
+
+Gérer un projet, c'est maintenir l'équilibre permanent entre trois contraintes antagonistes (le "Triangle de la gestion de projet") :
+
+1. **Qualité** (Le résultat répond-il au besoin ?)
+2. **Coûts** (Budget respecté ?)
+3. **Délais** (Temps respecté ?)
+
+> **Règle d'or** : Toucher à l'un impacte les autres. Si vous réduisez le délai, vous devrez augmenter le coût (plus de ressources) ou réduire la qualité (moins de fonctionnalités).
+
+### 3. La Matrice RACI (Qui fait quoi ?)
+
+Pour éviter le flou artistique dans les responsabilités, on utilise la matrice **RACI**. Elle définit le rôle de chaque acteur pour chaque tâche du projet :
+
+| Lettre | Rôle (Anglais) | Rôle (Français) | Description |
+| --- | --- | --- | --- |
+| **R** | **Responsible** | **Réalisateur** | Celui qui **fait** le travail. Il "tient le stylo". (Il faut au moins 1 R). |
+| **A** | **Accountable** | **Approbateur** | Le chef. Celui qui **valide** et qui est responsable du résultat final (celui qui "va en prison" si ça rate). Il n'y a qu'un seul A par tâche. |
+| **C** | **Consulted** | **Consulté** | L'expert qu'on interroge pour avoir des infos avant de décider (communication bidirectionnelle). |
+| **I** | **Informed** | **Informé** | Celui qu'on met en copie (CC) une fois la tâche finie ou la décision prise (communication unidirectionnelle). |
+
+### 4. Les Méthodologies (Cycle de vie)
+
+Il existe plusieurs façons de piloter un projet, du plus rigide au plus souple :
+
+- **Cascade (Waterfall)** : Séquentiel. On ne revient jamais en arrière. Trop rigide pour l'IT moderne.
+- **Cycle en V** : Amélioration de la cascade. Chaque phase de conception a sa phase de validation associée. Très structuré.
+- **Agile / Scrum** : Itératif. On livre petit à petit pour s'adapter aux changements.
+- **DevOps** : Fusion Développement + Opérations pour automatiser et livrer en continu.
+
+### 5. Focus : Le Cycle en V
+
+C'est le modèle classique pour les projets d'infrastructure lourds où l'erreur coûte cher (ex: refonte d'un réseau physique).
+
+**Le principe** : Une phase descendante de **conception**, suivie d'une phase remontante de **tests**.
+
+- **Phase Descendante (Conception)** :
+  1. **Analyse des besoins** : Comprendre ce que veut le client.
+  2. **Spécifications** : Définir fonctionnellement ce qu'on va faire.
+  3. **Conception Générale & Détaillée** : Comment on va le faire techniquement (Architecture).
+  4. **Réalisation** : On construit !
+
+- **Phase Ascendante (Validation)** :
+  1. **Tests Unitaires** : Vérifier chaque petit bout de code/config isolé.
+  2. **Tests d'Intégration** : Vérifier que les bouts fonctionnent ensemble.
+  3. **Tests de Validation** : Vérifier que ça répond aux spécifications.
+  4. **Recette** : Le client valide que c'est ce qu'il voulait (VABF/VSR).
+
+**Bilan du Cycle en V** :
+
+- ✅ **Avantages** : Prévisible, documenté, rassurant, idéal quand le besoin est clair et stable.
+- ❌ **Inconvénients** : "Effet tunnel" (on ne voit le résultat qu'à la fin), peu flexible, lourd en documentation.
 
 [Challenge C101](./challenges/Challenge_C101.md) : Faire la note de cadrage d'un projet.
 
 > 📚 **Ressources** :
 >
->
+> - Manifeste Agile : <https://agilemanifesto.org/iso/fr/manifesto.html>
 
 [Retour en haut](#-table-des-matières)
 
 ---
 
-### 🗓️ C102. Méthodologies Agile et outils
+### 🏃 C102. Méthodologies Agile et outils
 
 >
 
@@ -4747,7 +4816,7 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 ---
 
-### 🗓️ C103. Gestion des risques
+### 🎲 C103. Gestion des risques
 
 >
 
@@ -4761,7 +4830,7 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 ---
 
-### 🗓️ C104. Sécurité et continuité d'activité
+### 🛡️ C104. Sécurité et continuité d'activité
 
 >
 
