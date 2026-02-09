@@ -4719,14 +4719,67 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 >
 
-### 🗓️ C101
+### 🗓️ C101. Introduction à la gestion de projet
 
 >
 
-[Challenge C101](./challenges/Challenge_C101.md)
+[Challenge C101](./challenges/Challenge_C101.md) : Faire la note de cadrage d'un projet.
 
 > 📚 **Ressources** :
 >
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🗓️ C102. Méthodologies Agile et outils
+
+>
+
+[Challenge C101](./challenges/Challenge_C102.md)
+
+> 📚 **Ressources** :
+>
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🗓️ C103. Gestion des risques
+
+>
+
+[Challenge C101](./challenges/Challenge_C103.md)
+
+> 📚 **Ressources** :
+>
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🗓️ C104. Sécurité et continuité d'activité
+
+>
+
+[Challenge C101](./challenges/Challenge_C104.md)
+
+> 📚 **Ressources** :
+>
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🗓️ Fin Saison C1. Gestion de projet
+
+[QCM Saison C1](.)
+
+![Résultat QCM](.)
 
 [Retour en haut](#-table-des-matières)
 
