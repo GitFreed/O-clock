@@ -110,7 +110,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](#️-saison-c1-gestion-de-projet-et-analyse-de-risque)
 
-- [C101](.)
+- [C101. Les fondamentaux de la Gestion de Projet](#️-c101-les-fondamentaux-de-la-gestion-de-projet)
 
 ### [Saison C2. Cloud ☁️](.)
 
@@ -4719,13 +4719,13 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 > **Le Contexte** : En tant que professionnels de l'IT, nous ne faisons pas que de la technique pure. Nous devons répondre à des besoins précis, dans des délais donnés et avec un budget limité.
 > Cette saison couvre l'organisation du travail (comment on mène un projet de A à Z) et la sécurité organisationnelle (comment on gère les risques et la continuité d'activité).
-
-**Au programme de la saison :**
-
-- **Méthodologies** : Cycle en V, Agile, Scrum.
-- **Pilotage** : Planification et suivi.
-- **Analyse de Risques** : Menaces, vulnérabilités et gestion du risque.
-- **Continuité** : PCA (Continuité) et PRA (Reprise d'activité).
+>
+> **Au programme de la saison :**
+>
+> - **Méthodologies** : Cycle en V, Agile, Scrum.
+> - **Pilotage** : Planification et suivi.
+> - **Analyse de Risques** : Menaces, vulnérabilités et gestion du risque.
+> - **Continuité** : PCA (Continuité) et PRA (Reprise d'activité).
 
 ### 🏗️ C101. Les Fondamentaux de la Gestion de Projet
 
