@@ -4900,6 +4900,7 @@ En résumé 💡
 > - Manifeste Agile : <https://agilemanifesto.org/iso/fr/manifesto.html>
 > - Méthode Scrum : <https://gist.github.com/stephdl/13c8a66cccb87f696fb2fc058f3b4aad>
 > - [Guide Scrum PDF](./ressources/2020-Scrum-Guide-French.pdf)
+> - Diagrammes de Gantt sur Excell : <https://excel.cloud.microsoft/create/fr/gantt-charts/>
 
 [Retour en haut](#-table-des-matières)
 
