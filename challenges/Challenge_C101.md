@@ -62,7 +62,7 @@ Le but est de garantir un environnement de travail performant, sécurisé et col
 | **2. DÉPLOIEMENT** | | | | |
 | Commande Matériel | **R** | I | **A** | - |
 | Installation Physique (Rack, Bornes) | **A** | **R** | I | - |
-| Config. Cœur (Firewall, Sécruité) | **R** | I | - | - |
+| Config. Cœur (Firewall, Sécurité) | **R** | I | - | - |
 | Config. Accès (Wi-Fi, Postes) | **A** | **R** | - | - |
 | **3. CLÔTURE** | | | | |
 | Tests & Recette | **A** | **R** | I | C |

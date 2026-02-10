@@ -4871,7 +4871,7 @@ Pour qu'un projet n'aille pas dans le mur, il faut le découper et le suivre.
 ##### A. Structurer (Découper)
 
 - **PBS (Product Breakdown Structure)** : Découpage **graphique du produit** en composants. (Ex: Pour une infra -> Réseau, Serveurs, Stockage, OS).
-- **WBS (Work Breakdown Structure)** : Découpage **des tâches** nécessaires. (Ex: Installer l'OS, Configurer l'IP, etc.).
+- **WBS (Work Breakdown Structure)** : Découpage **des tâches** nécessaires. (Ex: Installer l'OS, Configurer l'IP, etc). En français, on dit souvent **SDP** – Structure de Découpage du Projet.
 
 ##### B. Planifier & Suivre
 
