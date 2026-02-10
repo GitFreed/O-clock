@@ -4893,7 +4893,7 @@ Un projet réussit grâce à la technique, mais échoue souvent à cause de la c
 - **PBS/WBS** = Pour savoir quoi faire.
 - **Gantt/Kanban** = Pour savoir quand et comment le suivre.
 
-[Challenge C102](./challenges/Challenge_C102.md)
+[Challenge C102](./challenges/Challenge_C102.md) : Créer le WBS, matrice RACI et diagramme Gantt.
 
 > 📚 **Ressources** :
 >
