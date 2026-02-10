@@ -42,7 +42,11 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![Subnet](/images/2026-02-10-22-14-11.png)
 
+![VSLM](/images/2026-02-10-22-32-01.png)
+
 ![IP](/images/2026-02-10-22-08-08.png)
+
+![ports](/images/2026-02-10-22-34-18.png)
 
 ![Protocoles](/images/2026-02-10-22-07-18.png)
 
@@ -55,6 +59,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 ![LLDPvsCDP](/images/2026-02-10-22-15-50.png)
 
 ![Kerberos](/images/2026-02-10-22-06-48.png)
+
+![proxy](/images/2026-02-10-22-28-25.png)
 
 ## 🖥️
 
@@ -75,3 +81,5 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 ![intel](/images/2026-02-10-22-22-17.png)
 
 ![password](/images/2026-02-10-22-22-34.png)
+
+![OSIattacks](/images/2026-02-10-22-28-53.png)
