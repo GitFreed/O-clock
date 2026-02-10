@@ -4886,7 +4886,7 @@ Un projet réussit grâce à la technique, mais échoue souvent à cause de la c
 - **Adapter le message** : On ne parle pas technique au Directeur Financier, on ne parle pas budget aux techniciens.
 - **Transparence** : Partager les succès mais aussi les risques et les difficultés.
 
-En résumé 💡
+**En résumé** 💡
 
 - **Agile** = Philosophie d'adaptation.
 - **Scrum** = Cadre de travail avec des Rôles (PO, SM, Dev), des Rituels (Daily, Review...) et des Sprints.
