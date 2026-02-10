@@ -1,12 +1,12 @@
-# Résumé des Saisons O'clock
+# Résumé des cours fondamentaux
 
-Cette fiche synthétise les notions fondamentales abordées durant les saisons de la formation O'clock en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées" et quelques ressources partagées lors des cours.
+Cette fiche synthétise les notions fondamentales abordées durant les cours en vue du Titre Pro "Administrateur d'Infrastructures Sécurisées" et des ressources utiles.
 
 ## 📖 Table des Matières
 
 ### [Saison A1. Savoirs de Base 💻](#-saison-a1-savoirs-de-base)
 
-- [A101. & A102. Introduction Formation O'clock & Titre Pro AIS](#-a101--a102-introduction-formation-oclock--titre-pro-ais)
+- [A101. & A102. Introduction Formation & Titre Pro AIS](#-a101--a102-introduction-formation--titre-pro-ais)
 - [A103. Histoire de l'Informatique](#-a103-histoire-de-linformatique)
 - [A104. Les Composants Matériels](#️-a104-les-composants-matériels)
 - [A105. Le Système d'Exploitation](#-a105-le-système-dexploitation)
@@ -128,7 +128,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les saisons d
 
 ---
 
-### 🎯 A101. & A102. Introduction Formation O'clock & Titre Pro AIS
+### 🎯 A101. & A102. Introduction Formation & Titre Pro AIS
 
 > Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
@@ -1412,6 +1412,8 @@ Passerelle VLan sur Routeur (L3)
 
 > Cette saison se concentre sur l'administration système dans un environnement Microsoft. L'objectif est de maîtriser l'installation, la configuration et la gestion des services essentiels (AD DS, DNS, DHCP) sur Windows Server.
 
+---
+
 ### 🖥️ A401. Introduction et Installation
 
 > Ce cours introduit la famille des systèmes d'exploitation serveurs de Microsoft, leur historique, leurs spécificités par rapport aux versions "publiques" (Windows 10/11), et détaille la procédure d'installation et de promotion d'un contrôleur de domaine.
@@ -2110,6 +2112,8 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
 ## **🐧 Saison A5. Linux**
 
 > Cette saison introduit l'environnement **GNU/Linux**, système d'exploitation incontournable pour les serveurs, le Cloud et la sécurité. Elle se concentre sur la compréhension de son architecture, de son histoire, et sur la maîtrise fondamentale de l'administration système via l'interface en ligne de commande.
+
+---
 
 ### 🖥️ A501. Introduction à GNU/Linux
 
@@ -2914,6 +2918,8 @@ Le nombre de VM Linux sur Proxmox à la fin de la saison
 
 > Cette saison introduit la Virtualisation, socle technologique indispensable au Cloud Computing et au DevOps. Elle se concentre sur la compréhension des hyperviseurs, l'optimisation des ressources matérielles et la gestion d'infrastructures virtuelles via les solutions standards comme VMware et Proxmox.
 
+---
+
 ### 💽 B101. Introduction à la Virtualisation
 
 > Ce cours introduit les concepts fondamentaux de la virtualisation, son histoire, et distingue les différents types d'hyperviseurs. Il présente également les deux outils qui seront utilisés durant la semaine : **VMware Workstation** et **Proxmox VE**.
@@ -3265,6 +3271,8 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 ## **💾 Saison B2. Stockage & sauvegarde**
 
 > Cette saison explore les fondamentaux de la gestion de la donnée en entreprise. Elle se concentre sur les architectures de stockage physiques et logicielles (NAS, SAN, SDS), les protocoles d'accès, ainsi que sur les stratégies vitales de sauvegarde et de sécurisation pour garantir l'intégrité et la disponibilité des informations.
+
+---
 
 ### 💾 B201. Introduction : Sauvegarde & Stockage
 
@@ -3672,6 +3680,8 @@ C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
 
 > Cette saison se concentre sur la "santé" du Système d'Information. L'objectif est de passer d'une gestion réactive ("C'est cassé, on répare") à une gestion proactive ("Ça va casser, on intervient"). On y apprendra à collecter des métriques, gérer des alertes et utiliser les protocoles standards comme SNMP.
 
+---
+
 ### 📊 B301. Introduction : Monitoring & Supervision
 
 > Ce premier cours pose les bases théoriques. Il distingue la collecte de données (Monitoring) de l'analyse décisionnelle (Supervision) et introduit le protocole roi des réseaux : SNMP.
@@ -4001,6 +4011,8 @@ Comme Zabbix, Nagios surveille le réseau via **SNMP**, mais pour entrer dans le
 ## **📜 Saison B4. Scripting**
 
 > Cette saison marque le passage de l'administration manuelle à l'automatisation. L'objectif est d'apprendre à faire exécuter par la machine des tâches répétitives, complexes ou massives (gestion de parc), en utilisant des langages comme Bash, PowerShell ou Python.
+
+---
 
 ### 🧱 B401. Les bases de la Programmation
 
