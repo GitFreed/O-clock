@@ -111,6 +111,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](#️-saison-c1-gestion-de-projet-et-analyse-de-risque)
 
 - [C101. Les fondamentaux de la Gestion de Projet](#️-c101-les-fondamentaux-de-la-gestion-de-projet)
+- [C102.](.)
 
 ### [Saison C2. Cloud ☁️](.)
 
