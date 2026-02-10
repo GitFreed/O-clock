@@ -65,3 +65,13 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 ## 🛡️ Pentesting
 
 ![Wireshark](/images/2026-02-10-22-17-03.png)
+
+![Kali](/images/2026-02-10-22-21-10.png)
+
+![Vulnerabscan](/images/2026-02-10-22-21-25.png)
+
+![shells](/images/2026-02-10-22-21-46.png)
+
+![intel](/images/2026-02-10-22-22-17.png)
+
+![password](/images/2026-02-10-22-22-34.png)
