@@ -10,7 +10,11 @@
 
 ---
 
-### WBS
+Suite à notre fiche de cadrage du projet hier on va effectuer le découpage en WBS, la matrice RACI et le diagramme de Gantt.
+
+### 1. Le WBS (Work Breakdown Structure)
+
+Découpage du projet en Grands Lots (Niveau 1) puis en Tâches (Niveau 2/3)
 
 ```mermaid
 graph TD
@@ -57,7 +61,28 @@ graph TD
     style Lot4 fill:#9b59b6,stroke:#8e44ad,color:#fff
 ```
 
-### Matrice RACI : Projet Infra Campus
+```mermaid
+mindmap
+  root((Modernisation<br/>Infra Campus))
+    Réseau LAN & Wi-Fi
+      Install Baie & Switchs
+      Config VLANs
+      Bornes Wi-Fi
+    Sécurité Firewall
+      Rackage Firewall
+      Règles Filtrage
+      VPN Admin
+    Stockage NAS
+      Mise en service RAID
+      Gestion Droits ACL
+      Migration Données
+    Transverse
+      Documentation
+      Formation Alternant
+      Recette
+```
+
+### 2. Matrice RACI : Projet Infra Campus
 
 | Phase / Tâche | Responsable IT | Alternant | Direction | Staff & Profs |
 | --- | --- | --- | --- | --- |
@@ -73,3 +98,5 @@ graph TD
 | **3. CLÔTURE** | | | | |
 | Tests & Recette | **A** | **R** | I | C |
 | Documentation & Formation | **A** | **R** | I | I |
+
+### 3. Gantt
