@@ -12,20 +12,20 @@
 
 Suite à notre fiche de cadrage du projet hier on va effectuer le découpage en WBS, la matrice RACI et le diagramme de Gantt.
 
-### 1. Le WBS (Work Breakdown Structure)
+### 1. Le WBS (Work Breakdown Structure) 📊
 
 Découpage du projet en Grands Lots (Niveau 1) puis en Tâches (Niveau 2/3)
 
 ```mermaid
-graph TD
+graph LR
     %% Le Projet Global
     Project[🚀 Projet Modernisation Infra Campus]
     
-    %% Les Grands Lots (Niveau 1)
-    Lot1[1. Infrastructure Réseau<br/>LAN & Wi-Fi]
-    Lot2[2. Sécurité & Périmètre<br/>Firewall]
-    Lot3[3. Systèmes & Stockage<br/>NAS & Serveur]
-    Lot4[4. Gestion & Transverse<br/>Doc & Formation]
+    %% Les Grands Lots
+    Lot1[1. Infrastructure Réseau]
+    Lot2[2. Sécurité & Périmètre]
+    Lot3[3. Systèmes & Stockage]
+    Lot4[4. Gestion & Transverse]
 
     %% Liaisons Projet -> Lots
     Project --> Lot1
@@ -53,7 +53,7 @@ graph TD
     Lot4 --> L4T2[4.2 Accompagnement<br/>Formation Alternant]
     Lot4 --> L4T3[4.3 Recette<br/>PV de fin]
 
-    %% Styles (Optionnel pour faire joli)
+    %% Styles
     style Project fill:#2c3e50,stroke:#34495e,stroke-width:4px,color:#fff
     style Lot1 fill:#3498db,stroke:#2980b9,color:#fff
     style Lot2 fill:#e74c3c,stroke:#c0392b,color:#fff
@@ -61,42 +61,27 @@ graph TD
     style Lot4 fill:#9b59b6,stroke:#8e44ad,color:#fff
 ```
 
-```mermaid
-mindmap
-  root((Modernisation<br/>Infra Campus))
-    Réseau LAN & Wi-Fi
-      Install Baie & Switchs
-      Config VLANs
-      Bornes Wi-Fi
-    Sécurité Firewall
-      Rackage Firewall
-      Règles Filtrage
-      VPN Admin
-    Stockage NAS
-      Mise en service RAID
-      Gestion Droits ACL
-      Migration Données
-    Transverse
-      Documentation
-      Formation Alternant
-      Recette
-```
+### 2. Matrice RACI (Alignée WBS) 📋
 
-### 2. Matrice RACI : Projet Infra Campus
+| WBS | Tâche / Activité | Responsable IT | Alternant | Direction | Staff & Profs |
+| --- | --- | --- | --- | --- | --- |
+| **1** | **LOT 1 : INFRA RÉSEAU** | | | | |
+| 1.1 | Installation Physique (Baie, Câblage) | **A** | **R** | I | - |
+| 1.2 | Config. Logique (VLANs, Routage) | **R/A** | C | I | - |
+| 1.3 | Déploiement Wi-Fi (Bornes, Portail) | **A** | **R** | - | I |
+| **2** | **LOT 2 : SÉCURITÉ (FIREWALL)** | | | | |
+| 2.1 | Rackage & Branchement Firewall | **A** | **R** | - | - |
+| 2.2 | Règles de Filtrage & URL | **R** | I | **A** | C |
+| 2.3 | Config. VPN Admin | **R** | I | - | - |
+| **3** | **LOT 3 : STOCKAGE (NAS)** | | | | |
+| 3.1 | Mise en service (RAID, Volumes) | **A** | **R** | - | - |
+| 3.2 | Gestion des Droits (ACL, Groupes) | **A** | **R** | I | C |
+| 3.3 | Migration des Données | **A** | **R** | I | I |
+| **4** | **LOT 4 : TRANSVERSE** | | | | |
+| 4.1 | Documentation Technique | **A** | **R** | - | - |
+| 4.2 | Formation / Transfert de compétences | **R** (Formateur) | **I** (Apprenant) | - | - |
+| 4.3 | Recette & PV de fin | **A** | **R** (Exécute les tests) | **I** (Signe) | - |
 
-| Phase / Tâche | Responsable IT | Alternant | Direction | Staff & Profs |
-| --- | --- | --- | --- | --- |
-| **1. CADRAGE** | | | | |
-| Audit de l'existant & Inventaire | **A** | **R** | I | - |
-| Définition des besoins & Budget | **R** | C | **A** | C |
-| Conception Architecture (VLAN, IP) | **R** | I | I | - |
-| **2. DÉPLOIEMENT** | | | | |
-| Commande Matériel | **R** | I | **A** | - |
-| Installation Physique (Rack, Bornes) | **A** | **R** | I | - |
-| Config. Cœur (Firewall, Sécurité) | **R** | I | - | - |
-| Config. Accès (Wi-Fi, Postes) | **A** | **R** | - | - |
-| **3. CLÔTURE** | | | | |
-| Tests & Recette | **A** | **R** | I | C |
-| Documentation & Formation | **A** | **R** | I | I |
+### 3. Diagramme de Gantt 🗓️
 
-### 3. Gantt
+![Gantt](/images/2026-02-10-18-54-29.png)
