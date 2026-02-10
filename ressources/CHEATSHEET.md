@@ -34,11 +34,18 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ---
 
+> Sites regroupant de nombreuses Cheatsheets
+>
+> - <https://cheatsheets.zip/>
+> - <https://cheatography.com/>
+
 ## ⌨️ CLI
 
 ![WinNetCMD](/images/2026-02-10-22-14-40.png)
 
 ![netadapter](/images/2026-02-10-22-55-12.png)
+
+[Linux Command Lines](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
 
 ## 🌐 Networking
 
@@ -74,7 +81,7 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![proxy](/images/2026-02-10-22-28-25.png)
 
-## 🖥️
+## ⚙️ Systems Architecture
 
 ![LinuxFiles](/images/2026-02-10-22-15-14.png)
 
