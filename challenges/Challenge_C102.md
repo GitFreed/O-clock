@@ -82,6 +82,8 @@ graph LR
 | 4.2 | Formation / Transfert de compétences | **R** (Formateur) | **I** (Apprenant) | - | - |
 | 4.3 | Recette & PV de fin | **A** | **R** (Exécute les tests) | **I** (Signe) | - |
 
+**R**éalisateur - **A**pprobateur - **C**onsulté - **I**nformé
+
 ### 3. Diagramme de Gantt 🗓️
 
 ![Gantt](/images/2026-02-10-18-54-29.png)
