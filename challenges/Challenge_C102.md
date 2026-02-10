@@ -2,17 +2,17 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge](/images/2026-02-10-10-07-10.png)
+![Challenge](/images/2026-02-10-16-04-23.png)
 
-[Challenge C102]<https://gist.github.com/stephdl/8b39256712f17ec1c183ea9aee2c3266>
+[Challenge C102]<https://kourou.oclock.io/ressources/recap-quotidien/aldebaran-administrateur-cybersecurite-sc01e02-agile-et-outils/>
 
-[Cours C102.](/RESUME.md#️-c102)
+[Cours C102.](/RESUME.md#-c102-agilité-scrum--outils-projet)
 
 ---
 
-## 📄 Fiche de Cadrage : Modernisation Infrastructure du Campus
+## WBS
 
-### 1. Contexte
+### 1
 
 #### Matrice RACI : Projet Infra Campus
 

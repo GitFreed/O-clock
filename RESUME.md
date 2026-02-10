@@ -4837,6 +4837,8 @@ L'Agile n'est pas une "méthode" stricte, c'est une **approche** et une philosop
 - **Quand l'utiliser ?** Quand le besoin est flou ou changeant, ou pour innover.
 - **Agile en Infra ?** Ça fonctionne pour le Cloud, l'automatisation ou la supervision (livraison progressive). Ça fonctionne mal pour les migrations lourdes "One-shot" (ex: déménagement physique de Datacenter).
 
+![Manifeste](/images/2026-02-09-17-41-34.png)
+
 #### 2. Le Framework Scrum
 
 Scrum est le cadre Agile le plus populaire. Il organise le travail en cycles courts appelés **Sprints** (1 à 4 semaines max).
@@ -4859,6 +4861,8 @@ Scrum est le cadre Agile le plus populaire. Il organise le travail en cycles cou
 - **Daily Scrum** : Mêlée quotidienne de 15 min. (Qu'ai-je fait hier ? Que fais-je aujourd'hui ? Ai-je un blocage ?).
 - **Sprint Review** : Démonstration du travail fini aux parties prenantes (Feedback).
 - **Sprint Retrospective** : L'équipe analyse son fonctionnement pour s'améliorer au prochain Sprint.
+
+![scrum](/images/2026-02-10-15-55-53.png)
 
 #### 3. Outils de Structuration & Planification
 
@@ -4889,15 +4893,13 @@ En résumé 💡
 - **PBS/WBS** = Pour savoir quoi faire.
 - **Gantt/Kanban** = Pour savoir quand et comment le suivre.
 
-![Manifeste](/images/2026-02-09-17-41-34.png)
-
-![agile](/images/2026-02-09-17-49-00.png)
-
 [Challenge C102](./challenges/Challenge_C102.md)
 
 > 📚 **Ressources** :
 >
 > - Manifeste Agile : <https://agilemanifesto.org/iso/fr/manifesto.html>
+> - Méthode Scrum : <https://gist.github.com/stephdl/13c8a66cccb87f696fb2fc058f3b4aad>
+> - [Guide Scrum PDF](./ressources/2020-Scrum-Guide-French.pdf)
 
 [Retour en haut](#-table-des-matières)
 
