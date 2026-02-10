@@ -111,7 +111,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 ### [Saison C1. Gestion de projet et analyse de risque 📅](#️-saison-c1-gestion-de-projet-et-analyse-de-risque)
 
 - [C101. Les fondamentaux de la Gestion de Projet](#️-c101-les-fondamentaux-de-la-gestion-de-projet)
-- [C102.](.)
+- [C102. Agilité Scrum & Outils Projet](#-c102-agilité-scrum--outils-projet)
+- [C103. Gestion des risques](.)
+- [C104. Sécurité et continuité d'activité](.)
 
 ### [Saison C2. Cloud ☁️](.)
 
@@ -4744,7 +4746,7 @@ Sous Linux, une erreur classique est le **chemin**. Cron ne charge pas tout votr
 
 > **Objectif** : Comprendre ce qu'est un projet, pourquoi il faut le gérer rigoureusement, et découvrir les méthodologies classiques comme le Cycle en V, adaptées aux projets d'infrastructure stable.
 
-### 1. Qu'est-ce qu'un Projet ?
+#### 1. Qu'est-ce qu'un Projet ?
 
 Un projet se définit par son caractère **temporaire** et **unique**. Ce n'est pas une opération courante (run), mais une entreprise avec un début et une fin précise pour créer un produit ou service unique.
 
@@ -4752,7 +4754,7 @@ Un projet se définit par son caractère **temporaire** et **unique**. Ce n'est 
 - **Exemples IT** : Déploiement de la fibre, migration vers le Cloud (ex: Netflix vers AWS), mise en place d'un ERP.
 - **Contraintes** : Elles sont techniques, humaines, financières, sécuritaires et liées à l'exploitation.
 
-### 2. La Gestion de Projet & Le Triangle d'Or (Qualité - Coûts - Délais)
+#### 2. La Gestion de Projet & Le Triangle d'Or (Qualité - Coûts - Délais)
 
 Gérer un projet, c'est maintenir l'équilibre permanent entre trois contraintes antagonistes (le "Triangle de la gestion de projet") :
 
@@ -4762,7 +4764,7 @@ Gérer un projet, c'est maintenir l'équilibre permanent entre trois contraintes
 
 > **Règle d'or** : Toucher à l'un impacte les autres. Si vous réduisez le délai, vous devrez augmenter le coût (plus de ressources) ou réduire la qualité (moins de fonctionnalités).
 
-### 3. La Matrice RACI (Qui fait quoi ?)
+#### 3. La Matrice RACI (Qui fait quoi ?)
 
 Pour éviter le flou artistique dans les responsabilités, on utilise la matrice **RACI**. Elle définit le rôle de chaque acteur pour chaque tâche du projet :
 
@@ -4773,7 +4775,7 @@ Pour éviter le flou artistique dans les responsabilités, on utilise la matrice
 | **C** | **Consulted** | **Consulté** | L'expert qu'on interroge pour avoir des infos avant de décider (communication bidirectionnelle). |
 | **I** | **Informed** | **Informé** | Celui qu'on met en copie (CC) une fois la tâche finie ou la décision prise (communication unidirectionnelle). |
 
-### 4. Les Méthodologies (Cycle de vie)
+#### 4. Les Méthodologies (Cycle de vie)
 
 Il existe plusieurs façons de piloter un projet, du plus rigide au plus souple :
 
@@ -4782,7 +4784,7 @@ Il existe plusieurs façons de piloter un projet, du plus rigide au plus souple 
 - **Agile / Scrum** : Itératif. On livre petit à petit pour s'adapter aux changements.
 - **DevOps** : Fusion Développement + Opérations pour automatiser et livrer en continu.
 
-### 5. Focus : Le Cycle en V
+#### 5. Focus : Le Cycle en V
 
 C'est le modèle classique pour les projets d'infrastructure lourds où l'erreur coûte cher (ex: refonte d'un réseau physique).
 
@@ -4818,9 +4820,74 @@ C'est le modèle classique pour les projets d'infrastructure lourds où l'erreur
 
 ---
 
-### 🏃 C102. Méthodologies Agile et outils
+### 🏃 C102. Agilité, Scrum & Outils Projet
 
->
+> **Objectif** : Comprendre la philosophie Agile (née en réaction aux échecs des méthodes traditionnelles), maîtriser le framework Scrum (le plus utilisé) et découvrir les outils concrets pour structurer et suivre un projet.
+
+#### 1. La Philosophie Agile
+
+L'Agile n'est pas une "méthode" stricte, c'est une **approche** et une philosophie née du **Manifeste Agile (2001)**.
+
+- **Le Constat** : Les projets classiques (Cycle en V) échouent souvent car ils sont trop rigides face aux changements.
+- **Les Principes** :
+  - Forte implication du client.
+  - Développement **itératif** (cycles courts) et **incrémental** (on livre petit à petit).
+  - Adaptation continue au changement.
+
+- **Quand l'utiliser ?** Quand le besoin est flou ou changeant, ou pour innover.
+- **Agile en Infra ?** Ça fonctionne pour le Cloud, l'automatisation ou la supervision (livraison progressive). Ça fonctionne mal pour les migrations lourdes "One-shot" (ex: déménagement physique de Datacenter).
+
+#### 2. Le Framework Scrum
+
+Scrum est le cadre Agile le plus populaire. Il organise le travail en cycles courts appelés **Sprints** (1 à 4 semaines max).
+
+##### A. Les 3 Rôles (La Scrum Team)
+
+1. **Product Owner (PO)** : La voix du client. Il définit **"Quoi"** faire (gère le Backlog). Il est responsable de la valeur métier.
+2. **Scrum Master** : Le coach / facilitateur. Il s'assure que la méthode est respectée et protège l'équipe des perturbations externes (Servant Leader).
+3. **L'Équipe de Développement** : Ceux qui font (**"Comment"**). Elle est auto-organisée et pluridisciplinaire (Dev, Ops, Test...).
+
+##### B. Les Artefacts (Les documents)
+
+- **Product Backlog** : La liste ordonnée de tout ce qu'il y a à faire (les besoins). Géré par le PO.
+- **Sprint Backlog** : La liste des tâches sélectionnées pour le Sprint en cours.
+- **Incrément** : Le livrable utilisable fourni à la fin du Sprint.
+
+##### C. Les Cérémonies (Les rituels)
+
+- **Sprint Planning** : On décide ce qu'on va faire dans le Sprint.
+- **Daily Scrum** : Mêlée quotidienne de 15 min. (Qu'ai-je fait hier ? Que fais-je aujourd'hui ? Ai-je un blocage ?).
+- **Sprint Review** : Démonstration du travail fini aux parties prenantes (Feedback).
+- **Sprint Retrospective** : L'équipe analyse son fonctionnement pour s'améliorer au prochain Sprint.
+
+#### 3. Outils de Structuration & Planification
+
+Pour qu'un projet n'aille pas dans le mur, il faut le découper et le suivre.
+
+##### A. Structurer (Découper)
+
+- **PBS (Product Breakdown Structure)** : Découpage **graphique du produit** en composants. (Ex: Pour une infra -> Réseau, Serveurs, Stockage, OS).
+- **WBS (Work Breakdown Structure)** : Découpage **des tâches** nécessaires. (Ex: Installer l'OS, Configurer l'IP, etc.).
+
+##### B. Planifier & Suivre
+
+- **Gantt** : Idéal pour le Cycle en V. Visualise le temps, les jalons et les dépendances (chemin critique).
+- **Kanban** : Idéal pour l'Agile/Run. Visualise le flux de travail (To Do / Doing / Done). Permet de limiter le travail en cours (WIP) pour fluidifier la prod.
+
+#### 4. La Communication Projet
+
+Un projet réussit grâce à la technique, mais échoue souvent à cause de la communication.
+
+- **Identifier les acteurs** : Sponsor, MOA (Métier), MOE (Tech), Utilisateurs finaux, Prestataires.
+- **Adapter le message** : On ne parle pas technique au Directeur Financier, on ne parle pas budget aux techniciens.
+- **Transparence** : Partager les succès mais aussi les risques et les difficultés.
+
+En résumé 💡
+
+- **Agile** = Philosophie d'adaptation.
+- **Scrum** = Cadre de travail avec des Rôles (PO, SM, Dev), des Rituels (Daily, Review...) et des Sprints.
+- **PBS/WBS** = Pour savoir quoi faire.
+- **Gantt/Kanban** = Pour savoir quand et comment le suivre.
 
 ![Manifeste](/images/2026-02-09-17-41-34.png)
 
