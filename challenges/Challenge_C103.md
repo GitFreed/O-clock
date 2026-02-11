@@ -4,7 +4,7 @@
 
 ![Challenge](/images/2026-02-11-14-32-44.png)
 
-[Challenge C103]<https://gist.github.com/stephdl/8b39256712f17ec1c183ea9aee2c3266>
+[Challenge C103] <https://gist.github.com/stephdl/8b39256712f17ec1c183ea9aee2c3266>
 
 [Cours C103.](/RESUME.md#-c103-gestion-des-risques)
 
