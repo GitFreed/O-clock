@@ -112,7 +112,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 
 - [C101. Les fondamentaux de la Gestion de Projet](#️-c101-les-fondamentaux-de-la-gestion-de-projet)
 - [C102. Agilité Scrum & Outils Projet](#-c102-agilité-scrum--outils-projet)
-- [C103. Gestion des risques](.)
+- [C103. Gestion des risques](#-c103-gestion-des-risques)
 - [C104. Sécurité et continuité d'activité](.)
 
 ### [Saison C2. Cloud ☁️](.)
@@ -4908,9 +4908,72 @@ Un projet réussit grâce à la technique, mais échoue souvent à cause de la c
 
 ### 🎲 C103. Gestion des risques
 
->
+> **Objectif** : Un projet informatique ne se déroule jamais exactement comme prévu. Ce cours apprend à anticiper les imprévus (risques) pour ne pas les subir. On y aborde la méthodologie classique (PMI/ISO) et la méthode spécifique française EBIOS RM.
 
-[Challenge C103](./challenges/Challenge_C103.md)
+#### 1. Comprendre le Risque
+
+Un risque n'est pas un problème avéré, c'est une **potentialité**.
+
+- **Définition** : C'est un événement incertain qui, s'il survient, aura un effet négatif sur les objectifs du projet (Planning, Budget, Qualité, Sécurité).
+
+- **Les 3 Composantes** :
+  1. **La Cause** : L'origine (ex: Matériel vieillissant).
+  2. **L'Événement** : Ce qui se produit (ex: Panne du serveur).
+  3. **La Conséquence** : L'impact (ex: Interruption de service, retard).
+
+- **Typologie** : Les risques peuvent être Techniques (panne, bug), Humains (départ d'un expert, erreur), Organisationnels, Juridiques ou Externes (météo, fournisseur).
+
+#### 2. Identification et Évaluation
+
+Avant de traiter, il faut trouver les risques et les classer.
+
+- **Identification** : On utilise des méthodes comme le Brainstorming, l'analyse SWOT (Forces/Faiblesses), les Checklists ou le diagramme d'Ishikawa (Causes/Effets).
+
+- **Évaluation (La Criticité)** : Chaque risque est noté sur deux axes :
+  - **Probabilité** : Est-ce que ça risque vraiment d'arriver ? (Échelle 1 à 3 ou 1 à 5).
+  - **Impact** : Si ça arrive, est-ce grave ? (Échelle 1 à 3 ou 1 à 5).
+
+- **Formule** : `Criticité = Probabilité x Impact`.
+
+- **La Matrice des Risques (Heatmap)** : On place les risques sur un graphique.
+  - 🟥 **Zone Rouge** : Risques critiques (Action immédiate).
+  - 🟧 **Zone Orange** : À surveiller.
+  - 🟩 **Zone Verte** : Acceptable.
+
+#### 3. Documentation et Stratégies de Traitement
+
+Une fois les risques identifiés, on les consigne dans un **Registre des Risques** (document vivant du projet) et on décide quoi faire.
+
+Il existe **4 stratégies** pour traiter un risque :
+
+1. **L'Évitement (Refus)** : On change le plan pour supprimer le risque totalement (ex: renoncer à une techno trop récente).
+2. **L'Atténuation (Réduction)** : On baisse la probabilité ou l'impact (ex: mettre des backups pour réduire l'impact d'une panne). C'est la stratégie la plus courante.
+3. **Le Transfert (Partage)** : On déplace le risque sur un tiers (ex: prendre une assurance, sous-traiter).
+4. **L'Acceptation** : Le risque est faible ou trop coûteux à traiter. On l'accepte et on assume les conséquences s'il survient.
+
+### 4. La Méthode EBIOS RM
+
+**EBIOS Risk Manager** est la méthode de référence en France (créée par l'ANSSI) pour la cybersécurité. Contrairement à une analyse de risque projet classique (focalisée sur le délai/budget), EBIOS se focalise sur la **sécurité de l'information**.
+
+Elle se déroule en **5 Ateliers** :
+
+1. **Cadrage & Socle** : Quoi protéger ? Quel est le contexte ? (Le périmètre).
+2. **Sources de risques** : Qui sont les attaquants ? (Cybercriminels, concurrents, étatiques...).
+3. **Scénarios Stratégiques** : Comment l'attaquant pourrait atteindre ses objectifs au niveau "haut" ? (ex: compromettre un prestataire).
+4. **Scénarios Opérationnels** : Comment cela se passe techniquement ? (Le chemin d'attaque).
+5. **Traitement du risque** : Quelles mesures de sécurité mettre en place ?
+
+**Quand l'utiliser en projet ?**
+Pour les projets sensibles, impliquant des données critiques (RGPD), ou des changements majeurs d'infrastructure. Elle est trop lourde pour des petits projets simples.
+
+💡 **En résumé**
+
+- **Risque** = Événement incertain avec impact négatif.
+- **Criticité** = Probabilité × Impact.
+- **Traitement** = Éviter, Atténuer, Transférer ou Accepter.
+- **EBIOS RM** = La méthode ANSSI pour les risques Cyber (5 ateliers).
+
+[Challenge C103](./challenges/Challenge_C103.md) : Analyser les risques pour notre projet.
 
 > 📚 **Ressources** :
 >

@@ -6,7 +6,7 @@
 
 [Challenge C103]<https://gist.github.com/stephdl/8b39256712f17ec1c183ea9aee2c3266>
 
-[Cours C103.](/RESUME.md#-c103)
+[Cours C103.](/RESUME.md#-c103-gestion-des-risques)
 
 ---
 
