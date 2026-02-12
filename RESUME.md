@@ -4985,13 +4985,97 @@ Pour les projets sensibles, impliquant des données critiques (RGPD), ou des cha
 
 ### 🛡️ C104. Sécurité et continuité d'activité
 
->
+> **Objectif** : Comprendre que la sécurité n'est pas une option à ajouter à la fin, mais une fondation ("Security by Design"). Apprendre à différencier la continuité (ne pas s'arrêter) de la reprise (redémarrer après la panne) et maîtriser les métriques critiques RTO/RPO.
 
-[Challenge C104](./challenges/Challenge_C104.md)
+#### 1. La Sécurité des Systèmes d'Information (SSI)
+
+La sécurité vise à protéger le patrimoine informationnel de l'entreprise. Elle repose sur le trépied **DIC** (ou CID) :
+
+- **D**isponibilité : Le système doit fonctionner quand on en a besoin.
+- **I**ntégrité : Les données ne doivent pas être modifiées par erreur ou malveillance.
+- **C**onfidentialité : Seules les personnes autorisées ont accès aux données.
+- *(On ajoute souvent la **T**raçabilité ou Preuve pour savoir "qui a fait quoi").*
+
+**Le Mécanisme du Risque** :
+Pour qu'il y ait un problème de sécurité, il faut la rencontre de trois éléments :
+
+1. Un **Bien** (Asset) : Ce qui a de la valeur (Serveur, Donnée client).
+2. Une **Vulnérabilité** (Faille) : Une faiblesse dans le bien (ex: Windows pas à jour).
+3. Une **Menace** (Threat) : Ce qui va exploiter la faille (ex: Virus, Hacker, Incendie).
+
+> **Risque = Menace × Vulnérabilité**
+
+**Les Bonnes Pratiques (Défense en profondeur)** :
+
+- **Prévention** : Empêcher l'attaque (Pare-feu, Mises à jour, Moindre privilège).
+- **Protection** : Limiter les dégâts (Chiffrement, Segmentation réseau).
+- **Détection** : Voir l'attaque (Logs, IDS/IPS, Supervision).
+- **Récupération** : Revenir à la normale (Sauvegardes).
+
+#### 2. PCA vs PRA : Quelle différence ?
+
+Ces deux plans répondent à la question : *"Que fait-on si le datacenter brûle ?"*.
+
+- **PCA (Plan de Continuité d'Activité)** :
+  - **But** : Assurer la survie de l'entreprise **PENDANT** le sinistre.
+  - **Principe** : On fonctionne en "mode dégradé" mais on ne s'arrête pas.
+  - *Exemple* : Bascule automatique sur un serveur de secours, télétravail si les bureaux sont inaccessibles.
+
+- **PRA (Plan de Reprise d'Activité)** :
+  - **But** : Redémarrer l'activité informatique **APRÈS** un arrêt complet.
+  - **Principe** : On remonte les infrastructures, on restaure les sauvegardes et on relance les applis.
+  - *Exemple* : Réinstaller les serveurs après un crash disque et restaurer la base de données.
+
+#### 3. Les Métriques Critiques : RTO & RPO
+
+Ce sont les deux indicateurs que vous devez définir avec le métier (le client) avant de concevoir votre architecture de sauvegarde.
+
+- **RTO (Recovery Time Objective)** : *Durée maximale d'interruption admissible.*
+  - Question : "Combien de temps pouvons-nous rester en panne sans couler ?"
+  - *Exemple* : RTO = 4h (Le service doit être rétabli en 4h max).
+
+- **RPO (Recovery Point Objective)** : *Perte de données maximale admissible.*
+  - Question : "Jusqu'à quand accepte-t-on de perdre des données ?"
+  - *Exemple* : RPO = 24h (On accepte de perdre le travail de la journée -> Sauvegarde nocturne suffisante). Si RPO = 0, il faut de la réplication synchrone temps réel.
+
+#### 4. Les Solutions Techniques
+
+Pour respecter le RTO et le RPO, on utilise trois leviers :
+
+- **A. La Redondance (Haute Disponibilité)**
+
+  - Pour un **RTO proche de 0** (pas de coupure).
+  - **Actif/Actif** (Load Balancing) : Plusieurs serveurs travaillent en même temps. Si l'un tombe, les autres continuent.
+  - **Actif/Passif** (Failover) : Un serveur travaille, l'autre dort. Si le premier tombe, le second prend le relais.
+
+- **B. Les Sauvegardes (Backup)**
+
+  - Indispensable contre l'effacement accidentel ou les ransomwares (là où la redondance ne sert à rien car elle réplique l'erreur !).
+  - **Règle du 3-2-1** :
+    - **3** copies des données.
+    - Sur **2** supports différents (Disque + Bande/Cloud).
+    - Dont **1** copie hors site (en cas d'incendie).
+
+- **C. La Supervision**
+
+  - C'est les yeux de l'admin. Elle permet de passer d'une gestion réactive ("C'est cassé") à proactive ("Le disque va bientôt être plein").
+
+💡 **En résumé**
+
+- **Sécurité** = Disponibilité + Intégrité + Confidentialité.
+- **PCA** = On continue (Redondance).
+- **PRA** = On repart (Sauvegardes).
+- **RTO** = Temps max de panne.
+- **RPO** = Perte max de données.
+- **Redondance** ≠ **Sauvegarde** (Il faut les deux !).
+
+[Challenge C104](./challenges/Challenge_C104.md) : Définir un scénario d’incident majeur et les mesures, procédures, PRA-PCA type.
 
 > 📚 **Ressources** :
 >
->
+> - [ANSSI : Administration des systèmes d'information sécurisés](./ressources/anssi-guide-admin_securisee_si_v3-0.pdf)
+> - [ANSSI : Recommandations Relatives à l'Authentification Multifacteur et aux Mots de Passe](./ressources/anssi-guide-authentification_multifacteur_et_mots_de_passe.pdf)
+> - [ANSSI : Gestion de Crise d'Origine Cyber](./ressources/anssi-guide-gestion_crise_cyber.pdf)
 
 [Retour en haut](#-table-des-matières)
 
