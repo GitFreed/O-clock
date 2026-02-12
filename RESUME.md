@@ -113,7 +113,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 - [C101. Les fondamentaux de la Gestion de Projet](#️-c101-les-fondamentaux-de-la-gestion-de-projet)
 - [C102. Agilité Scrum & Outils Projet](#-c102-agilité-scrum--outils-projet)
 - [C103. Gestion des risques](#-c103-gestion-des-risques)
-- [C104. Sécurité et continuité d'activité](.)
+- [C104. Sécurité et continuité d'activité](#️-c104-sécurité-et-continuité-dactivité)
+- [Fin Saison C1. Gestion de projet et analyse de risque](#️-fin-saison-c1-gestion-de-projet)
 
 ### [Saison C2. Cloud ☁️](.)
 
@@ -4951,7 +4952,7 @@ Il existe **4 stratégies** pour traiter un risque :
 3. **Le Transfert (Partage)** : On déplace le risque sur un tiers (ex: prendre une assurance, sous-traiter).
 4. **L'Acceptation** : Le risque est faible ou trop coûteux à traiter. On l'accepte et on assume les conséquences s'il survient.
 
-### 4. La Méthode EBIOS RM
+#### 4. La Méthode EBIOS RM
 
 **EBIOS Risk Manager** est la méthode de référence en France (créée par l'ANSSI) pour la cybersécurité. Contrairement à une analyse de risque projet classique (focalisée sur le délai/budget), EBIOS se focalise sur la **sécurité de l'information**.
 
