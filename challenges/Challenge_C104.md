@@ -91,3 +91,7 @@ Comment saura-t-on que le PRA a réussi ?
 ---
 
 ### *"Conformément à la Fiche 11 du guide ANSSI, nous déclarerons l'incident sur la plateforme cybermalveillance.gouv.fr et déposerons plainte, car il s'agit d'un acte de viennoiserie criminelle"*
+
+---
+
+Correction : <https://gist.github.com/stephdl/8b39256712f17ec1c183ea9aee2c3266#mini-plan-de-reprise-dactivit%C3%A9-pra--plan-de-continuit%C3%A9-dactivit%C3%A9-pca>
