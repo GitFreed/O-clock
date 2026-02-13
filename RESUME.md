@@ -5084,9 +5084,9 @@ Pour respecter le RTO et le RPO, on utilise trois leviers :
 
 ### 🗓️ Fin Saison C1. Gestion de projet
 
-[QCM Saison C1](.)
+[QCM Saison C1](https://forms.gle/ALNseRSKAtYWzt477)
 
-![Résultat QCM](.)
+![Résultat QCM](/images/2026-02-13-11-57-38.png)
 
 [Retour en haut](#-table-des-matières)
 
