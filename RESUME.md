@@ -116,7 +116,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 - [C104. Sécurité et continuité d'activité](#️-c104-sécurité-et-continuité-dactivité)
 - [Fin Saison C1. Gestion de projet et analyse de risque](#️-fin-saison-c1-gestion-de-projet)
 
-### [Saison C2. Cloud ☁️](.)
+### [Saison C2. Cloud ☁️](#️-saison-c2-cloud)
+
+- [C201. Intro Cloud](#️-c201-intro-cloud)
 
 ### [Saison C3. Sécurité système & réseau 🛡️](.)
 
@@ -5091,3 +5093,11 @@ Pour respecter le RTO et le RPO, on utilise trois leviers :
 [Retour en haut](#-table-des-matières)
 
 ---
+
+## **☁️ Saison C2. Cloud**
+
+>
+
+### ☁️ C201. Intro Cloud
+
+>
