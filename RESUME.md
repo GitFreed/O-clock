@@ -118,7 +118,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 
 ### [Saison C2. Cloud ☁️](#️-saison-c2-cloud)
 
-- [C201. Intro Cloud](#️-c201-intro-cloud)
+- [C201. Introduction au Cloud computing](#️-c201-introduction-au-cloud-computing)
 
 ### [Saison C3. Sécurité système & réseau 🛡️](.)
 
@@ -5096,8 +5096,100 @@ Pour respecter le RTO et le RPO, on utilise trois leviers :
 
 ## **☁️ Saison C2. Cloud**
 
+> **Le Contexte** : Le Cloud Computing n'est pas juste "l'ordinateur de quelqu'un d'autre". C'est un changement de paradigme où l'informatique devient un service consommé à la demande, et non plus un investissement matériel lourd.
+
+### ☁️ C201. Introduction au Cloud Computing
+
+> **Objectif** : Comprendre la définition officielle du Cloud (NIST), distinguer les différents modèles de service (IaaS/PaaS/SaaS) et saisir les enjeux juridiques comme la réversibilité.
+
+#### 1. Qu'est-ce que le Cloud ? (Définition NIST)
+
+Pour être qualifié de "Cloud", un service doit respecter **5 caractéristiques essentielles**:
+
+1. **Service à la demande (Self-service)** : L'utilisateur provisionne ses ressources (serveur, stockage) seul, automatiquement, sans interaction humaine avec le fournisseur.
+
+2. **Accès réseau universel** : Accessible partout (internet) via des mécanismes standards (PC, mobile, tablette).
+
+3. **Mutualisation des ressources** : Les ressources physiques du fournisseur sont partagées entre plusieurs clients (Multi-tenant) pour optimiser les coûts.
+
+4. **Élasticité rapide** : Capacité à augmenter ou réduire les ressources instantanément selon la charge (Scalabilité).
+
+5. **Service mesuré (Pay-as-you-go)** : On ne paie que ce que l'on consomme (compteur).
+
+#### 2. Les Modèles de Service (IaaS, PaaS, SaaS)
+
+Ici la différence réside dans **"Qui gère quoi ?"** (Nous vs le Fournisseur).
+
+- **On-Premises (Sur site)** : On gère tout, du câble réseau à l'application.
+
+- **IaaS (Infrastructure as a Service)** : Le fournisseur gère le matériel et la virtualisation. On gère l'OS et les applications (ex: AWS EC2).
+
+- **PaaS (Platform as a Service)** : Le fournisseur gère jusqu'au Runtime (OS, Mises à jour). On ne gère que notre code/application et nos données (ex: Google App Engine).
+
+- **SaaS (Software as a Service)** : Le fournisseur gère tout. On n'est qu'utilisateur du logiciel (ex: Gmail, Office 365, Salesforce).
+
+📊 **Tableau Comparatif & Responsabilités**
+
+| Couche Technique | 🏢 On-Premises | 🏗️ IaaS | 🛠️ PaaS | ☁️ SaaS |
+| --- | --- | --- | --- | --- |
+| **Applications** | 👤 Nous | 👤 Nous | 👤 Nous | ☁️ Le Provider |
+| **Données** | 👤 Nous | 👤 Nous | 👤 Nous | ☁️ Le Provider |
+| **Runtime / Middleware** | 👤 Nous | 👤 Nous | ☁️ Le Provider | ☁️ Le Provider |
+| **O.S. (Windows/Linux)** | 👤 Nous | 👤 Nous | ☁️ Le Provider | ☁️ Le Provider |
+| **Virtualisation** | 👤 Nous | ☁️ Le Provider | ☁️ Le Provider | ☁️ Le Provider |
+| **Serveurs / Stockage** | 👤 Nous | ☁️ Le Provider | ☁️ Le Provider | ☁️ Le Provider |
+| **Réseau Physique** | 👤 Nous | ☁️ Le Provider | ☁️ Le Provider | ☁️ Le Provider |
+| **Exemple** | Nos serveurs | Amazon EC2 | Azure App Service | Microsoft 365 |
+
+> **Règle clé** : Plus on va vers le SaaS, moins on a de contrôle technique, et moins on a de gestion à faire (Mises à jour, Backups système, etc.).
+
+#### 3. Modèles de Déploiement
+
+Où se trouve le Cloud ?
+
+- **Public** : Ouvert à tous, infrastructure partagée (AWS, Azure, Google).
+
+- **Privé** : Infrastructure dédiée à une seule organisation (plus sécurisé mais plus cher).
+
+- **Hybride** : Mélange des deux (ex: Données sensibles en Privé, Serveur Web en Public).
+
+#### 4. Enjeux Juridiques & Contractuels
+
+Le Cloud, c'est aussi du contrat.
+
+- **SLA (Service Level Agreement)** : C'est l'engagement de disponibilité du fournisseur (ex: 99,9%). S'il n'est pas tenu, le fournisseur doit des pénalités.
+
+- **Réversibilité** : C'est la capacité à récupérer ses données pour changer de fournisseur. C'est crucial pour éviter le **Vendor Lock-in** (être prisonnier d'un fournisseur).
+
+- **Localisation des données** : Savoir où sont physiquement stockées les données (RGPD, Patriot Act).
+
+💡 **En résumé**
+
+- **Cloud** = 5 caractéristiques NIST (Self-service, Élasticité...).
+- **IaaS** = Je gère l'OS et l'App (Admin Sys).
+- **PaaS** = Je gère juste l'App (Développeur).
+- **SaaS** = Je consomme le service (Utilisateur).
+- **Responsabilité Partagée** : La sécurité du Cloud est gérée par le provider, la sécurité *dans* le Cloud est gérée par le client.
+
+[Challenge C201](./challenges/Challenge_C201.md) : Expérimenter les versions gratuites de Google Cloud, AWS et Azure.
+
+> 📚 **Ressources** :
 >
 
-### ☁️ C201. Intro Cloud
+[Retour en haut](#-table-des-matières)
+
+---
+
+### ☁️ C202
 
 >
+
+[Challenge C202](./challenges/Challenge_C202.md) :
+
+> 📚 **Ressources** :
+>
+> - Comparaison des services Google Cloud, AWS, Azure : <https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison?hl=fr>
+
+[Retour en haut](#-table-des-matières)
+
+---
