@@ -41,13 +41,19 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ## ⌨️ CLI
 
+### Windows 🪟
+
 ![WinNetCMD](/images/2026-02-10-22-14-40.png)
 
 ![netadapter](/images/2026-02-10-22-55-12.png)
 
+### Linux 🐧
+
 [Linux Command Lines](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
 
 [Linux Cheatsheet PDF](./Linux-Commands-Cheatsheet-FR.pdf)
+
+![ncdu](/images/2026-02-16-18-04-25.png)
 
 ## 🌐 Networking
 
@@ -56,6 +62,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 ![MAC](/images/2026-02-10-22-46-56.png)
 
 ![Subnet](/images/2026-02-10-22-14-11.png)
+
+![wildcard](/images/2026-02-16-18-10-51.png)
 
 ![CAST](/images/2026-02-10-22-45-51.png)
 
@@ -67,11 +75,15 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![ports](/images/2026-02-10-22-34-18.png)
 
+![portssecure](/images/2026-02-16-18-03-25.png)
+
 ![PacketProtocols](/images/2026-02-10-22-07-18.png)
 
 ![NAT](/images/2026-02-10-22-03-38.png)
 
 ![NAT](/images/2026-02-10-22-06-04.png)
+
+![PAT](/images/2026-02-16-18-21-01.png)
 
 ![Switchtable](/images/2026-02-10-22-44-20.png)
 
@@ -81,9 +93,13 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![LLDPvsCDP](/images/2026-02-10-22-15-50.png)
 
+![FHRP](/images/2026-02-16-18-06-22.png)
+
 ![Kerberos](/images/2026-02-10-22-06-48.png)
 
 ![proxy](/images/2026-02-10-22-28-25.png)
+
+![setup](/images/2026-02-16-18-05-19.png)
 
 ## ⚙️ Systems Architecture
 
