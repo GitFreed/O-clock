@@ -51,13 +51,13 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 [Linux Command Lines](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
 
-[Linux Cheatsheet PDF](./Linux-Commands-Cheatsheet-FR.pdf)
+[Linux Cheatsheet PDF](./ressources/Linux-Commands-Cheatsheet-FR.pdf)
 
 ![ncdu](/images/2026-02-16-18-04-25.png)
 
 ## 🌐 Networking
 
-[Glossaire Réseau PDF](./Glossaire%20Reseau.pdf)
+[Glossaire Réseau PDF](./ressources/Glossaire%20Reseau.pdf)
 
 ![MAC](/images/2026-02-10-22-46-56.png)
 
