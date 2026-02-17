@@ -4,7 +4,7 @@
 
 >⌨️ Pitch de l'exercice :
 >
->Installer ESXi (l'hyperviseur), qui est la brique de base de la suite vSphere
+> Installer ESXi (l'hyperviseur), qui est la brique de base de la suite vSphere
 
 [Cours B102.](/RESUME.md#️-b102-proxmox-ve--infrastructure-haute-disponibilité)
 

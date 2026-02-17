@@ -139,7 +139,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 
 > Cette introduction a permis de présenter le déroulement de la formation, ses objectifs pédagogiques et les attentes pour l'obtention du **Titre Professionnel "Administrateur d'Infrastructures Sécurisées" (AIS)**. L'accent a été mis sur les compétences à acquérir, la méthodologie de travail (projets, veille technologique) et le référentiel du titre pro.
 
-[Challenge A102](/challenges/Challenge_A102.md)
+[Challenge A102](/challenges/Challenge_A102.md) : Exercice de recherche pour achat de périphériques
 
 >📚 Ressources :
 >
@@ -177,7 +177,7 @@ En résumé :
 | 1969 | **Micro-processeur** | Invention du composant central (ex: Intel 4004). |
 | 1975 | **Altair 8800** | Lancement de l'ère des micro-ordinateurs personnels. |
 
-[Challenge A103](/challenges/Challenge_A103.md)
+[Challenge A103](/challenges/Challenge_A103.md) : Description de notre Hardware
 
 >📚 Ressources :
 >
@@ -218,7 +218,7 @@ En résumé :
   - **Périphériques de sortie** : Écran, imprimante, haut-parleurs.
   - **Périphériques d'entrée-sortie** : Clé USB, disque dur externe, écran tactile.
 
-[Challenge A104](/challenges/Challenge_A104.md)
+[Challenge A104](/challenges/Challenge_A104.md) : Configuration de 3 Setups selon les besoins.
 
 >📚 Ressources :
 >
@@ -249,7 +249,7 @@ En résumé :
   - Ce média est créé à partir d'une **image ISO**, qui est une copie conforme d'un disque.
   - Il faut configurer le **BIOS/UEFI** de l'ordinateur pour qu'il démarre ("boot") sur ce média d'installation.
 
-[Challenge A105](/challenges/Challenge_A105.md)
+[Challenge A105](/challenges/Challenge_A105.md) : Découverte de la Virtualisation, Virtualbox et VM Windows.
 
 >📚 Ressources :
 >
@@ -279,7 +279,7 @@ En résumé :
   - **ASCII** : Une des premières normes, limitée à 128 caractères (principalement pour l'anglais).
   - **Unicode (UTF-8)** : La norme moderne qui peut représenter la quasi-totalité des systèmes d'écriture du monde, y compris les accents et les emojis.
 
-[Challenge A106](/challenges/Challenge_A106.md)
+[Challenge A106](/challenges/Challenge_A106.md) : Agents invités (Guest addition) pour la virtualisation et VM Linux.
 
 [Retour en haut](#-table-des-matières)
 
@@ -304,7 +304,7 @@ En résumé :
   - **Diagramme Physique** : Montre l'emplacement réel des équipements et leur câblage.
   - **Diagramme Logique** : Montre comment les informations circulent, les adresses IP, les sous-réseaux, etc.
 
-[Challenge A107](/challenges/Challenge_A107.md)
+[Challenge A107](/challenges/Challenge_A107.md) : Gestionnaire de mots de passe.
 
 >Ressources :
 >
@@ -345,7 +345,7 @@ En résumé :
 
 ![CIA Triad](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/06/CIA-Triad-What-is-cybersecurity-Edureka.png)
 
-[Challenge A108](/challenges/Challenge_A108.md)
+[Challenge A108](/challenges/Challenge_A108.md) : Création d'un Diagramme Réseau.
 
 >📚 Ressources :
 >
@@ -386,7 +386,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - 256- OS = Nombre magique
 - Calcul avec les multiples de l'adresse réseau et broadcast
 
-[Challenge A109](/challenges/Challenge_A109.md)
+[Challenge A109](/challenges/Challenge_A109.md) : Calculs d'adresses IP, réseau, broadcast, plage et masque.
 
 >📚 Ressources :
 >
@@ -429,7 +429,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 - **Collaboration et Partage** : Les outils modernes, notamment ceux basés sur le cloud, facilitent le travail d'équipe grâce au partage de fichiers et à la co-édition de documents en temps réel.
 
-[Challenge A201](/challenges/Challenge_A201.md)
+[Challenge A201](/challenges/Challenge_A201.md) : Test et comparatif de Microsoft / Libreoffice.
 
 >📚 Ressources :
 >
@@ -466,7 +466,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - **Logiciels tiers utiles** :
   - Des outils comme **CCleaner** pour le nettoyage, **Malwarebytes** pour la sécurité, ou **AOMEI Backupper** pour des sauvegardes avancées peuvent compléter les fonctionnalités natives de Windows.
 
-[Challenge A202](/challenges/Challenge_A202.md)
+[Challenge A202](/challenges/Challenge_A202.md) : Mise en réseau de VM.
 
 >📚 Ressources :
 >
@@ -514,7 +514,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **Rôle de la CNIL** : En France, la **Commission Nationale de l'Informatique et des Libertés (CNIL)** est l'autorité chargée de veiller au respect du RGPD. Elle informe, contrôle et peut sanctionner les entreprises en cas de manquement.
   - **En cas de violation de données** : L'entreprise a l'obligation de notifier la CNIL dans les 72 heures et d'informer les personnes concernées si le risque pour leurs droits et libertés est élevé.
 
-[Challenge A203](/challenges/Challenge_A203.md)
+[Challenge A203](/challenges/Challenge_A203.md) : Memtest, Anydest, Teamviewer.
 
 >📚 Ressources :
 >
@@ -529,7 +529,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 > L'atelier « Mme Michu » a servi de cas pratique pour appliquer les concepts vu précédemment, en simulant un dépannage complet : réparation du démarrage de Windows, résolution d'une surcharge CPU/RAM, vérification de l'état des disques et restauration de fichiers disparus.
 
-[Challenge A204](/challenges/Challenge_A204.md)
+[Challenge A204](/challenges/Challenge_A204.md) : Atelier "Mme Michu", dépannage d'une VM simulant un labtop en panne.
 
 >📚 Ressources :
 >
@@ -566,7 +566,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
   - **FAT32 (File Allocation Table 32)** : Ancien système de fichiers très compatible avec la plupart des appareils (clés USB, cartes mémoire). Sa principale limitation est qu'il ne peut pas gérer les fichiers de plus de 4 Go.
   - **exFAT (Extended File Allocation Table)** : Conçu pour les supports amovibles, il combine la large compatibilité de FAT32 avec la capacité de gérer des fichiers de plus de 4 Go, ce qui en fait un excellent choix pour les disques durs externes et les clés USB de grande capacité.
 
-[Challenge A206](/challenges/Challenge_A206.md)
+[Challenge A206](/challenges/Challenge_A206.md) : Test BIOS, et partitions sur USB.
 
 >📚 Ressources :
 >
@@ -645,7 +645,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 
 ![ITIL](/images/ITIL2.png)
 
-[Challenge A207](/challenges/Challenge_A207.md)
+[Challenge A207](/challenges/Challenge_A207.md) : QCM certification ITIL.
 
 >📚 Ressources :
 >
@@ -685,7 +685,7 @@ La **Méthode du Nombre Magique** (basée sur l'octet significatif du masque) a 
 - **Pratiques ITIL dans GLPI** :
   - **Gestion des Niveaux de Service (SLM)** : Cette pratique est matérialisée par le **SLA (Service Level Agreement)**. C'est un contrat formel entre un fournisseur de services et un client qui définit les attentes en matière de performance, les niveaux de service promis, les délais de réponse et de résolution (comme le TTO et le TTR), ainsi que les conséquences en cas de non-respect des engagements.
 
-[Challenge A208](/challenges/Challenge_A208.md)
+[Challenge A208](/challenges/Challenge_A208.md) : Installation GLPI Agent et test de ticketing.
 
 >📚 Ressources :
 >
@@ -877,7 +877,7 @@ nombre de machine : 14
 
 ![Blindages](/images/2025-11-03-13-28-06.png)
 
-[Challenge A301](/challenges/Challenge_A301.md)
+[Challenge A301](/challenges/Challenge_A301.md) : mise en place d'un réseau et ping sur Packet Tracer.
 
 >**📚 Ressources :**
 >
@@ -1025,7 +1025,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
     - **R**equest : Le client choisit une offre (généralement la première reçue) et envoie un **Broadcast** pour l'accepter (informant les autres serveurs qu'ils n'ont pas été choisis).
     - **A**CK (Acknowledge) : Le serveur choisi confirme l'attribution et envoie le reste de la configuration (masque, DNS, etc.) ainsi que la durée du bail.
 
-[Challenge A303](/challenges/Challenge_A303.md)
+[Challenge A303](/challenges/Challenge_A303.md) : création d’un plan d’adressage
 
 > **📚 Ressources :**
 >
@@ -1084,7 +1084,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 - **Routeur en tant que Serveur DHCP** : Un routeur Cisco peut aussi être configuré pour agir comme un serveur DHCP (`ip dhcp pool ...`) afin d'attribuer automatiquement des adresses IP aux clients de son réseau local (LAN).
 
-[Challenge A304](/challenges/Challenge_A304.md)
+[Challenge A304](/challenges/Challenge_A304.md) : Config de Routeurs et LANs sur Packet Tracer
 
 > **📚 Ressources :**
 >
@@ -1206,7 +1206,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 **Correction** [packet tracer](/challenges/Challenge_A305_correction.pkt) du [Challenge A305](/challenges/Challenge_A305.md)
 
-[Challenge A306](/challenges/Challenge_A306.md)
+[Challenge A306](/challenges/Challenge_A306.md) : DNS et SSH dans Packet Tracer
 
 > 📚 **Ressources :**
 >
@@ -1257,7 +1257,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - Elle dit : "Tout trafic arrivant sur mon IP publique *sur un port spécifique* (ex: Port 80) doit être redirigé vers l'IP privée de *ce serveur interne* (ex: `192.168.1.100` sur le Port 80)". Cela crée une "porte" dans votre pare-feu.
   - Il faut également avoir une adresse IP "fullstack", c'est à dire avoir sa propre adresse IP Publique et non celle donnée par le CG-NAT (Carrier-Grade Network Address Translation). C'est une technologie utilisée par les fournisseurs d'accès à Internet (FAI) pour partager une seule adresse IP publique entre des centaines, voire des milliers de clients.
 
-[Challenge A307](/challenges/Challenge_A307.md)
+[Challenge A307](/challenges/Challenge_A307.md) : Self Hosting, NAT et redirection dans Packet Tracer.
 
 > 📚 **Ressources :**
 >
@@ -1470,7 +1470,7 @@ Passerelle VLan sur Routeur (L3)
   - **Nouvelle Forêt** : Pour le premier serveur, on crée une nouvelle forêt et on définit le nom de domaine racine (ex: `thm.local`).
   - **DSRM** : On définit un mot de passe de restauration des services d'annuaire (crucial en cas de crash de l'AD).
 
-[Challenge A401](./challenges/Challenge_A401.md)
+[Challenge A401](./challenges/Challenge_A401.md) : Installation de Windows Server 2022 sur VMware.
 
 > **📚 Ressources :**
 >
@@ -1514,7 +1514,7 @@ Passerelle VLan sur Routeur (L3)
 
   - C'est un dossier partagé présent sur chaque Contrôleur de Domaine. Il contient les éléments publics nécessaires aux clients, comme les **scripts de connexion** et les fichiers des **GPO** (Stratégies de groupe). Il est automatiquement répliqué sur tous les DC.
 
-[Challenge A402](./challenges/Challenge_A402.md)
+[Challenge A402](./challenges/Challenge_A402.md) : Installation WS2025 sur Proxmox, AD DS Gestion d'utilisateurs.
 
 > **📚 Ressources :**
 >
@@ -1565,7 +1565,7 @@ Passerelle VLan sur Routeur (L3)
   - `gpupdate /force` : Force la mise à jour immédiate des stratégies de groupe sur le client, sans attendre le cycle de rafraîchissement automatique (environ 90 minutes).
   - `gpresult /r` : Affiche un rapport sur les GPO appliquées à l'utilisateur et à l'ordinateur, utile pour le diagnostic.
 
-[Challenge A403](./challenges/Challenge_A403.md)
+[Challenge A403](./challenges/Challenge_A403.md) : Utilisateurs, Groupes, et GPO Fond d'écran.
 
 > **📚 Ressources :**
 >
@@ -1617,7 +1617,7 @@ Passerelle VLan sur Routeur (L3)
   - Ajouter le suffixe `$` au nom d'un dossier partagé (ex : `drivers$`) cache le répertoire aux utilisateurs qui parcourent le réseau, tout en permettant l'accès via le chemin UNC complet.
   - Pour les besoins spécifiques, il est parfois plus simple de **casser l'héritage** et de redéfinir manuellement les permissions. Soit en supprimant tout et remettant manuellement, soit en
 
-[Challenge A404](./challenges/Challenge_A404.md)
+[Challenge A404](./challenges/Challenge_A404.md) : Création de partages et droits.
 
 > **📚 Ressources :**
 >
@@ -1662,7 +1662,7 @@ Passerelle VLan sur Routeur (L3)
         2. **Configurer la SACL** : Sur le dossier cible (Clic droit > Propriétés > Sécurité > Avancé > Onglet **Audit**), on définit *qui* on surveille et pour *quelles actions* (Réussite/Échec de suppression, écriture, etc.).
   - **Consultation** : Les traces se trouvent dans l'**Observateur d'événements**, journal **Sécurité**.
 
-[Challenge A405](./challenges/Challenge_A405.md)
+[Challenge A405](./challenges/Challenge_A405.md) : Mappage de lecteurs, ressources, quotas, filtres, et audit.
 
 > **📚 Ressources :**
 >
@@ -1680,7 +1680,7 @@ Passerelle VLan sur Routeur (L3)
 
 ### ⚙️ A406. Atelier
 
-[Challenge A406](./challenges/Challenge_A406.md)
+[Challenge A406](./challenges/Challenge_A406.md) : Atelier de mise en place et gestion de GPO.
 
 et Correction Atelier A407.
 
@@ -1715,7 +1715,7 @@ et Correction Atelier A407.
         1. **Côté DNS** : Créer un enregistrement **A** qui fait pointer le nom `intranet` vers l'adresse IP du serveur IIS.
         2. **Côté IIS** : Configurer le **binding** (liaison) du site pour qu'il écoute les requêtes arrivant sur cette IP avec ce nom d'hôte spécifique (ex: port 80, nom d'hôte `intranet.thm.local`).
 
-[Challenge A408](./challenges/Challenge_A408.md)
+[Challenge A408](./challenges/Challenge_A408.md) : enregistrement DNS, IIS et index.html
 
 > **📚 Ressources :**
 >
@@ -1778,7 +1778,7 @@ et Correction Atelier A407.
     - **Registry** (La configuration système locale).
   - **Règle impérative** : Active Directory étant un service critique en cours d'exécution, il **ne peut pas être restauré en mode normal**. Il faut obligatoirement redémarrer le serveur en **Mode de restauration des services d'annuaire (DSRM)**.
 
-[Challenge A409](./challenges/Challenge_A409.md)
+[Challenge A409](./challenges/Challenge_A409.md) : Supression et récupération utilisateur dans l'AD.
 
 > 📚 **Ressources** :
 >
@@ -1859,7 +1859,7 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
   - **Avantages** : Installation rapide d'OS natifs, standardisation du parc.
   - **Inconvénient** : Gère uniquement l'installation, pas la maintenance applicative post-install.
 
-[Challenge A410](./challenges/Challenge_A410.md)
+[Challenge A410](./challenges/Challenge_A410.md) : Test de Windows Deployment Services (WDS) et boot PXE.
 
 > 📚 **Ressources** :
 >
@@ -1928,7 +1928,7 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
   - **Avantages** : Centralisation des données, maintenance simplifiée (1 seule installation d'app pour 50 utilisateurs), accès à distance sécurisé.
   - **Inconvénients** : **SPOF** (Single Point of Failure) - si le serveur RDS plante, tous les utilisateurs sont bloqués. Nécessite une infrastructure serveur robuste (RAM/CPU).
 
-[Challenge A411](./challenges/Challenge_A411.md)
+[Challenge A411](./challenges/Challenge_A411.md) : Installation et test du RDS (Remote Desktop Services).
 
 > 📚 **Ressources** :
 >
@@ -1977,7 +1977,7 @@ L'objectif est de réaliser une installation "zéro touche" (Zero Touch Installa
     - Disque SCSI / Partition **GPT**.
     - Supporte le **Secure Boot** (Démarrage sécurisé). *Attention : il faut parfois désactiver le Secure Boot pour certaines distributions Linux.*
 
-[Challenge A412](./challenges/Challenge_A412.md)
+[Challenge A412](./challenges/Challenge_A412.md) : Installation d'une VM sur Hyper-V.
 
 > 📚 **Ressources** :
 >
@@ -2172,7 +2172,7 @@ En bonus, voici la méthode pour réduire la taille d'un disque virtuel `qcow2` 
   - `mv` : **M**o**V**e, pour déplacer ou renommer des fichiers/dossiers.
   - `cat` : Affiche le contenu d'un fichier dans la sortie standard (le terminal).
   
-[Challenge A501](./challenges/Challenge_A501.md)
+[Challenge A501](./challenges/Challenge_A501.md) : Installation d'une VM Linux sur VMware, et jeu Terminus Quest pour apprendre les commandes de base.
 
 > 📚 **Ressources** :
 >
@@ -2305,7 +2305,7 @@ C'est là que Linux diffère le plus de Windows/macOS, car l'interface graphique
   - **Rôle** : C'est la couche logicielle qui gère la carte son et permet à plusieurs applications de jouer du son en même temps (mixage).
   - *Contexte :* Bien que le support soit bref à ce sujet, on retient souvent **PulseAudio** (créé par le même auteur que systemd) ou plus récemment **PipeWire** comme standards actuels.
 
-[Challenge A502](./challenges/Challenge_A502.md)
+[Challenge A502](./challenges/Challenge_A502.md) : Jouer à VIM Adventures et VIM Tutor pour se familiariser avec VIM.
 
 > 📚 **Ressources** :
 >
@@ -2445,7 +2445,7 @@ Chaque fichier/dossier appartient à un **Propriétaire (u)** et un **Groupe pro
   - `sudo -l` : Liste les droits sudo de l'utilisateur courant.
   - `sudo -i` ou `sudo -s` : Ouvre un shell root interactif (à éviter pour des tâches ponctuelles).
 
-[Challenge A503](./challenges/Challenge_A503.md)
+[Challenge A503](./challenges/Challenge_A503.md) : sur Rocky Linux, création d'utilisateur, droits et dossiers.
 
 > 📚 **Ressources** :
 >
@@ -2588,7 +2588,7 @@ Pour surveiller les ressources et identifier le matériel.
   - `tail -f /var/log/syslog` : Suivre les logs en continu.
   - `journalctl -xe` : Debugger une erreur récente systemd.
 
-[Challenge A504](./challenges/Challenge_A504.md)
+[Challenge A504](./challenges/Challenge_A504.md) : Compiler un Binaire.
 
 > 📚 **Ressources** :
 >
@@ -2605,7 +2605,7 @@ Pour surveiller les ressources et identifier le matériel.
 
 ![LAMP](/images/2025-12-18-16-12-11.png)
 
-[Atelier A505](./challenges/Challenge_A505.md)
+[Atelier A505](./challenges/Challenge_A505.md) : Atelier mise en place d'une stack LAMP.
 
 > 📚 **Ressources** :
 >
@@ -2624,7 +2624,7 @@ Pour surveiller les ressources et identifier le matériel.
 
 ![SAMBA](/images/2025-12-18-16-12-30.png)
 
-[Atelier A506](./challenges/Challenge_A506.md)
+[Atelier A506](./challenges/Challenge_A506.md) : Atelier mise en place de SAMBA (AD)
 
 > 📚 **Ressources** :
 >
@@ -2707,7 +2707,7 @@ Voici les équivalences pour vous repérer par rapport à Debian/Ubuntu :
 | Supprimer un paquet | `sudo pacman -Rs <nom>` | `apt autoremove <nom>` |
 | Nettoyer le cache | `sudo pacman -Sc` | `apt clean` |
 
-[Challenge A507](./challenges/Challenge_A507.md)
+[Challenge A507](./challenges/Challenge_A507.md) : Installation et test d'Arch Linux.
 
 > 📚 **Ressources** :
 >
@@ -2831,7 +2831,7 @@ Une règle se compose de 4 éléments :
 - **Softphone** : Logiciel installé sur PC ou Smartphone qui simule un téléphone (ex: Zoiper, Linphone).
 - **Trunk SIP** : Le "tuyau" qui relie votre IPBX Asterisk au monde extérieur (via un opérateur VoIP) pour passer des appels sur les fixes/mobiles.
 
-[Challenge A508](./challenges/Challenge_A508.md)
+[Challenge A508](./challenges/Challenge_A508.md) : Installer et configurer un serveur Asterisk.
 
 > 📚 **Ressources** :
 >
@@ -2850,7 +2850,7 @@ Une règle se compose de 4 éléments :
 
 > IPBX Asterisk sur Debian 13
 
-[Challenge A509](./challenges/Challenge_A509.md)
+[Challenge A509](./challenges/Challenge_A509.md) : Atelier Installer et configurer un serveur Asterisk sur proxmox, fonctionnel via app VOIP du smartphone.
 
 > 📚 **Ressources** :
 >
@@ -3001,7 +3001,7 @@ Outre la virtualisation de serveurs, le concept s'applique ailleurs :
 - **Stockage (SDS)** : Regrouper plusieurs disques physiques en un pool virtuel (ex: vSAN, Ceph).
 - **Poste de travail (VDI)** : L'utilisateur accède à son PC Windows à distance, l'OS tourne en réalité dans le datacenter.
 
-[Challenge B101](./challenges/Challenge_B101.md)
+[Challenge B101](./challenges/Challenge_B101.md) : Installation d'Hyperviseurs Types 1 é 2, imbrication.
 
 > 📚 **Ressources** :
 >
@@ -3080,7 +3080,7 @@ C'est ici que la virtualisation prend tout son sens par rapport à des serveurs 
   - **Migration** = Je bouge ma VM (maintenance planifiée).
   - **HA** = Le cluster sauve ma VM (panne imprévue).
 
-[Challenge B102](./challenges/Challenge_B102.md)
+[Challenge B102](./challenges/Challenge_B102.md) : Installer ESXi (vSphere)
 
 > 📚 **Ressources** :
 >
@@ -3147,7 +3147,7 @@ Pour ne pas confondre les deux :
 
 **Note : vCenter tourne lui-même dans une VM, mais sa fonction est de manager.*
 
-[Challenge B103](./challenges/Challenge_B103.md)
+[Challenge B103](./challenges/Challenge_B103.md) : Installer vCenter et le configurer.
 
 > 📚 **Ressources** :
 >
@@ -3256,7 +3256,7 @@ Bien que VMware soit le leader, il existe des alternatives puissantes et libres 
 - **Xen Orchestra** : L'interface de gestion web centralisée pour XCP-ng, équivalent libre de vCenter.
 - *Intérêt* : Très populaire pour s'affranchir des coûts de licence VMware (surtout depuis le rachat par Broadcom).
 
-[Challenge B103](./challenges/Challenge_B103.md)
+[Challenge B103](./challenges/Challenge_B103.md) : Installer vCenter et le configurer
 
 > 📚 **Ressources** :
 >
@@ -3379,7 +3379,7 @@ Le RAID (Redundant Array of Independent Disks) permet de virtualiser plusieurs d
 
 - **Logiciels de Sauvegarde** : **Veeam** (Leader), Proxmox Backup Server, UrBackup .
 
-[Challenge B201](./challenges/Challenge_B201.md)
+[Challenge B201](./challenges/Challenge_B201.md) : Installation de TrueNAS (Proxmox), configuration ZFS, SMB et snapshots.
 
 > 📚 **Ressources** :
 >
@@ -3462,7 +3462,7 @@ Une fois les données stockées et sécurisées, il faut les rendre accessibles 
 4. J'applique des **Permissions** et **Quotas** sur ces Datasets.
 5. Je partage mes Datasets via **SMB** ou **NFS** pour que les utilisateurs y accèdent.
 
-[Challenge B202](./challenges/Challenge_B202.md)
+[Challenge B202](./challenges/Challenge_B202.md) : Installation Veeam Backup & Replication, configuration, restauration.
 
 > 📚 **Ressources** :
 >
@@ -3539,7 +3539,7 @@ C'est la force principale de Veeam : la granularité.
 | **Retention** | Le nombre de points de restauration (jours) que l'on conserve. |
 | **CBT** | Technologie de suivi des blocs modifiés pour accélérer les backups. |
 
-[Challenge B202](./challenges/Challenge_B202.md)
+[Challenge B202](./challenges/Challenge_B202.md) : Installation Veeam Backup & Replication, configuration, restauration.
 
 > 📚 **Ressources** :
 >
@@ -3664,7 +3664,7 @@ C'est la pièce manquante qui est enfin arrivée (V1.0 sortie en déc. 2025).
 
 > **En résumé** : Aujourd'hui, l'admin système gère le trio **PVE 9** (Compute) + **PBS 4** (Backup) + **Datacenter Manager** (Orchestration).
 
-[Challenge B204](./challenges/Challenge_B204.md)
+[Challenge B204](./challenges/Challenge_B204.md) : Installer Proxmox Backup Server, configurer, backup et restore.
 
 > 📚 **Ressources** :
 >
@@ -3995,7 +3995,7 @@ Comme Zabbix, Nagios surveille le réseau via **SNMP**, mais pour entrer dans le
 3. **Configuration** : Basée sur des **fichiers textes** (complexe), pas de BDD de configuration par défaut.
 4. **Héritage** : Nagios est le "père" de **Centreon** (qui est une surcouche graphique française pour Nagios à l'origine) et d'**Icinga**.
 
-[Challenge B304](./challenges/Challenge_B304.md) : Installation de Nachos et de ses agents
+[Challenge B304](./challenges/Challenge_B304.md) : Installation de Nagios et de ses agents.
 
 > 📚 **Ressources** :
 >
@@ -5181,7 +5181,7 @@ Le Cloud, c'est aussi du contrat.
 
 ---
 
-## 🚀 C202. Les Fournisseurs Cloud (Providers)
+### 🚀 C202. Les Fournisseurs Cloud (Providers)
 
 > **Objectif** : Savoir naviguer dans l'offre pléthorique du marché. On distingue deux mondes : les "Big 3" américains (leaders mondiaux, innovation maximale mais soumis au Cloud Act) et les acteurs Européens (Souveraineté, simplicité et tarifs prédictibles).
 
