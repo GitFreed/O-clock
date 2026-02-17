@@ -5180,15 +5180,99 @@ Le Cloud, c'est aussi du contrat.
 
 ---
 
-### ☁️ C202
+## 🚀 C202. Les Fournisseurs Cloud (Providers)
 
->
+> **Objectif** : Savoir naviguer dans l'offre pléthorique du marché. On distingue deux mondes : les "Big 3" américains (leaders mondiaux, innovation maximale mais soumis au Cloud Act) et les acteurs Européens (Souveraineté, simplicité et tarifs prédictibles).
+
+### 1. Les "Big 3" (Les Géants Américains)
+
+Ils dominent le marché mondial (~62% à eux trois). Ils offrent une profondeur de service inégalée (IaaS, PaaS, SaaS, IA, IoT...) mais sont soumis au droit américain (**Cloud Act**), ce qui peut poser problème pour certaines données sensibles.
+
+#### 🟠 **AWS (Amazon Web Services)**
+
+- **Profil** : Le pionnier (2006) et leader historique (~30% de parts de marché).
+- **Forces** : Catalogue de services immense, maturité, écosystème mondial.
+- **Faiblesses** : Complexité (trop d'options), coûts difficiles à maîtriser.
+- **Cible** : Startups (Tech), grands comptes, besoins généralistes.
+- **Services Clés** : EC2 (VM), S3 (Stockage), Lambda (Serverless).
+
+#### 🔵 **Microsoft Azure**
+
+- **Profil** : Le challenger n°1 (~20%), très fort en entreprise.
+- **Forces** : Intégration parfaite avec l'écosystème Microsoft (AD, Office 365, Windows Server). Leader sur le Cloud Hybride.
+- **Faiblesses** : Interface parfois lourde, nomenclature complexe.
+- **Cible** : Entreprises déjà clientes Microsoft, administration.
+- **Services Clés** : Virtual Machines, Azure AD, Azure SQL.
+
+#### 🟢 **GCP (Google Cloud Platform)**
+
+- **Profil** : L'outsider technologique (~12%).
+- **Forces** : Excellence en **Data**, **IA/ML** et Conteneurs (créateurs de Kubernetes). Réseau mondial ultra-rapide (fibre Google).
+- **Faiblesses** : Moins de services "entreprise" classique, support parfois critiqué.
+- **Cible** : Data Scientists, développeurs Cloud Native, Big Data.
+- **Services Clés** : Compute Engine, BigQuery (Data), GKE (Kubernetes).
+
+### 2. Les Alternatives Françaises & Européennes
+
+Pourquoi choisir l'Europe ? Pour la **Souveraineté des données** (RGPD natif, pas de Cloud Act), le support en français et souvent un meilleur rapport qualité/prix.
+
+#### 💙 **OVHcloud**
+
+- **Profil** : Le leader européen, champion industriel.
+- **Positionnement** : Prix très agressifs, souveraineté (qualifié SecNumCloud sur certaines offres), infrastructure matérielle maîtrisée (refroidissement liquide).
+- **Idéal pour** : PME, Secteur public, hébergement web, "Lift & Shift" économique.
+
+#### 💜 **Scaleway** (Groupe Iliad/Free)
+
+- **Profil** : Le cloud "qui a du sens", orienté développeurs.
+- **Positionnement** : Expérience utilisateur (UX) moderne, innovation (serveurs ARM), écosystème complet mais simple.
+- **Idéal pour** : Startups, Développeurs, environnements multi-cloud.
+
+#### ❤️ **Clever Cloud**
+
+- **Profil** : Le spécialiste du **PaaS** ("Platform as a Service").
+- **Positionnement** : "IT Automation". Vous poussez le code, ils gèrent tout (Run, Scalabilité, Maintien en condition opérationnelle). Pas de serveurs à gérer.
+- **Idéal pour** : Équipes de dev qui ne veulent pas faire d'Ops.
+
+### 3. Tarification : Le Choc des Modèles
+
+C'est un critère de choix majeur. La philosophie de facturation est radicalement différente.
+
+| Critère | 🇺🇸 Modèle US (Big 3) | 🇪🇺 Modèle EU (OVH, Scaleway...) |
+| --- | --- | --- |
+| **Philosophie** | **Pay-as-you-go** pur (à la seconde) | **Prédictible** / Forfaitaire |
+| **Facturation** | Complexe (CPU + RAM + Disque + IP + ...) | Simple (Pack mensuel ou horaire cappé) |
+| **Trafic Réseau** | 💸 **Payant** (Egress fees souvent chers) | ✅ **Souvent inclus** (Illimité) |
+| **Surprise** | Risque de facture élevée si mal géré | Faible risque (plafond mensuel) |
+| **Engagement** | Instances réservées (1-3 ans) pour réduire le prix | Prix bas sans engagement souvent disponible |
+| **Coûts cachés** | Appels API, IOPS disque, IP statiques... | Rares |
+
+💡 **En résumé**
+
+- **Besoin de puissance/Services avancés (IA, Big Data)** ➡️ **Big 3** (AWS/Azure/GCP).
+- **Besoin de Conformité (Santé, État) ou Budget serré** ➡️ **Providers FR** (OVH, Scaleway).
+- **Azure** est le roi de l'hybride et des entreprises Microsoft.
+- **AWS** est le standard du marché.
+- **Tarification** : Attention aux coûts de **trafic sortant** (Egress) chez les Américains, souvent gratuits chez les Européens.
 
 [Challenge C202](./challenges/Challenge_C202.md) :
 
 > 📚 **Ressources** :
 >
 > - Comparaison des services Google Cloud, AWS, Azure : <https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison?hl=fr>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+## ☁️ C203
+
+>
+
+[Challenge C203](./challenges/Challenge_C203.md) : Atelier
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
