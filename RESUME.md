@@ -119,6 +119,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 ### [Saison C2. Cloud ☁️](#️-saison-c2-cloud)
 
 - [C201. Introduction au Cloud computing](#️-c201-introduction-au-cloud-computing)
+- [C202. Les fournisseurs Cloud (Providers)](#-c202-les-fournisseurs-cloud-providers)
 
 ### [Saison C3. Sécurité système & réseau 🛡️](.)
 
