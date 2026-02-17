@@ -5256,7 +5256,7 @@ C'est un critère de choix majeur. La philosophie de facturation est radicalemen
 - **AWS** est le standard du marché.
 - **Tarification** : Attention aux coûts de **trafic sortant** (Egress) chez les Américains, souvent gratuits chez les Européens.
 
-[Challenge C202](./challenges/Challenge_C202.md) :
+[Challenge C202](./challenges/Challenge_C202.md) : Proposition d'une stratégie cloud simple, cohérente et réaliste pour une PME.
 
 > 📚 **Ressources** :
 >
