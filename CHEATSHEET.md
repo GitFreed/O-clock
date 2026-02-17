@@ -39,6 +39,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 > - <https://cheatsheets.zip/>
 > - <https://cheatography.com/>
 
+---
+
 ## ⌨️ CLI
 
 ### Windows 🪟
@@ -54,6 +56,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 [Linux Cheatsheet PDF](./ressources/Linux-Commands-Cheatsheet-FR.pdf)
 
 ![ncdu](/images/2026-02-16-18-04-25.png)
+
+---
 
 ## 🌐 Networking
 
@@ -103,11 +107,15 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![setup](/images/2026-02-16-18-05-19.png)
 
+---
+
 ## ⚙️ Systems Architecture
 
 ![LinuxFiles](/images/2026-02-10-22-15-14.png)
 
 ![GPT](/images/2026-02-10-22-16-27.png)
+
+---
 
 ## 🛡️ Pentesting
 
