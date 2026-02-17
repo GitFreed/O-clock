@@ -1289,7 +1289,9 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
 
 ---
 
-### [A308. Atelier proxmox](/challenges/Challenge_A308.md)
+### [Atelier A308](/challenges/Challenge_A308.md)
+
+Installation de Proxmox sur un serveur OVH, configuration du NAT, installation et configuration du routeur pfSense, et VPN.
 
 ---
 
@@ -1358,7 +1360,7 @@ Moyen mnémotechnique de Haut en bas : **``All People Seem To Need Data Processi
   - **Portail Captif** : Une technique (souvent utilisée sur les WiFi publics) qui force tout nouvel utilisateur à voir une page web spécifique (authentification, acceptation des CGU) avant de pouvoir accéder à Internet.
   - **Filtrage MAC** : Méthode de sécurité basique (Couche 2) qui autorise ou bloque l'accès au réseau selon l'adresse MAC. Elle est peu efficace car l'adresse MAC est facilement falsifiable (spoofing).
 
-[Challenge A309](/challenges/Challenge_A309.md)
+[Challenge A309](/challenges/Challenge_A309.md) : Pratiquer les VLAN, Inter-VLAN et ACLs
 
 > 📚 **Ressources :**
 >
@@ -5185,7 +5187,7 @@ Le Cloud, c'est aussi du contrat.
 
 > **Objectif** : Savoir naviguer dans l'offre pléthorique du marché. On distingue deux mondes : les "Big 3" américains (leaders mondiaux, innovation maximale mais soumis au Cloud Act) et les acteurs Européens (Souveraineté, simplicité et tarifs prédictibles).
 
-### 1. Les "Big 3" (Les Géants Américains)
+#### 1. Les "Big 3" (Les Géants Américains)
 
 Ils dominent le marché mondial (~62% à eux trois). Ils offrent une profondeur de service inégalée (IaaS, PaaS, SaaS, IA, IoT...) mais sont soumis au droit américain (**Cloud Act**), ce qui peut poser problème pour certaines données sensibles.
 
@@ -5213,7 +5215,7 @@ Ils dominent le marché mondial (~62% à eux trois). Ils offrent une profondeur 
 - **Cible** : Data Scientists, développeurs Cloud Native, Big Data.
 - **Services Clés** : Compute Engine, BigQuery (Data), GKE (Kubernetes).
 
-### 2. Les Alternatives Françaises & Européennes
+#### 2. Les Alternatives Françaises & Européennes
 
 Pourquoi choisir l'Europe ? Pour la **Souveraineté des données** (RGPD natif, pas de Cloud Act), le support en français et souvent un meilleur rapport qualité/prix.
 
@@ -5235,7 +5237,7 @@ Pourquoi choisir l'Europe ? Pour la **Souveraineté des données** (RGPD natif, 
 - **Positionnement** : "IT Automation". Vous poussez le code, ils gèrent tout (Run, Scalabilité, Maintien en condition opérationnelle). Pas de serveurs à gérer.
 - **Idéal pour** : Équipes de dev qui ne veulent pas faire d'Ops.
 
-### 3. Tarification : Le Choc des Modèles
+#### 3. Tarification : Le Choc des Modèles
 
 C'est un critère de choix majeur. La philosophie de facturation est radicalement différente.
 
@@ -5266,7 +5268,7 @@ C'est un critère de choix majeur. La philosophie de facturation est radicalemen
 
 ---
 
-## ☁️ C203
+### ☁️ C203
 
 >
 
