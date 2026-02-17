@@ -30,7 +30,7 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge A203](/challenges/Challenge_A203.md) : Memtest, Anydest, Teamviewer.
 
-[Challenge A204](/challenges/Challenge_A204.md) : Atelier "Mme Michu", dépannage d'une VM simulant un labtop en panne.
+[Atelier A204](/challenges/Challenge_A204.md) : Atelier "Mme Michu", dépannage d'une VM simulant un labtop en panne.
 
 [Challenge A206](/challenges/Challenge_A206.md) : Test BIOS, et partitions sur USB.
 
@@ -50,9 +50,9 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge A307](/challenges/Challenge_A307.md) : Self Hosting, NAT et redirection dans Packet Tracer.
 
-[A308. Atelier proxmox](/challenges/Challenge_A308.md) : Installation de Proxmox sur un serveur OVH, configuration du NAT, installation et configuration du routeur pfSense, et VPN.
+[Atelier A308](/challenges/Challenge_A308.md) : Installation de Proxmox sur un serveur OVH, configuration du NAT, installation et configuration du routeur pfSense, et VPN.
 
-[Challenge A309](/challenges/Challenge_A309.md)
+[Challenge A309](/challenges/Challenge_A309.md) : Pratiquer les VLAN, Inter-VLAN et ACLs
 
 [Challenge A401](./challenges/Challenge_A401.md) : Installation de Windows Server 2022 sur VMware.
 
@@ -64,7 +64,7 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge A405](./challenges/Challenge_A405.md) : Mappage de lecteurs, ressources, quotas, filtres, et audit.
 
-[Challenge A406](./challenges/Challenge_A406.md) : Atelier de mise en place et gestion de GPO.
+[Atelier A406](./challenges/Challenge_A406.md) : Atelier de mise en place et gestion de GPO.
 
 [Challenge A408](./challenges/Challenge_A408.md) : Enregistrement DNS, IIS et index.html
 
@@ -114,23 +114,21 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge B304](./challenges/Challenge_B304.md) : Installation de Nagios et de ses agents.
 
-[Challenge B401](./challenges/Challenge_B401.md) : Pratiquer sur Scratch en créant un jeu du Nombre Mystère (Plus/Moins)
+[Challenge B401](./challenges/Challenge_B401.md) : Pratiquer sur Scratch en créant un jeu du Nombre Mystère (Plus/Moins).
 
 [Challenge B402](./challenges/Challenge_B402.md) : Pratiquer Git & Github
 
-[Challenge B403](./challenges/Challenge_B403.md) : Recréer le jeu du Nombre Mystère (Plus/Moins) en script python
+[Challenge B403](./challenges/Challenge_B403.md) : Recréer le jeu du Nombre Mystère (Plus/Moins) en script python.
 
-[Challenge B404](./challenges/Challenge_B404.md) : Créer des Scripts batch et Powershell d'Administration Système
+[Challenge B404](./challenges/Challenge_B404.md) : Créer des Scripts batch et Powershell d'Administration Système.
 
-[Atelier B405](./challenges/Challenge_B405.md)
+[Atelier B405](./challenges/Challenge_B405.md) : Atelier Powershell et AD.
 
-[Challenge B406](./challenges/Challenge_B406.md) : Jeu du Nombre Mystère Plus ou Moins en PowerShell
+[Challenge B406](./challenges/Challenge_B406.md) : Jeu du Nombre Mystère Plus ou Moins en PowerShell.
 
 [Challenge B407](./challenges/Challenge_B407.md) : une série d'exercices pour créer une suite d'outils Admin en Bash.
 
-[Challenge B408](./challenges/Challenge_B408.md) : Atelier Bash - Automatisation de l'administration système
-
-[Challenge B409](./challenges/Challenge_B409.md)
+[Atelier B408](./challenges/Challenge_B408.md) : Atelier Bash - Automatisation de l'administration système.
 
 [Challenge C101](./challenges/Challenge_C101.md) : Effectuer la note de cadrage d'un projet.
 
@@ -144,4 +142,4 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge C202](./challenges/Challenge_C202.md) : Proposition d'une stratégie cloud simple, cohérente et réaliste pour une PME.
 
-[Challenge C203](./challenges/Challenge_C203.md) : Atelier
+[Atelier C203](./challenges/Challenge_C203.md) : Atelier
