@@ -1,5 +1,11 @@
 # Liste de tous les Challenges et Ateliers réalisés pour valider les concepts techniques abordés en cours 💻
 
+Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
+
+```ps1
+(Get-Content .\RESUME.md | Where-Object { $_ -like "*challenges/*" }) -join "`r`n`r`n" | Set-Clipboard
+```
+
 [Challenge A102](/challenges/Challenge_A102.md) : Exercice de recherche pour achat de périphériques
 
 [Challenge A103](/challenges/Challenge_A103.md) : Description de notre Hardware
