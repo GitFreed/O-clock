@@ -124,3 +124,73 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 ![password](/images/2026-02-10-22-22-34.png)
 
 ![OSIattacks](/images/2026-02-10-22-28-53.png)
+
+### 📂 Ressources Cybersécurité & OSINT
+
+#### > 🔍 Liste de 30 outils OSINT et recherche
+
+- **Dehashed** — Recherche et visualisation d’identifiants divulgués lors de fuites de données.
+- **SecurityTrails** — Accès à des données DNS historiques et informations sur les domaines.
+- **DorkSearch** — Génération et recherche rapide de requêtes Google avancées (Google Dorks).
+- **ExploitDB** — Base de données publique d’exploits et de vulnérabilités connues.
+- **ZoomEye** — Moteur de recherche d’actifs exposés sur Internet.
+- **Pulsedive** — Plateforme d’analyse et de renseignement sur les menaces.
+- **GrayHatWarfare** — Recherche dans les compartiments S3 publics exposés.
+- **PolySwarm** — Analyse collaborative de fichiers et d’URL pour la détection de menaces.
+- **FOFA** — Moteur de recherche d’actifs connectés et d’informations techniques associées.
+- **LeakIX** — Indexation d’informations exposées publiquement et de services mal configurés.
+- **DNSDumpster** — Outil de cartographie et de recherche d’enregistrements DNS.
+- **ONYPHE** — Collecte et corrélation de données de renseignement sur les cybermenaces.
+- **FullHunt** — Découverte de surfaces d’attaque et d’actifs exposés.
+- **AlienVault OTX** — Plateforme de partage de renseignements sur les menaces.
+- **Grep.app** — Recherche dans un grand nombre de dépôts publics Git.
+- **Shodan** — Moteur de recherche d’actifs et services connectés.
+- **URLScan** — Service d’analyse et d’inspection de sites web.
+- **Vulners** — Base de données centralisée de vulnérabilités et d’exploits.
+- **Wayback Machine** — Consultation d’anciennes versions de sites web archivés.
+- **WiGLE** — Base de données mondiale de réseaux sans fil.
+- **Netlas** — Recherche et surveillance des ressources connectées.
+- **crt.sh** — Recherche de certificats SSL/TLS.
+- **PublicWWW** — Recherche de technologies web et code source.
+- **BinaryEdge** — Analyse d’Internet et collecte d’informations.
+- **GreyNoise** — Analyse du bruit Internet et activités automatisées.
+- **Hunter** — Recherche d’adresses e-mail associées à un domaine.
+- **Censys** — Analyse et évaluation de la surface d’attaque.
+- **IntelligenceX** — Recherche dans les fuites (web, Tor et I2P).
+- **Packet Storm Security** — Publication de vulnérabilités et exploits.
+- **SearchCode** — Recherche dans des milliards de lignes de code public.
+
+#### > ⚔️ Classification Red Team vs Blue Team
+
+##### 🔴 **Outils Red Team (Tests d’intrusion)**
+
+- **Reconnaissance :**
+  - **Nmap** : découverte d’hôtes, scan de ports et identification des services.
+  - **Shodan** : recherche d’équipements exposés sur Internet.
+  - **theHarvester** : collecte d’emails, domaines et informations OSINT.
+  - **Recon-ng** : framework de reconnaissance et d’automatisation OSINT.
+- **Tests d’applications web :**
+  - **Burp Suite** : analyse et test de sécurité des applications web.
+  - **SQLmap** : détection et exploitation des injections SQL.
+- **Exploitation :**
+  - **Metasploit Framework** : exploitation contrôlée de vulnérabilités.
+- **Audit de mots de passe :**
+  - **Hydra** : tests d’authentification (brute force).
+  - **John the Ripper** : audit et analyse de hashs.
+- **Réseau :**
+  - **Aircrack-ng** : analyse et audit de sécurité Wi-Fi.
+  - **Wireshark** : analyse de trafic réseau.
+
+##### 🔵 **Outils Blue Team (Détection & Défense)**
+
+- **SIEM et centralisation :**
+  - **Splunk** : analyse et corrélation d’événements de sécurité.
+  - **ELK Stack** : collecte, analyse et visualisation des logs.
+  - **OSSEC / Wazuh** : détection d’intrusion (HIDS) et supervision.
+- **Détection d’intrusion :**
+  - **Snort** : IDS/IPS basé sur signatures.
+  - **Suricata** : IDS/IPS haute performance.
+- **Surveillance :**
+  - **Wireshark** : investigation et forensic réseau.
+
+*Note : C'est le contexte et l'objectif qui définissent le rôle de l'outil !*
