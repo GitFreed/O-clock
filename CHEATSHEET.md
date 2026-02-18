@@ -12,7 +12,7 @@ Il me sert d'aide-mémoire quotidien pour mes labs et mes configurations. L'obje
 
 Tu y trouveras des mémos sur :
     - **Switching & Routing :** VLANs, STP, OSPF, ACLs (Cisco IOS).
-    - **Système :** Commandes Linux utiles, droits, gestion des processus.
+    - **Système :** Commandes utiles, droits, gestion des processus.
     - **Sécurité :** Hardening de base, analyse de trames, firewalling.
     - **Protocoles :** Modèle OSI, TCP/IP, Subnetting rapide.
 
@@ -31,6 +31,16 @@ La plupart des schémas et images présents ici ont été glanés au fil de mes 
 ## 🛠️ Work in Progress
 
 Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentissage et de mes découvertes.
+
+---
+
+## 📖 Table des Matières
+
+- [Commandes](#️-cli)
+- [Networking](#-networking)
+- [Architecture](#️-architecture)
+- [Pentesting](#️-pentesting)
+- [SysAdmin](#️-administration-systèmes)
 
 ---
 
@@ -95,6 +105,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![switchport](/images/2026-02-10-22-08-33.png)
 
+![SVI](/images/2026-02-18-10-41-36.png)
+
 ![Routage](/images/2026-02-10-22-53-23.png)
 
 ![LLDPvsCDP](/images/2026-02-10-22-15-50.png)
@@ -109,7 +121,7 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ---
 
-## ⚙️ Systems Architecture
+## ⚙️ Architecture
 
 ![LinuxFiles](/images/2026-02-10-22-15-14.png)
 
@@ -202,3 +214,9 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
   - **Wireshark** : investigation et forensic réseau.
 
 *Note : C'est le contexte et l'objectif qui définissent le rôle de l'outil !*
+
+---
+
+## 🗂️ Administration Systèmes
+
+![LinuxSysAdmin](/images/2026-02-18-10-43-47.png)
