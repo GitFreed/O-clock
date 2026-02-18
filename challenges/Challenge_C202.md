@@ -171,3 +171,7 @@ Nous retenons **OVHcloud** pour l'hébergement de l'application métier et des d
 
   - *Risque :* L'admin connait Windows Server, pas Linux/Cloud.
   - *Solution :* Lui payer une formation "OVH Public Cloud" et l'infogérance partielle (Support OVH niveau Business) pour les premiers mois.
+
+---
+
+[Correction](./Challenge_C202_correction.pdf)
