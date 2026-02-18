@@ -5268,24 +5268,90 @@ C'est un critère de choix majeur. La philosophie de facturation est radicalemen
 
 ---
 
-### ☁️ C203
+### 🤝 C203. Administration des Suites Collaboratives
 
->
+> **Objectif** : Une suite collaborative est le cœur du travail en entreprise (Mail, Fichiers, Visio, Bureautique). Ce cours compare les trois approches dominantes du marché pour savoir laquelle choisir selon le contexte : le standard Microsoft, le challenger Google, ou l'alternative souveraine Nextcloud.
 
-[Atelier C203](./challenges/Challenge_C203.md) : Atelier déploiement Nextcloud
+#### 1. Qu'est-ce qu'une suite collaborative ?
 
-> 📚 **Ressources** :
->
+C'est un "pack" d'outils Cloud unifié permettant de travailler ensemble. Elle regroupe généralement 5 piliers :
 
-[Retour en haut](#-table-des-matières)
+1. **Email & Calendrier** (ex: Outlook, Gmail).
+2. **Stockage & Partage** (ex: OneDrive, Drive).
+3. **Bureautique** (Traitement de texte, Tableur).
+4. **Communication** (Chat, Visio).
+5. **Gestion des identités** (Annuaire centralisé).
+
+Il existe trois grandes philosophies sur le marché : le **SaaS Propriétaire** (Microsoft, Google) et l'**Open-Source Auto-hébergé** (Nextcloud).
+
+#### 2. Microsoft 365 (L'Omniprésent)
+
+C'est la suite "Entreprise" par excellence, conçue pour s'intégrer dans un écosystème Windows existant.
+
+- **Services Clés** :
+  - **Exchange Online** : Le standard de l'email pro.
+  - **Teams** : Le hub de communication (Chat + Visio).
+  - **SharePoint / OneDrive** : Gestion documentaire et stockage.
+  - **Entra ID (ex-Azure AD)** : La gestion des identités et accès.
+
+- **Philosophie** : **Hybride**. On travaille aussi bien sur le Web que sur des applications lourdes installées sur le PC (Word, Excel).
+
+- **Forces** : Puissance fonctionnelle inégalée, gestion de parc (Intune), adoption massive.
+
+- **Faiblesses** : Usine à gaz (complexe à administrer), coût élevé, dépendance à Windows.
 
 ---
 
-### ☁️ C204
+#### 3. Google Workspace (Le "Cloud Native")
 
->
+C'est le pionnier du 100% Web. Tout se passe dans le navigateur.
 
-[Challenge C204](./challenges/Challenge_C204.md) :
+- **Services Clés** :
+  - **Gmail** : Email.
+  - **Drive** : Stockage.
+  - **Meet** : Visio.
+  - **Docs / Sheets / Slides** : Bureautique collaborative.
+
+- **Philosophie** : **Web First**. La collaboration en temps réel est prioritaire sur la mise en page complexe.
+
+- **Forces** : Simplicité extrême, collaboration fluide (plusieurs curseurs en même temps), administration légère.
+
+- **Faiblesses** : Pas d'applis de bureau, problèmes de compatibilité avec les fichiers Office complexes, gestion moins fine que Microsoft.
+
+#### 4. Nextcloud (L'Alternative Souveraine)
+
+C'est la solution Open-Source pour ceux qui veulent garder le contrôle total de leurs données.
+
+- **Services Clés (Nextcloud Hub)** :
+  - **Files** : Stockage et partage.
+  - **Talk** : Chat et Visio.
+  - **Office** : Intégration avec OnlyOffice ou Collabora pour l'édition.
+
+- **Philosophie** : **Contrôle & Modularité**. C'est vous qui l'hébergez (On-Premise) ou chez un hébergeur de confiance.
+
+- **Forces** : **Souveraineté des données** (RGPD), pas de licence (gratuit si auto-géré), personnalisable.
+
+- **Faiblesses** : Demande des compétences techniques (maintenance serveur, mises à jour, backup), expérience utilisateur un peu moins fluide que les GAFAM.
+
+#### 5. Tableau Comparatif & Choix
+
+Voici les critères pour trancher entre les trois:
+
+| Aspect | 🟦 Microsoft 365 | 🟥🟨🟩 Google Workspace | 🟦 Nextcloud |
+| --- | --- | --- | --- |
+| **Modèle** | SaaS Propriétaire | SaaS Propriétaire | Open-Source / Auto-hébergé |
+| **Bureautique** | Desktop + Web (Puissant) | 100% Web (Fluide) | Web (via intégration) |
+| **Collaboration** | Très bonne | Excellente (Réel) | Bonne |
+| **Admin** | Complexe (Expert requis) | Simple | Technique (SysAdmin requis) |
+| **Souveraineté** | Faible (Cloud Act) | Faible (Cloud Act) | **Forte** (Vos données) |
+
+**Guide de Choix Rapide**:
+
+- Vous avez déjà un parc Windows et besoin d'Excel avancé ? 👉 **Microsoft 365**.
+- Vous êtes une startup, une école ou voulez aller vite sans gérer d'IT ? 👉 **Google Workspace**.
+- Vous gérez des données sensibles (Santé, État) ou refusez le Cloud Act ? 👉 **Nextcloud**.
+
+[Atelier C203](./challenges/Challenge_C203.md) : Atelier déploiement Nextcloud
 
 > 📚 **Ressources** :
 >
