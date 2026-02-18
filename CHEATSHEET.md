@@ -119,6 +119,10 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![setup](/images/2026-02-16-18-05-19.png)
 
+Virtualisation réseau
+
+![virtualisation](/images/2026-02-18-11-10-23.png)
+
 ---
 
 ## ⚙️ Architecture
