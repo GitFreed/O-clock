@@ -5272,7 +5272,7 @@ C'est un critère de choix majeur. La philosophie de facturation est radicalemen
 
 >
 
-[Challenge C203](./challenges/Challenge_C203.md) : Atelier
+[Atelier C203](./challenges/Challenge_C203.md) : Atelier déploiement Nextcloud
 
 > 📚 **Ressources** :
 >
