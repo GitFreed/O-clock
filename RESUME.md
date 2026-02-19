@@ -5360,7 +5360,7 @@ Voici les critères pour trancher entre les trois:
 
 ---
 
-### 🤝 C204. OpenStack
+### 🟥 C204. OpenStack
 
 >
 
@@ -5368,6 +5368,7 @@ Voici les critères pour trancher entre les trois:
 
 > 📚 **Ressources** :
 >
+> - Documentation officielle : <https://docs.openstack.org/devstack/latest/>
 
 [Retour en haut](#-table-des-matières)
 
