@@ -96,14 +96,14 @@ On doit juste ajouter le nom, le type d'image et si on la veut en privé, partag
     └──────────────┘ └─────────────┘ └────────────┘
 ```
 
-Objectif : avoir une DMZ et un LAN qui sortent vers `external`.
-    - Créer `dmz-network` + `dmz-subnet` en `10.0.1.0/24` (DHCP activé)
-    - Créer `lan-network` + `lan-subnet` en `10.0.2.0/24` (DHCP activé)
-    - Créer `router-prod` et le connecter à `external`, `dmz-subnet`, `lan-subnet`
+- Objectif : avoir une DMZ et un LAN qui sortent vers `external`.
+  - Créer `dmz-network` + `dmz-subnet` en `10.0.1.0/24` (DHCP activé)
+  - Créer `lan-network` + `lan-subnet` en `10.0.2.0/24` (DHCP activé)
+  - Créer `router-prod` et le connecter à `external`, `dmz-subnet`, `lan-subnet`
 
-Objectif : un web exposé, un LAN protégé.
-    - `sec-web` : SSH (22), HTTP (80), ICMP depuis `0.0.0.0/0`
-    - `sec-lan` : SSH (22), ICMP depuis `0.0.0.0/0`, MySQL (3306) depuis `10.0.2.0/24`
+- Objectif : un web exposé, un LAN protégé.
+  - `sec-web` : SSH (22), HTTP (80), ICMP depuis `0.0.0.0/0`
+  - `sec-lan` : SSH (22), ICMP depuis `0.0.0.0/0`, MySQL (3306) depuis `10.0.2.0/24`
 
 #### Réseaux
 
@@ -167,15 +167,15 @@ On va aller dans Paires de Clés pour créer notre clé SSH et la télécharger 
 
 Objectif : 3 VMs conformes à l’architecture.
 
-Paramètres communs :
-    - Image : `debian-13.1`
-    - Flavor : `m1.small`
-    - Key pair : `keypair-prod`
+- Paramètres communs :
+  - Image : `debian-13.1`
+  - Flavor : `m1.small`
+  - Key pair : `keypair-prod`
 
-VMs :
-    - `web-server` sur `dmz-network` avec `sec-web` + **floating IP**
-    - `app-server` sur `lan-network` avec `sec-lan`
-    - `db-server` sur `lan-network` avec `sec-lan`
+- VMs :
+  - `web-server` sur `dmz-network` avec `sec-web` + **floating IP**
+  - `app-server` sur `lan-network` avec `sec-lan`
+  - `db-server` sur `lan-network` avec `sec-lan`
 
 On va créer la VM admin dans Instance > Nouvelle Instance
 
@@ -231,9 +231,9 @@ Et nous voilà connecté à la VM debian web-server, on peut ping l'app-server e
 
 ### Volume
 
-Objectif : un volume persistant attaché à `db-server`.
-    - Créer `db-data` (10 GB)
-    - Attacher à `db-server`
+- Objectif : un volume persistant attaché à `db-server`.
+  - Créer `db-data` (10 GB)
+  - Attacher à `db-server`
 
 ![volume](/images/2026-02-19-16-53-08.png)
 

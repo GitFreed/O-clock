@@ -5351,7 +5351,20 @@ Voici les critères pour trancher entre les trois:
 - Vous êtes une startup, une école ou voulez aller vite sans gérer d'IT ? 👉 **Google Workspace**.
 - Vous gérez des données sensibles (Santé, État) ou refusez le Cloud Act ? 👉 **Nextcloud**.
 
-[Atelier C203](./challenges/Challenge_C203.md) : Atelier déploiement Nextcloud
+[Atelier C203](./challenges/Challenge_C203.md) : Déploiement de Nextcloud
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🤝 C204. OpenStack
+
+>
+
+[Atelier C204](./challenges/Challenge_C204.md) : Déploiement d'OpenStack
 
 > 📚 **Ressources** :
 >
