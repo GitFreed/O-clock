@@ -79,6 +79,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![Subnet](/images/2026-02-10-22-14-11.png)
 
+![subneting](/images/2026-02-19-10-09-29.png)
+
 ![wildcard](/images/2026-02-16-18-10-51.png)
 
 ![CAST](/images/2026-02-10-22-45-51.png)
