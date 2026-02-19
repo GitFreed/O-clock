@@ -103,6 +103,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![PAT](/images/2026-02-16-18-21-01.png)
 
+![L2L3](/images/2026-02-19-22-32-12.png)
+
 ![Switchtable](/images/2026-02-10-22-44-20.png)
 
 ![switchport](/images/2026-02-10-22-08-33.png)
@@ -124,6 +126,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 Virtualisation réseau
 
 ![virtualisation](/images/2026-02-18-11-10-23.png)
+
+![cloud](/images/2026-02-19-22-24-04.png)
 
 ---
 
