@@ -5452,6 +5452,15 @@ Installer OpenStack n'est pas un projet du dimanche.
 
 >
 
-### 🛡️ C301. Intro
+### 🛡️ C301. Intro Sécurité
 
 >
+
+[Atelier C301](./challenges/Challenge_C301.md) :
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
