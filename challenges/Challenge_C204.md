@@ -6,7 +6,7 @@
 
 [Challenge C204](https://github.com/O-clock-Aldebaran/SC2E04-Openstack-GitFreed)
 
-[Cours C204](/RESUME.md#️-c204)
+[Cours C204](/RESUME.md#-c204-openstack--le-cloud-privé)
 
 > - Documentation officielle : <https://docs.openstack.org/devstack/latest/>
 
