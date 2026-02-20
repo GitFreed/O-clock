@@ -150,4 +150,4 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 ---
 
-[TP Packet Tracer](/NetSec-Portfolio/ressources/TP_CiscoPacketTracer2SN.pdf)
+[TP Packet Tracer](../ressources/TP_CiscoPacketTracer2SN.pdf)
