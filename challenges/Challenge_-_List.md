@@ -147,3 +147,7 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 [Challenge C204](./Challenge_C204.md) : Déploiement Openstack
 
 [Challenge C301](./Challenge_C301.md) :
+
+---
+
+TP Packet Tracer [](./ressources/TP_CiscoPacketTracer2SN.pdf)
