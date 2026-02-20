@@ -121,7 +121,8 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 - [C201. Introduction au Cloud computing](#️-c201-introduction-au-cloud-computing)
 - [C202. Les fournisseurs Cloud (Providers)](#-c202-les-fournisseurs-cloud-providers)
 - [C203. Administration des Suites Collaboratives](#-c203-administration-des-suites-collaboratives)
-- [C204. OpenStack](#-c204-openstack)
+- [C204. OpenStack](#-c204-openstack--le-cloud-privé)
+- [Fin Saison C2 : QCM](#️-fin-saison-c2-cloud)
 
 ### [Saison C3. Sécurité système & réseau 🛡️](.)
 
@@ -5364,9 +5365,68 @@ Voici les critères pour trancher entre les trois:
 
 ---
 
-### 🟥 C204. OpenStack
+### 🟥 C204. OpenStack : Le Cloud Privé
 
->
+> **Objectif** : Et si vous ne vouliez pas confier vos données à AWS ou Microsoft ? OpenStack est la solution open-source de référence pour transformer vos propres serveurs physiques en une véritable infrastructure Cloud (IaaS). C'est le "Faites-le vous-même" du Cloud Computing.
+
+#### 1. Qu'est-ce qu'OpenStack ?
+
+Créé en 2010 par Rackspace et la NASA, OpenStack est un ensemble de logiciels open-source permettant de déployer et gérer des clouds privés (et publics).
+
+- **L'analogie parfaite** : Si AWS/Azure est comme un *iPhone* (clé en main, écosystème fermé, facile mais verrouillé), OpenStack est comme *Android* (open-source, hautement personnalisable, mais demande plus de maîtrise).
+- **Cas d'usage** : Idéal pour les grandes entreprises (télécoms, banques, recherche comme le CERN) ou les fournisseurs de Cloud européens (OVHcloud) qui exigent une souveraineté totale et un contrôle absolu de leurs données.
+
+#### 2. OpenStack vs Cloud Public (AWS/Azure)
+
+Pourquoi s'embêter à créer son propre Cloud ? Le choix dépend de vos priorités (contrôle vs agilité).
+
+| Critère | ☁️ Cloud Public (AWS, Azure) | 🟥 Cloud Privé (OpenStack) |
+| --- | --- | --- |
+| **Investissement initial** | Aucun (Pay-as-you-go) | **Élevé** (Achat des serveurs physiques) |
+| **Coût mensuel** | Variable (selon l'usage) | **Fixe** (Amortissement du matériel) |
+| **Contrôle & Souveraineté** | Limité (Cloud Act, boîte noire) | **Total** (Vous maîtrisez l'infra de A à Z) |
+| **Scalabilité** | Quasi infinie et immédiate | Limitée à votre parc matériel |
+| **Mise sur le marché** | Immédiate | Plusieurs mois (Conception/Installation) |
+
+#### 3. Les Services Proposés (L'Architecture Modulaire)
+
+OpenStack n'est pas un bloc monolithique, c'est un assemblage d'une trentaine de projets indépendants. On installe uniquement ce dont on a besoin.
+
+- **Les Services "Core" (Les Fondations Obligatoires)**
+
+  - **Keystone** (Identité) : Le vigile. Il gère l'authentification, les permissions (rôles) et le catalogue de tous les autres services.
+  - **Nova** (Compute) : Le moteur. Il provisionne et gère les machines virtuelles (VMs).
+  - **Neutron** (Réseau) : Le routeur. Il gère le réseau virtuel (SDN), les adresses IP, les pare-feux.
+  - **Glance** (Images) : La bibliothèque. Il stocke les images des systèmes d'exploitation (Ubuntu, Windows) pour démarrer les VMs.
+
+- **Les Services "Standards" (Très Courants)**
+
+  - **Cinder** (Block Storage) : Fournit des disques durs virtuels persistants à attacher aux VMs.
+  - **Swift** (Object Storage) : Stockage de fichiers en vrac (API REST, idéal pour les backups).
+  - **Horizon** (Dashboard) : L'interface graphique Web pour l'administrateur et les utilisateurs.
+
+- **L'Équivalence avec AWS**
+Pour bien comprendre, voici le parallèle avec le leader du marché :
+
+  - *Nova* = EC2 (VMs)
+  - *Swift* = S3 (Stockage objet)
+  - *Cinder* = EBS (Disques virtuels)
+  - *Keystone* = IAM (Identités)
+
+> ⚠️ **Limites** : OpenStack est un pur outil **IaaS**. Il ne fait pas de *Serverless* natif ni de services managés de haut niveau (comme le Machine Learning clé en main). Pour cela, on installe généralement un cluster Kubernetes par-dessus l'infrastructure OpenStack.
+
+#### 4. Installation et Configuration
+
+Installer OpenStack n'est pas un projet du dimanche.
+
+- **Complexité** : La configuration est très complexe car il faut faire communiquer tous les modules (Nova, Neutron, Keystone...) entre eux de manière sécurisée et résiliente.
+- **Compétences** : Cela nécessite des équipes très matures avec des compétences rares combinant système (Linux), réseau avancé, et automatisation.
+
+💡 **En résumé**
+
+- **OpenStack** = La référence Open-Source pour construire un Cloud Privé **IaaS**.
+- **Souveraineté & Coûts** : Parfait pour s'affranchir des géants américains (pas de lock-in) et lisser ses coûts sur le long terme.
+- **Modulaire** : Apprenez par cœur les 4 piliers "Core" : **Keystone** (Auth), **Nova** (Serveur), **Neutron** (Réseau), **Glance** (Images OS).
 
 [Atelier C204](./challenges/Challenge_C204.md) : Déploiement d'OpenStack
 
