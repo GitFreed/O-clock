@@ -44,10 +44,18 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ---
 
-> Sites regroupant de nombreuses Cheatsheets
+- Sites regroupant de nombreuses Cheatsheets
 >
 > - <https://cheatsheets.zip/>
 > - <https://cheatography.com/>
+
+- Sites de modules e-learning et certifications
+>
+> - Cisco Networking Academy : <https://www.netacad.com/catalogs/learn>
+> - Microsoft Learn : <https://learn.microsoft.com/fr-fr/training/browse/?source=learn>
+> - AWS Academy : <https://www.awsacademy.com/>
+> - Try Hack Me : <https://tryhackme.com/>
+> - Hack the Box : <https://www.hackthebox.com/>
 
 ---
 

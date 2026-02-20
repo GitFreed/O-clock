@@ -5440,9 +5440,9 @@ Installer OpenStack n'est pas un projet du dimanche.
 
 ### ☁️ Fin Saison C2. Cloud
 
-[QCM Saison C2](https://forms.gle/)
+[QCM Saison C2](https://docs.google.com/forms/d/e/1FAIpQLSdt_Z4ciquREQGyfdxNK4fveMb0Bl-Suz3_q2ww0YlW6GbJFw/viewform?pli=1)
 
-![Résultat QCM](/images/)
+![Résultat QCM](/images/2026-02-20-11-54-02.png)
 
 [Retour en haut](#-table-des-matières)
 
