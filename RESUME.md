@@ -124,9 +124,9 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 - [C204. OpenStack](#-c204-openstack--le-cloud-privé)
 - [Fin Saison C2 : QCM](#️-fin-saison-c2-cloud)
 
-### [Saison C3. Sécurité système & réseau 🛡️](.)
+### [Saison C3. Sécurité système & réseau 🛡️](#️-saison-c3-sécurité-système--réseau)
 
-- [C301. Introduction Sécurité](.)
+- [C301. Introduction Sécurité](#️-c301-introduction--gouvernance-outils--bases-réseau)
 
 ### [Saison C4. Conteneurs et orchestration 📦](.)
 
@@ -5551,11 +5551,24 @@ ip routing
 
 ```
 
-[Atelier C301](./challenges/Challenge_C301.md) :
+[Challenge C301](./challenges/Challenge_C301.md) :
 
 > 📚 **Ressources** :
 >
 > - Listes de contrôle d'accès : <https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🛡️ C302
+
+>
+
+[Challenge C302](./challenges/Challenge_C302.md) :
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
