@@ -259,10 +259,6 @@ Read-Host "Appuyez sur Entree pour fermer..."
 
 ### Update
 
-* Ajout de listes de blocage
-
-![lists](/images/2026-02-23-23-56-13.png)
-
 * Moyenne des blocages sur une semaine
 
-![blocked](/images/2026-02-23-23-56-45.png)
+![blocked](/images/2026-02-24-00-19-54.png)
