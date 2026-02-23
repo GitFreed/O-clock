@@ -5450,16 +5450,112 @@ Installer OpenStack n'est pas un projet du dimanche.
 
 ## **🛡️ Saison C3. Sécurité système & réseau**
 
->
+> **Objectif de la saison** : Passer du principe "ça marche" au principe "c'est sécurisé". Jusqu'ici, on a construit les murs et posé les portes de l'infrastructure. Maintenant, on va installer les serrures, vérifier qui possède les clés et surveiller ce qui se passe.
 
-### 🛡️ C301. Intro Sécurité
+### 🛡️ C301. Introduction : Gouvernance, Outils & Bases Réseau
 
->
+> **Objectif du cours** : Poser le cadre. La sécurité n'est pas qu'une affaire de configurations techniques ; c'est d'abord une question de règles (gouvernance), de surveillance (SOC/SIEM) et de maîtrise des vulnérabilités locales (Niveau 2).
+
+#### 1. Gouvernance et Normes : Le plan de l'architecte
+
+La sécurité technique sans cadre revient à sécuriser au hasard, sans savoir "jusqu'où" aller ni pouvoir justifier ses choix.
+
+- **Le rôle de la gouvernance** : C'est ce qui donne la direction. Elle permet de définir *qui* décide, *quoi* protéger en priorité et *comment* on vérifie que c'est efficace.
+- **La traduction sur le terrain** : C'est grâce à la gouvernance qu'un professionnel des réseaux peut justifier la création d'une règle stricte de pare-feu, prioriser le déploiement de patchs ou structurer un plan d'action précis.
+- **Les normes de référence** :
+  - *ISO 27001* : Le standard international pour le management de la sécurité de l'information.
+  - *PCI DSS* : Standard pour la protection des données bancaires.
+  - *RGPD / HIPAA* : Protection des données personnelles et de santé.
+
+#### 2. L'Écosystème de Défense (Vocabulaire et Acronymes)
+
+En cybersécurité, on part du principe qu'un incident finira par arriver : la question n'est pas "si", mais "quand". Il faut donc détecter vite et réagir proprement.
+
+- **SOC (Security Operations Center)** : C'est l'équipe de surveillance (les "gardiens"), humaine et technique, qui analyse les alertes 24/7.
+- **SIEM (Security Information and Event Management)** : Le "cerveau" central. C'est l'outil qui collecte, centralise et analyse tous les logs (des routeurs, switchs, serveurs) pour détecter des anomalies de comportement.
+- **CTI (Cyber Threat Intelligence)** : Le renseignement sur les menaces. Permet de connaître les techniques des attaquants pour mieux paramétrer les défenses.
+- **EDR / XDR (Endpoint / Extended Detection and Response)** : Des agents de sécurité très avancés (bien plus que de simples antivirus) qui surveillent les comportements suspects sur les machines (EDR) et sur l'ensemble du réseau/cloud (XDR).
+
+#### 3. Les Attaques Réseau de Niveau 2 (Couche Liaison)
+
+C'est le cœur du champ de bataille pour l'infrastructure locale. Sécuriser les équipements de cœur de réseau est primordial pour éviter ces compromissions.
+
+- **ARP Spoofing / Poisoning (Empoisonnement ARP)** :
+  - *Le principe* : L'attaquant envoie de faux messages ARP sur le réseau local pour associer son adresse MAC à l'adresse IP d'un autre équipement légitime (très souvent la passerelle par défaut/le routeur).
+  - *L'impact* : Le trafic de la victime est redirigé vers l'attaquant, permettant une attaque de type de l'Homme du Milieu (Man-in-the-Middle) pour intercepter, modifier ou bloquer les communications.
+
+- **VLAN Hopping (Saut de VLAN)** :
+  - *Le principe* : Une technique permettant à un attaquant de forcer l'envoi de paquets vers un VLAN auquel il ne devrait pas avoir accès.
+  - *Les méthodes* : Cela se fait souvent en exploitant des ports switch mal configurés (qui négocient automatiquement un lien Trunk via le protocole DTP) ou via l'attaque du *Double-Tagging* (ajout de deux en-têtes 802.1Q).
+
+### 🛠️ Ressources : Configurations Réseau
+
+Pour se prémunir contre les attaques de Niveau 2 et segmenter proprement le trafic, une configuration stricte des commutateurs et du routage Inter-VLAN (Router-on-a-Stick) est vitale. Voici les commandes issues de la démonstration :
+
+- **Configuration du Switch (Création VLANs et assignation des ports Access/Trunk)**
+
+```ios
+enable
+configure terminal
+
+! Création des VLANs
+vlan 10
+ name INFORMATIQUE
+ exit
+
+vlan 20
+ name COMPTABILITE
+ exit
+
+! Configuration des ports d'accès (utilisateurs finaux)
+interface range fa0/1-2
+ switchport mode access
+ switchport access vlan 10
+ exit
+
+interface range fa0/3-4
+ switchport mode access
+ switchport access vlan 20
+ exit
+
+! Configuration du port Trunk (vers le routeur ou un autre switch)
+interface fa0/24
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40,99 
+
+```
+
+- **Configuration du Routeur (Routage Inter-VLAN / Router-on-a-Stick)**
+
+```ios
+enable
+configure terminal
+
+! Activation de l'interface physique
+interface g0/0
+ no shutdown
+
+! Configuration des sous-interfaces pour chaque VLAN
+interface g0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.254 255.255.255.0
+ exit
+
+interface g0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.254 255.255.255.0
+ exit
+
+! Activation globale du routage IP (si nécessaire sur un commutateur L3, "ip routing")
+ip routing
+
+```
 
 [Atelier C301](./challenges/Challenge_C301.md) :
 
 > 📚 **Ressources** :
 >
+> - Listes de contrôle d'accès : <https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/>
 
 [Retour en haut](#-table-des-matières)
 
