@@ -5488,7 +5488,7 @@ C'est le cœur du champ de bataille pour l'infrastructure locale. Sécuriser les
   - *Le principe* : Une technique permettant à un attaquant de forcer l'envoi de paquets vers un VLAN auquel il ne devrait pas avoir accès.
   - *Les méthodes* : Cela se fait souvent en exploitant des ports switch mal configurés (qui négocient automatiquement un lien Trunk via le protocole DTP) ou via l'attaque du *Double-Tagging* (ajout de deux en-têtes 802.1Q).
 
-### 🛠️ Ressources : Configurations Réseau
+#### 🛠️ Ressources : Configurations Réseau
 
 Pour se prémunir contre les attaques de Niveau 2 et segmenter proprement le trafic, une configuration stricte des commutateurs et du routage Inter-VLAN (Router-on-a-Stick) est vitale. Voici les commandes issues de la démonstration :
 
