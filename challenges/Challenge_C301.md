@@ -6,7 +6,7 @@
 
 [Challenge C301](https://github.com/O-clock-Aldebaran/SC03E01-VLAN)
 
-[Cours C301.](/RESUME.md#️-c301)
+[Cours C301.](/RESUME.md#️-c301-introduction--gouvernance-outils--bases-réseau)
 
 > - ACL : <https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/>
 
