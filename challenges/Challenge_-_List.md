@@ -146,7 +146,7 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge C204](./Challenge_C204.md) : Déploiement Openstack
 
-[Challenge C301](./Challenge_C301.md) :
+[Challenge C301](./Challenge_C301.md) : Segmentation VLAN & Contrôle d'accès (ACL)
 
 ---
 
