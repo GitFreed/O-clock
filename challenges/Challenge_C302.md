@@ -37,7 +37,7 @@ Un ping entre les 2 pour voir si tout est fonctionnel et on peut faire la suite
 
 ![ping](/images/2026-02-24-17-31-56.png)
 
-Les 2 VM ayant des erreur de résolutions DNS lors d'apt upgrade on va edit le fichier de résolution et ajouter les DNS
+Les 2 VM ayant des erreurs de résolutions DNS lors d'apt upgrade on va edit le fichier de résolutions et rajouter les DNS
 
 `nano /etc/resolv.conf`
 
