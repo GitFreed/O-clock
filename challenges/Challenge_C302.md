@@ -12,32 +12,73 @@
 
 ## Préparation de l’environnement
 
-### LDAP
+### Création des 2 serveurs
 
-Installation du serveur ldap
+On installe 2 machines virtuelles, Debian 13 pour le Serveur LDAP et le Serveur RADIUS, puis on les passe en IP fixe
 
-sudo apt update
-sudo apt install slapd ldap-utils -y
-sudo dpkg-reconfigure slapd
+![radius](/images/2026-02-24-17-19-32.png)
 
-OUI pour configurer le serveur maintenant.
-Nom de domaine DNS : par exemple example.com
-Nom de l’organisation : par exemple Example Inc.
-Mot de passe admin : choisissez un mot de passe fort.
-Base de données : généralement MDB (default).
-Supprimer la base existante : NON si vous voulez garder d’anciennes données.
+![IPradius](/images/2026-02-24-17-29-10.png)
 
-sudo systemctl status slapd
-ldapsearch -x -LLL -H ldap:// -b dc=example,dc=com
+![ldap](/images/2026-02-24-17-19-44.png)
 
-CREER UNE "OU" (nano base_users.ldif)
+![IPldap](/images/2026-02-24-17-27-05.png)
+
+Un ping entre les 2 pour voir si tout est fonctionnel et on peut faire la suite
+
+![ping](/images/2026-02-24-17-31-56.png)
+
+### Installation de LDAP
+
+- Installation du moteur ldap
+
+`sudo apt install slapd ldap-utils -y`
+
+- Configuration du domaine
+
+`sudo dpkg-reconfigure slapd`
+
+      Omettre de configurer le serveur maintenant : Non
+      Nom de domaine DNS : example.com
+      Nom de l’organisation : Example Inc.
+      Mot de passe admin : un mot de passe fort.
+      Base de données : généralement MDB (default).
+      Supprimer la base existante : Non
+      Déplacer l'ancienne base : Oui
+
+`sudo systemctl status slapd`
+
+![ok](/images/2026-02-24-17-43-12.png)
+
+Commande de test pour interroger l'annuaire
+
+`ldapsearch -x -LLL -H ldap:// -b dc=example,dc=com`
+
+![search](/images/2026-02-24-17-44-41.png)
+
+### Créer une "OU"
+
+`nano base_users.ldif`
+
+```sh
 dn: ou=users,dc=example,dc=com
 objectClass: organizationalUnit
 ou: users
+```
 
-sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f base_users.ldif
+On injecte ce fichier dans la base LDAP
 
-CREER UN "USER" (nano newuser.ldif)
+`sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f base_users.ldif`
+
+### Créer un "USER"
+
+Hash du mot de passe avec `slappasswd`
+
+![hash](/images/2026-02-24-17-55-43.png)
+
+Puis `nano newuser.ldif`
+
+```sh
 dn: uid=jdupont,ou=users,dc=example,dc=com
 objectClass: inetOrgPerson
 objectClass: posixAccount
@@ -49,21 +90,26 @@ cn: Jean Dupont
 displayName: Jean Dupont
 uidNumber: 1001
 gidNumber: 1001
-userPassword: motdepasse
+userPassword: {SSHA}le_hash_ici
 loginShell: /bin/bash
 homeDirectory: /home/jdupont
+```
 
-slappasswd (puis remplacer le mot de passe dans le fichier)
-sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f newuser.ldif
+On injecte l'utilisateur dans la base
 
-TEST LOCAL
+`sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f newuser.ldif`
+
+![inject](/images/2026-02-24-18-00-05.png)
+
+### Le test de validation
+
 ldapsearch -x -LLL -b dc=example,dc=com uid=jdupont
 
-TEST DEPUIS LA MACHINE RADIUS (penser à remplacer l'IP)
-ldapsearch -x -H ldap://10.0.0.80 -b dc=example,dc=com
-ldapsearch -x -H ldap://10.0.0.80 -D "cn=admin,dc=example,dc=com" -W -b dc=example,dc=com
+![ok](/images/2026-02-24-18-01-25.png)
 
 ## Installer le serveur RADIUS
+
+
 
 ## Connecter RADIUS à LDAP (ou AD)
 
