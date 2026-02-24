@@ -5551,7 +5551,27 @@ ip routing
 
 ```
 
-#### 🔐 Les Listes de Contrôle d'Accès (ACL) Cisco
+[Challenge C301](./challenges/Challenge_C301.md) : Segmentation VLAN & Contrôle d'accès (ACL)
+
+> 📚 **Ressources** :
+>
+> - Revoir le cours réseau A309 : [VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
+> - Listes de contrôle d'accès : <https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🔑 C302. Contrôle d'accès et Sécurité Sans-Fil (ACL, NAC, WiFi)
+
+> **Objectif** : Sécuriser les accès au réseau, qu'ils soient filaires ou sans-fil. On apprend ici à filtrer le trafic (ACL), à authentifier les machines avant de les laisser entrer sur le réseau (802.1x / RADIUS) et à maîtriser l'évolution des chiffrements Wi-Fi.
+
+#### 1. Le Filtrage Réseau : Les ACL (Access Control Lists)
+
+Les ACL sont la première ligne de défense sur un routeur ou un switch de niveau 3. Elles filtrent le trafic entrant ou sortant selon des règles définies.
+
+- **ACL Standards** : Elles filtrent uniquement en fonction de l'**adresse IP source**. Elles sont simples mais peu précises (généralement placées le plus près possible de la destination).
+- **ACL Étendues** : Elles filtrent en fonction de l'**IP source, l'IP de destination, le protocole (TCP/UDP) et le numéro de port**. Elles permettent un contrôle granulaire (généralement placées le plus près possible de la source).
 
 Une ACL est une série de règles permettant de **filtrer le trafic** réseau en fonction de critères précis. Elles sont lues de haut en bas, et la première règle correspondante est appliquée.
 
@@ -5596,26 +5616,104 @@ Une ACL est une série de règles permettant de **filtrer le trafic** réseau en
   - `show access-lists` : Affiche les règles et le nombre de paquets ayant matché chaque ligne.
   - `show ip interface <nom>` : Permet de voir quelle ACL est appliquée sur une interface spécifique.
   - `clear access-list counters` : Remet les compteurs de "matches" à zéro (utile pour de nouveaux tests).
+  
+#### 2. NAC et 802.1x : Le Contrôle d'Accès Réseau
 
-[Challenge C301](./challenges/Challenge_C301.md) : Segmentation VLAN & Contrôle d'accès (ACL)
+Le **NAC (Network Access Control)** est une approche globale pour sécuriser l'accès au réseau. Le protocole phare pour cela est le **802.1x**.
+
+- **Principe du 802.1x** : Un appareil (PC) se branche sur une prise réseau (Switch). Le port du switch reste bloqué tant que l'utilisateur ou la machine ne s'est pas authentifié avec succès.
+- **Les 3 acteurs du 802.1x** :
+
+  1. **Le Supplicant** : Le client (le PC) qui demande l'accès.
+  2. **L'Authenticator** : Le Switch (ou la borne Wi-Fi) qui bloque le port et relaye la demande.
+  3. **Le Serveur d'Authentification (RADIUS)** : Le serveur qui vérifie les identifiants (souvent en interrogeant un annuaire comme **LDAP** ou Active Directory) et donne le feu vert au Switch.
+
+#### 3. Sécurité Wi-Fi : Du WEP au WPA3
+
+Les réseaux sans-fil sont particulièrement vulnérables car les ondes traversent les murs. Une mauvaise sécurité peut entraîner des intrusions, des vols de données ou le piratage d'appareils.
+
+- **Le Cadre Légal** : Attention, l'interception de communications et l'accès frauduleux à un système sont des délits pénaux (Article 323-1 en France : jusqu'à 2 ans de prison et 60 000€ d'amende). La démo en labo n'est pas une autorisation réelle.
+- **L'évolution des protocoles** :
+  - **WEP et WPA1** : Obsolètes et vulnérables, à fuir absolument.
+  - **WPA2** : Reste une base très solide s'il est bien configuré (avec un mot de passe fort).
+  - **WPA3** : La dernière évolution logique. Il protège beaucoup mieux contre les attaques par force brute (brute-force) et améliore le chiffrement sur les réseaux publics.
+
+- **Personal vs Enterprise** :
+  - *Personal (PSK)* : Utilise un mot de passe partagé. Idéal pour les petits réseaux (WPA2/WPA3 Personal).
+  - *Enterprise (802.1x/RADIUS)* : Chaque utilisateur a ses propres identifiants. Indispensable en PME/Entreprise (WPA2/WPA3 Enterprise).
+
+#### 🛠️ Ressources & Démos Techniques
+
+Voici les configurations et commandes tirées de tes notes de cours pour mettre en pratique ces concepts.
+
+##### Installation d'un Annuaire LDAP (Base pour l'authentification)
+
+L'annuaire LDAP va stocker nos utilisateurs.
+
+```bash
+sudo apt update
+sudo apt install slapd ldap-utils -y
+sudo dpkg-reconfigure slapd # Configurer le domaine (ex: example.com), MDB, mot de passe admin
+
+# Création d'une Unité Organisationnelle (OU)
+nano base_users.ldif
+dn: ou=users,dc=example,dc=com
+objectClass: organizationalUnit
+ou: users
+
+sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f base_users.ldif
+
+```
+
+##### Configuration 802.1x / RADIUS (Cisco)
+
+Le Switch (192.168.1.1) interroge le serveur RADIUS (192.168.1.2) pour authentifier les PC.
+
+```ios
+hostname SW1
+aaa new-model
+radius-server host 192.168.1.2 auth-port 1645 key password
+aaa authentication dot1x default group radius 
+dot1x system-auth-control
+
+! Configuration d'un port d'accès authentifié
+interface FastEthernet0/1
+ description PC-1
+ switchport mode access
+ authentication port-control auto
+ dot1x pae authenticator
+
+```
+
+##### Démo : Attaque sur un réseau Wi-Fi WEP
+
+L'objectif est d'écouter le trafic (sniffing) pour capturer les paquets et casser la clé avec la suite `aircrack-ng`.
+
+```bash
+# 1. Passer la carte Wi-Fi en mode écoute (Monitor)
+ifconfig wlx002401a26b93 down
+iwconfig wlx002401a26b93 mode monitor
+ifconfig wlx002401a26b93 up
+
+# 2. Scanner les réseaux WEP environnants
+airodump-ng --encrypt wep wlx002401a26b93
+
+# 3. Cibler un réseau précis (BSSID) sur son canal (ex: canal 3) et enregistrer le trafic
+airodump-ng -c 3 --bssid A2:63:91:9E:4D:41 -w /root/wep_simple wlx002401a26b93
+
+# 4. Craquer la clé WEP à partir du fichier capturé (.cap)
+aircrack-ng wep_simple-01.cap
+
+# (Variante pour le WPA2 avec un dictionnaire de mots de passe comme rockyou)
+aircrack-ng wpa_handshake.cap -w dictionary.txt
+
+```
+
+[Challenge C302](./challenges/Challenge_C302.md) : Authentification réseau avec RADIUS et LDAP / AD
 
 > 📚 **Ressources** :
 >
-> - Revoir le cours réseau A309 : [VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
-> - Listes de contrôle d'accès : <https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/>
-
-[Retour en haut](#-table-des-matières)
-
----
-
-### 🛡️ C302
-
->
-
-[Challenge C302](./challenges/Challenge_C302.md) :
-
-> 📚 **Ressources** :
->
+> - freeRadius documentation : <https://www.freeradius.org/documentation/>
 
 [Retour en haut](#-table-des-matières)
 
