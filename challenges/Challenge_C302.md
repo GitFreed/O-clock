@@ -2,20 +2,17 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge]()
+![Challenge](/images/2026-02-24-15-57-51.png)
 
 [Challenge C302](https://github.com/O-clock-Aldebaran/SC3E02-radius)
 
-[Cours C302.](/RESUME.md#️-c302)
+[Cours C302.](/RESUME.md#-c302-contrôle-daccès-et-sécurité-sans-fil-acl-nac-wifi)
 
 ---
 
-## 
+## Préparation de l’environnement
 
-
-
-
-### LDAP 
+### LDAP
 
 Installation du serveur ldap
 
@@ -65,3 +62,13 @@ ldapsearch -x -LLL -b dc=example,dc=com uid=jdupont
 TEST DEPUIS LA MACHINE RADIUS (penser à remplacer l'IP)
 ldapsearch -x -H ldap://10.0.0.80 -b dc=example,dc=com
 ldapsearch -x -H ldap://10.0.0.80 -D "cn=admin,dc=example,dc=com" -W -b dc=example,dc=com
+
+## Installer le serveur RADIUS
+
+## Connecter RADIUS à LDAP (ou AD)
+
+## Configurer le client RADIUS
+
+## Tester l’authentification
+
+## Documentation
