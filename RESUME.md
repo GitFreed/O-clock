@@ -5601,6 +5601,7 @@ ip routing
 
 > 📚 **Ressources** :
 >
+> - Revoir le cours réseau A309 : [VLANs, L3 switchs, WiFi & IPv6](#-a309-vlans-l3-switchs-wifi--ipv6)
 > - Listes de contrôle d'accès : <https://www.it-connect.fr/les-listes-de-controle-dacces-acl-avec-cisco/>
 
 [Retour en haut](#-table-des-matières)
