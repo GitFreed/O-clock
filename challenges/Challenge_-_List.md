@@ -148,6 +148,8 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge C301](./Challenge_C301.md) : Segmentation VLAN & Contrôle d'accès (ACL)
 
+[Challenge C301](./Challenge_C302.md) : Authentification réseau avec RADIUS et LDAP / AD
+
 ---
 
 [TP Packet Tracer](../ressources/TP_CiscoPacketTracer2SN.pdf)
