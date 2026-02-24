@@ -12,9 +12,18 @@
 
 ## Préparation de l’environnement
 
+### 🗺️ Topologie du Labo (LAN : `10.0.0.0/24`)
+
+| Machine | IP | Rôle Réseau | Service & Port |
+| --- | --- | --- | --- |
+| **pfSense** | `10.0.0.1` | Passerelle & Client NAS | Initiateur AAA |
+| **srv-radius** | `10.0.0.81` | Routeur d'authentification | FreeRADIUS (**UDP 1812**) |
+| **srv-ldap** | `10.0.0.82` | Backend d'annuaire | OpenLDAP (**TCP 389**) |
+| **Lubuntu** | `DHCP` | Poste de management | Client SSH / Web |
+
 ### Création des 2 serveurs
 
-On installe 2 machines virtuelles, Debian 13 pour le Serveur LDAP et le Serveur RADIUS, puis on les passe en IP fixe
+On installe 2 machines virtuelles Debian (debian-13.1.0-amd64-netinst.iso), pour le Serveur LDAP et le Serveur RADIUS, puis on les passe en IP statique
 
 ![radius](/images/2026-02-24-17-19-32.png)
 
@@ -213,3 +222,11 @@ Pour tester et valider on va dans la partie Diagnostics de pfSense
 ![ok](/images/2026-02-24-19-01-00.png)
 
 L'architecture pfSense -> RADIUS -> LDAP est maintenant 100% fonctionnelle et validée en conditions réelles ✅
+
+### 🚦 Le routage des trames (Résumé Couche 4/7)
+
+1. **pfSense (`10.0.0.1`)** reçoit une tentative de connexion.
+2. Il encapsule la requête (`Access-Request`) et l'envoie à **`10.0.0.81:1812`**.
+3. Le **RADIUS** vérifie l'ACL (réseau autorisé) et route la vérification vers le Next Hop LDAP **`10.0.0.82:389`**.
+4. Le **LDAP** confirme la validité du mot de passe.
+5. Le **RADIUS** renvoie l'`Access-Accept` final au **pfSense** pour ouvrir le port ou le tunnel.
