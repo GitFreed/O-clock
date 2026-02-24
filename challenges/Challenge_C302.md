@@ -28,6 +28,13 @@ Un ping entre les 2 pour voir si tout est fonctionnel et on peut faire la suite
 
 ![ping](/images/2026-02-24-17-31-56.png)
 
+Les 2 VM ayant des erreur de résolutions DNS lors d'apt upgrade on va edit le fichier de résolution et ajouter les DNS
+
+`nano /etc/resolv.conf`
+
+      nameserver 10.0.0.1
+      nameserver 8.8.8.8
+
 ### Installation de LDAP
 
 - Installation du moteur ldap
@@ -109,12 +116,100 @@ ldapsearch -x -LLL -b dc=example,dc=com uid=jdupont
 
 ## Installer le serveur RADIUS
 
+> Il faut voir FreeRADIUS non pas comme un lourd serveur d'application, mais comme un simple "routeur de paquets AAA" (Authentication, Authorization, Accounting). Son seul travail sera de recevoir des trames sur le port UDP 1812, de lire ce qu'il y a dedans, et de router cette demande vers l'annuaire LDAP (10.0.0.82) pour vérifier si les credentials sont bons.
 
+On installe le moteur FreeRADIUS, son module LDAP, et les outils de test réseau associés
+
+```sh
+apt update
+apt install freeradius freeradius-ldap freeradius-utils -y
+```
+
+![ok](/images/2026-02-24-18-09-54.png)
 
 ## Connecter RADIUS à LDAP (ou AD)
 
+Activer le module LDAP (Créer la route vers le backend)
+
+Par défaut, FreeRADIUS possède de nombreux modules désactivés. On va "allumer" l'interface vers LDAP en créant un lien symbolique
+
+`ln -s /etc/freeradius/3.0/mods-available/ldap /etc/freeradius/3.0/mods-enabled/`
+
+Configurer le "Next Hop" (Le serveur LDAP) :
+
+On va maintenant indiquer l'adresse IP de destination et les identifiants pour interroger la base.
+
+`nano /etc/freeradius/3.0/mods-enabled/ldap`
+
+![ldap](/images/2026-02-24-18-19-04.png)
+
+Insérer le LDAP dans le flux AAA
+
+Il faut maintenant dire au moteur principal d'utiliser cette nouvelle route LDAP lorsqu'une requête arrive sur le port UDP 1812
+
+`nano /etc/freeradius/3.0/sites-enabled/default`
+
+Section authorize { ... } on décommente devant -ldap
+
+authenticate { ... } on décommente devant ldap
+
+![ldap](/images/2026-02-24-18-21-47.png)
+
 ## Configurer le client RADIUS
+
+Par défaut, FreeRADIUS rejette silencieusement les trames UDP 1812 provenant d'IP inconnues. Il faut "déclarer" qui a le droit de l'interroger
+
+Déclarer le réseau autorisé (Le Client)
+
+`nano /etc/freeradius/3.0/clients.conf`
+
+Tout en bas on va ajouter :
+
+```sh
+client lab_pfsense {
+    ipaddr = 10.0.0.0/24
+    secret = pfsense_secret
+}
+```
+
+ipaddr = 10.0.0.0/24 : On autorise tout le LAN Segment (dont notre pfSense)
+
+secret = pfsense_secret : C'est le mot de passe réseau (shared secret) qui chiffrera les échanges RADIUS.
+
+On reboot `systemctl restart freeradius`
 
 ## Tester l’authentification
 
-## Documentation
+On va simuler la requête que ferait le routeur pfSense ou le switch pour vérifier que toute la chaîne (Client -> RADIUS -> LDAP) fonctionne
+
+`radtest jdupont LE_MOT_DE_PASSE 10.0.0.81 0 pfsense_secret`
+
+![test](/images/2026-02-24-18-36-56.png)
+
+Succès ✅
+
+- L'outil de test a généré une trame Access-Request chiffrée grâce à la secret partagé pfsense_secret.
+
+- FreeRADIUS l'a interceptée sur le port UDP 1812, a identifié que le client était autorisé, et a routé la demande d'authentification vers ton annuaire en suivant le "Next Hop" LDAP.
+
+- Le serveur LDAP (10.0.0.82) a reçu la requête, a interrogé sa base de données pour trouver l'utilisateur jdupont, et a validé que le mot de passe correspondait bien à "XXX".
+
+- Le LDAP a donné son feu vert, et FreeRADIUS a encapsulé le tout pour te renvoyer cet Access-Accept.
+
+## Déclarer le serveur RADIUS dans pfSense
+
+pfSense va maintenant pouvoir déléguer la vérification des identifiants à ton "routeur AAA" (FreeRADIUS), qui lui-même ira interroger l'annuaire
+
+On va ajouter un serveur d'authentification
+
+![auth](/images/2026-02-24-18-49-35.png)
+
+![auth](/images/2026-02-24-18-57-21.png)
+
+Pour tester et valider on va dans la partie Diagnostics de pfSense
+
+![test](/images/2026-02-24-18-52-21.png)
+
+![ok](/images/2026-02-24-19-01-00.png)
+
+L'architecture pfSense -> RADIUS -> LDAP est maintenant 100% fonctionnelle et validée en conditions réelles ✅
