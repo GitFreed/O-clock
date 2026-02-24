@@ -5488,6 +5488,52 @@ C'est le cœur du champ de bataille pour l'infrastructure locale. Sécuriser les
   - *Le principe* : Une technique permettant à un attaquant de forcer l'envoi de paquets vers un VLAN auquel il ne devrait pas avoir accès.
   - *Les méthodes* : Cela se fait souvent en exploitant des ports switch mal configurés (qui négocient automatiquement un lien Trunk via le protocole DTP) ou via l'attaque du *Double-Tagging* (ajout de deux en-têtes 802.1Q).
 
+#### 4. Les Listes de Contrôle d'Accès (ACL) Cisco
+
+Une ACL est une série de règles permettant de **filtrer le trafic** réseau en fonction de critères précis. Elles sont lues de haut en bas, et la première règle correspondante est appliquée.
+
+- **Les 3 Règles d'Or des ACL**
+
+  - **Le "Deny Any" implicite :** À la fin de chaque ACL, il existe une règle invisible qui bloque tout ce qui n'a pas été explicitement autorisé.
+  - **L'ordre est crucial :** Les règles les plus spécifiques (ex: autoriser un hôte précis) doivent être placées **avant** les règles générales (ex: bloquer un réseau entier).
+  - **Un par interface, un par sens, un par protocole :** On ne peut appliquer qu'une seule ACL par interface, par direction (IN ou OUT) et par protocole (IPv4/IPv6).
+
+- **Comparaison : Standard vs Étendu**e
+
+  | Caractéristique | ACL Standard | ACL Étendue |
+  | --- | --- | --- |
+  | **Plage de numéros** | 1 à 99 | 100 à 199 |
+  | **Critère de filtrage** | Adresse **Source** uniquement | Source, **Destination**, Protocole (IP, TCP, UDP, ICMP) et Port |
+  | **Usage typique** | Limitation des accès administratifs (VTY) | Filtrage précis entre les VLANs ou vers Internet |
+  | **Positionnement** | Au plus proche de la **destination** | Au plus proche de la **source** |
+
+- **Syntaxe et Logique des Commandes**
+
+  -Le Masque Générique (Wildcard Mask)
+
+  C'est l'inverse du masque de sous-réseau. Pour un /24 (255.255.255.0), le wildcard est **0.0.0.255**.
+
+  - `0` = Le bit doit correspondre exactement.
+  - `255` = On ignore la valeur du bit.
+
+  -Exemples de commandes
+
+  - **Standard :** `access-list 10 permit 192.168.10.0 0.0.0.255`
+  - **Étendue :** `access-list 110 permit tcp 192.168.10.0 0.0.0.255 host 192.168.99.10 eq 80`
+
+- **Méthodologie d'application (IN vs OUT)**
+
+  L'application se fait toujours par rapport au **cœur du routeur** :
+
+  - **IN (Entrée) :** Le trafic arrive du réseau, "frappe" l'interface et le routeur l'analyse **avant** de décider de le router. C'est le plus efficace pour économiser les ressources du routeur.
+  - **OUT (Sortie) :** Le trafic a déjà été routé et s'apprête à sortir de l'interface vers le réseau de destination.
+
+- **Commandes de vérification indispensables**
+
+  - `show access-lists` : Affiche les règles et le nombre de paquets ayant matché chaque ligne.
+  - `show ip interface <nom>` : Permet de voir quelle ACL est appliquée sur une interface spécifique.
+  - `clear access-list counters` : Remet les compteurs de "matches" à zéro (utile pour de nouveaux tests).
+
 #### 🛠️ Ressources : Configurations Réseau
 
 Pour se prémunir contre les attaques de Niveau 2 et segmenter proprement le trafic, une configuration stricte des commutateurs et du routage Inter-VLAN (Router-on-a-Stick) est vitale. Voici les commandes issues de la démonstration :
