@@ -128,7 +128,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 
 - [C301. Introduction Sécurité](#️-c301-introduction--gouvernance-outils--bases-réseau)
 - [C302. Contrôle d'accès et Sécurité Sans-Fil (ACL, NAC, WiFi)](#-c302-contrôle-daccès-et-sécurité-sans-fil-acl-nac-wifi)
-- [C303. DMZ et VPN](#-c303)
+- [C303. DMZ et VPN](#-c303-dmz-et-vpn)
 
 ### [Saison C4. Conteneurs et orchestration 📦](.)
 
@@ -5721,7 +5721,7 @@ aircrack-ng wpa_handshake.cap -w dictionary.txt
 
 ---
 
-### 🛡️ C303. DMZ et VPN
+### 🧱 C303. DMZ et VPN
 
 >
 
@@ -5729,6 +5729,7 @@ aircrack-ng wpa_handshake.cap -w dictionary.txt
 
 > 📚 **Ressources** :
 >
+> - DMZ, Pare-feu & NAT avec pfSense sur Proxmox : <https://github.com/O-clock-Aldebaran/SC03E03-DMZ>
 
 [Retour en haut](#-table-des-matières)
 
