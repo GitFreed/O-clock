@@ -12,7 +12,7 @@
 
 [Challenge C303](https://github.com/O-clock-Aldebaran/E03-SC3E03-VPN-auth-radius-GitFreed/blob/master/README.md)
 
-[Cours C303.](/RESUME.md#-c303-dmz-et-vpn)
+[Cours C303.](/RESUME.md#-c303-dmz-pare-feu--vpn)
 
 ---
 
