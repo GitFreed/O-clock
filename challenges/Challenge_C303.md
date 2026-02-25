@@ -250,3 +250,5 @@ Notre configuration et les règles pour la DMZ sont bonnes.
 ## Challenge VPN & Authentification Radius
 
 ![challenge](/images/2026-02-25-17-23-16.png)
+
+### Créer le VPN client‑à‑site
