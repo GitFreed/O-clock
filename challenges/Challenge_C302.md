@@ -207,7 +207,7 @@ Succès ✅
 
 ## Déclarer le serveur RADIUS dans pfSense
 
-pfSense va maintenant pouvoir déléguer la vérification des identifiants à ton "routeur AAA" (FreeRADIUS), qui lui-même ira interroger l'annuaire
+pfSense va maintenant pouvoir déléguer la vérification des identifiants au "routeur AAA" (FreeRADIUS), qui lui-même ira interroger l'annuaire
 
 On va ajouter un serveur d'authentification
 
