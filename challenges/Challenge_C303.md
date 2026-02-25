@@ -2,10 +2,11 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-> **Challenge :**
->
-> - Mise en place d'une zone DMZ isolée avec un serveur web, règles de pare-feu et redirection de port NAT.
-> - Challenge VPN & Authentification Radius
+**Challenge :**
+
+- Mise en place d'une zone DMZ isolée avec un serveur web, règles de pare-feu et redirection de port NAT.
+
+- Mise en place d'un serveur VPN avec Authentification RADIUS
 
 [DMZ, Pare-feu & NAT avec pfSense sur Proxmox](https://github.com/O-clock-Aldebaran/SC03E03-DMZ)
 
@@ -15,7 +16,7 @@
 
 ---
 
-## Création d'une DMZ avec un serveur Web
+## DMZ isolée & un serveur Web
 
 > Mise en place d'une zone DMZ isolée avec un serveur web, règles de pare-feu et redirection de port NAT.
 
@@ -247,7 +248,7 @@ Notre configuration et les règles pour la DMZ sont bonnes.
 
 ---
 
-## Challenge VPN & Authentification Radius
+## VPN & Authentification Radius
 
 ![challenge](/images/2026-02-25-17-23-16.png)
 
