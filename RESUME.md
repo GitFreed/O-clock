@@ -128,6 +128,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 
 - [C301. Introduction Sécurité](#️-c301-introduction--gouvernance-outils--bases-réseau)
 - [C302. Contrôle d'accès et Sécurité Sans-Fil (ACL, NAC, WiFi)](#-c302-contrôle-daccès-et-sécurité-sans-fil-acl-nac-wifi)
+- [C303. DMZ et VPN](#-c303)
 
 ### [Saison C4. Conteneurs et orchestration 📦](.)
 
@@ -5715,6 +5716,19 @@ aircrack-ng wpa_handshake.cap -w dictionary.txt
 > 📚 **Ressources** :
 >
 > - freeRadius documentation : <https://www.freeradius.org/documentation/>
+
+[Retour en haut](#-table-des-matières)
+
+---
+
+### 🛡️ C303. DMZ et VPN
+
+>
+
+[Challenge C303](./challenges/Challenge_C303.md) :
+
+> 📚 **Ressources** :
+>
 
 [Retour en haut](#-table-des-matières)
 
