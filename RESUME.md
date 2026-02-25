@@ -5645,7 +5645,7 @@ Les réseaux sans-fil sont particulièrement vulnérables car les ondes traverse
 
 #### 🛠️ Ressources & Démos Techniques
 
-Voici les configurations et commandes tirées de tes notes de cours pour mettre en pratique ces concepts.
+Quelques configurations et commandes pour mettre en pratique ces concepts.
 
 ##### Installation d'un Annuaire LDAP (Base pour l'authentification)
 
