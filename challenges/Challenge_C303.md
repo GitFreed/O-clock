@@ -2,8 +2,8 @@
 
 ## Pitch de l’exercice 🧑‍🏫
 
-![Challenge]()
-
+> **Challenge :**
+>
 > - Mise en place d'une zone DMZ isolée avec un serveur web, règles de pare-feu et redirection de port NAT.
 > - Challenge VPN & Authentification Radius
 
@@ -248,3 +248,5 @@ Notre configuration et les règles pour la DMZ sont bonnes.
 ---
 
 ## Challenge VPN & Authentification Radius
+
+![challenge](/images/2026-02-25-17-23-16.png)

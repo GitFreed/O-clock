@@ -5723,7 +5723,49 @@ aircrack-ng wpa_handshake.cap -w dictionary.txt
 
 ### 🧱 C303. DMZ, pare-feu & VPN
 
->
+> **Objectif** : Isoler pour mieux protéger. La segmentation réseau est la base de toute architecture sécurisée. On apprend ici à exposer des services sur Internet (Web, VPN, Mail) tout en contenant le risque pour ne pas compromettre le réseau interne.
+
+#### 1. Le Concept de DMZ (Zone Démilitarisée)
+
+Pour comprendre la DMZ, l'analogie du château fort est parfaite :
+
+- **Le LAN (Réseau Local)** : C'est le donjon au centre. Il abrite les données critiques et les utilisateurs internes.
+- **La DMZ** : C'est la cour extérieure. On y accueille les marchands et les visiteurs, mais sous haute surveillance.
+- **Internet** : C'est l'extérieur du château. Tout le monde y est, y compris les assaillants.
+
+**Le principe clé** : On accepte que la DMZ soit plus exposée aux attaques. Cependant, si un attaquant compromet un serveur dans la DMZ, le donjon (LAN) reste protégé par un second niveau de filtrage.
+**Règle absolue** : Il ne doit **jamais** y avoir de route directe entre Internet et le LAN ! Un serveur Web ne doit jamais être placé directement dans le LAN.
+
+#### 2. Les Règles de Flux (Qui parle à qui ?)
+
+Un pare-feu ne sert à rien si les règles sont floues. Voici les standards de communication inter-zones :
+
+- 🌐 **Internet → DMZ** : Autorisé **uniquement** sur des services précis (ex: HTTP 80, HTTPS 443). Tout le reste est bloqué.
+- ⚠️ **DMZ → LAN** : C'est la règle la plus importante et elle doit être **très limitée**. On autorise uniquement ce qui est vital (ex: le serveur Web en DMZ a le droit de parler au serveur de Base de Données dans le LAN sur le port 3306). Jamais d'accès libre.
+- 🛠️ **LAN → DMZ** : Autorisé selon les besoins stricts (ex: port SSH 22 pour que l'administrateur gère le serveur, ou flux de monitoring).
+- 🌍 **LAN → Internet** : Généralement autorisé pour la navigation et les mises à jour, mais souvent filtré (proxy, inspection).
+- ⛔ **Règle finale (Deny by default)** : Source Any -> Destination Any = **DENY**. Si un flux n'est pas explicitement autorisé, il est bloqué.
+
+#### 3. NAT & Redirections de port
+
+Pour exposer un service situé en DMZ vers l'extérieur, on utilise le **DNAT** (Destination NAT ou Redirection de port).
+
+- **Le mécanisme** : Lorsqu'une requête arrive d'Internet vers votre IP publique sur le port 443, le routeur la redirige vers l'IP privée de votre serveur en DMZ sur ce même port 443.
+- **Attention** : Une règle de NAT ne suffit pas. Elle doit toujours être accompagnée de la règle de pare-feu associée pour autoriser le flux.
+
+#### 4. L'outil : pfSense
+
+Pour mettre tout cela en place, on s'appuie sur **pfSense**.
+
+- **Avantages** : C'est une solution open-source, gratuite, avec une interface web intuitive.
+- **Fonctionnalités** : Il est parfait pour créer des interfaces physiques/virtuelles (DMZ, LAN, WAN), configurer des règles d'isolation, créer des "Alias" (pour regrouper des IPs ou des ports et rendre les règles lisibles), et auditer les logs.
+
+#### 5. Rappels VPN (Réseaux Privés Virtuels)
+
+(*Rappel synthétique sur les VPN, qui sont typiquement des services exposés sur le pare-feu*)
+
+- **VPN Site-à-Site** : Permet de relier deux réseaux distants (ex: le siège de l'entreprise et une agence) via un tunnel chiffré sur Internet. Pour les utilisateurs des deux sites, c'est comme s'ils étaient sur le même réseau local (LAN étendu). Les pare-feux (comme pfSense) se chargent de monter et maintenir le tunnel.
+- **VPN Client-à-Site (Nomade)** : Permet à un utilisateur distant (en télétravail ou en déplacement) de se connecter de manière sécurisée au réseau de l'entreprise. L'utilisateur installe un client logiciel (ex: OpenVPN, WireGuard) qui crée un tunnel vers le pare-feu de l'entreprise.
 
 [Challenge C303](./challenges/Challenge_C303.md) :
 
