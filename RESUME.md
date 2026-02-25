@@ -128,7 +128,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 
 - [C301. Introduction Sécurité](#️-c301-introduction--gouvernance-outils--bases-réseau)
 - [C302. Contrôle d'accès et Sécurité Sans-Fil (ACL, NAC, WiFi)](#-c302-contrôle-daccès-et-sécurité-sans-fil-acl-nac-wifi)
-- [C303. DMZ et VPN](#-c303-dmz-et-vpn)
+- [C303. DMZ, pare-feu & VPN](#-c303-dmz-pare-feu--vpn)
 
 ### [Saison C4. Conteneurs et orchestration 📦](.)
 
@@ -5721,11 +5721,15 @@ aircrack-ng wpa_handshake.cap -w dictionary.txt
 
 ---
 
-### 🧱 C303. DMZ et VPN
+### 🧱 C303. DMZ, pare-feu & VPN
 
 >
 
 [Challenge C303](./challenges/Challenge_C303.md) :
+
+- Mise en place d'une zone DMZ isolée avec un serveur web, règles de pare-feu et redirection de port NAT.
+
+- Challenge VPN & Authentification Radius
 
 > 📚 **Ressources** :
 >
