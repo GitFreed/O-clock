@@ -291,7 +291,7 @@ On sélectionne notre serveur, et on télécharge le profil Inline Configuration
 
 Une fois le fichier de config téléchargé, on l'ajoute en nouveau profil dans OpenVPN, on lance la connection et on met notre utilisateur LDAP (jdupont)
 
-![](/images/2026-02-26-00-46-21.png)
+![vpn](/images/2026-02-26-00-46-21.png)
 
 Et voilà
 
