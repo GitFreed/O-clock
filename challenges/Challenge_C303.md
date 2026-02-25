@@ -75,7 +75,7 @@ On **⬆ Add**
 | Destination | LAN subnets |
 | Description | Bloquer DMZ vers LAN |
 
-**Save**.
+**Save**
 
 **Règle 2 — Autoriser DMZ vers Internet :**
 
@@ -90,7 +90,7 @@ On **⬇ Add** (ajouter en bas, après la règle de blocage).
 | Destination | **any** |
 | Description | Autoriser DMZ vers Internet |
 
-**Save**.
+**Save**
 
 > **Pourquoi cet ordre ?** La règle 1 bloque d'abord le trafic vers le LAN. La règle 2 autorise tout le reste (= Internet). Si on inversait, la règle « any » autoriserait aussi le LAN avant d'atteindre le blocage. L'ordre est crucial.
 
@@ -251,4 +251,52 @@ Notre configuration et les règles pour la DMZ sont bonnes.
 
 ![challenge](/images/2026-02-25-17-23-16.png)
 
-### Créer le VPN client‑à‑site
+### Créer un VPN client‑à‑site avec authentification RADIUS
+
+On va utiliser OpenVPN, dans pfSense : VPN → OpenVPN → Wizard → Type of Server : Radius
+
+![radius](/images/2026-02-26-00-18-48.png)
+
+On sélectionne notre serveur déjà configuré (Challenge C302), OpenVPN a besoin de certificats pour chiffrer le tunnel. Certificate Authority (CA) : on remplis Descriptive Name (ex: VPN-CA) et on Valide, de même pour le server certificate : Add New (VPN-Cert).
+
+Etape 9 **Server Setup**
+
+```
+Description : vpn-lab-access
+Protocol : UDP on IPv4 only (Port par défaut 1194).
+Interface : WAN (C'est par là que les clients arrivent).
+Tunnel Network : On choisi un nouveau sous-réseau vierge pour les clients virtuels, par exemple 10.42.0.0/24. (Attention : ce réseau ne doit pas chevaucher le LAN).
+Local Network : Réseau du Lab, 10.0.0.0/24, pour que pfSense pousse cette route dans la table de routage des clients VPN.
+```
+
+Etape 10 **Firewall Rule**
+
+On coche Firewall Rule : Ça va ouvrir le port UDP 1194 sur l'interface WAN.
+
+On coche OpenVPN Rule : Ça va créer une règle Allow All sur la nouvelle interface virtuelle OpenVPN (pour que le client puisse joindre le LAN).
+
+![vpn](/images/2026-02-26-00-33-14.png)
+
+### Exporter et tester le VPN
+
+Pour tester la connexion depuis un client extérieur, ou exporter facilement les configurations (fichier `.ovpn`) pour nos utilisateurs du serveur VPN, on va devoir installer un paquet logiciel sur la pfSense.
+
+On va dans System → Package Manager → Available Packages.
+
+On installe le paquet `openvpn-client-export`, puis on va dans VPN → OpenVPN → Client Export.
+
+On sélectionne notre serveur, et on télécharge le profil Inline Configurations (Most Clients).
+
+![profil](/images/2026-02-26-00-40-22.png)
+
+Une fois le fichier de config téléchargé, on l'ajoute en nouveau profil dans OpenVPN, on lance la connection et on met notre utilisateur LDAP (jdupont)
+
+![](/images/2026-02-26-00-46-21.png)
+
+Et voilà
+
+![OK](/images/2026-02-26-00-46-46.png)
+
+On peut maintenant se connecter sur l'interface Web de la pfSense ou en SSH au serveur Radius, LDap etc
+
+![OK](/images/2026-02-26-00-50-23.png)

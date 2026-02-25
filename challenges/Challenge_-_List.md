@@ -148,7 +148,11 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge C301](./Challenge_C301.md) : Segmentation VLAN & Contrôle d'accès (ACL)
 
-[Challenge C301](./Challenge_C302.md) : Authentification réseau avec RADIUS et LDAP / AD
+[Challenge C302](./Challenge_C302.md) : Authentification réseau avec RADIUS et LDAP / AD
+
+[Challenge C303](./Challenge_C303.md) : DMZ isolée, serveur web, règles de pare-feu, redirection de port NAT, VPN & Authentification Radius
+
+[Atelier C304](./Challenge_C304.md) :
 
 ---
 
