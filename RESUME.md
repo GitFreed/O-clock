@@ -5780,3 +5780,63 @@ Pour mettre tout cela en place, on s'appuie sur **pfSense**.
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🧱 C304. DMZ, pare-feu & VPN
+
+>
+
+Un **IDS** (Intrusion Detection System) surveille le trafic réseau et génère des alertes quand il détecte un comportement suspect. Un **IPS** (Intrusion Prevention System) fait la même chose, mais peut en plus **bloquer** le trafic malveillant.
+
+**Suricata** est un moteur open-source qui peut fonctionner dans les deux modes :
+
+| Mode             | Fonctionnement                                | Avantage                   | Inconvénient                                    |
+| ---------------- | --------------------------------------------- | -------------------------- | ----------------------------------------------- |
+| **IDS** (passif) | Écoute une copie du trafic, alerte uniquement | Aucun impact sur le réseau | Ne bloque rien                                  |
+| **IPS** (inline) | Se place en coupure du trafic, peut bloquer   | Protection active          | Peut couper du trafic légitime si mal configuré |
+
+Suricata compare chaque paquet réseau à un ensemble de **règles** (signatures). Chaque règle décrit un pattern malveillant connu :
+
+```
+alert http any any -> any any (msg:"ET ATTACK_RESPONSE id check returned root"; content:"uid=0(root)"; sid:2100498; rev:7;)
+```
+
+Voici un résumé de la syntaxe d'une règle Suricata :
+
+- `alert` : action à effectuer (alerter, drop, pass...)
+- `http` : protocole surveillé
+- `any any -> any any` : source/destination (ici tout le trafic)
+- `content:"uid=0(root)"` : le motif à chercher dans le paquet
+- `sid:2100498` : identifiant unique de la règle (Signature ID)
+
+Un **SIEM** (Security Information and Event Management) est une plateforme qui collecte les logs de multiples sources (IDS, pare-feu, serveurs...), les normalise, les corrèle pour détecter des attaques, et alerte les analystes via un tableau de bord centralisé.
+
+**Wazuh** est un SIEM open-source composé de trois briques :
+
+| Composant           | Rôle                                                         | Port              |
+| ------------------- | ------------------------------------------------------------ | ----------------- |
+| **Wazuh Manager**   | Reçoit les logs des agents, applique les règles de détection | 1514, 1515, 55000 |
+| **Wazuh Indexer**   | Stocke et indexe les événements (basé sur OpenSearch)        | 9200              |
+| **Wazuh Dashboard** | Interface web de visualisation et d'investigation            | 443               |
+
+```
+       Sources                          SIEM Wazuh
+    ┌──────────┐                   ┌──────────────────┐
+    │ Suricata │──── eve.json ────>│  Wazuh Manager   │
+    │  (IDS)   │   via agent       │        │         │
+    └──────────┘                   │        ▼         │
+                                   │  Wazuh Indexer   │
+    ┌──────────┐                   │        │         │
+    │  Win11   │──── syslog ──────>│        ▼         │
+    │ (cible)  │   via agent       │ Wazuh Dashboard  │
+    └──────────┘                   └──────────────────┘
+
+[Atelier C304](./challenges/Challenge_C304.md) :
+
+> 📚 **Ressources** :
+>
+> - Documentation Wazuh : <https://documentation.wazuh.com/current/user-manual/index.html>
+> - Documentation Suricata : <https://docs.suricata.io/en/suricata-8.0.2/>
+
+[Retour en haut](#-table-des-matières)
+
+---
