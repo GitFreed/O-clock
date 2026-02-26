@@ -90,6 +90,8 @@ et restart `systemctl restart networking`
 
 ### Installation et Configuration Suricata
 
+![suricate](/images/2026-02-26-17-33-18.png)
+
 ```sh
 apt update && apt upgrade -y
 apt install -y suricata suricata-update
