@@ -5829,6 +5829,7 @@ Un **SIEM** (Security Information and Event Management) est une plateforme qui c
     │  Win11   │──── syslog ──────>│        ▼         │
     │ (cible)  │   via agent       │ Wazuh Dashboard  │
     └──────────┘                   └──────────────────┘
+```
 
 [Atelier C304](./challenges/Challenge_C304.md) :
 

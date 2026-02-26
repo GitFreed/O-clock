@@ -284,4 +284,6 @@ En même temps on peut voir et récupérer les logs d'installation, dont le mot 
 
 `tail -f wazuh-install.log`
 
-![tail](/images/2026-02-26-13-52-40.png)
+![tail](/images/2026-02-26-13-58-11.png)
+
+b3wYADl3s2H52MTAygI+*ZmOl8hYfTRC
