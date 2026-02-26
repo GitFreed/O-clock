@@ -276,7 +276,7 @@ iface ens18 inet static
 
 ### Installation de Wazuh
 
-On va installer Wazuh, l'installation tout-en-un déploie les trois composants sur la même VM :
+On va installer Wazuh, l'installation tout-en-un déploie les trois composants sur la même VM (elle prend entre 5 et 15 minutes) :
 
 `curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a > wazuh-install.log`
 
@@ -286,4 +286,20 @@ En même temps on peut voir et récupérer les logs d'installation, dont le mot 
 
 ![tail](/images/2026-02-26-13-58-11.png)
 
-b3wYADl3s2H52MTAygI+*ZmOl8hYfTRC
+> ⚠️ NOTER CE MOT DE PASSE. Il est généré aléatoirement et ne sera plus affiché. D'ou le log lors de l'installation. (b3wYADl3s2H52MTAygI+*ZmOl8hYfTRC)
+
+On vérifie que les 3 services sont actifs
+
+```sh
+systemctl status wazuh-manager
+systemctl status wazuh-indexer
+systemctl status wazuh-dashboard
+```
+
+## Connecter les sources (Agents)
+
+On peut maintenant se connecter à l'interface web avec le mot de passe
+
+![web](/images/2026-02-26-14-08-26.png)
+
+![dashboard](/images/2026-02-26-14-12-08.png)
