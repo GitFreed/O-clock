@@ -1,23 +1,17 @@
-# Challenge A308 14/11/2025
+# Atelier A308 14/11/2025
 
 ## Pitch de l’exercice 🧑‍🏫
 
 [Pitch de l'Atelier A308](https://github.com/O-clock-Aldebaran/SA3-atelier-proxmox)
 
-![Serveur](/images/2025-11-14-09-56-09.png)
+![atelier](/images/2026-02-26-18-50-41.png)
 
 ---
 
 > 📚 **Ressources :**
 >
->- Proxmox : <https://fr.wikipedia.org/wiki/Proxmox_Virtual_Environnement>
 >- Pfsense : <https://fr.wikipedia.org/wiki/PfSense>
-
----
-
-[Configuration](#configuration)
-[Bonus](#bonus)
-[MégaBonus](#méga-bonus)
+>- Proxmox : <https://fr.wikipedia.org/wiki/Proxmox_Virtual_Environnement>
 
 ---
 
