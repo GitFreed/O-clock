@@ -1,4 +1,4 @@
-# Challenge C302 23/02/2026
+# Challenge C302 24/02/2026
 
 ## Pitch de l’exercice 🧑‍🏫
 
