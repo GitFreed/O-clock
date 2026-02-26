@@ -152,7 +152,7 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 [Challenge C303](./Challenge_C303.md) : DMZ isolée, serveur web, règles de pare-feu, redirection de port NAT, VPN & Authentification Radius
 
-[Atelier C304](./Challenge_C304.md) :
+[Atelier C304](./Challenge_C304.md) : IDP, IPS & SIEM, mise en place d'une chaîne de détection et de supervision complète : Suricata & Wazuh
 
 ---
 
