@@ -4,13 +4,13 @@
 
 [Atelier C304](https://github.com/O-clock-Aldebaran/SC3E04-Atelier-IDS-IPS/blob/master/README.md)
 
-[Cours C304](.)
+[Cours C304](/RESUME.md#-c304-détection-prévention-et-siem-suricata--wazuh)
 
 Dans cet atelier, nous allons mettre en place une **chaîne de détection et de supervision** complète. L'idée est simple : un capteur réseau (**Suricata**) détecte les menaces, puis remonte ses alertes vers un SIEM centralisé (**Wazuh**) pour la visualisation et la corrélation. C'est exactement ce qu'on retrouve dans un **SOC** (Security Operations Center) en entreprise.
 
 **Architecture du lab :**
 
-```
+```sh
           Internet
               │
        ┌──────┴──────┐
@@ -27,12 +27,12 @@ Dans cet atelier, nous allons mettre en place une **chaîne de détection et de 
    └─────────┘ └──────────┘  └───────────┘
 ```
 
-| Machine      | Type                    | IP            | RAM           |  Disque dur        |Rôle                           |
-| ------------ | ----------------------- | ------------- | ------------- |  ------------- |------------------------------ |
-| pfSense      | VM (existante)          | 10.0.0.1      | 1 Go          | 20 Go | Firewall / Gateway             |
-| Win10        | VM (existante)          | 10.0.0.100     | 4 Go          | 32 Go | VM cible                       |
-| **Suricata** | **VM ou CT (nouvelle)** | **10.0.0.50** | **2 Go**      | 20 Go | **IDS/IPS + Agent Wazuh**      |
-| **Wazuh**    | **VM (nouvelle)**       | **10.0.0.40** | **10 Go mini** | 80 Go | **SIEM (Manager + Dashboard)** |
+| Machine | Type | IP | RAM | Disque dur | Rôle |
+| ------------ | ----------------------- | ------------- | ------------- | ------------- | ------------------------------ |
+| pfSense | VM (existante) | 10.0.0.1 | 1 Go | 20 Go | Firewall / Gateway |
+| Win10 | VM (existante) | 10.0.0.100 | 4 Go | 32 Go | VM cible |
+| **Suricata** | **VM ou CT (nouvelle)** | **10.0.0.50** | **2 Go** | 20 Go | **IDS/IPS + Agent Wazuh** |
+| **Wazuh** | **VM (nouvelle)** | **10.0.0.40** | **10 Go mini** | 80 Go | **SIEM (Manager + Dashboard)** |
 
 ---
 
@@ -231,7 +231,7 @@ Un **SIEM** (Security Information and Event Management) est une plateforme qui c
 | **Wazuh Indexer**   | Stocke et indexe les événements (basé sur OpenSearch)        | 9200              |
 | **Wazuh Dashboard** | Interface web de visualisation et d'investigation            | 443               |
 
-```
+```sh
        Sources                          SIEM Wazuh
     ┌──────────┐                   ┌──────────────────┐
     │ Suricata │──── eve.json ────>│  Wazuh Manager   │
@@ -461,6 +461,7 @@ On redémarre Suricata :
 ```bash
 systemctl restart suricata
 ```
+
 On vérifie que la règle est chargée :
 
 ```bash
@@ -482,3 +483,21 @@ Dans Suricata on peut vérifier avec `cat /var/log/suricata/eve.json | jq 'selec
 Dans le Dashboard Wazuh : Discover → recherche `data.alert.signature_id: 1000001`
 
 ![dash](/images/2026-02-26-16-50-58.png)
+
+### Monitoring
+
+La fonction Monitoring de Wazuh : IT Hygiene
+
+![IT hygiene](/images/2026-02-26-17-06-31.png)
+
+Dashboard :
+
+![dash](/images/2026-02-26-17-07-27.png)
+
+Processes :
+
+![process](/images/2026-02-26-17-09-16.png)
+
+Network :
+
+![network](/images/2026-02-26-17-10-30.png)

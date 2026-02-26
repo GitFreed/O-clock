@@ -129,6 +129,7 @@ Cette fiche synthétise les notions fondamentales abordées durant les cours en 
 - [C301. Introduction Sécurité](#️-c301-introduction--gouvernance-outils--bases-réseau)
 - [C302. Contrôle d'accès et Sécurité Sans-Fil (ACL, NAC, WiFi)](#-c302-contrôle-daccès-et-sécurité-sans-fil-acl-nac-wifi)
 - [C303. DMZ, pare-feu & VPN](#-c303-dmz-pare-feu--vpn)
+- [C304. Détection, Prévention et SIEM (Suricata & Wazuh)](#-c304-détection-prévention-et-siem-suricata--wazuh)
 
 ### [Saison C4. Conteneurs et orchestration 📦](.)
 
