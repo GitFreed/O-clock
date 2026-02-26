@@ -5781,45 +5781,56 @@ Pour mettre tout cela en place, on s'appuie sur **pfSense**.
 
 ---
 
-### 🧱 C304. DMZ, pare-feu & VPN
+### 🚨 C304. Détection, Prévention et SIEM (Suricata & Wazuh)
 
->
+> **Objectif** : Surveiller activement le trafic pour repérer ce qui passe au travers du pare-feu. On découvre comment analyser les paquets à la volée avec un moteur de détection (Suricata) et comment centraliser toutes les alertes de l'infrastructure dans un tableau de bord unique (Wazuh).
 
-Un **IDS** (Intrusion Detection System) surveille le trafic réseau et génère des alertes quand il détecte un comportement suspect. Un **IPS** (Intrusion Prevention System) fait la même chose, mais peut en plus **bloquer** le trafic malveillant.
+#### 1. L'Analyse du Trafic : IDS vs IPS
 
-**Suricata** est un moteur open-source qui peut fonctionner dans les deux modes :
+Sur le réseau, on peut choisir d'être un simple observateur ou d'intervenir activement. **Suricata** est un moteur open-source de référence qui peut jouer les deux rôles.
 
-| Mode             | Fonctionnement                                | Avantage                   | Inconvénient                                    |
-| ---------------- | --------------------------------------------- | -------------------------- | ----------------------------------------------- |
-| **IDS** (passif) | Écoute une copie du trafic, alerte uniquement | Aucun impact sur le réseau | Ne bloque rien                                  |
-| **IPS** (inline) | Se place en coupure du trafic, peut bloquer   | Protection active          | Peut couper du trafic légitime si mal configuré |
+| Mode | Fonctionnement sur le réseau | Avantage | Inconvénient |
+| --- | --- | --- | --- |
+| **IDS** (Intrusion Detection System) | **Passif**. Il écoute une copie du trafic (via un port miroir / SPAN), et génère uniquement des alertes. | Aucun impact sur le réseau en cas de panne de l'IDS. | Ne bloque rien, l'attaque passe. |
+| **IPS** (Intrusion Prevention System) | **Actif (Inline)**. Il se place en coupure du flux. Le trafic *doit* le traverser. Il peut bloquer. | Protection active et immédiate. | Peut bloquer du trafic légitime (faux positif) ou créer un goulot d'étranglement. |
 
-Suricata compare chaque paquet réseau à un ensemble de **règles** (signatures). Chaque règle décrit un pattern malveillant connu :
+#### 2. Comment Suricata détecte-t-il une attaque ?
 
-```
+Suricata analyse les paquets réseau et les compare à un dictionnaire de **signatures** (des règles). Si le trafic correspond à une règle, il déclenche l'action prévue.
+
+**Exemple d'une règle type :**
+
+```suricata
 alert http any any -> any any (msg:"ET ATTACK_RESPONSE id check returned root"; content:"uid=0(root)"; sid:2100498; rev:7;)
 ```
 
-Voici un résumé de la syntaxe d'une règle Suricata :
+**Décryptage de la syntaxe :**
 
-- `alert` : action à effectuer (alerter, drop, pass...)
-- `http` : protocole surveillé
-- `any any -> any any` : source/destination (ici tout le trafic)
-- `content:"uid=0(root)"` : le motif à chercher dans le paquet
-- `sid:2100498` : identifiant unique de la règle (Signature ID)
+- **`alert`** : L'action à effectuer (peut aussi être `drop` en mode IPS, ou `pass`).
+- **`http`** : Le protocole réseau ciblé.
+- **`any any -> any any`** : Le sens du flux. Ici : `IP Source` `Port Source` -> `IP Destination` `Port Destination` (Tout le trafic vers tout le trafic).
+- **`content:"uid=0(root)"`** : Le motif précis à chercher dans la charge utile (payload) du paquet.
+- **`sid:2100498`** : Le Signature ID (l'identifiant unique de cette règle).
 
-Un **SIEM** (Security Information and Event Management) est une plateforme qui collecte les logs de multiples sources (IDS, pare-feu, serveurs...), les normalise, les corrèle pour détecter des attaques, et alerte les analystes via un tableau de bord centralisé.
+#### 3. Le SIEM : La Tour de Contrôle (Wazuh)
 
-**Wazuh** est un SIEM open-source composé de trois briques :
+Si l'on a 5 routeurs, 3 switchs, 10 serveurs et un IDS Suricata, analyser les logs un par un est impossible. C'est là qu'intervient le **SIEM** (Security Information and Event Management).
+Il collecte, normalise, corrèle les événements et lance des alertes de manière centralisée.
 
-| Composant           | Rôle                                                         | Port              |
-| ------------------- | ------------------------------------------------------------ | ----------------- |
-| **Wazuh Manager**   | Reçoit les logs des agents, applique les règles de détection | 1514, 1515, 55000 |
-| **Wazuh Indexer**   | Stocke et indexe les événements (basé sur OpenSearch)        | 9200              |
-| **Wazuh Dashboard** | Interface web de visualisation et d'investigation            | 443               |
+**L'écosystème Wazuh** (SIEM open-source) repose sur 3 briques :
 
-```
-       Sources                          SIEM Wazuh
+| Composant | Rôle | Ports standard |
+| --- | --- | --- |
+| **Wazuh Manager** | Le "cerveau". Reçoit les logs envoyés par les agents et applique les règles de détection globales. | 1514, 1515, 55000 |
+| **Wazuh Indexer** | La "mémoire". Stocke et indexe les événements de manière très rapide (basé sur OpenSearch). | 9200 |
+| **Wazuh Dashboard** | L'interface. Le portail web d'investigation pour les analystes sécurité. | 443 |
+
+#### 4. Architecture et Remontée des Logs (Le Workflow)
+
+Pour que la détection soit efficace, le SIEM doit fusionner les événements purement réseaux (IDS) et les événements systèmes (OS). Les agents Wazuh installés sur les machines cibles et sur le capteur réseau se chargent de tout remonter au Manager.
+
+```text
+       Sources                         SIEM Wazuh
     ┌──────────┐                   ┌──────────────────┐
     │ Suricata │──── eve.json ────>│  Wazuh Manager   │
     │  (IDS)   │   via agent       │        │         │
@@ -5829,9 +5840,10 @@ Un **SIEM** (Security Information and Event Management) est une plateforme qui c
     │  Win11   │──── syslog ──────>│        ▼         │
     │ (cible)  │   via agent       │ Wazuh Dashboard  │
     └──────────┘                   └──────────────────┘
+
 ```
 
-[Atelier C304](./challenges/Challenge_C304.md) :
+[Atelier C304](./challenges/Challenge_C304.md) : Dans cet atelier, nous allons mettre en place une chaîne de détection et de supervision complète. L'idée est simple : un capteur réseau (Suricata) détecte les menaces, puis remonte ses alertes vers un SIEM centralisé (Wazuh) pour la visualisation et la corrélation. C'est exactement ce qu'on retrouve dans un SOC (Security Operations Center) en entreprise.
 
 > 📚 **Ressources** :
 >
