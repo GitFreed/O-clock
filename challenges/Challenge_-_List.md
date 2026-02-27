@@ -156,4 +156,10 @@ Commande utilisée pour extraire la liste du fichier [Resume.md](/RESUME.md)
 
 ---
 
+[Homelab Adguard](./Homelab_AdGuard.md) : Déployer AdGuard Home, serveur DHCP et DNS sinkhole.
+
+[Homelab Checkmk](./Homelab_Checkmk.md) : Déployer Checkmk (Raw Edition), supervision d'infrastructure.
+
+---
+
 [TP Packet Tracer](../ressources/TP_CiscoPacketTracer2SN.pdf)
