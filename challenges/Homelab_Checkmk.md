@@ -1,15 +1,41 @@
-# Checkmk
+# 📊 LAB : Supervision de l'Infrastructure et Visibilité Réseau
 
-![git](/images/2026-02-27-10-53-52.png)
+**Rôle :** Administrateur Réseau
 
-> - Documentation : <https://docs.checkmk.com/latest/fr/>
-> - Installation Guide : <https://checkmk.com/download?platform=cmk&distribution=debian&release=trixie&edition=cre&version=2.4.0p22>
+**Mission :** Déployer Checkmk (Raw Edition), une solution de supervision d'infrastructure hautes performances. Il fonctionne en interrogeant activement les équipements du réseau via des agents ultra-légers ou des protocoles standards (SNMP) pour remonter l'état de santé, la bande passante, et les erreurs de flux en temps réel. Cette méthode permet de cartographier instantanément l'architecture réseau (routeurs, switchs, hyperviseurs, serveurs) grâce à un puissant moteur d'auto-découverte, offrant ainsi une vue "hélicoptère" proactive pour détecter les goulots d'étranglement ou les pannes avant qu'elles n'impactent les utilisateurs.
+
+[Github Checkmk](https://github.com/Checkmk/checkmk)
 
 ![checkmk](/images/2026-02-27-10-50-09.png)
 
 ---
 
-## Création de la VM/Container
+## L'intérêt technique 🎯
+
+1. **Visibilité Réseau et Flux :** Analyser en temps réel la charge des interfaces (bande passante), la topologie, et surtout détecter les anomalies de transmission (comme les paquets perdus ou en erreur sur une interface `ens18`).
+2. **Efficacité (Auto-découverte) :** Oublier la configuration manuelle fastidieuse. Checkmk scanne l'hôte cible et identifie de lui-même les dizaines de services et interfaces réseaux à monitorer.
+3. **Sécurité (Flux TLS) :** Garantir la confidentialité des données de supervision en instaurant un canal chiffré de bout en bout (TLS) et une authentification forte entre le serveur central et ses agents sur le port TCP 6556.
+
+---
+
+## 🛠️ Architecture du Lab
+
+* **Environnement :** Serveur Proxmox
+* **Serveur Central :** Conteneur LXC sous Debian 13 (Trixie) alloué avec 1 vCPU et 1 Go de RAM.
+* **Cibles (Agents) :** Machines virtuelles Ubuntu et PC physiques sous Windows 10/11.
+* **Réseau Lab :** `10.0.0.0/16`
+* **Cible Checkmk (LXC) :** L'IP statique de notre serveur sera `10.0.0.80`
+* **Site de supervision :** `mkmonitor`
+
+---
+
+> Documentation : <https://docs.checkmk.com/latest/fr/>
+>
+> Installation Guide : <https://checkmk.com/download?platform=cmk&distribution=debian&release=trixie&edition=cre&version=2.4.0p22>
+
+---
+
+## Pré-requis Proxmox et LXC
 
 Installation d'un container LXC
 
@@ -88,7 +114,7 @@ Test de l'installation :
 
 On va maintenant pouvoir créer notre instance de supervision :
 
-`omd create monitoring`
+`omd create mkmonitor`
 
 > ⚠️ Bien noter le mot de passe aléatoire généré pour l'utilisateur `cmkadmin`, et l'URL pour se connecter à l'interface web
 
@@ -96,11 +122,11 @@ On va maintenant pouvoir créer notre instance de supervision :
 
 Démarrer le moteur de supervision :
 
-`omd start monitoring`
+`omd start mkmonitor`
 
 ![OK](/images/2026-02-27-13-04-30.png)
 
-L'installation est terminée. On peut se connecter à l'interface web en tapant <http://10.0.0.80/monitoring/> dans le navigateur 🎉
+L'installation est terminée. On peut se connecter à l'interface web en tapant <http://10.0.0.80/mkmonitor/> dans le navigateur 🎉
 
 ![login](/images/2026-02-27-13-06-14.png)
 
@@ -116,7 +142,7 @@ Schema des différentes façons dont Checkmk peut accéder aux systèmes à supe
 
 ## Installation des Agents
 
-> - Documentation Agents de supervision checkmk : <https://docs.checkmk.com/latest/fr/wato_monitoringagents.html>
+> Documentation Agents de supervision checkmk : <https://docs.checkmk.com/latest/fr/wato_monitoringagents.html>
 
 Le grand avantage de Checkmk, c'est que l'installation des agents ne demande aucune configuration système fastidieuse : on installe le paquet, ça ouvre un port d'écoute, et tout le reste de l'intelligence se gère depuis l'interface web centrale.
 
@@ -124,7 +150,7 @@ Pour déployer tes agents : Le serveur est le dépôt 💡
 
 ![agents](/images/2026-02-27-13-23-15.png)
 
-Pas besoin de chercher les agents sur Internet. Dès que le site "monitoring" est créé, Checkmk génère et héberge lui-même les agents.
+Pas besoin de chercher les agents sur Internet. Dès que le site "mkmonitor" est créé, Checkmk génère et héberge lui-même les agents.
 
 Ils sont toujours disponibles directement sur le serveur via l'interface web dans :
 Setup > Agents > Windows, Linux, Solaris, AIX, etc
@@ -137,7 +163,7 @@ On peut copier directement le lien de l'agent dont on a besoin.
 
 Pour télécharger l'agent depuis notre propre serveur Checkmk avec `wget` :
 
-`wget http://10.0.0.80/mkmonitoring/check_mk/agents/check-mk-agent_2.4.0p22-1_all.deb`
+`wget http://10.0.0.80/mkmonitor/check_mk/agents/check-mk-agent_2.4.0p22-1_all.deb`
 
 Installation de l'agent :
 
@@ -179,7 +205,7 @@ On peut ajouter nos autres hôtes
 
 Pour sécuriser les flux et les chiffrer on va utiliser la commande :
 
-`sudo cmk-agent-ctl register --hostname ubuntu-9005 --server 10.0.0.80 --site mkmonitoring --user cmkadmin --password Zy8KpTRvhZi6`
+`sudo cmk-agent-ctl register --hostname ubuntu-9005 --server 10.0.0.80 --site mkmonitor --user cmkadmin --password Zy8KpTRvhZi6`
 
 > 🔐 L'agent va s'authentifier auprès du serveur Checkmk, échanger des certificats, et tout le trafic de supervision sur le port 6556 sera chiffré. De plus, l'agent n'acceptera de parler qu'au serveur.
 
@@ -187,11 +213,11 @@ Pour sécuriser les flux et les chiffrer on va utiliser la commande :
 
 Pour Windows on fait de même en invite de commande ou powershell en tant qu'administrateur
 
-`sudo cmk-agent-ctl register --hostname windows10-9002 --server 10.0.0.80 --site mkmonitoring --user cmkadmin --password Zy8KpTRvhZi6`
+`sudo cmk-agent-ctl register --hostname windows10-9002 --server 10.0.0.80 --site mkmonitor --user cmkadmin --password Zy8KpTRvhZi6`
 
 Si ça ne fonctionne pas (windows ne reconnaît pas la variable d'environnement) on peut utiliser
 
-`"C:\Program Files (x86)\checkmk\service\cmk-agent-ctl.exe" register --hostname windows10-9002 --server 10.0.0.80 --site mkmonitoring --user cmkadmin --password Zy8KpTRvhZi6`
+`"C:\Program Files (x86)\checkmk\service\cmk-agent-ctl.exe" register --hostname windows10-9002 --server 10.0.0.80 --site mkmonitor --user cmkadmin --password Zy8KpTRvhZi6`
 
 ### Découverte
 

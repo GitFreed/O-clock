@@ -1,4 +1,4 @@
-# 🛡️ CHALLENGE LAB : Maîtrise du flux DNS et Sécurisation
+# 🛡️ LAB : Maîtrise du flux DNS et Sécurisation
 
 **Rôle :** Administrateur Réseau
 
