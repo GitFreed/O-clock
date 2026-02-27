@@ -28,7 +28,7 @@ Ce répertoire est organisé pour refléter mon apprentissage quotidien :
 - **Système :** Linux (Debian/RedHat), Windows Server,
 - **Sécurité :** Hardening, gestion des droits, VPN,
 - **Outils :** Cisco Packet Tracer, VMware, Proxmox, vCenter, Asterisk, Veeam, Proxmox Backup, Zabbix, Nagios, Git, Python, Bash, Powershell, AWS,
-- **HomeLab :** [Serveur Adguard Home](./challenges/Homelab_AdGuard.md) (DHCP & filtrage DNS),
+- **HomeLab :** [Adguard Home](./challenges/Homelab_AdGuard.md) (DHCP & filtrage DNS), [Checkmk Raw](./challenges/Homelab_Checkmk.md) (Supervision),
 
 ---
 
