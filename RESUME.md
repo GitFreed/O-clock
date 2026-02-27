@@ -5790,6 +5790,12 @@ Pour mettre tout cela en place, on s'appuie sur **pfSense**.
 
 Sur le réseau, on peut choisir d'être un simple observateur ou d'intervenir activement. **Suricata** est un moteur open-source de référence qui peut jouer les deux rôles.
 
+💡 **L'analogie de la boîte de nuit** :
+
+- **Le Pare-feu** : C'est le physionomiste à la porte. Il vérifie l'invitation (le port/l'IP) et bloque ceux qui n'ont pas le droit d'entrer.
+- **L'IDS** : C'est la caméra de surveillance à l'intérieur. Elle observe les comportements bizarres, mais n'intervient pas.
+- **L'IPS** : C'est le videur à l'intérieur. S'il voit un comportement dangereux, il intervient et sort le perturbateur.
+
 | Mode | Fonctionnement sur le réseau | Avantage | Inconvénient |
 | --- | --- | --- | --- |
 | **IDS** (Intrusion Detection System) | **Passif**. Il écoute une copie du trafic (via un port miroir / SPAN), et génère uniquement des alertes. | Aucun impact sur le réseau en cas de panne de l'IDS. | Ne bloque rien, l'attaque passe. |
@@ -5799,6 +5805,8 @@ Sur le réseau, on peut choisir d'être un simple observateur ou d'intervenir ac
 
 Suricata analyse les paquets réseau et les compare à un dictionnaire de **signatures** (des règles). Si le trafic correspond à une règle, il déclenche l'action prévue.
 
+Une règle se divise en deux parties : le **Header** (Action, IP, Ports) et les **Options** (Ce qu'on cherche dans le paquet).
+
 **Exemple d'une règle type :**
 
 ```suricata
@@ -5807,28 +5815,37 @@ alert http any any -> any any (msg:"ET ATTACK_RESPONSE id check returned root"; 
 
 **Décryptage de la syntaxe :**
 
-- **`alert`** : L'action à effectuer (peut aussi être `drop` en mode IPS, ou `pass`).
-- **`http`** : Le protocole réseau ciblé.
-- **`any any -> any any`** : Le sens du flux. Ici : `IP Source` `Port Source` -> `IP Destination` `Port Destination` (Tout le trafic vers tout le trafic).
-- **`content:"uid=0(root)"`** : Le motif précis à chercher dans la charge utile (payload) du paquet.
-- **`sid:2100498`** : Le Signature ID (l'identifiant unique de cette règle).
+- *Le Header (L'entête)* :
+  - **`alert`** : L'action à effectuer (peut aussi être `drop` en mode IPS, ou `pass`).
+  - **`http`** : Le protocole réseau ciblé.
+  - **`any any -> any any`** : Le sens du flux. Ici : `IP Source` `Port Source` -> `IP Destination` `Port Destination` (Tout le trafic vers tout le trafic).  
+  *Note : On utilise souvent des variables comme `$EXTERNAL_NET` pour l'IP source et `$HTTP_SERVERS` pour la destination afin de cibler précisément*.
+
+- *Les Options (Le corps de la règle)* :
+  - **`msg`** : Le nom de l'alerte qui s'affichera dans les logs.
+  - **`content:"uid=0(root)"`** : Le motif précis à chercher dans la charge utile (payload) du paquet.
+  - **`sid:2100498`** : Le Signature ID (l'identifiant unique de cette règle).
+  - **`rev:7`** : La version de la règle (pratique pour les mises à jour).
 
 #### 3. Le SIEM : La Tour de Contrôle (Wazuh)
 
-Si l'on a 5 routeurs, 3 switchs, 10 serveurs et un IDS Suricata, analyser les logs un par un est impossible. C'est là qu'intervient le **SIEM** (Security Information and Event Management).
+Si l'on a 5 routeurs, 3 switchs, 10 serveurs et un IDS Suricata, analyser les logs un par un est impossible et provoque la **"Fatigue des alertes"** (trop d'alertes tuent l'alerte). C'est là qu'intervient le **SIEM** (Security Information and Event Management).
 Il collecte, normalise, corrèle les événements et lance des alertes de manière centralisée.
 
 **L'écosystème Wazuh** (SIEM open-source) repose sur 3 briques :
 
 | Composant | Rôle | Ports standard |
 | --- | --- | --- |
-| **Wazuh Manager** | Le "cerveau". Reçoit les logs envoyés par les agents et applique les règles de détection globales. | 1514, 1515, 55000 |
-| **Wazuh Indexer** | La "mémoire". Stocke et indexe les événements de manière très rapide (basé sur OpenSearch). | 9200 |
-| **Wazuh Dashboard** | L'interface. Le portail web d'investigation pour les analystes sécurité. | 443 |
+| **Wazuh Manager** (Serveur) | Le "cerveau". Reçoit les logs envoyés par les agents, décode les données et applique les règles de détection globales. | 1514, 1515, 55000 |
+| **Wazuh Indexer** | La "mémoire". Stocke et indexe les événements de manière très rapide (basé sur le moteur Elasticsearch/OpenSearch). | 9200 |
+| **Wazuh Dashboard** | L'interface. Le portail web d'investigation pour les analystes sécurité (basé sur Kibana/OpenSearch Dashboards). | 443 |
 
 #### 4. Architecture et Remontée des Logs (Le Workflow)
 
-Pour que la détection soit efficace, le SIEM doit fusionner les événements purement réseaux (IDS) et les événements systèmes (OS). Les agents Wazuh installés sur les machines cibles et sur le capteur réseau se chargent de tout remonter au Manager.
+Pour que la détection soit efficace, le SIEM doit fusionner les événements purement réseaux (IDS) et les événements systèmes (OS).
+
+- **L'Agent Wazuh** : Installé sur les machines, il lit les événements locaux (journaux d'événements Windows, Syslog Linux, vérification d'intégrité des fichiers FIM, rootkits) et les transmet au serveur.
+- **Le lien avec Suricata** : Suricata génère un fichier de logs très détaillé au format JSON (`eve.json`). L'agent Wazuh est configuré pour lire ce fichier en temps réel et remonter les alertes réseau au SIEM.
 
 ```text
        Sources                         SIEM Wazuh
