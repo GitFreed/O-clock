@@ -80,11 +80,17 @@ iface ens18 inet static
 
 et restart `systemctl restart networking`
 
+---
+
 ## Installation et Configuration Checkmk
 
 Téléchargement de la clé GPG officielle depuis leur site web :
 
 `wget https://download.checkmk.com/checkmk/Check_MK-pubkey.gpg`
+
+Installer l'outil GPG
+
+`apt update && apt install gnupg -y`
 
 Importer la clé dans la liste des signatures fiables du système :
 
@@ -140,6 +146,8 @@ Schema des différentes façons dont Checkmk peut accéder aux systèmes à supe
 
 ![agents](/images/2026-02-27-13-16-39.png)
 
+---
+
 ## Installation des Agents
 
 > Documentation Agents de supervision checkmk : <https://docs.checkmk.com/latest/fr/wato_monitoringagents.html>
@@ -182,6 +190,8 @@ Et on lance le fichier téléchargé, et on termine l'install avec les option de
 ![exe](/images/2026-02-27-14-07-34.png)
 
 Côté réseau : L'installateur crée automatiquement un service Windows en arrière-plan et ajoute la règle au pare-feu Windows pour ouvrir le fameux port TCP 6556. Il n'y a rien d'autre à faire.
+
+---
 
 ## Découverte des agents
 
@@ -243,10 +253,14 @@ On peut retrouver les résultats du check dans Monitor > Overview > All Hosts
 
 ![dashboard](/images/2026-02-27-14-45-34.png)
 
+---
+
 ## Custom Dashboard
 
 ![dash](/images/2026-02-27-15-29-01.png)
 
 to be continued...
+
+---
 
 Suite Lab : interrogation des tes switchs / pfSense via SNMP
