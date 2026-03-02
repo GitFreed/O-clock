@@ -101,6 +101,8 @@ Cette Cheatsheet est vivante ! Elle évolue au fur et à mesure de mon apprentis
 
 ![ports](/images/2026-02-10-22-34-18.png)
 
+![ports](/images/2026-03-02-10-47-36.png)
+
 ![portssecure](/images/2026-02-16-18-03-25.png)
 
 ![PacketProtocols](/images/2026-02-10-22-07-18.png)
@@ -238,3 +240,5 @@ Virtualisation réseau
 ## 🗂️ Administration Systèmes
 
 ![LinuxSysAdmin](/images/2026-02-18-10-43-47.png)
+
+![backup](/images/2026-03-02-10-47-01.png)
