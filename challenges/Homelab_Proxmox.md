@@ -32,7 +32,7 @@ HDD Toshiba 2 To
 
 ## Correction des dépôts
 
-Utilisation du script communautaire PVE Post-install : <https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install>
+Utilisation du script communautaire **PVE Post-install** : <https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install>
 
 - La correction des dépôts (Repositories) : Il va désactiver le dépôt officiel "Enterprise" et il active automatiquement le dépôt gratuit "No-Subscription" pour pouvoir télécharger les paquets librement.
 
@@ -40,11 +40,15 @@ Utilisation du script communautaire PVE Post-install : <https://community-script
 
 - La mise à jour globale : Il se charge de télécharger et d'installer directement les dernières mises à jour de Proxmox.
 
+Il reste un dernier dépôt à corriger (stockage **Ceph**) pour ne pas avoir d'erreurs de mise à jour : pve-server > Updates > Repositories : Disable *ceph.sources* et *pve-enterprise.sources*
+
+![disable](/images/2026-03-02-09-16-46.png)
+
 ---
 
 ## Network
 
-L'activation du Trunking (802.1Q)
+L'activation du **Trunking (802.1Q)**
 
 Avec cette case cochée le switch virtuel se comporte comme un vrai port trunk. On pourra gérer les sous-interfaces et les VLANs directement depuis la ligne de commande des futures instances Cisco, pfSense, VyOS, etc.
 
@@ -75,3 +79,7 @@ Maintenant que le disque est prêt, on va définir ce que Proxmox a le droit de 
 Maintenant nos VM et Containers seront sur le SSD dans **local-lvm**, les ISOs, les Backup et les Datas seront sur le HDD.
 
 ---
+
+## VM & COntainers
+
+Il faut penser à activer le **Start at boot** pour le redémarrage automatique dans les Options de chaque si besoin
