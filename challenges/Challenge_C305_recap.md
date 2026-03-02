@@ -248,4 +248,6 @@ ufw allow 443/tcp
 ufw status verbose
 ```
 
+![ufw](/images/2026-03-02-12-25-35.png)
+
 ---
