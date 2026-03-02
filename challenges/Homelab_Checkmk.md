@@ -67,6 +67,13 @@ nano /etc/ssh/sshd_config
 
 et restart `systemctl restart sshd`
 
+ou en ligne de commande directement :
+
+```sh
+sed -i 's/^#\?PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
+systemctl restart ssh
+```
+
 On va aussi configurer l'IP en statique : `nano /etc/network/interfaces`
 
 ```sh
