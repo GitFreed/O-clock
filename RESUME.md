@@ -5876,6 +5876,8 @@ Pour que la détection soit efficace, le SIEM doit fusionner les événements pu
 
 > **Objectif**
 
+![netfilter](/images/2026-03-02-12-28-47.png)
+
 [Atelier C305](./challenges/Challenge_C305.md) :
 
 > 📚 **Ressources** :
