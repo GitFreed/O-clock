@@ -5871,3 +5871,16 @@ Pour que la détection soit efficace, le SIEM doit fusionner les événements pu
 [Retour en haut](#-table-des-matières)
 
 ---
+
+### 🧱 C305. Sécurité Linux
+
+> **Objectif**
+
+[Atelier C305](./challenges/Challenge_C305.md) :
+
+> 📚 **Ressources** :
+>
+
+[Retour en haut](#-table-des-matières)
+
+---
