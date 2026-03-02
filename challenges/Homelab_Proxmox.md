@@ -30,6 +30,18 @@ HDD Toshiba 2 To
 
 ---
 
+## Correction des dépôts
+
+Utilisation du script communautaire PVE Post-install : <https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install>
+
+- La correction des dépôts (Repositories) : Il va désactiver le dépôt officiel "Enterprise" et il active automatiquement le dépôt gratuit "No-Subscription" pour pouvoir télécharger les paquets librement.
+
+- La suppression de l'avertissement : Il retire le pop-up "No valid subscription" à chaque connection sur l'interface web.
+
+- La mise à jour globale : Il se charge de télécharger et d'installer directement les dernières mises à jour de Proxmox.
+
+---
+
 ## Network
 
 L'activation du Trunking (802.1Q)
